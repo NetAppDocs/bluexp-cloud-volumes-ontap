@@ -1,0 +1,388 @@
+---
+sidebar: sidebar
+permalink: task-managing-licenses.html
+keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator
+summary: The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
+---
+
+= Manage licenses for Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
+
+You can manage the following types of licenses for Cloud Volumes ONTAP:
+
+* _Capacity-based licenses_, which enable you to pay for Cloud Volumes ONTAP per TiB of capacity.
++
+https://cloud.netapp.com/contact-cds[Contact NetApp Sales^] to purchase a capacity-based license.
+
+* _Keystone Flex Subscriptions_, which is a pay-as-you-grow storage service offered by NetApp.
+
+* _Node-based licenses_, which are the previous generation licensing model:
+** BYOL licenses purchased from NetApp.
+** Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace.
+
+link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
+
+== Manage capacity-based licenses
+
+Manage your capacity-based licenses to ensure that your NetApp account has enough capacity for your Cloud Volumes ONTAP systems.
+
+=== View your account's capacity
+
+View the licensed capacity and provisioned capacity by package to ensure that you have enough room for your data volumes.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. With *Capacity Based Licenses* selected, view the licensed capacity and provisioned capacity for each package.
++
+image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of provisioned capacity versus licensed capacity for the professional package and essentials package.]
+
+. If needed, purchase additional licensed capacity and then add the license to your account.
+
+=== Add purchased licenses to your account
+
+After you purchase licenses for your NetApp account, you need to add the licenses to Cloud Manager so that the capacity is available for Cloud Volumes ONTAP.
+
+.What you'll need
+
+* You need to provide Cloud Manager the serial number of the license or the license file.
+
+* If you want to enter the serial number, you first need to link:task-adding-nss-accounts.html[add your NetApp Support Site account to Cloud Manager]. This is the NetApp Support Site account that's authorized to access the serial number.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Click *Add License*.
+
+. Enter the serial number for your capacity-based license or upload the license file.
++
+If you entered a serial number, you also need to select the NetApp Support Site account that's authorized to access the serial number.
+
+. Click *Add License*.
+
+=== Update a capacity-based license
+
+If you purchased additional capacity or extended the term of your license, Cloud Manager automatically updates the license in the Digital Wallet. There's nothing that you need to do.
+
+However, if you deployed Cloud Manager in a location that doesn't have internet access, then you'll need to manually update the license in Cloud Manager.
+
+.What you'll need
+
+The license file (or _files_ if you have an HA pair).
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Click the action menu next to the license and select *Update License*.
+
+. Upload the license file.
+
+. Click *Upload License*.
+
+=== Remove a capacity-based license
+
+If a capacity-based license expired and is no longer in use, then you can remove it at any time.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Click the action menu next to the license and select *Remove License*.
+
+. Click *Remove* to confirm.
+
+== Manage Keystone Flex Subscriptions
+
+Manage your Keystone Flex Subscriptions from the Digital Wallet by enabling subscriptions for use with Cloud Volumes ONTAP. You can also request changes to the committed capacity and you can unlink subscriptions.
+
+=== Authorize your account
+
+Before you can use and manage Keystone Flex Subscriptions in Cloud Manager, you need to contact NetApp to authorize your Cloud Manager user account with your Keystone Flex Subscriptions.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. If you see the *Welcome to NetApp Keystone* page, send an email to the address listed on the page.
++
+A NetApp representative will process your request by authorizing your user account to access the subscriptions.
+
+. Come back to the *Keystone Flex Subscription* to view your subscriptions.
++
+image:screenshot-keystone-overview.png[A screenshot that shows a list of Keystone Flex Subscriptions.]
+
+.What's next?
+
+Link the subscriptions that you want to use with Cloud Volumes ONTAP.
+
+=== Link a subscription
+
+After NetApp authorizes your account, you need to link Keystone Flex Subscriptions for use with Cloud Volumes ONTAP. This action enables users to select the subscription as the charging method for new Cloud Volumes ONTAP systems.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want to link, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Link*.
++
+image:screenshot-keystone-link.png[A screenshot that shows the link option for a subscription.]
+
+.Result
+
+The subscription is now linked to your Cloud Manager account and available to select when creating a Cloud Volumes ONTAP working environment.
+
+=== Request more or less committed capacity
+
+If you need to adjust the committed capacity for a subscription, you can send a request right from the Cloud Manager interface.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want adjust the capacity, click image:icon-action.png["An icon that is three side-by-side dots"] and select *View detail and edit*.
+
+. Enter the requested committed capacity for one or more subscriptions.
++
+image:screenshot-keystone-request.png[A screenshot that shows the ability to request a change to the committed capacity for a subscription.]
+
+. Scroll down, enter any additional details for the request, and then click *Submit*.
+
+.Result
+
+Your request creates a ticket in NetApp's system for processing.
+
+=== Unlink a subscription
+
+If you no longer want to use a Keystone Flex Subscription with new Cloud Volumes ONTAP systems, you can unlink the subscription. Note that you can only unlink a subscription that isn't attached to an existing Cloud Volumes ONTAP subscription.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Unlink*.
+
+.Result
+
+The subscription is unlinked from your Cloud Manager account and no longer available to select when creating a Cloud Volumes ONTAP working environment.
+
+== Manage node-based PAYGO licenses
+
+The Digital Wallet page enables you to view details about each of your PAYGO Cloud Volumes ONTAP systems, including the serial number and PAYGO license type.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *PAYGO*.
+
+. View details in the table about each of your PAYGO licenses.
++
+image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Digital Wallet page with three paygo licenses. Each row shows the name, type of system, serial number, package, and a link to manage the license."]
+
+. If needed, click *Manage PAYGO License* to change the PAYGO license or to change the instance type.
+
+== Manage node-based BYOL licenses
+
+Manage your node-based licenses to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
+
+=== Add unassigned licenses
+
+Add a node-based license to the Digital Wallet so that you can select the license when you create a new Cloud Volumes ONTAP system. The Digital Wallet identifies these licenses as _unassigned_.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *Unassigned*.
+
+. Click *Add Unassigned Licenses*.
+
+. Enter the serial number of the license or upload the license file.
++
+If you don't have the license file yet, refer to the section below.
+
+. Click *Add License*.
+
+.Result
+
+Cloud Manager adds the license to the Digital Wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the *BYOL* tab in the Digital Wallet.
+
+=== Exchange unassigned node-based licenses
+
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can exchange the license by converting it to a Cloud Backup license, a Cloud Data Sense license, or a Cloud Tiering license.
+
+Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service:
+
+* Licensing for a Cloud Volumes ONTAP HA pair is converted to a 51 TiB data service license
+* Licensing for a Cloud Volumes ONTAP single node is converted to a 32 TiB data service license
+
+The converted license has the same expiry date as the Cloud Volumes ONTAP license.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *Unassigned*.
+
+. Click *Exchange License*.
++
+image:screenshot-exchange-license.png[A screenshot of the Exchange License option that appears on the Unassigned license page.]
+
+. Select the service that you'd like to exchange the license with.
+
+. If you're prompted, select an additional license for the HA pair.
+
+. Read the legal consent and click *Agree*.
+
+.Result
+
+Cloud Manager converts the unassigned license to the service that you selected. You can view the new license in the *Data Services Licenses* tab.
+
+=== Obtain a system license file
+
+In most cases, Cloud Manager can automatically obtain your license file using your NetApp Support Site account. But if it can't, then you'll need to manually upload the license file. If you don't have the license file, you can obtain it from netapp.com.
+
+.Steps
+
+. Go to the https://register.netapp.com/register/getlicensefile[NetApp License File Generator^] and log in using your NetApp Support Site credentials.
+
+. Enter your password, choose your product, enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
++
+*Example*
++
+image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetApp License File Generator web page filled out, including a password, a product (NetApp Cloud Volumes ONTAP BYOL for AWS), and a product serial number.]
+
+. Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
+
+=== Update a system license
+
+When you renew a BYOL subscription by contacting a NetApp representative, Cloud Manager automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
+
+If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click the action menu next to the system license and select *Update License*.
+
+. Upload the license file (or files if you have an HA pair).
+
+. Click *Update License*.
+
+.Result
+
+Cloud Manager updates the license on the Cloud Volumes ONTAP system.
+
+=== Manage extra capacity licenses
+
+You can purchase extra capacity licenses for a Cloud Volumes ONTAP BYOL system to allocate more than the 368 TiB of capacity that's provided with a BYOL system license. For example, you might purchase one extra license capacity to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you could purchase three extra capacity licenses to get up to 1.4 PiB.
+
+The number of licenses that you can purchase for a single node system or HA pair is unlimited.
+
+==== Add capacity licenses
+
+Purchase an extra capacity license by contacting us through the chat icon in the lower-right of Cloud Manager. After you purchase the license, you can apply it to a Cloud Volumes ONTAP system.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click *Add Capacity License*.
+
+. Enter the serial number or upload the license file (or files if you have an HA pair).
+
+. Click *Add Capacity License*.
+
+==== Update capacity licenses
+
+If you extended the term of an extra capacity license, you'll need to update the license in Cloud Manager.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click the action menu next to the capacity license and select *Update License*.
+
+. Upload the license file (or files if you have an HA pair).
+
+. Click *Update License*.
+
+==== Remove capacity licenses
+
+If an extra capacity license expired and is no longer in use, then you can remove it at any time.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
+
+. Click the action menu next to the capacity license and select *Remove License*.
+
+. Click *Remove*.
+
+=== Convert an Eval license to a BYOL
+
+An evaluation license is good for 30 days. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade.
+
+When you convert an Eval license to a BYOL, Cloud Manager restarts the Cloud Volumes ONTAP system.
+
+* For a single-node system, the restart results in I/O interruption during the reboot process.
+* For an HA pair, the restart initiates takeover and giveback to continue serving I/O to clients.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Select *Node Based Licenses* from the drop-down.
+
+. Click *Eval*.
+
+. In the table, click *Convert to BYOL License* for a Cloud Volumes ONTAP system.
+
+. Enter the serial number or upload the license file.
+
+. Click *Convert License*.
+
+.Result
+
+Cloud Manager starts the conversion process. Cloud Volumes ONTAP automatically restarts as part of this process. When it's back up, the licensing information will reflect the new license.
