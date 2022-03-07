@@ -1,0 +1,84 @@
+---
+sidebar: sidebar
+permalink: task-getting-started-gcp.html
+keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager, create cloud manager, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions
+summary: Get started with Cloud Volumes ONTAP for GCP in a few steps.
+---
+
+= Getting started with Cloud Volumes ONTAP for Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Get started with Cloud Volumes ONTAP for GCP in a few steps.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
+
+[role="quick-margin-para"]
+If you don't have a link:concept-connectors.html[Connector] yet, an Account Admin needs to create one. link:task-creating-connectors-gcp.html[Learn how to create a Connector in GCP].
+
+[role="quick-margin-para"]
+When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
+
+[role="quick-margin-para"]
+Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
+
+[role="quick-margin-para"]
+link:task-planning-your-config-gcp.html[Learn more about planning your configuration].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
+
+[role="quick-margin-list"]
+.. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
+
+.. If you plan to enable data tiering, https://cloud.google.com/vpc/docs/configure-private-google-access[configure the Cloud Volumes ONTAP subnet for Private Google Access^].
+
+.. If you're deploying an HA pair, ensure that you have four VPCs, each with their own subnet.
+
+.. If you're using a shared VPC, provide the _Compute Network User_ role to the Connector service account.
+
+.. Enable outbound internet access from the target VPC so the Connector and Cloud Volumes ONTAP can contact several endpoints.
++
+This step is important because the Connector can't manage Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference-networking-gcp.html[the Connector and Cloud Volumes ONTAP].
+
+[role="quick-margin-para"]
+link:reference-networking-gcp.html[Learn more about networking requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up a service account
+
+[role="quick-margin-para"]
+Cloud Volumes ONTAP requires a Google Cloud service account for two purposes. The first is when you enable link:concept-data-tiering.html[data tiering] to tier cold data to low-cost object storage in Google Cloud. The second is when you enable the link:concept-backup-to-cloud.html[Cloud Backup Service] to back up volumes to low-cost object storage.
+
+[role="quick-margin-para"]
+You can set up one service account and use it for both purposes. The service account must have the *Storage Admin* role.
+
+[role="quick-margin-para"]
+link:task-creating-gcp-service-account.html[Read step-by-step instructions].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Enable Google Cloud APIs
+
+[role="quick-margin-para"]
+https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^]. These APIs are required to deploy the Connector and Cloud Volumes ONTAP.
+
+[role="quick-margin-list"]
+* Cloud Deployment Manager V2 API
+* Cloud Logging API
+* Cloud Resource Manager API
+* Compute Engine API
+* Identity and Access Management (IAM) API
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Launch Cloud Volumes ONTAP using Cloud Manager
+
+[role="quick-margin-para"]
+Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task-deploying-gcp.html[Read step-by-step instructions].
+
+.Related links
+
+* link:task-creating-connectors-gcp.html[Creating a Connector from Cloud Manager]
+* link:task-installing-linux.html[Installing the Connector software on a Linux host]
+* link:reference-permissions.html#what-cloud-manager-does-with-gcp-permissions[What Cloud Manager does with GCP permissions]

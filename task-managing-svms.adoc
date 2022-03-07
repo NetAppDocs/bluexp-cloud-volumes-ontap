@@ -1,0 +1,56 @@
+---
+sidebar: sidebar
+permalink: task-managing-svms.html
+keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported
+summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
+---
+
+= Manage storage VMs in Cloud Manager
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
+
+== Supported number of storage VMs
+
+Multiple storage VMs are supported with Cloud Volumes ONTAP in AWS and in Azure with certain configurations. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
+
+== Work with multiple storage VMs
+
+Cloud Manager supports any additional storage VMs that you create from System Manager or the CLI.
+
+For example, the following image shows how you can choose a storage VM when you create a volume.
+
+image:screenshot_create_volume_svm.gif[A screenshot that shows the ability to select the storage VM in which you want to create a volume.]
+
+And the following image shows how you can choose a storage VM when replicating a volume to another system.
+
+image:screenshot_replicate_volume_svm.gif[A screenshot that shows the ability to select the storage VM in which you want to replicate a volume.]
+
+== Modify the name of the default storage VM
+
+Cloud Manager automatically names the single storage VM that it creates for Cloud Volumes ONTAP. You can modify the name of the storage VM if you have strict naming standards. For example, you might want the name to match how you name the storage VMs for your ONTAP clusters.
+
+If you created any additional storage VMs for Cloud Volumes ONTAP, then you can't rename the storage VMs from Cloud Manager. You'll need to do so directly from Cloud Volumes ONTAP by using System Manager or the CLI.
+
+.Steps
+
+. From the working environment, click the menu icon, and then click *Information*.
+
+. Click the edit icon to the right of the storage VM name.
++
+image:screenshot_svm.gif[Screen shot: Shows the SVM Name field and the edit icon that you must click to modify the SVM name.]
+
+. In the Modify SVM Name dialog box, change the name, and then click *Save*.
+
+== Manage storage VMs for disaster recovery
+
+Cloud Manager doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]

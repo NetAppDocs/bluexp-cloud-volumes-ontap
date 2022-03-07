@@ -1,0 +1,458 @@
+---
+sidebar: sidebar
+permalink: task-deploying-otc-aws.html
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, aws, serial number, license key, byol, test instance, aws tags, tags, location, vpc, encryption, security group, aws-managed encryption, disk size, disk type, write speed, licensing, IAM role, preconfigured package, access control, volume protection, usage profile, register, CIFS share, quota, qtree, WorkingEnvironmentId, HA, high availability, subscription
+summary: You can launch Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS.
+---
+
+= Launching Cloud Volumes ONTAP in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in AWS.
+
+== Before you get started
+
+You need the following to create a working environment.
+
+[[licensing]]
+* A Connector that's up and running.
+
+** You should have a link:task-creating-connectors-aws.html[Connector that is associated with your workspace].
+
+** link:concept-connectors.html[You should be prepared to leave the Connector running at all times].
+
+* An understanding of the configuration that you want to use.
++
+You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration].
+
+* DNS and Active Directory for CIFS configurations.
++
+For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
+
+* An understanding of what's required to choose a specific licensing option in the Add Working Environment wizard. link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licensing].
++
+[cols="20,40,40",options="header"]
+|===
+| Licensing option
+| Requirement
+| How to meet the requirement
+
+| Freemium
+| A Marketplace subscription or NetApp Support Site (NSS) account is required.
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
+
+You can enter your NSS account on the *Charging Methods and NSS Account* page.
+
+| Professional or Essential package
+| A Marketplace subscription or capacity-based license (BYOL) is required.
+
+A Marketplace subscription is recommended for capacity-based charging in the event that your account doesn't have a valid capacity-based license, or in the event that your provisioned capacity exceeds the licensed capacity.
+
+| You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
+
+If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-managing-licenses.html[Learn how to add capacity-based BYOL licenses].
+
+| Keystone Flex Subscription
+| Your account must be authorized and the subscription must be enabled for use with Cloud Volumes ONTAP.
+a|
+. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
+. After NetApp authorizes your account, link:task-managing-licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.
+
+| Per node licensing
+| A Marketplace subscription is required or you need to bring your own license (BYOL). This option is available for customers with existing subscriptions or existing licenses. It's not available for new customers.
+
+| If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-managing-licenses.html#obtain-a-system-license-file[Learn how to add node-based BYOL licenses].
+
+You can enter your NSS account on the *Charging Methods and NSS Account* page.
+
+|===
+
+== Launching a single-node Cloud Volumes ONTAP system in AWS
+
+If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new working environment in Cloud Manager.
+
+.About this task
+
+Immediately after you create the working environment, Cloud Manager launches a test instance in the specified VPC to verify connectivity. If successful, Cloud Manager immediately terminates the instance and then starts deploying the Cloud Volumes ONTAP system. If Cloud Manager cannot verify connectivity, creation of the working environment fails. The test instance is either a t2.nano (for default VPC tenancy) or m3.medium (for dedicated VPC tenancy).
+
+.Steps
+
+. [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
+
+. *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
+
+. If you're prompted, link:task-creating-connectors-aws.html[create a Connector].
+
+. *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
++
+Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+
+| Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
+
+You can add up to four tags from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four tags when creating a working environment.
+
+For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
+
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+
+| Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
+
+Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
+
+link:task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
+
+|===
++
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your AWS credentials:
++
+video::video_subscribing_aws.mp4[width=848, height=480]
++
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS Marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
+image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not."]
+
+. *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
++
+* link:concept-cloud-compliance.html[Learn more about Cloud Data Sense].
+* link:concept-backup-to-cloud.html[Learn more about Cloud Backup].
+* link:concept-monitoring.html[Learn more about Monitoring].
+
+. *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
++
+If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.
++
+The following image shows the page filled out:
++
+image:screenshot_cot_vpc.gif[Screen shot: Shows the VPC page filled out for a new Cloud Volumes ONTAP instance.]
+
+. *Data Encryption*: Choose no data encryption or AWS-managed encryption.
++
+For AWS-managed encryption, you can choose a different Customer Master Key (CMK) from your account or another AWS account.
++
+TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
++
+link:task-setting-up-kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP].
++
+link:concept-security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
+
+. *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
++
+* link:concept-licensing.html[Learn about these charging methods].
+* link:task-deploying-otc-aws.html#licensing[Learn what's required in the wizard for the licensing method that you want to use.]
+
+. *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
++
+If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
+
+. *Preconfigured Packages* (hourly or BYOL only): Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
++
+If you choose one of the packages, then you only need to specify a volume and then review and approve the configuration.
+
+. *IAM Role*: It's best to keep the default option to let Cloud Manager create the role for you.
++
+If you prefer to use your own policy, it must meet https://mysupport.netapp.com/site/info/cloud-manager-policies[policy requirements for Cloud Volumes ONTAP nodes^].
+
+. *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
++
+image:screenshot_cvo_licensing_aws.gif[A screenshot of the Licensing page]
++
+If your needs change after you launch the instance, you can modify the license or instance type later.
++
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+
+. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
++
+Note the following:
++
+* The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+* The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
++
+For help choosing a disk type and size, see link:task-planning-your-config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+* You can choose a specific volume tiering policy when you create or edit a volume.
+* If you disable data tiering, you can enable it on subsequent aggregates.
++
+link:concept-data-tiering.html[Learn how data tiering works].
+
+. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
++
+link:concept-write-speed.html[Learn more about write speed].
++
+WORM can't be enabled if Cloud Backup was enabled or if data tiering was enabled.
++
+link:concept-worm.html[Learn more about WORM storage].
+
+. *Create Volume*: Enter details for the new volume or click *Skip*.
++
+Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
++
+include::_include/create_volume.adoc[]
++
+The following image shows the Volume page filled out for the CIFS protocol:
++
+image:screenshot_cot_vol.gif[Screen shot: Shows the Volume page filled out for a Cloud Volumes ONTAP instance.]
+
+. *CIFS Setup*: If you chose the CIFS protocol, set up a CIFS server.
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
+
+| Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
+
+| Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
+
+| Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+
+| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+|===
+
+. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
++
+For more information, see link:task-planning-your-config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+
+. *Review & Approve*: Review and confirm your selections.
+
+.. Review details about the configuration.
+
+.. Click *More information* to review details about support and the AWS resources that Cloud Manager will purchase.
+
+.. Select the *I understand...* check boxes.
+
+.. Click *Go*.
+
+.Result
+
+Cloud Manager launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.
+
+If you experience any issues launching the Cloud Volumes ONTAP instance, review the failure message. You can also select the working environment and click Re-create environment.
+
+For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
+
+.After you finish
+
+* If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
+
+* If you want to apply quotas to volumes, use System Manager or the CLI.
++
+Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+
+== Launching a Cloud Volumes ONTAP HA pair in AWS
+
+If you want to launch a Cloud Volumes ONTAP HA pair in AWS, you need to create an HA working environment in Cloud Manager.
+
+.Limitation
+
+At this time, HA pairs are not supported with AWS Outposts.
+
+.About this task
+
+Immediately after you create the working environment, Cloud Manager launches a test instance in the specified VPC to verify connectivity. If successful, Cloud Manager immediately terminates the instance and then starts deploying the Cloud Volumes ONTAP system. If Cloud Manager cannot verify connectivity, creation of the working environment fails. The test instance is either a t2.nano (for default VPC tenancy) or m3.medium (for dedicated VPC tenancy).
+
+.Steps
+
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
+
+. *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
+
+. *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
++
+Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+
+| Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
+
+You can add up to four tags from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four tags when creating a working environment.
+
+For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
+
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+
+| Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
+
+Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
+
+If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
+
+link:task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
+
+|===
++
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your AWS credentials:
++
+video::video_subscribing_aws.mp4[width=848, height=480]
++
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS Marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
+image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
+
+. *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
++
+* link:concept-cloud-compliance.html[Learn more about Cloud Data Sense].
+* link:task-backup-to-s3.html[Learn more about Cloud Backup].
+* link:concept-monitoring.html[Learn more about Monitoring].
+
+. *HA Deployment Models*: Choose an HA configuration.
++
+For an overview of the deployment models, see link:concept-ha.html[Cloud Volumes ONTAP HA for AWS].
+
+. *Region & VPC*: Enter the network information that you recorded in the AWS worksheet.
++
+The following image shows the page filled out for a multiple AZ configuration:
++
+image:screenshot_cot_vpc_ha.gif[Screen shot: Shows the VPC page filled out for an HA configuration. A different availability zone is selected for each instance.]
+
+. *Connectivity and SSH Authentication*: Choose connection methods for the HA pair and the mediator.
+
+. *Floating IPs*: If you chose multiple AZs, specify the floating IP addresses.
++
+The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:reference-networking-aws.html#aws-networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
+
+. *Route Tables*: If you chose multiple AZs, select the route tables that should include routes to the floating IP addresses.
++
+If you have more than one route table, it is very important to select the correct route tables. Otherwise, some clients might not have access to the Cloud Volumes ONTAP HA pair. For more information about route tables, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
+
+. *Data Encryption*: Choose no data encryption or AWS-managed encryption.
++
+For AWS-managed encryption, you can choose a different Customer Master Key (CMK) from your account or another AWS account.
++
+TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
++
+link:task-setting-up-kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP].
++
+link:concept-security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
+
+. *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
++
+* link:concept-licensing.html[Learn about these charging methods].
+* link:task-deploying-otc-aws.html#licensing[Learn what's required in the wizard for the licensing method that you want to use].
+
+. *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
++
+If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
+
+. *Preconfigured Packages* (hourly or BYOL only): Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
++
+If you choose one of the packages, then you only need to specify a volume and then review and approve the configuration.
+
+. *IAM Role*: It's best to keep the default option to let Cloud Manager create the role for you.
++
+If you prefer to use your own policy, it must meet https://mysupport.netapp.com/site/info/cloud-manager-policies[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator^].
+
+. *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
++
+image:screenshot_cvo_licensing_aws.gif[A screenshot of the Licensing page]
++
+If your needs change after you launch the instances, you can modify the license or instance type later.
++
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+
+. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
++
+Note the following:
++
+* The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+* The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
++
+For help choosing a disk type and size, see link:task-planning-your-config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+* You can choose a specific volume tiering policy when you create or edit a volume.
+* If you disable data tiering, you can enable it on subsequent aggregates.
++
+link:concept-data-tiering.html[Learn how data tiering works].
+
+. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
++
+link:concept-write-speed.html[Learn more about write speed].
++
+WORM can't be enabled if Cloud Backup was enabled or if data tiering was enabled.
++
+link:concept-worm.html[Learn more about WORM storage].
+
+. *Create Volume*: Enter details for the new volume or click *Skip*.
++
+Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
++
+include::_include/create_volume.adoc[]
++
+The following image shows the Volume page filled out for the CIFS protocol:
++
+image:screenshot_cot_vol.gif[Screen shot: Shows the Volume page filled out for a Cloud Volumes ONTAP instance.]
+
+. *CIFS Setup*: If you selected the CIFS protocol, set up a CIFS server.
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
+
+| Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
+
+| Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
+
+| Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+
+| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+|===
+
+. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
++
+For more information, see link:task-planning-your-config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+
+. *Review & Approve*: Review and confirm your selections.
+
+.. Review details about the configuration.
+
+.. Click *More information* to review details about support and the AWS resources that Cloud Manager will purchase.
+
+.. Select the *I understand...* check boxes.
+
+.. Click *Go*.
+
+.Result
+
+Cloud Manager launches the Cloud Volumes ONTAP HA pair. You can track the progress in the timeline.
+
+If you experience any issues launching the HA pair, review the failure message. You can also select the working environment and click Re-create environment.
+
+For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
+
+.After you finish
+
+* If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
+
+* If you want to apply quotas to volumes, use System Manager or the CLI.
++
+Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.

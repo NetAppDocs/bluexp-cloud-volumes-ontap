@@ -1,0 +1,72 @@
+---
+sidebar: sidebar
+permalink: task-enabling-private-link.html
+keywords: azure private link, private link connection, private link to storage
+summary: By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure.
+---
+
+= Using an Azure Private Link with Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure and provides performance benefits. https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more^].
+
+In most cases, there’s nothing that you need to do--Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You can also disable the Private Link connection, if desired.
+
+== Connector location in Azure
+
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+
+== How Private Link connections work with Cloud Volumes ONTAP
+
+When Cloud Manager deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with the storage account for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.
+
+Client access goes through the private link when clients are within the same VNet as Cloud Volumes ONTAP, within peered VNets, or in your on-premises network when using a private VPN or ExpressRoute connection to the VNet.
+
+Here's an example that shows client access over a private link from within the same VNet and from an on-prem network that has either a private VPN or ExpressRoute connection.
+
+image:diagram_azure_private_link.png[A conceptual image that shows data access going to Cloud Volumes ONTAP and through a private endpoint and private link to the storage account.]
+
+== Providing Cloud Manager with details about your Azure Private DNS
+
+If you use https://docs.microsoft.com/en-us/azure/dns/private-dns-overview[Azure Private DNS^], then you need to modify a configuration file on each Connector. Otherwise, Cloud Manager can't enable the Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts.
+
+Note that the DNS name must match Azure DNS naming requirements https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints#dns-changes-for-private-endpoints[as shown in Azure documentation^].
+
+.Steps
+
+. SSH to the Connector host and log in.
+
+. Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data
+
+. Edit app.conf by modifying the following parameters as shown:
++
+ "user-private-dns-zone-settings": {
+    "use-existing": true,
+    "resource-group": "<resource group name of the DNS zone>",
+    "subscription": "<subscription ID>"
+   }
++
+The subscription parameter is required only if the Private DNS Zone exists in a different subscription than the Connector.
+
+. Save the file and log off the Connector.
++
+A reboot isn't required.
+
+== Disabling Azure Private Link connections
+
+If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.
+
+.Steps
+
+.	In the upper right of the Cloud Manager console, click the Settings icon, and select *Connector Settings*.
+
+.	Under *Azure*, click *Use Azure Private Link*.
+
+. Deselect *Private Link connection between Cloud Volumes ONTAP and storage accounts*.
+
+.	Click *Save*.
