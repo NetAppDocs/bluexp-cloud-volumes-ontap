@@ -142,7 +142,7 @@ For instructions, refer to https://cloud.google.com/vpn/docs/concepts/overview[G
 
 Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task-configuring-proxy.html[Configuring the Connector to use a proxy server].
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
 
 === Connection to target networks
 

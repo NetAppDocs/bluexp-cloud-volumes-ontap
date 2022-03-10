@@ -22,9 +22,9 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a link:task-creating-connectors-azure.html[Connector that is associated with your workspace].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-azure.html[Connector that is associated with your workspace^].
 
-** link:concept-connectors.html[You should be prepared to leave the Connector running at all times].
+** https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
 * An understanding of the configuration that you want to use.
 +
