@@ -87,7 +87,7 @@ Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recom
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node* or *Cloud Volumes ONTAP High Availability*.
 
-. If you're prompted, link:task-creating-connectors-azure.html[create a Connector].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-azure.html[create a Connector].
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
@@ -118,9 +118,9 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* link:concept-cloud-compliance.html[Learn more about Cloud Data Sense].
-* link:concept-backup-to-cloud.html[Learn more about Cloud Backup].
-* link:concept-monitoring.html[Learn more about the Monitoring service].
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense].
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup].
+* https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about the Monitoring service].
 
 . *Location & Connectivity*: Select a location, a resource group, a security group, and then select the checkbox to confirm network connectivity between the Connector and the target location.
 +
