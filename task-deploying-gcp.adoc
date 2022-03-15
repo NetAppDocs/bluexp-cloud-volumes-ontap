@@ -22,9 +22,9 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a link:task-creating-connectors-gcp.html[Connector that is associated with your workspace].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-gcp.html[Connector that is associated with your workspace].
 
-** link:concept-connectors.html[You should be prepared to leave the Connector running at all times].
+** https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[You should be prepared to leave the Connector running at all times].
 
 ** The service account associated with the Connector link:https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[should have the latest permissions^].
 
@@ -89,7 +89,7 @@ Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in G
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
 
-. If you're prompted, link:task-creating-connectors-gcp.html[create a Connector].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-gcp.html[create a Connector].
 
 . *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
 +
@@ -102,7 +102,7 @@ The following table describes fields for which you might need guidance:
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Service Account Name | If you plan to use link:concept-data-tiering.html[data tiering] or link:concept-backup-to-cloud.html[Cloud Backup] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account].
+| Service Account Name | If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account].
 
 | Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
 
@@ -264,7 +264,7 @@ The following table describes fields for which you might need guidance:
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Service Account Name | If you plan to use the link:concept-data-tiering.html[Tiering] or link:concept-backup-to-cloud.html[Cloud Backup] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
+| Service Account Name | If you plan to use the link:concept-data-tiering.html[Tiering] or https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
 
 | Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
 

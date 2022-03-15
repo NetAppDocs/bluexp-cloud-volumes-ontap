@@ -33,4 +33,4 @@ https://www.netapp.com/us/media/tr-4816.pdf[NetApp Technical Report 4816: Perfor
 
 Cloud Volumes ONTAP nodes show as highly utilized (over 90%) from your cloud provider's monitoring tools. This is because ONTAP reserves all vCPUs presented to the virtual machine so that they are available when needed.
 
-link:concept-monitoring.html[Learn how to monitor Cloud Volumes ONTAP performance], or check out this https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Monitoring_CPU_utilization_before_an_ONTAP_upgrade[NetApp knowledgebase article about how to monitor ONTAP CPU utilization using the CLI^].
+https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn how to monitor Cloud Volumes ONTAP performance], or check out this https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Monitoring_CPU_utilization_before_an_ONTAP_upgrade[NetApp knowledgebase article about how to monitor ONTAP CPU utilization using the CLI^].
