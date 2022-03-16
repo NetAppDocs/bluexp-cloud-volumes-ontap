@@ -82,7 +82,7 @@ Some of the fields on this page are self-explanatory. The following list describ
 
 | Volume Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
 
-| Tags | Tags that you add to a volume are associated with the https://docs.netapp.com/us-en/cloud-manager-app-template/task-using-tags.html[Application Templates service], which can help you organize and simplify the management of your resources.
+| Tags | Tags that you add to a volume are associated with the https://docs.netapp.com/us-en/cloud-manager-app-template/task-using-tags.html[Application Templates service^], which can help you organize and simplify the management of your resources.
 
 | Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 

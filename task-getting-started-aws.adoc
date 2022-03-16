@@ -58,5 +58,5 @@ Click *Add Working Environment*, select the type of system that you would like t
 
 * https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-aws.html[Creating a Connector from Cloud Manager^]
 * https://docs.netapp.com/us-en/cloud-manager-connector/task-launching-aws-mktp.html[Launching a Connector from the AWS Marketplace^]
-* https://docs.netapp.com/us-en/cloud-manager-get-started/task-installing-linux.html[Installing the Connector software on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-linux.html[Installing the Connector software on a Linux host^]
 * https://docs.netapp.com/us-en/cloud-manager-get-started/reference-permissions.html[What Cloud Manager does with AWS permissions^]

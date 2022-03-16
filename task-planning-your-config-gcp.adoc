@@ -77,7 +77,7 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 +
 Google Cloud Compute Engine enforces quotas on resource usage so you should ensure that you haven't reached your limit before you deploy Cloud Volumes ONTAP.
 
-TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-connector/reference-connector-default-config.html[View details about the Connector's default configuration].
+TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-connector/reference-connector-default-config.html[View details about the Connector's default configuration^].
 
 == GCP network information worksheet
 

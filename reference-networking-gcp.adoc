@@ -126,7 +126,7 @@ You don't need to create firewall rules because Cloud Manager does that for you.
 Note that two sets of firewall rules are required for an HA configuration:
 +
 * One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
-* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for VPC-1 VPC-2 and VPC-3,Learn more>>.
+* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
 
 Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].

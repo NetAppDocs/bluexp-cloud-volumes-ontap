@@ -25,7 +25,7 @@ CAUTION: This process might be disruptive to CIFS clients. Data that is not comm
 
 .What you'll need
 
-You need to create a Connector before you can change Cloud Manager settings. https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html#how-to-create-a-connector[Learn how].
+You need to create a Connector before you can change Cloud Manager settings. https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html#how-to-create-a-connector[Learn how^].
 
 .Steps
 

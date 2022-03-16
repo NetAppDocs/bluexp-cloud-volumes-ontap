@@ -23,7 +23,7 @@ TIP: A system that isn't registered for support will still receive the software 
 
 . If you have not yet added your NetApp Support Site account to Cloud Manager, go to *Account Settings* and add it now.
 +
-link:task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts].
+https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts^].
 
 . On the Canvas page, double-click the name of the system that you want to register.
 

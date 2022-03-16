@@ -35,7 +35,7 @@ Be aware that disk limits can prevent you from reaching the capacity limit by us
 
 When you create a node-based BYOL system, Cloud Manager prompts you for the serial number of your license and your NetApp Support Site account. Cloud Manager uses the account to download the license file from NetApp and to install it on the Cloud Volumes ONTAP system.
 
-link:task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts to Cloud Manager].
+https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts to Cloud Manager^].
 
 If Cloud Manager can't access the license file over the secure internet connection, you can link:task-managing-licenses.html[obtain the file yourself and then manually upload the file to Cloud Manager].
 
