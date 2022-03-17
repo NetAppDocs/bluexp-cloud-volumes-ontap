@@ -15,7 +15,7 @@ summary: Cloud Manager can automate the deployment of NetApp Trident on Kubernet
 [.lead]
 Cloud Manager can automate the deployment of NetApp Trident on Kubernetes clusters so you can use Cloud Volumes ONTAP as persistent storage for containers.
 
-TIP: This feature has been deprecated and will be removed in a future release. It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management. link:concept-kubernetes.html[Learn more].
+TIP: This feature has been deprecated and will be removed in a future release. It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management. https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html[Learn more^].
 
 Trident is a fully-supported open source project maintained by NetApp. Trident integrates natively with Kubernetes and its Persistent Volume framework to seamlessly provision and manage volumes from systems running any combination of NetApp's storage platforms. https://netapp-trident.readthedocs.io/en/latest/introduction.html[Learn more about Trident^].
 

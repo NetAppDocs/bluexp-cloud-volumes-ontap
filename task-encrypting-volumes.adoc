@@ -26,7 +26,7 @@ Cloud Volumes ONTAP doesn't support onboard key management.
 
 Your Cloud Volumes ONTAP system should be registered with NetApp support. A NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.
 
-* link:task-adding-nss-accounts.html[Adding NetApp Support Site accounts to Cloud Manager]
+* https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-nss-accounts.html[Adding NetApp Support Site accounts to Cloud Manager^]
 * link:task-registering.html[Registering pay-as-you-go systems]
 
 NOTE: Cloud Manager doesn't install the NVE license on systems that reside in the China region.

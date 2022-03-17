@@ -18,7 +18,7 @@ Get started with Cloud Volumes ONTAP for GCP in a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
-If you don't have a link:concept-connectors.html[Connector] yet, an Account Admin needs to create one. link:task-creating-connectors-gcp.html[Learn how to create a Connector in GCP].
+If you don't have a https://docs.netapp.com/us-en/cloud-manager-get-started/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-gcp.html[Learn how to create a Connector in GCP^].
 
 [role="quick-margin-para"]
 When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
@@ -52,7 +52,7 @@ link:reference-networking-gcp.html[Learn more about networking requirements].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up a service account
 
 [role="quick-margin-para"]
-Cloud Volumes ONTAP requires a Google Cloud service account for two purposes. The first is when you enable link:concept-data-tiering.html[data tiering] to tier cold data to low-cost object storage in Google Cloud. The second is when you enable the link:concept-backup-to-cloud.html[Cloud Backup Service] to back up volumes to low-cost object storage.
+Cloud Volumes ONTAP requires a Google Cloud service account for two purposes. The first is when you enable link:concept-data-tiering.html[data tiering] to tier cold data to low-cost object storage in Google Cloud. The second is when you enable the https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup Service^] to back up volumes to low-cost object storage.
 
 [role="quick-margin-para"]
 You can set up one service account and use it for both purposes. The service account must have the *Storage Admin* role.
@@ -79,6 +79,6 @@ Click *Add Working Environment*, select the type of system that you would like t
 
 .Related links
 
-* link:task-creating-connectors-gcp.html[Creating a Connector from Cloud Manager]
-* link:task-installing-linux.html[Installing the Connector software on a Linux host]
-* link:reference-permissions.html#what-cloud-manager-does-with-gcp-permissions[What Cloud Manager does with GCP permissions]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-gcp.html[Creating a Connector from Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-linux.html[Installing the Connector software on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-get-started/reference-permissions.html[What Cloud Manager does with GCP permissions^]

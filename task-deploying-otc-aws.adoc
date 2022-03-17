@@ -22,9 +22,9 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a link:task-creating-connectors-aws.html[Connector that is associated with your workspace].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-aws.html[Connector that is associated with your workspace^].
 
-** link:concept-connectors.html[You should be prepared to leave the Connector running at all times].
+** https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
 * An understanding of the configuration that you want to use.
 +
@@ -87,7 +87,7 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
-. If you're prompted, link:task-creating-connectors-aws.html[create a Connector].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-aws.html[create a Connector^].
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -112,7 +112,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-link:task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
+https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager^].
 
 |===
 +
@@ -125,9 +125,9 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* link:concept-cloud-compliance.html[Learn more about Cloud Data Sense].
-* link:concept-backup-to-cloud.html[Learn more about Cloud Backup].
-* link:concept-monitoring.html[Learn more about Monitoring].
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^].
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^].
+* https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about Monitoring^].
 
 . *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
 +
@@ -247,7 +247,7 @@ Cloud Manager launches the Cloud Volumes ONTAP instance. You can track the progr
 
 If you experience any issues launching the Cloud Volumes ONTAP instance, review the failure message. You can also select the working environment and click Re-create environment.
 
-For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
+For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 
@@ -300,7 +300,7 @@ Click *Add Subscription* to associate the selected credentials with a new AWS Ma
 
 If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
 
-link:task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
+https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager^].
 
 |===
 +
@@ -313,9 +313,9 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
-* link:concept-cloud-compliance.html[Learn more about Cloud Data Sense].
-* link:task-backup-to-s3.html[Learn more about Cloud Backup].
-* link:concept-monitoring.html[Learn more about Monitoring].
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^].
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html[Learn more about Cloud Backup^].
+* https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about Monitoring^].
 
 . *HA Deployment Models*: Choose an HA configuration.
 +
@@ -447,7 +447,7 @@ Cloud Manager launches the Cloud Volumes ONTAP HA pair. You can track the progre
 
 If you experience any issues launching the HA pair, review the failure message. You can also select the working environment and click Re-create environment.
 
-For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
+For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 

@@ -85,7 +85,7 @@ link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
 link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
 link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in GCP]
 
-. link:task-replicating-data.html[Set up one-time data replication] between the systems for each volume that you must replicate.
+. https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Set up one-time data replication^] between the systems for each volume that you must replicate.
 
 . Terminate the Cloud Volumes ONTAP system that you no longer need by link:task-deleting-working-env.html[deleting the original working environment].
 

@@ -126,7 +126,7 @@ You don't need to create firewall rules because Cloud Manager does that for you.
 Note that two sets of firewall rules are required for an HA configuration:
 +
 * One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
-* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for VPC-1 VPC-2 and VPC-3,Learn more>>.
+* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
 
 Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
@@ -142,7 +142,7 @@ For instructions, refer to https://cloud.google.com/vpn/docs/concepts/overview[G
 
 Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task-configuring-proxy.html[Configuring the Connector to use a proxy server].
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
 
 === Connection to target networks
 

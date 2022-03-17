@@ -22,9 +22,9 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a link:task-creating-connectors-azure.html[Connector that is associated with your workspace].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-azure.html[Connector that is associated with your workspace^].
 
-** link:concept-connectors.html[You should be prepared to leave the Connector running at all times].
+** https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
 * An understanding of the configuration that you want to use.
 +
@@ -87,7 +87,7 @@ Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recom
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node* or *Cloud Volumes ONTAP High Availability*.
 
-. If you're prompted, link:task-creating-connectors-azure.html[create a Connector].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-azure.html[create a Connector^].
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
@@ -108,7 +108,7 @@ For information about tags, refer to https://azure.microsoft.com/documentation/a
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
 
-| [[video]]Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. link:task-adding-azure-accounts.html[Learn how to add credentials].
+| [[video]]Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-azure-accounts.html[Learn how to add credentials^].
 
 |===
 +
@@ -118,9 +118,9 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* link:concept-cloud-compliance.html[Learn more about Cloud Data Sense].
-* link:concept-backup-to-cloud.html[Learn more about Cloud Backup].
-* link:concept-monitoring.html[Learn more about the Monitoring service].
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^].
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^].
+* https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about the Monitoring service^].
 
 . *Location & Connectivity*: Select a location, a resource group, a security group, and then select the checkbox to confirm network connectivity between the Connector and the target location.
 +
@@ -247,7 +247,7 @@ Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress
 
 If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click *Re-create environment*.
 
-For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
+For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 
