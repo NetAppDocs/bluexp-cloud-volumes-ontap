@@ -1,12 +1,13 @@
 settings:
-  name: "Cloud Volumes ONTAP"
+  name: Cloud Volumes ONTAP
+  platform: cloud
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: true
 sidebar:
   entries:
-    - title: Back to Cloud Manager documentation
+    - title: All Cloud Manager documentation
       url: https://docs.netapp.com/us-en/cloud-manager-family
     - title: Cloud Volumes ONTAP docs
       url: /index.html
@@ -62,21 +63,25 @@ sidebar:
               url: /task-setting-up-gcp-encryption.html
             - title: Launch a system in GCP
               url: /task-deploying-gcp.html
-    - title: Manage Cloud Volumes ONTAP
+    - title: Use Cloud Volumes ONTAP
       entries:
-        - title: Provision and manage storage
+        - title: Volume and LUN administration
           entries:
-            - title: Create volumes, aggregates, and LUNs
+            - title: Create volumes
               url: /task-provisioning-storage.html
-            - title: Manage volumes and aggregates
+            - title: Connect a LUN to a host
               url: /task-managing-storage.html
-            - title: Tier inactive data to object storage
+            - title: Accelerate data access with FlexCache
               url: /task-tiering.html
-            - title: Use ONTAP as persistent storage
+            - title: Manage volumes
               url: /task-connecting-kubernetes.html
+        - title: Security and data encryption
+          entries:
             - title: Encrypt volumes with NetApp encryption
               url: /task-encrypting-volumes.html
-        - title: Manage storage VMs
+            - title: Improve ransomware protection
+              url: /task-protecting-ransomware.html
+        - title: Storage VM administration
           entries:
             - title: Work with storage VMs in Cloud Manager
               url: /task-managing-svms.html
@@ -84,36 +89,61 @@ sidebar:
               url: /task-managing-svms-aws.html
             - title: Create storage VMs in Azure
               url: /task-managing-svms-azure.html
-        - title: Optimize with Active IQ Digital Advisor
-          url: /concept-cvo-aiq-digital-advisor.html
-        - title: Improve ransomware protection
-          url: /task-protecting-ransomware.html
-        - title: Administer
+        - title: Aggregate administration
+          entries:
+            - title: Create volumes
+              url: /task-provisioning-storage.html
+            - title: Connect a LUN to a host
+              url: /task-managing-storage.html
+        - title: System administration
           entries:
             - title: Manage licenses
               url: /task-managing-licenses.html
             - title: Register pay-as-you-go systems
               url: /task-registering.html
-            - title: Set up Cloud Volumes ONTAP
-              url: /task-setting-up-ontap-cloud.html
             - title: Update software
               url: /task-updating-ontap-cloud.html
-            - title: Modify system configurations
-              url: /task-modifying-ontap-cloud.html
             - title: Stop and start systems
               url: /task-managing-state.html
-            - title: Monitor AWS costs
-              url: /task-monitoring-costs.html
-            - title: Connect to Cloud Volumes ONTAP
-              url: /task-connecting-to-otc.html
-            - title: Add existing systems
+            - title: Add or delete existing systems
               url: /task-adding-ontap-cloud.html
+            - title: Synchronize system time
+              url: /task-modifying-ontap-cloud.html
+            - title: System administration in AWS
+              entries:
+                - title: Change the Amazon EC2 instance type
+                  url: /reference-networking-aws.html
+                - title: Change route tables for HA pairs in multiple AZs
+                  url: /task-setting-up-transit-gateway.html
+                - title: Monitor AWS costs
+                  url: /task-monitoring-costs.html
+            - title: System administration in Azure
+              entries:
+                - title: Change the Azure VM type
+                  url: /reference-networking-aws.html
+                - title: Override CIFS locks in Azure
+                  url: /task-setting-up-transit-gateway.html
+                - title: Use an Azure Private Link
+                  url: /task-monitoring-costs.html
+            - title: System administration in Google Cloud
+              entries:
+                - title: Change the Google Cloud machine type
+                  url: /reference-networking-aws.html
+            - title: Management using the CLI or System Manager
+              url: /task-connecting-to-otc.html
+
             - title: Override CIFS locks in Azure
               url: /task-overriding-cifs-locks.html
             - title: Use an Azure Private Link
               url: /task-enabling-private-link.html
             - title: Delete systems
               url: /task-deleting-working-env.html
+        - title: System health and events
+          entries:
+            - title: AutoSupport
+              url: /task-managing-licenses.html
+            - title: EMS
+              url: /task-registering.html
     - title: Concepts
       entries:
         - title: Overview
@@ -132,34 +162,32 @@ sidebar:
               url: /concept-flash-cache.html
             - title: WORM storage
               url: /concept-worm.html
-            - title: High-availability pairs
-              entries:
-                - title: HA pairs in AWS
-                  url: /concept-ha.html
-                - title: HA pairs in Azure
-                  url: /concept-ha-azure.html
-                - title: HA pairs in GCP
-                  url: /concept-ha-google-cloud.html
-                - title: Actions during storage takeover
-                  url: /concept-degraded-ha-pair.html
-            - title: Licensing
-              url: /concept-licensing.html
-            - title: Management of node-based BYOL
-              url: /concept-license-management.html
-            - title: Evaluating
-              url: /concept-evaluating.html
-            - title: Security
-              url: /concept-security.html
-            - title: Performance
-              url: /concept-performance.html
-            - title: Supported configurations
-              url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
-            - title: Supported regions
-              url: https://cloud.netapp.com/cloud-volumes-global-regions
-            - title: AutoSupport and Active IQ Digital Advisor
-              url: /concept-active-iq.html
-            - title: Default configuration
-              url: /reference-default-configs.html
+        - title: High-availability pairs
+          entries:
+            - title: HA pairs in AWS
+              url: /concept-ha.html
+            - title: HA pairs in Azure
+              url: /concept-ha-azure.html
+            - title: HA pairs in GCP
+              url: /concept-ha-google-cloud.html
+        - title: Licensing
+          url: /concept-licensing.html
+        - title: Management of node-based BYOL
+          url: /concept-license-management.html
+        - title: Evaluating
+          url: /concept-evaluating.html
+        - title: Security
+          url: /concept-security.html
+        - title: Performance
+          url: /concept-performance.html
+        - title: Supported configurations
+          url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
+        - title: Supported regions
+          url: https://cloud.netapp.com/cloud-volumes-global-regions
+        - title: AutoSupport and Active IQ Digital Advisor
+          url: /concept-active-iq.html
+        - title: Default configuration
+          url: /reference-default-configs.html
     - title: Knowledge and support
       entries:
         - title: Register for support
@@ -168,6 +196,9 @@ sidebar:
           url: /task-get-help.html
     - title: Legal notices
       url: /legal-notices.html
+product-family:
+  name: Cloud Manager
+  repo: cloud-manager-family
 homepage:
   tiles:
     - title: Get started
