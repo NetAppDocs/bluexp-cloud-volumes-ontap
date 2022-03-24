@@ -1,0 +1,100 @@
+---
+sidebar: sidebar
+permalink: task-manage-keystone.html
+keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator
+summary: The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
+---
+
+= Manage Keystone Flex Subscriptions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Manage your Keystone Flex Subscriptions from the Digital Wallet by enabling subscriptions for use with Cloud Volumes ONTAP. You can also request changes to the committed capacity and you can unlink subscriptions.
+
+A _Keystone Flex Subscription_ is a pay-as-you-grow storage service offered by NetApp.
+
+The _Digital Wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
+
+link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
+
+== Authorize your account
+
+Before you can use and manage Keystone Flex Subscriptions in Cloud Manager, you need to contact NetApp to authorize your Cloud Manager user account with your Keystone Flex Subscriptions.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. If you see the *Welcome to NetApp Keystone* page, send an email to the address listed on the page.
++
+A NetApp representative will process your request by authorizing your user account to access the subscriptions.
+
+. Come back to the *Keystone Flex Subscription* to view your subscriptions.
++
+image:screenshot-keystone-overview.png[A screenshot that shows a list of Keystone Flex Subscriptions.]
+
+.What's next?
+
+Link the subscriptions that you want to use with Cloud Volumes ONTAP.
+
+== Link a subscription
+
+After NetApp authorizes your account, you need to link Keystone Flex Subscriptions for use with Cloud Volumes ONTAP. This action enables users to select the subscription as the charging method for new Cloud Volumes ONTAP systems.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want to link, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Link*.
++
+image:screenshot-keystone-link.png[A screenshot that shows the link option for a subscription.]
+
+.Result
+
+The subscription is now linked to your Cloud Manager account and available to select when creating a Cloud Volumes ONTAP working environment.
+
+== Request more or less committed capacity
+
+If you need to adjust the committed capacity for a subscription, you can send a request right from the Cloud Manager interface.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want adjust the capacity, click image:icon-action.png["An icon that is three side-by-side dots"] and select *View detail and edit*.
+
+. Enter the requested committed capacity for one or more subscriptions.
++
+image:screenshot-keystone-request.png[A screenshot that shows the ability to request a change to the committed capacity for a subscription.]
+
+. Scroll down, enter any additional details for the request, and then click *Submit*.
+
+.Result
+
+Your request creates a ticket in NetApp's system for processing.
+
+== Unlink a subscription
+
+If you no longer want to use a Keystone Flex Subscription with new Cloud Volumes ONTAP systems, you can unlink the subscription. Note that you can only unlink a subscription that isn't attached to an existing Cloud Volumes ONTAP subscription.
+
+.Steps
+
+. Click *All Services > Digital Wallet*.
+
+. Click *Keystone Flex Subscription*.
+
+. For the subscription that you want to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Unlink*.
+
+.Result
+
+The subscription is unlinked from your Cloud Manager account and no longer available to select when creating a Cloud Volumes ONTAP working environment.

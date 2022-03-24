@@ -1,0 +1,26 @@
+---
+sidebar: sidebar
+permalink: task-verify-autosupport.html
+keywords: autosupport, set up autosupport, test autosupport, asup, test asup
+summary: AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support. By default, AutoSupport is enabled on each node to send messages to technical support using the HTTPS transport protocol.
+---
+
+= Verify AutoSupport setup
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support. By default, AutoSupport is enabled on each node to send messages to technical support using the HTTPS transport protocol. It's best to verify that AutoSupport can send these messages.
+
+If the Cloud Manager Account Admin added a proxy server to Cloud Manager before you launched your instance, Cloud Volumes ONTAP is configured to use that proxy server for AutoSupport messages.
+
+The only required configuration step is to ensure that Cloud Volumes ONTAP has outbound internet connectivity through a NAT instance or your environment's proxy services. For details, refer to the networking requirements for your cloud provider.
+
+* link:reference-networking-aws.html[AWS networking requirements]
+* link:reference-networking-azure.html[Azure networking requirement]
+* link:reference-networking-gcp.html[Google Cloud networking requirements]
+
+After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
