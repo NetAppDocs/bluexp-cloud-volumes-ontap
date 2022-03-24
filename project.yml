@@ -17,7 +17,7 @@ sidebar:
       entries:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
-        - title: Get started in AWS
+        - title: Get started in Amazon Web Services
           entries:
             - title: Quick start
               url: /task-getting-started-aws.html
@@ -37,7 +37,7 @@ sidebar:
               url: /task-deploying-otc-aws.html
             - title: Get started in AWS C2S
               url: /task-getting-started-aws-c2s.html
-        - title: Get started in Azure
+        - title: Get started in Microsoft Azure
           entries:
             - title: Quick start
               url: /task-getting-started-azure.html
@@ -115,6 +115,10 @@ sidebar:
               url: /task-managing-state.html
             - title: Synchronize system time
               url: /task-sync-time.html
+            - title: Modify system write speed
+              url: /task-modify-write-speed.html
+            - title: Change the system password
+              url: /task-change-password.html
             - title: Add, remove, or delete systems
               entries:
                 - title: Add an existing system
@@ -128,14 +132,14 @@ sidebar:
                 - title: Change the EC2 instance type
                   url: /task-change-ec2-instance.html
                 - title: Change route tables for HA pairs
-                  url: /task-setting-up-transit-gateway.html
+                  url: /task-change-route-tables.html
                 - title: Monitor AWS costs
                   url: /task-monitoring-costs.html
             - title: Administration in Azure
               entries:
                 - title: Change the Azure VM type
                   url: /task-change-azure-vm.html
-                - title: Override CIFS locks in Azure
+                - title: Override CIFS locks
                   url: /task-overriding-cifs-locks.html
                 - title: Use an Azure Private Link
                   url: /task-enabling-private-link.html
@@ -147,9 +151,9 @@ sidebar:
               url: /task-connecting-to-otc.html
         - title: System health and events
           entries:
-            - title: AutoSupport
+            - title: Verify AutoSupport setup
               url: /task-verify-autosupport.html
-            - title: EMS
+            - title: Configure EMS
               url: /task-configure-ems.html
     - title: Concepts
       entries:
@@ -175,20 +179,16 @@ sidebar:
               url: /concept-ha-azure.html
             - title: HA pairs in GCP
               url: /concept-ha-google-cloud.html
+            - title: Actions during storage takeover
+              url: /concept-degraded-ha-pair.html
         - title: Licensing
           url: /concept-licensing.html
         - title: Management of node-based BYOL
           url: /concept-license-management.html
-        - title: Evaluating
-          url: /concept-evaluating.html
         - title: Security
           url: /concept-security.html
         - title: Performance
           url: /concept-performance.html
-        - title: Supported configurations
-          url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
-        - title: Supported regions
-          url: https://cloud.netapp.com/cloud-volumes-global-regions
         - title: AutoSupport and Active IQ Digital Advisor
           url: /concept-active-iq.html
         - title: Default configuration
