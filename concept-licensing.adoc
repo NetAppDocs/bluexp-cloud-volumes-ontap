@@ -195,4 +195,4 @@ A _system_ is either an HA pair or a single node system. For example, if you hav
 
 If you have questions, reach out to your account rep or sales team.
 
-https://docs.netapp.com/us-en/cloud-manager-accounts/concept-cloud-central-accounts.html[Learn more about NetApp accounts^].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^].

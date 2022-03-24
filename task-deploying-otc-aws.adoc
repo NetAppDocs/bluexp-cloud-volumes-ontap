@@ -22,9 +22,9 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-aws.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Connector that is associated with your workspace^].
 
-** https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
 * An understanding of the configuration that you want to use.
 +
@@ -87,7 +87,7 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
-. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-aws.html[create a Connector^].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[create a Connector^].
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -112,7 +112,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager^].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager^].
 
 |===
 +
@@ -300,7 +300,7 @@ Click *Add Subscription* to associate the selected credentials with a new AWS Ma
 
 If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
 
-https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager^].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to Cloud Manager^].
 
 |===
 +

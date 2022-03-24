@@ -55,7 +55,7 @@ After you purchase licenses for your NetApp account, you need to add the license
 
 * You need to provide Cloud Manager the serial number of the license or the license file.
 
-* If you want to enter the serial number, you first need to https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-nss-accounts.html[add your NetApp Support Site account to Cloud Manager^]. This is the NetApp Support Site account that's authorized to access the serial number.
+* If you want to enter the serial number, you first need to https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[add your NetApp Support Site account to Cloud Manager^]. This is the NetApp Support Site account that's authorized to access the serial number.
 
 .Steps
 

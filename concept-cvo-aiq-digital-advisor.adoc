@@ -42,7 +42,7 @@ In Cloud Manager, click the *Active IQ* service.
 +
 image:screenshot_aiq_digital_advisor.png[A screenshot of the Active IQ Digital Advisor user interface in Cloud Manager.]
 
-* If you haven't registered an NSS account in Cloud Manager, https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-nss-accounts.html[register an NSS account now^] and then the Active IQ Digital Advisor UI appears.
+* If you haven't registered an NSS account in Cloud Manager, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[register an NSS account now^] and then the Active IQ Digital Advisor UI appears.
 
 NOTE: As of December 3, 2021, NetApp has switched to a new methodology of registering credentials for NSS accounts. https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[See this FAQ for details]. If your NSS account uses the old set of credentials you will need to update the account to the new credentials.
 

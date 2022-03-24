@@ -15,6 +15,8 @@ sidebar:
       url: /whats-new.html
     - title: Get started
       entries:
+        - title: Learn about Cloud Volumes ONTAP
+          url: /concept-overview-cvo.html
         - title: Get started in AWS
           entries:
             - title: Quick start
@@ -47,7 +49,7 @@ sidebar:
               url: /task-set-up-azure-encryption.html
             - title: Launch a system in Azure
               url: /task-deploying-otc-azure.html
-        - title: Get started in GCP
+        - title: Get started in Google Cloud
           entries:
             - title: Quick start
               url: /task-getting-started-gcp.html
@@ -69,12 +71,18 @@ sidebar:
           entries:
             - title: Create volumes
               url: /task-provisioning-storage.html
+            - title: Manage existing volumes
+              url: /task-manage-volumes.html
             - title: Connect a LUN to a host
-              url: /task-managing-storage.html
+              url: /task-connect-lun.html
             - title: Accelerate data access with FlexCache
-              url: /task-tiering.html
-            - title: Manage volumes
-              url: /task-connecting-kubernetes.html
+              url: /task-accelerate-data-access.html
+        - title: Aggregate administration
+          entries:
+            - title: Create aggregates
+              url: /task-create-aggregates.html
+            - title: Manage existing aggregates
+              url: /task-manage-aggregates.html
         - title: Security and data encryption
           entries:
             - title: Encrypt volumes with NetApp encryption
@@ -89,55 +97,48 @@ sidebar:
               url: /task-managing-svms-aws.html
             - title: Create storage VMs in Azure
               url: /task-managing-svms-azure.html
-        - title: Aggregate administration
-          entries:
-            - title: Create volumes
-              url: /task-provisioning-storage.html
-            - title: Connect a LUN to a host
-              url: /task-managing-storage.html
         - title: System administration
           entries:
             - title: Manage licenses
               url: /task-managing-licenses.html
             - title: Register pay-as-you-go systems
               url: /task-registering.html
-            - title: Update software
+            - title: Upgrade Cloud Volumes ONTAP
               url: /task-updating-ontap-cloud.html
-            - title: Stop and start systems
+            - title: Stop and start the system
               url: /task-managing-state.html
-            - title: Add or delete existing systems
-              url: /task-adding-ontap-cloud.html
             - title: Synchronize system time
               url: /task-modifying-ontap-cloud.html
-            - title: System administration in AWS
+            - title: Add, remove, or delete systems
               entries:
-                - title: Change the Amazon EC2 instance type
+                - title: Add an existing system
+                  url: /task-add-systems.html
+                - title: Remove an existing system
+                  url: /task-removing.html
+                - title: Delete a system
+                  url: /task-deleting-working-env.html
+            - title: Administration in AWS
+              entries:
+                - title: Change the EC2 instance type
                   url: /reference-networking-aws.html
-                - title: Change route tables for HA pairs in multiple AZs
+                - title: Change route tables for HA pairs
                   url: /task-setting-up-transit-gateway.html
                 - title: Monitor AWS costs
                   url: /task-monitoring-costs.html
-            - title: System administration in Azure
+            - title: Administration in Azure
               entries:
                 - title: Change the Azure VM type
                   url: /reference-networking-aws.html
                 - title: Override CIFS locks in Azure
-                  url: /task-setting-up-transit-gateway.html
+                  url: /task-overriding-cifs-locks.html
                 - title: Use an Azure Private Link
-                  url: /task-monitoring-costs.html
-            - title: System administration in Google Cloud
+                  url: /task-enabling-private-link.html
+            - title: Administration in Google Cloud
               entries:
-                - title: Change the Google Cloud machine type
+                - title: Change the machine type
                   url: /reference-networking-aws.html
             - title: Management using the CLI or System Manager
               url: /task-connecting-to-otc.html
-
-            - title: Override CIFS locks in Azure
-              url: /task-overriding-cifs-locks.html
-            - title: Use an Azure Private Link
-              url: /task-enabling-private-link.html
-            - title: Delete systems
-              url: /task-deleting-working-env.html
         - title: System health and events
           entries:
             - title: AutoSupport
@@ -146,8 +147,6 @@ sidebar:
               url: /task-registering.html
     - title: Concepts
       entries:
-        - title: Overview
-          url: /concept-overview-cvo.html
         - title: Storage
           entries:
             - title: Disks and aggregates

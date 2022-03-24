@@ -84,7 +84,7 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 link:reference-default-configs.html#azure-single-node[View the default disks for Cloud Volumes ONTAP system data in Azure].
 
-TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-connector/reference-connector-default-config.html[View details about the Connector's default configuration^].
+TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-connector-default-config.html[View details about the Connector's default configuration^].
 
 == Azure network information worksheet
 

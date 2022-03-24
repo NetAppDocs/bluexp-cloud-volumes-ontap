@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: task-create-aggregates.html
+keywords: storage, provisioning, aggregates, provision, create, advanced allocation, creating aggregates, adding an aggregate, add an aggregate, create an aggregate
+summary: You can create aggregates yourself or let Cloud Manager do it for you when it creates volumes. The benefit of creating aggregates yourself is that you can choose the underlying disk size, which enables you to size your aggregate for the capacity or the performance that you need.
+---
+
+= Create aggregates
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can create aggregates yourself or let Cloud Manager do it for you when it creates volumes. The benefit of creating aggregates yourself is that you can choose the underlying disk size, which enables you to size your aggregate for the capacity or the performance that you need.
+
+CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+
+.Steps
+
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
+
+. Click the menu icon, and then click *Advanced > Advanced allocation*.
+
+. Click *Add Aggregate* and then specify details for the aggregate.
++
+For help with disk type and disk size, see link:task-planning-your-config.html[Planning your configuration].
+
+. Click *Go*, and then click *Approve and Purchase*.
