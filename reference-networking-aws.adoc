@@ -30,7 +30,7 @@ Routing and firewall policies must allow AWS HTTP/HTTPS traffic to the following
 
 If you have a NAT instance, you must define an inbound security group rule that allows HTTPS traffic from the private subnet to the internet.
 
-link:task-setting-up-ontap-cloud.html[Learn how to configure AutoSupport].
+link:task-verify-autosupport.html[Learn how to configure AutoSupport].
 
 === Outbound internet access for the HA mediator
 
@@ -149,7 +149,7 @@ HA configurations in multiple AZs use floating IP addresses that migrate between
 +
 One floating IP address is for cluster management, one is for NFS/CIFS data on node 1, and one is for NFS/CIFS data on node 2. A fourth floating IP address for SVM management is optional.
 +
-NOTE: A floating IP address is required for the SVM management LIF if you use SnapDrive for Windows or SnapCenter with the HA pair. If you don't specify the IP address when you deploy the system, you can create the LIF later. For details, see link:task-setting-up-ontap-cloud.html[Setting up Cloud Volumes ONTAP].
+NOTE: A floating IP address is required for the SVM management LIF if you use SnapDrive for Windows or SnapCenter with the HA pair.
 +
 You need to enter the floating IP addresses in Cloud Manager when you create a Cloud Volumes ONTAP HA working environment. Cloud Manager allocates the IP addresses to the HA pair when it launches the system.
 +

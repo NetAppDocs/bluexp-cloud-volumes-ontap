@@ -60,7 +60,7 @@ You can choose the disk size yourself by using the advanced allocation option.
 
 === Advanced allocation
 
-Rather than let Cloud Manager manage aggregates for you, you can do it yourself. link:task-provisioning-storage.html#creating-aggregates[From the *Advanced allocation* page], you can create new aggregates that include a specific number of disks, add disks to an existing aggregate, and create volumes in specific aggregates.
+Rather than let Cloud Manager manage aggregates for you, you can do it yourself. link:task-create-aggregates.html[From the *Advanced allocation* page], you can create new aggregates that include a specific number of disks, add disks to an existing aggregate, and create volumes in specific aggregates.
 
 == Capacity management
 

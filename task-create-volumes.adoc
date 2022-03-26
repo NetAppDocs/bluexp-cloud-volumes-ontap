@@ -129,7 +129,7 @@ NTP Server:: Select *Use Active Directory Domain* to configure an NTP server usi
 .iSCSI
 --
 
-LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task-provisioning-storage.html#connecting-a-lun-to-a-host[use the IQN to connect to the LUN from your hosts].
+LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task-connect-lun.html[use the IQN to connect to the LUN from your hosts].
 
 Initiator group:: Initiator groups (igroups) specify which hosts can access specified LUNs on the storage system
 

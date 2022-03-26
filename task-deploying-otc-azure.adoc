@@ -51,19 +51,19 @@ A Marketplace subscription is recommended for capacity-based charging in the eve
 
 | You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
-If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-managing-licenses.html[Learn how to add capacity-based BYOL licenses].
+If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-manage-capacity-licenses.html[Learn how to add capacity-based BYOL licenses].
 
 | Keystone Flex Subscription
 | Your account must be authorized and the subscription must be enabled for use with Cloud Volumes ONTAP.
 a|
 . mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
-. After NetApp authorizes your account, link:task-managing-licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.
 
 | Per node licensing
 | A Marketplace subscription is required or you need to bring your own license (BYOL). This option is available for customers with existing subscriptions or existing licenses. It's not available for new customers.
 
-| If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-managing-licenses.html#obtain-a-system-license-file[Learn how to add node-based BYOL licenses].
+| If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-manage-node-licenses.html#obtain-a-system-license-file[Learn how to add node-based BYOL licenses].
 
 You can enter your NSS account on the *Charging Methods and NSS Account* page.
 

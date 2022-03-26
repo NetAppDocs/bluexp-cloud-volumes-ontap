@@ -94,7 +94,7 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 +
-link:task-setting-up-ontap-cloud.html[Learn how to configure AutoSupport].
+link:task-verify-autosupport.html[Learn how to verify AutoSupport].
 +
 TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 

@@ -65,7 +65,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9101.htm
 
 == How to select a write speed
 
-You can choose a write speed when you create a new working environment and you can link:task-modifying-ontap-cloud.html#changing-write-speed-to-normal-or-high.html[change the write speed for an existing system].
+You can choose a write speed when you create a new working environment and you can link:task-modify-write-speed.html[change the write speed for an existing system].
 
 == What to expect if data loss occurs
 

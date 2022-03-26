@@ -37,7 +37,7 @@ When you create a node-based BYOL system, Cloud Manager prompts you for the seri
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts to Cloud Manager^].
 
-If Cloud Manager can't access the license file over the secure internet connection, you can link:task-managing-licenses.html[obtain the file yourself and then manually upload the file to Cloud Manager].
+If Cloud Manager can't access the license file over the secure internet connection, you can link:task-manage-node-licenses.html[obtain the file yourself and then manually upload the file to Cloud Manager].
 
 == License expiration
 
@@ -59,7 +59,7 @@ If you don't renew the license in time, the Cloud Volumes ONTAP system shuts its
 
 When you renew a node-based BYOL subscription by contacting a NetApp representative, Cloud Manager automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
 
-If Cloud Manager can't access the license file over the secure internet connection, you can link:task-managing-licenses.html[obtain the file yourself and then manually upload the file to Cloud Manager].
+If Cloud Manager can't access the license file over the secure internet connection, you can link:task-manage-node-licenses.html[obtain the file yourself and then manually upload the file to Cloud Manager].
 
 == License transfer to a new system
 

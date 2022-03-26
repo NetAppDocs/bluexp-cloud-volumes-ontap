@@ -139,9 +139,9 @@ Conversions to another licensing option isn't supported. If you want to transiti
 
 === How to get started
 
-. https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^].
-. link:task-managing-licenses.html[Add your license to Cloud Manager].
-. Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system.
+. https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
+. link:task-manage-capacity-licenses.html[Add your license to Cloud Manager]
+. Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system
 +
 * link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
 * link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
@@ -169,7 +169,7 @@ Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity thro
 
 . If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^].
 . mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
-. After NetApp authorizes your account, link:task-managing-licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP system.
 +
 * link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
