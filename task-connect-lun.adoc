@@ -17,9 +17,9 @@ When you create an iSCSI volume, Cloud Manager automatically creates a LUN for y
 
 Note the following:
 
-. Cloud Manager's automatic capacity management doesn't apply to LUNs. When Cloud Manager creates a LUN, it disables the autogrow feature.
+* Cloud Manager's automatic capacity management doesn't apply to LUNs. When Cloud Manager creates a LUN, it disables the autogrow feature.
 
-. You can create additional LUNs from System Manager or the CLI.
+* You can create additional LUNs from System Manager or the CLI.
 
 .Steps
 

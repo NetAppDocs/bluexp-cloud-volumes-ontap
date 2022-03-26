@@ -122,8 +122,8 @@ sidebar:
             - title: Add, remove, or delete systems
               entries:
                 - title: Add an existing system
-                  url: /task-add-systems.html
-                - title: Remove an existing system
+                  url: /task-adding-systems.html
+                - title: Remove a working environment
                   url: /task-removing.html
                 - title: Delete a system
                   url: /task-deleting-working-env.html
@@ -147,7 +147,7 @@ sidebar:
               entries:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
-            - title: Management using the CLI or System Manager
+            - title: Administration from System Manager or CLI
               url: /task-connecting-to-otc.html
         - title: System health and events
           entries:

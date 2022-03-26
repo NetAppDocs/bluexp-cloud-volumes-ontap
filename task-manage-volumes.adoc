@@ -5,7 +5,7 @@ keywords: volumes, managing, cloning, editing, CIFS server, edit, flexclone, sna
 summary: Cloud Manager enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 ---
 
-= Manage volumes
+= Manage existing volumes
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,9 +15,9 @@ summary: Cloud Manager enables you to manage volumes and CIFS servers. It also p
 [.lead]
 Cloud Manager enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 
-== Manage existing volumes
+== Manage volumes
 
-You can manage existing volumes as your storage needs change. You can view, edit, clone, restore, and delete volumes.
+You can manage volumes as your storage needs change. You can view, edit, clone, restore, and delete volumes.
 
 .Steps
 
