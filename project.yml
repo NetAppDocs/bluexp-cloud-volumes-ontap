@@ -72,13 +72,13 @@ sidebar:
             - title: Manage capacity-based licenses
               url: /task-manage-capacity-licenses.html
             - title: Manage Keystone Flex Subscriptions
-              url: /task-manage-volumes.html
+              url: /task-manage-keystone.html
             - title: Manage node-based licenses
               url: /task-manage-node-byol.html
         - title: Volume and LUN administration
           entries:
             - title: Create volumes
-              url: /task-provisioning-storage.html
+              url: /task-create-volumes.html
             - title: Manage existing volumes
               url: /task-manage-volumes.html
             - title: Connect a LUN to a host
@@ -146,7 +146,7 @@ sidebar:
             - title: Administration in Google Cloud
               entries:
                 - title: Change the machine type
-                  url: /reference-networking-aws.html
+                  url: /task-change-gcp-machine.html
             - title: Management using the CLI or System Manager
               url: /task-connecting-to-otc.html
         - title: System health and events

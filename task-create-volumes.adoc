@@ -1,0 +1,240 @@
+---
+sidebar: sidebar
+permalink: task-create-volumes.html
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, templates
+summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+---
+
+= Create FlexVol volumes
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+
+Cloud Manager provides several ways to create a new volume:
+
+* Specify details for a new volume and let Cloud Manager handle the underlying data aggregates for you. <<Create a volume,Learn more>>.
+* Create a volume on a data aggregate of your choice. <<Create a volume,Learn more>>.
+* Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<Create a volume from a template,Learn more>>.
+* Create a volume on the second node in an HA configuration. <<Create a volume on the second node in an HA configuration,Learn more>>.
+
+== Before you get started
+
+A few notes about volume provisioning:
+
+* When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <<Connect a LUN to a host,use the IQN to connect to the LUN from your hosts>>.
+
+* You can create additional LUNs from System Manager or the CLI.
+
+* If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
+
+== Create a volume
+
+The most common way to create a volume is to specify the type of volume that you need and then Cloud Manager handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.
+
+.Steps
+
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
+
+. Create a new volume by letting Cloud Manager handle the disk allocation for you, or choose a specific aggregate for the volume.
++
+Choosing a specific aggregate is recommended only if you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system.
++
+[role="tabbed-block"]
+====
+
+.Any aggregate
+--
+In the Volumes tab, click *Add Volume* > *New volume*.
+
+--
+
+.Specific aggregate
+--
+.. Click the menu icon, and then click *Advanced > Advanced allocation*.
+.. Click the menu for an aggregate.
+.. Click *Create volume*.
+
+--
+
+====
+
+. Follow the steps in the wizard to create the volume.
+
+.. *Details, Protection, and Tags*: Enter basic details about the volume and select a Snapshot policy.
++
+Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="2,6"]
+|===
+| Field
+| Description
+
+| Volume Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
+
+| Tags | Tags that you add to a volume are associated with the https://docs.netapp.com/us-en/cloud-manager-app-template/task-using-tags.html[Application Templates service^], which can help you organize and simplify the management of your resources.
+
+| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+
+|===
+
+.. *Protocol*: Choose a protocol for the volume (NFS, CIFS, or iSCSI) and then provide the required information.
++
+If you select CIFS and a server isn't set up, Cloud Manager prompts you to set up CIFS connectivity after you click *Next*.
++
+The following sections describe fields for which you might need guidance. The descriptions are organized by protocol.
++
+[role="tabbed-block"]
+====
+
+.NFS
+--
+
+Access control:: Choose a custom export policy to make the volume available to clients.
+
+Export policy:: Defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
+
+--
+
+.CIFS
+--
+
+Permissions and users/groups:: Enables you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user’s domain using the format domain\username.
+
+DNS Primary and Secondary IP Address:: The IP addresses of the DNS servers that provide name resolution for the CIFS server. The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
+
+Active Directory Domain to join:: The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
+
+Credentials authorized to join the domain:: The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+CIFS server NetBIOS name:: A CIFS server name that is unique in the AD domain.
+
+Organizational Unit::  The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+
+* To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+
+* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
+https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+
+DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+
+--
+
+.iSCSI
+--
+
+LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task-provisioning-storage.html#connecting-a-lun-to-a-host[use the IQN to connect to the LUN from your hosts].
+
+Initiator group:: Initiator groups (igroups) specify which hosts can access specified LUNs on the storage system
+
+Host initiator (IQN):: iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
+
+--
+
+====
+
+.. *Disk Type*: Choose an underlying disk type for the volume based on your performance needs and cost requirements.
++
+* link:task-planning-your-config.html#sizing-your-system-in-aws[Sizing your system in AWS]
+* link:task-planning-your-config-azure.html#sizing-your-system-in-azure[Sizing your system in Azure]
+* link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP]
+
+.. *Usage Profile & Tiering Policy*: Choose whether to enable or disable storage efficiency features on the volume and then select a link:concept-data-tiering.html[volume tiering policy].
++
+ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. NetApp storage efficiency features provide the following benefits:
++
+Thin provisioning:: Presents more logical storage to hosts or users than you actually have in your physical storage pool. Instead of preallocating storage space, storage space is allocated dynamically to each volume as data is written.
+
+Deduplication:: Improves efficiency by locating identical blocks of data and replacing them with references to a single shared block. This technique reduces storage capacity requirements by eliminating redundant blocks of data that reside in the same volume.
+
+Compression:: Reduces the physical capacity required to store data by compressing data within a volume on primary, secondary, and archive storage.
+
+.. *Review*: Review details about the volume and then click *Add*.
+
+.Result
+
+Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
+
+== Create a volume from a template
+
+If your organization has created Cloud Volumes ONTAP volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, follow the steps in this section.
+
+The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, cloud provider, and more. When a parameter is already predefined, you can just skip to the next volume parameter.
+
+NOTE: You can only create NFS or CIFS volumes when using templates.
+
+.Steps
+
+. On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
+
+. Click image:screenshot_gallery_options.gif[] > *Add Volume From Template*.
++
+image:screenshot_template_add_vol_cvo.png[A screenshot showing how to add a new volume from a template.]
+
+. In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
++
+image:screenshot_select_template_cvo.png[A screenshot of the available application templates.]
++
+The _Define Parameters_ page is displayed.
++
+image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
++
+NOTE: You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
+
+. In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* where the volume will be created.
+
+. Add values for all of the parameters that are not hard-coded from the template. See <<Create FlexVol volumes,creating volumes>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
+
+. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Run Template*.
++
+If there are other actions, click the action in the left pane to display the parameters you need to complete.
++
+image:screenshot_template_select_next_action.png[A screenshot showing how to select additional actions that need to be completed.]
++
+For example, if the Enable Cloud Backup action requires that you select a backup policy, you can do that now.
+
+. Click *Run Template*.
+
+.Result
+
+Cloud Volumes ONTAP provisions the volume and displays a page so that you can see the progress.
+
+image:screenshot_template_creating_resource_cvo.png[A screenshot showing the progress of creating your new volume from the template.]
+
+Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
+
+== Create a volume on the second node in an HA configuration
+
+By default, Cloud Manager creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.
+
+.Steps
+
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
+
+. Click the menu icon and then click *Advanced > Advanced allocation*.
+
+. Click *Add Aggregate* and then create the aggregate.
+
+. For Home Node, choose the second node in the HA pair.
+
+. After Cloud Manager creates the aggregate, select it and then click *Create volume*.
+
+. Enter details for the new volume, and then click *Create*.
+
+.Result
+
+Cloud Manager creates the volume on the second node in the HA pair.
+
+TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
+
+== After you create a volume
+
+If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
+
+If you want to apply quotas to volumes, you must use System Manager or the CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
