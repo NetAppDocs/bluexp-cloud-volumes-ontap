@@ -5,7 +5,7 @@ keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public clo
 summary: Get started with Cloud Volumes ONTAP for Azure in a few steps.
 ---
 
-= Getting started with Cloud Volumes ONTAP for Azure
+= Quick start for Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :nofooter:
 :icons: font

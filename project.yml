@@ -74,7 +74,7 @@ sidebar:
             - title: Manage Keystone Flex Subscriptions
               url: /task-manage-keystone.html
             - title: Manage node-based licenses
-              url: /task-manage-node-byol.html
+              url: /task-manage-node-licenses.html
         - title: Volume and LUN administration
           entries:
             - title: Create volumes

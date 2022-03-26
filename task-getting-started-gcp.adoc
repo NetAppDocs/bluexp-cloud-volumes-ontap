@@ -5,7 +5,7 @@ keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager
 summary: Get started with Cloud Volumes ONTAP for GCP in a few steps.
 ---
 
-= Getting started with Cloud Volumes ONTAP for Google Cloud
+= Quick start for Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
