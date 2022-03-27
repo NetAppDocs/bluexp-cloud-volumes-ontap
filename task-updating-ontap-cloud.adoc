@@ -5,7 +5,7 @@ keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading
 summary: Upgrade Cloud Volumes ONTAP from Cloud Manager to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 ---
 
-= Upgrading Cloud Volumes ONTAP software
+= Upgrade Cloud Volumes ONTAP software
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -19,11 +19,11 @@ Upgrade Cloud Volumes ONTAP from Cloud Manager to gain access to the latest new 
 
 You should be aware of the following before you start the Cloud Volumes ONTAP upgrade process.
 
-=== Software upgrades from Cloud Manager only
+=== Upgrade from Cloud Manager only
 
 Upgrades of Cloud Volumes ONTAP must be completed from Cloud Manager. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.
 
-=== Ways to upgrade
+=== How to upgrade
 
 Cloud Manager provides two ways to upgrade Cloud Volumes ONTAP:
 
@@ -32,17 +32,7 @@ Cloud Manager provides two ways to upgrade Cloud Volumes ONTAP:
 
 === Supported upgrade paths
 
-The version of Cloud Volumes ONTAP that you can upgrade to depends on the version of Cloud Volumes ONTAP that you're currently running. Note that the supported upgrade paths for Cloud Volumes ONTAP are different than they are for an on-premises ONTAP cluster.
-
-Note the following:
-
-* If you upgrade by following the upgrade notifications in a working environment, Cloud Manager will prompt you to upgrade to a release that follows these supported upgrade paths.
-
-* If you upgrade by placing an upgrade image at an HTTPS location, be sure to follow these supported upgrade paths.
-
-* In some cases, you might need to upgrade a few times to reach your target release.
-+
-For example, if you're running version 9.8 and you want to upgrade to 9.10.0, you first need to upgrade to version 9.9.0.
+The version of Cloud Volumes ONTAP that you can upgrade to depends on the version of Cloud Volumes ONTAP that you're currently running.
 
 [cols=2*,options="header,autowidth"]
 |===
@@ -73,6 +63,18 @@ For example, if you're running version 9.8 and you want to upgrade to 9.10.0, yo
 
 |===
 
+Note the following:
+
+* The supported upgrade paths for Cloud Volumes ONTAP are different than they are for an on-premises ONTAP cluster.
+
+* If you upgrade by following the upgrade notifications that appear in a working environment, Cloud Manager will prompt you to upgrade to a release that follows these supported upgrade paths.
+
+* If you upgrade by placing an upgrade image at an HTTPS location, be sure to follow these supported upgrade paths.
+
+* In some cases, you might need to upgrade a few times to reach your target release.
++
+For example, if you're running version 9.8 and you want to upgrade to 9.10.0, you first need to upgrade to version 9.9.0.
+
 === Reverting or downgrading
 
 Reverting or downgrading Cloud Volumes ONTAP to a previous release is not supported.
@@ -87,33 +89,28 @@ TIP: A system that isn't registered for support will still receive the software 
 
 For HA systems in AWS or Google Cloud, Cloud Manager also updates the mediator instance as needed during the Cloud Volumes ONTAP upgrade process.
 
-== Preparing to upgrade Cloud Volumes ONTAP software
+== Prepare to upgrade
 
 Before performing an upgrade, you must verify that your systems are ready and make any required configuration changes.
 
-* <<Understanding supported upgrade paths>>
-* <<Planning for downtime>>
-* <<Verifying that automatic giveback is still enabled>>
-* <<Suspending SnapMirror transfers>>
-* <<Verifying that aggregates are online>>
+* <<Plan for downtime>>
+* <<Verify that automatic giveback is still enabled>>
+* <<Suspend SnapMirror transfers>>
+* <<Verify that aggregates are online>>
 
-=== Understanding supported upgrade paths
-
-https://docs.netapp.com/us-en/cloud-volumes-ontap/[Refer to the "Upgrade notes" page in the Cloud Volumes ONTAP Release Notes for the target version].
-
-=== Planning for downtime
+=== Plan for downtime
 
 When you upgrade a single-node system, the upgrade process takes the system offline for up to 25 minutes, during which I/O is interrupted.
 
 Upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients.
 
-=== Verifying that automatic giveback is still enabled
+=== Verify that automatic giveback is still enabled
 
 Automatic giveback must be enabled on a Cloud Volumes ONTAP HA pair (this is the default setting). If it isn't, then the operation will fail.
 
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html[ONTAP 9 Documentation: Commands for configuring automatic giveback^]
 
-=== Suspending SnapMirror transfers
+=== Suspend SnapMirror transfers
 
 If a Cloud Volumes ONTAP system has active SnapMirror relationships, it is best to suspend transfers before you update the Cloud Volumes ONTAP software. Suspending the transfers prevents SnapMirror failures. You must suspend the transfers from the destination system.
 
@@ -131,7 +128,7 @@ These steps describe how to use System Manager for version 9.3 and later.
 
 . Select the relationship and click *Operations > Quiesce*.
 
-=== Verifying that aggregates are online
+=== Verify that aggregates are online
 
 Aggregates for Cloud Volumes ONTAP must be online before you update the software. Aggregates should be online in most configurations, but if they are not, then you should bring them online.
 
@@ -155,13 +152,13 @@ image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view
 
 .. Select the aggregate, and then click *More Actions > Status > Online*.
 
-== Upgrading Cloud Volumes ONTAP
+== Upgrade Cloud Volumes ONTAP
 
-Cloud Manager notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For details, see <<Upgrading from Cloud Manager notifications>>.
+Cloud Manager notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For details, see <<Upgrade from Cloud Manager notifications>>.
 
-Another way to perform software upgrades by using an image on an external URL. This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <<Upgrading by using an HTTP or FTP server>>.
+Another way to perform software upgrades by using an image on an external URL. This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <<Upgrade by using an HTTP or FTP server>>.
 
-=== Upgrading from Cloud Manager notifications
+=== Upgrade from Cloud Manager notifications
 
 Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
 
@@ -199,7 +196,7 @@ Cloud Manager starts the software upgrade. You can perform actions on the workin
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
-=== Upgrading from an image available at a URL
+=== Upgrade from an image available at a URL
 
 You can place the Cloud Volumes ONTAP software image on the Connector or on an HTTP server and then initiate the software upgrade from Cloud Manager. You might use this option if Cloud Manager can't access the S3 bucket to upgrade the software.
 
@@ -243,7 +240,7 @@ Cloud Manager starts the software update. You can perform actions on the working
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
-== Fixing download failures when using a Google Cloud NAT gateway
+== Fix download failures when using a Google Cloud NAT gateway
 
 The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the Cloud Manager API.
 
