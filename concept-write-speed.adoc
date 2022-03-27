@@ -37,6 +37,12 @@ High write speed is a good choice if fast write performance is required for your
 
 If you enable high write speed, you should ensure write protection at the application layer, or that the applications can tolerate data loss, if it occurs.
 
+=== High write speed with an HA pair in AWS
+
+If you plan to enable high write speed on an HA pair in AWS, you should understand the difference in protection levels between a multiple Availability Zone (AZ) deployment and a single AZ deployment. Deploying an HA pair across multiple AZs provides more resiliency and can help to mitigate the chance of data loss.
+
+link:concept-ha.html[Learn more about HA pairs in AWS].
+
 === Configurations that support high write speed
 
 Not all Cloud Volumes ONTAP configurations support high write speed. Those configurations use normal write speed by default.

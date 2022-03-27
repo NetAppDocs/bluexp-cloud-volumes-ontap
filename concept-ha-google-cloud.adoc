@@ -41,6 +41,24 @@ The following conceptual image shows a Cloud Volumes ONTAP HA pair and its compo
 
 image:diagram_gcp_ha.png[]
 
+=== Mediator
+
+Here are some key details about the mediator instance in Google Cloud:
+
+Instance type:: f1-micro
+
+Disks:: Two standard persistent disks that are 10 GiB each.
+
+Operating system:: Debian 11
++
+NOTE: For Cloud Volumes ONTAP 9.10.0 and earlier, Debian 10 was installed on the mediator.
+
+Upgrades:: When you upgrade Cloud Volumes ONTAP, Cloud Manager also updates the mediator instance as needed.
+
+Access to the instance:: For Debian, the default cloud user is `admin`. Google Cloud creates and adds a certificates for the `admin` user when SSH access is requested through the Google Cloud console or gcloud command line. You can specify `sudo` to gain root privileges.
+
+Third-party agents:: Third-party agents or VM extensions are not supported on the mediator instance.
+
 == Storage takeover and giveback
 
 If a node goes down, the other node can serve data for its partner to provide continued data service. Clients can access the same data from the partner node because the data was synchronously mirrored to the partner.

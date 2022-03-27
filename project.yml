@@ -12,7 +12,13 @@ sidebar:
     - title: Cloud Volumes ONTAP docs
       url: /index.html
     - title: Release notes
-      url: /whats-new.html
+      entries:
+        - title: What's new with Cloud Manager
+          url: /whats-new.html
+        - title: What's new with Cloud Volumes ONTAP
+          url: /whats-new-ontap.html
+        - title: Known limitations
+          url: /reference-limitations.html
     - title: Get started
       entries:
         - title: Learn about Cloud Volumes ONTAP
@@ -85,6 +91,8 @@ sidebar:
               url: /task-connect-lun.html
             - title: Accelerate data access with FlexCache
               url: /task-accelerate-data-access.html
+            - title: Use ONTAP as persistent storage
+              url: /task-connecting-kubernetes.html
         - title: Aggregate administration
           entries:
             - title: Create aggregates

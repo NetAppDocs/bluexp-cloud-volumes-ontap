@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: reference-limitations.html
+keywords: limitations, flexgroup, ontap s3, s3 configuration, svm dr, svm disaster recovery, disaster recovery, storage vm dr
+summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
+---
+
+= Known limitations
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
+
+These limitations are specific to Cloud Manager limitations with Cloud Volumes ONTAP support.
+
+== Cloud Manager doesn't support FlexGroup volumes
+
+While Cloud Volumes ONTAP supports FlexGroup volumes, Cloud Manager does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set Cloud Manager's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
+
+== Cloud Manager doesn't support ONTAP S3
+
+While Cloud Volumes ONTAP in Azure supports objects using S3, Cloud Manager doesn't provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html[S3 Configuration Power Guide^].
+
+== Cloud Manager doesn't support disaster recovery for storage VMs
+
+Cloud Manager doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]
