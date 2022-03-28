@@ -45,8 +45,7 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 | 9.10.1
 | 9.10.0
 
-.2+| 9.9.0
-| 9.10.0
+| 9.9.0
 | 9.9.1
 
 | 9.8	| 9.9.0
@@ -73,7 +72,7 @@ Note the following:
 
 * In some cases, you might need to upgrade a few times to reach your target release.
 +
-For example, if you're running version 9.8 and you want to upgrade to 9.10.0, you first need to upgrade to version 9.9.0.
+For example, if you're running version 9.8 and you want to upgrade to 9.10.0, you first need to upgrade to version 9.9.0, then to 9.9.1, and finally to 9.10.0.
 
 === Reverting or downgrading
 
