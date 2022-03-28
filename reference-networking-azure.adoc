@@ -15,7 +15,7 @@ summary: Set up your Azure networking so Cloud Volumes ONTAP systems can operate
 [.lead]
 Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 
-== Cloud Volumes ONTAP networking
+== Requirements for Cloud Volumes ONTAP
 
 The following networking requirements must be met in Azure.
 
@@ -28,11 +28,7 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 
-link:task-setting-up-ontap-cloud.html[Learn how to configure AutoSupport].
-
-=== Security groups
-
-You don't need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.
+link:task-verify-autosupport[Learn how to verify AutoSupport].
 
 === IP addresses
 
@@ -75,43 +71,29 @@ To replicate data between a Cloud Volumes ONTAP system in Azure and ONTAP system
 
 For instructions, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^].
 
-== Requirements for the Connector
+=== Port for the HA interconnect
 
-Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
+A Cloud Volumes ONTAP HA pair includes an HA interconnect, which allows each node to continually check whether its partner is functioning and to mirror log data for the other’s nonvolatile memory. The HA interconnect uses TCP port 10006 for communication.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
+By default, communication between the HA interconnect LIFs is open and there are no security group rules for this port. But if you create a firewall between the HA interconnect LIFs, then you need to ensure that TCP traffic is open for port 10006 so that the HA pair can operate properly.
 
-=== Connections to target networks
+=== Only one HA pair in an Azure resource group
 
-A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
+You must use a _dedicated_ resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group.
 
-For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
+Cloud Manager experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
 
-=== Outbound internet access
+=== Security groups
 
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
+You don't need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.
 
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
-| \https://cloudmanagerinfraprod.azurecr.io
-
-\https://*.blob.core.windows.net
-| To upgrade the Connector and its Docker components.
-
-|===
-
-== Security group rules for Cloud Volumes ONTAP
+=== Security group rules
 
 Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
 The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.
 
-=== Inbound rules for single node systems
+==== Inbound rules for single node systems
 
 The rules listed below allow traffic, unless the description notes that it blocks specific inbound traffic.
 
@@ -198,7 +180,7 @@ Any protocol | Any to Any | Block all other inbound traffic
 
 |===
 
-=== Inbound rules for HA systems
+==== Inbound rules for HA systems
 
 The rules listed below allow traffic, unless the description notes that it blocks specific inbound traffic.
 
@@ -239,11 +221,11 @@ Any protocol | Any to Any | Block all other inbound traffic
 
 |===
 
-=== Outbound rules
+==== Outbound rules
 
 The predefined security group for Cloud Volumes ONTAP opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
-==== Basic outbound rules
+===== Basic outbound rules
 
 The predefined security group for Cloud Volumes ONTAP includes the following outbound rules.
 
@@ -259,7 +241,7 @@ The predefined security group for Cloud Volumes ONTAP includes the following out
 
 |===
 
-==== Advanced outbound rules
+===== Advanced outbound rules
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP.
 
@@ -310,11 +292,41 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 
 |===
 
-== Security group rules for the Connector
+== Requirements for the Connector
+
+Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
+
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
+
+=== Connections to target networks
+
+A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
+
+=== Outbound internet access
+
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
+| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://cloudmanagerinfraprod.azurecr.io
+
+\https://*.blob.core.windows.net
+| To upgrade the Connector and its Docker components.
+
+|===
+
+=== Security group rules
 
 The security group for the Connector requires both inbound and outbound rules.
 
-=== Inbound rules
+==== Inbound rules
 
 [cols=3*,options="header,autowidth"]
 |===
@@ -329,11 +341,11 @@ The security group for the Connector requires both inbound and outbound rules.
 
 |===
 
-=== Outbound rules
+==== Outbound rules
 
 The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
-==== Basic outbound rules
+===== Basic outbound rules
 
 The predefined security group for the Connector includes the following outbound rules.
 
@@ -349,7 +361,7 @@ The predefined security group for the Connector includes the following outbound 
 
 |===
 
-==== Advanced outbound rules
+===== Advanced outbound rules
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
 

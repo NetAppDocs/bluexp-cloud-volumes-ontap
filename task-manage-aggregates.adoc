@@ -1,0 +1,57 @@
+---
+sidebar: sidebar
+permalink: task-manage-aggregates.html
+keywords: aggregates, delete aggregates, add disks, view aggregates
+summary: Manage aggregates yourself by adding disks, viewing information about the aggregates, and by deleting them.
+---
+
+= Manage aggregates
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Manage aggregates yourself by adding disks, viewing information about the aggregates, and by deleting them.
+
+CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+
+.Before you begin
+
+If you want to delete an aggregate, you must have first deleted the volumes in the aggregate.
+
+.About this task
+
+If an aggregate is running out of space, you can move volumes to another aggregate by using System Manager.
+
+.Steps
+
+. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
+
+. Click the menu icon and then click *Advanced > Advanced allocation*.
+. Manage your aggregates:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+
+| Task
+| Action
+
+| View information about an aggregate | Select an aggregate and click *Info*.
+
+| Create a volume on a specific aggregate |	Select an aggregate and click *Create volume*.
+
+| Add disks to an aggregate
+a|
+.. Select an aggregate and click *Add AWS disks* or *Add Azure disks*.
+.. Select the number of disks that you want to add and click *Add*.
++
+TIP: All disks in an aggregate must be the same size.
+
+| Delete an aggregate
+a|
+.. Select an aggregate that does not contain any volumes and click *Delete*.
+.. Click *Delete* again to confirm.
+
+|===

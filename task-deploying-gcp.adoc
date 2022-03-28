@@ -22,9 +22,9 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-gcp.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Connector that is associated with your workspace^].
 
-** https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
+** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
 ** The service account associated with the Connector link:https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[should have the latest permissions^].
 
@@ -53,19 +53,19 @@ A Marketplace subscription is recommended for capacity-based charging in the eve
 
 | You'll have the option to subscribe to your cloud provider's marketplace from the *Details & Credentials* page.
 
-If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-managing-licenses.html[Learn how to add capacity-based BYOL licenses].
+If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-manage-capacity-licenses.html[Learn how to add capacity-based BYOL licenses].
 
 | Keystone Flex Subscription
 | Your account must be authorized and the subscription must be enabled for use with Cloud Volumes ONTAP.
 a|
 . mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
-. After NetApp authorizes your account, link:task-managing-licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.
 
 | Per node licensing
 | A Marketplace subscription is required or you need to bring your own license (BYOL). This option is available for customers with existing subscriptions or existing licenses. It's not available for new customers.
 
-| If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-managing-licenses.html#obtain-a-system-license-file[Learn how to add node-based BYOL licenses].
+| If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the *Digital Wallet*. link:task-manage-node-licenses.html#obtain-a-system-license-file[Learn how to add node-based BYOL licenses].
 
 You can enter your NSS account on the *Charging Methods and NSS Account* page.
 
@@ -89,7 +89,7 @@ Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in G
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
 
-. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-gcp.html[create a Connector^].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[create a Connector^].
 
 . *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
 +
@@ -124,7 +124,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project. Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-gcp-accounts.html[Associating a Marketplace subscription with GCP credentials^] section.
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project. Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with GCP credentials^] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
@@ -174,7 +174,7 @@ link:concept-worm.html[Learn more about WORM storage].
 Note the following:
 +
 * Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from Cloud Manager.
-* For help with adding a GCP account, see https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-gcp-accounts.html[Setting up and adding GCP accounts for data tiering with 9.6^].
+* For help with adding a GCP account, see https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Setting up and adding GCP accounts for data tiering with 9.6^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the GCP console.
 +
@@ -286,7 +286,7 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP p
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project.  Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-gcp-accounts.html[Associating a Marketplace subscription with GCP credentials^] section.
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project.  Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with GCP credentials^] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 

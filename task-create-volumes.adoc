@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-provisioning-storage.html
-keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, creating aggregates, adding an aggregate, add an aggregate, create an aggregate, provision volume, provision a volume, provisioning volumes, create a LUN, create LUNs, create LUN, provision LUNs, add volume to second node, add volume to node 2, flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume, templates
-summary: You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
+permalink: task-create-volumes.html
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, templates
+summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
 ---
 
-= Provision storage
+= Create FlexVol volumes
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,12 +13,6 @@ summary: You can provision additional storage for your Cloud Volumes ONTAP syste
 :imagesdir: ./media/
 
 [.lead]
-You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
-
-CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
-
-== Create FlexVol volumes
-
 If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
 
 Cloud Manager provides several ways to create a new volume:
@@ -28,7 +22,7 @@ Cloud Manager provides several ways to create a new volume:
 * Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<Create a volume from a template,Learn more>>.
 * Create a volume on the second node in an HA configuration. <<Create a volume on the second node in an HA configuration,Learn more>>.
 
-=== Before you get started
+== Before you get started
 
 A few notes about volume provisioning:
 
@@ -38,7 +32,7 @@ A few notes about volume provisioning:
 
 * If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
 
-=== Create a volume
+== Create a volume
 
 The most common way to create a volume is to specify the type of volume that you need and then Cloud Manager handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.
 
@@ -135,7 +129,7 @@ NTP Server:: Select *Use Active Directory Domain* to configure an NTP server usi
 .iSCSI
 --
 
-LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task-provisioning-storage.html#connecting-a-lun-to-a-host[use the IQN to connect to the LUN from your hosts].
+LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task-connect-lun.html[use the IQN to connect to the LUN from your hosts].
 
 Initiator group:: Initiator groups (igroups) specify which hosts can access specified LUNs on the storage system
 
@@ -167,7 +161,7 @@ Compression:: Reduces the physical capacity required to store data by compressin
 
 Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
 
-=== Create a volume from a template
+== Create a volume from a template
 
 If your organization has created Cloud Volumes ONTAP volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, follow the steps in this section.
 
@@ -215,7 +209,7 @@ image:screenshot_template_creating_resource_cvo.png[A screenshot showing the pro
 
 Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
 
-=== Create a volume on the second node in an HA configuration
+== Create a volume on the second node in an HA configuration
 
 By default, Cloud Manager creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.
 
@@ -239,62 +233,8 @@ Cloud Manager creates the volume on the second node in the HA pair.
 
 TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
 
-=== After you create a volume
+== After you create a volume
 
 If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
 If you want to apply quotas to volumes, you must use System Manager or the CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
-
-== Create an aggregate
-
-You can create aggregates yourself or let Cloud Manager do it for you when it creates volumes. The benefit of creating aggregates yourself is that you can choose the underlying disk size, which enables you to size your aggregate for the capacity or the performance that you need.
-
-.Steps
-
-. On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
-
-. Click the menu icon, and then click *Advanced > Advanced allocation*.
-
-. Click *Add Aggregate* and then specify details for the aggregate.
-+
-For help with disk type and disk size, see link:task-planning-your-config.html[Planning your configuration].
-
-. Click *Go*, and then click *Approve and Purchase*.
-
-== Connect a LUN to a host
-
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, use the IQN to connect to the LUN from your hosts.
-
-Note the following:
-
-. Cloud Manager's automatic capacity management doesn't apply to LUNs. When Cloud Manager creates a LUN, it disables the autogrow feature.
-
-. You can create additional LUNs from System Manager or the CLI.
-
-.Steps
-
-. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
-
-. Select a volume, and then click *Target iQN*.
-
-. Click *Copy* to copy the iQN name.
-
-. Set up an iSCSI connection from the host to the LUN.
-+
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-rhel-cg/GUID-15E8C226-BED5-46D0-BAED-379EA4311340.html[ONTAP 9 iSCSI express configuration for Red Hat Enterprise Linux: Starting the iSCSI sessions with the target^]
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-cpg/GUID-857453EC-90E9-4AB6-B543-83827CF374BF.html[ONTAP 9 iSCSI express configuration for Windows: Starting iSCSI sessions with the target^]
-
-== Use FlexCache volumes to accelerate data access
-
-A FlexCache volume is a storage volume that caches NFS read data from an origin (or source) volume. Subsequent reads to the cached data result in faster access to that data.
-
-You can use FlexCache volumes to speed up access to data or to offload traffic from heavily accessed volumes. FlexCache volumes help improve performance, especially when clients need to access the same data repeatedly, because the data can be served directly without having to access the origin volume. FlexCache volumes work well for system workloads that are read-intensive.
-
-Cloud Manager does not provide management of FlexCache volumes at this time, but you can use the ONTAP CLI or ONTAP System Manager to create and manage FlexCache volumes:
-
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html[FlexCache Volumes for Faster Data Access Power Guide^]
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html[Creating FlexCache volumes in System Manager^]
-
-Starting with the 3.7.2 release, Cloud Manager generates a FlexCache license for all new Cloud Volumes ONTAP systems. The license includes a 500 GiB usage limit.
-
-video::PBNPVRUeT1o[youtube, width=848, height=480]

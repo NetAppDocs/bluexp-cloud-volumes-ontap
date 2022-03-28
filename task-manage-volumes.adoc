@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-managing-storage.html
-keywords: volumes, aggregates, managing, cloning, editing, CIFS server, edit, flexclone, snapshot copy, restore, mount, tier, delete, advanced allocation, disks, cifs setup, DNS, active directory, AD, domain, NetBIOS, identify, move, capacity, action required, clone, snapshot copies, restoring, disk type, add disk, change disk, vol move, volume move, move a volume, volume move slow, volume move performance
-summary: Cloud Manager enables you to manage volumes, aggregates, and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
+permalink: task-manage-volumes.html
+keywords: volumes, managing, cloning, editing, CIFS server, edit, flexclone, snapshot copy, restore, mount, delete, cifs setup, DNS, active directory, AD, domain, NetBIOS, identify, move, capacity, action required, clone, snapshot copies, restoring, vol move, volume move, move a volume, volume move slow, volume move performance
+summary: Cloud Manager enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 ---
 
-= Managing existing storage
+= Manage existing volumes
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,12 +13,11 @@ summary: Cloud Manager enables you to manage volumes, aggregates, and CIFS serve
 :imagesdir: ./media/
 
 [.lead]
+Cloud Manager enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 
-Cloud Manager enables you to manage volumes, aggregates, and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
+== Manage volumes
 
-== Managing existing volumes
-
-You can manage existing volumes as your storage needs change. You can view, edit, clone, restore, and delete volumes.
+You can manage volumes as your storage needs change. You can view, edit, clone, restore, and delete volumes.
 
 .Steps
 
@@ -69,7 +68,7 @@ a|
 a|
 .. Select a volume, and then click *Target iQN*.
 .. Click *Copy*.
-.. link:task-provisioning-storage.html#connecting-a-lun-to-a-host[Use the IQN to connect to the LUN from your hosts].
+.. link:task-connect-lun.html[Use the IQN to connect to the LUN from your hosts].
 
 | Change the underlying disk type
 a|
@@ -93,56 +92,13 @@ a|
 
 |===
 
-== Resizing a volume
+== Resize a volume
 
 By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times it's size. This value is configurable in a Connector's settings.
 
 If you need to resize your volume, you can do it through https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html[ONTAP System Manager^]. Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
 
-== Managing existing aggregates
-
-Manage aggregates yourself by adding disks, viewing information about the aggregates, and by deleting them.
-
-.Before you begin
-
-If you want to delete an aggregate, you must have first deleted the volumes in the aggregate.
-
-.About this task
-
-If an aggregate is running out of space, you can move volumes to another aggregate by using OnCommand System Manager.
-
-.Steps
-
-. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
-
-. Click the menu icon and then click *Advanced > Advanced allocation*.
-. Manage your aggregates:
-+
-[cols=2*,options="header",cols="30,70"]
-|===
-
-| Task
-| Action
-
-| View information about an aggregate | Select an aggregate and click *Info*.
-
-| Create a volume on a specific aggregate |	Select an aggregate and click *Create volume*.
-
-| Add disks to an aggregate
-a|
-.. Select an aggregate and click *Add AWS disks* or *Add Azure disks*.
-.. Select the number of disks that you want to add and click *Add*.
-+
-TIP: All disks in an aggregate must be the same size.
-
-| Delete an aggregate
-a|
-.. Select an aggregate that does not contain any volumes and click *Delete*.
-.. Click *Delete* again to confirm.
-
-|===
-
-== Modifying the CIFS server
+== Modify the CIFS server
 
 If you change your DNS servers or Active Directory domain, you need to modify the CIFS server in Cloud Volumes ONTAP so that it can continue to serve storage to clients.
 
@@ -183,7 +139,7 @@ If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONT
 
 Cloud Volumes ONTAP updates the CIFS server with the changes.
 
-== Moving a volume
+== Move a volume
 
 Move volumes for capacity utilization, improved performance, and to satisfy service-level agreements.
 
@@ -197,7 +153,7 @@ In most situations, you can use System Manager to move volumes.
 +
 For instructions, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
 
-== Moving a volume when Cloud Manager displays an Action Required message
+== Move a volume when Cloud Manager displays an Action Required message
 
 Cloud Manager might display an Action Required message that says moving a volume is necessary to avoid capacity issues, but that you need to correct the issue yourself. If this happens, you need to identify how to correct the issue and then move one or more volumes.
 
@@ -205,15 +161,15 @@ TIP: Cloud Manager displays these Action Required messages when an aggregate has
 
 .Steps
 
-. <<Identifying how to correct capacity issues,Identify how to correct the issue>>.
+. <<Identify how to correct capacity issues,Identify how to correct the issue>>.
 
 . Based on your analysis, move volumes to avoid capacity issues:
 
-* <<Moving volumes to another system to avoid capacity issues,Move volumes to another system>>.
+* <<Move volumes to another system to avoid capacity issues,Move volumes to another system>>.
 
-* <<Moving volumes to another aggregate to avoid capacity issues,Move volumes to another aggregate on the same system>>.
+* <<Move volumes to another aggregate to avoid capacity issues,Move volumes to another aggregate on the same system>>.
 
-=== Identifying how to correct capacity issues
+=== Identify how to correct capacity issues
 
 If Cloud Manager can't provide recommendations for moving a volume to avoid capacity issues, you must identify the volumes that you need to move and whether you should move them to another aggregate on the same system or to another system.
 
@@ -239,7 +195,7 @@ You should choose volumes that are large enough to free space in the aggregate s
 
 . If the system has not reached the disk limit, you should move the volumes to an existing aggregate or a new aggregate on the same system.
 +
-For details, see link:task-managing-storage.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
+For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
 
 . If the system has reached the disk limit, do any of the following:
 
@@ -247,13 +203,13 @@ For details, see link:task-managing-storage.html#moving-volumes-to-another-aggre
 
 .. Rearrange volumes to free space on an aggregate.
 +
-For details, see link:task-managing-storage.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
+For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
 
 .. Move two or more volumes to another system that has space.
 +
-For details, see link:task-managing-storage.html#moving-volumes-to-another-system-to-avoid-capacity-issues[Moving volumes to another system to avoid capacity issues].
+For details, see link:task-manage-volumes.html#moving-volumes-to-another-system-to-avoid-capacity-issues[Moving volumes to another system to avoid capacity issues].
 
-=== Moving volumes to another system to avoid capacity issues
+=== Move volumes to another system to avoid capacity issues
 
 You can move one or more volumes to another Cloud Volumes ONTAP system to avoid capacity issues. You might need to do this if the system reached its disk limit.
 
@@ -281,9 +237,9 @@ For information about configuring a destination volume for data access, see the 
 
 . Delete the original volume.
 +
-For details, see link:task-managing-storage.html#managing-existing-volumes[Managing existing volumes].
+For details, see link:task-manage-volumes.html#manage-volumes[Manage volumes].
 
-=== Moving volumes to another aggregate to avoid capacity issues
+=== Move volumes to another aggregate to avoid capacity issues
 
 You can move one or more volumes to another aggregate to avoid capacity issues.
 
@@ -311,7 +267,7 @@ image:screenshot_aggr_capacity.gif[Screen shot: Shows the total aggregate capaci
 
 . If no aggregates have available capacity, create a new aggregate.
 +
-For details, see link:task-provisioning-storage.html#creating-aggregates[Creating aggregates].
+For details, see link:task-create-aggregates.html[Creating aggregates].
 
 . Use System Manager or the CLI to move the volumes to the aggregate.
 

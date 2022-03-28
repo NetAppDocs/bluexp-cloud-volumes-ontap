@@ -68,7 +68,7 @@ When you select a gp3 disk, Cloud Manager fills in default IOPS and throughput v
 NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
 
 EBS disk size::
-You need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept-storage-management.html[let Cloud Manager manage a system's capacity for you], but if you want to link:task-provisioning-storage.html#creating-aggregates[build aggregates yourself], be aware of the following:
+You need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept-storage-management.html[let Cloud Manager manage a system's capacity for you], but if you want to link:task-create-aggregates.html[create aggregates yourself], be aware of the following:
 
 ** All disks in an aggregate must be the same size.
 ** The performance of EBS disks is tied to disk size. The size determines the baseline IOPS and maximum burst duration for SSD disks and the baseline and burst throughput for HDD disks.
@@ -87,7 +87,7 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 link:reference-default-configs.html#aws[View the default disks for Cloud Volumes ONTAP system data in AWS].
 
-TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-connector/reference-connector-default-config.html[View details about the Connector's default configuration^].
+TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-connector-default-config.html[View details about the Connector's default configuration^].
 
 == Preparing to deploy Cloud Volumes ONTAP in an AWS Outpost
 

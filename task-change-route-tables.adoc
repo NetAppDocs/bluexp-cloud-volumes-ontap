@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: task-change-route-tables.html
+keywords: route tables, update route tables, modify route tables, change route table
+summary: You can modify the AWS route tables that include routes to the floating IP addresses for an HA pair that's deployed in multiple AWS Availability Zones. You might do this if new NFS or CIFS clients need to access an HA pair in AWS.
+---
+
+= Change route tables for HA pairs in multiple AZs
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can modify the AWS route tables that include routes to the floating IP addresses for an HA pair that's deployed in multiple AWS Availability Zones (AZs). You might do this if new NFS or CIFS clients need to access an HA pair in AWS.
+
+.Steps
+
+. From the working environment, click the menu icon and then click *Information*.
+
+. Click *Route Tables*.
+
+. Modify the list of selected route tables and then click *Save*.
+
+.Result
+
+Cloud Manager sends an AWS request to modify the route tables.

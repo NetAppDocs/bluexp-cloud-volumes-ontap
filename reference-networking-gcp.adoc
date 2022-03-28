@@ -81,7 +81,7 @@ For an HA pair, four VPCs are required. Each of those VPCs can be either shared 
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
-The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
+link:task-creating-connectors-gcp.html#shared-vpc-permissions[Review the required shared VPC permissions covered in Connector deployment].
 
 Packet mirroring in VPCs::
 https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud VPC in which you deploy Cloud Volumes ONTAP. Cloud Volumes ONTAP can't operate properly if packet mirroring is enabled.
@@ -94,7 +94,7 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 +
-link:task-setting-up-ontap-cloud.html[Learn how to configure AutoSupport].
+link:task-verify-autosupport.html[Learn how to verify AutoSupport].
 +
 TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 
@@ -109,7 +109,7 @@ You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud
 +
 A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
 
-* *HA pair*: 15 or 16 private IP addresses
+* *HA pair*: 14 or 15 private IP addresses
 +
 ** 7 or 8 private IP addresses for VPC-0
 +
@@ -142,7 +142,7 @@ For instructions, refer to https://cloud.google.com/vpn/docs/concepts/overview[G
 
 Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-connector/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
 
 === Connection to target networks
 

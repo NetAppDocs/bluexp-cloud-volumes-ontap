@@ -59,7 +59,7 @@ HA systems use Premium page blobs. Meanwhile, single node systems can use two ty
 For additional details about the use cases for these disks, see https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure Documentation: What disk types are available in Azure?^].
 
 Azure disk size::
-When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. Cloud Manager uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task-provisioning-storage.html#creating-aggregates[using the advanced allocation option].
+When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. Cloud Manager uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task-create-aggregates.html[using the advanced allocation option].
 +
 TIP: All disks in an aggregate must be the same size.
 +
@@ -84,7 +84,7 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 link:reference-default-configs.html#azure-single-node[View the default disks for Cloud Volumes ONTAP system data in Azure].
 
-TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-connector/reference-connector-default-config.html[View details about the Connector's default configuration^].
+TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-connector-default-config.html[View details about the Connector's default configuration^].
 
 == Azure network information worksheet
 

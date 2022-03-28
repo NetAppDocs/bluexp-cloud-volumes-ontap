@@ -1,0 +1,25 @@
+---
+sidebar: sidebar
+permalink: task-sync-time.html
+keywords: set up, setting up, ntp, time, synch
+summary: Specifying an NTP server synchronizes the time between the systems in your network, which can help prevent issues due to time differences.
+---
+
+= Synchronize the system time using NTP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Specifying an NTP server synchronizes the time between the systems in your network, which can help prevent issues due to time differences.
+
+Specify an NTP server using the Cloud Manager API or from the user interface when you set up a CIFS server.
+
+* link:task-manage-volumes.html#modifying-the-cifs-server[Modifying the CIFS server]
+* https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^]
+
+For example, here's the API for a single-node system in AWS:
+
+image:screenshot_ntp_server_api.gif[A screenshot of the Swagger interface that shows the NTP API call.]

@@ -43,7 +43,7 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * Support from NetApp is not included.
 * You're limited to 500 GiB of provisioned capacity per Cloud Volumes ONTAP system.
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
-* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.
+* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package (capacity-based licensing).
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
@@ -119,10 +119,6 @@ With this licensing model, each individual Cloud Volumes ONTAP system supports u
 
 There is no maximum capacity limitation when it comes to the license itself.
 
-=== License conversions
-
-Conversions to another licensing option isn't supported. If you want to transition to capacity-based licensing, you can deploy a new Cloud Volumes ONTAP system that uses capacity-based charging and then replicate the data to that new system.
-
 === Notes about charging
 
 * If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at the hourly rate based on your marketplace subscription.
@@ -139,9 +135,9 @@ Conversions to another licensing option isn't supported. If you want to transiti
 
 === How to get started
 
-. https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^].
-. link:task-managing-licenses.html[Add your license to Cloud Manager].
-. Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system.
+. https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
+. link:task-manage-capacity-licenses.html[Add your license to Cloud Manager]
+. Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system
 +
 * link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
 * link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
@@ -169,7 +165,7 @@ Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity thro
 
 . If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^].
 . mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
-. After NetApp authorizes your account, link:task-managing-licenses.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP system.
 +
 * link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
@@ -185,7 +181,11 @@ Node-based licensing is still available for existing customers:
 * If you have an active license, BYOL is available for license renewals only.
 * If you have an active marketplace subscription, charging is still available through that subscription.
 
-Conversions to another licensing option isn't supported. If you want to transition to capacity-based licensing, you can purchase a license, deploy a new Cloud Volumes ONTAP system, and then replicate the data to that new system.
+== License conversions
+
+Converting an existing Cloud Volumes ONTAP system to another licensing method isn't supported. The three current licensing methods are capacity-based licensing, Keystone Flex Subscriptions, and node-based licensing. For example, you can't convert a system from node-based licensing to capacity-based licensing (and vice versa).
+
+If you want to transition to another licensing method, you can purchase a license, deploy a new Cloud Volumes ONTAP system using that license, and then replicate the data to that new system.
 
 == Max number of systems
 
@@ -195,4 +195,4 @@ A _system_ is either an HA pair or a single node system. For example, if you hav
 
 If you have questions, reach out to your account rep or sales team.
 
-https://docs.netapp.com/us-en/cloud-manager-accounts/concept-cloud-central-accounts.html[Learn more about NetApp accounts^].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^].

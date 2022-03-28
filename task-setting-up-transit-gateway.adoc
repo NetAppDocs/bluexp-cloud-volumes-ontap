@@ -71,7 +71,7 @@ image:screenshot_mount.gif[Screen shot: Shows the Mount Command which is availab
 
 . If you're mounting an NFS volume, configure the export policy to match the subnet of the client VPC.
 +
-link:task-managing-storage.html[Learn how to edit a volume].
+link:task-manage-volumes.html[Learn how to edit a volume].
 
 *Related links*
 

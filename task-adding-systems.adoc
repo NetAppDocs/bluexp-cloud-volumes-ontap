@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task-adding-ontap-cloud.html
+permalink: task-adding-systems.html
 keywords: discover, discovering, add, adding, existing
 summary: You can discover and add existing Cloud Volumes ONTAP systems to Cloud Manager. You might do this if you deployed a new Cloud Manager system.
 ---

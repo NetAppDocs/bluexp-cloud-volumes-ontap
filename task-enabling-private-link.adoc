@@ -31,7 +31,7 @@ Here's an example that shows client access over a private link from within the s
 
 image:diagram_azure_private_link.png[A conceptual image that shows data access going to Cloud Volumes ONTAP and through a private endpoint and private link to the storage account.]
 
-== Providing Cloud Manager with details about your Azure Private DNS
+== Provide Cloud Manager with details about your Azure Private DNS
 
 If you use https://docs.microsoft.com/en-us/azure/dns/private-dns-overview[Azure Private DNS^], then you need to modify a configuration file on each Connector. Otherwise, Cloud Manager can't enable the Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts.
 
@@ -57,7 +57,24 @@ The subscription parameter is required only if the Private DNS Zone exists in a 
 +
 A reboot isn't required.
 
-== Disabling Azure Private Link connections
+== Enable rollback on failures
+
+If Cloud Manager fails to create an Azure Private Link as part of specific actions, it completes the action without the Azure Private Link connection. This can happen when creating a new working environment (single node or HA pair), or when the following actions occur on an HA pair: creating a new aggregate, adding disks to an existing aggregate, or creating a new storage account when going above 32 TiB.
+
+You can change this default behavior by enabling rollback if Cloud Manager fails to create the Azure Private Link. This can help to ensure that you're fully compliant with your company's security regulations.
+
+If you enable rollback, Cloud Manager stops the action and rolls back all resources that were created as part of the action.
+
+Enabling rollback is supported through the API only.
+
+.Step
+
+. Use the `PUT /occm/config` API call with the following request body:
++
+[source, json]
+{ "rollbackOnAzurePrivateLinkFailure": true }
+
+== Disable Azure Private Link connections
 
 If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.
 
