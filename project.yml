@@ -256,12 +256,16 @@ homepage:
           url: task-protecting-ransomware.html
     - title: API
       links:
-        - title: Overview of the API
+        - title: Overview of the Cloud Volumes ONTAP API
           url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html
         - title: Prepare to use the API
           url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/prepare.html
         - title: API reference
           url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html
+    - tilte: Troubleshooting
+      links:
+        - title: NetApp Knowledge Base
+          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
     - title: Reference
       links:
         - title: Supported configurations
