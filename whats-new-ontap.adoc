@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: whats-new.html
+permalink: whats-new-ontap.html
 keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud volumes ontap
 summary: The Release Notes for Cloud Volumes ONTAP provide release-specific information. What's new in the release, supported configurations, storage limits, and any known limitations or issues that can affect product functionality.
 ---

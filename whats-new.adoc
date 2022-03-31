@@ -20,7 +20,7 @@ The enhancements described on this page are specific to Cloud Manager features t
 //tag::whats-new[]
 == 27 Feb 2022 (Connector 3.9.16)
 
-=== Redesigned create new volume wizard
+=== Redesigned volume wizard
 
 The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the *Advanced allocation* option.
 
@@ -28,7 +28,7 @@ link:task-provisioning-storage.html[Learn how to create volumes on a specific ag
 
 == 9 Feb 2022
 
-=== Cloud provider marketplace changes
+=== Marketplace updates
 
 * The Essentials package and Professional package are now available in the AWS and Google Cloud Marketplaces.
 +
@@ -46,9 +46,7 @@ link:concept-licensing.html[Learn more about the licensing options for Cloud Vol
 
 == 6 Feb 2022
 
-This update includes enhancements to several features and services.
-
-=== Cloud Volumes ONTAP
+=== Exchange unassigned licenses
 
 If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
 
@@ -148,7 +146,7 @@ This change applies to _new_ Cloud Volumes ONTAP systems starting with the 3.9.1
 
 == 4 Oct 2021 (Connector 3.9.11)
 
-=== Support for Cloud Volumes ONTAP 9.10.0
+=== Cloud Volumes ONTAP 9.10.0
 
 Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.0.
 
@@ -158,7 +156,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9100.html[Learn 
 
 We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
 
-== 2 September 2021 (Connector 3.9.10)
+== 2 Sept 2021 (Connector 3.9.10)
 
 === Customer-managed encryption key in Azure
 
@@ -196,7 +194,7 @@ Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xla
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[View supported configurations for Cloud Volumes ONTAP in AWS^].
 
-=== Support for existing Azure resource groups
+===  existing Azure resource groups
 
 When creating a Cloud Volumes ONTAP system in Azure, you now have the option to select an existing resource group for the VM and its associated resources.
 
@@ -222,7 +220,7 @@ This means _all_ storage accounts for Cloud Volumes ONTAP will now use a private
 
 link:task-enabling-private-link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP].
 
-=== Support for Balanced persistent disks in Google Cloud
+===  Balanced persistent disks in Google Cloud
 
 Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports Balanced persistent disks (pd-balanced).
 
@@ -380,3 +378,12 @@ Cloud Volumes ONTAP now supports the following machine types:
 * n2-standard-4 with the Explore license and with BYOL
 * n2-standard-8 with the Standard license and with BYOL
 * n2-standard-32 with the Premium license and with BYOL
+
+== 3 Nov 2020 (Connector 3.9.0)
+
+=== Azure Private Link for Cloud Volumes ONTAP
+
+By default, Cloud Manager now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure.
+
+* https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more about Azure Private Links^]
+* link:task-enabling-private-link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP]
