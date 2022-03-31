@@ -87,6 +87,8 @@ sidebar:
               url: /task-create-volumes.html
             - title: Manage existing volumes
               url: /task-manage-volumes.html
+            - title: Tier inactive data to object storage
+              url: /task-tiering.html
             - title: Connect a LUN to a host
               url: /task-connect-lun.html
             - title: Accelerate data access with FlexCache
@@ -99,12 +101,6 @@ sidebar:
               url: /task-create-aggregates.html
             - title: Manage existing aggregates
               url: /task-manage-aggregates.html
-        - title: Security and data encryption
-          entries:
-            - title: Encrypt volumes with NetApp encryption
-              url: /task-encrypting-volumes.html
-            - title: Improve ransomware protection
-              url: /task-protecting-ransomware.html
         - title: Storage VM administration
           entries:
             - title: Work with storage VMs in Cloud Manager
@@ -113,12 +109,18 @@ sidebar:
               url: /task-managing-svms-aws.html
             - title: Create storage VMs in Azure
               url: /task-managing-svms-azure.html
+        - title: Security and data encryption
+          entries:
+            - title: Encrypt volumes with NetApp encryption
+              url: /task-encrypting-volumes.html
+            - title: Improve ransomware protection
+              url: /task-protecting-ransomware.html
         - title: System administration
           entries:
-            - title: Register pay-as-you-go systems
-              url: /task-registering.html
             - title: Upgrade Cloud Volumes ONTAP
               url: /task-updating-ontap-cloud.html
+            - title: Register pay-as-you-go systems
+              url: /task-registering.html
             - title: Stop and start a system
               url: /task-managing-state.html
             - title: Synchronize system time
