@@ -13,12 +13,12 @@ sidebar:
       url: /index.html
     - title: Release notes
       entries:
-        - title: What's new with Cloud Manager
+        - title: What's new
           url: /whats-new.html
-        - title: What's new with Cloud Volumes ONTAP
-          url: /whats-new-ontap.html
         - title: Known limitations
           url: /reference-limitations.html
+        - title: Cloud Volumes ONTAP Release Notes
+          url: /whats-new-ontap.html
     - title: Get started
       entries:
         - title: Learn about Cloud Volumes ONTAP
@@ -87,6 +87,8 @@ sidebar:
               url: /task-create-volumes.html
             - title: Manage existing volumes
               url: /task-manage-volumes.html
+            - title: Tier inactive data to object storage
+              url: /task-tiering.html
             - title: Connect a LUN to a host
               url: /task-connect-lun.html
             - title: Accelerate data access with FlexCache
@@ -99,12 +101,6 @@ sidebar:
               url: /task-create-aggregates.html
             - title: Manage existing aggregates
               url: /task-manage-aggregates.html
-        - title: Security and data encryption
-          entries:
-            - title: Encrypt volumes with NetApp encryption
-              url: /task-encrypting-volumes.html
-            - title: Improve ransomware protection
-              url: /task-protecting-ransomware.html
         - title: Storage VM administration
           entries:
             - title: Work with storage VMs in Cloud Manager
@@ -113,12 +109,18 @@ sidebar:
               url: /task-managing-svms-aws.html
             - title: Create storage VMs in Azure
               url: /task-managing-svms-azure.html
+        - title: Security and data encryption
+          entries:
+            - title: Encrypt volumes with NetApp encryption
+              url: /task-encrypting-volumes.html
+            - title: Improve ransomware protection
+              url: /task-protecting-ransomware.html
         - title: System administration
           entries:
-            - title: Register pay-as-you-go systems
-              url: /task-registering.html
             - title: Upgrade Cloud Volumes ONTAP
               url: /task-updating-ontap-cloud.html
+            - title: Register pay-as-you-go systems
+              url: /task-registering.html
             - title: Stop and start a system
               url: /task-managing-state.html
             - title: Synchronize system time
@@ -216,20 +218,62 @@ homepage:
   tiles:
     - title: Get started
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-    - title: tile name
+        - title: Learn about Cloud Volumes ONTAP
+          url: concept-overview-cvo.html
+        - title: Quick start for AWS
+          url: task-getting-started-aws.html
+        - title: Quick start for Azure
+          url: task-getting-started-azure.html
+        - title: Quick start for Google Cloud
+          url: task-getting-started-gcp.html
+    - title: Licensing
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
+        - title: Licensing overview
+          url: concept-licensing.html
+        - title: Manage capacity-based licenses
+          url: task-manage-capacity-licenses.html
+        - title: Manage Keystone Flex Subscriptions
+          url: task-manage-keystone.html
+    - title: Storage management
+      links:
+        - title: Create volumes
+          url: task-create-volumes.html
+        - title: Tier inactive data to object storage
+          url: task-tiering.html
+        - title: Accelerate data access with FlexCache
+          url: task-accelerate-data-access.html
+    - title: System administration
+      links:
+        - title: Upgrade Cloud Volumes ONTAP
+          url: task-updating-ontap-cloud.html
+        - title: Stop and start Cloud Volumes ONTAP
+          url: task-managing-state.html
+    - title: Security
+      links:
+        - title: Encrypt volumes with NetApp encryption
+          url: task-encrypting-volumes.html
+        - title: Improve ransomware protection
+          url: task-protecting-ransomware.html
+    - title: API
+      links:
+        - title: Overview of the Cloud Volumes ONTAP API
+          url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html
+        - title: Prepare to use the API
+          url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/prepare.html
+        - title: API reference
+          url: https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html
+    - title: Troubleshooting
+      links:
+        - title: NetApp Knowledge Base
+          url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
+    - title: Reference
+      links:
+        - title: Supported configurations
+          url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
+        - title: Supported cloud regions
+          url: https://cloud.netapp.com/cloud-volumes-global-regions
+        - title: Calculators
+          url: https://cloud.netapp.com/calculator-hub
     - title: Blogs & community
       links:
         - title: NetApp Community

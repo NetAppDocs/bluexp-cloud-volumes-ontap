@@ -5,7 +5,7 @@ keywords: what's new, features, new, release notes, bugs, limitations, known iss
 summary: Learn what's new in <service>.
 ---
 
-= What's new with <service>
+= What's new
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,46 +13,377 @@ summary: Learn what's new in <service>.
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new in <service>.
+Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
-tag::whats-new[]
-== <date of release in the format dd month year like 28 Nov 2021>
+The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. A separate set of release notes describes what's new with the Cloud Volumes ONTAP software itself.
 
-=== <feature title>
+//tag::whats-new[]
+== 27 Feb 2022 (Connector 3.9.16)
 
-<description>
+=== Redesigned volume wizard
 
-=== <feature title>
+The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the *Advanced allocation* option.
 
-<description>
+link:task-create-volumes.html[Learn how to create volumes on a specific aggregate].
 
-== <date of release in the format dd month year like 28 Nov 2021>
+== 9 Feb 2022
 
-=== <feature title>
+=== Marketplace updates
 
-<description>
+* The Essentials package and Professional package are now available in the AWS and Google Cloud Marketplaces.
++
+These by-capacity charging methods enable you to pay by the hour or to purchase an annual contract directly from your cloud provider. You still have the option to purchase a by-capacity license directly from NetApp.
++
+If you have an existing subscription in a cloud marketplace, you're automatically subscribed to these new offerings as well. You can choose by-capacity charging when you deploy a new Cloud Volumes ONTAP working environment.
++
+If you're a new customer, Cloud Manager will prompt you to subscribe when you create a new working environment.
 
-=== <feature title>
+* By-node licensing via the AWS and Google Cloud Marketplaces is deprecated and no longer available for new subscribers. This includes annual contracts and hourly subscriptions (Explore, Standard, and Premium).
++
+This charging method is still available for existing customers who have an active subscription.
 
-<description>
+link:concept-licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
 
-== <date of release in the format dd month year like 28 Nov 2021>
+== 6 Feb 2022
 
-=== <feature title>
+=== Exchange unassigned licenses
 
-<description>
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
 
-=== <feature title>
+This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
 
-<description>
-end::whats-new[]
+link:task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
+//end::whats-new[]
 
-== <date of release in the format dd month year like 28 Nov 2021>
+== 30 Jan 2022 (Connector 3.9.15)
 
-=== <feature title>
+=== Redesigned licensing selection
 
-<description>
+We redesigned the licensing selection screen when creating a new Cloud Volumes ONTAP working environment. The changes highlight the by-capacity charging methods that were introduced in July 2021 and support upcoming offerings through the cloud provider marketplaces.
 
-=== <feature title>
+=== Digital Wallet update
 
-<description>
+We updated the *Digital Wallet* by consolidating Cloud Volumes ONTAP licenses in a single tab.
+
+=== 20 systems per NetApp account
+
+The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
+
+A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you'd have a total of 4 systems, with room for 16 additional systems in your account.
+
+If you have questions, reach out to your account rep or sales team.
+
+link:concept-netapp-accounts.html[Learn more about NetApp accounts].
+
+== 2 Jan 2022 (Connector 3.9.14)
+
+=== Support for additional VM types
+
+Cloud Volumes ONTAP is now supported with the following VM types in Microsoft Azure, starting with the 9.10.1 release:
+
+* E4ds_v4
+* E8ds_v4
+* E32ds_v4
+* E48ds_v4
+
+Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Cloud Volumes ONTAP Release Notes^] for more details about supported configurations.
+
+=== FlexClone charging update
+
+If you use a link:concept-licensing.html[capacity-based license^] for Cloud Volumes ONTAP, you are no longer charged for the capacity used by FlexClone volumes.
+
+=== Charging method now displayed
+
+Cloud Manager now shows the charging method for each Cloud Volumes ONTAP working environment in the right panel of the Canvas.
+
+image:screenshot-cvo-charging-method.png[A screenshot that shows the charging method for a Cloud Volumes ONTAP working environment which appears in the right panel after selecting a working environment from the Canvas.]
+
+=== Choose your user name
+
+When you create a Cloud Volumes ONTAP working environment, you now have the option to enter your preferred user name, instead of the default admin user name.
+
+image:screenshot-cvo-user-name.png[A screenshot of the Details and Credentials page in the working environment wizard where you can specify a user name.]
+
+=== Volume creation enhancements
+
+We made a few enhancements to volume creation:
+
+* We redesigned the create volume wizard for ease of use.
+* Tags that you add to a volume are now associated with the Application Templates service, which can help you organize and simplify the management of your resources.
+* You can now choose a custom export policy for NFS.
+
+image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
+
+== 28 Nov 2021 (Connector 3.9.13)
+
+=== Cloud Volumes ONTAP 9.10.1
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.1.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+=== Keystone Flex Subscriptions
+
+You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
+
+A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
+
+A Keystone Flex Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from Cloud Manager.
+
+* https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
+
+* link:task-manage-keystone.html[Learn how to get started with Keystone Flex Subscriptions in Cloud Manager].
+
+=== New AWS region support
+
+Cloud Volumes ONTAP is now supported in the AWS Asia Pacific (Osaka) region (ap-northeast-3).
+
+=== Port reduction
+
+Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure for both single node systems and HA pairs.
+
+This change applies to _new_ Cloud Volumes ONTAP systems starting with the 3.9.13 release of the Connector.
+
+== 4 Oct 2021 (Connector 3.9.11)
+
+=== Cloud Volumes ONTAP 9.10.0
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.0.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9100-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+=== Reduced deployment time
+
+We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
+
+== 2 Sept 2021 (Connector 3.9.10)
+
+=== Customer-managed encryption key in Azure
+
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
+
+. From Azure, create a key vault and then generate a key in that vault.
+
+. From Cloud Manager, use the API to create a Cloud Volumes ONTAP working environment that uses the key.
+
+link:task-set-up-azure-encryption.html[Learn more about these steps].
+
+== 7 July 2021 (Connector 3.9.8)
+
+=== New charging methods
+
+New charging methods are available for Cloud Volumes ONTAP.
+
+* *Capacity-based BYOL*: A capacity-based license enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to create as multiple Cloud Volumes ONTAP systems, as long as enough capacity is available through your license. Capacity-based licensing is available in the form of a package, either _Essentials_ or _Professional_.
+
+* *Freemium offering*: Freemium enables you to use all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply). You're limited to 500 GiB of provisioned capacity per system and there’s no support contract. You can have up to 10 Freemium systems.
++
+link:concept-licensing.html[Learn more about these licensing options].
++
+Here's an example of the charging methods that you can choose from when deploying a new Cloud Volumes ONTAP system in Azure:
++
+image:screenshot_cvo_charging_methods.png[A screenshot of the Cloud Volumes ONTAP working environment wizard where you can choose a charging method.]
+
+=== WORM storage available for general use
+
+Write once, read many (WORM) storage is no longer in Preview and is now available for general use with Cloud Volumes ONTAP. link:concept-worm.html[Learn more about WORM storage].
+
+=== Support for m5dn.24xlarge in AWS
+
+Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, bring your own license (BYOL), and Freemium.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[View supported configurations for Cloud Volumes ONTAP in AWS^].
+
+===  existing Azure resource groups
+
+When creating a Cloud Volumes ONTAP system in Azure, you now have the option to select an existing resource group for the VM and its associated resources.
+
+image:screenshot_azure_resource_group.png[A screenshot of the Create Working Environment wizard where you can select an existing resource group.]
+
+The following permissions enable Cloud Manager to remove Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion:
+
+[source,json]
+"Microsoft.Network/privateEndpoints/delete",
+"Microsoft.Compute/availabilitySets/delete",
+
+Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+
+=== Blob public access now disabled in Azure
+
+As a security enhancement, Cloud Manager now disables *Blob public access* when creating a storage account for Cloud Volumes ONTAP.
+
+=== Azure Private Link enhancement
+
+By default, Cloud Manager now enables an Azure Private Link connection on the boot diagnostics storage account for new Cloud Volumes ONTAP systems.
+
+This means _all_ storage accounts for Cloud Volumes ONTAP will now use a private link.
+
+link:task-enabling-private-link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP].
+
+===  Balanced persistent disks in Google Cloud
+
+Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports Balanced persistent disks (pd-balanced).
+
+These SSDs balance performance and cost by providing lower IOPS per GiB.
+
+=== custom-4-16384 no longer supported in Google Cloud
+
+The custom-4-16384 machine type is no longer supported with new Cloud Volumes ONTAP systems.
+
+If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[View supported configurations for Cloud Volumes ONTAP in GCP^].
+
+== 30 May 2021 (Connector 3.9.7)
+
+=== New Professional Package in AWS
+
+A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
+
+If you choose this payment option, you can provision up to 2 PiB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
+
+Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
+
+=== Tags on EBS volumes in AWS
+
+Cloud Manager now adds tags to EBS volumes when it creates a new Cloud Volumes ONTAP working environment. The tags were previously created after Cloud Volumes ONTAP was deployed.
+
+This change can help if your organization uses service control policies (SCPs) to manage permissions.
+
+=== Minimum cooling period for auto tiering policy
+
+If you enabled data tiering on a volume using the _auto_ tiering policy, you can now adjust the minimum cooling period using the API.
+
+link:task-tiering.html#changing-the-cooling-period-for-the-auto-tiering-policy[Learn how to adjust the minimum cooling period.]
+
+=== Enhancement to custom export policies
+
+When you create a new NFS volume, Cloud Manager now displays custom export policies in ascending order, making it easier for you to find the export policy that you need.
+
+=== Deletion of old cloud snapshots
+
+Cloud Manager now deletes older cloud snapshots of root and boot disks that are created when a Cloud Volumes ONTAP system is deployed and every time its powered down. Only the two most recent snapshots are retained for both the root and boot volumes.
+
+This enhancement helps reduce cloud provider costs by removing snapshots that are no longer needed.
+
+Note that a Connector requires a new permission to delete Azure snapshots. https://mysupport.netapp.com/site/info/cloud-manager-policies[View the latest Cloud Manager policy for Azure^].
+
+[source,json]
+"Microsoft.Compute/snapshots/delete"
+
+== 24 May 2021
+
+=== Cloud Volumes ONTAP 9.9.1
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.1.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-991-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+== 11 Apr 2021 (Connector 3.9.5)
+
+=== Logical space reporting
+
+Cloud Manager now enables logical space reporting on the initial storage VM that it creates for Cloud Volumes ONTAP.
+
+When space is reported logically, ONTAP reports the volume space such that all the physical space saved by the storage efficiency features are also reported as used.
+
+=== Support for gp3 disks in AWS
+
+Cloud Volumes ONTAP now supports _General Purpose SSD (gp3)_ disks, starting with the 9.7 release. gp3 disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads.
+
+link:task-planning-your-config.html#sizing-your-system-in-aws[Learn more about using gp3 disks with Cloud Volumes ONTAP].
+
+=== Cold HDD disks no longer supported in AWS
+
+Cloud Volumes ONTAP no longer supports Cold HDD (sc1) disks.
+
+=== TLS 1.2 for Azure storage accounts
+
+When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, the TLS version for the storage account is now version 1.2.
+
+== 8 Mar 2021 (Connector 3.9.4)
+
+=== Cloud Volumes ONTAP 9.9.0
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-990-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+=== Support for the AWS C2S environment
+
+You can now deploy Cloud Volumes ONTAP 9.8 in the AWS Commercial Cloud Services (C2S) environment.
+
+link:task-getting-started-aws-c2s.html[Learn how to get started in C2S].
+
+=== AWS encryption with customer-managed CMKs
+
+Cloud Manager has always enabled you to encrypt Cloud Volumes ONTAP data using the AWS Key Management Service (KMS). Starting with Cloud Volumes ONTAP 9.9.0, data on EBS disks and data tiered to S3 are encrypted if you select a customer-managed CMK. Previously, only EBS data would be encrypted.
+
+Note that you'll need to provide the Cloud Volumes ONTAP IAM role with access to use the CMK.
+
+link:task-setting-up-kms.html[Learn more about setting up the AWS KMS with Cloud Volumes ONTAP].
+
+=== Support for Azure DoD
+
+You can now deploy Cloud Volumes ONTAP 9.8 in the Azure Department of Defense (DoD) Impact Level 6 (IL6).
+
+=== IP address reduction in Google Cloud
+
+We've reduced the number of IP addresses that are required for Cloud Volumes ONTAP 9.8 and later in Google Cloud. By default, one less IP address is required (we unified the intercluster LIF with the node management LIF). You also have the option to skip the creation of the SVM management LIF when using the API, which would reduce the need for an additional IP address.
+
+link:reference-networking-gcp.html#requirements-for-cloud-volumes-ontap[Learn more about IP address requirements in Google Cloud].
+
+=== Shared VPC support in Google Cloud
+
+When you deploy a Cloud Volumes ONTAP HA pair in Google Cloud, you can now choose shared VPCs for VPC-1, VPC-2, and VPC-3. Previously, only VPC-0 could be a shared VPC. This change is supported with Cloud Volumes ONTAP 9.8 and later.
+
+link:reference-networking-gcp.html[Learn more about Google Cloud networking requirements].
+
+== 4 Jan 2021 (Connector 3.9.2)
+
+=== AWS Outposts
+
+A few months ago, we announced that Cloud Volumes ONTAP had achieved the Amazon Web Services (AWS) Outposts Ready designation. Today, we're pleased to announce that we've validated Cloud Manager and Cloud Volumes ONTAP with AWS Outposts.
+
+If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC in the Working Environment wizard. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Connector in your AWS Outpost.
+
+There are a few limitations to point out:
+
+* Only single node Cloud Volumes ONTAP systems are supported at this time
+* The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
+* Only General Purpose SSDs (gp2) are supported at this time
+
+=== Ultra SSD VNVRAM in supported Azure regions
+
+Cloud Volumes ONTAP can now use an Ultra SSD as VNVRAM when you use the E32s_v3 VM type with a single node system https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd[in any supported Azure region^].
+
+VNVRAM provides better write performance.
+
+=== Choose an Availability Zone in Azure
+
+You can now choose the Availability Zone in which you'd like to deploy a single node Cloud Volumes ONTAP system. If you don't select an AZ, Cloud Manager will select one for you.
+
+image:screenshot_azure_az.gif[A screenshot of the Availability Zone drop-down list that's available after choosing a region.]
+
+=== Larger disks in Google Cloud
+
+Cloud Volumes ONTAP now supports 64 TB disks in GCP.
+
+NOTE: The maximum system capacity with disks alone remains at 256 TB due to GCP limits.
+
+=== New machine types in Google Cloud
+
+Cloud Volumes ONTAP now supports the following machine types:
+
+* n2-standard-4 with the Explore license and with BYOL
+* n2-standard-8 with the Standard license and with BYOL
+* n2-standard-32 with the Premium license and with BYOL
+
+== 3 Nov 2020 (Connector 3.9.0)
+
+=== Azure Private Link for Cloud Volumes ONTAP
+
+By default, Cloud Manager now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure.
+
+* https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more about Azure Private Links^]
+* link:task-enabling-private-link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP]

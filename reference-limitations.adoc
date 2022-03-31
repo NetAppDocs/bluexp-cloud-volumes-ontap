@@ -15,7 +15,7 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-These limitations are specific to Cloud Manager limitations with Cloud Volumes ONTAP support.
+These limitations are specific to Cloud Volumes ONTAP management in Cloud Manager.
 
 == Cloud Manager doesn't support FlexGroup volumes
 
