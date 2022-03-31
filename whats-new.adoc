@@ -24,7 +24,7 @@ The enhancements described on this page are specific to Cloud Manager features t
 
 The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the *Advanced allocation* option.
 
-link:task-provisioning-storage.html[Learn how to create volumes on a specific aggregate].
+link:task-create-volumes.html[Learn how to create volumes on a specific aggregate].
 
 == 9 Feb 2022
 
@@ -52,7 +52,7 @@ If you have an unassigned node-based license for Cloud Volumes ONTAP that you ha
 
 This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
 
-link:task-managing-licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
+link:task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
 //end::whats-new[]
 
 == 30 Jan 2022 (Connector 3.9.15)
@@ -73,7 +73,7 @@ A _system_ is either an HA pair or a single node system. For example, if you hav
 
 If you have questions, reach out to your account rep or sales team.
 
-link:concept-cloud-central-accounts.html[Learn more about NetApp accounts].
+link:concept-netapp-accounts.html[Learn more about NetApp accounts].
 
 == 2 Jan 2022 (Connector 3.9.14)
 
@@ -86,11 +86,11 @@ Cloud Volumes ONTAP is now supported with the following VM types in Microsoft Az
 * E32ds_v4
 * E48ds_v4
 
-Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9101.html[Cloud Volumes ONTAP Release Notes^] for more details about supported configurations.
+Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Cloud Volumes ONTAP Release Notes^] for more details about supported configurations.
 
 === FlexClone charging update
 
-If you use a link:concept_licensing[capacity-based license^] for Cloud Volumes ONTAP, you are no longer charged for the capacity used by FlexClone volumes.
+If you use a link:concept-licensing.html[capacity-based license^] for Cloud Volumes ONTAP, you are no longer charged for the capacity used by FlexClone volumes.
 
 === Charging method now displayed
 
@@ -109,7 +109,7 @@ image:screenshot-cvo-user-name.png[A screenshot of the Details and Credentials p
 We made a few enhancements to volume creation:
 
 * We redesigned the create volume wizard for ease of use.
-* Tags that you add to a volume are now associated with the link:task-using-tags.html[Application Templates service], which can help you organize and simplify the management of your resources.
+* Tags that you add to a volume are now associated with the Application Templates service, which can help you organize and simplify the management of your resources.
 * You can now choose a custom export policy for NFS.
 
 image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
@@ -120,7 +120,7 @@ image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page
 
 Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.1.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9101.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 === Keystone Flex Subscriptions
 
@@ -132,7 +132,7 @@ A Keystone Flex Subscription is supported with all new versions of Cloud Volumes
 
 * https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
 
-* link:task-managing-licenses.html#manage-keystone-flex-subscriptions[Learn how to get started with Keystone Flex Subscriptions in Cloud Manager].
+* link:task-manage-keystone.html[Learn how to get started with Keystone Flex Subscriptions in Cloud Manager].
 
 === New AWS region support
 
@@ -150,7 +150,7 @@ This change applies to _new_ Cloud Volumes ONTAP systems starting with the 3.9.1
 
 Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.10.0.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_9100.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9100-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 === Reduced deployment time
 
@@ -192,7 +192,7 @@ Write once, read many (WORM) storage is no longer in Preview and is now availabl
 
 Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, bring your own license (BYOL), and Freemium.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[View supported configurations for Cloud Volumes ONTAP in AWS^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[View supported configurations for Cloud Volumes ONTAP in AWS^].
 
 ===  existing Azure resource groups
 
@@ -232,7 +232,7 @@ The custom-4-16384 machine type is no longer supported with new Cloud Volumes ON
 
 If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_991.html[View supported configurations for Cloud Volumes ONTAP in GCP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[View supported configurations for Cloud Volumes ONTAP in GCP^].
 
 == 30 May 2021 (Connector 3.9.7)
 
@@ -242,7 +242,7 @@ A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud B
 
 If you choose this payment option, you can provision up to 2 PiB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
 
-Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_991.html[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
+Go to the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^] to view pricing details and go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Cloud Volumes ONTAP Release Notes^] to learn more about this licensing option.
 
 === Tags on EBS volumes in AWS
 
@@ -277,7 +277,7 @@ Note that a Connector requires a new permission to delete Azure snapshots. https
 
 Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.1.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_991.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-991-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 11 Apr 2021 (Connector 3.9.5)
 
@@ -307,7 +307,7 @@ When Cloud Manager creates storage accounts in Azure for Cloud Volumes ONTAP, th
 
 Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.9.0.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_991.html[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-990-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 === Support for the AWS C2S environment
 
