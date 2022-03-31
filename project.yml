@@ -5,22 +5,6 @@ settings:
     pdf_enabled: true
   prod:
     pdf_enabled: true
-  versions:
-    - name: Connector
-      url: /cloud-manager-cloud-volumes-ontap
-      version-number: "3.9"
-    - name: Connector
-      url: /occm38
-      version-number: "3.8"
-    - name: Connector
-      url: /occm37
-      version-number: "3.7"
-    - name: Connector
-      url: /occm36
-      version-number: "3.7"
-    - name: Connector
-      url: /occm35
-      version-number: "3.5"
 sidebar:
   entries:
     - title: All Cloud Manager documentation
