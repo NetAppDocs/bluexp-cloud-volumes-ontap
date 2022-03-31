@@ -1,0 +1,90 @@
+---
+sidebar: sidebar
+permalink: task-manage-capacity-licenses.html
+keywords: license, licensing, capacity license, capacity based license, add license, install license, digital wallet
+summary: Manage your capacity-based licenses from the Digital Wallet to ensure that your NetApp account has enough capacity for your Cloud Volumes ONTAP systems.
+---
+
+= Manage capacity-based licenses
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Manage your capacity-based licenses from the Digital Wallet to ensure that your NetApp account has enough capacity for your Cloud Volumes ONTAP systems.
+
+_Capacity-based licenses_ enable you to pay for Cloud Volumes ONTAP per TiB of capacity.
+
+The _Digital Wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
+
+link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
+
+== View your account's capacity
+
+View the licensed capacity and provisioned capacity by package to ensure that you have enough room for your data volumes.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. With *Capacity Based Licenses* selected, view the licensed capacity and provisioned capacity for each package.
++
+image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of provisioned capacity versus licensed capacity for the professional package and essentials package.]
+
+. If needed, purchase additional licensed capacity and then add the license to your account.
+
+== Add purchased licenses to your account
+
+After you purchase licenses for your NetApp account, you need to add the licenses to Cloud Manager so that the capacity is available for Cloud Volumes ONTAP.
+
+.What you'll need
+
+* You need to provide Cloud Manager the serial number of the license or the license file.
+
+* If you want to enter the serial number, you first need to https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[add your NetApp Support Site account to Cloud Manager^]. This is the NetApp Support Site account that's authorized to access the serial number.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Click *Add License*.
+
+. Enter the serial number for your capacity-based license or upload the license file.
++
+If you entered a serial number, you also need to select the NetApp Support Site account that's authorized to access the serial number.
+
+. Click *Add License*.
+
+== Update a capacity-based license
+
+If you purchased additional capacity or extended the term of your license, Cloud Manager automatically updates the license in the Digital Wallet. There's nothing that you need to do.
+
+However, if you deployed Cloud Manager in a location that doesn't have internet access, then you'll need to manually update the license in Cloud Manager.
+
+.What you'll need
+
+The license file (or _files_ if you have an HA pair).
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Click the action menu next to the license and select *Update License*.
+
+. Upload the license file.
+
+. Click *Upload License*.
+
+== Remove a capacity-based license
+
+If a capacity-based license expired and is no longer in use, then you can remove it at any time.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+
+. Click the action menu next to the license and select *Remove License*.
+
+. Click *Remove* to confirm.

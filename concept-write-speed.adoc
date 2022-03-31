@@ -1,0 +1,101 @@
+---
+sidebar: sidebar
+permalink: concept-write-speed.html
+keywords: write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode
+summary: Cloud Manager enables you to choose normal or high write speed for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
+---
+
+= Write speed
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager enables you to choose normal or high write speed for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
+
+High write speed is supported with all types of single node systems. It's also supported with HA pairs in AWS and Azure when using a specific instance or VM type (refer to the sections below for the list of supported instances and VM types). High write speed is not supported with HA pairs in GCP.
+
+== Normal write speed
+
+When you choose normal write speed, data is written directly to disk. When data is written directly to disk, reduces the likelihood of data loss in the event of an unplanned system outage, or a cascading failure involving an unplanned system outage (HA pairs only).
+
+Normal write speed is the default option.
+
+== High write speed
+
+When you choose high write speed, data is buffered in memory before it is written to disk, which provides faster write performance. Due to this caching, there is the potential for data loss if an unplanned system outage occurs.
+
+The amount of data that can be lost in the event of an unplanned system outage is the span of the last two consistency points. A consistency point is the act of writing buffered data to disk. A consistency point occurs when the write log is full or after 10 seconds (whichever comes first). However, the performance of the storage provided by your cloud provider can affect consistency point processing time.
+
+=== When to use high write speed
+
+High write speed is a good choice if fast write performance is required for your workload and you can withstand the risk of data loss in the event of an unplanned system outage, or a cascading failure involving an unplanned system outage (HA pairs only).
+
+=== Recommendations when using high write speed
+
+If you enable high write speed, you should ensure write protection at the application layer, or that the applications can tolerate data loss, if it occurs.
+
+=== High write speed with an HA pair in AWS
+
+If you plan to enable high write speed on an HA pair in AWS, you should understand the difference in protection levels between a multiple Availability Zone (AZ) deployment and a single AZ deployment. Deploying an HA pair across multiple AZs provides more resiliency and can help to mitigate the chance of data loss.
+
+link:concept-ha.html[Learn more about HA pairs in AWS].
+
+=== Configurations that support high write speed
+
+Not all Cloud Volumes ONTAP configurations support high write speed. Those configurations use normal write speed by default.
+
+==== AWS
+
+If you use a single node system, Cloud Volumes ONTAP supports high write speed with all instance types.
+
+Starting with the 9.8 release, Cloud Volumes ONTAP supports high write speed with HA pairs when using almost all supported EC2 instance types, except for m5.xlarge and r5.xlarge.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9101.html[Learn more about the Amazon EC2 instances that Cloud Volumes ONTAP supports^].
+
+==== Azure
+
+If you use a single node system, Cloud Volumes ONTAP supports high write speed with all VM types.
+
+If you use an HA pair, Cloud Volumes ONTAP supports high write speed with several VM types, starting with the 9.8 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_9101.html[Cloud Volumes ONTAP Release Notes^] to view the VM types that support high write speed.
+
+==== Google Cloud
+
+If you use a single node system, Cloud Volumes ONTAP supports high write speed with all machine types.
+
+Cloud Volumes ONTAP doesn’t support high write speed with HA pairs in Google Cloud.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_9101.html[Learn more about the Google Cloud machine types that Cloud Volumes ONTAP supports^].
+
+== How to select a write speed
+
+You can choose a write speed when you create a new working environment and you can link:task-modify-write-speed.html[change the write speed for an existing system].
+
+== What to expect if data loss occurs
+
+If you choose high write speed and data loss occurs, the system should be able to boot up and continue to serve data without user intervention. Two EMS messages will be reported when a node runs into data loss. One is wafl.root.content.changed with the ERROR severity level event, the other is nv.check.failed with the DEBUG severity level event. Both messages must be present as an indication of data loss.
+
+== How to stop data access if data loss occurs
+
+If you are concerned about data loss, want the applications to stop running upon data loss, and the data access to be resumed after the data loss issue is properly addressed, you can use the NVFAIL option from the CLI to achieve that goal.
+
+To enable the NVFAIL option::
+`vol modify -volume <vol-name> -nvfail on`
+
+To check NVFAIL settings::
+`vol show -volume <vol-name> -fields nvfail`
+
+To disable the NVFAIL option::
+`vol modify -volume <vol-name> -nvfail off`
+
+When data loss occurs, an NFS or iSCSI volume with NVFAIL enabled should stop serving data (there's no impact to CIFS which is a stateless protocol). For more details, refer to https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-mgmt-dr/GUID-40D04B8A-01F7-4E87-8161-E30BD80F5B7F.html[How NVFAIL impacts access to NFS volumes or LUNs^].
+
+To check the NVFAIL state::
+`vol show -fields in-nvfailed-state`
+
+After the data loss issue is properly addressed, you can clear the NVFAIL state and the volume will be available for data access.
+
+To clear the NVFAIL state::
+`vol modify -volume <vol-name> -in-nvfailed-state false`

@@ -1,0 +1,258 @@
+---
+sidebar: sidebar
+permalink: task-tiering.html
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, S3 tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, azure tiering, blob tiering, azure blob, container, inactive, gcp, tiering in gcp, tiering requirements
+summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
+---
+
+= Tiering inactive data to low-cost object storage
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology. For a high-level overview, see link:concept-data-tiering.html[Data tiering overview].
+
+To set up data tiering, you need to do the following:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Choose a supported configuration
+
+[role="quick-margin-para"]
+Most configurations are supported. If you have a Cloud Volumes ONTAP system running the most recent version, then you should be good to go. link:task-tiering.html#configurations-that-support-data-tiering[Learn more].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Ensure connectivity between Cloud Volumes ONTAP and object storage
+
+[role="quick-margin-list"]
+* For AWS, you'll need a VPC Endpoint to S3. <<Requirements to tier cold data to AWS S3,Learn more>>.
+* For Azure, you won't need to do anything as long as Cloud Manager has the required permissions. <<Requirements to tier cold data to Azure Blob storage,Learn more>>.
+* For GCP, you need to configure the subnet for Private Google Access and set up a service account. <<Requirements to tier cold data to a Google Cloud Storage bucket,Learn more>>.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Ensure that you have an aggregate with tiering enabled
+
+[role="quick-margin-para"]
+Data tiering must be enabled on an aggregate in order to enable data tiering on a volume. You should be aware of the requirements for new volumes and for existing volumes. <<Ensuring that tiering is enabled on aggregates,Learn more>>.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Choose a tiering policy when creating, modifying, or replicating a volume
+
+[role="quick-margin-para"]
+Cloud Manager prompts you to choose a tiering policy when you create, modify, or replicate a volume.
+
+[role="quick-margin-list"]
+* link:task-tiering.html#tiering-data-from-read-write-volumes[Tiering data on read-write volumes]
+* link:task-tiering.html#tiering-data-from-data-protection-volumes[Tiering data on data protection volumes]
+
+[NOTE]
+.What's not required for data tiering?
+====
+* You don't need to install a feature license to enable data tiering.
+* You don't need to create the capacity tier (an S3 bucket, Azure Blob container, or GCP bucket). Cloud Manager does that for you.
+* You don't need to enable data tiering at the system level.
++
+Cloud Manager creates an object store for cold data when the system is created, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
+====
+
+== Configurations that support data tiering
+
+You can enable data tiering when using specific configurations and features:
+
+* Data tiering is supported with Cloud Volumes ONTAP starting with the following versions:
+** Version 9.2 in AWS
+** Version 9.4 in Azure with single node systems
+** Version 9.6 in Azure with HA pairs
+** Version 9.6 in GCP
+
+* In AWS, the performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
++
+NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
+
+* In Azure, the performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
+
+* In GCP, the performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
+
+* Data tiering is supported with encryption technologies.
+
+* Thin provisioning must be enabled on volumes.
+
+== Requirements
+
+Depending on your cloud provider, certain connections and permissions must be set up so that Cloud Volumes ONTAP can tier cold data to object storage.
+
+=== Requirements to tier cold data to AWS S3
+
+Ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
+
+When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
+
+If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^].
+
+=== Requirements to tier cold data to Azure Blob storage
+
+You don't need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has these permissions:
+
+[source,json]
+"Microsoft.Network/virtualNetworks/subnets/write",
+"Microsoft.Network/routeTables/join/action",
+
+The permissions are included in the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy].
+
+=== Requirements to tier cold data to a Google Cloud Storage bucket
+
+* The subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
+
+* You need a service account that meets the following requirements:
+** It must have the predefined Storage Admin role.
+** The Connector service account must be a _Service Account User_ of this tiering service account.
++
+link:task-creating-gcp-service-account.html[Learn how to set up a service account].
+** To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.
++
+link:task-setting-up-gcp-encryption.html[Learn how to use customer-managed encryption keys with Cloud Volumes ONTAP].
+
+=== Enabling data tiering after implementing the requirements
+
+Cloud Manager creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering, which creates the object store.
+
+.Steps
+
+. <<Requirements,Ensure that you've met all requirements>>.
+
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance.
+
+. Click the menu icon and select *Enable capacity tiering*.
++
+image:screenshot_enable_capacity_tiering.gif[A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when Cloud Manager tried to enable data tiering.]
++
+NOTE: You'll only see this option if data tiering couldn't be enabled when Cloud Manager created the system.
+
+. Click *Enable* so Cloud Manager can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
+
+== Ensuring that tiering is enabled on aggregates
+
+Data tiering must be enabled on an aggregate in order to enable data tiering on a volume. You should be aware of the requirements for new volumes and for existing volumes.
+
+* *New volumes*
++
+If you're enabling data tiering on a new volume, then you don't need to worry about enabling data tiering on an aggregate. Cloud Manager creates the volume on an existing aggregate that has tiering enabled, or it creates a new aggregate for the volume if a data tiering-enabled aggregate doesn't already exist.
+
+* *Existing volumes*
++
+If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to use System Manager to attach an existing aggregate to the object store.
+
+.Steps to confirm whether tiering is enabled on an aggregate
+
+. Open the working environment in Cloud Manager.
+
+. Click the menu icon, click *Advanced*, and then click *Advanced allocation*.
+
+. Verify whether tiering is enabled or disabled on the aggregate.
++
+image:screenshot_aggr_tiering.gif[A screenshot that shows information about an aggregate in Cloud Manager which includes the tiering status.]
+
+.Steps to enable tiering on an aggregate
+
+. In System Manager, click *Storage > Tiers*.
+
+. Click the action menu for the aggregate and select *Attach Cloud Tiers*.
+
+. Select the cloud tier to attach and click *Save*.
+
+.What's next?
+
+You can now enable data tiering on new and existing volumes, as explained in the next section.
+
+== Tiering data from read-write volumes
+
+Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effective object storage, freeing up the performance tier for hot data.
+
+.Steps
+
+. In the working environment, create a new volume or change the tier of an existing volume:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+
+| Task
+| Action
+
+| Create a new volume	| Click *Add New Volume*.
+
+| Modify an existing volume | Select the volume and click *Change Disk Type & Tiering Policy*.
+
+|===
+
+. Select a tiering policy.
++
+For a description of these policies, see link:concept-data-tiering.html[Data tiering overview].
++
+*Example*
++
+image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to object storage.]
++
+Cloud Manager creates a new aggregate for the volume if a data tiering-enabled aggregate does not already exist.
+
+== Tiering data from data protection volumes
+
+Cloud Volumes ONTAP can tier data from a data protection volume to a capacity tier. If you activate the destination volume, the data gradually moves to the performance tier as it is read.
+
+.Steps
+
+. On the Canvas page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
+
+. Follow the prompts until you reach the tiering page and enable data tiering to object storage.
++
+*Example*
++
+image:screenshot_replication_tiering.gif[Screenshot that shows the S3 tiering option when replicating a volume.]
++
+For help with replicating data, see https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicating data to and from the cloud^].
+
+== Changing the storage class for tiered data
+
+After you deploy Cloud Volumes ONTAP, you can reduce your storage costs by changing the storage class for inactive data that hasn't been accessed for 30 days. The access costs are higher if you do access the data, so you must take that into consideration before you change the storage class.
+
+The storage class for tiered data is system wide—​it's not per volume.
+
+For information about supported storage classes, see link:concept-data-tiering.html[Data tiering overview].
+
+.Steps
+
+. From the working environment, click the menu icon and then click *Storage Classes* or *Blob Storage Tiering*.
+
+. Choose a storage class and then click *Save*.
+
+== Changing the free space ratio for data tiering
+
+The free space ratio for data tiering defines how much free space is required on Cloud Volumes ONTAP SSDs/HDDs when tiering data to object storage. The default setting is 10% free space, but you can tweak the setting based on your requirements.
+
+For example, you might choose less than 10% free space to ensure that you are utilizing the purchased capacity. Cloud Manager can then purchase additional disks for you when additional capacity is required (up until you reach the disk limit for the aggregate).
+
+CAUTION: If there isn’t sufficient space, then Cloud Volumes ONTAP can't move the data and you might experience performance degradation. Any change should be done with caution. If you're unsure, reach out to NetApp support for guidance.
+
+The ratio is important for disaster recovery scenarios because as data is read from the object store, Cloud Volumes ONTAP moves the data to SSDs/HDDs to provide better performance. If there isn't sufficient space, then Cloud Volumes ONTAP can't move the data. Take this into consideration when changing the ratio so that you can meet your business requirements.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the *Settings* icon, and select *Connector Settings*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+
+. Under *Capacity*, click *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
+
+. Change the free space ratio based on your requirements and click *Save*.
+
+== Changing the cooling period for the auto tiering policy
+
+If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API only.
+
+The cooling period is the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to object storage.
+
+The default cooling period for the auto tiering policy is 31 days. You can change the cooling period as follows:
+
+* 9.8 or later: 2 days to 183 days
+* 9.7 or earlier: 2 days to 63 days
+
+.Step
+
+. Use the _minimumCoolingDays_ parameter with your API request when creating a volume or modifying an existing volume.

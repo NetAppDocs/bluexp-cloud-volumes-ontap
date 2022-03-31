@@ -1,0 +1,62 @@
+---
+sidebar: sidebar
+permalink: task-getting-started-aws.html
+keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, cloud volumes ontap, cloud ontap, create
+summary: Get started with Cloud Volumes ONTAP for AWS in a few steps.
+---
+
+= Quick start for Cloud Volumes ONTAP in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Get started with Cloud Volumes ONTAP in AWS in a few steps.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
+
+[role="quick-margin-para"]
+If you don't have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Learn how to create a Connector in AWS^].
+
+[role="quick-margin-para"]
+When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
+
+[role="quick-margin-para"]
+Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task-planning-your-config.html[Learn more].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
+
+[role="quick-margin-list"]
+.. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
+
+.. Enable outbound internet access from the target VPC so the Connector and Cloud Volumes ONTAP can contact several endpoints.
++
+This step is important because the Connector can't manage Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference-networking-aws.html[the Connector and Cloud Volumes ONTAP].
+
+.. Set up a VPC endpoint to the S3 service.
++
+A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage.
+
+[role="quick-margin-para"]
+link:reference-networking-aws.html[Learn more about networking requirements].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up the AWS KMS
+
+[role="quick-margin-para"]
+If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to ensure that an active Customer Master Key (CMK) exists. You also need to modify the key policy for each CMK by adding the IAM role that provides permissions to the Connector as a _key user_. link:task-setting-up-kms.html[Learn more].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Launch Cloud Volumes ONTAP using Cloud Manager
+
+[role="quick-margin-para"]
+Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task-deploying-otc-aws.html[Read step-by-step instructions].
+
+.Related links
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Creating a Connector from Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html[Launching a Connector from the AWS Marketplace^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector software on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[What Cloud Manager does with AWS permissions^]
