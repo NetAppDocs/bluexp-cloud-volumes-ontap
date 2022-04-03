@@ -232,6 +232,8 @@ homepage:
           url: concept-licensing.html
         - title: Manage capacity-based licenses
           url: task-manage-capacity-licenses.html
+        - title: Exchange unassigned node-based licenses
+          url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
         - title: Manage Keystone Flex Subscriptions
           url: task-manage-keystone.html
     - title: Storage management
