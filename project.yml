@@ -279,8 +279,8 @@ homepage:
     - title: Blogs & community
       links:
         - title: NetApp Community
-          url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+          url: https://community.netapp.com/t5/Cloud-Volumes-ONTAP/bd-p/CloudVolumes
         - title: Cloud Central blog
-          url: https://cloud.netapp.com/blog
+          url: https://cloud.netapp.com/blog/topic/cloud-volumes-ontap
         - title: Cloud webinars
           url: https://cloud.netapp.com/events
