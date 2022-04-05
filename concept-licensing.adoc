@@ -125,7 +125,9 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 * For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
 
-* There are no extra licensing costs for additional data serving storage VMs (SVMs), but there is a 4 TiB minimum capacity charge per SVM.
+* There are no extra licensing costs for additional data-serving storage VMs (SVMs), but there is a 4 TiB minimum capacity charge per data-serving SVM.
+
+* Disaster recovery SVMs are charged according to the provisioned capacity.
 
 * For HA pairs, you're only charged for the provisioned capacity on a node. You aren't charged for data that is synchronously mirrored to the partner node.
 

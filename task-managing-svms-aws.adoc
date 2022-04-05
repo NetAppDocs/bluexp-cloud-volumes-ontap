@@ -112,6 +112,13 @@ network interface create -auto-revert true -vserver svm_2 -service-policy defaul
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
 
+. Assign one or more aggregates to the storage VM.
++
+[source,cli]
+vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
++
+This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.
+
 == Create a storage VM on an HA pair in a single AZ
 
 These steps create a new storage VM on an HA pair in a single AZ. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
@@ -141,6 +148,13 @@ Where _private_ip_x_ is an unused secondary private IP on e0a of cvo-node1. This
 network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
+
+. Assign one or more aggregates to the storage VM.
++
+[source,cli]
+vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
++
+This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.
 
 == Create a storage VM on an HA pair in multiple AZs
 
@@ -190,3 +204,10 @@ network interface create -vserver svm_2 -service-policy default-data-blocks -hom
 * This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
 * `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
 * _private_ip_ is an unused secondary private IP address on eth0 (e0a) of cvo_node2.
+
+. Assign one or more aggregates to the storage VM.
++
+[source,cli]
+vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
++
+This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.
