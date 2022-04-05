@@ -23,7 +23,9 @@ After the retention period has elapsed, you are responsible for deleting any fil
 
 == Charging
 
-WORM storage is currently in an introductory special rate and will be free of charge until April 1st, 2022. After that time, you may choose to continue using this feature, at which point you will incur additional charges.
+Charging for WORM storage is hourly, according to the total provisioned capacity of volumes.
+
+https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^].
 
 == Activating WORM storage
 
