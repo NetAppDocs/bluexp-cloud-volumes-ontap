@@ -211,6 +211,8 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
 | NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+
+Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
@@ -370,6 +372,8 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
 | NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+
+Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.

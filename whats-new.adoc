@@ -15,18 +15,26 @@ summary: Learn what's new in <service>.
 [.lead]
 Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
-The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. A separate set of release notes describes what's new with the Cloud Volumes ONTAP software itself.
+The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[View the Cloud Volumes ONTAP Release Notes^] to learn what's new with the Cloud Volumes ONTAP software itself.
 
 //tag::whats-new[]
-== 27 Feb 2022 (Connector 3.9.16)
+== 3 April 2022
+
+=== Charging for WORM storage
+
+Now that the introductory special rate has expired, you will now be charged for using WORM storage. Charging is hourly, according to the total provisioned capacity of volumes. This applies to new and existing Cloud Volumes ONTAP systems.
+
+https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^].
+
+== 27 February 2022 (Connector 3.9.16)
 
 === Redesigned volume wizard
 
 The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the *Advanced allocation* option.
 
-link:task-create-volumes.html[Learn how to create volumes on a specific aggregate].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html[Learn how to create volumes on a specific aggregate].
 
-== 9 Feb 2022
+== 9 February 2022
 
 === Marketplace updates
 
@@ -42,9 +50,9 @@ If you're a new customer, Cloud Manager will prompt you to subscribe when you cr
 +
 This charging method is still available for existing customers who have an active subscription.
 
-link:concept-licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
 
-== 6 Feb 2022
+== 6 February 2022
 
 === Exchange unassigned licenses
 
@@ -52,10 +60,10 @@ If you have an unassigned node-based license for Cloud Volumes ONTAP that you ha
 
 This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
 
-link:task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
 //end::whats-new[]
 
-== 30 Jan 2022 (Connector 3.9.15)
+== 30 January 2022 (Connector 3.9.15)
 
 === Redesigned licensing selection
 
@@ -75,7 +83,7 @@ If you have questions, reach out to your account rep or sales team.
 
 link:concept-netapp-accounts.html[Learn more about NetApp accounts].
 
-== 2 Jan 2022 (Connector 3.9.14)
+== 2 January 2022 (Connector 3.9.14)
 
 === Support for additional VM types
 
@@ -114,7 +122,7 @@ We made a few enhancements to volume creation:
 
 image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
 
-== 28 Nov 2021 (Connector 3.9.13)
+== 28 November 2021 (Connector 3.9.13)
 
 === Cloud Volumes ONTAP 9.10.1
 
@@ -144,7 +152,7 @@ Ports 8023 and 49000 are no longer open on Cloud Volumes ONTAP systems in Azure 
 
 This change applies to _new_ Cloud Volumes ONTAP systems starting with the 3.9.13 release of the Connector.
 
-== 4 Oct 2021 (Connector 3.9.11)
+== 4 October 2021 (Connector 3.9.11)
 
 === Cloud Volumes ONTAP 9.10.0
 
@@ -156,7 +164,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9100-relnotes[Learn about the 
 
 We reduced the amount of time that it takes to deploy a Cloud Volumes ONTAP working environment in Microsoft Azure or in Google Cloud when normal write speed is enabled. The deployment time is now 3-4 minutes shorter on average.
 
-== 2 Sept 2021 (Connector 3.9.10)
+== 2 September 2021 (Connector 3.9.10)
 
 === Customer-managed encryption key in Azure
 
@@ -194,7 +202,7 @@ Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xla
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[View supported configurations for Cloud Volumes ONTAP in AWS^].
 
-===  existing Azure resource groups
+=== Select existing Azure resource groups
 
 When creating a Cloud Volumes ONTAP system in Azure, you now have the option to select an existing resource group for the VM and its associated resources.
 
