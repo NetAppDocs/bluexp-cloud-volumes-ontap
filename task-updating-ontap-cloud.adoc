@@ -164,7 +164,7 @@ image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view
 
 Cloud Manager notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For details, see <<Upgrade from Cloud Manager notifications>>.
 
-Another way to perform software upgrades by using an image on an external URL. This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <<Upgrade by using an HTTP or FTP server>>.
+Another way to perform software upgrades by using an image on an external URL. This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <<Upgrade from an image available at a URL>>.
 
 === Upgrade from Cloud Manager notifications
 

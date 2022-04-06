@@ -13,7 +13,7 @@ summary: Set up an AWS transit gateway to enable NAS client access to floating I
 :imagesdir: ./media/
 
 [.lead]
-Set up an AWS transit gateway to enable access to an HA pair's link:reference-networking-aws.html#aws-networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[floating IP addresses] from outside the VPC where the HA pair resides.
+Set up an AWS transit gateway to enable access to an HA pair's link:reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[floating IP addresses] from outside the VPC where the HA pair resides.
 
 When a Cloud Volumes ONTAP HA configuration is spread across multiple AWS Availability Zones, floating IP addresses are required for NAS data access from within the VPC. These floating IP addresses can migrate between nodes when failures occur, but they are not natively accessible from outside the VPC. Separate private IP addresses provide data access from outside the VPC, but they don't provide automatic failover.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes
-summary: Learn what's new in <service>.
+summary: Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 ---
 
 = What's new
@@ -15,7 +15,7 @@ summary: Learn what's new in <service>.
 [.lead]
 Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
-The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[View the Cloud Volumes ONTAP Release Notes^] to learn what's new with the Cloud Volumes ONTAP software itself.
+The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
 //tag::whats-new[]
 == 3 April 2022
@@ -81,7 +81,7 @@ A _system_ is either an HA pair or a single node system. For example, if you hav
 
 If you have questions, reach out to your account rep or sales team.
 
-link:concept-netapp-accounts.html[Learn more about NetApp accounts].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^]
 
 == 2 January 2022 (Connector 3.9.14)
 
@@ -200,7 +200,7 @@ Write once, read many (WORM) storage is no longer in Preview and is now availabl
 
 Starting with the 9.9.1 release, Cloud Volumes ONTAP now supports the m5dn.24xlarge instance type with the following charging methods: PAYGO Premium, bring your own license (BYOL), and Freemium.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[View supported configurations for Cloud Volumes ONTAP in AWS^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[View supported configurations for Cloud Volumes ONTAP in AWS^].
 
 === Select existing Azure resource groups
 
@@ -240,7 +240,7 @@ The custom-4-16384 machine type is no longer supported with new Cloud Volumes ON
 
 If you have an existing system running on this machine type, you can keep using it, but we recommend switching to the n2-standard-4 machine type.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[View supported configurations for Cloud Volumes ONTAP in GCP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[View supported configurations for Cloud Volumes ONTAP in GCP^].
 
 == 30 May 2021 (Connector 3.9.7)
 
