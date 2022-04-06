@@ -103,7 +103,7 @@ There are a few limitations to point out:
 
 When you launch Cloud Volumes ONTAP in AWS, you need to specify details about your VPC network. You can use a worksheet to collect the information from your administrator.
 
-==== Network information for Cloud Volumes ONTAP
+=== Network information for Cloud Volumes ONTAP
 
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -118,7 +118,7 @@ When you launch Cloud Volumes ONTAP in AWS, you need to specify details about yo
 
 |===
 
-==== Network information for an HA pair in multiple AZs
+=== Network information for an HA pair in multiple AZs
 
 [cols=2*,options="header",cols="30,70"]
 |===
