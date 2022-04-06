@@ -29,7 +29,7 @@ The number of licenses that you can purchase for a single node system or HA pair
 
 NOTE: Some on-premises ONTAP storage systems that you purchased may have included a free Cloud Volumes ONTAP license. You can use the license to create a new Cloud Volumes ONTAP system, or you can apply the license to an existing Cloud Volumes ONTAP system to expand the capacity. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-managing-ontap.html#viewing-unused-cloud-volumes-ontap-licenses[See if you have any available licenses to use^].
 
-Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by link:concept-data-tiering.html[tiering inactive data to object storage]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/[storage limits in the Cloud Volumes ONTAP Release Notes^].
+Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by link:concept-data-tiering.html[tiering inactive data to object storage]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 
 == License management for a new system
 

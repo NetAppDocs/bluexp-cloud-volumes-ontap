@@ -96,7 +96,7 @@ a|
 
 By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times it's size. This value is configurable in a Connector's settings.
 
-If you need to resize your volume, you can do it through https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html[ONTAP System Manager^]. Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
+If you need to resize your volume, you can do it through https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html[ONTAP System Manager^]. Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
 
 == Modify the CIFS server
 
