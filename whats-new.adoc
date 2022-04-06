@@ -51,6 +51,7 @@ If you're a new customer, Cloud Manager will prompt you to subscribe when you cr
 This charging method is still available for existing customers who have an active subscription.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
+//end::whats-new[]
 
 == 6 February 2022
 
@@ -61,7 +62,6 @@ If you have an unassigned node-based license for Cloud Volumes ONTAP that you ha
 This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Learn how to exchange unassigned node-based licenses].
-//end::whats-new[]
 
 == 30 January 2022 (Connector 3.9.15)
 
