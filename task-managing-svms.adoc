@@ -18,7 +18,7 @@ A storage VM is a virtual machine running within ONTAP that provides storage and
 
 == Supported number of storage VMs
 
-Multiple storage VMs are supported with Cloud Volumes ONTAP in AWS and in Azure with certain configurations. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
+Multiple storage VMs are supported with Cloud Volumes ONTAP in AWS and in Azure with certain configurations. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
 == Work with multiple storage VMs
 

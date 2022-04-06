@@ -15,7 +15,7 @@ summary: Specifying an NTP server synchronizes the time between the systems in y
 [.lead]
 Specifying an NTP server synchronizes the time between the systems in your network, which can help prevent issues due to time differences.
 
-Specify an NTP server using the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager API^] or from the user interface when you create a CIFS server.
+Specify an NTP server using the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager API^] or from the user interface when you link:task-create-volumes.html#create-a-volume[create a CIFS server].
 
 For example, here's the API for a single-node system in AWS:
 

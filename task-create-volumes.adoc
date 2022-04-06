@@ -191,7 +191,7 @@ NOTE: You can click the checkbox *Show read-only parameters* to show all the fie
 
 . In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* where the volume will be created.
 
-. Add values for all of the parameters that are not hard-coded from the template. See <<Create FlexVol volumes,creating volumes>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
+. Add values for all of the parameters that are not hard-coded from the template. See <<create a volume,Create a volume>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
 
 . If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Run Template*.
 +

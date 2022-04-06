@@ -41,7 +41,7 @@ Switch between high and low-performance storage pools on-demand without taking a
 +
 Ensure consistency of NetApp Snapshot copies using NetApp SnapCenter.
 +
-https://docs.netapp.com/us-en/snapcenter/index.html[Learn more about SnapCenter^]
+https://docs.netapp.com/us-en/snapcenter/concept/concept_snapcenter_overview.html[Learn more about SnapCenter^]
 
 * Data security
 +
@@ -55,6 +55,6 @@ https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.
 
 NOTE: Licenses for ONTAP features are included with Cloud Volumes ONTAP.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[View supported Cloud Volumes ONTAP configurations^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[View supported Cloud Volumes ONTAP configurations^]
 
 https://cloud.netapp.com/ontap-cloud[Learn more about Cloud Volumes ONTAP^]

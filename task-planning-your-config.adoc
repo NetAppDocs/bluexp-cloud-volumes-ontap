@@ -29,7 +29,7 @@ Several licensing options are available for Cloud Volumes ONTAP. Each option ena
 
 Cloud Volumes ONTAP supports several instance types, depending on the license type that you choose.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_9101.html[Supported configurations for Cloud Volumes ONTAP in AWS^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[Supported configurations for Cloud Volumes ONTAP in AWS^]
 
 == Choosing a configuration that supports Flash Cache
 
@@ -39,7 +39,7 @@ Some Cloud Volumes ONTAP configurations in AWS include local NVMe storage, which
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_9101.html[Storage limits for Cloud Volumes ONTAP in AWS^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html[Storage limits for Cloud Volumes ONTAP in AWS^]
 
 == Sizing your system in AWS
 
