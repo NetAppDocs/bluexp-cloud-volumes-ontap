@@ -96,3 +96,9 @@ The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persis
 == RAID type
 
 The RAID type for each Cloud Volumes ONTAP aggregate is RAID0 (striping). No other RAID types are supported. Cloud Volumes ONTAP relies on the cloud provider for disk availability and durability.
+
+=== Hot spares
+
+RAID0 doesn't support the use of hot spares for redundancy.
+
+Creating unused disks (hot spares) attached to a Cloud Volumes ONTAP instance is an unnecessary expense and may prevent provisioning additional space as needed. Therefore, it's not recommended.
