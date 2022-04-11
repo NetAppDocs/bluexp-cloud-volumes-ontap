@@ -23,7 +23,7 @@ After the retention period has elapsed, you are responsible for deleting any fil
 
 == Charging
 
-Charging for WORM storage is hourly, according to the total provisioned capacity of volumes.
+Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes.
 
 https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^].
 

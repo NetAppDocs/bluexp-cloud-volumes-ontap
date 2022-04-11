@@ -154,6 +154,7 @@ You need an IAM policy and IAM role for each of the following:
                 "iam:CreateRole",
                 "iam:DeleteRole",
                 "iam:PutRolePolicy",
+                "iam:ListInstanceProfiles",
                 "iam:CreateInstanceProfile",
                 "iam:DeleteRolePolicy",
                 "iam:AddRoleToInstanceProfile",
