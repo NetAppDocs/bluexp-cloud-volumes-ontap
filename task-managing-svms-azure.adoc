@@ -100,10 +100,6 @@ Copy the private IP addresses that you just created. You'll need to specify thos
 
 How you allocate IP addresses for an HA pair depends on the storage protocol that you're using.
 
-==== Required number of IP addresses
-
-// start tabbed area
-
 [role="tabbed-block"]
 ====
 
@@ -118,52 +114,8 @@ You'll need to create the following IP addresses:
 * An another optional IP address for a storage VM (SVM) management LIF
 +
 This management LIF provides a connection to management tools like SnapCenter.
---
 
-.NFS
---
-IP addresses that you use for NFS are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
-
-You'll need to create the following IP addresses:
-
-* One IP address for NAS data LIF access from node 1
-* One IP address for NAS data LIF access from node 2
-* An another optional IP address for a storage VM (SVM) management LIF
-+
-This management LIF provides a connection to management tools like SnapCenter.
---
-
-.SMB
---
-IP addresses that you use for SMB data are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
-
-You'll need to create the following IP addresses:
-
-* One IP address for NAS data LIF access from node 1
-* One IP address for NAS data LIF access from node 2
-* One IP address for an iSCSI LIF on node 1
-* One IP address for an iSCSI LIF on node 2
-+
-The iSCSI LIFs are required for DNS and SMB communication.
-* An another optional IP address for a storage VM (SVM) management LIF
-+
-This management LIF provides a connection to management tools like SnapCenter.
---
-
-====
-
-// end tabbed area
-
-==== Steps
-
-// start tabbed area
-
-[role="tabbed-block"]
-====
-
-.iSCSI
---
-.Stps
+.Steps
 
 . Log in to the Azure portal and open the *Virtual machine* service.
 
@@ -190,6 +142,18 @@ It's best to use a static IP address because a static IP ensures that the IP add
 
 .NFS
 --
+IP addresses that you use for NFS are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
+
+You'll need to create the following IP addresses:
+
+* One IP address for NAS data LIF access from node 1
+* One IP address for NAS data LIF access from node 2
+* An another optional IP address for a storage VM (SVM) management LIF
++
+This management LIF provides a connection to management tools like SnapCenter.
+
+.Steps
+
 . In the Azure portal, open the *Load balancers* service.
 
 . Click the name of the load balancer for the HA pair.
@@ -486,6 +450,8 @@ This step is required because the new storage VM needs access to at least one ag
 --
 Follow these steps to create a new storage VM, along with the required LIFs.
 
+.Steps
+
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
@@ -524,6 +490,8 @@ This step is required because the new storage VM needs access to at least one ag
 .SMB
 --
 Follow these steps to create a new storage VM, along with the required LIFs.
+
+.Steps
 
 . Create the storage VM and a route to the storage VM.
 +
