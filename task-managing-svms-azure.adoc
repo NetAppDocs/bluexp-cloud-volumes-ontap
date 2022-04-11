@@ -20,34 +20,49 @@ To create additional data-serving storage VMs, you need to allocate IP addresses
 
 == Supported number of storage VMs
 
-Multiple storage VMs are supported with Cloud Volumes ONTAP BYOL in Azure with an add-on license starting with the 9.9.0 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
-
-All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
+Multiple storage VMs are supported with Cloud Volumes ONTAP in Azure starting with the 9.9.0 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
 == Allocate IP addresses in Azure
 
 Follow the steps below for your configuration: either a single node system, an HA pair using iSCSI, or an HA pair using NFS/SMB.
 
-=== Single node
+=== Single node system
 
-IP addresses must be assigned to nic0 in Azure before you create a storage VM and allocate LIFs.
+IP addresses must be assigned to nic0 in Azure before you create a storage VM and allocate LIFs. The number of IP addresses that you need depends on the storage protocol.
 
-You'll need to create IP addresses as follows:
+// start tabbed area
 
-iSCSI or NFS::
-+
+[role="tabbed-block"]
+====
+
+.iSCSI
+--
 * One IP address for data LIF access
 * An optional IP address for a storage VM (SVM) management LIF
 +
 This management LIF provides a connection to management tools like SnapCenter.
+--
 
-SMB::
+.NFS
+--
+* One IP address for data LIF access
+* An optional IP address for a storage VM (SVM) management LIF
 +
+This management LIF provides a connection to management tools like SnapCenter.
+--
+
+.SMB
+--
 * One IP address for data LIF access
 * One IP address for DNS and SMB communication
 * An optional IP address for a storage VM (SVM) management LIF
 +
 This management LIF provides a connection to management tools like SnapCenter.
+--
+
+====
+
+// end tabbed area
 
 .Steps
 
@@ -241,13 +256,11 @@ Copy the private IP addresses that you just created. You'll need to specify thos
 
 == Create a storage VM and LIFs
 
-These steps create a new storage VM on a single node system or on an HA pair. One IP address is required for data LIF access from node 1, another IP address for data LIF access from node 2 (HA pairs only), and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
-
-Use the commands below that match the data access protocol for the storage VM, which is either NAS or iSCSI.
+After you allocate IP addresses in Azure, you can create a new storage VM on a single node system or on an HA pair.
 
 === Single node
 
-Some text.
+How you create a storage VM and LIFs depends on the storage protocol that you're using.
 
 // start tabbed area
 
@@ -256,6 +269,8 @@ Some text.
 
 .iSCSI
 --
+One IP address is required for data LIF access and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
+
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
@@ -284,6 +299,8 @@ This step is required because the new storage VM needs access to at least one ag
 
 .NFS
 --
+One IP address is required for data LIF access and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
+
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
@@ -314,6 +331,8 @@ This step is required because the new storage VM needs access to at least one ag
 
 .SMB
 --
+One IP address is required for data LIF access, another is required for  and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
+
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
@@ -353,7 +372,7 @@ This step is required because the new storage VM needs access to at least one ag
 
 === HA pair
 
-Some text.
+How you create a storage VM and LIFs depends on the storage protocol that you're using.
 
 // start tabbed area
 
@@ -362,6 +381,10 @@ Some text.
 
 .iSCSI
 --
+Follow these steps to create a new storage VM, along with the required LIFs.
+
+One iSCSI data LIF is required on each node. A storage VM (SVM) management LIF is optional. This management LIF provides a connection to management tools like SnapCenter.
+
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
@@ -397,6 +420,10 @@ This step is required because the new storage VM needs access to at least one ag
 
 .NFS
 --
+Follow these steps to create a new storage VM, along with the required LIFs.
+
+One NAS data LIF is required on each node. A storage VM (SVM) management LIF is optional. This management LIF provides a connection to management tools like SnapCenter.
+
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
@@ -411,8 +438,6 @@ network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-
 +
 [source,cli]
 network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nfs--ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe1>
-+
-If this is a single node system, then you should change the value of the -failover-policy parameter to _disabled_.
 
 .. Use the following command to create a NAS LIF on node 2.
 +
@@ -434,6 +459,16 @@ This step is required because the new storage VM needs access to at least one ag
 
 .SMB
 --
+Follow these steps to create a new storage VM, along with the required LIFs.
+
+* One NAS data LIF is required on each node.
+* One iSCSI LIF is required on each node.
++
+The iSCSI LIF is required for DNS and SMB communication.
+* A storage VM (SVM) management LIF is optional.
++
+This management LIF provides a connection to management tools like SnapCenter.
+
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
