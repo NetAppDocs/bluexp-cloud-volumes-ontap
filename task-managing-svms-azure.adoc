@@ -284,7 +284,7 @@ Copy the private IP addresses that you just created. You'll need to specify thos
 
 After you allocate IP addresses in Azure, you can create a new storage VM on a single node system or on an HA pair.
 
-=== Single node
+=== Single node system
 
 How you create a storage VM and LIFs on a single node system depends on the storage protocol that you're using.
 
