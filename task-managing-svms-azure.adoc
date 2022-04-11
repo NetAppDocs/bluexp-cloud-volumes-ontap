@@ -56,7 +56,9 @@ This management LIF provides a connection to management tools like SnapCenter.
 .SMB
 --
 * One IP address for NAS data LIF access
-* One IP address for DNS and SMB communication
+* One IP address for DNS and SMB communication through an iSCSI LIF
++
+An iSCSI LIF is used for this purpose because it doesn't migrate on failover.
 * An optional IP address for a storage VM (SVM) management LIF
 +
 This management LIF provides a connection to management tools like SnapCenter.
@@ -98,6 +100,8 @@ Copy the private IP addresses that you just created. You'll need to specify thos
 
 How you allocate IP addresses for an HA pair depends on the storage protocol that you're using.
 
+==== Required number of IP addresses
+
 // start tabbed area
 
 [role="tabbed-block"]
@@ -107,8 +111,58 @@ How you allocate IP addresses for an HA pair depends on the storage protocol tha
 --
 iSCSI IP addresses must be assigned to nic0 in Azure before you create a storage VM and allocate LIFs. IPs for iSCSI are assigned to nic0 and not the load balancer because iSCSI uses ALUA for failover.
 
-You’ll need to create an IP address for data LIF access from node 1, another IP address for data LIF access from node 2, and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
+You'll need to create the following IP addresses:
 
+* One IP address for iSCSI data LIF access from node 1
+* One IP address for iSCSI data LIF access from node 2
+* An another optional IP address for a storage VM (SVM) management LIF
++
+This management LIF provides a connection to management tools like SnapCenter.
+--
+
+.NFS
+--
+IP addresses that you use for NFS are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
+
+You'll need to create the following IP addresses:
+
+* One IP address for NAS data LIF access from node 1
+* One IP address for NAS data LIF access from node 2
+* An another optional IP address for a storage VM (SVM) management LIF
++
+This management LIF provides a connection to management tools like SnapCenter.
+--
+
+.SMB
+--
+IP addresses that you use for SMB data are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
+
+You'll need to create the following IP addresses:
+
+* One IP address for NAS data LIF access from node 1
+* One IP address for NAS data LIF access from node 2
+* One IP address for an iSCSI LIF on node 1
+* One IP address for an iSCSI LIF on node 2
++
+The iSCSI LIFs are required for DNS and SMB communication.
+* An another optional IP address for a storage VM (SVM) management LIF
++
+This management LIF provides a connection to management tools like SnapCenter.
+--
+
+====
+
+// end tabbed area
+
+==== Steps
+
+// start tabbed area
+
+[role="tabbed-block"]
+====
+
+.iSCSI
+--
 .Steps
 
 . Log in to the Azure portal and open the *Virtual machine* service.
@@ -136,16 +190,6 @@ It's best to use a static IP address because a static IP ensures that the IP add
 
 .NFS
 --
-IP addresses that you use for NFS are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
-
-You'll need to create IP addresses as follows:
-
-* One IP address for NAS data LIF access from node 1
-* One IP address for NAS data LIF access from node 2
-* An another optional IP address for a storage VM (SVM) management LIF
-+
-This management LIF provides a connection to management tools like SnapCenter.
-
 . In the Azure portal, open the *Load balancers* service.
 
 . Click the name of the load balancer for the HA pair.
@@ -198,20 +242,6 @@ image:screenshot_azure_lb_rule.gif[A screenshot of adding a load balancing rule 
 
 .SMB
 --
-IP addresses that you use for SMB data are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
-
-You'll need to create IP addresses as follows:
-
-* One IP address for NAS data LIF access from node 1
-* One IP address for NAS data LIF access from node 2
-* One IP address for an iSCSI LIF on node 1
-* One IP address for an iSCSI LIF on node 2
-+
-The iSCSI LIFs are required for DNS and SMB communication.
-* An another optional IP address for a storage VM (SVM) management LIF
-+
-This management LIF provides a connection to management tools like SnapCenter.
-
 . In the Azure portal, open the *Load balancers* service.
 
 . Click the name of the load balancer for the HA pair.
