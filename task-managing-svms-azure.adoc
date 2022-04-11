@@ -81,18 +81,6 @@ Copy the private IP addresses that you just created. You'll need to specify thos
 
 How you allocate IP addresses for an HA pair depends on the storage protocol that you're using.
 
-iSCSI::
-
-iSCSI IP addresses must be assigned to nic0 in Azure before you create a storage VM and allocate LIFs. IPs for iSCSI are assigned to nic0 and not the load balancer because iSCSI uses ALUA for failover.
-+
-You'll need to create an IP address for data LIF access from node 1, another IP address for data LIF access from node 2, and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
-
-NFS or SMB::
-
-IP addresses that you use for NFS and SMB data are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
-
-.Steps
-
 // start tabbed area
 
 [role="tabbed-block"]
@@ -100,6 +88,10 @@ IP addresses that you use for NFS and SMB data are allocated in the load balance
 
 .iSCSI
 --
+iSCSI IP addresses must be assigned to nic0 in Azure before you create a storage VM and allocate LIFs. IPs for iSCSI are assigned to nic0 and not the load balancer because iSCSI uses ALUA for failover.
+
+You'll need to create an IP address for data LIF access from node 1, another IP address for data LIF access from node 2, and another optional IP address for a storage VM (SVM) management LIF. This management LIF provides a connection to management tools like SnapCenter.
+
 . Log in to the Azure portal and open the *Virtual machine* service.
 
 . Click the name of the Cloud Volumes ONTAP VM for node 1.
@@ -125,11 +117,13 @@ It's best to use a static IP address because a static IP ensures that the IP add
 
 .NFS
 --
+IP addresses that you use for NFS are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
+
 . In the Azure portal, open the *Load balancers* service.
 
 . Click the name of the load balancer for the HA pair.
 
-. Create one frontend IP configuration for data LIF access from node 1, another for data LIF access from node 2 (HA pairs only), and another optional frontend IP for a storage VM (SVM) management LIF.
+. Create one frontend IP configuration for data LIF access from node 1, another for data LIF access from node 2, and another optional frontend IP for a storage VM (SVM) management LIF.
 
 .. Under *Settings*, click *Frontend IP configuration*.
 
@@ -177,6 +171,8 @@ image:screenshot_azure_lb_rule.gif[A screenshot of adding a load balancing rule 
 
 .SMB
 --
+IP addresses that you use for SMB data are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
+
 . In the Azure portal, open the *Load balancers* service.
 
 . Click the name of the load balancer for the HA pair.
