@@ -163,7 +163,7 @@ This management LIF provides a connection to management tools like SnapCenter.
 
 .iSCSI
 --
-.Steps
+.Stps
 
 . Log in to the Azure portal and open the *Virtual machine* service.
 
@@ -242,19 +242,27 @@ image:screenshot_azure_lb_rule.gif[A screenshot of adding a load balancing rule 
 
 .SMB
 --
+IP addresses that you use for SMB data are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.
+
+You'll need to create the following IP addresses:
+
+* One IP address for NAS data LIF access from node 1
+* One IP address for NAS data LIF access from node 2
+* One IP address for an iSCSI LIF on node 1
+* One IP address for an iSCSI LIF on node 2
++
+The iSCSI LIFs are required for DNS and SMB communication.
+* An another optional IP address for a storage VM (SVM) management LIF
++
+This management LIF provides a connection to management tools like SnapCenter.
+
+.Steps
+
 . In the Azure portal, open the *Load balancers* service.
 
 . Click the name of the load balancer for the HA pair.
 
-. Create the following frontend IP configurations:
-+
-* Node 1
-** One frontend IP for data LIF access
-** One frontend IP for DNS and SMB communication
-** An optional frontend IP for a storage VM (SVM) management LIF
-* Node 2
-** One frontend IP for data LIF access
-** One frontend IP for DNS and SMB communication
+. Create the required number of frontend IP configurations:
 
 .. Under *Settings*, click *Frontend IP configuration*.
 
