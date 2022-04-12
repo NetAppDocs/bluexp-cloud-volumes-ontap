@@ -6,7 +6,7 @@ settings:
   prod:
     pdf_enabled: true
   filter:
-    label: Cloud Provider
+    label: Filter by cloud provider
     default: All cloud providers
     options:
       - name: Amazon Web Services
