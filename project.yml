@@ -12,15 +12,12 @@ filter:
     - name: Amazon Web Services
        alias: AWS
        id: aws
-       icon: ./media/aws.svg
     - name: Google Cloud
        alias: GCP
        id: gcp
-       icon: ./media/gcp.svg
     - name: Microsoft Azure
        alias: Azure
        id: azure
-       icon: ./media/azure.svg
 sidebar:
   entries:
     - title: All Cloud Manager documentation
