@@ -5,19 +5,19 @@ settings:
     pdf_enabled: true
   prod:
     pdf_enabled: true
-filter:
-  label: Cloud Provider
-  default: All cloud providers
-  options:
-    - name: Amazon Web Services
-      alias: AWS
-      id: aws
-    - name: Google Cloud
-      alias: GCP
-      id: gcp
-    - name: Microsoft Azure
-      alias: Azure
-      id: azure
+  filter:
+    label: Cloud Provider
+    default: All cloud providers
+    options:
+      - name: Amazon Web Services
+        alias: AWS
+        id: aws
+      - name: Google Cloud
+        alias: GCP
+        id: gcp
+      - name: Microsoft Azure
+        alias: Azure
+        id: azure
 sidebar:
   entries:
     - title: All Cloud Manager documentation
