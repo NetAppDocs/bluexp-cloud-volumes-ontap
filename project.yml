@@ -5,6 +5,15 @@ settings:
     pdf_enabled: true
   prod:
     pdf_enabled: true
+  flavors:
+    - name: All cloud providers
+      id: all
+    - name: Amazon Web Services
+      id: aws
+    - name: Microsoft Azure
+      id: azure
+    - name: Google Cloud
+      id: gcp
 sidebar:
   entries:
     - title: All Cloud Manager documentation
@@ -24,6 +33,7 @@ sidebar:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
         - title: Get started in Amazon Web Services
+          flavor: aws
           entries:
             - title: Quick start
               url: /task-getting-started-aws.html
@@ -44,6 +54,7 @@ sidebar:
             - title: Get started in AWS C2S
               url: /task-getting-started-aws-c2s.html
         - title: Get started in Microsoft Azure
+          flavor: azure
           entries:
             - title: Quick start
               url: /task-getting-started-azure.html
@@ -56,6 +67,7 @@ sidebar:
             - title: Launch a system in Azure
               url: /task-deploying-otc-azure.html
         - title: Get started in Google Cloud
+          flavor: gcp
           entries:
             - title: Quick start
               url: /task-getting-started-gcp.html
