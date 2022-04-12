@@ -86,6 +86,8 @@ Some of the fields on this page are self-explanatory. The following list describ
 +
 If you select CIFS and a server isn't set up, Cloud Manager prompts you to set up CIFS connectivity after you click *Next*.
 +
+link:concept-client-protocols.html[Learn about supported client protocols and versions].
++
 The following sections describe fields for which you might need guidance. The descriptions are organized by protocol.
 +
 [role="tabbed-block"]

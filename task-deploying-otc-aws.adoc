@@ -195,6 +195,8 @@ link:concept-worm.html[Learn more about WORM storage].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
+link:concept-client-protocols.html[Learn about supported client protocols and versions].
++
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
 include::_include/create_volume.adoc[]
@@ -396,6 +398,8 @@ WORM can't be enabled if Cloud Backup was enabled or if data tiering was enabled
 link:concept-worm.html[Learn more about WORM storage].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
++
+link:concept-client-protocols.html[Learn about supported client protocols and versions].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
