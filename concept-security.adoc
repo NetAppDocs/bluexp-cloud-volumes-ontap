@@ -39,6 +39,7 @@ New aggregates have NetApp Aggregate Encryption (NAE) enabled by default after y
 
 Setting up a supported key manager is the only required step. For set up instructions, refer to link:task-encrypting-volumes.html[Encrypting volumes with NetApp encryption solutions].
 
+ifdef::aws[]
 === AWS Key Management Service
 
 When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encryption using the http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS Key Management Service (KMS)^]. Cloud Manager requests data keys using a customer master key (CMK).
@@ -46,18 +47,23 @@ When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encrypt
 TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
 
 If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task-setting-up-kms.html[Setting up the AWS KMS].
+endif::aws[]
 
+ifdef::azure[]
 === Azure Storage Service Encryption
 
 Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key.
 
 You can use your own encryption keys if you prefer. link:task-set-up-azure-encryption.html[Learn how to set up Cloud Volumes ONTAP to use a customer-managed key in Azure].
+endif::azure[]
 
+ifdef::gcp[]
 === Google Cloud Platform default encryption
 
 https://cloud.google.com/security/encryption-at-rest/[Google Cloud Platform data-at-rest encryption^] is enabled by default for Cloud Volumes ONTAP. No setup is required.
 
 While Google Cloud Storage always encrypts your data before it's written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service. link:task-setting-up-gcp-encryption.html[Learn more].
+endif::gcp[]
 
 == ONTAP virus scanning
 
