@@ -170,6 +170,8 @@ sidebar:
       entries:
         - title: Storage
           entries:
+            - title: Client protocols
+              url: /concept-client-protocols.html
             - title: Disks and aggregates
               url: /concept-storage.html
             - title: Data tiering

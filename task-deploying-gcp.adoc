@@ -182,6 +182,8 @@ link:concept-data-tiering.html[Learn more about data tiering].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
+link:concept-client-protocols.html[Learn about supported client protocols and versions].
++
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
 include::_include/create_volume.adoc[]
@@ -342,6 +344,8 @@ Note the following:
 link:concept-data-tiering.html[Learn more about data tiering].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
++
+link:concept-client-protocols.html[Learn about supported client protocols and versions].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +

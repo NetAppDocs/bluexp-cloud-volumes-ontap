@@ -1,0 +1,38 @@
+---
+sidebar: sidebar
+permalink: concept-client-protocols.html
+keywords: client protocols, client version, smb version, nfs version, protocol versions, s3, smb, nfs, iscsi, cifs
+summary: Cloud Volumes ONTAP supports the iSCSI, NFS, SMB, and S3 client protocols.
+---
+
+= Client protocols
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Volumes ONTAP supports the iSCSI, NFS, SMB, and S3 client protocols.
+
+== iSCSI
+
+iSCSI is a block protocol that can run on standard Ethernet networks. Most client operating systems offer a software initiator that runs over a standard Ethernet port.
+
+== NFS
+
+NFS is the traditional file access protocol for UNIX and LINUX systems. Clients can access files in ONTAP volumes using the NFSv3, NFSv4, and NFSv4.1 protocols. You can control file access using UNIX-style permissions, NTFS-style permissions, or a mix of both.
+
+Clients can access the same files using both NFS and SMB protocols.
+
+== SMB
+
+SMB is the traditional file access protocol for Windows systems. Clients can access files in ONTAP volumes using the SMB 2.0, SMB 2.1, SMB 3.0, and SMB 3.1.1 protocols. Just like with NFS, a mix of permission styles are supported.
+
+== S3
+
+Cloud Volumes ONTAP supports S3 as an option for scale-out storage in Microsoft Azure. S3 protocol support enables you to configure S3 client access to objects contained in a bucket in an SVM.
+
+At this time, the S3 protocol is not supported with Cloud Volumes ONTAP in AWS or in Google Cloud.
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^].
