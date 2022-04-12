@@ -13,7 +13,7 @@ settings:
         alias: AWS
         id: aws
       - name: Google Cloud
-        alias: GCP
+        alias: Google Cloud
         id: gcp
       - name: Microsoft Azure
         alias: Azure
@@ -242,6 +242,7 @@ homepage:
           url: task-getting-started-aws.html
         - title: Quick start for Azure
           url: task-getting-started-azure.html
+          flavor: azure
         - title: Quick start for Google Cloud
           url: task-getting-started-gcp.html
     - title: Licensing
