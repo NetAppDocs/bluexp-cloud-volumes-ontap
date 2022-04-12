@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-client-protocols.html
 keywords: client protocols, client version, smb version, nfs version, protocol versions, s3, smb, nfs, iscsi, cifs
-summary: Cloud Volumes ONTAP supports the following client protocols: NFS, SMB, iSCSI, and S3.
+summary: Cloud Volumes ONTAP supports the NFS, SMB, iSCSI, and S3 client protocols.
 ---
 
 = Client protocols
@@ -13,7 +13,7 @@ summary: Cloud Volumes ONTAP supports the following client protocols: NFS, SMB, 
 :imagesdir: ./media/
 
 [.lead]
-Cloud Volumes ONTAP supports the following client protocols: NFS, SMB, iSCSI, and S3.
+Cloud Volumes ONTAP supports the NFS, SMB, iSCSI, and S3 client protocols.
 
 == iSCSI
 
