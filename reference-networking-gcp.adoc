@@ -362,16 +362,7 @@ NOTE: The source IP address is the Connector host.
 | Destination
 | Purpose
 
-.9+| Active Directory | TCP	| 88 | Active Directory forest | Kerberos V authentication
-| TCP	| 139 | Active Directory forest | NetBIOS service session
-| TCP	| 389 | Active Directory forest | LDAP
-| TCP	| 445 | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
-| TCP	| 464 | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
-| TCP	| 749 | Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
-| UDP	| 137 | Active Directory forest | NetBIOS name service
-| UDP	| 138 | Active Directory forest | NetBIOS datagram service
-| UDP	| 464 | Active Directory forest | Kerberos key administration
-| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to GCP and ONTAP, and sending AutoSupport messages to NetApp
+| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to GCP and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
 | DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
 
 |===
