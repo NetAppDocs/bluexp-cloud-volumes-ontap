@@ -125,7 +125,14 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | CIFS server NetBIOS name | 	A CIFS server name that is unique in the AD domain.
 
 | Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+ifdef::aws[]
 If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+endif::aws[]
+
+ifdef::azure[]
+If you configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
+https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+endif::azure[]
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
@@ -280,7 +287,7 @@ Moving a volume might take longer than you expect if any of the following condit
 * The volume is a clone.
 * The volume is a parent of a clone.
 *	The source or destination aggregate has a single Throughput Optimized HDD (st1) disk.
-*	The Cloud Volumes ONTAP system is in AWS and one aggregate uses an older naming scheme for objects. Both aggregates have to use the same name format.
+*	One of the aggregates uses an older naming scheme for objects. Both aggregates have to use the same name format.
 +
 An older naming scheme is used if data tiering was enabled on an aggregate in the 9.4 release or earlier.
 * The encryption settings don't match on the source and destination aggregates, or a rekey is in progress.

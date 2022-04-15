@@ -27,6 +27,7 @@ Several types of cloud disks are supported. You choose the disk type when you cr
 
 TIP: The total amount of storage purchased from a cloud provider is the _raw capacity_. The _usable capacity_ is less because approximately 12 to 14 percent is overhead that is reserved for Cloud Volumes ONTAP use. For example, if Cloud Manager creates a 500 GiB aggregate, the usable capacity is 442.94 GiB.
 
+ifdef::aws[]
 == AWS storage
 
 In AWS, Cloud Volumes ONTAP uses EBS storage for user data and local NVMe storage as Flash Cache on some EC2 instance types.
@@ -50,7 +51,9 @@ Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP us
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html[Review storage limits for Cloud Volumes ONTAP in AWS^]
 
 * http://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[Review supported configurations for Cloud Volumes ONTAP in AWS^]
+endif::aws[]
 
+ifdef::azure[]
 == Azure storage
 
 In Azure, an aggregate can contain up to 12 disks that are all the same size. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:
@@ -80,22 +83,25 @@ HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.
 * link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[Review storage limits for Cloud Volumes ONTAP in Azure^]
+endif::azure[]
 
-== GCP storage
+ifdef::gcp[]
+== Google Cloud storage
 
-In GCP, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.
+In Google Cloud, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.
 
 The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept-data-tiering.html[tier inactive data to low-cost object storage].
 
 *Related links*
 
-* https://cloud.google.com/compute/docs/disks/[Google Cloud Platform documentation: Storage Options^]
+* https://cloud.google.com/compute/docs/disks/[Google Cloud documentation: Storage Options^]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html[Review storage limits for Cloud Volumes ONTAP in GCP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html[Review storage limits for Cloud Volumes ONTAP in Google Cloud^]
+endif::gcp[]
 
 == RAID type
 
-The RAID type for each Cloud Volumes ONTAP aggregate is RAID0 (striping). Cloud Volumes ONTAP relies on the cloud provider for disk availability and durability. No other RAID types are supported. 
+The RAID type for each Cloud Volumes ONTAP aggregate is RAID0 (striping). Cloud Volumes ONTAP relies on the cloud provider for disk availability and durability. No other RAID types are supported.
 
 === Hot spares
 

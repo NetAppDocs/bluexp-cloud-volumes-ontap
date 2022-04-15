@@ -15,9 +15,7 @@ summary: Understanding how Cloud Volumes ONTAP is configured by default can help
 [.lead]
 Understanding how Cloud Volumes ONTAP is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for Cloud Volumes ONTAP is different than ONTAP.
 
-== Defaults
-
-* Cloud Volumes ONTAP is available as a single-node system and as an HA pair in AWS, Azure, and GCP.
+== Default setup
 
 * Cloud Manager creates one data-serving storage VM when it deploys Cloud Volumes ONTAP. Some configurations support additional storage VMs. link:task-managing-svms.html[Learn more about managing storage VMs].
 +
@@ -37,12 +35,12 @@ Starting with the Cloud Manager 3.9.5 release, logical space reporting is enable
 * Several network interfaces are created by default:
 ** A cluster management LIF
 ** An intercluster LIF
-** An SVM management LIF on HA systems in Azure and in GCP, on single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones
-** A node management LIF (in GCP, this LIF is combined with the intercluster LIF)
+** An SVM management LIF on HA systems in Azure and in Google Cloud, on single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones
+** A node management LIF (in Google Cloud, this LIF is combined with the intercluster LIF)
 ** An iSCSI data LIF
 ** A CIFS and NFS data LIF
 +
-NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to EC2 requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
+NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to cloud provider requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 
 * Cloud Volumes ONTAP sends configuration backups to the Connector using HTTPS.
 +
@@ -77,6 +75,7 @@ See the _volume create_ man page for information about these attributes.
 
 In addition to the storage for user data, Cloud Manager also purchases cloud storage for system data.
 
+ifdef::aws[]
 === AWS
 
 * Three disks per node for boot, root, and core data:
@@ -89,7 +88,9 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 * For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GiB
 
 TIP: In AWS, NVRAM is on the boot disk.
+endif::aws[]
 
+ifdef::azure[]
 === Azure (single node)
 
 * Three Premium SSD disks:
@@ -110,7 +111,9 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
+endif::aws[]
 
+ifdef::gcp[]
 === Google Cloud (single node)
 
 * One 10 GiB SSD persistent disk for boot data
@@ -127,6 +130,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * Two 315 GiB Standard persistent disk for saving cores
 * One 10 GiB Standard persistent disk for mediator data
 * Snapshots for boot and root data
+endif::gcp[]
 
 === Where the disks reside
 

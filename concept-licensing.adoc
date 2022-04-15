@@ -49,9 +49,15 @@ Any other systems that have less than 500 GiB of provisioned capacity stay on Fr
 
 To get started with the Freemium offering, create a new Cloud Volumes ONTAP working environment and select *Freemium* when prompted to choose a charging method.
 
+ifdef::aws[]
 * link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
+endif::aws[]
+ifdef::azure[]
 * link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
+endif::azure[]
+ifdef::gcp[]
 * link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+endif::gcp[]
 
 == Capacity-based licensing packages
 
@@ -141,9 +147,15 @@ There is no maximum capacity limitation when it comes to the license itself.
 . link:task-manage-capacity-licenses.html[Add your license to Cloud Manager]
 . Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system
 +
+ifdef::aws[]
 * link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
+endif::aws[]
+ifdef::azure[]
 * link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
+endif::azure[]
+ifdef::gcp[]
 * link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+endif::gcp[]
 
 == Keystone Flex Subscription
 
@@ -170,9 +182,15 @@ Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity thro
 . After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 . Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP system.
 +
+ifdef::aws[]
 * link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
+endif::aws[]
+ifdef::azure[]
 * link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
+endif::azure[]
+ifdef::gcp[]
 * link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+endif::gcp[]
 
 == Node-based licensing
 

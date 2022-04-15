@@ -30,7 +30,9 @@ A few notes about volume provisioning:
 
 * You can create additional LUNs from System Manager or the CLI.
 
+ifdef::aws[]
 * If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
+endif::aws[]
 
 == Create a volume
 
@@ -117,10 +119,14 @@ CIFS server NetBIOS name:: A CIFS server name that is unique in the AD domain.
 
 Organizational Unit::  The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
+ifdef::aws[]
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
+endif::aws[]
 
+ifdef::azure[]
 * To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
 https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+endif::azure[]
 
 DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
@@ -145,9 +151,15 @@ Host initiator (IQN):: iSCSI targets connect to the network through standard Eth
 
 .. *Disk Type*: Choose an underlying disk type for the volume based on your performance needs and cost requirements.
 +
+ifdef::aws[]
 * link:task-planning-your-config.html#sizing-your-system-in-aws[Sizing your system in AWS]
+ifdef::aws[]
+endif::azure[]
 * link:task-planning-your-config-azure.html#sizing-your-system-in-azure[Sizing your system in Azure]
-* link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP]
+endif::azure[]
+ifdef::gcp[]
+* link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in Google Cloud]
+endif::gcp[]
 
 .. *Usage Profile & Tiering Policy*: Choose whether to enable or disable storage efficiency features on the volume and then select a link:concept-data-tiering.html[volume tiering policy].
 +
@@ -235,7 +247,9 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 Cloud Manager creates the volume on the second node in the HA pair.
 
+ifdef::aws[]
 TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
+endif::aws[]
 
 == After you create a volume
 
