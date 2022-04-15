@@ -93,7 +93,7 @@ The following policy provides the permissions that Cloud Manager needs to use th
     ]
 }
 +
-For additional details about this process, see https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying.html#key-policy-modifying-external-accounts[AWS Documentation: Allowing External AWS Accounts to Access a CMK^].
+For additional details about this process, see https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html[AWS Documentation: Allowing users in other accounts to use a KMS key^].
 
 . If you are using a customer-managed CMK, modify the key policy for the CMK by adding the Cloud Volumes ONTAP IAM role as a _key user_.
 +
