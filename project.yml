@@ -122,8 +122,10 @@ sidebar:
             - title: Work with storage VMs in Cloud Manager
               url: /task-managing-svms.html
             - title: Create storage VMs in AWS
+              flavor: aws
               url: /task-managing-svms-aws.html
             - title: Create storage VMs in Azure
+              flavor: azure
               url: /task-managing-svms-azure.html
         - title: Security and data encryption
           entries:
@@ -154,6 +156,7 @@ sidebar:
                 - title: Delete a system
                   url: /task-deleting-working-env.html
             - title: Administration in AWS
+              flavor: aws
               entries:
                 - title: Change the EC2 instance type
                   url: /task-change-ec2-instance.html
@@ -162,6 +165,7 @@ sidebar:
                 - title: Monitor AWS costs
                   url: /task-monitoring-costs.html
             - title: Administration in Azure
+              flavor: azure
               entries:
                 - title: Change the Azure VM type
                   url: /task-change-azure-vm.html
@@ -170,6 +174,7 @@ sidebar:
                 - title: Use an Azure Private Link
                   url: /task-enabling-private-link.html
             - title: Administration in Google Cloud
+              flavor: gcp
               entries:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
@@ -202,10 +207,13 @@ sidebar:
         - title: High-availability pairs
           entries:
             - title: HA pairs in AWS
+              flavor: aws
               url: /concept-ha.html
             - title: HA pairs in Azure
+              flavor: azure
               url: /concept-ha-azure.html
             - title: HA pairs in GCP
+              flavor: gcp
               url: /concept-ha-google-cloud.html
             - title: Actions during storage takeover
               url: /concept-degraded-ha-pair.html
@@ -240,11 +248,13 @@ homepage:
           url: concept-overview-cvo.html
         - title: Quick start for AWS
           url: task-getting-started-aws.html
+          flavor: aws
         - title: Quick start for Azure
           url: task-getting-started-azure.html
           flavor: azure
         - title: Quick start for Google Cloud
           url: task-getting-started-gcp.html
+          flavor: gcp
     - title: Licensing
       links:
         - title: Licensing overview
