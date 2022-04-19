@@ -13,7 +13,7 @@ summary: Some Cloud Volumes ONTAP configurations in AWS and Azure include local 
 :imagesdir: ./media/
 
 [.lead]
-Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance.
+Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance.
 
 == What's Flash Cache?
 
@@ -21,7 +21,7 @@ Flash Cache speeds access to data through real-time intelligent caching of recen
 
 == Supported configurations
 
-Flash Cache is supported with specific Cloud Volumes ONTAP configurations in AWS and in Azure. View supported configurations in the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^]
+Flash Cache is supported with specific Cloud Volumes ONTAP configurations. View supported configurations in the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^]
 
 == Limitations
 

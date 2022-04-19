@@ -199,7 +199,6 @@ sidebar:
             - title: Write speed
               url: /concept-write-speed.html
             - title: Flash Cache
-              flavor: aws,azure
               url: /concept-flash-cache.html
             - title: WORM storage
               url: /concept-worm.html
