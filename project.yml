@@ -109,8 +109,6 @@ sidebar:
               url: /task-connect-lun.html
             - title: Accelerate data access with FlexCache
               url: /task-accelerate-data-access.html
-            - title: Use ONTAP as persistent storage
-              url: /task-connecting-kubernetes.html
         - title: Aggregate administration
           entries:
             - title: Create aggregates
@@ -201,6 +199,7 @@ sidebar:
             - title: Write speed
               url: /concept-write-speed.html
             - title: Flash Cache
+              flavor: aws,azure
               url: /concept-flash-cache.html
             - title: WORM storage
               url: /concept-worm.html

@@ -33,7 +33,11 @@ Cloud Volumes ONTAP supports https://www.netapp.com/us/media/ds-3899.pdf[NetApp 
 * NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
 * NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
 
-Both NVE and NAE are supported with an external key manager. If you use NVE, you have the option to use Azure Key Vault (AKV) or the Google Cloud Key Management Service to protect ONTAP encryption keys.
+Both NVE and NAE are supported with an external key manager.
+
+ifdef::azure,gcp[]
+If you use NVE, you have the option to use Azure Key Vault (AKV) or the Google Cloud Key Management Service to protect ONTAP encryption keys.
+endif::azure,gcp[]
 
 New aggregates have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
 

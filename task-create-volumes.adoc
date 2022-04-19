@@ -153,8 +153,8 @@ Host initiator (IQN):: iSCSI targets connect to the network through standard Eth
 +
 ifdef::aws[]
 * link:task-planning-your-config.html#sizing-your-system-in-aws[Sizing your system in AWS]
-ifdef::aws[]
-endif::azure[]
+endif::aws[]
+ifdef::azure[]
 * link:task-planning-your-config-azure.html#sizing-your-system-in-azure[Sizing your system in Azure]
 endif::azure[]
 ifdef::gcp[]

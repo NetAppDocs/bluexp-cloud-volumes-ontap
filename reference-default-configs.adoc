@@ -35,8 +35,20 @@ Starting with the Cloud Manager 3.9.5 release, logical space reporting is enable
 * Several network interfaces are created by default:
 ** A cluster management LIF
 ** An intercluster LIF
-** An SVM management LIF on HA systems in Azure and in Google Cloud, on single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones
-** A node management LIF (in Google Cloud, this LIF is combined with the intercluster LIF)
+ifdef::azure[]
+** An SVM management LIF on HA systems in Azure
+endif::azure[]
+ifdef::gcp[]
+** An SVM management LIF on HA systems in Google Cloud
+endif::gcp[]
+ifdef::aws[]
+** An SVM management LIF on single node systems in AWS
+endif::aws[]
+** A node management LIF
+ifdef::gcp[]
++
+In Google Cloud, this LIF is combined with the intercluster LIF.
+endif::gcp[]
 ** An iSCSI data LIF
 ** A CIFS and NFS data LIF
 +
@@ -111,7 +123,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
-endif::aws[]
+endif::azure[]
 
 ifdef::gcp[]
 === Google Cloud (single node)
