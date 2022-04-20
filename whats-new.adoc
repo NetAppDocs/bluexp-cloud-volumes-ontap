@@ -198,7 +198,7 @@ New charging methods are available for Cloud Volumes ONTAP.
 +
 link:concept-licensing.html[Learn more about these licensing options].
 +
-Here's an example of the charging methods that you can choose from when deploying a new Cloud Volumes ONTAP system in Azure:
+Here's an example of the charging methods that you can choose from:
 +
 image:screenshot_cvo_charging_methods.png[A screenshot of the Cloud Volumes ONTAP working environment wizard where you can choose a charging method.]
 
