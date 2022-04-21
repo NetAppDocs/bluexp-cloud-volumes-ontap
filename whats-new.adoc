@@ -18,6 +18,32 @@ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
 //tag::whats-new[]
+== 1 May 2022 (Connector 3.9.18)
+
+=== S3 Glacier Instant Retrieval
+
+You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.
+
+link:task-tiering.html#changing-the-storage-class-for-tiered-data[Learn how to change the storage class for tiered data].
+
+=== New AWS region support
+
+Cloud Volumes ONTAP is now supported in the AWS Jakarta region (ap-southeast-3) starting with the 9.10.1 release.
+
+=== New Google Cloud region support
+
+Cloud Volumes ONTAP is now supported in the Google Cloud Delhi region (asia-south2) starting with the 9.10.1 release.
+
+=== Enhancement to mediator upgrades
+
+When Cloud Manager upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.
+
+=== K8s tab has been removed
+
+The K8s tab was deprecated in a previous and has now been removed. It has been replaced with the ability to add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
+
+https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html[Learn about Kubernetes data management in Cloud Manager^]
+
 == 3 April 2022
 
 === Charging for WORM storage
@@ -33,6 +59,7 @@ https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^].
 The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the *Advanced allocation* option.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html[Learn how to create volumes on a specific aggregate].
+//end::whats-new[]
 
 == 9 February 2022
 
@@ -51,7 +78,6 @@ If you're a new customer, Cloud Manager will prompt you to subscribe when you cr
 This charging method is still available for existing customers who have an active subscription.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about the licensing options for Cloud Volumes ONTAP].
-//end::whats-new[]
 
 == 6 February 2022
 
