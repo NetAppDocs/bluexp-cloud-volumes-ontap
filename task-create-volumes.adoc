@@ -108,7 +108,7 @@ Export policy:: Defines the clients in the subnet that can access the volume. By
 Permissions and users/groups:: Enables you to control the level of access to an SMB share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user’s domain using the format domain\username.
 
 DNS Primary and Secondary IP Address:: The IP addresses of the DNS servers that provide name resolution for the CIFS server. The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
-
++
 If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
 
 Active Directory Domain to join:: The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.

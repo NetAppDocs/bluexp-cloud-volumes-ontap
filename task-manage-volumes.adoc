@@ -126,7 +126,7 @@ If you're configuring Google Managed Active Directory, AD can be accessed by def
 
 | CIFS server NetBIOS name | 	A CIFS server name that is unique in the AD domain.
 
-| Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+| Organizational Unit a| The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
 * To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
