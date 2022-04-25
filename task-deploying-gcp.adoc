@@ -91,7 +91,7 @@ Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in G
 
 . If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[create a Connector^].
 
-. *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
+. *Details & Credentials*: Select a project, specify a cluster name, optionally select a service account, optionally add labels, and then specify credentials.
 +
 The following table describes fields for which you might need guidance:
 +
