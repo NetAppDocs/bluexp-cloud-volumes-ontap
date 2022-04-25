@@ -29,6 +29,8 @@ NOTE: When deployed in multiple AWS Availability Zones, Cloud Volumes ONTAP HA c
 . From the Canvas, select the Cloud Volumes ONTAP working environment.
 
 . On the right pane, click the information icon and copy the cluster management IP.
++
+image:screenshot-cvo-info.png[A screenshot of the information icon that appears on the Canvas for a Cloud Volumes ONTAP working environment.]
 
 . Open a web browser on the machine that has a network connection to Cloud Volumes ONTAP and enter the IP address.
 
