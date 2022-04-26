@@ -20,44 +20,6 @@ The enhancements described on this page are specific to Cloud Manager features t
 //tag::whats-new[]
 == 1 May 2022 (Connector 3.9.18)
 
-=== Annual contract in Azure
-
-The Essentials and Professional packages are now available in Azure through an annual contract.
-
-You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
-
-After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
-
-=== S3 Glacier Instant Retrieval
-
-You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.
-
-link:task-tiering.html#changing-the-storage-class-for-tiered-data[Learn how to change the storage class for tiered data].
-
-=== New AWS region support
-
-Cloud Volumes ONTAP is now supported in the AWS Jakarta region (ap-southeast-3) starting with the 9.10.1 release.
-
-=== New Google Cloud region support
-
-Cloud Volumes ONTAP is now supported in the Google Cloud Delhi region (asia-south2) starting with the 9.10.1 release.
-
-=== Support for n2-standard-16
-
-The n2-standard-16 machine type is now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.10.1 release.
-
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[View supported configurations for Cloud Volumes ONTAP in Google Cloud^]
-
-=== Enhancement to Google Cloud firewall policies
-
-When you create a Cloud Volumes ONTAP HA pair in Google Cloud, Cloud Manager will now display all existing firewall policies in a VPC. Previously, Cloud Manager wouldn't display any policies in VPC-1, VPC-2, or VPC-3 that didn't have a target tag.
-
-=== Enhancement to Google Cloud service accounts
-
-When you select the Google Cloud service account to use with Cloud Volumes ONTAP, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
-
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
-
 === Enhancement to mediator upgrades
 
 When Cloud Manager upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.
@@ -67,6 +29,48 @@ When Cloud Manager upgrades the mediator for an HA pair, it now validates that a
 The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
 
 https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html[Learn about Kubernetes data management in Cloud Manager^]
+
+=== Annual contract in Azure
+
+The Essentials and Professional packages are now available in Azure through an annual contract.
+
+You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
+
+After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
+
+=== New AWS region support
+
+Cloud Volumes ONTAP is now supported in the AWS Jakarta region (ap-southeast-3) starting with the 9.10.1 release.
+
+=== S3 Glacier Instant Retrieval
+
+You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.
+
+link:task-tiering.html#changing-the-storage-class-for-tiered-data[Learn how to change the storage class for tiered data].
+
+=== New Google Cloud region support
+
+Cloud Volumes ONTAP is now supported in the Google Cloud Delhi region (asia-south2) starting with the 9.10.1 release.
+
+=== Support for n2-standard-16 in Google Cloud
+
+The n2-standard-16 machine type is now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.10.1 release.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[View supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+
+=== Enhancements to Google Cloud firewall policies
+
+* When you create a Cloud Volumes ONTAP HA pair in Google Cloud, Cloud Manager will now display all existing firewall policies in a VPC.
++
+Previously, Cloud Manager wouldn't display any policies in VPC-1, VPC-2, or VPC-3 that didn't have a target tag.
+
+* When you create a Cloud Volumes ONTAP single node system in Google Cloud, you can now choose whether you want the predefined firewall policy to allow traffic within the selected VPC only (recommended) or all VPCs.
+
+=== Enhancement to Google Cloud service accounts
+
+When you select the Google Cloud service account to use with Cloud Volumes ONTAP, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
 
 == 3 April 2022
 

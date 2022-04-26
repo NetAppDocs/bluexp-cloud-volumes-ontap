@@ -132,6 +132,8 @@ video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Location & Connectivity*: Select a location, choose a firewall policy, and select the checkbox to confirm network connectivity to Google Cloud storage for data tiering.
 +
+You can configure the predefined firewall policy to allow traffic within the selected VPC only (recommended) or all VPCs.
++
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
