@@ -296,18 +296,6 @@ Meanwhile, the predefined firewall rules that Cloud Manager creates for instance
 
 Communication from the HA nodes to the HA mediator takes place over port 3260 (iSCSI).
 
-=== Using your own firewall rules with VPCs 1-3
-
-When you create an HA pair, Cloud Manager gives you the option to use predefined firewall rules or to use existing rules for each VPC. If you use your own firewall rules for VPCs 1-3 and you're deploying the HA pair across multiple Google Cloud zones, then you must set up a _target tag_ for the firewall rule. If you don't set up target tags, then you'll experience an error during deployment.
-
-. When you create the firewall rules in Google Cloud, go to the *Targets* field, select *Specified target tags*, and enter the tag.
-+
-The value can be any text string that you'd like.
-
-. When you create the HA pair in Cloud Manager, select the existing firewall rules on the *Connectivity* page.
-+
-After the firewall rules are attached to Cloud Volumes ONTAP, the target tag is automatically added to the Cloud Volumes ONTAP nodes as _network tags_.
-
 == Firewall rules for the Connector
 
 The firewall rules for the Connector requires both inbound and outbound rules.
