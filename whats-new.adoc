@@ -76,9 +76,7 @@ Previously, Cloud Manager wouldn't display any policies in VPC-1, VPC-2, or VPC-
 
 When you select the Google Cloud service account to use with Cloud Volumes ONTAP, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
 
-image:screenshot-google-cloud-service-account.png[A screenshot of the service account field]
-
-//image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
 
 == 3 April 2022
 
