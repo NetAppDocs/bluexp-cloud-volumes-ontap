@@ -20,6 +20,12 @@ The enhancements described on this page are specific to Cloud Manager features t
 //tag::whats-new[]
 == 3 April 2022
 
+=== System Manager link has been removed
+
+We have removed the System Manager link that was previously available from within a Cloud Volumes ONTAP working environment.
+
+You can still connect to System Manager by entering the cluster management IP address in a web browser that has a connection to the Cloud Volumes ONTAP system. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html[Learn more about connecting to System Manager].
+
 === Charging for WORM storage
 
 Now that the introductory special rate has expired, you will now be charged for using WORM storage. Charging is hourly, according to the total provisioned capacity of WORM volumes. This applies to new and existing Cloud Volumes ONTAP systems.
