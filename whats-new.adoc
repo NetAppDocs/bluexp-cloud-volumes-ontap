@@ -80,6 +80,8 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-o
 
 == 3 April 2022
 
+The following changes were introduced with the 3.9.17 release of the Connector.
+
 === Charging for WORM storage
 
 Now that the introductory special rate has expired, you will now be charged for using WORM storage. Charging is hourly, according to the total provisioned capacity of WORM volumes. This applies to new and existing Cloud Volumes ONTAP systems.
