@@ -141,15 +141,12 @@ The following table describes fields for which you might need guidance:
 
 | Connectivity verification | To tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
 
-| Firewall Policy |	Let Cloud Manager create the firewall policy for you, or use an existing firewall policy.
-+
-If you let Cloud Manager generate the policy, you need to choose how you'll allow traffic:
+| Generated firewall policy |	If you let Cloud Manager generate the firewall policy for you, you need to choose how you'll allow traffic:
 
 * If you choose *Selected VPC only*, the source filter for inbound traffic is the VPC subnet range. This is the recommended option.
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
 
-+
-If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+| Use existing firewall policy | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
 
 |===
 
