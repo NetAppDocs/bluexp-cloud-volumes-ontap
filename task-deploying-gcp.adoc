@@ -130,11 +130,28 @@ video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Services*: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.
 
-. *Location & Connectivity*: Select a location, choose a firewall policy, and select the checkbox to confirm network connectivity to Google Cloud storage for data tiering.
+. *Location & Connectivity*: Select a location, choose a firewall policy, and confirm network connectivity to Google Cloud storage for data tiering.
 +
-You can configure the predefined firewall policy to allow traffic within the selected VPC only (recommended) or all VPCs.
+The following table describes fields for which you might need guidance:
 +
-If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| Connectivity verification | To tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
+
+| Firewall Policy |	Let Cloud Manager create the firewall policy for you, or use an existing firewall policy.
++
+If you let Cloud Manager generate the policy, you need to choose how you'll allow traffic:
+
+* If you choose *Selected VPC only*, the source filter for inbound traffic is the VPC subnet range. This is the recommended option.
+* If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
+
++
+If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+
+|===
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
