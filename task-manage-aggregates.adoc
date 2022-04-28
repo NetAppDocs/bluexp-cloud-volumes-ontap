@@ -44,7 +44,7 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 
 | Add disks to an aggregate
 a|
-.. Select an aggregate and click *Add AWS disks* or *Add Azure disks*.
+.. Select an aggregate and click *Add disks*.
 .. Select the number of disks that you want to add and click *Add*.
 +
 TIP: All disks in an aggregate must be the same size.
