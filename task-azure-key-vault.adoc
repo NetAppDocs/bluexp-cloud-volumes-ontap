@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: task-azure-key-vault.html
+keywords: azure, encryption, NVE, NetApp volume encryption, KMIP, azure key vault
+summary: Utilize Azure Key Vault for your third-party key management service. 
+---
+= Manage keys with Azure Key Vault
+:icons: font
+:imagesdir: ../media/
+
+You can use link:https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts[Azure Key Vault (AKV)^] to protect your ONTAP encryption keys in an Azure-deployed application.
+
+AKV and Cloud KMS can be used to protect link:configure-netapp-volume-encryption-concept.html[NetApp Volume Encryption (NVE) keys] only for data SVMs. 
+
+Key management with AKV can be enabled with the CLI or the ONTAP REST API. 
+
+When using AKV, be aware that by default a data SVM LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider's authentication services (login.microsoftonline.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service. 
+
+.Prerequisites
+* The Cloud Volumes ONTAP cluster's nodes must support NVE 
+* Volume Encryption (VE) license installed 
+* Multi-tenant Encryption Key Management (MTEKM) license installed 
+* You must be a cluster or SVM administrator 
+
+.Limitations
+* AKV is not available for NSE and NAE keys
+* AKV is not available for MetroCluster configurations.
+* AKV can only be configured on a data SVM 
+
+
+//1 may 2022, ontap issue #437
