@@ -94,8 +94,6 @@ sidebar:
               url: /task-connect-lun.html
             - title: Accelerate data access with FlexCache
               url: /task-accelerate-data-access.html
-            - title: Use ONTAP as persistent storage
-              url: /task-connecting-kubernetes.html
         - title: Aggregate administration
           entries:
             - title: Create aggregates
