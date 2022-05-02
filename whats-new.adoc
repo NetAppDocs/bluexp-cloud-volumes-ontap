@@ -48,11 +48,13 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.htm
 
 === New AWS permissions required for the Connector
 
-The following permissions are now required to better optimize how Cloud Manager creates an AWS spread placement group for an HA pair that's deployed in a single Availability Zone (AZ):
+The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):
 
 [source,json]
 "ec2:DescribePlacementGroups",
 "iam:GetRolePolicy",
+
+These permissions are now required to optimize how Cloud Manager creates the placement group.
 
 Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
 
