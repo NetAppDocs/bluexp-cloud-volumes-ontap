@@ -9,7 +9,7 @@ summary: Utilize Azure Key Vault for your third-party key management service.
 :hardbreaks:
 :imagesdir: ../media/
 
-Beginning in Cloud Volumes ONTAP 9.10.1, You can use link:https://cloud.google.com/kms/docs[Google Cloud Platform's Key Management Service (Cloud KMS)^] to protect your ONTAP encryption keys in a Google Cloud Platform-deployed application.
+You can use link:https://cloud.google.com/kms/docs[Google Cloud Platform's Key Management Service (Cloud KMS)^] to protect your ONTAP encryption keys in a Google Cloud Platform-deployed application.
 
 Key management Cloud KMS can be enabled with the CLI or the ONTAP REST API. To configure Cloud KMS for Cloud Volumes ONTAP, you must first 
 
@@ -22,10 +22,13 @@ When using Cloud KMS, be aware that by default a data SVMs LIF is used to commun
 * You must be a cluster or SVM administrator 
 
 .Limitations
+* Cloud Volumes ONTAP must be running version 9.10.1 or later
 * Cloud KMS is not available for NSE and NAE.
 * Cloud KMS is not available for MetroCluster configurations.
 //Ben is MetroCluster relevant?
 * Cloud KMS can only be configured on a data SVM 
+* An active Google Cloud Platform subscription 
+
 
 .Enable 
 . In your Google Cloud environment:
@@ -36,7 +39,7 @@ When using Cloud KMS, be aware that by default a data SVMs LIF is used to commun
     --title=_kms_custom_role_name_
     --description=_custom_role_description_
     --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
-    --stage=GA`
+    --stage=GA` //does it have to be GA?
 .. Assign the custom role to the Cloud KMS key and Cloud Volumes ONTAP service account:
 `gcloud kms keys add-iam-policy-binding ${_key_name_}
     --keyring ${_key_ring_name_}

@@ -7,6 +7,7 @@ summary: Utilize Azure Key Vault for your third-party key management service.
 = Manage keys with Azure Key Vault
 :icons: font
 :imagesdir: ../media/
+:hardbreaks:
 
 You can use link:https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts[Azure Key Vault (AKV)^] to protect your ONTAP encryption keys in an Azure-deployed application.
 
@@ -17,15 +18,67 @@ Key management with AKV can be enabled with the CLI or the ONTAP REST API.
 When using AKV, be aware that by default a data SVM LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider's authentication services (login.microsoftonline.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service. 
 
 .Prerequisites
+* Cloud Volumes ONTAP must be running version 9.10.1 or later
 * The Cloud Volumes ONTAP cluster's nodes must support NVE 
 * Volume Encryption (VE) license installed 
 * Multi-tenant Encryption Key Management (MTEKM) license installed 
 * You must be a cluster or SVM administrator 
+* An Active Azure subscription
 
 .Limitations
 * AKV is not available for NSE and NAE keys
 * AKV is not available for MetroCluster configurations.
 * AKV can only be configured on a data SVM 
+
+== Configuration process
+
+
+.ONTAP configuration
+. Connect to the cluster management LIF with your preferred SSH client.
+. Enter the advanced privilege mode in ONTAP:
+`set advanced -con off``
+. Identify the desired data SVM and verify its DNS configuration: 
+`vserver services name-service dns show`
+.. If a DNS entry for the desired data SVM exists and it contains an entry for the Azure DNS, then no action is required. If it does not, add a DNS server entry for the data SVM that points to the Azure DNS, private DNS, or on-premise server.  This should match the entry for the cluster admin SVM:
+`vserver services name-service dns create -vserver _SVM_name_ -domains _domain_ -name-servers _IP_address_`
+.. Verify the DNS service has been created for the data SVM:
+`vserver services name-service dns show`
+. Enable Azure Key Vault using the client ID and tenant ID saved after the application registration:
+`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _Azure_key_name_ -key-id _Azure_key_ID_`
+. Verify the key manager configuration:
+`security key-manager external azure show`
+. Check the status of the key manager:
+`security key-manager external azure check`
+The output will look like: 
++
+[source]
+----
+::*> security key-manager external azure check
+  
+Vserver: data_svm_name
+Node: akvlab01-01
+ 
+Category: service_reachability
+    Status: OK
+ 
+Category: ekmip_server
+    Status: OK
+ 
+Category: kms_wrapped_key_status
+    Status: UNKNOWN
+    Details: No volumes created yet for the vserver. Wrapped KEK status will be available after creating encrypted volumes.
+
+3 entries were displayed.
+----
++
+If the `service_reachability` status is not `OK`, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions.
+The `kms_wrapped_key_status` will report `UNKNOWN` at initial configuration. Its status will change to `OK` after the first volume is encrypted.
+. OPTIONAL: Create a test volume to verify the functionality of AKV.
+`vol create -vserver _SVM_name_ -volume _volume_name_ -aggregate _aggr_ -size _size_ -state online -policy default`
+If configured correctly, ONTAP will automatically create the volume and enable volume encryption.
+. Confirm the volume was created and encrypted correctly. If it is, the `-is-encrypted` parameter will display as `true`.
+`vol show -vserver _SVM_name_ -fields is-encrypted`
+// Ben - should this be CVO?
 
 
 //1 may 2022, ontap issue #437
