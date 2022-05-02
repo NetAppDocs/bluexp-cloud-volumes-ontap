@@ -40,12 +40,6 @@ After NetApp shares the private offer with you, you can select the annual plan w
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about licensing].
 
-=== New AWS region support
-
-Cloud Volumes ONTAP is now supported in the AWS Jakarta region (ap-southeast-3) starting with the 9.10.1 release.
-
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
-
 === S3 Glacier Instant Retrieval
 
 You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.
