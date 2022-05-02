@@ -132,7 +132,11 @@ These steps describe how to use System Manager for version 9.3 and later.
 
 .Steps
 
-. link:task-connecting-to-otc.html[Log in to System Manager] from the destination system.
+. Log in to System Manager from the destination system.
++
+You can log in to System Manager by pointing your web browser to the IP address of the cluster management LIF. You can find the IP address in the Cloud Volumes ONTAP working environment.
++
+NOTE: The computer from which you are accessing Cloud Manager must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to Cloud Manager from a jump host that's in your cloud provider network.
 
 . Click *Protection > Relationships*.
 
@@ -155,8 +159,6 @@ These steps describe how to use System Manager for version 9.3 and later.
 image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view information for an aggregate.]
 
 . If the aggregate is offline, use System Manager to bring the aggregate online:
-
-.. link:task-connecting-to-otc.html[Log in to System Manager].
 
 .. Click *Storage > Aggregates & Disks > Aggregates*.
 

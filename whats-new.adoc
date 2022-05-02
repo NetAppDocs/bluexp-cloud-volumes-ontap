@@ -97,7 +97,11 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-o
 
 == 3 April 2022
 
-The following changes were introduced with the 3.9.17 release of the Connector.
+=== System Manager link has been removed
+
+We have removed the System Manager link that was previously available from within a Cloud Volumes ONTAP working environment.
+
+You can still connect to System Manager by entering the cluster management IP address in a web browser that has a connection to the Cloud Volumes ONTAP system. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html[Learn more about connecting to System Manager].
 
 === Charging for WORM storage
 

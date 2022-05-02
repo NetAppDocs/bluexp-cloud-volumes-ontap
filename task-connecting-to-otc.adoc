@@ -5,7 +5,7 @@ keywords: system manager, connecting, cli, command, command line, connect, shell
 summary: If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager or the command line interface.
 ---
 
-= Connecting to Cloud Volumes ONTAP
+= Use System Manager or the CLI
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -26,13 +26,13 @@ NOTE: When deployed in multiple AWS Availability Zones, Cloud Volumes ONTAP HA c
 
 .Steps
 
-. From the Canvas page, double-click the Cloud Volumes ONTAP system that you want to manage with System Manager.
+. From the Canvas, select the Cloud Volumes ONTAP working environment.
 
-. Click the menu icon, and then click *Advanced > System Manager*.
-
-. Click *Launch*.
+. On the right pane, click the information icon and copy the cluster management IP.
 +
-System Manager loads in a new browser tab.
+image:screenshot-cvo-info.png[A screenshot of the information icon that appears on the Canvas for a Cloud Volumes ONTAP working environment.]
+
+. Open a web browser on the machine that has a network connection to Cloud Volumes ONTAP and enter the IP address.
 
 . At the login screen, enter *admin* in the User Name field, enter the password that you specified when you created the working environment, and then click *Sign In*.
 
