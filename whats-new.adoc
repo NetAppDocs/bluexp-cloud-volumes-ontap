@@ -18,7 +18,7 @@ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
 //tag::whats-new[]
-== 1 May 2022
+== 2 May 2022
 
 The following changes were introduced with the 3.9.18 release of the Connector.
 
@@ -46,9 +46,24 @@ You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data[Learn how to change the storage class for tiered data].
 
+=== New AWS permissions required for the Connector
+
+The following permissions are now required to better optimize how Cloud Manager creates an AWS spread placement group for an HA pair that's deployed in a single Availability Zone (AZ):
+
+[source,json]
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
+
+Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+
 === New Google Cloud region support
 
-Cloud Volumes ONTAP is now supported in the Google Cloud Delhi region (asia-south2) starting with the 9.10.1 release.
+Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:
+
+* Delhi (asia-south2)
+* Melbourne (australia-southeast2)
+* Milan (europe-west8) - single node only
+* Santiago (southamerica-west1) - single node only
 
 https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
 
