@@ -33,7 +33,7 @@ Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single S3 
 +
 NOTE: Cloud Manager creates a single S3 bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different S3 bucket is not created for each volume.
 
-Storage classes:: The default storage class for tiered data in AWS is _Standard_. If you don't plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: _Intelligent Tiering_, _One-Zone Infrequent Access_, or _Standard-Infrequent Access_. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.
+Storage classes:: The default storage class for tiered data in AWS is _Standard_. If you don't plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: _Intelligent Tiering_, _One-Zone Infrequent Access_, _Standard-Infrequent Access_, or _S3 Glacier Instant Retrieval_. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://aws.amazon.com/s3/storage-classes[Learn more about Amazon S3 storage classes^].
 +

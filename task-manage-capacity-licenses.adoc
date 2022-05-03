@@ -21,6 +21,14 @@ The _Digital Wallet_ enables you to manage licenses for Cloud Volumes ONTAP from
 
 link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
+== How licenses are added to the Digital Wallet
+
+After you purchase a license from your NetApp sales representative, NetApp will send you an email with the serial number and additional licensing details.
+
+In the meantime, Cloud Manager automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, Cloud Manager automatically adds the licenses to the Digital Wallet.
+
+If Cloud Manager can't add the license, you'll need to manually add them to the Digital Wallet yourself. <<Add purchased licenses to your account,Learn how to add purchased licenses to your account>>.
+
 == View your account's capacity
 
 View the licensed capacity and provisioned capacity by package to ensure that you have enough room for your data volumes.
@@ -37,7 +45,7 @@ image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount 
 
 == Add purchased licenses to your account
 
-After you purchase licenses for your NetApp account, you need to add the licenses to Cloud Manager so that the capacity is available for Cloud Volumes ONTAP.
+If you don't see your purchased licenses in the Digital Wallet, you'll need to add the licenses to Cloud Manager so that the capacity is available for Cloud Volumes ONTAP.
 
 .What you'll need
 
