@@ -90,22 +90,6 @@ The license is not restricted to a single cloud provider.
 
 * An annual contract from your cloud provider's marketplace.
 
-ifdef::aws[]
-** In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe when deploying a Cloud Volumes ONTAP working environment.
-endif::aws[]
-
-ifdef::azure[]
-** In Azure, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
-+
-After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
-endif::azure[]
-
-ifdef::gcp[]
-** In Google Cloud, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Google Cloud Marketplace.
-+
-After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Google Cloud Marketplace during working environment creation.
-endif::gcp[]
-
 Note the following:
 
 * If you purchase a license from NetApp (BYOL), you also need to subscribe to the PAYGO offering from your cloud provider's marketplace.
@@ -161,6 +145,8 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 === How to get started
 
+==== Licenses purchased from NetApp
+
 . https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
 . link:task-manage-capacity-licenses.html[Add your license to Cloud Manager]
 . Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system
@@ -173,6 +159,55 @@ ifdef::azure[]
 endif::azure[]
 ifdef::gcp[]
 * link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+endif::gcp[]
+
+
+==== Marketplace subscriptions (hourly)
+
+When you create a Cloud Volumes ONTAP working environment, Cloud Manager prompts you to subscribe to the marketplace agreement that's available in the cloud provider's marketplace. That subscription is then associated with the working environment for charging. You can use that same subscription for additional working environments.
+
+. Create a Cloud Volumes ONTAP working environment.
++
+ifdef::aws[]
+* link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
+endif::aws[]
+ifdef::azure[]
+* link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
+endif::azure[]
+ifdef::gcp[]
+* link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+endif::gcp[]
+
+. On the Details & Credentials page, subscribe to your cloud provider’s marketplace.
+
+TIP: You can manage marketplace subscriptions from the Settings > Credentials page.
++
+ifdef::aws[]
+* link:task-adding-aws-accounts.html#associate-an-aws-subscription[Associate an AWS Marketplace subscription]
+endif::aws[]
+ifdef::azure[]
+* link:task-adding-azure-accounts.html#manage-existing-credentials[Associate an Azure Marketplace subscription]
+endif::azure[]
+ifdef::gcp[]
+* link:task-adding-gcp-accounts.html[Associate a Google Cloud Marketplace subscription]
+endif::gcp[]
+
+==== Marketplace subscriptions (annual contract)
+
+ifdef::aws[]
+* In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe when deploying a Cloud Volumes ONTAP working environment.
+endif::aws[]
+
+ifdef::azure[]
+* In Azure, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
++
+After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
+endif::azure[]
+
+ifdef::gcp[]
+* In Google Cloud, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Google Cloud Marketplace.
++
+After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Google Cloud Marketplace during working environment creation.
 endif::gcp[]
 
 == Keystone Flex Subscription
