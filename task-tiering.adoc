@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-tiering.html
-keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, azure blob, container, inactive, tiering requirements
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements
 summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
 ---
 

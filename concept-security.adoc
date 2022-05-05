@@ -20,9 +20,15 @@ Cloud Volumes ONTAP supports data encryption and provides protection against vir
 Cloud Volumes ONTAP supports the following encryption technologies:
 
 * NetApp encryption solutions (NVE and NAE)
+ifdef::aws[]
 * AWS Key Management Service
+endif::aws[]
+ifdef::azure[]
 * Azure Storage Service Encryption
+endif::azure[]
+ifdef::gcp[]
 * Google Cloud Platform default encryption
+endif::gcp[]
 
 You can use NetApp encryption solutions with native encryption from AWS, Azure, or GCP, which encrypt data at the hypervisor level. Doing so would provide double encryption, which might be desired for very sensitive data. When the encrypted data is accessed, it’s unencrypted twice—once at the hypervisor-level (using keys from the cloud provider) and then again using NetApp encryption solutions (using keys from an external key manager).
 
