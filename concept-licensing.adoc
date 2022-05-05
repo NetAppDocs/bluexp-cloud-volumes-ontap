@@ -90,15 +90,21 @@ The license is not restricted to a single cloud provider.
 
 * An annual contract from your cloud provider's marketplace.
 
+ifdef::aws[]
 ** In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe when deploying a Cloud Volumes ONTAP working environment.
+endif::aws[]
 
+ifdef::azure[]
 ** In Azure, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
 +
 After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
+endif::azure[]
 
+ifdef::gcp[]
 ** In Google Cloud, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Google Cloud Marketplace.
 +
 After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Google Cloud Marketplace during working environment creation.
+endif::gcp[]
 
 Note the following:
 
