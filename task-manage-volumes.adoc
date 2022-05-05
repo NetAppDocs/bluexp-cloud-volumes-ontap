@@ -118,7 +118,7 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
-ifdev::gcp[]
+ifdef::gcp[]
 If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
 endif::gcp[]
 
