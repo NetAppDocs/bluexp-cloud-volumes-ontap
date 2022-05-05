@@ -177,10 +177,10 @@ ifdef::gcp[]
 * link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
-. On the Details & Credentials page, subscribe to your cloud provider’s marketplace.
+. On the Details & Credentials page, subscribe to the offering in your cloud provider’s marketplace.
 
 Note that you can manage marketplace subscriptions from the Settings > Credentials page.
-+
+
 ifdef::aws[]
 * link:task-adding-aws-accounts.html#associate-an-aws-subscription[Associate an AWS Marketplace subscription]
 endif::aws[]
@@ -194,7 +194,7 @@ endif::gcp[]
 .Marketplace subscription (annual contract)
 
 ifdef::aws[]
-* In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe when deploying a Cloud Volumes ONTAP working environment.
+* In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe from the Details & Credentials page when deploying a Cloud Volumes ONTAP working environment.
 endif::aws[]
 
 ifdef::azure[]
