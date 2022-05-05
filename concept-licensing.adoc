@@ -145,7 +145,7 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 === How to get started
 
-==== Licenses purchased from NetApp
+.License purchased from NetApp
 
 . https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
 . link:task-manage-capacity-licenses.html[Add your license to Cloud Manager]
@@ -161,8 +161,7 @@ ifdef::gcp[]
 * link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
-
-==== Marketplace subscriptions (hourly)
+.Marketplace subscription (hourly)
 
 When you create a Cloud Volumes ONTAP working environment, Cloud Manager prompts you to subscribe to the marketplace agreement that's available in the cloud provider's marketplace. That subscription is then associated with the working environment for charging. You can use that same subscription for additional working environments.
 
@@ -180,7 +179,7 @@ endif::gcp[]
 
 . On the Details & Credentials page, subscribe to your cloud provider’s marketplace.
 
-TIP: You can manage marketplace subscriptions from the Settings > Credentials page.
+Note that you can manage marketplace subscriptions from the Settings > Credentials page.
 +
 ifdef::aws[]
 * link:task-adding-aws-accounts.html#associate-an-aws-subscription[Associate an AWS Marketplace subscription]
@@ -192,7 +191,7 @@ ifdef::gcp[]
 * link:task-adding-gcp-accounts.html[Associate a Google Cloud Marketplace subscription]
 endif::gcp[]
 
-==== Marketplace subscriptions (annual contract)
+.Marketplace subscription (annual contract)
 
 ifdef::aws[]
 * In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe when deploying a Cloud Volumes ONTAP working environment.
