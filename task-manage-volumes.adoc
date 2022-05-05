@@ -118,21 +118,27 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
+If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
+
 | Active Directory Domain to join |	The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
 
 | Credentials authorized to join the domain |	The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
 
 | CIFS server NetBIOS name | 	A CIFS server name that is unique in the AD domain.
 
-| Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
-ifdef::aws[]
-If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
-endif::aws[]
+| Organizational Unit a| The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
+ifdef::aws[]
+* To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
+endif::aws[]
 ifdef::azure[]
-If you configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
+* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
 https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
 endif::azure[]
+ifdef::gcp[]
+*	To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
+https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
+endif::gcp[]
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 

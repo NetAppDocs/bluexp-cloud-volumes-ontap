@@ -91,7 +91,7 @@ Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in G
 
 . If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[create a Connector^].
 
-. *Details & Credentials*: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.
+. *Details & Credentials*: Select a project, specify a cluster name, optionally select a service account, optionally add labels, and then specify credentials.
 +
 The following table describes fields for which you might need guidance:
 +
@@ -130,9 +130,25 @@ video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Services*: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.
 
-. *Location & Connectivity*: Select a location, choose a firewall policy, and select the checkbox to confirm network connectivity to Google Cloud storage for data tiering.
+. *Location & Connectivity*: Select a location, choose a firewall policy, and confirm network connectivity to Google Cloud storage for data tiering.
 +
-If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
+The following table describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| Connectivity verification | To tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
+
+| Generated firewall policy a| If you let Cloud Manager generate the firewall policy for you, you need to choose how you'll allow traffic:
+
+* If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
+* If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
+
+| Use existing firewall policy | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+
+|===
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
@@ -202,6 +218,8 @@ image:screenshot_cot_vol.gif[Screen shot: Shows the Volume page filled out for a
 | DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
+If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
+
 | Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
 
 | Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
@@ -209,6 +227,10 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
 
 | Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+
+To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
+
+https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
@@ -365,6 +387,8 @@ image:screenshot_cot_vol.gif[Screen shot: Shows the Volume page filled out for a
 | DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
+If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
+
 | Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
 
 | Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
@@ -372,6 +396,10 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
 
 | Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+
+To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
+
+https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
