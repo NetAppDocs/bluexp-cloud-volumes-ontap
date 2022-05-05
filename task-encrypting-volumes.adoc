@@ -20,6 +20,7 @@ Both NVE and NAE are supported with an external key manager.
 
 ifdef::azure,gcp[]
 If you use NVE, you have the option to use your cloud provider's key vault to protect ONTAP encryption keys:
+
 ifdef::azure[]
 * Azure Key Vault (AKV)
 endif::azure[]
