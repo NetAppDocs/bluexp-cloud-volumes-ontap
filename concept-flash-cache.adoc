@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept-flash-cache.html
-keywords: cloud volumes ontap, aws, ec2, flash cache, read-intensive, read, random, databases, email, file services, c5d.4xlarge, c5d.9xlarge, r5d.2xlarge, compression, performance, azure, nvme, standard, l8s, vm type, virtual machine, m5d.8xlarge, m5d.12xlarge, c5d.18xlarge
-summary: Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
+keywords: cloud volumes ontap, flash cache, read-intensive, read, random, databases, email, file services, compression, performance, nvme
+summary: Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
 ---
 
 = Flash Cache

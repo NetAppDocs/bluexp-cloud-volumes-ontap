@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-manage-keystone.html
-keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator
+keywords: license, licensing, install, keystone, requst capacity, link subscription, add keystone subscription, keystone subscription
 summary: The Digital Wallet page enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 ---
 

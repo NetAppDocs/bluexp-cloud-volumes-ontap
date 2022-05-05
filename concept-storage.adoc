@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-storage.html
-keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity, aws, azure
+keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity
 summary: Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.
 ---
 
