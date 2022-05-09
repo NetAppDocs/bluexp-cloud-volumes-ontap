@@ -30,6 +30,7 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
 . Click the menu icon and then click *Advanced > Advanced allocation*.
+
 . Manage your aggregates:
 +
 [cols=2*,options="header",cols="30,70"]

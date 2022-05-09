@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-configure-ems.html
-keywords: ems, event management system, ems notifications, notifications,
+keywords: ems, event management system, ems notifications, notifications
 summary: The Event Management System collects and displays information about events that occur on  ONTAP systems. To receive event notifications, you can set event destinations and event routes for a particular event severity.
 ---
 

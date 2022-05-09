@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-tiering.html
-keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, S3 tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, azure tiering, blob tiering, azure blob, container, inactive, gcp, tiering in gcp, tiering requirements
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements
 summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
 ---
 
@@ -25,9 +25,17 @@ Most configurations are supported. If you have a Cloud Volumes ONTAP system runn
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Ensure connectivity between Cloud Volumes ONTAP and object storage
 
 [role="quick-margin-list"]
+ifdef::aws[]
 * For AWS, you'll need a VPC Endpoint to S3. <<Requirements to tier cold data to AWS S3,Learn more>>.
+endif::aws[]
+
+ifdef::azure[]
 * For Azure, you won't need to do anything as long as Cloud Manager has the required permissions. <<Requirements to tier cold data to Azure Blob storage,Learn more>>.
-* For GCP, you need to configure the subnet for Private Google Access and set up a service account. <<Requirements to tier cold data to a Google Cloud Storage bucket,Learn more>>.
+endif::azure[]
+
+ifdef::gcp[]
+* For Google Cloud, you need to configure the subnet for Private Google Access and set up a service account. <<Requirements to tier cold data to a Google Cloud Storage bucket,Learn more>>.
+endif::gcp[]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Ensure that you have an aggregate with tiering enabled
 
@@ -47,7 +55,7 @@ Cloud Manager prompts you to choose a tiering policy when you create, modify, or
 .What's not required for data tiering?
 ====
 * You don't need to install a feature license to enable data tiering.
-* You don't need to create the capacity tier (an S3 bucket, Azure Blob container, or GCP bucket). Cloud Manager does that for you.
+* You don't need to create an object store for the capacity tier. Cloud Manager does that for you.
 * You don't need to enable data tiering at the system level.
 +
 Cloud Manager creates an object store for cold data when the system is created, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
@@ -55,21 +63,35 @@ Cloud Manager creates an object store for cold data when the system is created, 
 
 == Configurations that support data tiering
 
-You can enable data tiering when using specific configurations and features:
+You can enable data tiering when using specific configurations and features.
 
-* Data tiering is supported with Cloud Volumes ONTAP starting with the following versions:
-** Version 9.2 in AWS
-** Version 9.4 in Azure with single node systems
-** Version 9.6 in Azure with HA pairs
-** Version 9.6 in GCP
+ifdef::aws[]
+=== Support in AWS
 
-* In AWS, the performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
+* Data tiering is supported in AWS starting with Cloud Volumes ONTAP 9.2.
+* The performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
 +
 NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
+endif::aws[]
 
-* In Azure, the performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
+ifdef::azure[]
+=== Support in Azure
 
-* In GCP, the performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
+* Data tiering is supported in Azure as follows:
+** Version 9.4 in with single node systems
+** Version 9.6 in with HA pairs
+
+* The performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
+endif::azure[]
+
+ifdef::gcp[]
+=== Support in Google Cloud
+
+* Data tiering is supported in Google Cloud starting with Cloud Volumes ONTAP 9.6.
+* The performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
+endif::gcp[]
+
+=== Feature interoperability
 
 * Data tiering is supported with encryption technologies.
 
@@ -79,6 +101,7 @@ NOTE: Tiering data to object storage is not recommended when using Throughput Op
 
 Depending on your cloud provider, certain connections and permissions must be set up so that Cloud Volumes ONTAP can tier cold data to object storage.
 
+ifdef::aws[]
 === Requirements to tier cold data to AWS S3
 
 Ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
@@ -86,7 +109,9 @@ Ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide 
 When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
 
 If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^].
+endif::aws[]
 
+ifdef::azure[]
 === Requirements to tier cold data to Azure Blob storage
 
 You don't need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has these permissions:
@@ -96,7 +121,9 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/routeTables/join/action",
 
 The permissions are included in the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy].
+endif::azure[]
 
+ifdef::gcp[]
 === Requirements to tier cold data to a Google Cloud Storage bucket
 
 * The subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
@@ -109,6 +136,7 @@ link:task-creating-gcp-service-account.html[Learn how to set up a service accoun
 ** To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.
 +
 link:task-setting-up-gcp-encryption.html[Learn how to use customer-managed encryption keys with Cloud Volumes ONTAP].
+endif::gcp[]
 
 === Enabling data tiering after implementing the requirements
 

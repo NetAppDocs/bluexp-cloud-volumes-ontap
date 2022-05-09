@@ -5,7 +5,7 @@ keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, stor
 summary: The Account Admin can enable a setting in Cloud Manager that prevents issues with Cloud Volumes ONTAP storage giveback during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
 ---
 
-= Overriding CIFS locks for Cloud Volumes ONTAP HA in Azure
+= Overriding CIFS locks for Cloud Volumes ONTAP HA pairs in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
