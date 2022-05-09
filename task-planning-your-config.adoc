@@ -5,7 +5,7 @@ keywords: license, disk, ebs, storage, size, write speed, volume usage, ec2, cap
 summary: When you deploy Cloud Volumes ONTAP in AWS, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 ---
 
-= Planning your Cloud Volumes ONTAP configuration in AWS
+= Plan your Cloud Volumes ONTAP configuration in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,33 +15,29 @@ summary: When you deploy Cloud Volumes ONTAP in AWS, you can choose a preconfigu
 [.lead]
 When you deploy Cloud Volumes ONTAP in AWS, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 
-== Viewing supported regions
+== Choose a Cloud Volumes ONTAP license
+
+Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs. link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
+
+== Choose a supported region
 
 Cloud Volumes ONTAP is supported in most AWS regions. https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^].
 
 Newer AWS regions must be enabled before you can create and manage resources in those regions. https://docs.aws.amazon.com/general/latest/gr/rande-manage.html[Learn how to enable a region^].
 
-== Choosing a license
-
-Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs. link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-
-== Choosing a supported instance
+== Choose a supported instance
 
 Cloud Volumes ONTAP supports several instance types, depending on the license type that you choose.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[Supported configurations for Cloud Volumes ONTAP in AWS^]
 
-== Choosing a configuration that supports Flash Cache
-
-Some Cloud Volumes ONTAP configurations in AWS include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance. link:concept-flash-cache.html[Learn more about Flash Cache].
-
-== Understanding storage limits
+== Understand storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html[Storage limits for Cloud Volumes ONTAP in AWS^]
 
-== Sizing your system in AWS
+== Size your system in AWS
 
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing an instance type, disk type, and disk size:
 
@@ -81,7 +77,7 @@ Watch the following video for more details about sizing your Cloud Volumes ONTAP
 
 video::GELcXmOuYPw[youtube, width=848, height=480]
 
-== Viewing default system disks
+== View default system disks
 
 In addition to the storage for user data, Cloud Manager also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
 
@@ -89,7 +85,7 @@ link:reference-default-configs.html#aws[View the default disks for Cloud Volumes
 
 TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-connector-default-config.html[View details about the Connector's default configuration^].
 
-== Preparing to deploy Cloud Volumes ONTAP in an AWS Outpost
+== Prepare to deploy Cloud Volumes ONTAP in an AWS Outpost
 
 If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC in the Working Environment wizard. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Connector in your AWS Outpost.
 
@@ -99,11 +95,11 @@ There are a few limitations to point out:
 * The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
 * Only General Purpose SSDs (gp2) are supported at this time
 
-== AWS network information worksheet
+== Collect networking information
 
 When you launch Cloud Volumes ONTAP in AWS, you need to specify details about your VPC network. You can use a worksheet to collect the information from your administrator.
 
-=== Network information for Cloud Volumes ONTAP
+=== Single node or HA pair in a single AZ
 
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -118,7 +114,7 @@ When you launch Cloud Volumes ONTAP in AWS, you need to specify details about yo
 
 |===
 
-=== Network information for an HA pair in multiple AZs
+=== HA pair in multiple AZs
 
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -143,11 +139,11 @@ When you launch Cloud Volumes ONTAP in AWS, you need to specify details about yo
 
 |===
 
-== Choosing a write speed
+== Choose a write speed
 
 Cloud Manager enables you to choose a write speed setting for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed. link:concept-write-speed.html[Learn more about write speed].
 
-== Choosing a volume usage profile
+== Choose a volume usage profile
 
 ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. When you create a volume in Cloud Manager, you can choose a profile that enables these features or a profile that disables them. You should learn more about these features to help you decide which profile to use.
 

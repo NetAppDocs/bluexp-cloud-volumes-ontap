@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: concept-licensing-overview.html
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go
+summary: Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
+---
+
+= Licensing overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs.
+
+The following licensing options are available for new customers.
+
+Freemium offering::
+Free of charge up to 500 GiB of provisioned capacity without purchasing a license or contract. Includes limited support.
++
+Learn more about the Freemium offering.
+
+Essentials package::
+Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
++
+Learn more about the Essentials package.
+
+Professional package::
+Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unlimited backups with Cloud Backup.
++
+Learn more about the Professional package.
+
+Keystone Flex Subscription::
+A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
++
+Learn more about a Keystone Flex Subscription.
+
+The previous by-node licensing model remains available for existing customers who have already purchased a license or who have an active marketplace subscription.

@@ -1,0 +1,128 @@
+---
+sidebar: sidebar
+permalink: task-set-up-licensing-aws.html
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go
+summary: After you decide which licensing option you want to use for Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when deploying a new system.
+---
+
+= Set up licensing for Cloud Volumes ONTAP in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you decide which licensing option you want to use for Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when deploying a new system.
+
+== Freemium
+
+Select the Freemium offering to get Cloud Volumes ONTAP free of charge up to 500 GiB of provisioned capacity. link:concept-licensing.html#freemium-offering[Learn more about the Freemium offering].
+
+.Steps
+
+. Create a new Cloud Volumes ONTAP working environment in AWS.
+
+.. On the *Details and Credentials* page, click *Edit Credentials* and subscribe to the pay-as-you-go offering in the AWS Marketplace.
++
+You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#capacity-based-licensing-packages[Essentials package].
++
+image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP working environment.]
+
+.. Select *Freemium* when prompted to choose a charging method.
++
+image:screenshot-freemium.png[A screenshot of the Freemium option when creating a Cloud Volumes ONTAP working environment.]
+
+link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
+
+== Capacity-based license
+
+Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. Capacity-based licensing is available in the form of a _package_: the Essentials package or the Professional package.
+
+The Essentials and Professional packages are available with the following consumption models:
+
+* A license (BYOL) purchased from NetApp
+* An hourly subscription (PAYGO) from the AWS Marketplace
+* An annual contract from the AWS Marketplace
+
+link:concept-licensing.html#freemium-offering[Learn more about capacity-based licensing].
+
+The following sections describe how to get started with each of these consumption models.
+
+=== BYOL
+
+Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes ONTAP systems in any cloud provider.
+
+.Steps
+
+. https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
+
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site to Cloud Manager]
++
+Cloud Manager automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, Cloud Manager automatically adds the licenses to the Digital Wallet.
+
+. Create a new Cloud Volumes ONTAP working environment in AWS.
+
+.. On the *Details and Credentials* page, subscribe to the pay-as-you-go offering in the AWS Marketplace.
++
+The license that you purchased from NetApp is always charged first, but you'll be charged from the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
+
+.. Select a capacity-based package when prompted to choose a charging method.
++
+image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
+
+link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
+
+=== PAYGO subscription
+
+Pay hourly by subscribing to the offer from your cloud provider's marketplace.
+
+When you create a Cloud Volumes ONTAP working environment, Cloud Manager prompts you to subscribe to the agreement that's available in the AWS Marketplace. That subscription is then associated with the working environment for charging. You can use that same subscription for additional working environments.
+
+.Steps
+
+. Create a new Cloud Volumes ONTAP working environment in AWS.
+
+.. On the *Details and Credentials* page, subscribe to the pay-as-you-go offering in the AWS Marketplace.
++
+image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP working environment.]
+
+.. Select a capacity-based package when prompted to choose a charging method.
++
+image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
+
+=== Annual contract
+
+Pay annually by purchasing an annual contract from your cloud provider's marketplace.
+
+Similar to an hourly subscription, Cloud Manager prompts you to subscribe to the annual contract  that's available in the AWS Marketplace.
+
+.Steps
+
+. Create a new Cloud Volumes ONTAP working environment in AWS.
+
+.. On the *Details and Credentials* page, click *Edit Credentials* and subscribe to the annual contract in your cloud provider's marketplace.
++
+image:screenshot-aws-annual-subscription.png[A screenshot of the annual contract offering when creating a Cloud Volumes ONTAP working environment.]
+
+.. Select a capacity-based package when prompted to choose a charging method.
++
+image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
+
+== Keystone Flex Subscription
+
+A Keystone Flex Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-flex-subscription[Learn more about Keystone Flex Subscriptions].
+
+.Steps
+
+. If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^]
+
+. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
+
+. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
+
+. Create a new Cloud Volumes ONTAP HA working environment in AWS.
+
+.. Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP system.
++
+image:screenshot-keystone.png[A screenshot of the Keystone Flex Subscription option when creating a Cloud Volumes ONTAP working environment.]

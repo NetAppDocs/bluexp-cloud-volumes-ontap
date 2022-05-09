@@ -1,0 +1,21 @@
+---
+sidebar: sidebar
+permalink: concept-licensing-by-node.html
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go
+summary: Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
+---
+
+= Node-based licensing overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers and no free trials are available. By-node charging has been replaced with the by-capacity charging methods described above.
+
+Node-based licensing is still available for existing customers:
+
+* If you have an active license, BYOL is available for license renewals only.
+* If you have an active marketplace subscription, charging is still available through that subscription.
