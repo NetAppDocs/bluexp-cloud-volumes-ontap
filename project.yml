@@ -6,6 +6,19 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
+  filter:
+    label: Cloud provider
+    default: All cloud providers
+    options:
+      - name: Amazon Web Services
+        alias: AWS
+        id: aws
+      - name: Google Cloud
+        alias: Google Cloud
+        id: gcp
+      - name: Microsoft Azure
+        alias: Azure
+        id: azure
 sidebar:
   entries:
     - title: All Cloud Manager documentation
@@ -25,6 +38,7 @@ sidebar:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
         - title: Get started in Amazon Web Services
+          flavor: aws
           entries:
             - title: Quick start
               url: /task-getting-started-aws.html
@@ -45,6 +59,7 @@ sidebar:
             - title: Get started in AWS C2S
               url: /task-getting-started-aws-c2s.html
         - title: Get started in Microsoft Azure
+          flavor: azure
           entries:
             - title: Quick start
               url: /task-getting-started-azure.html
@@ -57,6 +72,7 @@ sidebar:
             - title: Launch a system in Azure
               url: /task-deploying-otc-azure.html
         - title: Get started in Google Cloud
+          flavor: gcp
           entries:
             - title: Quick start
               url: /task-getting-started-gcp.html
@@ -105,8 +121,10 @@ sidebar:
             - title: Work with storage VMs in Cloud Manager
               url: /task-managing-svms.html
             - title: Create storage VMs in AWS
+              flavor: aws
               url: /task-managing-svms-aws.html
             - title: Create storage VMs in Azure
+              flavor: azure
               url: /task-managing-svms-azure.html
         - title: Security and data encryption
           entries:
@@ -137,6 +155,7 @@ sidebar:
                 - title: Delete a system
                   url: /task-deleting-working-env.html
             - title: Administration in AWS
+              flavor: aws
               entries:
                 - title: Change the EC2 instance type
                   url: /task-change-ec2-instance.html
@@ -145,6 +164,7 @@ sidebar:
                 - title: Monitor AWS costs
                   url: /task-monitoring-costs.html
             - title: Administration in Azure
+              flavor: azure
               entries:
                 - title: Change the Azure VM type
                   url: /task-change-azure-vm.html
@@ -153,6 +173,7 @@ sidebar:
                 - title: Use an Azure Private Link
                   url: /task-enabling-private-link.html
             - title: Administration in Google Cloud
+              flavor: gcp
               entries:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
@@ -185,10 +206,13 @@ sidebar:
         - title: High-availability pairs
           entries:
             - title: HA pairs in AWS
+              flavor: aws
               url: /concept-ha.html
             - title: HA pairs in Azure
+              flavor: azure
               url: /concept-ha-azure.html
             - title: HA pairs in GCP
+              flavor: gcp
               url: /concept-ha-google-cloud.html
             - title: Actions during storage takeover
               url: /concept-degraded-ha-pair.html
@@ -223,10 +247,13 @@ homepage:
           url: concept-overview-cvo.html
         - title: Quick start for AWS
           url: task-getting-started-aws.html
+          flavor: aws
         - title: Quick start for Azure
           url: task-getting-started-azure.html
+          flavor: azure
         - title: Quick start for Google Cloud
           url: task-getting-started-gcp.html
+          flavor: gcp
     - title: Licensing
       links:
         - title: Licensing overview
@@ -285,4 +312,3 @@ homepage:
           url: https://cloud.netapp.com/blog/topic/cloud-volumes-ontap
         - title: Cloud webinars
           url: https://cloud.netapp.com/events
-

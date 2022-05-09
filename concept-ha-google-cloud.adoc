@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: concept-ha-google-cloud.html
 keywords: high availability, HA, mediator, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, synchronous, resync, recovery point objective, recovery time objective, failover, mount, remount, failure, data access, access, ip address, performance, gcp, gcp ha, google cloud ha, ha in google cloud
-summary: A Cloud Volumes ONTAP high availability configuration provides nondisruptive operations and fault tolerance. In Google Cloud Platform, data is synchronously mirrored between the two nodes.
+summary: A Cloud Volumes ONTAP high availability configuration provides nondisruptive operations and fault tolerance. In Google Cloud, data is synchronously mirrored between the two nodes.
 ---
 
-= High-availability pairs in Google Cloud Platform
+= High-availability pairs in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: A Cloud Volumes ONTAP high availability configuration provides nondisru
 :imagesdir: ./media/
 
 [.lead]
-A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In Google Cloud Platform, data is synchronously mirrored between the two nodes.
+A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In Google Cloud, data is synchronously mirrored between the two nodes.
 
 == HA components
 
-Cloud Volumes ONTAP HA configurations in GCP include the following components:
+Cloud Volumes ONTAP HA configurations in Google Cloud include the following components:
 
 * Two Cloud Volumes ONTAP nodes whose data is synchronously mirrored between each other.
 

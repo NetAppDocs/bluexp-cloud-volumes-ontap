@@ -15,7 +15,7 @@ summary: You might need to change the configuration of Cloud Volumes ONTAP syste
 [.lead]
 Cloud Manager enables you to choose a normal or high write speed for Cloud Volumes ONTAP. The default write speed is normal. You can change to high write speed if fast write performance is required for your workload.
 
-High write speed is supported with all types of single node systems. It's also supported with HA pairs in AWS and Azure when using a specific instance or VM type. High write speed is not supported with HA pairs in GCP. https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Go to the Cloud Volumes ONTAP Release Notes for more details^].
+High write speed is supported with all types of single node systems and some HA pair configurations. View supported configurations in the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Cloud Volumes ONTAP Release Notes^]
 
 Before you change the write speed, you should link:concept-write-speed.html[understand the differences between the normal and high settings].
 

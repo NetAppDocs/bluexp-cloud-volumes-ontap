@@ -122,7 +122,7 @@ If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledg
 
 === Connections to ONTAP systems
 
-To replicate data between a Cloud Volumes ONTAP system in AWS and ONTAP systems in other networks, you must have a VPN connection between the AWS VPC and the other network—for example, an Azure VNet or your corporate network. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/SetUpVPNConnections.html[AWS Documentation: Setting Up an AWS VPN Connection^].
+To replicate data between a Cloud Volumes ONTAP system in AWS and ONTAP systems in other networks, you must have a VPN connection between the AWS VPC and the other network—for example, your corporate network. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/SetUpVPNConnections.html[AWS Documentation: Setting Up an AWS VPN Connection^].
 
 === DNS and Active Directory for CIFS
 

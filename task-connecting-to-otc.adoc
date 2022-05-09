@@ -22,7 +22,9 @@ You might need to perform some Cloud Volumes ONTAP tasks from System Manager, wh
 
 The computer from which you are accessing Cloud Manager must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to Cloud Manager from a jump host that's in your cloud provider network.
 
+ifdef::aws[]
 NOTE: When deployed in multiple AWS Availability Zones, Cloud Volumes ONTAP HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
+endif::aws[]
 
 .Steps
 
@@ -46,9 +48,11 @@ The Cloud Volumes ONTAP CLI enables you to run all administrative commands and i
 
 .Before you begin
 
-The host from which you use SSH to connect to Cloud Volumes ONTAP must have a network connection to Cloud Volumes ONTAP. For example, you might need to use SSH from a jump host in AWS or Azure.
+The host from which you use SSH to connect to Cloud Volumes ONTAP must have a network connection to Cloud Volumes ONTAP. For example, you might need to SSH from a jump host that's in your cloud provider network.
 
+ifdef::aws[]
 NOTE: When deployed in multiple AZs, Cloud Volumes ONTAP HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
+endif::aws[]
 
 .Steps
 

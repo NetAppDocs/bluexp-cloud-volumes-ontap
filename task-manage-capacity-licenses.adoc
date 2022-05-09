@@ -27,7 +27,7 @@ After you purchase a license from your NetApp sales representative, NetApp will 
 
 In the meantime, Cloud Manager automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, Cloud Manager automatically adds the licenses to the Digital Wallet.
 
-If Cloud Manager can't add the license, you'll need to manually add them to the Digital Wallet yourself. <<Add purchased licenses to your account,Learn how to add purchased licenses to your account>>.
+If Cloud Manager can't add the license, you'll need to manually add them to the Digital Wallet yourself. For example, if the Connector is installed in a location that doesn't have internet access, you'll need to add the licenses yourself. <<Add purchased licenses to your account,Learn how to add purchased licenses to your account>>.
 
 == View your account's capacity
 

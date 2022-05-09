@@ -17,10 +17,11 @@ Reduce your storage costs by enabling automated tiering of inactive data to low-
 
 image:diagram_data_tiering.png[This is a conceptual image that shows hot data going to EBS storage and inactive data going to S3 storage.]
 
-Cloud Volumes ONTAP supports data tiering in AWS, Azure, and Google Cloud Platform. Data tiering is powered by FabricPool technology.
+Data tiering is powered by FabricPool technology.
 
 NOTE: You don't need to install a feature license to enable data tiering (FabricPool).
 
+ifdef::aws[]
 == Data tiering in AWS
 
 When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for inactive data.
@@ -40,7 +41,9 @@ The access costs are higher if you do access the data, so take that into conside
 You can select a storage class when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage class for data tiering is system wide--it's not per volume.
+endif::aws[]
 
+ifdef::azure[]
 == Data tiering in Azure
 
 When you enable data tiering in Azure, Cloud Volumes ONTAP uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for inactive data.
@@ -58,10 +61,12 @@ The access costs are higher if you do access the data, so take that into conside
 You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage tier, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage access tier for data tiering is system wide--it's not per volume.
+endif::azure[]
 
-== Data tiering in GCP
+ifdef::gcp[]
+== Data tiering in Google Cloud
 
-When you enable data tiering in GCP, Cloud Volumes ONTAP uses persistent disks as a performance tier for hot data and a Google Cloud Storage bucket as a capacity tier for inactive data.
+When you enable data tiering in Google Cloud, Cloud Volumes ONTAP uses persistent disks as a performance tier for hot data and a Google Cloud Storage bucket as a capacity tier for inactive data.
 
 Performance tier:: The performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
 
@@ -76,6 +81,7 @@ The access costs are higher if you do access the data, so take that into conside
 You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage class for data tiering is system wide--it's not per volume.
+endif::gcp[]
 
 == Data tiering and capacity limits
 

@@ -97,7 +97,7 @@ TIP: A system that isn't registered for support will still receive the software 
 
 === Upgrades of the HA mediator
 
-For HA systems in AWS or Google Cloud, Cloud Manager also updates the mediator instance as needed during the Cloud Volumes ONTAP upgrade process.
+Cloud Manager also updates the mediator instance as needed during the Cloud Volumes ONTAP upgrade process.
 
 == Prepare to upgrade
 
@@ -252,6 +252,7 @@ Cloud Manager starts the software update. You can perform actions on the working
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
 
+ifdef::gcp[]
 == Fix download failures when using a Google Cloud NAT gateway
 
 The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the Cloud Manager API.
@@ -270,3 +271,4 @@ The value for _maxDownloadSessions_ can be 1 or any integer greater than 1. If t
 Note that 32 is an example value. The value that you should use depends on your NAT configuration and the number of sessions that you can have simultaneously.
 
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#occmconfig[Learn more about the /occm/config API call^].
+endif::gcp[]

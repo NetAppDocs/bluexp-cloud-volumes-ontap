@@ -118,7 +118,9 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
+ifdef::gcp[]
 If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
+endif::gcp[]
 
 | Active Directory Domain to join |	The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
 
@@ -128,11 +130,17 @@ If you're configuring Google Managed Active Directory, AD can be accessed by def
 
 | Organizational Unit a| The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
+ifdef::aws[]
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
+endif::aws[]
+ifdef::azure[]
 * To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
 https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+endif::azure[]
+ifdef::gcp[]
 *	To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
 https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
+endif::gcp[]
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
@@ -287,7 +295,7 @@ Moving a volume might take longer than you expect if any of the following condit
 * The volume is a clone.
 * The volume is a parent of a clone.
 *	The source or destination aggregate has a single Throughput Optimized HDD (st1) disk.
-*	The Cloud Volumes ONTAP system is in AWS and one aggregate uses an older naming scheme for objects. Both aggregates have to use the same name format.
+*	One of the aggregates uses an older naming scheme for objects. Both aggregates have to use the same name format.
 +
 An older naming scheme is used if data tiering was enabled on an aggregate in the 9.4 release or earlier.
 * The encryption settings don't match on the source and destination aggregates, or a rekey is in progress.

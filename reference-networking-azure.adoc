@@ -67,7 +67,7 @@ link:task-enabling-private-link.html[Learn more about using an Azure Private Lin
 
 === Connections to other ONTAP systems
 
-To replicate data between a Cloud Volumes ONTAP system in Azure and ONTAP systems in other networks, you must have a VPN connection between the Azure VNet and the other network—for example, an AWS VPC or your corporate network.
+To replicate data between a Cloud Volumes ONTAP system in Azure and ONTAP systems in other networks, you must have a VPN connection between the Azure VNet and the other network—for example, your corporate network.
 
 For instructions, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^].
 
@@ -376,7 +376,7 @@ NOTE: The source IP address is the Connector host.
 | Destination
 | Purpose
 
-| API calls and AutoSupport | 443 | HTTPS | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
+| API calls and AutoSupport | 443 | HTTPS | Outbound internet and ONTAP cluster management LIF | API calls to Azure and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
 | DNS | 53 | UDP	| DNS | Used for DNS resolve by Cloud Manager
 
 |===
