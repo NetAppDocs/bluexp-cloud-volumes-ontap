@@ -37,16 +37,6 @@ sidebar:
       entries:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
-        - title: Choose a licensing option
-          entries:
-            - title: Overview
-              url: /concept-licensing-overview.html
-            - title: Capacity-based licenses
-              url: /concept-licensing-capacity.html
-            - title: Keystone Flex Subscription
-              url: /concept-licensing-keystone.html
-            - title: Max number of systems
-              url: /concept-licensing-max-systems.html
         - title: Get started in Amazon Web Services
           flavor: aws
           entries:
@@ -238,17 +228,11 @@ sidebar:
           url: /concept-security.html
         - title: Performance
           url: /concept-performance.html
-        - title: Node-based licenses
-          entries:
-            - title: Overview
-              url: /concept-licensing-overview.html
-            - title: Management of node-based BYOL
-              url: /concept-license-management.html
-        - title: License conversions
-          url: /concept-licensing-conversions.html
+        - title: Management of node-based BYOL
+          url: /concept-license-management.html
         - title: AutoSupport and Active IQ Digital Advisor
           url: /concept-active-iq.html
-        - title: Default configuration
+        - title: Default configurations
           url: /reference-default-configs.html
     - title: Knowledge and support
       entries:

@@ -47,16 +47,16 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
-To get started with the Freemium offering, create a new Cloud Volumes ONTAP working environment and select *Freemium* when prompted to choose a charging method.
+Learn how to get started with the Freemium offering:
 
 ifdef::aws[]
-* link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
 endif::aws[]
 ifdef::azure[]
-* link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in Azure]
 endif::azure[]
 ifdef::gcp[]
-* link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
 == Capacity-based licensing packages
@@ -89,22 +89,6 @@ The license is not restricted to a single cloud provider.
 * An hourly subscription (PAYGO) from your cloud provider's marketplace.
 
 * An annual contract from your cloud provider's marketplace.
-
-ifdef::aws[]
-** In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe from the Details & Credentials page when deploying a Cloud Volumes ONTAP working environment.
-endif::aws[]
-
-ifdef::azure[]
-** In Azure, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
-+
-After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
-endif::azure[]
-
-ifdef::gcp[]
-** In Google Cloud, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Google Cloud Marketplace.
-+
-After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Google Cloud Marketplace during working environment creation.
-endif::gcp[]
 
 Note the following:
 
@@ -157,18 +141,16 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 === How to get started
 
-. https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
-. link:task-manage-capacity-licenses.html[Add your license to Cloud Manager]
-. Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system
-+
+Learn how to get started with capacity-based licensing:
+
 ifdef::aws[]
-* link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
 endif::aws[]
 ifdef::azure[]
-* link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in Azure]
 endif::azure[]
 ifdef::gcp[]
-* link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
 == Keystone Flex Subscription
@@ -191,19 +173,16 @@ Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity thro
 
 === How to get started
 
-. If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^].
-. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.
-. After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
-. Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP system.
-+
+Learn how to get started with a Keystone Flex Subscription:
+
 ifdef::aws[]
-* link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
 endif::aws[]
 ifdef::azure[]
-* link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in Azure]
 endif::azure[]
 ifdef::gcp[]
-* link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
+* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
 == Node-based licensing
