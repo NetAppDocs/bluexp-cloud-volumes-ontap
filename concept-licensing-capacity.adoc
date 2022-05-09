@@ -27,17 +27,21 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
-To get started with the Freemium offering, create a new Cloud Volumes ONTAP working environment and select *Freemium* when prompted to choose a charging method.
+== How to get started
 
-ifdef::aws[]
-* link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
-endif::aws[]
-ifdef::azure[]
-* link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
-endif::azure[]
-ifdef::gcp[]
-* link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
-endif::gcp[]
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
+
+. On the *Details and Credentials* page, click *Edit Credentials* and subscribe to the pay-as-you-go offering in the AWS Marketplace.
++
+You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#capacity-based-licensing-packages[Essentials package].
++
+image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP working environment.]
+
+. Select *Freemium* when prompted to choose a charging method.
++
+image:screenshot-freemium.png[A screenshot of the Freemium option when creating a Cloud Volumes ONTAP working environment.]
+
+link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
 
 == Capacity-based licensing packages
 
@@ -69,22 +73,6 @@ The license is not restricted to a single cloud provider.
 * An hourly subscription (PAYGO) from your cloud provider's marketplace.
 
 * An annual contract from your cloud provider's marketplace.
-
-ifdef::aws[]
-** In AWS, annual contracts are available from a public offer in the AWS Marketplace. Cloud Manager prompts you to subscribe from the Details & Credentials page when deploying a Cloud Volumes ONTAP working environment.
-endif::aws[]
-
-ifdef::azure[]
-** In Azure, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
-+
-After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
-endif::azure[]
-
-ifdef::gcp[]
-** In Google Cloud, you need to work with your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Google Cloud Marketplace.
-+
-After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Google Cloud Marketplace during working environment creation.
-endif::gcp[]
 
 Note the following:
 
@@ -138,15 +126,19 @@ There is no maximum capacity limitation when it comes to the license itself.
 === How to get started
 
 . https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
-. link:task-manage-capacity-licenses.html[Add your license to Cloud Manager]
-. Select the capacity-based BYOL charging method when you create a Cloud Volumes ONTAP system
+
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site to Cloud Manager].
 +
-ifdef::aws[]
-* link:task-deploying-otc-aws.html[Launching Cloud Volumes ONTAP in AWS]
-endif::aws[]
-ifdef::azure[]
-* link:task-deploying-otc-azure.html[Launching Cloud Volumes ONTAP in Azure]
-endif::azure[]
-ifdef::gcp[]
-* link:task-deploying-gcp.html[Launching Cloud Volumes ONTAP in Google Cloud]
-endif::gcp[]
+Cloud Manager automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, Cloud Manager automatically adds the licenses to the Digital Wallet.
+
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
+
+.. On the *Details and Credentials* page, subscribe to the pay-as-you-go offering in the AWS Marketplace.
++
+The license that you purchased from NetApp is always charged first, but you'll be charged from the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
+
+.. Select a capacity-based package when prompted to choose a charging method.
++
+image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
+
+link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
