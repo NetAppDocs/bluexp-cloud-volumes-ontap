@@ -57,7 +57,7 @@ Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes O
 
 . https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site to Cloud Manager].
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site to Cloud Manager^]
 +
 Cloud Manager automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, Cloud Manager automatically adds the licenses to the Digital Wallet.
 +
@@ -97,7 +97,7 @@ image:screenshot-professional.png[A screenshot of the Professional option when c
 
 link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
 
-TIP: You can manage the AWS Marketplace subscriptions associated with your AWS accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html[Learn how to manage your AWS accounts and subscriptions]
+TIP: You can manage the AWS Marketplace subscriptions associated with your AWS accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html[Learn how to manage your AWS accounts and subscriptions^]
 
 === Annual contract
 
