@@ -41,6 +41,16 @@ The access costs are higher if you do access the data, so take that into conside
 You can select a storage class when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage class for data tiering is system wide--it's not per volume.
+
+Object storage settings::
+When Cloud Manager creates an S3 bucket in AWS, it uses the following default settings:
+
+* Storage class: Standard
+* Default encryption: Disabled
+* Block public access: Block all public access
+* Object ownership: ACLs enabled
+* Bucket versioning: Disabled
+* Object lock: Disabled
 endif::aws[]
 
 ifdef::azure[]
@@ -61,6 +71,18 @@ The access costs are higher if you do access the data, so take that into conside
 You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage tier, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage access tier for data tiering is system wide--it's not per volume.
+
+Object storage settings::
+Cloud Manager creates a new storage account with the following settings:
+
+* Access tier: Hot
+* Performance: Standard
+* Redundancy: Locally-redundant storage (LRS)
+* Account: StorageV2 (general purpose v2)
+* Require secure transfer for REST API operations: Enabled
+* Storage account key access: Enabled
+* Minimum TLS version: Version 1.2
+* Infrastructure encryption: Disabled
 endif::azure[]
 
 ifdef::gcp[]
@@ -81,6 +103,16 @@ The access costs are higher if you do access the data, so take that into conside
 You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage class for data tiering is system wide--it's not per volume.
+
+Object storage settings::
+When Cloud Manager creates a bucket in Google Cloud, it uses the following default settings:
+
+* Location type: Region
+* Storage class: Standard
+* Public access: Subject to object ACLs
+* Access control: Fine-grained
+* Protection: None
+* Data encryption: Google-managed key
 endif::gcp[]
 
 == Data tiering and capacity limits
