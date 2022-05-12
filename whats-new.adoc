@@ -37,8 +37,10 @@ When Cloud Manager upgrades the mediator for an HA pair, it now validates that a
 The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
 
 https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html[Learn about Kubernetes data management in Cloud Manager^]
+//end::whats-new[]
 
 ifdef::azure[]
+//tag::whats-new[]
 === Annual contract in Azure
 
 The Essentials and Professional packages are now available in Azure through an annual contract. You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
@@ -46,6 +48,7 @@ The Essentials and Professional packages are now available in Azure through an a
 After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about licensing].
+//end::whats-new[]
 endif::azure[]
 
 ifdef::aws[]
