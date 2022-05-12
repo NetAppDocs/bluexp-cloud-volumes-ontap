@@ -40,6 +40,7 @@ https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html[L
 //end::whats-new[]
 
 ifdef::azure[]
+
 //tag::whats-new[]
 === Annual contract in Azure
 
