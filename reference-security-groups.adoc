@@ -193,9 +193,11 @@ If you need rigid rules for outbound traffic, you can use the following informat
 
 NOTE: Rather than open ports 443 and 53, you can create an interface VPC endpoint from the target subnet to the AWS EC2 service.
 
-== Rules for the HA mediator internal security group
+== Rules for the HA configuration internal security group
 
-The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. Cloud Manager always creates this security group. You do not have the option to use your own.
+The predefined internal security group for a Cloud Volumes ONTAP HA configuration includes the following rules. This security group enables communication between the HA nodes and between the mediator and the nodes. 
+
+Cloud Manager always creates this security group. You do not have the option to use your own.
 
 === Inbound rules
 

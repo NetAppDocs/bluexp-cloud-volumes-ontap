@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept-flash-cache.html
-keywords: cloud volumes ontap, aws, ec2, flash cache, read-intensive, read, random, databases, email, file services, c5d.4xlarge, c5d.9xlarge, r5d.2xlarge, compression, performance, azure, nvme, standard, l8s, vm type, virtual machine, m5d.8xlarge, m5d.12xlarge, c5d.18xlarge
-summary: Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
+keywords: cloud volumes ontap, flash cache, read-intensive, read, random, databases, email, file services, compression, performance, nvme
+summary: Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
 ---
 
 = Flash Cache
@@ -13,26 +13,15 @@ summary: Some Cloud Volumes ONTAP configurations in AWS and Azure include local 
 :imagesdir: ./media/
 
 [.lead]
-Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance.
+Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance.
 
 == What's Flash Cache?
 
 Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It's effective for random read-intensive workloads, including databases, email, and file services.
 
-== Supported instances in AWS
+== Supported configurations
 
-Select one of the following EC2 instance types with a new or existing Cloud Volumes ONTAP Premium or BYOL system:
-
-* c5d.4xlarge
-* c5d.9xlarge
-* c5d.18xlarge
-* m5d.8xlarge
-* m5d.12xlarge
-* r5d.2xlarge
-
-== Supported VM type in Azure
-
-Select the Standard_L8s_v2 VM type with a single node Cloud Volumes ONTAP BYOL system in Azure.
+Flash Cache is supported with specific Cloud Volumes ONTAP configurations. View supported configurations in the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^]
 
 == Limitations
 

@@ -29,10 +29,10 @@ Clients can access the same files using both NFS and SMB protocols.
 
 SMB is the traditional file access protocol for Windows systems. Clients can access files in ONTAP volumes using the SMB 2.0, SMB 2.1, SMB 3.0, and SMB 3.1.1 protocols. Just like with NFS, a mix of permission styles are supported.
 
+ifdef::azure[]
 == S3
 
-Cloud Volumes ONTAP supports S3 as an option for scale-out storage in Microsoft Azure. S3 protocol support enables you to configure S3 client access to objects contained in a bucket in an SVM.
-
-At this time, the S3 protocol is not supported with Cloud Volumes ONTAP in AWS or in Google Cloud.
+Cloud Volumes ONTAP supports S3 as an option for scale-out storage in Microsoft Azure only. S3 protocol support enables you to configure S3 client access to objects contained in a bucket in an SVM.
 
 https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^].
+endif::azure[]
