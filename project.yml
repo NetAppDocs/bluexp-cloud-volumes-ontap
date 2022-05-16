@@ -132,9 +132,9 @@ sidebar:
               url: /task-encrypting-volumes.html
             - title: Improve ransomware protection
               url: /task-protecting-ransomware.html
-            - title: Enable Azure Key Vault 
+            - title: Manage keys with Azure Key Vault 
               url: /task-azure-key-vault.html
-            - title: Enable Google Cloud Key Manager Service 
+            - title: Manage keys with Google Cloud Key Manager Service 
               url: /task-google-key-manager.html
         - title: System administration
           entries:
