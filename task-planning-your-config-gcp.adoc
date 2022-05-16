@@ -17,7 +17,10 @@ When you deploy Cloud Volumes ONTAP in Google Cloud, you can choose a preconfigu
 
 == Choose a Cloud Volumes ONTAP license
 
-Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs. link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
+Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs.
+
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP]
+* link:task-set-up-licensing-gcp.html[Learn how to set up licensing]
 
 == Choose a supported region
 
