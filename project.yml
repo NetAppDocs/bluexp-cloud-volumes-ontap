@@ -54,7 +54,9 @@ sidebar:
                   url: /reference-security-groups.html
             - title: Set up the AWS KMS
               url: /task-setting-up-kms.html
-            - title: Launch a system in AWS
+            - title: Set up licensing
+              url: /task-set-up-licensing-aws.html
+            - title: Launch Cloud Volumes ONTAP in AWS
               url: /task-deploying-otc-aws.html
             - title: Get started in AWS C2S
               url: /task-getting-started-aws-c2s.html
@@ -69,7 +71,9 @@ sidebar:
               url: /reference-networking-azure.html
             - title: Set up encryption using your key
               url: /task-set-up-azure-encryption.html
-            - title: Launch a system in Azure
+            - title: Set up licensing
+              url: /task-set-up-licensing-azure.html
+            - title: Launch Cloud Volumes ONTAP in Azure
               url: /task-deploying-otc-azure.html
         - title: Get started in Google Cloud
           flavor: gcp
@@ -86,7 +90,9 @@ sidebar:
               url: /task-creating-gcp-service-account.html
             - title: Use customer-managed encryption keys
               url: /task-setting-up-gcp-encryption.html
-            - title: Launch a system in GCP
+            - title: Set up licensing
+              url: /task-set-up-licensing-google.html
+            - title: Launch Cloud Volumes ONTAP in Google Cloud
               url: /task-deploying-gcp.html
     - title: Use Cloud Volumes ONTAP
       entries:
@@ -187,6 +193,8 @@ sidebar:
               url: /task-configure-ems.html
     - title: Concepts
       entries:
+        - title: Licensing
+          url: /concept-licensing.html
         - title: Storage
           entries:
             - title: Client protocols
@@ -216,17 +224,15 @@ sidebar:
               url: /concept-ha-google-cloud.html
             - title: Actions during storage takeover
               url: /concept-degraded-ha-pair.html
-        - title: Licensing
-          url: /concept-licensing.html
-        - title: Management of node-based BYOL
-          url: /concept-license-management.html
         - title: Security
           url: /concept-security.html
         - title: Performance
           url: /concept-performance.html
+        - title: Management of node-based BYOL
+          url: /concept-license-management.html
         - title: AutoSupport and Active IQ Digital Advisor
           url: /concept-active-iq.html
-        - title: Default configuration
+        - title: Default configurations
           url: /reference-default-configs.html
     - title: Knowledge and support
       entries:
