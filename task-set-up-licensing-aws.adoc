@@ -23,13 +23,13 @@ Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up t
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, click *Edit Credentials* and subscribe to the pay-as-you-go offering in the AWS Marketplace.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
 +
 You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#capacity-based-licensing-packages[Essentials package].
 +
 image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP working environment.]
 
-.. Select *Freemium* when prompted to choose a charging method.
+.. After you return to Cloud Manager, select *Freemium* when you reach the charging methods page.
 +
 image:screenshot-freemium.png[A screenshot of the Freemium option when creating a Cloud Volumes ONTAP working environment.]
 
@@ -65,13 +65,13 @@ Your license must be available from the Digital Wallet before you can use it wit
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, click *Edit Credentials* subscribe to the pay-as-you-go offering in the AWS Marketplace.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
 +
 The license that you purchased from NetApp is always charged first, but you'll be charged from the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
 +
 image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP working environment.]
 
-.. Select a capacity-based package when prompted to choose a charging method.
+.. After you return to Cloud Manager, select a capacity-based package when you reach the charging methods page.
 +
 image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
 
@@ -87,11 +87,11 @@ When you create a Cloud Volumes ONTAP working environment, Cloud Manager prompts
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, subscribe to the pay-as-you-go offering in the AWS Marketplace.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
 +
 image:screenshot-aws-paygo-subscription.png[A screenshot of the PAYGO subscription option when creating a Cloud Volumes ONTAP working environment.]
 
-.. Select a capacity-based package when prompted to choose a charging method.
+.. After you return to Cloud Manager, select a capacity-based package when you reach the charging methods page.
 +
 image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
 
@@ -109,11 +109,11 @@ Similar to an hourly subscription, Cloud Manager prompts you to subscribe to the
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, click *Edit Credentials* and subscribe to the annual contract in your cloud provider's marketplace.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the annual contract in the AWS Marketplace.
 +
 image:screenshot-aws-annual-subscription.png[A screenshot of the annual contract offering when creating a Cloud Volumes ONTAP working environment.]
 
-.. Select a capacity-based package when prompted to choose a charging method.
+.. After you return to Cloud Manager, select a capacity-based package when you reach the charging methods page.
 +
 image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
 

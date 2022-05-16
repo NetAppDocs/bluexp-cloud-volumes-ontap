@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task-set-up-licensing-gcp.html
+permalink: task-set-up-licensing-google.html
 keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go
 summary: After you decide which licensing option you want to use for Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when deploying a new system.
 ---
@@ -23,11 +23,11 @@ Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up t
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, click *Edit Credentials* and click *Add Subscription* to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
 You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#capacity-based-licensing-packages[Essentials package].
 
-.. Select *Freemium* when prompted to choose a charging method.
+.. After you return to Cloud Manager, select *Freemium* when you reach the charging methods page.
 +
 image:screenshot-freemium.png[A screenshot of the Freemium option when creating a Cloud Volumes ONTAP working environment.]
 
@@ -63,11 +63,11 @@ Your license must be available from the Digital Wallet before you can use it wit
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, click *Edit Credentials* and click *Add Subscription* to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
 The license that you purchased from NetApp is always charged first, but you'll be charged from the hourly rate in the marketplace if you exceed your licensed capacity or if the term of your license expires.
 
-.. Select a capacity-based package when prompted to choose a charging method.
+.. After you return to Cloud Manager, select a capacity-based package when you reach the charging methods page.
 +
 image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
 
@@ -83,9 +83,9 @@ When you create a Cloud Volumes ONTAP working environment, Cloud Manager prompts
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, click *Edit Credentials* and click *Add Subscription* to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 
-.. Select a capacity-based package when prompted to choose a charging method.
+.. After you return to Cloud Manager, select a capacity-based package when you reach the charging methods page.
 +
 image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
 
@@ -107,11 +107,11 @@ After NetApp shares the private offer with you, you can select the annual plan w
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
-.. On the *Details and Credentials* page, click *Edit Credentials*, click *Add Subscription*, and then click *Continue*.
+.. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the annual plan in the Google Cloud Marketplace.
 
 .. In Google Cloud, select the annual plan that was shared with your account and then click *Subscribe*.
 
-.. After you return to Cloud Manager, select a capacity-based package when prompted to choose a charging method.
+.. After you return to Cloud Manager, select a capacity-based package when you reach the charging methods page.
 +
 image:screenshot-professional.png[A screenshot of the Professional option when creating a Cloud Volumes ONTAP working environment.]
 
