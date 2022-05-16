@@ -57,11 +57,11 @@ Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes O
 
 . https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site to Cloud Manager^]
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to Cloud Manager^]
 +
 Cloud Manager automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, Cloud Manager automatically adds the licenses to the Digital Wallet.
 +
-Your license must be available from the Digital Wallet before you can use it with Cloud Volumes ONTAP.
+Your license must be available from the Digital Wallet before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account[manually add the license to the Digital Wallet].
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
