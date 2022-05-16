@@ -5,7 +5,7 @@ keywords: license, disk, ebs, storage, size, write speed, volume usage, capacity
 summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 ---
 
-= Planning your Cloud Volumes ONTAP configuration in Google Cloud
+= Plan your Cloud Volumes ONTAP configuration in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,27 +15,30 @@ summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured sys
 [.lead]
 When you deploy Cloud Volumes ONTAP in Google Cloud, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 
-== Viewing supported regions
+== Choose a Cloud Volumes ONTAP license
+
+Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs.
+
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP]
+* link:task-set-up-licensing-gcp.html[Learn how to set up licensing]
+
+== Choose a supported region
 
 Cloud Volumes ONTAP is supported in most Google Cloud regions. https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^].
 
-== Choosing a license
-
-Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a consumption model that meets your needs. link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-
-== Supported machine types
+== Choose a supported machine type
 
 Cloud Volumes ONTAP supports several machine types, depending on the license type that you choose.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations for Cloud Volumes ONTAP in GCP^]
 
-== Understanding storage limits
+== Understand storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html[Storage limits for Cloud Volumes ONTAP in GCP^]
 
-== Sizing your system in GCP
+== Size your system in GCP
 
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a machine type, disk type, and disk size:
 
@@ -68,7 +71,7 @@ Refer to the following for more details:
 ** https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^]
 ** https://cloud.google.com/compute/docs/disks/performance[Google Cloud documentation: Optimizing Persistent Disk and Local SSD Performance^]
 
-== Viewing default system disks
+== View default system disks
 
 In addition to the storage for user data, Cloud Manager also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
 
@@ -79,7 +82,7 @@ Google Cloud Compute Engine enforces quotas on resource usage so you should ensu
 
 TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-connector-default-config.html[View details about the Connector's default configuration^].
 
-== GCP network information worksheet
+== Collect networking information
 
 When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.
 
@@ -137,11 +140,11 @@ When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about yo
 
 |===
 
-== Choosing a write speed
+== Choose a write speed
 
 Cloud Manager enables you to choose a write speed setting for Cloud Volumes ONTAP, except for high availability (HA) pairs in Google Cloud. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed. link:concept-write-speed.html[Learn more about write speed].
 
-== Choosing a volume usage profile
+== Choose a volume usage profile
 
 ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. When you create a volume in Cloud Manager, you can choose a profile that enables these features or a profile that disables them. You should learn more about these features to help you decide which profile to use.
 
