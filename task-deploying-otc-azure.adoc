@@ -112,8 +112,8 @@ TIP: If the Azure account that you're using has the https://mysupport.netapp.com
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about these charging methods].
-* link:task-deploying-otc-azure.html#licensing[Learn what's required in the wizard for the licensing method that you want to use].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
+* link:task-set-up-licensing-azure.html[Learn how to set up licensing].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +

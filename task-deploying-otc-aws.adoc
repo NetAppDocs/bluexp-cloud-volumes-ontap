@@ -114,8 +114,8 @@ link:concept-security.html#encryption-of-data-at-rest[Learn more about supported
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about these charging methods].
-* link:task-deploying-otc-aws.html#licensing[Learn what's required in the wizard for the licensing method that you want to use.]
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
+* link:task-set-up-licensing-aws.html[Learn how to set up licensing].
 
 . *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
@@ -318,8 +318,8 @@ link:concept-security.html#encryption-of-data-at-rest[Learn more about supported
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about these charging methods].
-* link:task-deploying-otc-aws.html#licensing[Learn what's required in the wizard for the licensing method that you want to use].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
+* link:task-set-up-licensing-aws.html[Learn how to set up licensing].
 
 . *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
