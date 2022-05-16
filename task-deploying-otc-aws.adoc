@@ -30,6 +30,10 @@ You need the following to create a working environment.
 +
 You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration].
 
+* An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
++
+link:task-set-up-licensing-aws.html[Learn how to set up licensing]
+
 * DNS and Active Directory for CIFS configurations.
 +
 For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].

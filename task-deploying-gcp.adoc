@@ -32,6 +32,10 @@ You need the following to create a working environment.
 +
 You should have prepared by choosing a configuration and by obtaining GCP networking information from your administrator. For details, see link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration].
 
+* An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
++
+link:task-set-up-licensing-gcp.html[Learn how to set up licensing]
+
 * Google Cloud APIs should be https://cloud.google.com/apis/docs/getting-started#enabling_apis[enabled in your project^]:
 +
 ** Cloud Deployment Manager V2 API

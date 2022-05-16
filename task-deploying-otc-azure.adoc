@@ -30,6 +30,10 @@ You need the following to create a working environment.
 +
 You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task-planning-your-config-azure.html[Planning your Cloud Volumes ONTAP configuration].
 
+* An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
++
+link:task-set-up-licensing-azure.html[Learn how to set up licensing]
+
 .About this task
 
 When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates several Azure objects, such as a resource group, network interfaces, and storage accounts. You can review a summary of the resources at the end of the wizard.
