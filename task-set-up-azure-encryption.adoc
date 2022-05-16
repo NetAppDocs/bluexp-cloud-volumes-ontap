@@ -89,7 +89,7 @@ If you want to use a customer-managed key with a single node Cloud Volumes ONTAP
 
 You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
 
-These permissions aren't required for HA pairs.
+NOTE: The first three permissions aren't required for HA pairs.
 
 .Steps
 
