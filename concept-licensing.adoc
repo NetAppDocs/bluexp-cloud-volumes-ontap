@@ -113,6 +113,10 @@ There are no instance or capacity limitations. You can deploy as many Cloud Volu
 
 There are no hourly software license charges for Cloud Volumes ONTAP, but infrastructure charges from your cloud provider still apply.
 
+TIP: You will receive a notification in Cloud Manager when the free trial starts, when there are 7 days left, and when there is 1 day remaining. For example:
++
+image:screenshot-free-trial-notification.png[A screenshot of a notification in the Cloud Manager interface that states there is only 7 days remaining on a free trial.]
+
 === Supported configurations
 
 Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
