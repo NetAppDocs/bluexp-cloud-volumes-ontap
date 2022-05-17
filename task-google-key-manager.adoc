@@ -44,8 +44,6 @@ gcloud iam roles create kmsCustomRole
 ----
 +
 . Assign the custom role to the Cloud KMS key and Cloud Volumes ONTAP service account:
-+
-gcloud kms keys add-iam-policy-binding frodo --keyring='fellowship' --location='global' --member='user:test-user@gmail.com' --role='roles/editor'
 `gcloud kms keys add-iam-policy-binding _key_name_ --keyring _key_ring_name_ --location _key_location_ --member serviceAccount:_service_account_Name_ --role projects/_customer_project_id_/roles/kmsCustomRole`
 . Download service account JSON key:
 `gcloud iam service-accounts keys create key-file --iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com`
