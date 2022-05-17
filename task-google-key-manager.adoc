@@ -31,25 +31,22 @@ When using Cloud KMS, be aware that by default a data SVMs LIF is used to commun
 == Configuration 
 
 .GCP
-. In the GCP environment, reate a symmetric GCP key ring and key:
+. In the GCP environment, create a symmetric GCP key ring and key.
 . Create a custom role for your Cloud Volumes ONTAP service account:
 +
-[source]
+----
 gcloud iam roles create kmsCustomRole
-    --project=_project_id_
-    --title=_kms_custom_role_name_
-    --description=_custom_role_description_
+    --project=<project_id>
+    --title=<kms_custom_role_name>
+    --description=<custom_role_description>
     --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
     --stage=GA
+----
 +
 . Assign the custom role to the Cloud KMS key and Cloud Volumes ONTAP service account:
 +
-[source]
-`gcloud kms keys add-iam-policy-binding ${_key_name_}
-    --keyring ${_key_ring_name_}
-    --location ${_key_location_}
-    --member serviceAccount:${_service_account_Name_}
-    --role projects/_<customer_project_id>_/roles/kmsCustomRole`
+gcloud kms keys add-iam-policy-binding frodo --keyring='fellowship' --location='global' --member='user:test-user@gmail.com' --role='roles/editor'
+`gcloud kms keys add-iam-policy-binding _key_name_ --keyring _key_ring_name_ --location _key_location_ --member serviceAccount:_service_account_Name_ --role projects/_customer_project_id_/roles/kmsCustomRole`
 . Download service account JSON key:
 `gcloud iam service-accounts keys create key-file --iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com`
 
