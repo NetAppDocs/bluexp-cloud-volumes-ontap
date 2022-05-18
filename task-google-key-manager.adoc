@@ -16,7 +16,7 @@ Key management with Cloud KMS can be enabled with the CLI or the ONTAP REST API.
 When using Cloud KMS, be aware that by default a data SVMs LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider's authentication services (oauth2.googleapis.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service. 
 
 .Prerequisites
-* The Cloud Volumes ONTAP cluster's nodes must support NVE 
+* Cloud Volumes ONTAP must be running version 9.10.1 or later
 * Volume Encryption (VE) license installed 
 * Multi-tenant Encryption Key Management (MTEKM) license installed 
 * You must be a cluster or SVM administrator 
