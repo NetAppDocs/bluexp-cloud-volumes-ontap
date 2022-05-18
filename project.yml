@@ -133,8 +133,10 @@ sidebar:
             - title: Improve ransomware protection
               url: /task-protecting-ransomware.html
             - title: Manage keys with Azure Key Vault 
+              flavor: azure
               url: /task-azure-key-vault.html
             - title: Manage keys with Google Cloud Key Manager Service 
+              flavor: gcp
               url: /task-google-key-manager.html
         - title: System administration
           entries:

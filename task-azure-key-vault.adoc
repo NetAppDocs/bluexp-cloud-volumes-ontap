@@ -26,12 +26,11 @@ When using AKV, be aware that by default a data SVM LIF is used to communicate w
 * An Active Azure subscription
 
 .Limitations
-* AKV is not available for NSE and NAE keys
 * AKV can only be configured on a data SVM 
 
 == Configuration process
 
-The outlined steps capture how to register your Cloud Volumes ONTAP configure with Azure and how to create an Azure Key Vault and keys. If you have already completed these steps, ensure you have the correct configuration settings, particularly in <<create-akv>>, and then proceed to <<ontap>>.
+The outlined steps capture how to register your Cloud Volumes ONTAP configuration with Azure and how to create an Azure Key Vault and keys. If you have already completed these steps, ensure you have the correct configuration settings, particularly in <<create-akv>>, and then proceed to <<ontap>>.
 * <<azure-app>>
 * <<secret>>
 * <<create-akv>>
@@ -41,7 +40,7 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configure wi
 
 [[azure-app]]
 .Azure Application Registration 
-. You must first register your application in the Azure subscription that you want the Cloud Volumes ONTAP to use for access the Azure Key Vault. Within the Azure portal, select **App registrations** in the
+. You must first register your application in the Azure subscription that you want the Cloud Volumes ONTAP to use for access the Azure Key Vault. Within the Azure portal, select **App registrations**.
 . Select **New registration**.
 . Provide a name for your application and select a supported application type. The default single tenant suffices for Azure Key Vault usage. Select **Register**. 
 . In the Azure Overview window, select the application you have registered. Copy the **application (client) ID** and the **directory (tenant) ID** to a secure location. They will be required later in the registration process.
@@ -56,7 +55,7 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configure wi
 .Create an Azure Key Vault
 . If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration, however you must adapt the access policies to the settings in this process. 
 . In the Azure portal, navigate to the **Key Vaults** section.
-. Select **Create**. Enter the required i information including resource group, region and pricing tier and make selections for the days to retain deleted vaults and whether or not purge protection is enabled. For the purposes of this configuration, defaults are sufficient, however your specific cloud governance policies may require different settings.
+. Select **Create**. Enter the required information including resource group, region and pricing tier and make selections for the days to retain deleted vaults and whether or not purge protection is enabled. For the purposes of this configuration, defaults are sufficient, however your specific cloud governance policies may require different settings.
 . Select **Next** to choose an access policy.
 . Select **Azure Disk Encryption** for the volume encryption option and **Vault access policy** for the permission model.
 . Select **Add Access Policy**.
