@@ -17,6 +17,18 @@ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
 The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
+== 6 June 2022
+
+The following changes were introduced with the 3.9.19 release of the Connector.
+
+=== Disabling Azure Private Link connections
+
+If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.
+
+If you disable the Azure Private Link connection, Cloud Manager limits storage account access to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
+
+link:task-enabling-private-link.html[Learn how to disable Azure Private Link connections].
+
 == 2 May 2022
 
 The following changes were introduced with the 3.9.18 release of the Connector.
