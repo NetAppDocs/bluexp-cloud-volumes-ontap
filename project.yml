@@ -160,7 +160,7 @@ sidebar:
                   url: /task-removing.html
                 - title: Delete a system
                   url: /task-deleting-working-env.html
-            - title: Administration in AWS
+            - title: AWS administration
               flavor: aws
               entries:
                 - title: Change the EC2 instance type
@@ -169,7 +169,7 @@ sidebar:
                   url: /task-change-route-tables.html
                 - title: Monitor AWS costs
                   url: /task-monitoring-costs.html
-            - title: Administration in Azure
+            - title: Azure administration
               flavor: azure
               entries:
                 - title: Change the Azure VM type
@@ -178,12 +178,14 @@ sidebar:
                   url: /task-overriding-cifs-locks.html
                 - title: Use an Azure Private Link
                   url: /task-enabling-private-link.html
-            - title: Administration in Google Cloud
+            - title: Google Cloud administration
               flavor: gcp
               entries:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
-            - title: Administration from System Manager or CLI
+            - title: Administration from System Manager
+              url: /task-administer-system-manager.html
+            - title: Administration from the CLI
               url: /task-connecting-to-otc.html
         - title: System health and events
           entries:
