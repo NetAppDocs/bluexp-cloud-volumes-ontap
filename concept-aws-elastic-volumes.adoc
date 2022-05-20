@@ -45,11 +45,11 @@ For example, the Elastic Volumes feature is not supported if you created a Cloud
 
 === EBS disk types
 
-The Elastic Volumes feature is automatically enabled at the aggregate level when using General Purpose SSDs (gp3) or Provisioned IOPS SSDs (io1). Aggregates that use any other disk type are not supported.
+The Elastic Volumes feature is automatically enabled at the aggregate level when using General Purpose SSDs (gp3) or Provisioned IOPS SSDs (io1). The Elastic Volumes feature is not supported with aggregates that use any other disk type.
 
 == Required AWS permissions
 
-The Connector requires the following permissions to enable and manage the Elastic Volumes feature on a Cloud Volumes ONTAP aggregate:
+Starting with the 3.9.19 release, the Connector requires the following permissions to enable and manage the Elastic Volumes feature on a Cloud Volumes ONTAP aggregate:
 
 * ec2:DescribeVolumesModifications
 * ec2:ModifyVolume
@@ -70,7 +70,7 @@ Cloud Manager increases the size of the disks while the Cloud Volumes ONTAP syst
 
 If an aggregate reaches 64 TiB (or 16 TiB on each disk), Cloud Manager creates a second RAID group for additional capacity. This second RAID group works just like the first one: it has four disks that have the exact same capacity and it can grow up to 64 TiB. That means an aggregate can have a maximum capacity of 128 TiB.
 
-Here's an example of an aggregate with two RAID groups:
+Here's an example of an aggregate with two RAID groups. The capacity limit has been reached on the first RAID group, while the disks in the second RAID group have plenty of free space.
 
 image:diagram-aws-elastic-volumes-two-raid-groups.png[A conceptual image that shows an aggregate and two RAID groups that are both comprised of four disks of equal size.]
 
@@ -110,7 +110,7 @@ https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html[Learn ho
 
 * Create a new volume on an aggregate that has Elastic Volumes enabled
 +
-If you create a volume that uses gp3 or io1 disks, Cloud Manager automatically creates the volume on an aggregate with Elastic Volumes enabled.
+If you create a volume that uses gp3 or io1 disks, Cloud Manager automatically creates the volume on an aggregate that has Elastic Volumes enabled. For more details, refer to <<What happens when you create a volume>>.
 +
 link:task-create-volumes.html[Learn how to create volumes].
 
@@ -122,12 +122,12 @@ link:task-create-aggregates.html[Learn how to create aggregates].
 
 * Add capacity to an aggregate
 +
-While Cloud Manager automatically grows aggregates as needed, you can manually increase the capacity yourself.
+While Cloud Manager automatically adds capacity to aggregates as needed, you can manually increase the capacity yourself.
 +
 link:task-manage-aggregates.html[Learn how to increase aggregate capacity].
 
 * Replicate data to an aggregate that has Elastic Volumes enabled
 +
-When you choose the destination disk type for data replication, Elastic Volumes will be enabled if you choose a gp3 or io1 disk.
+If the destination Cloud Volumes ONTAP system supports Elastic Volumes, a destination volume will be placed on an aggregate that has Elastic Volumes enabled (as long as you chose a gp3 or io1 disk).
 +
 https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Learn how to set up data replication^]
