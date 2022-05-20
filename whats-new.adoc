@@ -29,6 +29,18 @@ If you disable the Azure Private Link connection, Cloud Manager limits storage a
 
 link:task-enabling-private-link.html[Learn how to disable Azure Private Link connections].
 
+=== New licensing packages in Azure
+
+Two new licensing packages are available in the Azure Marketplace as a PAYGO offering:
+
+Optimized package::
+The same capabilities as the Essentials package with charging based on storage and usage (I/O).
+
+Edge Cache package::
+The same capabilities as the Professional package with a Global File Cache license.
+
+link:concept-licensing.html#capacity-based-licensing-packages[Learn more about these packages].
+
 == 2 May 2022
 
 The following changes were introduced with the 3.9.18 release of the Connector.
