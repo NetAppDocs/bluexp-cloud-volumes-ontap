@@ -56,7 +56,7 @@ The Connector requires the following permissions to enable and manage the Elasti
 
 These permissions are included in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^]
 
-== How Cloud Volumes ONTAP works with Elastic Volumes
+== How support for Elastic Volumes works
 
 An aggregate that has the Elastic Volumes feature enabled is comprised of one or two RAID groups. Each RAID group has four identical disks that have the same capacity. Here's an example of a 10 TiB aggregate that has four disks that are 2.5 TiB each:
 
@@ -74,7 +74,7 @@ Here's an example of an aggregate with two RAID groups:
 
 image:diagram-aws-elastic-volumes-two-raid-groups.png[A conceptual image that shows an aggregate and two RAID groups that are both comprised of four disks of equal size.]
 
-=== How Cloud Manager chooses an aggregate for new volumes
+=== What happens when you create a volume
 
 If you create a volume that uses gp3 or io1 disks, Cloud Manager creates the volume on an aggregate as follows:
 
@@ -94,7 +94,7 @@ The size of the aggregate is based on the requested volume size plus an addition
 +
 All other actions (such as creating a new aggregate) are supported from the user interface.
 
-== How to work with Elastic Volumes in Cloud Manager
+== How to work with Elastic Volumes
 
 The Amazon EBS Elastic Volumes feature is enabled by default on new Cloud Volumes ONTAP 9.11.0 or later systems.
 
