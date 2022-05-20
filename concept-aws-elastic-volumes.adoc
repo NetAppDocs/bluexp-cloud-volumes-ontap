@@ -21,15 +21,15 @@ Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP ag
 +
 Cloud Manager can dynamically increase the size of disks while Cloud Volumes ONTAP is running and while disks are still attached.
 
-* Higher performance
+* Better performance
 +
-Aggregates that are enabled with Elastic Volumes can have up to 8 disks, which provides more throughput. In addition, the disks are equally utilized across a RAID group, which provides consistent performance.
+Aggregates that are enabled with Elastic Volumes can have up to eight disks that are equally utilized across two RAID groups. This configuration provides more throughput and consistent performance.
 
 * Larger aggregates
 +
-Each aggregate can have up to 8 disks (this is more than the 6 disk limit for aggregates that aren't enabled with the Elastic Volumes feature). Support for 8 disks provides a maximum aggregate capacity of 128 TiB.
+Support for eight disks provides a maximum aggregate capacity of 128 TiB. These limits are higher than the six disk limit and 96 TiB limit of aggregates that aren't enabled with the Elastic Volumes feature.
 +
-NOTE: Total system capacity limits remain the same.
+Note that total system capacity limits remain the same.
 
 https://aws.amazon.com/ebs/features/[Learn more about Elastic Volumes from AWS^]
 
@@ -39,7 +39,9 @@ The Amazon EBS Elastic Volumes feature is supported with specific Cloud Volumes 
 
 === Cloud Volumes ONTAP version
 
-The Elastic Volumes feature is supported with _new_ Cloud Volumes ONTAP systems deployed with version 9.11.0 and later. The feature is _not_ supported with existing Cloud Volumes ONTAP systems that were deployed prior to 9.11.0.
+The Elastic Volumes feature is supported with _new_ Cloud Volumes ONTAP systems created from version 9.11.0 or later. The feature is _not_ supported with existing Cloud Volumes ONTAP systems that were deployed prior to 9.11.0.
+
+For example, the Elastic Volumes feature is not supported if you created a Cloud Volumes ONTAP 9.9.0 system and then later upgraded that system to version 9.11.0. It must be a new system deployed using version 9.11.0 or later.
 
 === EBS disk types
 
@@ -52,19 +54,25 @@ The Connector requires the following permissions to enable and manage the Elasti
 * ec2:DescribeVolumesModifications
 * ec2:ModifyVolume
 
+These permissions are included in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
+
 == How Cloud Volumes ONTAP works with Elastic Volumes
 
-An aggregate that has the Elastic Volumes feature enabled has 1 to 2 RAID groups. Each RAID group has 4 identical disks that have the same capacity. Here's an example of a 10 TiB aggregate that has 4 disks with 2.5 TiB each:
+An aggregate that has the Elastic Volumes feature enabled is comprised of one or two RAID groups. Each RAID group has four identical disks that have the same capacity. Here's an example of a 10 TiB aggregate that has four disks that are 2.5 TiB each:
 
 image:diagram-aws-elastic-volumes-one-raid-group.png[]
 
-When the aggregate is created, it starts with 1 RAID group. If additional capacity is needed, Cloud Manager grows the aggregate by increasing the capacity of all disks in the RAID group by the same amount. The capacity increases by whichever number is lower: either 10% of the aggregate's size or 256 GiB.
+When Cloud Manager creates an aggregate, it starts with one RAID group. If additional capacity is needed, Cloud Manager grows the aggregate by increasing the capacity of all disks in the RAID group by the same amount. The capacity increases by whichever number is lower: either 10% of the aggregate's size or 256 GiB.
 
 For example, if you have a 1 TiB aggregate, each disk is 250 GiB. 10% of the aggregate's capacity is 100 GiB. That's lower than 256 GiB, so the size of the aggregate is increased by 100 GiB (or 25 GiB for each disk).
 
 Cloud Manager increases the size of the disks while the Cloud Volumes ONTAP system is running and while the disks are still attached. The change is non-disruptive.
 
-If an aggregate reaches 64 TiB (or 16 TiB on each disk), Cloud Manager creates a second RAID group for additional capacity. This second RAID group works just like the first one: it has 4 disks that have the exact same capacity and it can grow up to 64 TiB. That means an aggregate can have a maximum capacity of 128 TiB.
+If an aggregate reaches 64 TiB (or 16 TiB on each disk), Cloud Manager creates a second RAID group for additional capacity. This second RAID group works just like the first one: it has four disks that have the exact same capacity and it can grow up to 64 TiB. That means an aggregate can have a maximum capacity of 128 TiB.
+
+Here's an example of an aggregate with two RAID groups:
+
+image:diagram-aws-elastic-volumes-two-raid-groups.png[]
 
 === How Cloud Manager chooses an aggregate for new volumes
 
@@ -82,25 +90,31 @@ The size of the aggregate is based on the requested volume size plus an addition
 
 * Increasing the size of an aggregate can take up to 8 hours. During that time, Cloud Manager can't request any additional capacity for that aggregate.
 
-* Creating a new system with Elastic Volumes enabled on the initial aggregate is supported with the API only at this time. It's not supported with the Cloud Manager user interface.
+* At this time, creating a new Cloud Volumes ONTAP system with Elastic Volumes enabled on the initial aggregate is supported only with the API. This action is not supported from the Cloud Manager user interface.
 +
 All other actions (such as creating a new aggregate) are supported from the user interface.
 
 == How to work with Elastic Volumes in Cloud Manager
 
-* Create a new system with Elastic Volumes enabled on the initial aggregate
-+
-This action is only supported with the API at this time. It's not supported from the user interface.
-+
-https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html[Learn how to create Cloud Volumes ONTAP by using the API]
+The Amazon EBS Elastic Volumes feature is enabled by default on new Cloud Volumes ONTAP 9.11.0 or later systems.
 
-* Create a new volume on an aggregate with Elastic Volumes enabled
+You can work with Elastic Volumes in Cloud Manager as follows:
+
+* Create a new system that has Elastic Volumes enabled on the initial aggregate
++
+As noted above, this action is only supported with the API at this time. It's not supported from the user interface.
++
+When you initiate the API call, the Elastic Volumes feature is enabled by default on the initial aggregate.
++
+https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html[Learn how to create Cloud Volumes ONTAP by using the API^]
+
+* Create a new volume on an aggregate that has Elastic Volumes enabled
 +
 If you create a volume that uses gp3 or io1 disks, Cloud Manager automatically creates the volume on an aggregate with Elastic Volumes enabled.
 +
 link:task-create-volumes.html[Learn how to create volumes].
 
-* Create a new aggregate with Elastic Volumes enabled
+* Create a new aggregate that has Elastic Volumes enabled
 +
 Elastic Volumes is automatically enabled on new aggregates that use gp3 or io1 disks, as long as the Cloud Volumes ONTAP system was created from version 9.11.0 or later.
 +
@@ -112,8 +126,8 @@ While Cloud Manager automatically grows aggregates as needed, you can manually i
 +
 link:task-manage-aggregates.html[Learn how to increase aggregate capacity].
 
-* Replicate data to an aggregate with Elastic Volumes enabled
+* Replicate data to an aggregate that has Elastic Volumes enabled
 +
-When you choose the destination disk type for data replication, Elastic Volumes will be enabled when you choose a gp3 or io1 disk.
+When you choose the destination disk type for data replication, Elastic Volumes will be enabled if you choose a gp3 or io1 disk.
 +
 https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Learn how to set up data replication^]
