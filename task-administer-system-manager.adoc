@@ -15,6 +15,8 @@ summary: If you need to perform advanced management of Cloud Volumes ONTAP, you 
 [.lead]
 If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager, which is a management interface that's provided with an ONTAP system. We have included the System Manager interface directly inside Cloud Manager so that you don't need to leave Cloud Manager for advanced management.
 
+This Advanced View is available as a Preview. We plan to refine this experience and add enhancements in upcoming releases. Please send us feedback by using the in-product chat.
+
 == Features
 
 The Advanced View in Cloud Manager gives you access to additional management features:
