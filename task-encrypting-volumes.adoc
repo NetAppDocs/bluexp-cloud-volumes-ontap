@@ -4,7 +4,6 @@ permalink: task-encrypting-volumes.html
 keywords: encrypt, encryption, data, volumes, netapp volume encryption, volume encryption, nve, key managers, kmip, key management servers, license, ssl certificates, nae, netapp aggregate encryption
 summary: Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) with an external key manager. NVE and NAE are enabled by default if you set up an external key manager.
 ---
-
 = Encrypting volumes with NetApp encryption solutions
 :toc: macro
 :hardbreaks:
@@ -14,7 +13,7 @@ summary: Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and Ne
 :imagesdir: ./media/
 
 [.lead]
-Cloud Volumes ONTAP supports NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE). NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. link:concept-security.html[Learn more about these encryption solutions].
+Cloud Volumes ONTAP supports NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE). NVE and NAE are software-based solutions that enable FIPS 140-2–compliant data-at-rest encryption of volumes. link:concept-security.html[Learn more about these encryption solutions].
 
 Both NVE and NAE are supported with an external key manager.
 
@@ -52,4 +51,9 @@ TIP: Search for the *Key Managers* solution.
 
 . Configure external key management.
 +
-https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-overview-concept.html[Go to the ONTAP documentation for instructions^].
+ifdef::azure[]
+* link:task-azure-key-vault.html[Azure Key Vault (AKV)]
+endif::azure[]
+ifdef::gcp[]
+* link:task-google-key-manager.html[Google Cloud Key Management Service]
+endif::gcp[]
