@@ -139,7 +139,7 @@ sidebar:
             - title: Manage keys with Azure Key Vault
               flavor: azure
               url: /task-azure-key-vault.html
-            - title: Manage keys with Google Cloud Key Manager Service
+            - title: Manage keys with Google Cloud KMS
               flavor: gcp
               url: /task-google-key-manager.html
             - title: Improve ransomware protection
