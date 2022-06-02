@@ -62,9 +62,9 @@ An aggregate that has the Elastic Volumes feature enabled is comprised of one or
 
 image:diagram-aws-elastic-volumes-one-raid-group.png[A conceptual image that shows an aggregate and a RAID group that is comprised of four disks of equal size.]
 
-When Cloud Manager creates an aggregate, it starts with one RAID group. If additional capacity is needed, Cloud Manager grows the aggregate by increasing the capacity of all disks in the RAID group by the same amount. The capacity increases by whichever number is lower: either 10% of the aggregate's size or 256 GiB.
+When Cloud Manager creates an aggregate, it starts with one RAID group. If additional capacity is needed, Cloud Manager grows the aggregate by increasing the capacity of all disks in the RAID group by the same amount. The capacity increase is either a minimum of 256 GiB or 10% of the aggregate’s size.
 
-For example, if you have a 1 TiB aggregate, each disk is 250 GiB. 10% of the aggregate's capacity is 100 GiB. That's lower than 256 GiB, so the size of the aggregate is increased by 100 GiB (or 25 GiB for each disk).
+For example, if you have a 1 TiB aggregate, each disk is 250 GiB. 10% of the aggregate’s capacity is 100 GiB. That’s lower than 256 GiB, so the size of the aggregate is increased by the 256 GiB minimum (or 64 GiB for each disk).
 
 Cloud Manager increases the size of the disks while the Cloud Volumes ONTAP system is running and while the disks are still attached. The change is non-disruptive.
 
@@ -78,31 +78,51 @@ image:diagram-aws-elastic-volumes-two-raid-groups.png[A conceptual image that sh
 
 If you create a volume that uses gp3 or io1 disks, Cloud Manager creates the volume on an aggregate as follows:
 
-* If there are no existing aggregates that support Elastic Volumes, Cloud Manager creates the aggregate and then creates the volume on that new aggregate.
+* If there is an existing gp3 or io1 aggregate that has Elastic Volumes enabled, Cloud Manager creates the volume on that aggregate.
+
+* If there are multiple gp3 or io1 aggregates that have Elastic Volumes enabled, Cloud Manager creates the volume on the aggregate that requires the least amount of resources.
+
+* If the system only has gp3 or io1 aggregates that aren't enabled for Elastic Volumes, then the volume is created on that aggregate.
++
+[NOTE]
+====
+While this scenario is unlikely, it's possible in two cases:
+
+* You explicitly disabled the Elastic Volumes feature when creating an aggregate from the API
+* You created a new Cloud Volumes ONTAP system from the user interface, in which case the Elastic Volumes feature is disabled on the initial aggregate
+====
+
+* If there no existing aggregates that have enough capacity, Cloud Manager creates the aggregate with Elastic Volumes enabled and then creates the volume on that new aggregate.
 +
 The size of the aggregate is based on the requested volume size plus an additional 10% capacity.
 
-* If there is an existing aggregate that supports Elastic Volumes, Cloud Manager creates the volume on that aggregate.
+=== Capacity Management Mode
 
-* If there are multiple aggregates that support Elastic Volumes, Cloud Manager creates the volume on the aggregate that requires the least amount of resources.
+The Capacity Management Mode for a Connector works with Elastic Volumes similar to how it works with other types of aggregates:
+
+* When Automatic mode is enabled (this is the default setting), Cloud Manager automatically increases the size of aggregates if additional capacity is needed.
+
+* If you change the capacity management mode to Manual, Cloud Manager asks for your approval to purchase additional capacity.
+
+link:concept-storage-management.html#capacity-management[Learn more about the Capacity Management Mode].
 
 == Limitations
 
 * Increasing the size of an aggregate can take up to 8 hours. During that time, Cloud Manager can't request any additional capacity for that aggregate.
 
-* At this time, creating a new Cloud Volumes ONTAP system with Elastic Volumes enabled on the initial aggregate is supported only with the API. This action is not supported from the Cloud Manager user interface.
+* At this time, creating a new Cloud Volumes ONTAP system with Elastic Volumes enabled on the initial aggregate is supported only with the API. This action is not supported from the Cloud Manager user interface. If you create a new Cloud Volumes ONTAP 9.11.0 or later system from the user interface, Elastic Volumes will not be enabled on the initial aggregate.
 +
 All other actions (such as creating a new aggregate) are supported from the user interface.
 
 == How to work with Elastic Volumes
 
-The Amazon EBS Elastic Volumes feature is enabled by default on new Cloud Volumes ONTAP 9.11.0 or later systems.
+The Amazon EBS Elastic Volumes feature is enabled by default on new Cloud Volumes ONTAP 9.11.0 or later systems when using gp3 or io1 disks.
 
 You can work with Elastic Volumes in Cloud Manager as follows:
 
 * Create a new system that has Elastic Volumes enabled on the initial aggregate
 +
-As noted above, this action is only supported with the API at this time. It's not supported from the user interface.
+As noted above, this action is only supported with the API at this time. It's not supported from the user interface. If you create a new Cloud Volumes ONTAP 9.11.0 or later system from the user interface, Elastic Volumes will not be enabled on the initial aggregate.
 +
 When you initiate the API call, the Elastic Volumes feature is enabled by default on the initial aggregate.
 +
@@ -118,7 +138,19 @@ link:task-create-volumes.html[Learn how to create volumes].
 +
 Elastic Volumes is automatically enabled on new aggregates that use gp3 or io1 disks, as long as the Cloud Volumes ONTAP system was created from version 9.11.0 or later.
 +
+When you create the aggregate, Cloud Manager will prompt you for the aggregate's capacity size. This is different than other configurations where you choose a disk size and number of disks.
++
+The following screenshot shows an example of a new aggregate comprised of gp3 disks.
++
+image:screenshot-aggregate-size-ev.png[A screenshot of the Aggregate Disks screen for a gp3 disk where you enter the aggregate size in TiB.]
++
 link:task-create-aggregates.html[Learn how to create aggregates].
+
+* Identify aggregates that have Elastic Volumes enabled
++
+When you go to the Advanced Allocation page, you can identify whether the Elastic Volumes feature is enabled on an aggregate. In the following example, the aggr2 has Elastic Volumes enabled whereas aggr1 does not.
++
+image:screenshot-elastic-volumes-enabled.png[A screenshot that shows two aggregates where one has a field with the text Elastic Volumes Enabled.]
 
 * Add capacity to an aggregate
 +
@@ -128,6 +160,6 @@ link:task-manage-aggregates.html[Learn how to increase aggregate capacity].
 
 * Replicate data to an aggregate that has Elastic Volumes enabled
 +
-If the destination Cloud Volumes ONTAP system supports Elastic Volumes, a destination volume will be placed on an aggregate that has Elastic Volumes enabled (as long as you chose a gp3 or io1 disk).
+If the destination Cloud Volumes ONTAP system supports Elastic Volumes, a destination volume will be placed on an aggregate that has Elastic Volumes enabled (as long as you choose a gp3 or io1 disk).
 +
 https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Learn how to set up data replication^]

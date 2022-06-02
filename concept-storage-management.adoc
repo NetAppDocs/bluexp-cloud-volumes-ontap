@@ -30,6 +30,10 @@ When you create a volume, Cloud Manager does one of three things:
 * It places the volume on an existing aggregate that has sufficient free space.
 
 * It places the volume on an existing aggregate by purchasing more disks for that aggregate.
+ifdef::aws[]
++
+In the case of an aggregate in AWS that supports Elastic Volumes, Cloud Manager also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+endif::aws[]
 
 * It purchases disks for a new aggregate and places the volume on that aggregate.
 
@@ -42,7 +46,7 @@ ifdef::aws[]
 
 When Cloud Manager creates new aggregates for Cloud Volumes ONTAP in AWS, it gradually increases the disk size in an aggregate, as the number of aggregates in the system increases. Cloud Manager does this to ensure that you can utilize the system's maximum capacity before it reaches the maximum number of data disks allowed by AWS.
 
-For example, Cloud Manager might choose the following disk sizes for aggregates in a Cloud Volumes ONTAP Premium or BYOL system:
+For example, Cloud Manager might choose the following disk sizes:
 
 [cols=3*,options="header",width=60%]
 |===
@@ -56,6 +60,8 @@ For example, Cloud Manager might choose the following disk sizes for aggregates 
 | 6 | 2 TiB | 12 TiB
 
 |===
+
+NOTE: This behavior does not apply to aggregates that support the Amazon EBS Elastic Volumes feature. Aggregates that have Elastic Volumes enabled are comprised of one or two RAID groups. Each RAID group has four identical disks that have the same capacity. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
 
 You can choose the disk size yourself by using the advanced allocation option.
 endif::aws[]
@@ -77,6 +83,10 @@ The following examples illustrate how this mode works:
 * If an aggregate reaches the capacity threshold and it has room for more disks, Cloud Manager automatically purchases new disks for that aggregate so volumes can continue to grow.
 +
 Cloud Manager checks the free space ratio every 15 minutes to determine if it needs to purchase additional disks.
+ifdef::aws[]
++
+In the case of an aggregate in AWS that supports Elastic Volumes, Cloud Manager also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+endif::aws[]
 
 * If an aggregate reaches the capacity threshold and it can't support any additional disks, Cloud Manager automatically moves a volume from that aggregate to an aggregate with available capacity or to a new aggregate.
 +
