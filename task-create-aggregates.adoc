@@ -33,11 +33,11 @@ ifdef::aws[]
 --
 * If you're prompted to choose a disk type and disk size, refer to link:task-planning-your-config.html[Plan your Cloud Volumes ONTAP configuration in AWS].
 
-* If you're prompted to enter the aggregate's capacity size, then you're creating an aggregate on a configuration that supports the Amazon EBS Elastic Volumes feature. This feature is automatically enabled on new aggregates that use gp3 or io1 disks, as long as the Cloud Volumes ONTAP system was created from version 9.11.0 or later.
-+
-The following screenshot shows an example of a new aggregate comprised of gp3 disks.
+* If you're prompted to enter the aggregate's capacity size, then you're creating an aggregate on a configuration that supports the Amazon EBS Elastic Volumes feature. The following screenshot shows an example of a new aggregate comprised of gp3 disks.
 +
 image:screenshot-aggregate-size-ev.png[A screenshot of the Aggregate Disks screen for a gp3 disk where you enter the aggregate size in TiB.]
++
+link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
 --
 endif::aws[]
 
