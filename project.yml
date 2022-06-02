@@ -132,6 +132,9 @@ sidebar:
             - title: Create storage VMs in Azure
               flavor: azure
               url: /task-managing-svms-azure.html
+            - title: Create storage VMs in Google Cloud
+              flavor: gcp
+              url: /task-managing-svms-gcp.html
         - title: Security and data encryption
           entries:
             - title: Encrypt volumes with NetApp encryption
