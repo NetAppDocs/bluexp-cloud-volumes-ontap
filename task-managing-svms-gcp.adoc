@@ -5,7 +5,7 @@ keywords: storage virtual machine, vserver, svm, storage vm, supported number, n
 summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 ---
 
-= Create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud
+= Manage data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -20,7 +20,7 @@ To create additional data-serving storage VMs, you need to allocate IP addresses
 
 == Supported number of storage VMs
 
-Multiple storage VMs are supported with Cloud Volumes ONTAP configurations in Google Cloud starting with the 9.11.1 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
+Multiple storage VMs are supported with specific Cloud Volumes ONTAP configurations in Google Cloud starting with the 9.11.1 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
@@ -35,34 +35,36 @@ These permissions are included in https://mysupport.netapp.com/site/info/cloud-m
 
 == Create a storage VM
 
-
+You must use the Cloud Manager API to create a storage VM on a Cloud Volumes ONTAP system in Google Cloud. Using the API (and not System Manager or the CLI) is required because Cloud Manager configures the storage VM with the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communication on an HA pair.
 
 .Steps
 
-.
-occm/api/gcp/vsa/aggregates
+. Use one of the following API calls depending on your Cloud Volumes ONTAP configuration:
 
+* Single node: `POST /occm/api/gcp/vsa/working-environments/{WE_ID}/svm/`
+* HA pair: `POST /occm/api/gcp/ha/working-environments/{WE_ID}/svm/`
 
-POST /occm/api/gcp/ha/working-environments/{WE_ID}/svm/
-
-Request body:
-
++
+The request body should include the following:
++
+[source,json]
 { "svmName": "myNewSvm1" }
 
 == Rename a storage VM
 
-
+If needed, you can change the name of a storage VM at any time.
 
 .Steps
 
-.
-occm/api/gcp/vsa/aggregates
+. Use one of the following API calls:
 
+* Single node: `PUT /occm/api/gcp/vsa/working-environments/{WE_ID}/svm/`
+* HA pair: `PUT /occm/api/gcp/ha/working-environments/{WE_ID}/svm`
 
-PUT /occm/api/gcp/ha/working-environments/{WE_ID}/svm
-
-Request body:
-
++
+The request body should include the following:
++
+[source,json]
 {
 
 "svmNewName": "newSvmName",
@@ -73,13 +75,11 @@ Request body:
 
 == Delete a storage VM
 
-
+If you no longer need a storage VM, you can delete it from Cloud Volumes ONTAP.
 
 .Steps
 
-.
+. Use one of the following API calls:
 
-DELETE /occm/api/gcp/ha/working-environments/{WE_ID}/svm/{SVM_NAME}
-
-
-occm/api/gcp/vsa/aggregates
+* Single node: `DELETE /occm/api/gcp/vsa/working-environments/{WE_ID}/svm/{SVM_NAME}`
+* HA pair: `DELETE /occm/api/gcp/ha/working-environments/{WE_ID}/svm/{SVM_NAME}`
