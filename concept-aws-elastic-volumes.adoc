@@ -108,7 +108,7 @@ link:concept-storage-management.html#capacity-management[Learn more about the Ca
 
 == Limitations
 
-* Increasing the size of an aggregate can take up to 8 hours. During that time, Cloud Manager can't request any additional capacity for that aggregate.
+* Increasing the size of an aggregate can take up to 6 hours. During that time, Cloud Manager can't request any additional capacity for that aggregate.
 
 * At this time, creating a new Cloud Volumes ONTAP system with Elastic Volumes enabled on the initial aggregate is supported only with the API. This action is not supported from the Cloud Manager user interface. If you create a new Cloud Volumes ONTAP 9.11.0 or later system from the user interface, Elastic Volumes will not be enabled on the initial aggregate.
 +
