@@ -33,20 +33,20 @@ In the case of a Cloud Volumes ONTAP HA configuration that is deployed across mu
 Be sure to do the following:
 
 * Under *Trusted entity type*, select *AWS account*.
-* Select *Another AWS account* and enter the ID of the account where the Connector instance resides.
+* Select *Another AWS account* and enter the ID of the VPC owner account.
 * Create a policy using the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^].
 
 .. Copy the Role ARN of the IAM role so that you can paste it in the API request when you deploy the HA pair.
 
 . Share the subnets in the VPC owner account with the participant account.
 +
-This step is required to deploy the HA pair in the shared subnets.
+This step is required to deploy the HA pair in shared subnets.
 +
 https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-share-subnet[AWS documentation: Share a subnet^]
 
 . In the VPC owner account, create a security group for Cloud Volumes ONTAP.
 +
-link:reference-security-groups.html[Refer to the rules for Cloud Volumes ONTAP]. Note that you don't need to create a security group for the HA mediator. Cloud Manager does that for you.
+link:reference-security-groups.html[Refer to the security group rules for Cloud Volumes ONTAP]. Note that you don't need to create a security group for the HA mediator. Cloud Manager does that for you.
 
 . Use the API to create a new Cloud Volumes ONTAP working environment and pass the "assumeRoleArn" field in the "haParams" object.
 +
