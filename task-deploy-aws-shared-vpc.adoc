@@ -49,8 +49,10 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-sh
 link:reference-security-groups.html[Refer to the rules for Cloud Volumes ONTAP]. Note that you don't need to create a security group for the HA mediator. Cloud Manager does that for you.
 
 . Use the API to create a new Cloud Volumes ONTAP working environment and pass the "assumeRoleArn" field in the "haParams" object.
-
++
 [source,json]
 "haParams": {
      “assumeRoleArn”: “arn:aws:iam::642991768967:role/mediator_role_assume_fromdev”
 }
++
+https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html[Learn about the Cloud Volumes ONTAP API^]
