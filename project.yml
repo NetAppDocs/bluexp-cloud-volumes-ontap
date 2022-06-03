@@ -50,6 +50,8 @@ sidebar:
                   url: /reference-networking-aws.html
                 - title: Set up an AWS transit gateway
                   url: /task-setting-up-transit-gateway.html
+                - title: Deploy an HA pair in a shared subnet
+                  url: /task-deploy-aws-shared-vpc.html
                 - title: Security group rules for AWS
                   url: /reference-security-groups.html
             - title: Set up the AWS KMS
