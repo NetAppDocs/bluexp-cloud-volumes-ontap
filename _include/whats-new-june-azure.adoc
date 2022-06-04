@@ -1,0 +1,13 @@
+=== New Azure region support
+
+Cloud Volumes ONTAP is now supported in the Azure Brazil Southeast region starting with the 9.10.1 release.
+
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
+
+=== Disabling Azure Private Link connections
+
+If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.
+
+If you disable the Azure Private Link connection, Cloud Manager limits storage account access to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
+
+link:task-enabling-private-link.html[Learn how to disable Azure Private Link connections].
