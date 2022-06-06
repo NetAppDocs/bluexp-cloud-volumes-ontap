@@ -58,25 +58,19 @@ network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-
 
 . Create a data LIF.
 +
-// start tabbed area
 [role="tabbed-block"]
 ====
-
 .iSCSI
 --
 [source,cli]
 network interface create -vserver <svm-name> -home-port e0a -address <iscsi-ip-address> -lif <lif-name> -home-node <name-of-node1> -data-protocol iscsi
 --
-
 .NFS or SMB
 --
 [source,cli]
 network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nfs--ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
 --
-
 ====
-
-// end tabbed area
 
 . Optional: Create a storage VM management LIF.
 +
