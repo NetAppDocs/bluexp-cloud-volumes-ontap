@@ -1,0 +1,5 @@
+=== New Google Cloud region support
+
+Cloud Volumes ONTAP HA pairs are now supported in the Milan (europe-west8) region starting with the 9.10.1 release.
+
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
