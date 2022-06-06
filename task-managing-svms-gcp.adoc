@@ -36,30 +36,29 @@ The permissions are not required for single node systems.
 
 == Create a storage VM
 
-You can create a storage VM on a single node system or on an HA pair. Note that you musts use the Cloud Manager API to create a storage VM on an HA pair.
+You can create multiple storage VMs on a single node system or on an HA pair. Note that you must use the Cloud Manager API to create a storage VM on an HA pair, while you can use the CLI or System Manager to create a storage VM on a single node system.
 
 === Single node system
 
-These steps create a new storage VM on a single node system. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
+These steps create a new storage VM on a single node system using the CLI. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
 
 .Steps
 
-. https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address#reservenewip[Reserve one or two static internal IP addresses^].
+. In Google Cloud, https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address#reservenewip[reserve one or two static internal IP addresses^]
 +
 You need one IP address for a data LIF and another optional IP address if you want to create a management LIF on the storage VM.
 
 . Create the storage VM and a route to the storage VM.
 +
 [source,cli]
-vserver create -rootvolume-security-style unix -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
+network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
 
 . Create a data LIF.
 +
 // start tabbed area
-
 [role="tabbed-block"]
 ====
 
@@ -82,9 +81,7 @@ network interface create -vserver <svm-name> -lif <lif-name> -role data -data-pr
 . Optional: Create a storage VM management LIF.
 +
 [source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node
-+
-Where _private_ip_y_ is another unused secondary private IP on e0a.
+network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol none -address <svm-mgmt-ip-address> -netmask-length <length> -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default
 
 . Assign one or more aggregates to the storage VM.
 +
