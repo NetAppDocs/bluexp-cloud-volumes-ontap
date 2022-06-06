@@ -184,7 +184,7 @@ sidebar:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
             - title: Administration from System Manager
-              url: /task-administer-system-manager.html
+              url: /task-administer-advanced-view.html
             - title: Administration from the CLI
               url: /task-connecting-to-otc.html
         - title: System health and events

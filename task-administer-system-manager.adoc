@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task-administer-system-manager.html
+permalink: task-administer-advanced-view.html
 keywords: system manager, advanced view, access system manager, load system manager, use system manager
 summary: If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager, which is a management interface that's provided with an ONTAP system. We have included the System Manager interface directly inside Cloud Manager so that you don't need to leave Cloud Manager for advanced management.
 ---
 
-= Administer Cloud Volumes ONTAP using System Manager
+= Administer Cloud Volumes ONTAP using the Advanced View
 :hardbreaks:
 :nofooter:
 :icons: font
