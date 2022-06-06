@@ -4,10 +4,8 @@ Cloud Volumes ONTAP is now supported in the Azure Brazil Southeast region starti
 
 https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
 
-=== Disabling Azure Private Link connections
+=== Limited network access when using service endpoints
 
-If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.
+If you disable an Azure Private Link connection between Cloud Volumes ONTAP and storage accounts, Cloud Manager now limits network access when using a VNet service endpoint for the connection. Network access is limited to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
 
-If you disable the Azure Private Link connection, Cloud Manager limits storage account access to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
-
-link:task-enabling-private-link.html[Learn how to disable Azure Private Link connections].
+link:task-enabling-private-link.html[Learn more about Azure Private Link connections with Cloud Volumes ONTAP].
