@@ -156,6 +156,27 @@ vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
 +
 This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.
 
+. If you're running Cloud Volumes ONTAP 9.11.1 or later, modify the network service policies for the storage VM.
++
+Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.
++
+[source,cli]
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-nis-client
+
 == Create a storage VM on an HA pair in multiple AZs
 
 These steps create a new storage VM on an HA pair in multiple AZs.
@@ -211,3 +232,24 @@ network interface create -vserver svm_2 -service-policy default-data-blocks -hom
 vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
 +
 This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.
+
+. If you're running Cloud Volumes ONTAP 9.11.1 or later, modify the network service policies for the storage VM.
++
+Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.
++
+[source,cli]
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service data-fpolicy-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ad-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-dns-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-ldap-client
+network interface service-policy remove-service -vserver <svm-name> -policy default-data-files -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-blocks -service management-nis-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service data-fpolicy-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ad-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-dns-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-ldap-client
+network interface service-policy add-service -vserver <svm-name> -policy default-data-iscsi -service management-nis-client
