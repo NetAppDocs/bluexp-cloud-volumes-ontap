@@ -135,7 +135,8 @@ Category: kms_wrapped_key_status
 If the `service_reachability` status is not `OK`, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions.
 The `kms_wrapped_key_status` will report `UNKNOWN` at initial configuration. Its status will change to `OK` after the first volume is encrypted.
 
-. OPTIONAL: Create a test volume to verify the functionality of AKV.
+. OPTIONAL: Create a test volume to verify the functionality of NVE.
++
 `vol create -vserver _SVM_name_ -volume _volume_name_ -aggregate _aggr_ -size _size_ -state online -policy default`
 +
 If configured correctly, Cloud Volumes ONTAP will automatically create the volume and enable volume encryption.

@@ -25,6 +25,36 @@ CAUTION: All disks and aggregates must be created and deleted directly from Clou
 
 . Click *Add Aggregate* and then specify details for the aggregate.
 +
-For help with disk type and disk size, see link:task-planning-your-config.html[Planning your configuration].
+[role="tabbed-block"]
+====
+
+ifdef::aws[]
+.AWS
+--
+* If you're prompted to choose a disk type and disk size, refer to link:task-planning-your-config.html[Plan your Cloud Volumes ONTAP configuration in AWS].
+
+* If you're prompted to enter the aggregate's capacity size, then you're creating an aggregate on a configuration that supports the Amazon EBS Elastic Volumes feature. The following screenshot shows an example of a new aggregate comprised of gp3 disks.
++
+image:screenshot-aggregate-size-ev.png[A screenshot of the Aggregate Disks screen for a gp3 disk where you enter the aggregate size in TiB.]
++
+link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+--
+endif::aws[]
+
+ifdef::azure[]
+.Azure
+--
+For help with disk type and disk size, refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure].
+--
+endif::azure[]
+
+ifdef::gcp[]
+.Google Cloud
+--
+For help with disk type and disk size, refer to link:task-planning-your-config-gcp.html[Plan your Cloud Volumes ONTAP configuration in Google Cloud].
+--
+endif::gcp[]
+
+====
 
 . Click *Go*, and then click *Approve and Purchase*.

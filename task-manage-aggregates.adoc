@@ -50,6 +50,17 @@ a|
 +
 TIP: All disks in an aggregate must be the same size.
 
+ifdef::aws[]
+| Increase the capacity of an aggregate that supports Amazon EBS Elastic Volumes
+a|
+.. Select an aggregate and click *Increase capacity*.
+.. Enter the additional capacity that you'd like to add and then click *Add*.
++
+Note that you must increase the capacity of the aggregate by a minimum of 256 GiB or 10% of the aggregate's size.
++
+For example, if you have a 1.77 TiB aggregate, 10% is 181 GiB. That’s lower than 256 GiB, so the size of the aggregate must in increased by the 256 GiB minimum.
+endif::aws[]
+
 | Delete an aggregate
 a|
 .. Select an aggregate that does not contain any volumes and click *Delete*.

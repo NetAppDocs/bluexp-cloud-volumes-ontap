@@ -21,8 +21,6 @@ settings:
         id: azure
 sidebar:
   entries:
-    - title: All Cloud Manager documentation
-      url: https://docs.netapp.com/us-en/cloud-manager-family
     - title: Cloud Volumes ONTAP docs
       url: /index.html
     - title: Release notes
@@ -50,6 +48,8 @@ sidebar:
                   url: /reference-networking-aws.html
                 - title: Set up an AWS transit gateway
                   url: /task-setting-up-transit-gateway.html
+                - title: Deploy an HA pair in a shared subnet
+                  url: /task-deploy-aws-shared-vpc.html
                 - title: Security group rules for AWS
                   url: /reference-security-groups.html
             - title: Set up the AWS KMS
@@ -132,6 +132,9 @@ sidebar:
             - title: Create storage VMs in Azure
               flavor: azure
               url: /task-managing-svms-azure.html
+            - title: Create storage VMs in Google Cloud
+              flavor: gcp
+              url: /task-managing-svms-gcp.html
         - title: Security and data encryption
           entries:
             - title: Encrypt volumes with NetApp encryption
@@ -166,7 +169,7 @@ sidebar:
                   url: /task-removing.html
                 - title: Delete a system
                   url: /task-deleting-working-env.html
-            - title: Administration in AWS
+            - title: AWS administration
               flavor: aws
               entries:
                 - title: Change the EC2 instance type
@@ -175,7 +178,7 @@ sidebar:
                   url: /task-change-route-tables.html
                 - title: Monitor AWS costs
                   url: /task-monitoring-costs.html
-            - title: Administration in Azure
+            - title: Azure administration
               flavor: azure
               entries:
                 - title: Change the Azure VM type
@@ -184,12 +187,14 @@ sidebar:
                   url: /task-overriding-cifs-locks.html
                 - title: Use an Azure Private Link
                   url: /task-enabling-private-link.html
-            - title: Administration in Google Cloud
+            - title: Google Cloud administration
               flavor: gcp
               entries:
                 - title: Change the machine type
                   url: /task-change-gcp-machine.html
-            - title: Administration from System Manager or CLI
+            - title: Administration from System Manager
+              url: /task-administer-advanced-view.html
+            - title: Administration from the CLI
               url: /task-connecting-to-otc.html
         - title: System health and events
           entries:
@@ -207,6 +212,9 @@ sidebar:
               url: /concept-client-protocols.html
             - title: Disks and aggregates
               url: /concept-storage.html
+            - title: Elastic Volumes in AWS
+              flavor: aws
+              url: /concept-aws-elastic-volumes.html
             - title: Data tiering
               url: /concept-data-tiering.html
             - title: Storage management
@@ -251,6 +259,7 @@ sidebar:
 product-family:
   name: Cloud Manager
   repo: cloud-manager-family
+  sidebar_label: All Cloud Manager documentation
 homepage:
   tiles:
     - title: Get started
