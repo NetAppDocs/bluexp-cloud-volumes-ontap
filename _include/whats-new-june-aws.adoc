@@ -16,6 +16,6 @@ Be sure to provide these permissions to each set of AWS credentials that you've 
 
 === Support for deploying HA pairs in shared subnets
 
-Starting with Cloud Volumes ONTAP 9.11.1, you can now deploy an HA pair in an AWS shared subnet when using the API.
+The Cloud Volumes ONTAP 9.11.1 includes support for AWS VPC sharing. This release of the Connector enables you to deploy an HA pair in an AWS shared subnet when using the API.
 
 link:task-deploy-aws-shared-vpc.html[Learn how to deploy an HA pair in a shared subnet].
