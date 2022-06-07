@@ -78,7 +78,7 @@ Enabling rollback is supported through the API only.
 
 If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.
 
-If you disable the Azure Private Link connection, Cloud Manager limits storage account access to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
+If you disable the Azure Private Link connection, Cloud Manager uses a service endpoint instead. Even with the service endpoint, Cloud Manager limits storage account access to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
 
 .Steps
 
