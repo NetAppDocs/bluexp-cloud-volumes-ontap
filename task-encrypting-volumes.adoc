@@ -51,9 +51,12 @@ TIP: Search for the *Key Managers* solution.
 
 . Configure external key management.
 +
+ifdef::aws[]
+* AWS: https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-overview-concept.html[Go to the ONTAP documentation for instructions^]
+endif::aws[]
 ifdef::azure[]
-* link:task-azure-key-vault.html[Azure Key Vault (AKV)]
+* Azure: link:task-azure-key-vault.html[Azure Key Vault (AKV)]
 endif::azure[]
 ifdef::gcp[]
-* link:task-google-key-manager.html[Google Cloud Key Management Service]
+* Google Cloud: link:task-google-key-manager.html[Google Cloud Key Management Service]
 endif::gcp[]
