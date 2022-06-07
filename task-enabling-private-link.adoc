@@ -19,7 +19,7 @@ In most cases, there’s nothing that you need to do--Cloud Manager manages the 
 
 == Connector location in Azure
 
-The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts. link:task-enabling-private-link.html[Learn how Cloud Volumes ONTAP uses an Azure Private Link].
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts.
 
 == How Private Link connections work with Cloud Volumes ONTAP
 
@@ -77,6 +77,8 @@ Enabling rollback is supported through the API only.
 == Disable Azure Private Link connections
 
 If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.
+
+If you disable the Azure Private Link connection, Cloud Manager uses a service endpoint instead. Even with the service endpoint, Cloud Manager limits storage account access to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
 
 .Steps
 
