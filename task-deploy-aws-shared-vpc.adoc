@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-deploy-aws-shared-vpc.html
 keywords: shared vpc, aws shared vpc, vpc sharing, shared subnet, deploy shared vpc, assume role
-summary: Cloud Volumes ONTAP HA pairs are supported in AWS with VPC sharing. VPC sharing enables your organization to share subnets with other AWS accounts. To use this configuration, you must set up your AWS environment and then deploy the HA pair using the API.
+summary: Starting with the 9.11.1 release, Cloud Volumes ONTAP HA pairs are supported in AWS with VPC sharing. VPC sharing enables your organization to share subnets with other AWS accounts. To use this configuration, you must set up your AWS environment and then deploy the HA pair using the API.
 ---
 
 = Deploy an HA pair in a shared subnet
@@ -13,7 +13,7 @@ summary: Cloud Volumes ONTAP HA pairs are supported in AWS with VPC sharing. VPC
 :imagesdir: ./media/
 
 [.lead]
-Cloud Volumes ONTAP HA pairs are supported in AWS with VPC sharing. VPC sharing enables your organization to share subnets with other AWS accounts. To use this configuration, you must set up your AWS environment and then deploy the HA pair using the API.
+Starting with the 9.11.1 release, Cloud Volumes ONTAP HA pairs are supported in AWS with VPC sharing. VPC sharing enables your organization to share subnets with other AWS accounts. To use this configuration, you must set up your AWS environment and then deploy the HA pair using the API.
 
 With https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/[VPC sharing^], a Cloud Volumes ONTAP HA configuration is spread across two accounts:
 
