@@ -24,11 +24,11 @@ All other Cloud Volumes ONTAP configurations support one data-serving storage VM
 
 == Create a storage VM
 
-You can create multiple storage VMs on a single node system or on an HA pair. Note that you must use the Cloud Manager API to create a storage VM on an HA pair, while you can use the CLI or System Manager to create a storage VM on a single node system.
+If supported by your license, you can create multiple storage VMs on a single node system or on an HA pair. Note that you must use the Cloud Manager API to create a storage VM on an HA pair, while you can use the CLI or System Manager to create a storage VM on a single node system.
 
 === Single node system
 
-These steps create a new storage VM on a single node system using the CLI. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.
+These steps create a new storage VM on a single node system using the CLI. One private IP address is required to create a data LIF and another optional private IP address is needed if you want to create a management LIF.
 
 .Steps
 
@@ -72,7 +72,7 @@ network interface create -vserver <svm-name> -lif <lif-name> -role data -data-pr
 . Assign one or more aggregates to the storage VM.
 +
 [source,cli]
-vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
+vserver add-aggregates -vserver <svm-name> -aggregates <aggr1,aggr2>
 +
 This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.
 
@@ -105,7 +105,7 @@ The request body should include the following:
 
 == Manage storage VMs on HA pairs
 
-The Cloud Manager API also supports renaming and deleting storage VMs.
+The Cloud Manager API also supports renaming and deleting storage VMs on HA pairs.
 
 === Rename a storage VM
 
