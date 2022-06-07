@@ -17,7 +17,7 @@ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
 The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
-== 6 June 2022
+== 7 June 2022
 
 The following changes were introduced with the 3.9.19 release of the Connector.
 
