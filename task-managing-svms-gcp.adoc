@@ -32,9 +32,11 @@ These steps create a new storage VM on a single node system using the CLI. One p
 
 .Steps
 
-. In Google Cloud, https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address#reservenewip[reserve one or two static internal IP addresses^]
+. In Google Cloud, add an IP range to nic0 for each LIF.
 +
 You need one IP address for a data LIF and another optional IP address if you want to create a management LIF on the storage VM.
++
+https://cloud.google.com/vpc/docs/configure-alias-ip-ranges#adding_alias_ip_ranges_to_an_existing_instance[Google Cloud documentation: Adding alias IP ranges to an existing instance^]
 
 . Create the storage VM and a route to the storage VM.
 +
@@ -44,7 +46,7 @@ vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-nam
 [source,cli]
 network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
 
-. Create a data LIF.
+. Create a data LIF by specifying the IP address that you added in Google Cloud.
 +
 [role="tabbed-block"]
 ====
@@ -56,11 +58,11 @@ network interface create -vserver <svm-name> -home-port e0a -address <iscsi-ip-a
 .NFS or SMB
 --
 [source,cli]
-network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nfs--ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
+network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nfs-ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
 --
 ====
 
-. Optional: Create a storage VM management LIF.
+. Optional: Create a storage VM management LIF by specifying the IP address that you added in Google Cloud.
 +
 [source,cli]
 network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol none -address <svm-mgmt-ip-address> -netmask-length <length> -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default
