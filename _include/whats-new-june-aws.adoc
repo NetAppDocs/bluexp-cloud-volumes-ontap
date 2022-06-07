@@ -1,9 +1,3 @@
-=== New AWS region support
-
-Cloud Volumes ONTAP is now supported in the AWS Jakarta region (ap-southeast-3) starting with the 9.10.1 release.
-
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
-
 === Support for Elastic Volumes
 
 Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling Cloud Manager to automatically increase the underlying disk capacity as needed.

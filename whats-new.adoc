@@ -31,10 +31,6 @@ ifdef::azure[]
 include::_include/whats-new-june-azure.adoc[]
 endif::azure[]
 
-ifdef::gcp[]
-include::_include/whats-new-june-gcp.adoc[]
-endif::gcp[]
-
 == 2 May 2022
 
 The following changes were introduced with the 3.9.18 release of the Connector.
