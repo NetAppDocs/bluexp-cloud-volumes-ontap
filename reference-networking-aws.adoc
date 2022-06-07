@@ -132,6 +132,12 @@ The DNS server must provide name resolution services for the Active Directory en
 
 For instructions, refer to https://aws-quickstart.github.io/quickstart-microsoft-activedirectory/[AWS Documentation: Active Directory Domain Services on the AWS Cloud: Quick Start Reference Deployment^].
 
+=== VPC sharing
+
+Starting with the 9.11.1 release, Cloud Volumes ONTAP HA pairs are supported in AWS with VPC sharing. VPC sharing enables your organization to share subnets with other AWS accounts. To use this configuration, you must set up your AWS environment and then deploy the HA pair using the API.
+
+link:task-deploy-aws-shared-vpc.html[Learn how to deploy an HA pair in a shared subnet].
+
 == Requirements for HA pairs in multiple AZs
 
 Additional AWS networking requirements apply to Cloud Volumes ONTAP HA configurations that use multiple Availability Zones (AZs). You should review these requirements before you launch an HA pair because you must enter the networking details in Cloud Manager when you create the working environment.
