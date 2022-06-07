@@ -59,7 +59,7 @@ These permissions are included in the latest https://mysupport.netapp.com/site/i
 
 For details about setting up data tiering, see link:task-tiering.html[Tiering cold data to low-cost object storage].
 
-==== Private endpoint
+==== Private link
 
 By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure and provides performance benefits. In most cases, there's nothing that you need to do--Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you'll need to edit a configuration file. You can also disable the Private Link connection, if desired.
 
