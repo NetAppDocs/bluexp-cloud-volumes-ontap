@@ -207,6 +207,9 @@ sidebar:
               url: /concept-client-protocols.html
             - title: Disks and aggregates
               url: /concept-storage.html
+            - title: Elastic Volumes in AWS
+              flavor: aws
+              url: /concept-aws-elastic-volumes.html
             - title: Data tiering
               url: /concept-data-tiering.html
             - title: Storage management

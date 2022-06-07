@@ -33,7 +33,9 @@ ifdef::aws[]
 In AWS, Cloud Volumes ONTAP uses EBS storage for user data and local NVMe storage as Flash Cache on some EC2 instance types.
 
 EBS storage::
-In AWS, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TiB.
+In AWS, an aggregate can contain up to 6 disks that are all the same size. But if you have a configuration that supports the Amazon EBS Elastic Volumes feature, then an aggregate can contain up to 8 disks. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
++
+The maximum disk size is 16 TiB.
 +
 The underlying EBS disk type can be either General Purpose SSDs (gp3 or gp2), Provisioned IOPS SSD (io1), or Throughput Optimized HDD (st1). You can pair an EBS disk with Amazon S3 to link:concept-data-tiering.html[tier inactive data to low-cost object storage].
 +
