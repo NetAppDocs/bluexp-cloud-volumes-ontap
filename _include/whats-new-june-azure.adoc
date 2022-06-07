@@ -3,9 +3,3 @@
 Cloud Manager now limits network access when using a VNet service endpoint for connections between Cloud Volumes ONTAP and storage accounts. Cloud Manager uses a service endpoint if you disable Azure Private Link connections.
 
 link:task-enabling-private-link.html[Learn more about Azure Private Link connections with Cloud Volumes ONTAP].
-
-=== New Azure region support
-
-Cloud Volumes ONTAP is now supported in the Azure Brazil Southeast region.
-
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
