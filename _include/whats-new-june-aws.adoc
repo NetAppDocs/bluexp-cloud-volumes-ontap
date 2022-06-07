@@ -1,4 +1,4 @@
-=== Support for Elastic Volumes
+=== Support for Amazon EBS Elastic Volumes
 
 Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling Cloud Manager to automatically increase the underlying disk capacity as needed.
 
@@ -14,8 +14,8 @@ Note that support for Elastic Volumes requires new AWS permissions for the Conne
 
 Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
 
-=== Support for deploying HA pairs in shared subnets
+=== Support for deploying HA pairs in shared AWS subnets
 
-The Cloud Volumes ONTAP 9.11.1 includes support for AWS VPC sharing. This release of the Connector enables you to deploy an HA pair in an AWS shared subnet when using the API.
+Cloud Volumes ONTAP 9.11.1 includes support for AWS VPC sharing. This release of the Connector enables you to deploy an HA pair in an AWS shared subnet when using the API.
 
 link:task-deploy-aws-shared-vpc.html[Learn how to deploy an HA pair in a shared subnet].

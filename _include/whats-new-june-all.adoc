@@ -1,6 +1,6 @@
 === Cloud Volumes ONTAP 9.11.1
 
-Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.1.
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.1, which includes support for new features and additional cloud provider regions.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
 
