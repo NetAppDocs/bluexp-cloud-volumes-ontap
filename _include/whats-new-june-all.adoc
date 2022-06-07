@@ -1,3 +1,9 @@
+=== Cloud Volumes ONTAP 9.11.1
+
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.1.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
+
 === New Advanced View
 
 If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager, which is a management interface that’s provided with an ONTAP system. We have included the System Manager interface directly inside Cloud Manager so that you don’t need to leave Cloud Manager for advanced management.

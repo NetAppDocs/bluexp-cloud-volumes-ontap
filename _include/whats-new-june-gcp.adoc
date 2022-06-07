@@ -1,1 +1,21 @@
+=== Support for creating storage VMs in Google Cloud
 
+Multiple storage VMs are now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.11.1 release. Starting with this release of the Connector, Cloud Manager enables you to create storage VMs on Cloud Volumes ONTAP HA pairs in Google Cloud by using the API.
+
+Support for creating storage VMs requires new Google Cloud permissions for the Connector:
+
+[source,yaml]
+- compute.instanceGroups.get
+- compute.addresses.get
+
+Note that you must use the ONTAP CLI or System Manager to create a storage VM on a single node system.
+
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits[Learn more about storage VM limits in Google Cloud^]
+
+* link:task-managing-svms-gcp.html[Learn how to create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud]
+
+=== New Google Cloud region support
+
+Cloud Volumes ONTAP HA pairs are now supported in the Milan (europe-west8) region starting with the 9.10.1 release.
+
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]

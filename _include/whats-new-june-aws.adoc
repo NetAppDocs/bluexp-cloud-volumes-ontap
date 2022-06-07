@@ -13,3 +13,9 @@ Note that support for Elastic Volumes requires new AWS permissions for the Conne
 "ec2:ModifyVolume",
 
 Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+
+=== New AWS region support
+
+Cloud Volumes ONTAP is now supported in the AWS Jakarta region (ap-southeast-3) starting with the 9.10.1 release.
+
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
