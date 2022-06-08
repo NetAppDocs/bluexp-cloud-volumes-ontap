@@ -128,12 +128,15 @@ ifdef::gcp[]
 
 * The subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
 
-* You need a service account that meets the following requirements:
-** It must have the predefined Storage Admin role.
-** The Connector service account must be a _Service Account User_ of this tiering service account.
+* A service account must be attached to Cloud Volumes ONTAP.
 +
-link:task-creating-gcp-service-account.html[Learn how to set up a service account].
-** To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.
+link:task-creating-gcp-service-account.html[Learn how to set up this service account].
++
+You're prompted to select this service account when you create a Cloud Volumes ONTAP working environment.
++
+If you don't select a service account during deployment, you'll need to shut down Cloud Volumes ONTAP, go to the Google Cloud console, and then attach the service account to the Cloud Volumes ONTAP instances. You can then enable data tiering as described in the next section.
+
+* To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.
 +
 link:task-setting-up-gcp-encryption.html[Learn how to use customer-managed encryption keys with Cloud Volumes ONTAP].
 endif::gcp[]
@@ -152,7 +155,9 @@ Cloud Manager creates an object store for cold data when the system is created, 
 +
 image:screenshot_enable_capacity_tiering.gif[A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when Cloud Manager tried to enable data tiering.]
 +
-NOTE: You'll only see this option if data tiering couldn't be enabled when Cloud Manager created the system.
+You'll only see this option if data tiering couldn't be enabled when Cloud Manager created the system.
++
+In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <<Requirements,Ensure that you've met all requirements>>.
 
 . Click *Enable* so Cloud Manager can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
 
