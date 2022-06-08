@@ -32,7 +32,7 @@ These steps create a new storage VM on a single node system using the CLI. One p
 
 .Steps
 
-. In Google Cloud, go to the Cloud Volumes ONTAP instance and add an IP range to nic0 for each LIF.
+. In Google Cloud, go to the Cloud Volumes ONTAP instance and add an IP address to nic0 for each LIF.
 +
 image:screenshot-gcp-add-ip-range.png[A screenshot of the Google Cloud console where you can edit the network interface for Cloud Volumes ONTAP by adding an IP range.]
 +
@@ -78,9 +78,9 @@ This step is required because the new storage VM needs access to at least one ag
 
 === HA pair
 
-You must use the Cloud Manager API to create a storage VM on a Cloud Volumes ONTAP system in Google Cloud. Using the API (and not System Manager or the CLI) is required because Cloud Manager configures the storage VM with the required LIF services, as well as an iSCSI LIF for an HA pair that's required for outbound SMB/CIFS communication.
+You must use the Cloud Manager API to create a storage VM on a Cloud Volumes ONTAP system in Google Cloud. Using the API (and not System Manager or the CLI) is required because Cloud Manager configures the storage VM with the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communication.
 
-Note that Cloud Manager allocates the required IP addresses in Google Cloud for you.
+Note that Cloud Manager allocates the required IP addresses in Google Cloud and creates the storage VM with a data LIF for SMB/NFS access and an iSCSI LIF for outbound SMB communication.
 
 .Required Google Cloud permissions
 
