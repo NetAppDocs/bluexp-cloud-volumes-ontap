@@ -203,6 +203,8 @@ Converting an existing Cloud Volumes ONTAP system to another licensing method is
 
 If you want to transition to another licensing method, you can purchase a license, deploy a new Cloud Volumes ONTAP system using that license, and then replicate the data to that new system.
 
+Note that converting a system from PAYGO by-node licensing to BYOL by-node licensing (and vice versa) isn't supported. You need to deploy a new system and then replicate data to that system. link:task-manage-node-licenses.html[Learn how to change between PAYGO and BYOL].
+
 == Max number of systems
 
 The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.

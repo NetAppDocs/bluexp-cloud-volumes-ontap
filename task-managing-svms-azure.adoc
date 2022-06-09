@@ -128,9 +128,9 @@ This management LIF provides a connection to management tools like SnapCenter.
 
 .. Click *Add*.
 
-.. Enter a name for the frontend IP, select the subnet for the Cloud Volumes ONTAP HA pair, and leave *Dynamic* selected.
+.. Enter a name for the frontend IP, select the subnet for the Cloud Volumes ONTAP HA pair, leave *Dynamic* selected, and in regions with Availability Zones, leave *Zone-redundant* selected to ensure that the IP address remains available if a zone fails.
 +
-image:screenshot_azure_frontend_ip.gif[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
+image:screenshot_azure_frontend_ip.png[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
 
 .. Click the name of the frontend IP configuration that you just created, change the *Assignment* to *Static*, and click *Save*.
 +
@@ -196,9 +196,9 @@ This management LIF provides a connection to management tools like SnapCenter.
 
 .. Click *Add*.
 
-.. Enter a name for the frontend IP, select the subnet for the Cloud Volumes ONTAP HA pair, and leave *Dynamic* selected.
+.. Enter a name for the frontend IP, select the subnet for the Cloud Volumes ONTAP HA pair, leave *Dynamic* selected, and in regions with Availability Zones, leave *Zone-redundant* selected to ensure that the IP address remains available if a zone fails.
 +
-image:screenshot_azure_frontend_ip.gif[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
+image:screenshot_azure_frontend_ip.png[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
 
 .. Click the name of the frontend IP configuration that you just created, change the *Assignment* to *Static*, and click *Save*.
 +
