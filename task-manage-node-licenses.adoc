@@ -228,7 +228,7 @@ When you convert an Eval license to a BYOL, Cloud Manager restarts the Cloud Vol
 
 Cloud Manager starts the conversion process. Cloud Volumes ONTAP automatically restarts as part of this process. When it's back up, the licensing information will reflect the new license.
 
-== Change from PAYGO to BYOL and vice versa
+== Change between PAYGO and BYOL
 
 Converting a system from PAYGO by-node licensing to BYOL by-node licensing (and vice versa) isn't supported. If you want to switch between a pay-as-you-go subscription and a BYOL subscription, then you need to deploy a new system and replicate data from the existing system to the new system.
 
