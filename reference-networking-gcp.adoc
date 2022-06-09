@@ -148,6 +148,8 @@ TIP: If your network uses a proxy server for all communication to the internet, 
 
 A Connector requires a network connection to the VPCs in which you want to deploy Cloud Volumes ONTAP. If you're deploying an HA pair, then the Connector needs a connection to VPC-0 only.
 
+If you plan to deploy Cloud Volumes ONTAP in a VPC separate from the Connector, then you'll need to set up VPC Network Peering. https://cloud.google.com/vpc/docs/vpc-peering[Learn more about VPC Network Peering^]
+
 === Outbound internet access
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
