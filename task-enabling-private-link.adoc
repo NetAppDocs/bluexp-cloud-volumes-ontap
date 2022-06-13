@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-enabling-private-link.html
 keywords: azure private link, private link connection, private link to storage, service endpoints
-summary: By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP virtual machines and other Azure resources. If needed, you can disable Azure Private Links and use service endpoints instead.
+summary: By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Private Links and use service endpoints instead.
 ---
 
 = Use an Azure Private Link or service endpoints
@@ -13,16 +13,16 @@ summary: By default, Cloud Manager enables an Azure Private Link for connections
 :imagesdir: ./media/
 
 [.lead]
-By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP virtual machines and other Azure resources. If needed, you can disable Azure Private Links and use service endpoints instead.
+By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Private Links and use service endpoints instead.
 
 == Overview
 
-By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP nodes and other Azure resources:
+Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP nodes and the following Azure resources:
 
 * Connections between Cloud Volumes ONTAP and its associated storage accounts
 * Connections between Cloud Volumes ONTAP and Azure Blob storage for backups and data tiering
 
-A Private Link secures connections between endpoints in Azure and provides performance benefits.
+An Azure Private Link secures connections between endpoints in Azure and provides performance benefits.
 
 If required by your business needs, you can disable an Azure Private Link connection. If you disable Azure Private Links, Cloud Manager configures Cloud Volumes ONTAP to use a service endpoint, instead.
 
@@ -30,7 +30,7 @@ With either configuration, Cloud Manager always limits network access for connec
 
 == Disable Azure Private Links and use service endpoints instead
 
-If required for your Azure configuration, you can disable new Cloud Volumes ONTAP systems from using an Azure Private Link connection. Any new systems will use service endpoints instead.
+If required by your business, you can change a setting in Cloud Manager so that it configures Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link. Changing this setting applies to new Cloud Volumes ONTAP systems that you create.
 
 .Steps
 
@@ -44,11 +44,11 @@ If required for your Azure configuration, you can disable new Cloud Volumes ONTA
 
 == Work with Azure Private Links
 
-In most cases, there’s nothing that you need to do—​Cloud Manager manages Azure Private Links for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
+In most cases, there’s nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. ​Cloud Manager manages Azure Private Links for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
 
 === How Private Link connections work with Cloud Volumes ONTAP storage accounts
 
-When Cloud Manager deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with the storage account for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.
+When Cloud Manager deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with storage accounts for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.
 
 Client access goes through the private link when clients are within the same VNet as Cloud Volumes ONTAP, within peered VNets, or in your on-premises network when using a private VPN or ExpressRoute connection to the VNet.
 
