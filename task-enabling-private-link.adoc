@@ -24,7 +24,7 @@ Cloud Manager enables an Azure Private Link for connections between Cloud Volume
 
 An Azure Private Link secures connections between endpoints in Azure and provides performance benefits.
 
-If required by your business needs, you can disable an Azure Private Link connection. If you disable Azure Private Links, Cloud Manager configures Cloud Volumes ONTAP to use a service endpoint, instead.
+If required, you can configure Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link.
 
 With either configuration, Cloud Manager always limits network access for connections between Cloud Volumes ONTAP and storage accounts. Network access is limited to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
 
