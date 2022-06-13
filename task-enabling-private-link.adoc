@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-enabling-private-link.html
-keywords: azure private link, private link connection, private link to storage, service endpoints
+keywords: azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link
 summary: By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Private Links and use service endpoints instead.
 ---
 
