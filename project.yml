@@ -185,7 +185,7 @@ sidebar:
                   url: /task-change-azure-vm.html
                 - title: Override CIFS locks
                   url: /task-overriding-cifs-locks.html
-                - title: Use an Azure Private Link
+                - title: Use an Azure Private Link or service endpoints
                   url: /task-enabling-private-link.html
             - title: Google Cloud administration
               flavor: gcp
