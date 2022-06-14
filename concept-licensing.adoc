@@ -207,9 +207,9 @@ Note that converting a system from PAYGO by-node licensing to BYOL by-node licen
 
 == Max number of systems
 
-The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
+The maximum number of Cloud Volumes ONTAP systems is limited to 50 per NetApp account, regardless of the licensing model in use.
 
-A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you'd have a total of 4 systems, with room for 16 additional systems in your account.
+A _system_ is either an HA pair or a single node system. For example, if you have eight Cloud Volumes ONTAP HA pairs and four single node systems, you'd have a total of 12 systems, with room for 38 additional systems in your account.
 
 If you have questions, reach out to your account rep or sales team.
 

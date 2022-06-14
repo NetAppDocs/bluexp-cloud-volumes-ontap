@@ -43,27 +43,13 @@ TIP: A LIF is an IP address associated with a physical port. An SVM management L
 
 === Secure connections to Azure services
 
-Cloud Manager sets up a VNet service endpoint and an Azure Private Link endpoint so that Cloud Volumes ONTAP can privately connect to Azure services.
+By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources.
 
-==== Service endpoint
+In most cases, there's nothing that you need to do—​Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
 
-Cloud Manager enables a VNet service endpoint to create a secure connection from Cloud Volumes ONTAP to Azure Blob storage for data tiering. No additional service endpoints are supported from Cloud Volumes ONTAP to Azure services.
+You can also disable the Private Link connection, if required by your business needs. If you disable the link, Cloud Manager configures Cloud Volumes ONTAP to use a service endpoint instead.
 
-Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has these permissions:
-
-[source,json]
-"Microsoft.Network/virtualNetworks/subnets/write",
-"Microsoft.Network/routeTables/join/action",
-
-These permissions are included in the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy].
-
-For details about setting up data tiering, see link:task-tiering.html[Tiering cold data to low-cost object storage].
-
-==== Private link
-
-By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure and provides performance benefits. In most cases, there's nothing that you need to do--Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you'll need to edit a configuration file. You can also disable the Private Link connection, if desired.
-
-link:task-enabling-private-link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP].
+link:task-enabling-private-link.html[Learn more about using Azure Private Links or service endpoints with Cloud Volumes ONTAP].
 
 === Connections to other ONTAP systems
 
