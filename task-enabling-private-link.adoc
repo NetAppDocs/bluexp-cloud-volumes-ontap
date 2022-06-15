@@ -17,9 +17,7 @@ Cloud Volumes ONTAP uses an Azure Private Link for connections to its associated
 
 == Overview
 
-By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and its associated storage accounts. For example, storage accounts used for disks and Blob storage for backups and data tiering.
-
-An Azure Private Link secures connections between endpoints in Azure and provides performance benefits.
+By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and its associated storage accounts. An Azure Private Link secures connections between endpoints in Azure and provides performance benefits.
 
 If required, you can configure Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link.
 
