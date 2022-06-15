@@ -64,7 +64,7 @@ link:reference-security-groups.html[Refer to the security group rules for Cloud 
 +
 [source,json]
 "haParams": {
-     “assumeRoleArn”: “arn:aws:iam::642991768967:role/mediator_role_assume_fromdev”
+     "assumeRoleArn": "arn:aws:iam::642991768967:role/mediator_role_assume_fromdev"
 }
 +
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html[Learn about the Cloud Volumes ONTAP API^]
