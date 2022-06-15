@@ -43,9 +43,9 @@ TIP: A LIF is an IP address associated with a physical port. An SVM management L
 
 === Secure connections to Azure services
 
-By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources.
+By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure storage accounts.
 
-In most cases, there's nothing that you need to do—​Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
+In most cases, there's nothing that you need to do—​Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you'll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
 
 You can also disable the Private Link connection, if required by your business needs. If you disable the link, Cloud Manager configures Cloud Volumes ONTAP to use a service endpoint instead.
 
