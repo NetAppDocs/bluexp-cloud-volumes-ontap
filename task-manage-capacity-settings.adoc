@@ -32,15 +32,15 @@ Choose whether Cloud Manager notifies you of storage capacity decisions or wheth
 +
 link:concept-storage-management.html#capacity-management[Learn how Capacity Management Mode works].
 
-Aggregate Capacity Thresholds - Free Space Ratio::
+Free Space Ratio::
 Triggers a notification when the free space ratio on an aggregate drops below the specified threshold.
 +
 The free space ratio is calculated as follows:
 +
 (aggregate capacity - total used capacity on the aggregate) / aggregate capacity
 
-Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering::
-Defines how much free space is required on the performance tier (disks) when tiering data to the capacity tier (object storage).
+Free Space Ratio for Data Tiering::
+Defines how much free space is required on the performance tier (disks) when tiering data to a capacity tier (object storage).
 +
 The ratio is important for disaster recovery scenarios. As data is read from the capacity tier, Cloud Volumes ONTAP moves data to the performance tier to provide better performance. If there isn't sufficient space, then Cloud Volumes ONTAP can't move the data.
 
