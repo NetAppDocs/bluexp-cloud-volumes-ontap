@@ -122,6 +122,8 @@ sidebar:
               url: /task-create-aggregates.html
             - title: Manage existing aggregates
               url: /task-manage-aggregates.html
+            - title: Manage capacity settings
+              url: /task-manage-capacity-settings.html
         - title: Storage VM administration
           entries:
             - title: Work with storage VMs in Cloud Manager
