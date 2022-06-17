@@ -72,7 +72,9 @@ Rather than let Cloud Manager manage aggregates for you, you can do it yourself.
 
 == Capacity management
 
-The Account Admin can choose whether Cloud Manager notifies you of storage capacity decisions or whether Cloud Manager automatically manages capacity requirements for you. It might help for you to understand how these modes work.
+The Account Admin can choose whether Cloud Manager notifies you of storage capacity decisions or whether Cloud Manager automatically manages capacity requirements for you.
+
+This behavior is determined by the _Capacity Management Mode_ on a Connector. The Capacity Management Mode affects all Cloud Volumes ONTAP systems managed by that Connector. If you have another Connector, it can be configured differently.
 
 === Automatic capacity management
 
@@ -103,3 +105,7 @@ Cloud Manager's automatic capacity management doesn't apply to LUNs. When Cloud 
 === Manual capacity management
 
 If the Account Admin set the Capacity Management Mode to manual, Cloud Manager displays Action Required messages when capacity decisions must be made. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
+
+=== Learn more
+
+link:task-manage-capacity-settings.html[Learn how to modify the capacity management mode].
