@@ -17,7 +17,7 @@ Starting with the 9.11.1 release, Cloud Volumes ONTAP HA pairs are supported in 
 
 With https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/[VPC sharing^], a Cloud Volumes ONTAP HA configuration is spread across two accounts:
 
-* The VPC owner account, which owns the networking (the VPC, subnets, and route tables)
+* The VPC owner account, which owns the networking (the VPC, subnets, route tables, and security groups)
 * The participant account, where the EC2 instances are deployed in shared subnets (this includes the two HA nodes and the mediator)
 
 In the case of a Cloud Volumes ONTAP HA configuration that is deployed across multiple Availability Zones, the HA mediator needs specific permissions to write to the route tables in the VPC owner account. You need to provide those permissions by setting up an IAM role that the mediator can assume.
@@ -61,6 +61,8 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-sh
 link:reference-security-groups.html[Refer to the security group rules for Cloud Volumes ONTAP]. Note that you don't need to create a security group for the HA mediator. Cloud Manager does that for you.
 
 . Use the API to create a new Cloud Volumes ONTAP working environment and pass the "assumeRoleArn" field in the "haParams" object.
++
+For example:
 +
 [source,json]
 "haParams": {
