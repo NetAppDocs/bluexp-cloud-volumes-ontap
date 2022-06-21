@@ -121,7 +121,7 @@ link:concept-security.html#encryption-of-data-at-rest[Learn more about supported
 +
 If you keep the default configuration, then you only need to specify a volume and then review and approve the configuration.
 
-. *Preconfigured Packages* (hourly or BYOL only): Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
+. *Preconfigured Packages*: Select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Change Configuration* to select your own configuration.
 +
 If you choose one of the packages, then you only need to specify a volume and then review and approve the configuration.
 
@@ -129,13 +129,9 @@ If you choose one of the packages, then you only need to specify a volume and th
 +
 If you prefer to use your own policy, it must meet https://mysupport.netapp.com/site/info/cloud-manager-policies[policy requirements for Cloud Volumes ONTAP nodes^].
 
-. *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
+. *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
-image:screenshot_cvo_licensing_aws.gif[A screenshot of the Licensing page]
-+
-If your needs change after you launch the instance, you can modify the license or instance type later.
-+
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
 +
@@ -333,13 +329,9 @@ If you choose one of the packages, then you only need to specify a volume and th
 +
 If you prefer to use your own policy, it must meet https://mysupport.netapp.com/site/info/cloud-manager-policies[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator^].
 
-. *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
+. *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
-image:screenshot_cvo_licensing_aws.gif[A screenshot of the Licensing page]
-+
-If your needs change after you launch the instances, you can modify the license or instance type later.
-+
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
 +

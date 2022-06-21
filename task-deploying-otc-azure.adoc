@@ -119,13 +119,9 @@ TIP: If the Azure account that you're using has the https://mysupport.netapp.com
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 
-. *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, and select a virtual machine type.
+. *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a virtual machine type.
 +
-image:screenshot_cvo_licensing_azure.gif[A screenshot of the Licensing page]
-+
-If your needs change after you launch the system, you can modify the license or virtual machine type later.
-+
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
 . *Subscribe from the Azure Marketplace*: Follow the steps if Cloud Manager could not enable programmatic deployments of Cloud Volumes ONTAP.
 
