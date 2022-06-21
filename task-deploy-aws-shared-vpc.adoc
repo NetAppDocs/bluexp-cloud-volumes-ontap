@@ -17,38 +17,20 @@ Starting with the 9.11.1 release, Cloud Volumes ONTAP HA pairs are supported in 
 
 With https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/[VPC sharing^], a Cloud Volumes ONTAP HA configuration is spread across two accounts:
 
-* The VPC owner account, which owns the networking (the VPC, subnets, route tables, and security groups)
+* The VPC owner account, which owns the networking (the VPC, subnets, route tables, and Cloud Volumes ONTAP security group)
 * The participant account, where the EC2 instances are deployed in shared subnets (this includes the two HA nodes and the mediator)
 
 In the case of a Cloud Volumes ONTAP HA configuration that is deployed across multiple Availability Zones, the HA mediator needs specific permissions to write to the route tables in the VPC owner account. You need to provide those permissions by setting up an IAM role that the mediator can assume.
 
+The following image shows the components involved this deployment:
+
+image:diagram-aws-vpc-sharing.png["A conceptual image of a Cloud Volumes ONTAP HA deployment in a shared VPC. It shows a shared VPC that is available to the VPC owner account and the participant account. The shared VPC includes the IAM role, route table, security group, and three shared subnets. The participant account includes the Cloud Volumes ONTAP HA configuration and an IAM role attached to the mediator."]
+
+As described in the steps below, you'll need to share the subnets with the participant account, and then create the IAM role and security group in the VPC owner account.
+
+When you create the Cloud Volumes ONTAP working environment, Cloud Manager automatically creates and attaches an IAM role to the mediator. This role assumes the IAM role that you created in the VPC owner account in order to make changes to the route tables associated with the HA pair.
+
 .Steps
-
-. Create an IAM role.
-
-.. Go to the IAM console in the participant account where you want to deploy the EC2 instances for Cloud Volumes ONTAP.
-
-.. Under Access Management, click *Roles > Create Role* and follow the steps to create the role.
-+
-Be sure to do the following:
-
-* Under *Trusted entity type*, select *AWS account*.
-* Select *Another AWS account* and enter the ID of the VPC owner account.
-* Attach a policy to the IAM role that includes the “sts:AssumeRole” permission.
-+
-For example:
-+
-[source,json]
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": "sts:AssumeRole",
-    "Resource": "arn:aws:iam::account-id:role/Test*"
-  }
-}
-
-.. Copy the Role ARN of the IAM role so that you can paste it in the API request when you deploy the HA pair.
 
 . Share the subnets in the VPC owner account with the participant account.
 +
@@ -60,7 +42,22 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-sh
 +
 link:reference-security-groups.html[Refer to the security group rules for Cloud Volumes ONTAP]. Note that you don't need to create a security group for the HA mediator. Cloud Manager does that for you.
 
+. In the VPC owner account, create an IAM role that includes the following permissions:
++
+[source,json]
+Action": [
+                "ec2:AssignPrivateIpAddresses",
+                "ec2:CreateRoute",
+                "ec2:DeleteRoute",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeVpcs",
+                "ec2:ReplaceRoute",
+                "ec2:UnassignPrivateIpAddresses"
+
 . Use the API to create a new Cloud Volumes ONTAP working environment and pass the "assumeRoleArn" field in the "haParams" object.
++
+The "assumeRoleArn" field should include the ARN of the IAM role that you created in the VPC owner account (see the previous step).
 +
 For example:
 +
