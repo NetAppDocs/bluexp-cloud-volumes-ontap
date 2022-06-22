@@ -55,9 +55,17 @@ Action": [
                 "ec2:ReplaceRoute",
                 "ec2:UnassignPrivateIpAddresses"
 
-. Use the API to create a new Cloud Volumes ONTAP working environment and pass the "assumeRoleArn" field in the "haParams" object.
+. Use the Cloud Manager API to create a new Cloud Volumes ONTAP working environment.
 +
-The "assumeRoleArn" field should include the ARN of the IAM role that you created in the VPC owner account (see the previous step).
+Note that you must specify the following fields:
++
+* "securityGroupId"
++
+The "securityGroupId" field should specify the security group that you created in the VPC owner account (see step 2 above).
+
+* "assumeRoleArn" in the "haParams" object
++
+The "assumeRoleArn" field should include the ARN of the IAM role that you created in the VPC owner account (see step 3 above).
 +
 For example:
 +
