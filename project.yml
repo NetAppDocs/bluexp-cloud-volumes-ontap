@@ -73,6 +73,8 @@ sidebar:
               url: /task-set-up-azure-encryption.html
             - title: Set up licensing
               url: /task-set-up-licensing-azure.html
+            - title: Enable high availability mode
+              url: /task-azure-high-availability-mode.html
             - title: Launch Cloud Volumes ONTAP in Azure
               url: /task-deploying-otc-azure.html
         - title: Get started in Google Cloud
