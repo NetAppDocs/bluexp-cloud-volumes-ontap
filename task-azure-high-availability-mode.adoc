@@ -22,8 +22,6 @@ Cloud Manager will prompt you with these details in an Action Required message w
 Note the following:
 
 *	There are no problems with the high availability of your Cloud Volumes ONTAP HA pair. This Azure feature works in concert with ONTAP to reduce the client observed application outage time for NFS protocols that result from unplanned failover events.
-+
-High availability mode is an Azure feature. If this feature isn't enabled, it does not impact the HA pair's capabilities from an ONTAP perspective.
 *	Enabling this feature is non-disruptive to Cloud Volumes ONTAP HA pairs.
 *	Enabling this feature on your Azure subscription won't cause issues to other VMs.
 
