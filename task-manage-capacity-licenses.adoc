@@ -35,9 +35,9 @@ View the licensed capacity and provisioned capacity by package to ensure that yo
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left-hand navigation menu, select *Digital Wallet*.
 
-. With *Capacity Based Licenses* selected, view the licensed capacity and provisioned capacity for each package.
+. On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected and view the licensed capacity and provisioned capacity for each package.
 +
 image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of provisioned capacity versus licensed capacity for the professional package and essentials package.]
 
@@ -55,9 +55,9 @@ If you don't see your purchased licenses in the Digital Wallet, you'll need to a
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left-hand navigation menu, select *Digital Wallet*.
 
-. Click *Add License*.
+. On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected and click *Add License*.
 
 . Enter the serial number for your capacity-based license or upload the license file.
 +
@@ -77,9 +77,9 @@ The license file (or _files_ if you have an HA pair).
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left-hand navigation menu, select *Digital Wallet*.
 
-. Click the action menu next to the license and select *Update License*.
+. On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Update License*.
 
 . Upload the license file.
 
@@ -91,8 +91,8 @@ If a capacity-based license expired and is no longer in use, then you can remove
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left-hand navigation menu, select *Digital Wallet*.
 
-. Click the action menu next to the license and select *Remove License*.
+. On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Remove License*.
 
 . Click *Remove* to confirm.
