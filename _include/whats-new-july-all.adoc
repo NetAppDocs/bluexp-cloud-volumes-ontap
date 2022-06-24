@@ -1,0 +1,5 @@
+=== WORM and data tiering
+
+When you create a new Cloud Volumes ONTAP system, you can now enable both data tiering and write once, read many (WORM) storage together. Enabling both options allows you to tier the data to an object store in the cloud.
+
+Note that any data tiered to object storage doesn't include the ONTAP WORM functionality. To ensure end-to-end WORM capability, you'll need to set up the bucket permissions accordingly.
