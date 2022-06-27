@@ -1,0 +1,144 @@
+---
+sidebar: sidebar
+permalink: task-set-up-iam-roles.html
+keywords: iam role, mediator role, cloud volumes ontap role, policy, iam policy, permissions
+summary: Each Cloud Volumes ONTAP node must have an attached IAM role that provides required permissions. The same is true for the HA mediator. It's easiest to let Cloud Manager create the IAM roles for you, but you can use your own roles.
+---
+
+= Set up IAM roles for Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Each Cloud Volumes ONTAP node must have an attached IAM role that provides required permissions. The same is true for the HA mediator. It's easiest to let Cloud Manager create the IAM roles for you, but you can use your own roles.
+
+This task is optional. When you create a Cloud Volumes ONTAP working environment, the default option is to let Cloud Manager create the IAM roles for you. If your security policies require you to use your own IAM role, then follow the steps below.
+
+NOTE: Using your own IAM roles is required in the AWS Commercial Cloud Services Environment.
+
+.Steps
+
+. From the IAM console, create a policy that includes the following permissions:
++
+* Cloud Volumes ONTAP nodes
++
+[role="tabbed-block"]
+====
+.Standard regions
+--
+[source,json]
+{
+	"Version": "2012-10-17",
+	"Statement": [{
+			"Action": "s3:ListAllMyBuckets",
+			"Resource": "arn:aws:s3:::*",
+			"Effect": "Allow"
+		}, {
+			"Action": [
+				"s3:ListBucket",
+				"s3:GetBucketLocation"
+			],
+			"Resource": "arn:aws:s3:::fabric-pool-*",
+			"Effect": "Allow"
+		}, {
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:DeleteObject"
+			],
+			"Resource": "arn:aws:s3:::fabric-pool-*",
+			"Effect": "Allow"
+		}
+	]
+}
+--
+
+.GovCloud (US) regions
+--
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws-us-gov:s3:::*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+        ],
+        "Resource": "arn:aws-us-gov:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws-us-gov:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }]
+}
+--
+
+.C2S environment
+--
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws-iso:s3:::*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+        ],
+        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }]
+}
+--
+
+====
+// end tabbed area
+
+* HA mediator
++
+[source,json]
+{
+	"Version": "2012-10-17",
+	"Statement": [{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AssignPrivateIpAddresses",
+				"ec2:CreateRoute",
+				"ec2:DeleteRoute",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeVpcs",
+				"ec2:ReplaceRoute",
+				"ec2:UnassignPrivateIpAddresses"
+			],
+			"Resource": "*"
+		}
+	]
+}
+
+. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+
+.Result
+
+You now have IAM roles that you can select when you create a new Cloud Volumes ONTAP working environment.
