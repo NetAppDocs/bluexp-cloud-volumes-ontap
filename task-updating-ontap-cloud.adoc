@@ -188,7 +188,7 @@ Cloud Manager operations such as volume or aggregate creation must not be in pro
 
 .Steps
 
-. From the left-hand navigation menu, select *Canvas*.
+. From the left navigation menu, select *Canvas*.
 
 . Select a working environment.
 +

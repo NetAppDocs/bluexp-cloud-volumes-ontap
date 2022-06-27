@@ -30,7 +30,7 @@ The Digital Wallet page enables you to view details about each of your PAYGO Clo
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -52,7 +52,7 @@ Add a node-based license to the Digital Wallet so that you can select the licens
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -83,7 +83,7 @@ The converted license has the same expiry date as the Cloud Volumes ONTAP licens
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -127,7 +127,7 @@ If Cloud Manager can't access the license file over the secure internet connecti
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -155,7 +155,7 @@ Purchase an extra capacity license by contacting us through the chat icon in the
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -173,7 +173,7 @@ If you extended the term of an extra capacity license, you'll need to update the
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -191,7 +191,7 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -212,7 +212,7 @@ When you convert an Eval license to a BYOL, Cloud Manager restarts the Cloud Vol
 
 .Steps
 
-. From the left-hand navigation menu, select *Digital Wallet*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
