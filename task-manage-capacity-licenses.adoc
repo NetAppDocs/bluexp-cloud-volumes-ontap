@@ -39,11 +39,11 @@ The Digital Wallet shows you the total consumed capacity in your account and the
 
 . With *Capacity Based Licenses* selected, view the packages summary, which shows you consumed capacity, total licensed capacity, and total PAYGO capacity.
 +
-_Total consumed capacity_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
+* _Total consumed capacity_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
 +
-_Total licensed_ is the total licensed capacity (BYOL) that you purchased from NetApp.
+* _Total licensed_ is the total licensed capacity (BYOL) that you purchased from NetApp.
 +
-_Total PAYGO_ is the total provisioned capacity using cloud marketplace subscriptions. Charging via PAYGO is used only if the consumed capacity is higher than the licensed capacity or if there is no BYOL license available in the Digital Wallet.
+* _Total PAYGO_ is the total provisioned capacity using cloud marketplace subscriptions. Charging via PAYGO is used only if the consumed capacity is higher than the licensed capacity or if there is no BYOL license available in the Digital Wallet.
 +
 Here's an example of an account that has 2000 TiB of consumed capacity:
 +
@@ -51,9 +51,9 @@ image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount 
 
 . Under the summary, view the consumed capacity for each of your licensing packages.
 +
-_Consumed capacity_ shows you the total capacity of the volumes for that package. For more details about a specific package, hover your mouse over the tooltip.
+* _Consumed capacity_ shows you the total capacity of the volumes for that package. For more details about a specific package, hover your mouse over the tooltip.
 +
-The _BYOL_ and _PAYGO_ capacities show you the total consumed capacity by license consumption model.
+* The _BYOL_ and _PAYGO_ capacities show you the total consumed capacity by license consumption model.
 +
 Here's an example for an account that has several licensing packages:
 +
