@@ -19,14 +19,8 @@ Several licensing options are available for Cloud Volumes ONTAP. Each option ena
 
 The following licensing options are available for new customers.
 
-Freemium offering::
-Free of charge up to 500 GiB of provisioned capacity without purchasing a license or contract. Includes limited support.
-
-Essentials package::
-Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
-
-Professional package::
-Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unlimited backups with Cloud Backup.
+Capacity-based licensing packages::
+Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services.
 
 Keystone Flex Subscription::
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
@@ -35,7 +29,15 @@ The previous by-node licensing model remains available for existing customers wh
 
 The following sections provide more details about each of these options.
 
-== Freemium offering
+== Capacity-based licensing packages
+
+Capacity-based licensing packages enable you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through the license.
+
+For example, you could purchase a single 20 TiB license, deploy four Cloud Volumes ONTAP systems, and then allocate a 5 TiB volume to each system, for a total of 20 TiB. The capacity is available to the volumes on each Cloud Volumes ONTAP system deployed in that account.
+
+Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from several licensing packages based on your business needs.
+
+=== Freemium
 
 Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply).
 
@@ -43,52 +45,55 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * Support from NetApp is not included.
 * You're limited to 500 GiB of provisioned capacity per Cloud Volumes ONTAP system.
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
-* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package (capacity-based licensing).
+* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
-Learn how to get started with the Freemium offering:
+=== Essentials
 
-ifdef::aws[]
-* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
-endif::aws[]
-ifdef::azure[]
-* link:task-set-up-licensing-azure.html[Set up licensing for Cloud Volumes ONTAP in Azure]
-endif::azure[]
-ifdef::gcp[]
-* link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
-endif::gcp[]
+Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
 
-== Capacity-based licensing packages
-
-Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through the license.
-
-For example, you could purchase a single 20 TiB license, deploy four Cloud Volumes ONTAP systems, and then allocate a 5 TiB volume to each system, for a total of 20 TiB. The capacity is available to the volumes on each Cloud Volumes ONTAP system deployed in that account.
-
-Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose the _Essentials_ package or the _Professional_ package.
-
-Essentials package::
 * Choose your Cloud Volumes ONTAP configuration:
 ** A single node or HA system
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
 
-Professional package::
+=== Optimized
+
+Pay for provisioned capacity and I/O operations separately.
+
+*	The same capabilities as the Essentials package
+*	Charging is based on two cost components: storage and usage (I/O)
+*	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
+* Supported with selected VM types: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4
+
+=== Professional
+
+Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unlimited backups with Cloud Backup.
+
 * Provides licensing for any Cloud Volumes ONTAP configuration (single node or HA with any storage type)
 * Includes volume backups using Cloud Backup (only for volumes charged against this license)
 * Add on any of NetApp's cloud data services at extra cost
 
+=== Edge Cache
+
+Cloud Volumes ONTAP with a Global File Cache Edge license.
+
+*	The same capabilities as the Professional package
+*	One Global File Cache Edge license per 3 TiB of provisioned capacity
+*	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
+
 === Consumption models
 
-The Essentials and Professional packages are available with the following consumption models:
+Capacity-based licensing packages are available with the following consumption models:
 
-* A license (BYOL) purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
+* *BYOL*: A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
 +
-The license is not restricted to a single cloud provider.
+Note that the Optimized and Edge Cache packages are not available with BYOL.
 
-* An hourly subscription (PAYGO) from your cloud provider's marketplace.
+* *PAYGO*: An hourly subscription from your cloud provider's marketplace.
 
-* An annual contract from your cloud provider's marketplace.
+* *Annual*: An annual contract from your cloud provider's marketplace.
 
 Note the following:
 
