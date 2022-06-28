@@ -26,7 +26,7 @@ You need the following to create a working environment.
 
 ** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
-** The service account associated with the Connector link:https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml[should have the latest permissions^].
+** The service account associated with the Connector https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[should have the required permissions^]
 
 * An understanding of the configuration that you want to use.
 +
