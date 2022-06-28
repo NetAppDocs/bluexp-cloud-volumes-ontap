@@ -29,7 +29,7 @@ The previous by-node licensing model remains available for existing customers wh
 
 The following sections provide more details about each of these options.
 
-== Capacity-based licensing packages
+== Capacity-based licensing
 
 Capacity-based licensing packages enable you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through the license.
 
@@ -71,7 +71,7 @@ Pay for provisioned capacity and I/O operations separately.
 *	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
 * Supported with selected VM types: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4
 
-=== Professional
+==== Professional
 
 Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unlimited backups with Cloud Backup.
 
@@ -79,7 +79,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unli
 * Includes volume backups using Cloud Backup (only for volumes charged against this license)
 * Add on any of NetApp's cloud data services at extra cost
 
-=== Edge Cache
+==== Edge Cache
 
 Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
 
@@ -137,15 +137,38 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 === Notes about charging
 
-* If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at the hourly rate based on your marketplace subscription.
+==== Minimum charge
 
-* For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
+For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
+
+==== Overages
+
+If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at the hourly rate based on your marketplace subscription.
+
+==== Essentials package
+
+With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). For example, _Essentials HA_ has different pricing than _Essentials Secondary HA_.
+
+If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the Digital Wallet charges overages against a higher priced Essentials license (if you have one). This happens because BYOL is cheaper than PAYGO. We want to ensure that you're charged at a lower price.
+
+Here's an example. Let's say you have the following licenses for the Essentials package:
+
+* A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
+* A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
+
+Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the Digital Wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's cheaper than the PAYGO rate.
+
+==== Storage VMs
 
 * There are no extra licensing costs for additional data-serving storage VMs (SVMs), but there is a 4 TiB minimum capacity charge per data-serving SVM.
 
 * Disaster recovery SVMs are charged according to the provisioned capacity.
 
-* For HA pairs, you're only charged for the provisioned capacity on a node. You aren't charged for data that is synchronously mirrored to the partner node.
+==== HA pairs
+
+For HA pairs, you're only charged for the provisioned capacity on a node. You aren't charged for data that is synchronously mirrored to the partner node.
+
+==== FlexClone and FlexCache volumes
 
 * You won't be charged for the capacity used by FlexClone volumes.
 
