@@ -137,6 +137,8 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 === Notes about charging
 
+The following details can help you understand how charging works with capacity-based licensing.
+
 ==== Minimum charge
 
 For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
