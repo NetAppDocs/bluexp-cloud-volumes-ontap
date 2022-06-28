@@ -37,7 +37,11 @@ For example, you could purchase a single 20 TiB license, deploy four Cloud Volum
 
 Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from several licensing packages based on your business needs.
 
-=== Freemium
+=== Packages
+
+The following capacity-based packages are available for Cloud Volumes ONTAP.
+
+==== Freemium
 
 Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply).
 
@@ -49,7 +53,7 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
-=== Essentials
+==== Essentials
 
 Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
 
@@ -58,7 +62,7 @@ Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
 
-=== Optimized
+==== Optimized
 
 Pay for provisioned capacity and I/O operations separately.
 
@@ -67,18 +71,16 @@ Pay for provisioned capacity and I/O operations separately.
 *	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
 * Supported with selected VM types: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4
 
-=== Professional
-
+Professional::
 Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unlimited backups with Cloud Backup.
-
++
 * Provides licensing for any Cloud Volumes ONTAP configuration (single node or HA with any storage type)
 * Includes volume backups using Cloud Backup (only for volumes charged against this license)
 * Add on any of NetApp's cloud data services at extra cost
 
-=== Edge Cache
-
-Cloud Volumes ONTAP with a Global File Cache Edge license.
-
+Edge Cache::
+Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
++
 *	The same capabilities as the Professional package
 *	One Global File Cache Edge license per 3 TiB of provisioned capacity
 *	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
