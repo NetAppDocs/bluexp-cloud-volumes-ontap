@@ -19,7 +19,7 @@ Several licensing options are available for Cloud Volumes ONTAP. Each option ena
 
 The following licensing options are available for new customers.
 
-Capacity-based licensing packages::
+Capacity-based licensing::
 Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services.
 
 Keystone Flex Subscription::
