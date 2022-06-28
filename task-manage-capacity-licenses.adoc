@@ -53,6 +53,8 @@ image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount 
 +
 * _Consumed capacity_ shows you the total capacity of the volumes for that package. For more details about a specific package, hover your mouse over the tooltip.
 +
+To better understand the capacities that display for the Essentials package, you should be familiar with how charging works. link:concept-licensing.html#notes-about-charging[Learn about charging for the Essentials package].
++
 * The _BYOL_ and _PAYGO_ capacities show you the total consumed capacity by license consumption model.
 +
 Here's an example for an account that has several licensing packages:

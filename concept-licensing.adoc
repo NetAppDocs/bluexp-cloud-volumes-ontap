@@ -160,6 +160,8 @@ Here's an example. Let's say you have the following licenses for the Essentials 
 
 Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the Digital Wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's cheaper than the PAYGO rate.
 
+In the Digital Wallet, that 50 TiB will be shown as charged against the _Essentials Single Node_ license.
+
 ==== Storage VMs
 
 * There are no extra licensing costs for additional data-serving storage VMs (SVMs), but there is a 4 TiB minimum capacity charge per data-serving SVM.
