@@ -114,13 +114,13 @@ endif::aws[]
 ifdef::azure[]
 === Requirements to tier cold data to Azure Blob storage
 
-You don't need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has these permissions:
+You don't need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the custom role for the Connector has these permissions:
 
 [source,json]
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
-The permissions are included in the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy].
+The permissions are included in the custom role by default. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
 endif::azure[]
 
 ifdef::gcp[]

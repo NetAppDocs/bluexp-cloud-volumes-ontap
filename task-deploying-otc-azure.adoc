@@ -104,7 +104,7 @@ a| Create a new resource group for Cloud Volumes ONTAP or use an existing resour
 
 You must use a dedicated resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group. Cloud Manager experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
 
-TIP: If the Azure account that you're using has the https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^], Cloud Manager removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
+TIP: If the Azure account that you're using has the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[required permissions^], Cloud Manager removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
 
 | Security group | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap[View the default security group].
 

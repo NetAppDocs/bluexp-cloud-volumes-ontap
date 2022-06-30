@@ -12,7 +12,7 @@ Note that support for Elastic Volumes requires new AWS permissions for the Conne
 "ec2:DescribeVolumesModifications",
 "ec2:ModifyVolume",
 
-Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[View the latest Connector policy for AWS^].
 
 === Support for deploying HA pairs in shared AWS subnets
 

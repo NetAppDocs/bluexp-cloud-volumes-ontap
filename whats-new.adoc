@@ -283,7 +283,7 @@ The following permissions enable Cloud Manager to remove Cloud Volumes ONTAP res
 "Microsoft.Network/privateEndpoints/delete",
 "Microsoft.Compute/availabilitySets/delete",
 
-Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+Be sure to provide these permissions to each set of Azure credentials that you've added to Cloud Manager. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View the latest Connector policy for Azure^].
 
 === Blob public access now disabled in Azure
 
@@ -351,7 +351,7 @@ Cloud Manager now deletes older cloud snapshots of root and boot disks that are 
 This enhancement helps reduce cloud provider costs by removing snapshots that are no longer needed.
 
 ifdef::azure[]
-Note that a Connector requires a new permission to delete Azure snapshots. https://mysupport.netapp.com/site/info/cloud-manager-policies[View the latest Cloud Manager policy for Azure^].
+Note that a Connector requires a new permission to delete Azure snapshots. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View the latest Connector policy for Azure^].
 
 [source,json]
 "Microsoft.Compute/snapshots/delete"
