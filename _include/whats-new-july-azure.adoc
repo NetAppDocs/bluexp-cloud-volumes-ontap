@@ -1,13 +1,3 @@
-=== New licensing packages in Azure
-
-Two new capacity-based licensing packages are available for Cloud Volumes ONTAP in Azure when you pay through an Azure Marketplace subscription:
-
-* *Optimized*: Pay for provisioned capacity and I/O operations separately
-
-* *Edge Cache*: Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
-
-link:concept-licensing.html#packages[Learn more about these licensing packages].
-
 === New Azure Cloud region support
 
 Starting with the 9.10.1 release, Cloud Volumes ONTAP is now supported in the Azure West US 3 region.
