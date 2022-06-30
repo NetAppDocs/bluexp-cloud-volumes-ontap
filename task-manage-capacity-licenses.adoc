@@ -31,7 +31,7 @@ If Cloud Manager can't add the license, you'll need to manually add them to the 
 
 == View the consumed capacity in your account
 
-The Digital Wallet shows you the total consumed capacity in your account and the consumed capacity by package type. This can help you understand how you're being charged and whether you should purchase additional licenses.
+The Digital Wallet shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you're being charged and whether you need to purchase additional capacity.
 
 .Steps
 
