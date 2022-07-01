@@ -51,6 +51,8 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
 * If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.
 +
+As soon as a system is converted to the Essentials package, the <<minimum charge>> applies.
++
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
 ==== Essentials
@@ -64,10 +66,12 @@ Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
 
 ==== Professional
 
-Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unlimited backups with Cloud Backup.
+Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited backups.
 
-* Provides licensing for any Cloud Volumes ONTAP configuration (single node or HA with any storage type)
-* Includes volume backups using Cloud Backup (only for volumes charged against this license)
+* Provides licensing for any Cloud Volumes ONTAP configuration
++
+Single node or HA with capacity charging for primary or secondary volumes at the same rate
+* Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems deployed with the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
 === Consumption models
@@ -132,7 +136,7 @@ If you exceed your BYOL capacity or if your license expires, you'll be charged f
 
 With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). For example, _Essentials HA_ has different pricing than _Essentials Secondary HA_.
 
-If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the Digital Wallet charges overages against a higher priced Essentials license (if you have one). This happens because BYOL is cheaper than PAYGO. We want to ensure that you're charged at a lower price.
+If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the Digital Wallet charges overages against a higher priced Essentials license (if you have one). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. Charging to the marketplace would add costs to your monthly bill.
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
