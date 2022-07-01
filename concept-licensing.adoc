@@ -51,7 +51,7 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
 * If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.
 +
-As soon as a system is converted to the Essentials package, the <<minimum charge>> applies.
+As soon as a system is converted to the Essentials package, the <<Notes about charging,minimum charge>> applies.
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
@@ -70,7 +70,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 
 * Provides licensing for any Cloud Volumes ONTAP configuration
 +
-Single node or HA with capacity charging for primary or secondary volumes at the same rate
+Single node or HA with capacity charging for primary and secondary volumes at the same rate
 * Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems deployed with the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
