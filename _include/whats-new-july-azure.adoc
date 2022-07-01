@@ -1,5 +1,0 @@
-=== New Azure Cloud region support
-
-Starting with the 9.10.1 release, Cloud Volumes ONTAP is now supported in the Azure West US 3 region.
-
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
