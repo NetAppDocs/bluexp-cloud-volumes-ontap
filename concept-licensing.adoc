@@ -126,7 +126,11 @@ The following details can help you understand how charging works with capacity-b
 
 ==== Minimum charge
 
-For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
+There is a 4 TiB minimum charge for each data-serving storage VM that has least one primary (read-write) volume. If the sum of the primary volumes is less than 4 TiB, then Cloud Manager applies the 4 TiB minimum charge to that storage VM.
+
+If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
+
+The 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data.
 
 ==== Overages
 
@@ -228,9 +232,23 @@ Note that converting a system from PAYGO by-node licensing to BYOL by-node licen
 
 == Max number of systems
 
-The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
+The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
 
-A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you’d have a total of 4 systems, with room for 16 additional systems in your account.
+For example, let's say you have three working environments:
+
+* A single node Cloud Volumes ONTAP system with one storage VM (this is the default storage VM that's created when you deploy Cloud Volumes ONTAP)
++
+This working environment counts as one system.
+
+* A single node Cloud Volumes ONTAP system with two storage VMs (the default storage VM, plus one additional storage VM that you created)
++
+This working environment counts as two systems: one for the single node system and one for the additional storage VM.
+
+* A Cloud Volumes ONTAP HA pair with three storage VMs (the default storage VM, plus two additional storage VMs that you created)
++
+This working environment counts as three systems: one for the HA pair and two for the additional storage VMs.
+
+That's six systems in total. You would then have room for an additional 14 systems in your account.
 
 If you have questions, reach out to your account rep or sales team.
 
