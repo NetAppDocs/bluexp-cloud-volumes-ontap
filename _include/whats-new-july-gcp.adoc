@@ -1,9 +1,0 @@
-=== New Google Cloud region support
-
-Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:
-
-* Madrid (europe-southwest1)
-* Paris (europe-west9)
-* Warsaw (europe-central2)
-
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
