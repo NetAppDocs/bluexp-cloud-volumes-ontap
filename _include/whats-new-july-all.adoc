@@ -1,0 +1,5 @@
+=== Digital Wallet
+
+The Digital Wallet now shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you're being charged and whether you need to purchase additional capacity.
+
+image:screenshot-digital-wallet-summary.png["A screenshot that shows the Digital Wallet page for capacity-based licenses. The page provides an overview of the consumed capacity in your account and then breaks down the consumed capacity by licensing package."]
