@@ -29,19 +29,37 @@ In the meantime, Cloud Manager automatically queries NetApp's licensing service 
 
 If Cloud Manager can't add the license, you'll need to manually add them to the Digital Wallet yourself. For example, if the Connector is installed in a location that doesn't have internet access, you'll need to add the licenses yourself. <<Add purchased licenses to your account,Learn how to add purchased licenses to your account>>.
 
-== View your account's capacity
+== View the consumed capacity in your account
 
-View the licensed capacity and provisioned capacity by package to ensure that you have enough room for your data volumes.
+The Digital Wallet shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you're being charged and whether you need to purchase additional capacity.
 
 .Steps
 
 . From the left navigation menu, select *Digital Wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected and view the licensed capacity and provisioned capacity for each package.
+. With *Capacity Based Licenses* selected, view the packages summary, which shows you consumed capacity, total licensed capacity, and total PAYGO capacity.
++
+* _Total consumed capacity_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
++
+* _Total licensed_ is the total licensed capacity (BYOL) that you purchased from NetApp.
++
+* _Total PAYGO_ is the total provisioned capacity using cloud marketplace subscriptions. Charging via PAYGO is used only if the consumed capacity is higher than the licensed capacity or if there is no BYOL license available in the Digital Wallet.
++
+Here's an example of an account that has 2000 TiB of consumed capacity:
 +
 image:screenshot_capacity-based-licenses.png[A screenshot that shows the amount of provisioned capacity versus licensed capacity for the professional package and essentials package.]
 
-. If needed, purchase additional licensed capacity and then add the license to your account.
+. Under the summary, view the consumed capacity for each of your licensing packages.
++
+* _Consumed capacity_ shows you the total capacity of the volumes for that package. For more details about a specific package, hover your mouse over the tooltip.
++
+To better understand the capacities that display for the Essentials package, you should be familiar with how charging works. link:concept-licensing.html#notes-about-charging[Learn about charging for the Essentials package].
++
+* The _BYOL_ and _PAYGO_ capacities show you the total consumed capacity by license consumption model.
++
+Here's an example for an account that has several licensing packages:
++
+image:screenshot-digital-wallet-packages.png[A screenshot that shows consumed capacity for the professional, optimized, and essentials packages.]
 
 == Add purchased licenses to your account
 
