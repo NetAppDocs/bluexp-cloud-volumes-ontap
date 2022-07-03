@@ -8,4 +8,4 @@ https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supp
 
 Cloud Manager now automatically installs the ONTAP S3 license on new and existing Cloud Volumes ONTAP systems running version 9.9.1 or later in Azure.
 
-https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^].
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]

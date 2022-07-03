@@ -35,7 +35,7 @@ The Digital Wallet shows you the total consumed capacity in your account and the
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left navigation menu, select *Digital Wallet*.
 
 . With *Capacity Based Licenses* selected, view the packages summary, which shows you consumed capacity, total licensed capacity, and total PAYGO capacity.
 +
@@ -73,9 +73,9 @@ If you don't see your purchased licenses in the Digital Wallet, you'll need to a
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left navigation menu, select *Digital Wallet*.
 
-. Click *Add License*.
+. On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected and click *Add License*.
 
 . Enter the serial number for your capacity-based license or upload the license file.
 +
@@ -95,9 +95,9 @@ The license file (or _files_ if you have an HA pair).
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left navigation menu, select *Digital Wallet*.
 
-. Click the action menu next to the license and select *Update License*.
+. On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Update License*.
 
 . Upload the license file.
 
@@ -109,8 +109,8 @@ If a capacity-based license expired and is no longer in use, then you can remove
 
 .Steps
 
-. Click *All Services > Digital Wallet > Cloud Volumes ONTAP*.
+. From the left navigation menu, select *Digital Wallet*.
 
-. Click the action menu next to the license and select *Remove License*.
+. On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Remove License*.
 
 . Click *Remove* to confirm.

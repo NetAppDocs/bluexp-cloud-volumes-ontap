@@ -8,4 +8,4 @@ link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volum
 
 Cloud Manager now automatically installs the ONTAP S3 license on new and existing Cloud Volumes ONTAP systems running version 9.11.0 or later in AWS.
 
-https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^].
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
