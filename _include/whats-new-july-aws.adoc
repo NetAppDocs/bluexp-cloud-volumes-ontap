@@ -3,3 +3,9 @@
 Cloud Manager now supports the Amazon EBS Elastic Volumes feature when creating a Cloud Volumes ONTAP working environment from the user interface. The Elastic Volumes feature is enabled by default when using gp3 or io1 disks. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed.
 
 link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS].
+
+=== ONTAP S3 license in AWS
+
+Cloud Manager now automatically installs the ONTAP S3 license on new and existing Cloud Volumes ONTAP systems running version 9.11.0 or later in AWS.
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^].
