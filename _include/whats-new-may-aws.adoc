@@ -14,4 +14,4 @@ The following permissions are now required to create an AWS spread placement gro
 
 These permissions are now required to optimize how Cloud Manager creates the placement group.
 
-Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[View the latest Connector policy for AWS^].

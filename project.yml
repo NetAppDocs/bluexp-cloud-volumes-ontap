@@ -54,6 +54,8 @@ sidebar:
                   url: /reference-security-groups.html
             - title: Set up the AWS KMS
               url: /task-setting-up-kms.html
+            - title: Set up IAM roles
+              url: /task-set-up-iam-roles.html
             - title: Set up licensing
               url: /task-set-up-licensing-aws.html
             - title: Launch Cloud Volumes ONTAP in AWS
