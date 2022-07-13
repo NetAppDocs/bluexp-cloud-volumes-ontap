@@ -19,7 +19,7 @@ While Google Cloud Storage always encrypts your data before it's written to disk
 
 . Ensure that the Cloud Manager Connector service account has the correct permissions at the project level, in the project where the key is stored.
 +
-The permissions are provided by the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager YAML file^] by default, but may not be applied if you use an alternate project for the Cloud Key Management Service.
+The permissions are provided in the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[Connector service account permissions by default^], but may not be applied if you use an alternate project for the Cloud Key Management Service.
 +
 The permissions are as follows:
 +

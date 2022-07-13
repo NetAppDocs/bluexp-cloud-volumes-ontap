@@ -54,7 +54,7 @@ Starting with the 3.9.19 release, the Connector requires the following permissio
 * ec2:DescribeVolumesModifications
 * ec2:ModifyVolume
 
-These permissions are included in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^]
+These permissions are included in https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[the policies provided by NetApp^]
 
 == How support for Elastic Volumes works
 

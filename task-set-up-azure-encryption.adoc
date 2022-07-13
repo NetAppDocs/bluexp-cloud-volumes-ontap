@@ -87,7 +87,7 @@ If you want to use a customer-managed key with a single node Cloud Volumes ONTAP
 "Microsoft.KeyVault/vaults/read",
 "Microsoft.KeyVault/vaults/accessPolicies/write"
 
-You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View the latest list of permissions^]
 
 NOTE: The first three permissions aren't required for HA pairs.
 

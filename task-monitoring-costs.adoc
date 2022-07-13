@@ -23,15 +23,9 @@ Cloud Manager updates the costs when you refresh the page. You should refer to A
 
 . Verify that Cloud Manager can obtain cost information from AWS:
 
-.. Ensure that the IAM policy that provides Cloud Manager with permissions includes the following actions:
+.. Ensure that the IAM policy that provides Cloud Manager with permissions includes the required permissions.
 +
-[source,json]
-"ce:GetReservationUtilization",
-"ce:GetDimensionValues",
-"ce:GetCostAndUsage",
-"ce:GetTags"
-+
-These actions are included in the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^]. New systems deployed from NetApp Cloud Central automatically include these permissions.
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[View the required permissions^]
 
 .. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html[Activate the *WorkingEnvironmentId* tag^].
 +

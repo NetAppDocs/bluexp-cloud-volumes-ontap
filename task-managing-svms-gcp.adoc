@@ -90,7 +90,7 @@ Starting with the 3.9.19 release, the Connector requires the following permissio
 - compute.instanceGroups.get
 - compute.addresses.get
 
-These permissions are included in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^]
+These permissions are included in https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp].
 
 .Steps
 
