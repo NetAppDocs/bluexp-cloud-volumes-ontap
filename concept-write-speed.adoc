@@ -81,7 +81,21 @@ You can choose a write speed when you create a new working environment and you c
 
 == What to expect if data loss occurs
 
-If you choose high write speed and data loss occurs, the system should be able to boot up and continue to serve data without user intervention. Two EMS messages will be reported when a node runs into data loss. One is wafl.root.content.changed with the ERROR severity level event, the other is nv.check.failed with the DEBUG severity level event. Both messages must be present as an indication of data loss.
+If data loss occurs due to high write speed, the Event Management System (EMS) reports the following two events:
+
+* Cloud Volumes ONTAP 9.11.0 or later
++
+ DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown with High Write Speed mode"
++
+ ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.
+
+* Cloud Volumes ONTAP 9.8 to 9.10.1
++
+ DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown"
++
+ ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.
+
+When this happens, Cloud Volumes ONTAP should be able to boot up and continue to serve data without user intervention.
 
 == How to stop data access if data loss occurs
 
