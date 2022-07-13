@@ -133,15 +133,18 @@ If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.ht
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
-. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
+. *Underlying Storage Resources*: Choose a disk type, configure the underlying storage, and choose whether to keep data tiering enabled.
 +
 Note the following:
 +
-* The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
-* The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
-+
-For help choosing a disk type and size, see link:task-planning-your-config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+* The disk type is for the initial volume (and aggregate). You can choose a different disk type for subsequent volumes (and aggregates).
+
+* If you choose a gp3 or io1 disk, Cloud Manager uses the Elastic Volumes feature in AWS to automatically increase the underlying storage disk capacity as needed. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS].
+
+* If you choose a gp2 or st1 disk, you can select a disk size for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
+
 * You can choose a specific volume tiering policy when you create or edit a volume.
+
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
 link:concept-data-tiering.html[Learn how data tiering works].
@@ -333,15 +336,18 @@ If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.ht
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
-. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
+. *Underlying Storage Resources*: Choose a disk type, configure the underlying storage, and choose whether to keep data tiering enabled.
 +
 Note the following:
 +
-* The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
-* The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
-+
-For help choosing a disk type and size, see link:task-planning-your-config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+* The disk type is for the initial volume (and aggregate). You can choose a different disk type for subsequent volumes (and aggregates).
+
+* If you choose a gp3 or io1 disk, Cloud Manager uses the Elastic Volumes feature in AWS to automatically increase the underlying storage disk capacity as needed. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS].
+
+* If you choose a gp2 or st1 disk, you can select a disk size for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
+
 * You can choose a specific volume tiering policy when you create or edit a volume.
+
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
 link:concept-data-tiering.html[Learn how data tiering works].

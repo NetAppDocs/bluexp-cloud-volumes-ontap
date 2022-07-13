@@ -17,6 +17,24 @@ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
 The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
+== 3 July 2022
+
+The following changes were introduced with the 3.9.20 release of the Connector.
+
+include::_include/whats-new-july-all.adoc[]
+
+ifdef::aws[]
+include::_include/whats-new-july-aws.adoc[]
+endif::aws[]
+
+ifdef::azure[]
+include::_include/whats-new-july-azure.adoc[]
+endif::azure[]
+
+ifdef::gcp[]
+include::_include/whats-new-july-gcp.adoc[]
+endif::gcp[]
+
 == 7 June 2022
 
 The following changes were introduced with the 3.9.19 release of the Connector.
@@ -118,16 +136,6 @@ We redesigned the licensing selection screen when creating a new Cloud Volumes O
 === Digital Wallet update
 
 We updated the *Digital Wallet* by consolidating Cloud Volumes ONTAP licenses in a single tab.
-
-=== 20 systems per NetApp account
-
-The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
-
-A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you'd have a total of 4 systems, with room for 16 additional systems in your account.
-
-If you have questions, reach out to your account rep or sales team.
-
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^]
 
 == 2 January 2022
 

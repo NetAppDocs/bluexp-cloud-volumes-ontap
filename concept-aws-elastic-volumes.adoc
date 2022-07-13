@@ -108,23 +108,15 @@ link:concept-storage-management.html#capacity-management[Learn more about the Ca
 
 == Limitations
 
-* Increasing the size of an aggregate can take up to 6 hours. During that time, Cloud Manager can't request any additional capacity for that aggregate.
-
-* At this time, creating a new Cloud Volumes ONTAP system with Elastic Volumes enabled on the initial aggregate is supported only with the API. This action is not supported from the Cloud Manager user interface. If you create a new Cloud Volumes ONTAP 9.11.0 or later system from the user interface, Elastic Volumes will not be enabled on the initial aggregate.
-+
-All other actions (such as creating a new aggregate) are supported from the user interface.
+Increasing the size of an aggregate can take up to 6 hours. During that time, Cloud Manager can't request any additional capacity for that aggregate.
 
 == How to work with Elastic Volumes
 
 You can work with Elastic Volumes in Cloud Manager as follows:
 
-* Create a new system that has Elastic Volumes enabled on the initial aggregate
+* Create a new system that has Elastic Volumes enabled on the initial aggregate when using gp3 or io1 disks
 +
-As noted in <<Limitations>>, this action is only supported with the API at this time. It's not supported from the user interface.
-+
-When you initiate the API call, the Elastic Volumes feature is enabled by default on the initial aggregate.
-+
-https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html[Learn how to create Cloud Volumes ONTAP by using the API^]
+link:task-deploying-otc-aws.html[Learn how to create Cloud Volumes ONTAP system]
 
 * Create a new volume on an aggregate that has Elastic Volumes enabled
 +

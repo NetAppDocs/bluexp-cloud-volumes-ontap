@@ -19,14 +19,8 @@ Several licensing options are available for Cloud Volumes ONTAP. Each option ena
 
 The following licensing options are available for new customers.
 
-Freemium offering::
-Free of charge up to 500 GiB of provisioned capacity without purchasing a license or contract. Includes limited support.
-
-Essentials package::
-Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
-
-Professional package::
-Pay by capacity for any type of Cloud Volumes ONTAP configuration. Includes unlimited backups with Cloud Backup.
+Capacity-based licensing::
+Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services.
 
 Keystone Flex Subscription::
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
@@ -35,7 +29,19 @@ The previous by-node licensing model remains available for existing customers wh
 
 The following sections provide more details about each of these options.
 
-== Freemium offering
+== Capacity-based licensing
+
+Capacity-based licensing packages enable you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through the license.
+
+For example, you could purchase a single 20 TiB license, deploy four Cloud Volumes ONTAP systems, and then allocate a 5 TiB volume to each system, for a total of 20 TiB. The capacity is available to the volumes on each Cloud Volumes ONTAP system deployed in that account.
+
+Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from several licensing packages based on your business needs.
+
+=== Packages
+
+The following capacity-based packages are available for Cloud Volumes ONTAP.
+
+==== Freemium
 
 Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply).
 
@@ -43,52 +49,40 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * Support from NetApp is not included.
 * You're limited to 500 GiB of provisioned capacity per Cloud Volumes ONTAP system.
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
-* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package (capacity-based licensing).
+* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.
++
+As soon as a system is converted to the Essentials package, the <<Notes about charging,minimum charge>> applies.
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
-Learn how to get started with the Freemium offering:
+==== Essentials
 
-ifdef::aws[]
-* link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
-endif::aws[]
-ifdef::azure[]
-* link:task-set-up-licensing-azure.html[Set up licensing for Cloud Volumes ONTAP in Azure]
-endif::azure[]
-ifdef::gcp[]
-* link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
-endif::gcp[]
+Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
 
-== Capacity-based licensing packages
-
-Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through the license.
-
-For example, you could purchase a single 20 TiB license, deploy four Cloud Volumes ONTAP systems, and then allocate a 5 TiB volume to each system, for a total of 20 TiB. The capacity is available to the volumes on each Cloud Volumes ONTAP system deployed in that account.
-
-Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose the _Essentials_ package or the _Professional_ package.
-
-Essentials package::
 * Choose your Cloud Volumes ONTAP configuration:
 ** A single node or HA system
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
 
-Professional package::
-* Provides licensing for any Cloud Volumes ONTAP configuration (single node or HA with any storage type)
-* Includes volume backups using Cloud Backup (only for volumes charged against this license)
+==== Professional
+
+Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited backups.
+
+* Provides licensing for any Cloud Volumes ONTAP configuration
++
+Single node or HA with capacity charging for primary and secondary volumes at the same rate
+* Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems deployed with the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
 === Consumption models
 
-The Essentials and Professional packages are available with the following consumption models:
+Capacity-based licensing packages are available with the following consumption models:
 
-* A license (BYOL) purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
-+
-The license is not restricted to a single cloud provider.
+* *BYOL*: A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
 
-* An hourly subscription (PAYGO) from your cloud provider's marketplace.
+* *PAYGO*: An hourly subscription from your cloud provider's marketplace.
 
-* An annual contract from your cloud provider's marketplace.
+* *Annual*: An annual contract from your cloud provider's marketplace.
 
 Note the following:
 
@@ -126,17 +120,72 @@ With this licensing model, each individual Cloud Volumes ONTAP system supports u
 
 There is no maximum capacity limitation when it comes to the license itself.
 
+=== Max number of systems
+
+With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
+
+For example, let's say you have three working environments:
+
+* A single node Cloud Volumes ONTAP system with one storage VM (this is the default storage VM that's created when you deploy Cloud Volumes ONTAP)
++
+This working environment counts as one system.
+
+* A single node Cloud Volumes ONTAP system with two storage VMs (the default storage VM, plus one additional storage VM that you created)
++
+This working environment counts as two systems: one for the single node system and one for the additional storage VM.
+
+* A Cloud Volumes ONTAP HA pair with three storage VMs (the default storage VM, plus two additional storage VMs that you created)
++
+This working environment counts as three systems: one for the HA pair and two for the additional storage VMs.
+
+That's six systems in total. You would then have room for an additional 14 systems in your account.
+
+If you have a large deployment that requires more then 20 systems, contact your account rep or sales team.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^].
+
 === Notes about charging
 
-* If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at the hourly rate based on your marketplace subscription.
+The following details can help you understand how charging works with capacity-based licensing.
 
-* For each package, there is a minimum 4 TiB capacity charge. Any Cloud Volumes ONTAP instance that has less than 4 TiB of capacity will be charged at a rate of 4 TiB.
+==== Minimum charge
+
+There is a 4 TiB minimum charge for each data-serving storage VM that has least one primary (read-write) volume. If the sum of the primary volumes is less than 4 TiB, then Cloud Manager applies the 4 TiB minimum charge to that storage VM.
+
+If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
+
+The 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data.
+
+==== Overages
+
+If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at the hourly rate based on your marketplace subscription.
+
+==== Essentials package
+
+With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). For example, _Essentials HA_ has different pricing than _Essentials Secondary HA_.
+
+If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the Digital Wallet charges overages against a higher priced Essentials license (if you have one). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. Charging to the marketplace would add costs to your monthly bill.
+
+Here's an example. Let's say you have the following licenses for the Essentials package:
+
+* A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
+* A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
+
+Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the Digital Wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's cheaper than the PAYGO rate.
+
+In the Digital Wallet, that 50 TiB will be shown as charged against the _Essentials Single Node_ license.
+
+==== Storage VMs
 
 * There are no extra licensing costs for additional data-serving storage VMs (SVMs), but there is a 4 TiB minimum capacity charge per data-serving SVM.
 
 * Disaster recovery SVMs are charged according to the provisioned capacity.
 
-* For HA pairs, you're only charged for the provisioned capacity on a node. You aren't charged for data that is synchronously mirrored to the partner node.
+==== HA pairs
+
+For HA pairs, you're only charged for the provisioned capacity on a node. You aren't charged for data that is synchronously mirrored to the partner node.
+
+==== FlexClone and FlexCache volumes
 
 * You won't be charged for the capacity used by FlexClone volumes.
 
@@ -204,13 +253,3 @@ Converting an existing Cloud Volumes ONTAP system to another licensing method is
 If you want to transition to another licensing method, you can purchase a license, deploy a new Cloud Volumes ONTAP system using that license, and then replicate the data to that new system.
 
 Note that converting a system from PAYGO by-node licensing to BYOL by-node licensing (and vice versa) isn't supported. You need to deploy a new system and then replicate data to that system. link:task-manage-node-licenses.html[Learn how to change between PAYGO and BYOL].
-
-== Max number of systems
-
-The maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account, regardless of the licensing model in use.
-
-A _system_ is either an HA pair or a single node system. For example, if you have two Cloud Volumes ONTAP HA pairs and two single node systems, you’d have a total of 4 systems, with room for 16 additional systems in your account.
-
-If you have questions, reach out to your account rep or sales team.
-
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^].
