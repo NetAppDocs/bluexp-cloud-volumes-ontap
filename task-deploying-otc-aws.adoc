@@ -153,7 +153,7 @@ link:concept-data-tiering.html[Learn how data tiering works].
 +
 link:concept-write-speed.html[Learn more about write speed].
 +
-WORM can't be enabled if Cloud Backup was enabled or if data tiering was enabled.
+WORM can't be enabled if data tiering was enabled.
 +
 link:concept-worm.html[Learn more about WORM storage].
 
@@ -356,7 +356,7 @@ link:concept-data-tiering.html[Learn how data tiering works].
 +
 link:concept-write-speed.html[Learn more about write speed].
 +
-WORM can't be enabled if Cloud Backup was enabled or if data tiering was enabled.
+WORM can't be enabled if data tiering was enabled.
 +
 link:concept-worm.html[Learn more about WORM storage].
 

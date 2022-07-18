@@ -50,5 +50,3 @@ After you activate WORM storage on a Cloud Volumes ONTAP system, you must use th
 * In addition to the trusted storage administrator model, WORM storage in Cloud Volumes ONTAP also implicitly operates under a "trusted cloud administrator" model. A cloud administrator could delete WORM data before its expiry date by removing or editing cloud storage directly from the cloud provider.
 
 * When WORM storage is activated, data tiering to object storage can't be enabled.
-
-* Cloud Backup Service must be disabled in order to enable WORM storage.
