@@ -55,6 +55,20 @@ As soon as a system is converted to the Essentials package, the <<Notes about ch
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
+ifdef::azure[]
+==== Optimized
+
+Pay for provisioned capacity and I/O operations separately.
+
+* Cloud Volumes ONTAP single node or HA
+*	Charging is based on two cost components: storage and usage (I/O)
++
+Note that I/O for data replication does not count as charged I/O usage.
+*	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
+* Supported with selected VM types: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4
+* Add on any of NetApp's cloud data services at extra cost
+endif::azure[]
+
 ==== Essentials
 
 Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
@@ -74,11 +88,25 @@ Single node or HA with capacity charging for primary and secondary volumes at th
 * Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems deployed with the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
+ifdef::azure[]
+==== Edge Cache
+
+Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
+
+*	The same capabilities as the Professional package
+*	One Global File Cache Edge license per 3 TiB of provisioned capacity
+*	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
+endif::azure[]
+
 === Consumption models
 
 Capacity-based licensing packages are available with the following consumption models:
 
 * *BYOL*: A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
+ifdef::azure[]
++
+Note that the Optimized and Edge Cache packages are not available with BYOL.
+endif::azure[]
 
 * *PAYGO*: An hourly subscription from your cloud provider's marketplace.
 
