@@ -230,7 +230,7 @@ If you have a VPN connection to the virtual network, you can place the Cloud Vol
 +
 NOTE: The predefined Cloud Volumes ONTAP security group allows outbound HTTP connections by default.
 
-. Obtain the software image from https://mysupport.netapp.com/products/p/cloud_ontap.html[the NetApp Support Site^].
+. Obtain the software image from https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[the NetApp Support Site^].
 
 . Copy the software image to a directory on the Connector or on an HTTP server from which the file will be served.
 +
