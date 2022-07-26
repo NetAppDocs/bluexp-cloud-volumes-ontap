@@ -26,8 +26,10 @@ Starting with the Cloud Manager 3.9.5 release, logical space reporting is enable
 ** FlexCache
 ** FlexClone
 ** iSCSI
+** Multi-tenant Encryption Key Management (MTEKM)
 ** NetApp Volume Encryption (only for BYOL or registered PAYGO systems)
 ** NFS
+** ONTAP S3
 ** SnapMirror
 ** SnapRestore
 ** SnapVault
