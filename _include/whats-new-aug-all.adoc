@@ -1,0 +1,7 @@
+=== MTEKM license
+
+The Multi-tenant Encryption Key Management (MTEKM) license is now included on new and existing Cloud Volumes ONTAP systems running version 9.11.1 or later.
+
+Multi-tenant external key management enables individual storage VMs (SVMs) to maintain their own keys through a KMIP for NetApp Volume Encryption.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html[Learn how to encrypt volumes with NetApp encryption solutions^]

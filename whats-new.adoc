@@ -17,6 +17,24 @@ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
 The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
+== 31 July 2022
+
+The following changes were introduced with the 3.9.21 release of the Connector.
+
+include::_include/whats-new-aug-all.adoc[]
+
+ifdef::aws[]
+include::_include/whats-new-aug-aws.adoc[]
+endif::aws[]
+
+ifdef::azure[]
+include::_include/whats-new-aug-azure.adoc[]
+endif::azure[]
+
+ifdef::gcp[]
+include::_include/whats-new-aug-gcp.adoc[]
+endif::gcp[]
+
 ifdef::azure[]
 == 18 July 2022
 
