@@ -4,4 +4,24 @@ The Multi-tenant Encryption Key Management (MTEKM) license is now included on ne
 
 Multi-tenant external key management enables individual storage VMs (SVMs) to maintain their own keys through a KMIP for NetApp Volume Encryption.
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html[Learn how to encrypt volumes with NetApp encryption solutions^]
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html[Learn how to encrypt volumes with NetApp encryption solutions].
+
+=== Proxy server
+
+Cloud Manager now automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server, if an outbound internet connection isn't available to send AutoSupport messages.
+
+AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support.
+
+The only requirement is to ensure that the Cloud Volumes ONTAP security group allows inbound connections over port 3128.
+
+=== Change licensing packages
+
+You can now change the licensing package for a Cloud Volumes ONTAP system from the Digital Wallet. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs change.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to change licensing packages].
+
+=== Security group enhancement
+
+When you create a Cloud Volumes ONTAP working environment, the user interface now enables you to choose whether you want the predefined security group to allow traffic within the selected network only (recommended) or all networks.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-allow-traffic.png["A screenshot that shows the Allow Traffic Within option that's available in the working environment wizard when selecting a security group."]
