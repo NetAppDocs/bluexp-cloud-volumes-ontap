@@ -23,18 +23,6 @@ The following changes were introduced with the 3.9.21 release of the Connector.
 
 include::_include/whats-new-aug-all.adoc[]
 
-ifdef::aws[]
-include::_include/whats-new-aug-aws.adoc[]
-endif::aws[]
-
-ifdef::azure[]
-include::_include/whats-new-aug-azure.adoc[]
-endif::azure[]
-
-ifdef::gcp[]
-include::_include/whats-new-aug-gcp.adoc[]
-endif::gcp[]
-
 ifdef::azure[]
 == 18 July 2022
 
