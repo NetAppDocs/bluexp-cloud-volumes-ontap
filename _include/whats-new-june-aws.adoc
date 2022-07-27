@@ -4,7 +4,7 @@ Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP ag
 
 Support for Elastic Volumes is available starting with _new_ Cloud Volumes ONTAP 9.11.0 systems and with gp3 and io1 EBS disk types.
 
-link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
 
 Note that support for Elastic Volumes requires new AWS permissions for the Connector:
 

@@ -10,4 +10,4 @@ If you need to perform advanced management of Cloud Volumes ONTAP, you can do so
 
 This Advanced View is available as a Preview with Cloud Volumes ONTAP 9.10.0 and later. We plan to refine this experience and add enhancements in upcoming releases. Please send us feedback by using the in-product chat.
 
-link:task-administer-advanced-view.html[Learn more about the Advanced View].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html[Learn more about the Advanced View].
