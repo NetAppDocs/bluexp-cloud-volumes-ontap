@@ -28,7 +28,7 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 
-If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Cloud Volumes ONTAP security group allows inbound connections over port 3128.
+If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128 and that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
 
 After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
 
