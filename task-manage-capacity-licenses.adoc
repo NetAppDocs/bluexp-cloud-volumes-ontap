@@ -105,6 +105,28 @@ The license file (or _files_ if you have an HA pair).
 
 . Click *Upload License*.
 
+== Change charging methods
+
+You can change the charging method for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed.
+
+.Steps
+
+. From the left navigation menu, select *Digital Wallet*.
+
+. On the *Cloud Volumes ONTAP* tab, click *Change Charging Method*.
++
+image:screenshot-digital-wallet-charging-method-button.png[A screenshot of the Cloud Volumes ONTAP page in the Digital Wallet where the Change Charging Method button is just above the table.]
+
+. Select a working environment, choose the new charging method, and then confirm your understanding that changing the package type will affect service charges.
++
+image:screenshot-digital-wallet-charging-method.png[A screenshot of the Change Charging Method dialog box where you choose a new charging method for a Cloud Volumes ONTAP working environment.]
+
+. Click *Change Charging Method*.
+
+.Result
+
+Cloud Manager changes the charging method for the Cloud Volumes ONTAP system. The Digital Wallet refreshes the consumed capacity for each package type to account for the change that you just made.
+
 == Remove a capacity-based license
 
 If a capacity-based license expired and is no longer in use, then you can remove it at any time.
