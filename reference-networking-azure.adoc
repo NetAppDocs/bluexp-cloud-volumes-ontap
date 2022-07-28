@@ -263,8 +263,9 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | 464 | TCP | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
 | 464 | UDP | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos key administration
 | 749 | TCP | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (RPCSEC_GSS)
-.2+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
+.3+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
 | HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
+| TCP | 3128 | Node management LIF | Connector | If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128 and that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
 | DHCP | 68 | UDP | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | 67 | UDP | Node management LIF | DHCP | DHCP server
 | DNS | 53 | UDP | Node management LIF and data LIF (NFS, CIFS) | DNS | DNS
