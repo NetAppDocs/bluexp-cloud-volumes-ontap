@@ -87,7 +87,11 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^].
 * https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about the Monitoring service^].
 
-. *Location & Connectivity*: Select a location, a resource group, a security group, and then select the checkbox to confirm network connectivity between the Connector and the target location.
+. *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.
++
+For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, Cloud Manager will select one for you.
+
+. *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.
 +
 The following table describes fields for which you might need guidance:
 +
@@ -96,7 +100,7 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Location | For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, Cloud Manager will select one for you.
+| Availability Zone | For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, Cloud Manager will select one for you.
 
 | Resource Group
 
@@ -106,7 +110,12 @@ You must use a dedicated resource group for each Cloud Volumes ONTAP HA pair tha
 
 TIP: If the Azure account that you're using has the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[required permissions^], Cloud Manager removes Cloud Volumes ONTAP resources from a resource group, in case of deployment failure or deletion.
 
-| Security group | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap[View the default security group].
+| Generated security group a| If you let Cloud Manager generate the security group for you, you need to choose how you'll allow traffic:
+
+* If you choose *Selected VNet only*, the source for inbound traffic is the subnet range of the selected VNet and the subnet range of the VNet where the Connector resides. This is the recommended option.
+* If you choose *All VNets*, the source for inbound traffic is the 0.0.0.0/0 IP range.
+
+| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap[View the default security group].
 
 |===
 
