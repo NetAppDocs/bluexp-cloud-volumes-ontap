@@ -87,14 +87,16 @@ Packet mirroring in VPCs::
 https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud VPC in which you deploy Cloud Volumes ONTAP. Cloud Volumes ONTAP can't operate properly if packet mirroring is enabled.
 
 Outbound internet access for Cloud Volumes ONTAP::
-Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
+Cloud Volumes ONTAP requires outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
 +
 Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
 +
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 +
-link:task-verify-autosupport.html[Learn how to verify AutoSupport].
+If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Cloud Volumes ONTAP security group allows inbound connections over port 3128.
++
+After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
 +
 TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 
