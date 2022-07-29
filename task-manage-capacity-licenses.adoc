@@ -125,7 +125,9 @@ image:screenshot-digital-wallet-charging-method.png[A screenshot of the Change C
 
 .Result
 
-Cloud Manager changes the charging method for the Cloud Volumes ONTAP system. The Digital Wallet refreshes the consumed capacity for each package type to account for the change that you just made.
+Cloud Manager changes the charging method for the Cloud Volumes ONTAP system.
+
+You might also notice that the Digital Wallet refreshes the consumed capacity for each package type to account for the change that you just made.
 
 == Remove a capacity-based license
 
