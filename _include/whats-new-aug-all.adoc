@@ -12,7 +12,7 @@ Cloud Manager now automatically configures your Cloud Volumes ONTAP systems to u
 
 AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support.
 
-The only requirement is to ensure that the Cloud Volumes ONTAP security group allows inbound connections over port 3128.
+The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 
 === Change charging method
 
@@ -25,5 +25,3 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capa
 When you create a Cloud Volumes ONTAP working environment, the user interface now enables you to choose whether you want the predefined security group to allow traffic within the selected network only (recommended) or all networks.
 
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-allow-traffic.png["A screenshot that shows the Allow Traffic Within option that's available in the working environment wizard when selecting a security group."]
-
-image:screenshot-allow-traffic.png["A screenshot that shows the Allow Traffic Within option that's available in the working environment wizard when selecting a security group."]
