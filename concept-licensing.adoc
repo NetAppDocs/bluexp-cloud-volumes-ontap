@@ -91,7 +91,7 @@ Single node or HA with capacity charging for primary and secondary volumes at th
 ifdef::azure[]
 ==== Edge Cache
 
-Licensing for Cloud Volumes Edge Cache
+Provides licensing for Cloud Volumes Edge Cache.
 
 *	The same capabilities as the Professional package with business continuity and data protection for a distributed enterprise
 * Intelligent edge caching through a small-footprint Windows VM at each location
