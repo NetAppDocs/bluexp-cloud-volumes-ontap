@@ -94,7 +94,9 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 +
-If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's firewall allows _inbound_ connections over port 3128 and that the Cloud Volumes ONTAP firewall allows _outbound_ connections over port 3128.
+If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's firewall allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
++
+If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP firewall allows _outbound_ connections over port 3128.
 +
 After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
 +
@@ -281,7 +283,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | TCP | 749 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (RPCSEC_GSS)
 .3+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
 | HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
-| TCP | 3128 | Node management LIF | Connector | If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128 and that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
+| TCP | 3128 | Node management LIF | Connector | Sending AutoSupport messages through a proxy server on the Connector, if an outbound internet connection isn't available
 | Cluster | All traffic | All traffic | All LIFs on one node | All LIFs on the other node | Intercluster communications (Cloud Volumes ONTAP HA only)
 | DHCP | UDP | 68 | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | UDP | 67 | Node management LIF | DHCP | DHCP server
@@ -322,6 +324,7 @@ The firewall rules for the Connector requires both inbound and outbound rules.
 | SSH | 22 | Provides SSH access to the Connector host
 | HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
+| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.
 
 |===
 

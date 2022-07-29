@@ -114,7 +114,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | TCP | 749 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (RPCSEC_GSS)
 .3+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
 | HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
-| TCP | 3128 | Node management LIF | Connector | If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128 and that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
+| TCP | 3128 | Node management LIF | Connector | Sending AutoSupport messages through a proxy server on the Connector, if an outbound internet connection isn't available
 | Backup to S3 | TCP | 5010 | Intercluster LIF | Backup endpoint or restore endpoint | Back up and restore operations for the Backup to S3 feature
 .3+| Cluster | All traffic | All traffic | All LIFs on one node | All LIFs on the other node | Intercluster communications (Cloud Volumes ONTAP HA only)
 | TCP | 3000 | Node management LIF | HA mediator | ZAPI calls (Cloud Volumes ONTAP HA only)
@@ -246,7 +246,7 @@ The security group for the Connector requires both inbound and outbound rules.
 | SSH | 22 | Provides SSH access to the Connector host
 | HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Data Sense
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides the Cloud Data Sense instance with internet access, if your AWS network doesn’t use a NAT or proxy
+| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.
 
 |===
 
