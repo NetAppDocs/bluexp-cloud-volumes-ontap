@@ -112,7 +112,7 @@ You can change the charging method for a Cloud Volumes ONTAP system that uses ca
 ifdef::azure[]
 .Limitation
 
-At this time, changing to the Optimized package isn't supported.
+At this time, changing to the Optimized charging method isn't supported.
 endif::azure[]
 
 .Steps
