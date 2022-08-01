@@ -91,11 +91,15 @@ Single node or HA with capacity charging for primary and secondary volumes at th
 ifdef::azure[]
 ==== Edge Cache
 
-Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
+Provides licensing for Cloud Volumes Edge Cache.
 
-*	The same capabilities as the Professional package
-*	One Global File Cache Edge license per 3 TiB of provisioned capacity
+*	The same capabilities as the Professional package with business continuity and data protection for a distributed enterprise
+* Intelligent edge caching through a small-footprint Windows VM at each location
+* 30 TiB minimum with six edge nodes included
+* One edge node with every 3 TiBs of additional capacity purchased
 *	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
+
+https://cloud.netapp.com/cloud-volumes-edge-cache[Learn more about how Cloud Volumes Edge Cache can help your business^]
 endif::azure[]
 
 === Consumption models
