@@ -286,6 +286,22 @@ link:concept-ha-google-cloud.html[Learn more about HA deployment models].
 . *Connectivity*: Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.
 +
 link:reference-networking-gcp.html[Learn more about networking requirements].
++
+The following table describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| Generated policy a| If you let Cloud Manager generate the firewall policy for you, you need to choose how you'll allow traffic:
+
+* If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
+* If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
+
+| Use existing | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+
+|===
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +

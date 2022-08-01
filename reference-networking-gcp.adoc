@@ -178,11 +178,10 @@ If you're deploying an HA configuration, these are the firewall rules for Cloud 
 
 === Inbound rules
 
-For HA pairs, the source filter for inbound traffic in the predefined firewall policy is 0.0.0.0/0.
-
-For single node systems, you can choose the source filter for the predefined firewall policy during deployment:
+When you create a working environment, you can choose the source filter for the predefined firewall policy during deployment:
 
 * *Selected VPC only*: the source filter for inbound traffic is the subnet range of the VPC for the Cloud Volumes ONTAP system and the subnet range of the VPC where the Connector resides. This is the recommended option.
+
 * *All VPCs*: the source filter for inbound traffic is the 0.0.0.0/0 IP range.
 
 If you use your own firewall policy, ensure that you add all networks that need to communicate with Cloud Volumes ONTAP, but also ensure to add both address ranges to allow the internal Google Load Balancer to function correctly. These addresses are 130.211.0.0/22 and 35.191.0.0/16. For more information, refer to https://cloud.google.com/load-balancing/docs/tcp#firewall_rules[Google Cloud documentation: Load Balancer Firewall Rules^].

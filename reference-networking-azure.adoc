@@ -81,7 +81,11 @@ The security group for Cloud Volumes ONTAP requires both inbound and outbound ru
 
 ==== Inbound rules for single node systems
 
-The rules listed below allow traffic, unless the description notes that it blocks specific inbound traffic.
+When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
+
+* *Selected VNet only*: the source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
+
+* *All VNets*: the source for inbound traffic is the 0.0.0.0/0 IP range.
 
 [cols=4*,options="header,autowidth"]
 
@@ -168,7 +172,11 @@ Any protocol | Any to Any | Block all other inbound traffic
 
 ==== Inbound rules for HA systems
 
-The rules listed below allow traffic, unless the description notes that it blocks specific inbound traffic.
+When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
+
+* *Selected VNet only*: the source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
+
+* *All VNets*: the source for inbound traffic is the 0.0.0.0/0 IP range.
 
 NOTE: HA systems have less inbound rules than single node systems because inbound data traffic goes through the Azure Standard Load Balancer. Because of this, traffic from the Load Balancer should be open, as shown in the "AllowAzureLoadBalancerInBound" rule.
 
