@@ -109,6 +109,12 @@ The license file (or _files_ if you have an HA pair).
 
 You can change the charging method for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed.
 
+ifdef::azure[]
+.Limitation
+
+At this time, changing to the Optimized package isn't supported.
+endif::azure[]
+
 .Steps
 
 . From the left navigation menu, select *Digital Wallet*.
