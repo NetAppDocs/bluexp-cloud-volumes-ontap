@@ -96,11 +96,23 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 
 . *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
 +
-If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.
+The following table describes fields for which you might need guidance:
 +
-The following image shows the page filled out:
-+
-image:screenshot_cot_vpc.gif[Screen shot: Shows the VPC page filled out for a new Cloud Volumes ONTAP instance.]
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| VPC | If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.
+
+| Generated security group a| If you let Cloud Manager generate the security group for you, you need to choose how you'll allow traffic:
+
+* If you choose *Selected VPC only*, the source for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
+* If you choose *All VPCs*, the source for inbound traffic is the 0.0.0.0/0 IP range.
+
+| Use existing security group | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-security-groups.html[Learn about firewall rules for Cloud Volumes ONTAP].
+
+|===
 
 . *Data Encryption*: Choose no data encryption or AWS-managed encryption.
 +
@@ -289,11 +301,23 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 +
 For an overview of the deployment models, see link:concept-ha.html[Cloud Volumes ONTAP HA for AWS].
 
-. *Region & VPC*: Enter the network information that you recorded in the AWS worksheet.
+. *Location and Connectivity* (single AZ) or *Region & VPC* (multiple AZs): Enter the network information that you recorded in the AWS worksheet.
 +
-The following image shows the page filled out for a multiple AZ configuration:
+The following table describes fields for which you might need guidance:
 +
-image:screenshot_cot_vpc_ha.gif[Screen shot: Shows the VPC page filled out for an HA configuration. A different availability zone is selected for each instance.]
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| Generated security group a| If you let Cloud Manager generate the security group for you, you need to choose how you'll allow traffic:
+
+* If you choose *Selected VPC only*, the source for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
+* If you choose *All VPCs*, the source for inbound traffic is the 0.0.0.0/0 IP range.
+
+| Use existing security group | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-security-groups.html[Learn about firewall rules for Cloud Volumes ONTAP].
+
+|===
 
 . *Connectivity and SSH Authentication*: Choose connection methods for the HA pair and the mediator.
 

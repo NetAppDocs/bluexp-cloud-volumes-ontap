@@ -435,7 +435,11 @@ The security group for Cloud Volumes ONTAP nodes requires both inbound and outbo
 
 ==== Inbound rules
 
-The source for inbound rules in the predefined security group is 0.0.0.0/0.
+When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
+
+* *Selected VPC only*: the source for inbound traffic is the subnet range of the VPC for the Cloud Volumes ONTAP system and the subnet range of the VPC where the Connector resides. This is the recommended option.
+
+* *All VPCs*: the source for inbound traffic is the 0.0.0.0/0 IP range.
 
 [cols="10,10,80",width=100%,options="header"]
 |===
