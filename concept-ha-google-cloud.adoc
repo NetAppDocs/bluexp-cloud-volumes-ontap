@@ -22,8 +22,6 @@ Cloud Volumes ONTAP HA configurations in Google Cloud include the following comp
 * Two Cloud Volumes ONTAP nodes whose data is synchronously mirrored between each other.
 
 * A mediator instance that provides a communication channel between the nodes to assist in storage takeover and giveback processes.
-+
-The mediator runs the Linux operating system on a f1-micro instance and uses two standard persistent disks that are 10 GB each.
 
 * One zone or three zones (recommended).
 +
@@ -45,9 +43,9 @@ image:diagram_gcp_ha.png[]
 
 Here are some key details about the mediator instance in Google Cloud:
 
-Instance type:: f1-micro
+Instance type:: e2-micro (an f1-micro instance was previously used)
 
-Disks:: Two standard persistent disks that are 10 GiB each.
+Disks:: Two standard persistent disks that are 10 GiB each
 
 Operating system:: Debian 11
 +
