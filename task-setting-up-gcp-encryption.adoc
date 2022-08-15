@@ -24,7 +24,7 @@ The permissions are provided in the https://docs.netapp.com/us-en/cloud-manager-
 The permissions are as follows:
 +
 [source,yaml]
-- cloudkms.cryptoKeyVersions.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
 - cloudkms.cryptoKeys.get
 - cloudkms.cryptoKeys.list
 - cloudkms.keyRings.list
