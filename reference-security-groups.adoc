@@ -36,7 +36,7 @@ When you create a working environment and choose a predefined security group, yo
 
 | All ICMP | All | Pinging the instance
 | HTTP | 80 |	HTTP access to the System Manager web console using the IP address of the cluster management LIF
-| HTTPS |	443 |	HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+| HTTPS |	443 |	Connectivity with the Connector and HTTPS access to the System Manager web console using the IP address of the cluster management LIF
 | SSH |	22 | SSH access to the IP address of the cluster management LIF or a node management LIF
 | TCP |	111 |	Remote procedure call for NFS
 | TCP |	139 | NetBIOS service session for CIFS
