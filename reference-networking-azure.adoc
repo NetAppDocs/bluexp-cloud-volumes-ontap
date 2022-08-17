@@ -122,7 +122,7 @@ inbound_161-162 _udp | 161-162
 UDP | Any to Any | Simple network management protocol
 | 1007
 inbound_443 | 443
-TCP | Any to Any | HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+TCP | Any to Any | Connectivity with the Connector and HTTPS access to the System Manager web console using the IP address of the cluster management LIF
 | 1008
 inbound_445 | 445
 TCP | Any to Any | Microsoft SMB/CIFS over TCP with NetBIOS framing
@@ -194,7 +194,7 @@ NOTE: HA systems have less inbound rules than single node systems because inboun
 
 | 100
 inbound_443 | 443
-Any protocol | Any to Any | HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+Any protocol | Any to Any | Connectivity with the Connector and HTTPS access to the System Manager web console using the IP address of the cluster management LIF
 | 101
 inbound_111_tcp | 111
 Any protocol | Any to Any | Remote procedure call for NFS
