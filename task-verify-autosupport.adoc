@@ -92,7 +92,7 @@ If the status of the http-https category is "ok" then it means AutoSupport is co
 +
 . If the proxy URL parameter is empty, configure Cloud Volumes ONTAP to use the Connector as a proxy:
 +
-`autosupport modify -proxy-url http://<connector private ip>:3128`
+`autosupport modify -proxy-url \http://<connector private ip>:3128`
 +
 . Verify AutoSupport status again:
 +
@@ -104,7 +104,9 @@ If the status of the http-https category is "ok" then it means AutoSupport is co
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm[Learn more about Connecting to the Linux VM for the Connector^]
 
-. Go to `/opt/application/netapp/cloudmanager/docker_occm/data/` where the proxy configuration file `squid.conf` resides.
+. Go to `/opt/application/netapp/cloudmanager/docker_occm/data/`
+
+. Open the proxy configuration file `squid.conf`
 +
 The basic structure of the file is as follows:
 +
@@ -122,7 +124,7 @@ The basic structure of the file is as follows:
 +
 The localnet src value is the CIDR of the Cloud Volumes ONTAP system.
 
-. If the CIDR block of the Cloud Volumes ONTAP system isn't in that range, either update the value or add a new entry as follows:
+. If the CIDR block of the Cloud Volumes ONTAP system isn't in the range that's specified in the file, either update the value or add a new entry as follows:
 +
 `acl cvonet src <cidr>`
 +
@@ -134,8 +136,8 @@ If you add this new entry, don't forget to also add an allow entry:
 +
 `docker restart squid`
 
-. Verify again that Cloud Volumes ONTAP can send AutoSupport messages:
+. Go back to the Cloud Volumes ONTAP CLI and verify that Cloud Volumes ONTAP can send AutoSupport messages:
 +
 `autosupport check show-details`
 
-. If the status is still failed, contact NetApp support.
+. If the status is still failed, contact NetApp Support.
