@@ -34,6 +34,8 @@ If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also n
 
 After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
 
+If Cloud Manager notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
+
 === IP addresses
 
 Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in Azure:
