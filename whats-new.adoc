@@ -27,6 +27,12 @@ Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.12.0.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
+=== Password for new storage VMs
+
+When you create a storage VM on HA pairs in Google Cloud, you can now specify an optional _svmPassword_. This parameter enables you to specify a password for the vsadmin user.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html[Learn how to create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud].
+
 == 31 July 2022
 
 The following changes were introduced with the 3.9.21 release of the Connector.
