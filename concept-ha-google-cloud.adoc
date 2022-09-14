@@ -37,7 +37,7 @@ link:reference-networking-gcp.html[Learn about networking requirements], includi
 
 The following conceptual image shows a Cloud Volumes ONTAP HA pair and its components:
 
-image:diagram_gcp_ha.png[]
+image:diagram_gcp_ha.png[A conceptual image of a Cloud Volumes ONTAP HA pair and its components.]
 
 === Mediator
 

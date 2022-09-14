@@ -198,7 +198,7 @@ NOTE: You can only create NFS or CIFS volumes when using templates.
 
 . On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
 
-. Click image:screenshot_gallery_options.gif[] > *Add Volume From Template*.
+. Click image:screenshot_gallery_options.gif[An icon of three side-by-side dots.] > *Add Volume From Template*.
 +
 image:screenshot_template_add_vol_cvo.png[A screenshot showing how to add a new volume from a template.]
 

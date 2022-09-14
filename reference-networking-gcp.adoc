@@ -60,7 +60,7 @@ Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
 * VPC-0 for inbound connections to the data and nodes
 * VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
 +
-image:diagram_gcp_ha.png[]
+image:diagram_gcp_ha.png[A conceptual image showing a Cloud Volume HA pair and the four VPCs required for configuration.]
 
 Subnets for HA pairs::
 A private subnet is required for each VPC.
