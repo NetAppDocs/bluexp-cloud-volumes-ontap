@@ -111,7 +111,6 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors
 The basic structure of the file is as follows:
 +
 ----
->
         http_port 3128
         acl localnet src 172.31.0.0/16
         acl azure_aws_metadata dst 169.254.169.254
@@ -131,6 +130,21 @@ The localnet src value is the CIDR of the Cloud Volumes ONTAP system.
 If you add this new entry, don't forget to also add an allow entry:
 +
 `http_access allow cvonet`
++
+Here's an example:
++
+----
+        http_port 3128
+        acl localnet src 172.31.0.0/16
+        acl cvonet src 172.33.0.0/16
+        acl azure_aws_metadata dst 169.254.169.254
+
+        http_access allow localnet
+        http_access allow cvonet
+        http_access deny azure_aws_metadata
+        http_access allow localhost
+        http_access deny all
+----
 
 . After editing the config file, restart the proxy container as sudo:
 +
