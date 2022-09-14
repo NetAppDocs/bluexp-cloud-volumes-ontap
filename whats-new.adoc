@@ -29,7 +29,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new f
 
 === Digital Wallet enhancement
 
-The Digital Wallet now shows a summary of the Optimized I/O licensing package and the provisioned WORM capacity for Cloud Volumes ONTAP systems across your account.
+The Digital Wallet now shows a summary of the Optimized I/O licensing package and the provisioned WORM capacity for Cloud Volumes ONTAP systems across your account. These details can help you better understand how you're being charged and whether you need to purchase additional capacity.
 
 link:task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
 
@@ -43,13 +43,13 @@ image:screenshot-optimized-cost-performance.png["A screenshot of the Optimize Co
 
 === Password for new storage VMs
 
-When you create a storage VM on HA pairs in Google Cloud, you can now specify an optional _svmPassword_. This parameter enables you to specify a password for the vsadmin user.
+When you create a storage VM on HA pairs in Google Cloud using the API, you can now specify the password for the vsadmin user.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html[Learn how to create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud].
 
 === AutoSupport notifications
 
-Cloud Manager will now notify you if a Cloud Volumes ONTAP system is unable to send AutoSupport messages. The notification includes a link to instructions that you can use to troubleshoot networking issues.
+Cloud Manager will now generate a notification if a Cloud Volumes ONTAP system is unable to send AutoSupport messages. The notification includes a link to instructions that you can use to troubleshoot networking issues.
 
 == 31 July 2022
 
