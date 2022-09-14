@@ -27,11 +27,17 @@ Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.12.0.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-=== Digital Wallet enhancement
+=== Digital Wallet enhancements
 
-The Digital Wallet now shows a summary of the Optimized I/O licensing package and the provisioned WORM capacity for Cloud Volumes ONTAP systems across your account. These details can help you better understand how you're being charged and whether you need to purchase additional capacity.
+* The Digital Wallet now shows a summary of the Optimized I/O licensing package and the provisioned WORM capacity for Cloud Volumes ONTAP systems across your account.
++
+These details can help you better understand how you're being charged and whether you need to purchase additional capacity.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
 
-link:task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
+* You can now change from one charging method to the Optimized charging method.
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to change charging methods].
 
 === Optimize cost and performance
 
