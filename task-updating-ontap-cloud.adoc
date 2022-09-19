@@ -218,7 +218,13 @@ You can place the Cloud Volumes ONTAP software image on the Connector or on an H
 
 .Before you begin
 
-Cloud Manager operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.
+* Cloud Manager operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.
+
+* If you use HTTPS to host ONTAP images, the upgrade can fail due to SSL authentication issues, which are caused by missing certificates. The workaround is to generate and install a CA-signed certificate to be used for authentication between ONTAP and Cloud Manager.
++
+Go to the NetApp Knowledge Base to view step-by-step instructions:
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_configure_Cloud_Manager_as_an_HTTPS_server_to_host_upgrade_images[NetApp KB: How to configure Cloud Manager as an HTTPS server to host upgrade images^]
 
 .Steps
 
