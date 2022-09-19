@@ -33,7 +33,13 @@ TIP: Cloud Manager gracefully changes one node at a time by initiating takeover 
 
 .Steps
 
-. From the working environment, click the menu icon, and then select *Change VM*.
+. From the Canvas, select the working environment.
+
+. In the right pane, click the menu icon and select *Optimize Cost & Performance*.
++
+image:screenshot-optimize-cost-performance.png[A screenshot of the Optimize Cost & Performance option that is available from the Canvas.]
++
+TIP: This option is also available by entering the working environment, opening the action menu, and selecting *Change VM*.
 
 . If you are using a node-based PAYGO license, you can optionally choose a different license.
 
