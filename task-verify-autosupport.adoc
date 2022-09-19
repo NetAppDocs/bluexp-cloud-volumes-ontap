@@ -153,5 +153,3 @@ Here's an example:
 . Go back to the Cloud Volumes ONTAP CLI and verify that Cloud Volumes ONTAP can send AutoSupport messages:
 +
 `autosupport check show-details`
-
-. If the status is still failed, contact NetApp Support.
