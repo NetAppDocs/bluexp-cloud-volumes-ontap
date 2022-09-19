@@ -102,6 +102,8 @@ After you've verified that outbound internet access is available, you can test A
 +
 TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 
+If Cloud Manager notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
+
 Private IP addresses::
 Cloud Manager allocates the following number of private IP addresses to Cloud Volumes ONTAP in GCP:
 
