@@ -28,8 +28,10 @@ You must know the password for the Cloud Volumes ONTAP admin user account.
 . Choose the type of Cloud Volumes ONTAP system.
 
 . Click the link to discover an existing system.
+ifdef::aws[]
 +
 image:screenshot_discover.gif[A screenshot that shows a link to discover an existing Cloud Volumes ONTAP system.]
+endif::aws[]
 
 . On the Region page, choose the region where the instances are running, and then select the instances.
 

@@ -38,7 +38,7 @@ Cloud Backup is independent from Cloud Volumes ONTAP by design. Cloud Backup doe
 
 .. Click menu icon and then click *Delete*.
 +
-image:screenshot_delete_cloud_volumes_ontap.gif[A screenshot that shows the menu available from the working environment that contains the Delete action.]
+image:screenshot_delete_cloud_volumes_ontap.png[A screenshot that shows the menu available from the working environment that contains the Delete action.]
 
 .. Type the name of the working environment and then click *Delete*.
 +
