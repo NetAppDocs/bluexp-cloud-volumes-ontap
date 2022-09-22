@@ -1,5 +1,0 @@
-=== Limited network access when using service endpoints
-
-Cloud Manager now limits network access when using a VNet service endpoint for connections between Cloud Volumes ONTAP and storage accounts. Cloud Manager uses a service endpoint if you disable Azure Private Link connections.
-
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html[Learn more about Azure Private Link connections with Cloud Volumes ONTAP].
