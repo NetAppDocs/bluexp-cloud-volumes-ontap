@@ -17,6 +17,9 @@ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager.
 
 The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
+//The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
+
+//tag::whats-new[]
 == 18 September 2022
 
 The following changes were introduced with the 3.9.22 release of the Connector.
@@ -49,9 +52,34 @@ Cloud Manager will now generate a notification if a Cloud Volumes ONTAP system i
 
 The following changes were introduced with the 3.9.21 release of the Connector.
 
-include::_include/whats-new-aug-all.adoc[]
+=== MTEKM license
 
-ifdef::azure[]
+The Multi-tenant Encryption Key Management (MTEKM) license is now included with new and existing Cloud Volumes ONTAP systems running version 9.11.1 or later.
+
+Multi-tenant external key management enables individual storage VMs (SVMs) to maintain their own keys through a KMIP server when using NetApp Volume Encryption.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html[Learn how to encrypt volumes with NetApp encryption solutions].
+
+=== Proxy server
+
+Cloud Manager now automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server, if an outbound internet connection isn't available to send AutoSupport messages.
+
+AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support.
+
+The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
+
+=== Change charging method
+
+You can now change the charging method for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed. This feature is available from the Digital Wallet.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to change charging methods].
+
+=== Security group enhancement
+
+When you create a Cloud Volumes ONTAP working environment, the user interface now enables you to choose whether you want the predefined security group to allow traffic within the selected network only (recommended) or all networks.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-allow-traffic.png["A screenshot that shows the Allow Traffic Within option that's available in the working environment wizard when selecting a security group."]
+
 == 18 July 2022
 
 === New licensing packages in Azure
@@ -63,63 +91,181 @@ Two new capacity-based licensing packages are available for Cloud Volumes ONTAP 
 * *Edge Cache*: Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#packages[Learn more about these licensing packages].
-endif::azure[]
+//end::whats-new[]
 
 == 3 July 2022
 
 The following changes were introduced with the 3.9.20 release of the Connector.
 
-include::_include/whats-new-july-all.adoc[]
+=== Digital Wallet
 
-ifdef::aws[]
-include::_include/whats-new-july-aws.adoc[]
-endif::aws[]
+The Digital Wallet now shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you're being charged and whether you need to purchase additional capacity.
 
-ifdef::azure[]
-include::_include/whats-new-july-azure.adoc[]
-endif::azure[]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["A screenshot that shows the Digital Wallet page for capacity-based licenses. The page provides an overview of the consumed capacity in your account and then breaks down the consumed capacity by licensing package."]
 
-ifdef::gcp[]
-include::_include/whats-new-july-gcp.adoc[]
-endif::gcp[]
+=== Elastic Volumes enhancement
+
+Cloud Manager now supports the Amazon EBS Elastic Volumes feature when creating a Cloud Volumes ONTAP working environment from the user interface. The Elastic Volumes feature is enabled by default when using gp3 or io1 disks. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS].
+
+=== ONTAP S3 license in AWS
+
+An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.11.0 or later in AWS.
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
+
+=== New Azure Cloud region support
+
+Starting with the 9.10.1 release, Cloud Volumes ONTAP is now supported in the Azure West US 3 region.
+
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
+
+=== ONTAP S3 license in Azure
+
+An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.9.1 or later in Azure.
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
 
 == 7 June 2022
 
 The following changes were introduced with the 3.9.19 release of the Connector.
 
-include::_include/whats-new-june-all.adoc[]
+=== Cloud Volumes ONTAP 9.11.1
 
-ifdef::aws[]
-include::_include/whats-new-june-aws.adoc[]
-endif::aws[]
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.1, which includes support for new features and additional cloud provider regions.
 
-ifdef::azure[]
-include::_include/whats-new-june-azure.adoc[]
-endif::azure[]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
 
-ifdef::gcp[]
-include::_include/whats-new-june-gcp.adoc[]
-endif::gcp[]
+=== New Advanced View
+
+If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager, which is a management interface that’s provided with an ONTAP system. We have included the System Manager interface directly inside Cloud Manager so that you don’t need to leave Cloud Manager for advanced management.
+
+This Advanced View is available as a Preview with Cloud Volumes ONTAP 9.10.0 and later. We plan to refine this experience and add enhancements in upcoming releases. Please send us feedback by using the in-product chat.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html[Learn more about the Advanced View].
+
+=== Support for Amazon EBS Elastic Volumes
+
+Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling Cloud Manager to automatically increase the underlying disk capacity as needed.
+
+Support for Elastic Volumes is available starting with _new_ Cloud Volumes ONTAP 9.11.0 systems and with gp3 and io1 EBS disk types.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
+
+Note that support for Elastic Volumes requires new AWS permissions for the Connector:
+
+[source,json]
+"ec2:DescribeVolumesModifications",
+"ec2:ModifyVolume",
+
+Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[View the latest Connector policy for AWS^].
+
+=== Support for deploying HA pairs in shared AWS subnets
+
+Cloud Volumes ONTAP 9.11.1 includes support for AWS VPC sharing. This release of the Connector enables you to deploy an HA pair in an AWS shared subnet when using the API.
+
+link:task-deploy-aws-shared-vpc.html[Learn how to deploy an HA pair in a shared subnet].
+
+=== Limited network access when using service endpoints
+
+Cloud Manager now limits network access when using a VNet service endpoint for connections between Cloud Volumes ONTAP and storage accounts. Cloud Manager uses a service endpoint if you disable Azure Private Link connections.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html[Learn more about Azure Private Link connections with Cloud Volumes ONTAP].
+
+=== Support for creating storage VMs in Google Cloud
+
+Multiple storage VMs are now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.11.1 release. Starting with this release of the Connector, Cloud Manager enables you to create storage VMs on Cloud Volumes ONTAP HA pairs in Google Cloud by using the API.
+
+Support for creating storage VMs requires new Google Cloud permissions for the Connector:
+
+[source,yaml]
+- compute.instanceGroups.get
+- compute.addresses.get
+
+Note that you must use the ONTAP CLI or System Manager to create a storage VM on a single node system.
+
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits[Learn more about storage VM limits in Google Cloud^]
+
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html[Learn how to create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud]
 
 == 2 May 2022
 
 The following changes were introduced with the 3.9.18 release of the Connector.
 
-include::_include/whats-new-may-all.adoc[]
+=== Cloud Volumes ONTAP 9.11.0
 
-ifdef::azure[]
-include::_include/whats-new-may-azure.adoc[]
-endif::azure[]
+Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.0.
 
-ifdef::aws[]
-include::_include/whats-new-may-aws.adoc[]
-endif::aws[]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-ifdef::gcp[]
-include::_include/whats-new-may-gcp.adoc[]
-endif::gcp[]
+=== Enhancement to mediator upgrades
 
-//tag::whats-new[]
+When Cloud Manager upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.
+
+=== K8s tab has been removed
+
+The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
+
+https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html[Learn about Kubernetes data management in Cloud Manager^]
+
+=== Annual contract in Azure
+
+The Essentials and Professional packages are now available in Azure through an annual contract. You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
+
+After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about licensing].
+
+=== S3 Glacier Instant Retrieval
+
+You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data[Learn how to change the storage class for tiered data].
+
+=== New AWS permissions required for the Connector
+
+The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):
+
+[source,json]
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
+
+These permissions are now required to optimize how Cloud Manager creates the placement group.
+
+Be sure to provide these permissions to each set of AWS credentials that you've added to Cloud Manager. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[View the latest Connector policy for AWS^].
+
+=== New Google Cloud region support
+
+Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:
+
+* Delhi (asia-south2)
+* Melbourne (australia-southeast2)
+* Milan (europe-west8) - single node only
+* Santiago (southamerica-west1) - single node only
+
+https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
+
+=== Support for n2-standard-16 in Google Cloud
+
+The n2-standard-16 machine type is now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.10.1 release.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[View supported configurations for Cloud Volumes ONTAP in Google Cloud^]
+
+=== Enhancements to Google Cloud firewall policies
+
+* When you create a Cloud Volumes ONTAP HA pair in Google Cloud, Cloud Manager will now display all existing firewall policies in a VPC.
++
+Previously, Cloud Manager wouldn't display any policies in VPC-1, VPC-2, or VPC-3 that didn't have a target tag.
+
+* When you create a Cloud Volumes ONTAP single node system in Google Cloud, you can now choose whether you want the predefined firewall policy to allow traffic within the selected VPC only (recommended) or all VPCs.
+
+=== Enhancement to Google Cloud service accounts
+
+When you select the Google Cloud service account to use with Cloud Volumes ONTAP, Cloud Manager now displays the email address that's associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png[A screenshot of the service account field]
+
 == 3 April 2022
 
 === System Manager link has been removed
