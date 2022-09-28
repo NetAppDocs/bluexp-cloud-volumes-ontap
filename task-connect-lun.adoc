@@ -33,3 +33,4 @@ Note the following:
 +
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-rhel-cg/GUID-15E8C226-BED5-46D0-BAED-379EA4311340.html[ONTAP 9 iSCSI express configuration for Red Hat Enterprise Linux: Starting the iSCSI sessions with the target^]
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-cpg/GUID-857453EC-90E9-4AB6-B543-83827CF374BF.html[ONTAP 9 iSCSI express configuration for Windows: Starting iSCSI sessions with the target^]
+* https://docs.netapp.com/us-en/ontap-sanhost/[ONTAP SAN host configuration^]
