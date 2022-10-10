@@ -63,6 +63,19 @@ Cloud Manager allocates 6 IP addresses to a single node system:
 +
 A storage VM management LIF is used with management tools like SnapCenter.
 
+[cols="20,40",options="header"]
+|===
+| LIF
+| Purpose
+
+| Cluster management | Administrative management of the entire cluster (HA pair).
+| Node management | Administrative management of a node.
+| Intercluster | Cross-cluster communication, backup, and replication.
+| NAS data | Client access over NAS protocols.
+| iSCSI data | Client access over the iSCSI protocol. Also used by the system for other important networking workflows. These LIFs are required and should not be deleted.
+| Cluster connectivity | Enables the nodes to communicate with each other and to move data within the cluster.
+| Storage VM management | A storage VM management LIF is used with management tools like SnapCenter.
+
 ==== IP addresses for HA pairs
 
 HA pairs require more IP addresses than a single node system does. These IP addresses are spread across different ethernet interfaces, as shown in the following image:
