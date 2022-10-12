@@ -43,13 +43,13 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 . You must first register your application in the Azure subscription that you want the Cloud Volumes ONTAP to use for access the Azure Key Vault. Within the Azure portal, select **App registrations**.
 . Select **New registration**.
 . Provide a name for your application and select a supported application type. The default single tenant suffices for Azure Key Vault usage. Select **Register**.
-. In the Azure Overview window, select the application you have registered. Copy the **application (client) ID** and the **directory (tenant) ID** to a secure location. They will be required later in the registration process.
+. In the Azure Overview window, select the application you have registered. Copy the **application client ID** (_Azure_client_ID_) and the **directory tenant ID** (_Azure_tenant_ID_) to a secure location. They will be required later in the registration process.
 
 [[secret]]
 .Create Azure client secret
 . In the Azure portal for your Cloud Volumes ONTAP application, select the **Ceritificates & secrets** pane.
 . Select **New client secret** Enter a meaningful name for your client secret. NetApp recommends a 24-month expiration period, however your specific cloud governance policies may require a different setting.
-. Select **Add** to save the client secret.	Immediately copy the **Value** of the secret and store it somewhere secure for future configuration. The secret value will not be displayed after you navigate away from the page.
+. Select **Add** to save the client secret.	Immediately copy the **Value** (_Azure_client_secret_) of the secret and store it somewhere secure for future configuration. The secret value will not be displayed after you navigate away from the page.
 
 [[create-akv]]
 .Create an Azure Key Vault
@@ -67,7 +67,7 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 . Select **Add** to create the access policy.
 . Select **Next** to advance to **Networking** options.
 . Choose the appropriate network access method or select **All networks** and **Review + Create** to create the key vault. (Network access method may be prescribed by a governance policy or your corporate cloud security team.)
-. Record the Key Vault URI: In the key vault you created, navigate to the Overview menu and copy the **Vault URI** from the right-hand column. You will need this for a later step.
+. Record the Key Vault URI: In the key vault you created, navigate to the Overview menu and copy the **Vault URI** (_Azure_keyvault_uri_) from the right-hand column. You will need this for a later step.
 
 [[key]]
 .Create encryption key
@@ -82,7 +82,7 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 . Select **Create** to create the encryption key.
 . Return to the **Keys** menu and select the key you just created.
 . Select the key ID under **Current version** to view the key properties.
-. Locate the **Key Identifier** field. Copy the URI up to but not including the hexadecimal string.
+. Locate the **Key Identifier** field. Copy the URI (_Azure_key_ID_) up to but not including the hexadecimal string.
 
 [[AAD]]
 .Create an Azure Active Directory Endpoint (HA only)
@@ -97,7 +97,7 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 .Cloud Volumes ONTAP configuration
 . Connect to the cluster management LIF with your preferred SSH client.
 . Enter the advanced privilege mode in ONTAP:
-`set advanced -con off``
+`set advanced -con off`
 . Identify the desired data SVM and verify its DNS configuration:
 `vserver services name-service dns show`
 .. If a DNS entry for the desired data SVM exists and it contains an entry for the Azure DNS, then no action is required. If it does not, add a DNS server entry for the data SVM that points to the Azure DNS, private DNS, or on-premise server.  This should match the entry for the cluster admin SVM:
@@ -105,7 +105,8 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 .. Verify the DNS service has been created for the data SVM:
 `vserver services name-service dns show`
 . Enable Azure Key Vault using the client ID and tenant ID saved after the application registration:
-`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _Azure_key_name_ -key-id _Azure_key_ID_`
+`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _Azure_keyvault_uri_ -key-id _Azure_key_ID_`
+.. Enter the _Azure_client_secret_ when prompted by the CLI as it processes the Enable command.
 . Verify the key manager configuration:
 `security key-manager external azure show`
 . Check the status of the key manager:
@@ -132,7 +133,7 @@ Category: kms_wrapped_key_status
 3 entries were displayed.
 ----
 +
-If the `service_reachability` status is not `OK`, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions.
+If the `service_reachability` status is not `OK`, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions. Check your Azure network policies and routing are not blocking your private vNet from reaching the Azure KeyVault Public endpoint. If it is, consider using an Azure Private endpoint to access the Key vault from within the vNet, you may also need to add a static hosts entry on your SVM to resolve the private IP address for your endpoint.
 The `kms_wrapped_key_status` will report `UNKNOWN` at initial configuration. Its status will change to `OK` after the first volume is encrypted.
 
 . OPTIONAL: Create a test volume to verify the functionality of NVE.
