@@ -65,7 +65,7 @@ The following table provides details about the LIFs that are associated with eac
 | Node management | Administrative management of a node.
 | Intercluster | Cross-cluster communication, backup, and replication.
 | NAS data | Client access over NAS protocols.
-| iSCSI data | Client access over the iSCSI protocol. Also used by the system for other important networking workflows. These LIFs are required and should not be deleted.
+| iSCSI data | Client access over the iSCSI protocol. Also used by the system for other important networking workflows. This LIF is required and should not be deleted.
 | Storage VM management | A storage VM management LIF is used with management tools like SnapCenter.
 |===
 

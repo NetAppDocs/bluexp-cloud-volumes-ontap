@@ -54,7 +54,7 @@ Cloud Manager allocates 5 or 6 IP addresses to a single node system:
 ** NFS/CIFS IP
 ** iSCSI IP 
 +
-NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. These LIFs are required and should not be deleted.
+NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted.
 ** SVM management (optional - not configured by default)
 
 ==== IP addresses for HA pairs
@@ -67,7 +67,9 @@ NIC0
 
 * Node management IP
 * Intercluster IP
-* iSCSI IP 
+* iSCSI IP
++
+NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted. 
 
 NIC1
 
