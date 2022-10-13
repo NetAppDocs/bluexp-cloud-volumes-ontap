@@ -166,7 +166,9 @@ The Connector requires outbound internet access to manage resources and processe
 | Purpose
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+| \https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
