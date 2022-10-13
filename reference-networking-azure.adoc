@@ -46,13 +46,15 @@ NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by
 
 ==== IP addresses for a single node system
 
-Cloud Manager allocates 5 IP addresses to a single node system:
+Cloud Manager allocates 5 or 6 IP addresses to a single node system:
 
-** Cluster Management IP
-** Node Management IP
-** Intercluster IP for Snapmirror
+** Cluster management IP
+** Node management IP
+** Intercluster IP for SnapMirror
 ** NFS/CIFS IP
 ** iSCSI IP 
++
+NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. These LIFs are required and should not be deleted.
 ** SVM management (optional - not configured by default)
 
 ==== IP addresses for HA pairs
@@ -63,13 +65,13 @@ Note that Cloud Manager creates an SVM management LIF on HA pairs, but not on si
 
 NIC0
 
-* Node Management IP
+* Node management IP
 * Intercluster IP
 * iSCSI IP 
 
 NIC1
 
-* Cluster Network IP
+* Cluster network IP
 
 NIC2
 
@@ -81,13 +83,12 @@ NIC3
 
 The above IP addresses do not migrate on failover events.
 
-Additionally, 4 Frontend IPs (FIPs) are configured to migrate on failover events. These Frontend IPs live in the load balancer.
+Additionally, 4 frontend IPs (FIPs) are configured to migrate on failover events. These frontend IPs live in the load balancer.
 
-* Cluster Scoped IPs from Load Balancer
-* Cluster Management IP
-* NodeA Data IP (NFS/CIFS)
-* NodeB Data IP (NFS/CIFS)
-* SVM Management IP
+* Cluster management IP
+* NodeA data IP (NFS/CIFS)
+* NodeB data IP (NFS/CIFS)
+* SVM management IP
 
 
 === Secure connections to Azure services
