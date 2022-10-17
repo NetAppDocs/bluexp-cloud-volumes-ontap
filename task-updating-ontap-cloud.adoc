@@ -240,12 +240,12 @@ NOTE: The predefined Cloud Volumes ONTAP security group allows outbound HTTP con
 
 . Copy the software image to a directory on the Connector or on an HTTP server from which the file will be served.
 +
-For example, you can copy the software image to the following path on the Connector:
-+
-`/opt/application/netapp/cloudmanager/docker_occm/data/ontap/images/`
-+
-If you have an older version of the Connector, then the correct path is:
-`/opt/application/netapp/cloudmanager/ontap/images/`
+Two paths are available. The correct path depends on your Connector version. 
+ 
+*	/opt/application/netapp/cloudmanager/docker_occm/data/ontap/images/
+ 
+*	/opt/application/netapp/cloudmanager/ontap/images/
+
 
 . From the working environment in Cloud Manager, click the menu icon, and then click *Advanced > Update Cloud Volumes ONTAP*.
 
