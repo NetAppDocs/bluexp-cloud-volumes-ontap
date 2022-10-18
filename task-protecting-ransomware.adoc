@@ -15,8 +15,6 @@ summary: Ransomware attacks can cost a business time, resources, and reputation.
 [.lead]
 Ransomware attacks can cost a business time, resources, and reputation. Cloud Manager enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
 
-Using this feature to improve protection against ransomware addresses a separate use case from https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html[the ONTAP anti-ransomware feature^] that you can enable through System Manager or the ONTAP CLI.
-
 .Steps
 
 . From the working environment, click the *Ransomware* icon.
