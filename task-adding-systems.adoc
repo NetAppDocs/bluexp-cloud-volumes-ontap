@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-adding-systems.html
 keywords: discover, discovering, add, adding, existing
-summary: You can discover and add existing Cloud Volumes ONTAP systems to Cloud Manager. You might do this if you deployed a new Cloud Manager system.
+summary: You can discover and add existing Cloud Volumes ONTAP systems to BlueXP. You might do this if you deployed a new BlueXP system.
 ---
 
-= Adding existing Cloud Volumes ONTAP systems to Cloud Manager
+= Adding existing Cloud Volumes ONTAP systems to BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: You can discover and add existing Cloud Volumes ONTAP systems to Cloud 
 :imagesdir: ./media/
 
 [.lead]
-You can discover and add existing Cloud Volumes ONTAP systems to Cloud Manager. You might do this if you deployed a new Cloud Manager system.
+You can discover and add existing Cloud Volumes ONTAP systems to BlueXP. You might do this if you deployed a new BlueXP system.
 
 .Before you begin
 
@@ -39,4 +39,4 @@ endif::aws[]
 
 .Result
 
-Cloud Manager adds the Cloud Volumes ONTAP instances to the workspace.
+BlueXP adds the Cloud Volumes ONTAP instances to the workspace.

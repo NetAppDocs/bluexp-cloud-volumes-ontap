@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-managing-state.html
 keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend
-summary: You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage your cloud compute costs.
+summary: You can stop and start Cloud Volumes ONTAP from BlueXP to manage your cloud compute costs.
 ---
 
 = Managing the state of Cloud Volumes ONTAP
@@ -13,17 +13,17 @@ summary: You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage
 :imagesdir: ./media/
 
 [.lead]
-You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage your cloud compute costs.
+You can stop and start Cloud Volumes ONTAP from BlueXP to manage your cloud compute costs.
 
 == Scheduling automatic shutdowns of Cloud Volumes ONTAP
 
-You might want to shut down Cloud Volumes ONTAP during specific time intervals to lower your compute costs. Rather than do this manually, you can configure Cloud Manager to automatically shut down and then restart systems at specific times.
+You might want to shut down Cloud Volumes ONTAP during specific time intervals to lower your compute costs. Rather than do this manually, you can configure BlueXP to automatically shut down and then restart systems at specific times.
 
 .About this task
 
-* When you schedule an automatic shutdown of your Cloud Volumes ONTAP system, Cloud Manager postpones the shutdown if an active data transfer is in progress.
+* When you schedule an automatic shutdown of your Cloud Volumes ONTAP system, BlueXP postpones the shutdown if an active data transfer is in progress.
 +
-Cloud Manager shuts down the system after the transfer is complete.
+BlueXP shuts down the system after the transfer is complete.
 
 * This task schedules automatic shutdowns of both nodes in an HA pair.
 
@@ -45,7 +45,7 @@ image:screenshot_shutdown_icon.gif[Screen shot: Shows the icon that loads the au
 +
 *Example*
 +
-The following image shows a schedule that instructs Cloud Manager to shut down the system every Saturday at 12:00 a.m. for 48 hours. Cloud Manager restarts the system every Monday at 12:00 a.m.
+The following image shows a schedule that instructs BlueXP to shut down the system every Saturday at 12:00 a.m. for 48 hours. BlueXP restarts the system every Monday at 12:00 a.m.
 +
 image:screenshot_shutdown.gif[Screen shot: Shows a shutdown schedule that shuts down Cloud Volumes ONTAP every weekend at 12:00 AM for 48 hours.]
 
@@ -53,17 +53,17 @@ image:screenshot_shutdown.gif[Screen shot: Shows a shutdown schedule that shuts 
 
 .Result
 
-Cloud Manager saves the schedule. The clock icon changes to indicate that a schedule is set: image:screenshot_shutdown_icon_scheduled.gif[Screen shot: Shows the automatic shutdown icon after a schedule is defined.]
+BlueXP saves the schedule. The clock icon changes to indicate that a schedule is set: image:screenshot_shutdown_icon_scheduled.gif[Screen shot: Shows the automatic shutdown icon after a schedule is defined.]
 
 == Stopping Cloud Volumes ONTAP
 
 Stopping Cloud Volumes ONTAP saves you from accruing compute costs and creates snapshots of the root and boot disks, which can be helpful for troubleshooting.
 
-NOTE: To reduce costs, Cloud Manager periodically deletes older snapshots of root and boot disks. Only the two most recent snapshots are retained for both the root and boot disks.
+NOTE: To reduce costs, BlueXP periodically deletes older snapshots of root and boot disks. Only the two most recent snapshots are retained for both the root and boot disks.
 
 .About this task
 
-When you stop an HA pair, Cloud Manager shuts down both nodes.
+When you stop an HA pair, BlueXP shuts down both nodes.
 
 .Steps
 

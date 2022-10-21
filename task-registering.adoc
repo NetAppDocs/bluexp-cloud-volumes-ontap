@@ -17,11 +17,11 @@ Support from NetApp is included with Cloud Volumes ONTAP PAYGO systems, but you 
 
 Registering a PAYGO system with NetApp is required to upgrade ONTAP software using any of the methods link:task-updating-ontap-cloud.html[described on this page].
 
-TIP: A system that isn't registered for support will still receive the software update notifications that appear in Cloud Manager when a new version is available. But you will need to register the system before you can upgrade the software.
+TIP: A system that isn't registered for support will still receive the software update notifications that appear in BlueXP when a new version is available. But you will need to register the system before you can upgrade the software.
 
 .Steps
 
-. If you have not yet added your NetApp Support Site account to Cloud Manager, go to *Account Settings* and add it now.
+. If you have not yet added your NetApp Support Site account to BlueXP, go to *Account Settings* and add it now.
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts^].
 
@@ -35,4 +35,4 @@ image:screenshot_menu_registration.gif[Screen shot: Shows the Support registrati
 
 .Result
 
-Cloud Manager registers the system with NetApp.
+BlueXP registers the system with NetApp.

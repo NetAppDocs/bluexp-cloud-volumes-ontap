@@ -25,9 +25,9 @@ link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 After you purchase a license from your NetApp sales representative, NetApp will send you an email with the serial number and additional licensing details.
 
-In the meantime, Cloud Manager automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, Cloud Manager automatically adds the licenses to the Digital Wallet.
+In the meantime, BlueXP automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, BlueXP automatically adds the licenses to the Digital Wallet.
 
-If Cloud Manager can't add the license, you'll need to manually add them to the Digital Wallet yourself. For example, if the Connector is installed in a location that doesn't have internet access, you'll need to add the licenses yourself. <<Add purchased licenses to your account,Learn how to add purchased licenses to your account>>.
+If BlueXP can't add the license, you'll need to manually add them to the Digital Wallet yourself. For example, if the Connector is installed in a location that doesn't have internet access, you'll need to add the licenses yourself. <<Add purchased licenses to your account,Learn how to add purchased licenses to your account>>.
 
 == View the consumed capacity in your account
 
@@ -65,13 +65,13 @@ image:screenshot-digital-wallet-packages.png[A screenshot that shows consumed ca
 
 == Add purchased licenses to your account
 
-If you don't see your purchased licenses in the Digital Wallet, you'll need to add the licenses to Cloud Manager so that the capacity is available for Cloud Volumes ONTAP.
+If you don't see your purchased licenses in the Digital Wallet, you'll need to add the licenses to BlueXP so that the capacity is available for Cloud Volumes ONTAP.
 
 .What you'll need
 
-* You need to provide Cloud Manager the serial number of the license or the license file.
+* You need to provide BlueXP the serial number of the license or the license file.
 
-* If you want to enter the serial number, you first need to https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[add your NetApp Support Site account to Cloud Manager^]. This is the NetApp Support Site account that's authorized to access the serial number.
+* If you want to enter the serial number, you first need to https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[add your NetApp Support Site account to BlueXP^]. This is the NetApp Support Site account that's authorized to access the serial number.
 
 .Steps
 
@@ -87,9 +87,9 @@ If you entered a serial number, you also need to select the NetApp Support Site 
 
 == Update a capacity-based license
 
-If you purchased additional capacity or extended the term of your license, Cloud Manager automatically updates the license in the Digital Wallet. There's nothing that you need to do.
+If you purchased additional capacity or extended the term of your license, BlueXP automatically updates the license in the Digital Wallet. There's nothing that you need to do.
 
-However, if you deployed Cloud Manager in a location that doesn't have internet access, then you'll need to manually update the license in Cloud Manager.
+However, if you deployed BlueXP in a location that doesn't have internet access, then you'll need to manually update the license in BlueXP.
 
 .What you'll need
 
@@ -135,7 +135,7 @@ image:screenshot-digital-wallet-charging-method.png[A screenshot of the Change C
 
 .Result
 
-Cloud Manager changes the charging method for the Cloud Volumes ONTAP system.
+BlueXP changes the charging method for the Cloud Volumes ONTAP system.
 
 You might also notice that the Digital Wallet refreshes the consumed capacity for each package type to account for the change that you just made.
 

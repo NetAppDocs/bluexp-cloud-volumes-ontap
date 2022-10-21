@@ -25,4 +25,4 @@ You can modify the AWS route tables that include routes to the floating IP addre
 
 .Result
 
-Cloud Manager sends an AWS request to modify the route tables.
+BlueXP sends an AWS request to modify the route tables.

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-overriding-cifs-locks.html
 keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback
-summary: The Account Admin can enable a setting in Cloud Manager that prevents issues with Cloud Volumes ONTAP storage giveback during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
+summary: The Account Admin can enable a setting in BlueXP that prevents issues with Cloud Volumes ONTAP storage giveback during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
 ---
 
 = Overriding CIFS locks for Cloud Volumes ONTAP HA pairs in Azure
@@ -13,7 +13,7 @@ summary: The Account Admin can enable a setting in Cloud Manager that prevents i
 :imagesdir: ./media/
 
 [.lead]
-The Account Admin can enable a setting in Cloud Manager that prevents issues with Cloud Volumes ONTAP storage giveback during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
+The Account Admin can enable a setting in BlueXP that prevents issues with Cloud Volumes ONTAP storage giveback during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
 
 .About this task
 
@@ -25,13 +25,13 @@ CAUTION: This process might be disruptive to CIFS clients. Data that is not comm
 
 .What you'll need
 
-You need to create a Connector before you can change Cloud Manager settings. https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
+You need to create a Connector before you can change BlueXP settings. https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Connector Settings*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 . Under *Azure*, click *Azure CIFS locks for Azure HA working environments*.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-getting-started-aws.html
-keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, cloud volumes ontap, cloud ontap, create
+keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, BlueXP, cloud volumes ontap, cloud ontap, create
 summary: Get started with Cloud Volumes ONTAP for AWS in a few steps.
 ---
 
@@ -21,12 +21,12 @@ Get started with Cloud Volumes ONTAP in AWS in a few steps.
 If you don't have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Learn how to create a Connector in AWS^].
 
 [role="quick-margin-para"]
-When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
+When you create your first Cloud Volumes ONTAP working environment, BlueXP (formerly Cloud Manager) prompts you to deploy a Connector if you don't have one yet.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
 
 [role="quick-margin-para"]
-Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task-planning-your-config.html[Learn more].
+BlueXP offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task-planning-your-config.html[Learn more].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
 
@@ -49,14 +49,14 @@ link:reference-networking-aws.html[Learn more about networking requirements].
 [role="quick-margin-para"]
 If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to ensure that an active Customer Master Key (CMK) exists. You also need to modify the key policy for each CMK by adding the IAM role that provides permissions to the Connector as a _key user_. link:task-setting-up-kms.html[Learn more].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Launch Cloud Volumes ONTAP using Cloud Manager
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Launch Cloud Volumes ONTAP using BlueXP
 
 [role="quick-margin-para"]
 Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task-deploying-otc-aws.html[Read step-by-step instructions].
 
 .Related links
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Creating a Connector from Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Creating a Connector from BlueXP^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html[Launching a Connector from the AWS Marketplace^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector software on a Linux host^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[What Cloud Manager does with AWS permissions^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[What BlueXP does with AWS permissions^]

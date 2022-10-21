@@ -23,7 +23,7 @@ link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 == Authorize your account
 
-Before you can use and manage Keystone Flex Subscriptions in Cloud Manager, you need to contact NetApp to authorize your Cloud Manager user account with your Keystone Flex Subscriptions.
+Before you can use and manage Keystone Flex Subscriptions in BlueXP, you need to contact NetApp to authorize your BlueXP user account with your Keystone Flex Subscriptions.
 
 .Steps
 
@@ -59,11 +59,11 @@ image:screenshot-keystone-link.png[A screenshot that shows the link option for a
 
 .Result
 
-The subscription is now linked to your Cloud Manager account and available to select when creating a Cloud Volumes ONTAP working environment.
+The subscription is now linked to your BlueXP account and available to select when creating a Cloud Volumes ONTAP working environment.
 
 == Request more or less committed capacity
 
-If you need to adjust the committed capacity for a subscription, you can send a request right from the Cloud Manager interface.
+If you need to adjust the committed capacity for a subscription, you can send a request right from the BlueXP interface.
 
 .Steps
 
@@ -97,4 +97,4 @@ If you no longer want to use a Keystone Flex Subscription with new Cloud Volumes
 
 .Result
 
-The subscription is unlinked from your Cloud Manager account and no longer available to select when creating a Cloud Volumes ONTAP working environment.
+The subscription is unlinked from your BlueXP account and no longer available to select when creating a Cloud Volumes ONTAP working environment.
