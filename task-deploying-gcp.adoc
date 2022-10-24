@@ -50,6 +50,8 @@ Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in G
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
@@ -235,6 +237,8 @@ Quotas enable you to restrict or track the disk space and number of files used b
 Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.
 
 .Steps
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, click *Add Working Environment* and follow the prompts.
 

@@ -48,6 +48,8 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
@@ -250,6 +252,8 @@ At this time, HA pairs are not supported with AWS Outposts.
 Immediately after you create the working environment, Cloud Manager launches a test instance in the specified VPC to verify connectivity. If successful, Cloud Manager immediately terminates the instance and then starts deploying the Cloud Volumes ONTAP system. If Cloud Manager cannot verify connectivity, creation of the working environment fails. The test instance is either a t2.nano (for default VPC tenancy) or m3.medium (for dedicated VPC tenancy).
 
 .Steps
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, click *Add Working Environment* and follow the prompts.
 

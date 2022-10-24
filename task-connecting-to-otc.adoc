@@ -27,6 +27,8 @@ endif::aws[]
 
 . In Cloud Manager, identify the IP address of the cluster management interface:
 
+.. From the left navigation menu, select *Storage > Canvas*.
+
 .. On the Canvas page, select the Cloud Volumes ONTAP system.
 
 .. Copy the cluster management IP address that appears in the right pane.

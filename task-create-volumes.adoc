@@ -42,6 +42,8 @@ The most common way to create a volume is to specify the type of volume that you
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
 
 . Create a new volume by letting Cloud Manager handle the disk allocation for you, or choose a specific aggregate for the volume.
@@ -196,6 +198,8 @@ NOTE: You can only create NFS or CIFS volumes when using templates.
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
 
 . Click image:screenshot_gallery_options.gif[An icon of three side-by-side dots.] > *Add Volume From Template*.
@@ -239,6 +243,8 @@ Additionally, if any secondary action is implemented in the template, for exampl
 By default, Cloud Manager creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.
 
 .Steps
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
