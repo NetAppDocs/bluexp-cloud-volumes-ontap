@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: whats-new.html
-keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes
-summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP.
+keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud manager
+summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager).
 ---
 
 = What's new
@@ -13,7 +13,7 @@ summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with Cloud Volumes ONTAP management in BlueXP.
+Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager).
 
 The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
