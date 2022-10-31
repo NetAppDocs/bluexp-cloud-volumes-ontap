@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-getting-started-gcp.html
-keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager, create cloud manager, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions
+keywords: google cloud platform, gcp, cloud manager, deploy BlueXP, launch BlueXP, create BlueXP, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions
 summary: Get started with Cloud Volumes ONTAP for GCP in a few steps.
 ---
 
@@ -21,12 +21,12 @@ Get started with Cloud Volumes ONTAP for GCP in a few steps.
 If you don't have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Learn how to create a Connector in GCP^].
 
 [role="quick-margin-para"]
-When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
+When you create your first Cloud Volumes ONTAP working environment, BlueXP (formerly Cloud Manager) prompts you to deploy a Connector if you don't have one yet.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
 
 [role="quick-margin-para"]
-Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
+BlueXP offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 
 [role="quick-margin-para"]
 link:task-planning-your-config-gcp.html[Learn more about planning your configuration].
@@ -72,13 +72,13 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the foll
 * Compute Engine API
 * Identity and Access Management (IAM) API
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Launch Cloud Volumes ONTAP using Cloud Manager
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Launch Cloud Volumes ONTAP using BlueXP
 
 [role="quick-margin-para"]
 Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task-deploying-gcp.html[Read step-by-step instructions].
 
 .Related links
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Creating a Connector from Cloud Manager^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Creating a Connector from BlueXP^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector software on a Linux host^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[What Cloud Manager does with GCP permissions^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[What BlueXP does with GCP permissions^]

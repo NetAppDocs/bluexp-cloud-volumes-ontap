@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-updating-ontap-cloud.html
 keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading
-summary: Upgrade Cloud Volumes ONTAP from Cloud Manager to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
+summary: Upgrade Cloud Volumes ONTAP from BlueXP to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 ---
 
 = Upgrade Cloud Volumes ONTAP software
@@ -13,22 +13,22 @@ summary: Upgrade Cloud Volumes ONTAP from Cloud Manager to gain access to the la
 :imagesdir: ./media/
 
 [.lead]
-Upgrade Cloud Volumes ONTAP from Cloud Manager to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
+Upgrade Cloud Volumes ONTAP from BlueXP to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 
 == Upgrade overview
 
 You should be aware of the following before you start the Cloud Volumes ONTAP upgrade process.
 
-=== Upgrade from Cloud Manager only
+=== Upgrade from BlueXP only
 
-Upgrades of Cloud Volumes ONTAP must be completed from Cloud Manager. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.
+Upgrades of Cloud Volumes ONTAP must be completed from BlueXP. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.
 
 === How to upgrade
 
-Cloud Manager provides two ways to upgrade Cloud Volumes ONTAP:
+BlueXP provides two ways to upgrade Cloud Volumes ONTAP:
 
 * By following upgrade notifications that appear in the working environment
-* By placing the upgrade image at an HTTPS location and then providing Cloud Manager with the URL
+* By placing the upgrade image at an HTTPS location and then providing BlueXP with the URL
 
 === Supported upgrade paths
 
@@ -81,7 +81,7 @@ Note the following:
 
 * The supported upgrade paths for Cloud Volumes ONTAP are different than they are for an on-premises ONTAP cluster.
 
-* If you upgrade by following the upgrade notifications that appear in a working environment, Cloud Manager will prompt you to upgrade to a release that follows these supported upgrade paths.
+* If you upgrade by following the upgrade notifications that appear in a working environment, BlueXP will prompt you to upgrade to a release that follows these supported upgrade paths.
 
 * If you upgrade by placing an upgrade image at an HTTPS location, be sure to follow these supported upgrade paths.
 
@@ -97,11 +97,11 @@ Reverting or downgrading Cloud Volumes ONTAP to a previous release is not suppor
 
 Cloud Volumes ONTAP must be registered with NetApp support in order to upgrade the software using any of the methods described on this page. This applies to both PAYGO and BYOL. You'll need to link:task-registering.html[manually register PAYGO systems], while BYOL systems are registered by default.
 
-TIP: A system that isn't registered for support will still receive the software update notifications that appear in Cloud Manager when a new version is available. But you will need to register the system before you can upgrade the software.
+TIP: A system that isn't registered for support will still receive the software update notifications that appear in BlueXP when a new version is available. But you will need to register the system before you can upgrade the software.
 
 === Upgrades of the HA mediator
 
-Cloud Manager also updates the mediator instance as needed during the Cloud Volumes ONTAP upgrade process.
+BlueXP also updates the mediator instance as needed during the Cloud Volumes ONTAP upgrade process.
 
 == Prepare to upgrade
 
@@ -140,7 +140,7 @@ These steps describe how to use System Manager for version 9.3 and later.
 +
 You can log in to System Manager by pointing your web browser to the IP address of the cluster management LIF. You can find the IP address in the Cloud Volumes ONTAP working environment.
 +
-NOTE: The computer from which you are accessing Cloud Manager must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to Cloud Manager from a jump host that's in your cloud provider network.
+NOTE: The computer from which you are accessing BlueXP must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to BlueXP from a jump host that's in your cloud provider network.
 
 . Click *Protection > Relationships*.
 
@@ -170,13 +170,13 @@ image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view
 
 == Upgrade Cloud Volumes ONTAP
 
-Cloud Manager notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For details, see <<Upgrade from Cloud Manager notifications>>.
+BlueXP notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For details, see <<Upgrade from BlueXP notifications>>.
 
-Another way to perform software upgrades by using an image on an external URL. This option is helpful if Cloud Manager can't access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <<Upgrade from an image available at a URL>>.
+Another way to perform software upgrades by using an image on an external URL. This option is helpful if BlueXP can't access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <<Upgrade from an image available at a URL>>.
 
-=== Upgrade from Cloud Manager notifications
+=== Upgrade from BlueXP notifications
 
-Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
+BlueXP displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
 
 image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
 
@@ -184,7 +184,7 @@ You can start the upgrade process from this notification, which automates the pr
 
 .Before you begin
 
-Cloud Manager operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.
+BlueXP operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.
 
 .Steps
 
@@ -206,7 +206,7 @@ image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available no
 
 .Result
 
-Cloud Manager starts the software upgrade. You can perform actions on the working environment once the software update is complete.
+BlueXP starts the software upgrade. You can perform actions on the working environment once the software update is complete.
 
 .After you finish
 
@@ -214,17 +214,17 @@ If you suspended SnapMirror transfers, use System Manager to resume the transfer
 
 === Upgrade from an image available at a URL
 
-You can place the Cloud Volumes ONTAP software image on the Connector or on an HTTP server and then initiate the software upgrade from Cloud Manager. You might use this option if Cloud Manager can't access the S3 bucket to upgrade the software.
+You can place the Cloud Volumes ONTAP software image on the Connector or on an HTTP server and then initiate the software upgrade from BlueXP. You might use this option if BlueXP can't access the S3 bucket to upgrade the software.
 
 .Before you begin
 
-* Cloud Manager operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.
+* BlueXP operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.
 
-* If you use HTTPS to host ONTAP images, the upgrade can fail due to SSL authentication issues, which are caused by missing certificates. The workaround is to generate and install a CA-signed certificate to be used for authentication between ONTAP and Cloud Manager.
+* If you use HTTPS to host ONTAP images, the upgrade can fail due to SSL authentication issues, which are caused by missing certificates. The workaround is to generate and install a CA-signed certificate to be used for authentication between ONTAP and BlueXP.
 +
 Go to the NetApp Knowledge Base to view step-by-step instructions:
 +
-https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_configure_Cloud_Manager_as_an_HTTPS_server_to_host_upgrade_images[NetApp KB: How to configure Cloud Manager as an HTTPS server to host upgrade images^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_configure_Cloud_Manager_as_an_HTTPS_server_to_host_upgrade_images[NetApp KB: How to configure BlueXP as an HTTPS server to host upgrade images^]
 
 .Steps
 
@@ -247,7 +247,7 @@ Two paths are available. The correct path depends on your Connector version.
 *	`/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. From the working environment in Cloud Manager, click the menu icon, and then click *Advanced > Update Cloud Volumes ONTAP*.
+. From the working environment in BlueXP, click the menu icon, and then click *Advanced > Update Cloud Volumes ONTAP*.
 
 . On the update software page, enter the URL, and then click *Change Image*.
 +
@@ -259,7 +259,7 @@ If you copied the software image to the Connector in the path shown above, you w
 
 .Result
 
-Cloud Manager starts the software update. You can perform actions on the working environment once the software update is complete.
+BlueXP starts the software update. You can perform actions on the working environment once the software update is complete.
 
 .After you finish
 
@@ -268,7 +268,7 @@ If you suspended SnapMirror transfers, use System Manager to resume the transfer
 ifdef::gcp[]
 == Fix download failures when using a Google Cloud NAT gateway
 
-The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the Cloud Manager API.
+The Connector automatically downloads software updates for Cloud Volumes ONTAP. The download can fail if your configuration uses a Google Cloud NAT gateway. You can correct this issue by limiting the number of parts that the software image is divided into. This step must be completed by using the BlueXP API.
 
 .Step
 

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-create-volumes.html
 keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, templates
-summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP.
 ---
 
 = Create FlexVol volumes
@@ -13,11 +13,11 @@ summary: If you need more storage after you launch your initial Cloud Volumes ON
 :imagesdir: ./media/
 
 [.lead]
-If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP.
 
-Cloud Manager provides several ways to create a new volume:
+BlueXP provides several ways to create a new volume:
 
-* Specify details for a new volume and let Cloud Manager handle the underlying data aggregates for you. <<Create a volume,Learn more>>.
+* Specify details for a new volume and let BlueXP handle the underlying data aggregates for you. <<Create a volume,Learn more>>.
 * Create a volume on a data aggregate of your choice. <<Create a volume,Learn more>>.
 * Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<Create a volume from a template,Learn more>>.
 * Create a volume on the second node in an HA configuration. <<Create a volume on the second node in an HA configuration,Learn more>>.
@@ -26,7 +26,7 @@ Cloud Manager provides several ways to create a new volume:
 
 A few notes about volume provisioning:
 
-* When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <<Connect a LUN to a host,use the IQN to connect to the LUN from your hosts>>.
+* When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <<Connect a LUN to a host,use the IQN to connect to the LUN from your hosts>>.
 
 * You can create additional LUNs from System Manager or the CLI.
 
@@ -38,7 +38,7 @@ endif::aws[]
 
 == Create a volume
 
-The most common way to create a volume is to specify the type of volume that you need and then Cloud Manager handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.
+The most common way to create a volume is to specify the type of volume that you need and then BlueXP handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.
 
 .Steps
 
@@ -46,7 +46,7 @@ The most common way to create a volume is to specify the type of volume that you
 
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.
 
-. Create a new volume by letting Cloud Manager handle the disk allocation for you, or choose a specific aggregate for the volume.
+. Create a new volume by letting BlueXP handle the disk allocation for you, or choose a specific aggregate for the volume.
 +
 Choosing a specific aggregate is recommended only if you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system.
 +
@@ -90,7 +90,7 @@ Some of the fields on this page are self-explanatory. The following list describ
 
 .. *Protocol*: Choose a protocol for the volume (NFS, CIFS, or iSCSI) and then provide the required information.
 +
-If you select CIFS and a server isn't set up, Cloud Manager prompts you to set up CIFS connectivity after you click *Next*.
+If you select CIFS and a server isn't set up, BlueXP prompts you to set up CIFS connectivity after you click *Next*.
 +
 link:concept-client-protocols.html[Learn about supported client protocols and versions].
 +
@@ -104,7 +104,7 @@ The following sections describe fields for which you might need guidance. The de
 
 Access control:: Choose a custom export policy to make the volume available to clients.
 
-Export policy:: Defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
+Export policy:: Defines the clients in the subnet that can access the volume. By default, BlueXP enters a value that provides access to all instances in the subnet.
 
 --
 
@@ -141,7 +141,7 @@ endif::gcp[]
 
 DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
 +
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 
@@ -150,7 +150,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 .iSCSI
 --
 
-LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task-connect-lun.html[use the IQN to connect to the LUN from your hosts].
+LUN:: iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We've made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task-connect-lun.html[use the IQN to connect to the LUN from your hosts].
 
 Initiator group:: Initiator groups (igroups) specify which hosts can access specified LUNs on the storage system
 
@@ -186,7 +186,7 @@ Compression:: Reduces the physical capacity required to store data by compressin
 
 .Result
 
-Cloud Manager creates the volume on the Cloud Volumes ONTAP system.
+BlueXP creates the volume on the Cloud Volumes ONTAP system.
 
 == Create a volume from a template
 
@@ -240,7 +240,7 @@ Additionally, if any secondary action is implemented in the template, for exampl
 
 == Create a volume on the second node in an HA configuration
 
-By default, Cloud Manager creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.
+By default, BlueXP creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.
 
 .Steps
 
@@ -254,13 +254,13 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 . For Home Node, choose the second node in the HA pair.
 
-. After Cloud Manager creates the aggregate, select it and then click *Create volume*.
+. After BlueXP creates the aggregate, select it and then click *Create volume*.
 
 . Enter details for the new volume, and then click *Create*.
 
 .Result
 
-Cloud Manager creates the volume on the second node in the HA pair.
+BlueXP creates the volume on the second node in the HA pair.
 
 ifdef::aws[]
 TIP: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.

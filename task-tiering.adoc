@@ -30,7 +30,7 @@ ifdef::aws[]
 endif::aws[]
 
 ifdef::azure[]
-* For Azure, you won't need to do anything as long as Cloud Manager has the required permissions. <<Requirements to tier cold data to Azure Blob storage,Learn more>>.
+* For Azure, you won't need to do anything as long as BlueXP has the required permissions. <<Requirements to tier cold data to Azure Blob storage,Learn more>>.
 endif::azure[]
 
 ifdef::gcp[]
@@ -45,7 +45,7 @@ Data tiering must be enabled on an aggregate in order to enable data tiering on 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Choose a tiering policy when creating, modifying, or replicating a volume
 
 [role="quick-margin-para"]
-Cloud Manager prompts you to choose a tiering policy when you create, modify, or replicate a volume.
+BlueXP prompts you to choose a tiering policy when you create, modify, or replicate a volume.
 
 [role="quick-margin-list"]
 * link:task-tiering.html#tiering-data-from-read-write-volumes[Tiering data on read-write volumes]
@@ -55,10 +55,10 @@ Cloud Manager prompts you to choose a tiering policy when you create, modify, or
 .What's not required for data tiering?
 ====
 * You don't need to install a feature license to enable data tiering.
-* You don't need to create an object store for the capacity tier. Cloud Manager does that for you.
+* You don't need to create an object store for the capacity tier. BlueXP does that for you.
 * You don't need to enable data tiering at the system level.
 +
-Cloud Manager creates an object store for cold data when the system is created, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
+BlueXP creates an object store for cold data when the system is created, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
 ====
 
 == Configurations that support data tiering
@@ -114,7 +114,7 @@ endif::aws[]
 ifdef::azure[]
 === Requirements to tier cold data to Azure Blob storage
 
-You don't need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the custom role for the Connector has these permissions:
+You don't need to set up a connection between the performance tier and the capacity tier as long as BlueXP has the required permissions. BlueXP enables a VNet service endpoint for you if the custom role for the Connector has these permissions:
 
 [source,json]
 "Microsoft.Network/virtualNetworks/subnets/write",
@@ -143,7 +143,7 @@ endif::gcp[]
 
 === Enabling data tiering after implementing the requirements
 
-Cloud Manager creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering, which creates the object store.
+BlueXP creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering, which creates the object store.
 
 .Steps
 
@@ -155,13 +155,13 @@ Cloud Manager creates an object store for cold data when the system is created, 
 
 . Click the menu icon and select *Enable capacity tiering*.
 +
-image:screenshot_enable_capacity_tiering.gif[A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when Cloud Manager tried to enable data tiering.]
+image:screenshot_enable_capacity_tiering.gif[A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when BlueXP tried to enable data tiering.]
 +
-You'll only see this option if data tiering couldn't be enabled when Cloud Manager created the system.
+You'll only see this option if data tiering couldn't be enabled when BlueXP created the system.
 +
 In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <<Requirements,Ensure that you've met all requirements>>.
 
-. Click *Enable* so Cloud Manager can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
+. Click *Enable* so BlueXP can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
 
 == Ensuring that tiering is enabled on aggregates
 
@@ -169,7 +169,7 @@ Data tiering must be enabled on an aggregate in order to enable data tiering on 
 
 * *New volumes*
 +
-If you're enabling data tiering on a new volume, then you don't need to worry about enabling data tiering on an aggregate. Cloud Manager creates the volume on an existing aggregate that has tiering enabled, or it creates a new aggregate for the volume if a data tiering-enabled aggregate doesn't already exist.
+If you're enabling data tiering on a new volume, then you don't need to worry about enabling data tiering on an aggregate. BlueXP creates the volume on an existing aggregate that has tiering enabled, or it creates a new aggregate for the volume if a data tiering-enabled aggregate doesn't already exist.
 
 * *Existing volumes*
 +
@@ -177,13 +177,13 @@ If you want to enable data tiering on an existing volume, then you'll need to en
 
 .Steps to confirm whether tiering is enabled on an aggregate
 
-. Open the working environment in Cloud Manager.
+. Open the working environment in BlueXP.
 
 . Click the menu icon, click *Advanced*, and then click *Advanced allocation*.
 
 . Verify whether tiering is enabled or disabled on the aggregate.
 +
-image:screenshot_aggr_tiering.gif[A screenshot that shows information about an aggregate in Cloud Manager which includes the tiering status.]
+image:screenshot_aggr_tiering.gif[A screenshot that shows information about an aggregate in BlueXP which includes the tiering status.]
 
 .Steps to enable tiering on an aggregate
 
@@ -225,7 +225,7 @@ For a description of these policies, see link:concept-data-tiering.html[Data tie
 +
 image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to object storage.]
 +
-Cloud Manager creates a new aggregate for the volume if a data tiering-enabled aggregate does not already exist.
+BlueXP creates a new aggregate for the volume if a data tiering-enabled aggregate does not already exist.
 
 == Tiering data from data protection volumes
 
@@ -263,7 +263,7 @@ For information about supported storage classes, see link:concept-data-tiering.h
 
 The free space ratio for data tiering defines how much free space is required on Cloud Volumes ONTAP SSDs/HDDs when tiering data to object storage. The default setting is 10% free space, but you can tweak the setting based on your requirements.
 
-For example, you might choose less than 10% free space to ensure that you are utilizing the purchased capacity. Cloud Manager can then purchase additional disks for you when additional capacity is required (up until you reach the disk limit for the aggregate).
+For example, you might choose less than 10% free space to ensure that you are utilizing the purchased capacity. BlueXP can then purchase additional disks for you when additional capacity is required (up until you reach the disk limit for the aggregate).
 
 CAUTION: If there isn’t sufficient space, then Cloud Volumes ONTAP can't move the data and you might experience performance degradation. Any change should be done with caution. If you're unsure, reach out to NetApp support for guidance.
 
@@ -271,9 +271,9 @@ The ratio is important for disaster recovery scenarios because as data is read f
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the *Settings* icon, and select *Connector Settings*.
+. In the upper right of the BlueXP console, click the *Settings* icon, and select *Connector Settings*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 . Under *Capacity*, click *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
 

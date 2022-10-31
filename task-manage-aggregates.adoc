@@ -15,7 +15,7 @@ summary: Manage aggregates yourself by adding disks, viewing information about t
 [.lead]
 Manage aggregates yourself by adding disks, viewing information about the aggregates, and by deleting them.
 
-CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+CAUTION: All disks and aggregates must be created and deleted directly from BlueXP. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
 
 .Before you begin
 

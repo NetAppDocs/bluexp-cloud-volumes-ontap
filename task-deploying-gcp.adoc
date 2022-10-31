@@ -46,7 +46,7 @@ link:task-set-up-licensing-gcp.html[Learn how to set up licensing].
 
 == Launching a single-node system in GCP
 
-Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.
+Create a working environment in BlueXP to launch Cloud Volumes ONTAP in GCP.
 
 .Steps
 
@@ -67,11 +67,11 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+| Working Environment Name | BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Service Account Name | If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup^] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account].
 
-| Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
+| Add Labels |	Labels are metadata for your GCP resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
 
 You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.
 
@@ -79,11 +79,11 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
 
-| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.
+| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.
 
-If you don't see any additional projects in the drop-down list, then you haven't yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
+If you don't see any additional projects in the drop-down list, then you haven't yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
 
-NOTE: This is the service account that you set up for Cloud Manager, link:task-creating-gcp-service-account.html[as described on this page].
+NOTE: This is the service account that you set up for BlueXP, link:task-creating-gcp-service-account.html[as described on this page].
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 
@@ -108,7 +108,7 @@ The following table describes fields for which you might need guidance:
 
 | Connectivity verification | To tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
 
-| Generated firewall policy a| If you let Cloud Manager generate the firewall policy for you, you need to choose how you'll allow traffic:
+| Generated firewall policy a| If you let BlueXP generate the firewall policy for you, you need to choose how you'll allow traffic:
 
 * If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
@@ -128,13 +128,13 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type and the size for each disk.
 +
 The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 +
-The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
+The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
 For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP].
 
@@ -152,7 +152,7 @@ link:concept-worm.html[Learn more about WORM storage].
 +
 Note the following:
 +
-* Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from Cloud Manager.
+* BlueXP sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from BlueXP
 * For help with adding a GCP account, see https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Setting up and adding GCP accounts for data tiering with 9.6^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the GCP console.
@@ -197,7 +197,7 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
@@ -210,7 +210,7 @@ For more information, see link:task-planning-your-config-gcp.html#choosing-a-vol
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the GCP resources that Cloud Manager will purchase.
+.. Click *More information* to review details about support and the GCP resources that BlueXP will purchase.
 
 .. Select the *I understand...* check boxes.
 
@@ -218,7 +218,7 @@ For more information, see link:task-planning-your-config-gcp.html#choosing-a-vol
 
 .Result
 
-Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.
+BlueXP deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.
 
 If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click *Re-create environment*.
 
@@ -234,7 +234,7 @@ Quotas enable you to restrict or track the disk space and number of files used b
 
 == Launching an HA pair in GCP
 
-Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.
+Create a working environment in BlueXP to launch Cloud Volumes ONTAP in GCP.
 
 .Steps
 
@@ -253,11 +253,11 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+| Working Environment Name | BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Service Account Name | If you plan to use the link:concept-data-tiering.html[Tiering] or https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup^] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
 
-| Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
+| Add Labels |	Labels are metadata for your GCP resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
 
 You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.
 
@@ -265,11 +265,11 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 | User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
 
-| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.
+| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.
 
-If you don't see any additional projects in the drop-down list, then you haven't yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
+If you don't see any additional projects in the drop-down list, then you haven't yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
 
-NOTE: This is the service account that you set up for Cloud Manager, link:task-creating-gcp-service-account.html[as described on this page].
+NOTE: This is the service account that you set up for BlueXP, link:task-creating-gcp-service-account.html[as described on this page].
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 
@@ -298,7 +298,7 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Generated policy a| If you let Cloud Manager generate the firewall policy for you, you need to choose how you'll allow traffic:
+| Generated policy a| If you let BlueXP generate the firewall policy for you, you need to choose how you'll allow traffic:
 
 * If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
@@ -318,13 +318,13 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type and the size for each disk.
 +
 The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 +
-The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
+The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
 For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP].
 
@@ -336,7 +336,7 @@ WORM can't be enabled if data tiering was enabled. link:concept-worm.html[Learn 
 +
 Note the following:
 +
-* Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from Cloud Manager.
+* BlueXP sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from BlueXP.
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the GCP console.
 +
@@ -380,7 +380,7 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
@@ -393,7 +393,7 @@ For more information, see link:task-planning-your-config-gcp.html#choosing-a-vol
 
 .. Review details about the configuration.
 
-.. Click *More information* to review details about support and the GCP resources that Cloud Manager will purchase.
+.. Click *More information* to review details about support and the GCP resources that BlueXP will purchase.
 
 .. Select the *I understand...* check boxes.
 
@@ -401,7 +401,7 @@ For more information, see link:task-planning-your-config-gcp.html#choosing-a-vol
 
 .Result
 
-Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.
+BlueXP deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.
 
 If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click *Re-create environment*.
 
