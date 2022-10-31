@@ -31,6 +31,8 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aw
 +
 To track your AWS costs, BlueXP assigns a cost allocation tag to Cloud Volumes ONTAP instances. After you create your first working environment, activate the *WorkingEnvironmentId* tag. User-defined tags don't appear on AWS billing reports until you activate them in the Billing and Cost Management console.
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, select a Cloud Volumes ONTAP working environment and then click *Cost*.
 +
 The Cost page displays costs for the current and previous months and shows your annual NetApp savings, if you enabled NetApp's cost-saving features on volumes.

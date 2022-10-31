@@ -71,6 +71,8 @@ Open a Cloud Volumes ONTAP working environment and click the Advanced View optio
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, double-click the name of a Cloud Volumes ONTAP system.
 
 . In the top-right, click *Switch to Advanced View*.

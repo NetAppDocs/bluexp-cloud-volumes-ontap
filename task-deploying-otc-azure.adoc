@@ -48,6 +48,8 @@ Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recom
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node* or *Cloud Volumes ONTAP High Availability*.
@@ -83,9 +85,8 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^].
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^].
-* https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about the Monitoring service^].
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
 
 . *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.
 +

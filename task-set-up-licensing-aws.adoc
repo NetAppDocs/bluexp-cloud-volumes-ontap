@@ -21,6 +21,8 @@ Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up t
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, click *Add Working Environment* and follow the steps in BlueXP.
 
 .. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
@@ -84,6 +86,8 @@ Pay hourly by subscribing to the offer from your cloud provider's marketplace.
 When you create a Cloud Volumes ONTAP working environment, BlueXP prompts you to subscribe to the agreement that's available in the AWS Marketplace. That subscription is then associated with the working environment for charging. You can use that same subscription for additional working environments.
 
 .Steps
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in BlueXP.
 

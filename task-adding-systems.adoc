@@ -21,6 +21,8 @@ You must know the password for the Cloud Volumes ONTAP admin user account.
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, click *Add Working Environment*.
 
 . Select the cloud provider in which the system resides.

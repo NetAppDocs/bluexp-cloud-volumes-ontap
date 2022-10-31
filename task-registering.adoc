@@ -25,6 +25,8 @@ TIP: A system that isn't registered for support will still receive the software 
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts^].
 
+. From the left navigation menu, select *Storage > Canvas*
+
 . On the Canvas page, double-click the name of the system that you want to register.
 
 . Click the menu icon and then click *Support registration*:

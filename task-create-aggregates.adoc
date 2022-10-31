@@ -19,6 +19,8 @@ CAUTION: All disks and aggregates must be created and deleted directly from Blue
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
 
 . Click the menu icon, and then click *Advanced > Advanced allocation*.

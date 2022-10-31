@@ -21,6 +21,8 @@ You can manage volumes as your storage needs change. You can view, edit, clone, 
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
 . Manage your volumes:
