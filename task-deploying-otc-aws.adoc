@@ -90,9 +90,8 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^].
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^].
-* https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about Monitoring^].
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
 
 . *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
 +
@@ -293,9 +292,8 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^].
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html[Learn more about Cloud Backup^].
-* https://docs.netapp.com/us-en/cloud-manager-monitoring/concept-monitoring.html[Learn more about Monitoring^].
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html[Learn more about Cloud Backup^]
 
 . *HA Deployment Models*: Choose an HA configuration.
 +
