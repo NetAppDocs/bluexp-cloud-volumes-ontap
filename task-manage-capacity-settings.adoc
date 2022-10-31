@@ -23,12 +23,12 @@ Account Admin privileges are required to modify Connector settings.
 
 .Steps
 
-.	In the upper right of the Cloud Manager console, click the Settings icon, and select *Connector Settings*.
+.	In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
 
 .	Under *Capacity*, modify any of the following settings:
 +
 Capacity Management Mode::
-Choose whether Cloud Manager notifies you of storage capacity decisions or whether Cloud Manager automatically manages capacity requirements for you.
+Choose whether BlueXP notifies you of storage capacity decisions or whether BlueXP automatically manages capacity requirements for you.
 +
 link:concept-storage-management.html#capacity-management[Learn how Capacity Management Mode works].
 

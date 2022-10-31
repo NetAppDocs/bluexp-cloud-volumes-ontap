@@ -59,7 +59,7 @@ Setting up a supported key manager is the only required step. For set up instruc
 ifdef::aws[]
 === AWS Key Management Service
 
-When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encryption using the http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS Key Management Service (KMS)^]. Cloud Manager requests data keys using a customer master key (CMK).
+When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encryption using the http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS Key Management Service (KMS)^]. BlueXP requests data keys using a customer master key (CMK).
 
 TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
 
@@ -79,7 +79,7 @@ ifdef::gcp[]
 
 https://cloud.google.com/security/encryption-at-rest/[Google Cloud Platform data-at-rest encryption^] is enabled by default for Cloud Volumes ONTAP. No setup is required.
 
-While Google Cloud Storage always encrypts your data before it's written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service. link:task-setting-up-gcp-encryption.html[Learn more].
+While Google Cloud Storage always encrypts your data before it's written to disk, you can use BlueXP APIs to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service. link:task-setting-up-gcp-encryption.html[Learn more].
 endif::gcp[]
 
 == ONTAP virus scanning
@@ -94,13 +94,13 @@ For information about how to configure and manage the antivirus functionality on
 
 == Ransomware protection
 
-Ransomware attacks can cost a business time, resources, and reputation. Cloud Manager enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
+Ransomware attacks can cost a business time, resources, and reputation. BlueXP enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
 
-* Cloud Manager identifies volumes that are not protected by a Snapshot policy and enables you to activate the default Snapshot policy on those volumes.
+* BlueXP identifies volumes that are not protected by a Snapshot policy and enables you to activate the default Snapshot policy on those volumes.
 +
 Snapshot copies are read-only, which prevents ransomware corruption. They can also provide the granularity to create images of a single file copy or a complete disaster recovery solution.
 
-* Cloud Manager also enables you to block common ransomware file extensions by enabling ONTAP's FPolicy solution.
+* BlueXP also enables you to block common ransomware file extensions by enabling ONTAP's FPolicy solution.
 
 image:screenshot_ransomware_protection.gif[A screenshot that shows the Ransomware Protection page that is available from within a working environment. The screen shows the number of volumes without a Snapshot Policy and the ability to block ransomware file extensions.]
 

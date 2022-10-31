@@ -56,7 +56,7 @@ At a high level, the differences between EBS disk types are as follows. To learn
 
 * _General Purpose SSD (gp3)_ disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads. Performance is defined in terms of IOPS and throughput. gp3 disks are supported with Cloud Volumes ONTAP 9.7 and later.
 +
-When you select a gp3 disk, Cloud Manager fills in default IOPS and throughput values that provide performance that is equivalent to a gp2 disk based on the selected disk size. You can increase the values to get better performance at a higher cost, but we do not support lower values because it can result in inferior performance. In short, stick with the default values or increase them. Don't lower them. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type[Learn more about gp3 disks and their performance^].
+When you select a gp3 disk, BlueXP fills in default IOPS and throughput values that provide performance that is equivalent to a gp2 disk based on the selected disk size. You can increase the values to get better performance at a higher cost, but we do not support lower values because it can result in inferior performance. In short, stick with the default values or increase them. Don't lower them. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type[Learn more about gp3 disks and their performance^].
 +
 Note that Cloud Volumes ONTAP supports the Amazon EBS Elastic Volumes feature with gp3 disks. link:concept-aws-elastic-volumes.html[Learn more about Elastic Volumes support].
 
@@ -71,7 +71,7 @@ Note that Cloud Volumes ONTAP supports the Amazon EBS Elastic Volumes feature wi
 NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
 
 EBS disk size::
-If you choose a configuration that doesn't support the link:concept-aws-elastic-volumes.html[Amazon EBS Elastic Volumes feature], then you need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept-storage-management.html[let Cloud Manager manage a system's capacity for you], but if you want to link:task-create-aggregates.html[create aggregates yourself], be aware of the following:
+If you choose a configuration that doesn't support the link:concept-aws-elastic-volumes.html[Amazon EBS Elastic Volumes feature], then you need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept-storage-management.html[let BlueXP manage a system's capacity for you], but if you want to link:task-create-aggregates.html[create aggregates yourself], be aware of the following:
 
 ** All disks in an aggregate must be the same size.
 ** The performance of EBS disks is tied to disk size. The size determines the baseline IOPS and maximum burst duration for SSD disks and the baseline and burst throughput for HDD disks.
@@ -88,7 +88,7 @@ video::GELcXmOuYPw[youtube, width=848, height=480]
 
 == View default system disks
 
-In addition to the storage for user data, Cloud Manager also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
+In addition to the storage for user data, BlueXP also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.
 
 link:reference-default-configs.html#aws[View the default disks for Cloud Volumes ONTAP system data in AWS].
 
@@ -150,11 +150,11 @@ When you launch Cloud Volumes ONTAP in AWS, you need to specify details about yo
 
 == Choose a write speed
 
-Cloud Manager enables you to choose a write speed setting for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed. link:concept-write-speed.html[Learn more about write speed].
+BlueXP enables you to choose a write speed setting for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed. link:concept-write-speed.html[Learn more about write speed].
 
 == Choose a volume usage profile
 
-ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. When you create a volume in Cloud Manager, you can choose a profile that enables these features or a profile that disables them. You should learn more about these features to help you decide which profile to use.
+ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. When you create a volume in BlueXP, you can choose a profile that enables these features or a profile that disables them. You should learn more about these features to help you decide which profile to use.
 
 NetApp storage efficiency features provide the following benefits:
 

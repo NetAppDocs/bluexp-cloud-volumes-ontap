@@ -15,7 +15,7 @@ summary: Manage aggregates yourself by adding disks, viewing information about t
 [.lead]
 Manage aggregates yourself by adding disks, viewing information about the aggregates, and by deleting them.
 
-CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+CAUTION: All disks and aggregates must be created and deleted directly from BlueXP. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
 
 .Before you begin
 
@@ -26,6 +26,8 @@ If you want to delete an aggregate, you must have first deleted the volumes in t
 If an aggregate is running out of space, you can move volumes to another aggregate by using System Manager.
 
 .Steps
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 

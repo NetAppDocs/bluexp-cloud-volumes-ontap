@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-write-speed.html
 keywords: write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode
-summary: Cloud Manager enables you to choose normal or high write speed for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
+summary: BlueXP enables you to choose normal or high write speed for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
 ---
 
 = Write speed
@@ -13,7 +13,7 @@ summary: Cloud Manager enables you to choose normal or high write speed for Clou
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to choose normal or high write speed for most Cloud Volumes ONTAP configurations. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
+BlueXP enables you to choose normal or high write speed for most Cloud Volumes ONTAP configurations. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
 
 == Normal write speed
 

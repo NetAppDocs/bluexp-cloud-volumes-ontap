@@ -17,7 +17,7 @@ Microsoft Azure's high availability mode should be enabled to reduce unplanned f
 
 Starting with the Cloud Volumes ONTAP 9.10.1 release, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the high availability feature on your Azure subscription.
 
-Cloud Manager will prompt you with these details in an Action Required message when the feature needs to be enabled on an Azure subscription.
+BlueXP will prompt you with these details in an Action Required message when the feature needs to be enabled on an Azure subscription.
 
 Note the following:
 

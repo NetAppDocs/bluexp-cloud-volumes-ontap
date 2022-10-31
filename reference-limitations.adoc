@@ -15,21 +15,21 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-These limitations are specific to Cloud Volumes ONTAP management in Cloud Manager. To view limitations with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html[go to the Cloud Volumes ONTAP Release Notes^]
+These limitations are specific to Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager). To view limitations with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html[go to the Cloud Volumes ONTAP Release Notes^]
 
-== Cloud Manager doesn't support FlexGroup volumes
+== BlueXP doesn't support FlexGroup volumes
 
-While Cloud Volumes ONTAP supports FlexGroup volumes, Cloud Manager does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set Cloud Manager's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
+While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set BlueXP's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
 
-== Cloud Manager doesn't support S3 with Cloud Volumes ONTAP
+== BlueXP doesn't support S3 with Cloud Volumes ONTAP
 
-While Cloud Volumes ONTAP supports S3 as an option for scale-out storage in some cloud providers, Cloud Manager doesn't provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html[S3 Configuration Power Guide^].
+While Cloud Volumes ONTAP supports S3 as an option for scale-out storage in some cloud providers, BlueXP doesn't provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html[S3 Configuration Power Guide^].
 
 link:concept-client-protocols.html[Learn more about Cloud Volumes ONTAP support for S3 and other client protocols].
 
-== Cloud Manager doesn't support disaster recovery for storage VMs
+== BlueXP doesn't support disaster recovery for storage VMs
 
-Cloud Manager doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
+BlueXP doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
 
 * https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
 * https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]

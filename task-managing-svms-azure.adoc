@@ -570,4 +570,4 @@ network interface service-policy add-service -vserver <svm-name> -policy default
 
 .What's next?
 
-After you create a storage VM on an HA pair, it's best to wait 12 hours before you provision storage on that SVM. Starting with the Cloud Volumes ONTAP 9.10.1 release, Cloud Manager scans the settings for an HA pair's load balancer at a 12-hour interval. If there are new SVMs, Cloud Manager will enable a setting that provides shorter unplanned failover.
+After you create a storage VM on an HA pair, it's best to wait 12 hours before you provision storage on that SVM. Starting with the Cloud Volumes ONTAP 9.10.1 release, BlueXP scans the settings for an HA pair's load balancer at a 12-hour interval. If there are new SVMs, BlueXP will enable a setting that provides shorter unplanned failover.

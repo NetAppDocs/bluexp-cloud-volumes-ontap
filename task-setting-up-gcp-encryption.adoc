@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-setting-up-gcp-encryption.html
 keywords: encryption, gcp, encryption key, permissions, customer-managed, gcpencryption
-summary: While Google Cloud Storage always encrypts your data before it’s written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that uses customer-managed encryption keys. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
+summary: While Google Cloud Storage always encrypts your data before it’s written to disk, you can use BlueXP APIs to create a Cloud Volumes ONTAP system that uses customer-managed encryption keys. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
 ---
 
 = Using customer-managed encryption keys with Cloud Volumes ONTAP
@@ -13,11 +13,11 @@ summary: While Google Cloud Storage always encrypts your data before it’s writ
 :imagesdir: ./media/
 
 [.lead]
-While Google Cloud Storage always encrypts your data before it's written to disk, you can use the Cloud Manager API to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
+While Google Cloud Storage always encrypts your data before it's written to disk, you can use the BlueXP API to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
 
 .Steps
 
-. Ensure that the Cloud Manager Connector service account has the correct permissions at the project level, in the project where the key is stored.
+. Ensure that the BlueXP Connector service account has the correct permissions at the project level, in the project where the key is stored.
 +
 The permissions are provided in the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[Connector service account permissions by default^], but may not be applied if you use an alternate project for the Cloud Key Management Service.
 +
@@ -37,7 +37,7 @@ https://cloud.google.com/kms/docs/iam#granting_roles_on_a_resource[Google Cloud 
 
 . Obtain the "id" of the key by invoking the get command for the `/gcp/vsa/metadata/gcp-encryption-keys` API call or by choosing "Copy Resource Name" on the key in the GCP console.
 
-. If using customer-managed encryption keys and tiering data to object storage, Cloud Manager attempts to utilize the same keys that are used to encrypt the persistent disks. But you'll first need to enable Google Cloud Storage buckets to use the keys:
+. If using customer-managed encryption keys and tiering data to object storage, BlueXP attempts to utilize the same keys that are used to encrypt the persistent disks. But you'll first need to enable Google Cloud Storage buckets to use the keys:
 
 .. Find the Google Cloud Storage service agent by following the https://cloud.google.com/storage/docs/getting-service-agent[Google Cloud Documentation: Getting the Cloud Storage service agent^].
 
@@ -55,4 +55,4 @@ For more information, refer to https://cloud.google.com/storage/docs/encryption/
     "key": "projects/project-1/locations/us-east4/keyRings/keyring-1/cryptoKeys/generatedkey1"
   }
 
-Refer to the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[Cloud Manager automation docs^] for more details about using the "GcpEncryption" parameter.
+Refer to the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for more details about using the "GcpEncryption" parameter.
