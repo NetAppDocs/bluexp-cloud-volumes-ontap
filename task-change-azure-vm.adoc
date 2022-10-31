@@ -33,6 +33,8 @@ TIP: Cloud Manager gracefully changes one node at a time by initiating takeover 
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . From the Canvas, select the working environment.
 
 . In the right pane, click the menu icon and select *Optimize Cost & Performance*.

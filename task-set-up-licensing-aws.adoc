@@ -21,6 +21,8 @@ Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up t
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
 .. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.
@@ -85,6 +87,7 @@ When you create a Cloud Volumes ONTAP working environment, Cloud Manager prompts
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*
 . On the Canvas page, click *Add Working Environment* and follow the steps in Cloud Manager.
 
 .. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the AWS Marketplace.

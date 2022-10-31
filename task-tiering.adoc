@@ -149,6 +149,8 @@ Cloud Manager creates an object store for cold data when the system is created, 
 
 . <<Requirements,Ensure that you've met all requirements>>.
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance.
 
 . Click the menu icon and select *Enable capacity tiering*.
@@ -230,6 +232,8 @@ Cloud Manager creates a new aggregate for the volume if a data tiering-enabled a
 Cloud Volumes ONTAP can tier data from a data protection volume to a capacity tier. If you activate the destination volume, the data gradually moves to the performance tier as it is read.
 
 .Steps
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
 

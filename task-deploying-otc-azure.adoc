@@ -48,6 +48,8 @@ Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recom
 
 .Steps
 
+. From the left navigation menu, select *Storage > Canvas*.
+
 . [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node* or *Cloud Volumes ONTAP High Availability*.
