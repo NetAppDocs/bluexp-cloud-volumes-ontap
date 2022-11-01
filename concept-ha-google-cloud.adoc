@@ -51,7 +51,7 @@ Operating system:: Debian 11
 +
 NOTE: For Cloud Volumes ONTAP 9.10.0 and earlier, Debian 10 was installed on the mediator.
 
-Upgrades:: When you upgrade Cloud Volumes ONTAP, Cloud Manager also updates the mediator instance as needed.
+Upgrades:: When you upgrade Cloud Volumes ONTAP, BlueXP also updates the mediator instance as needed.
 
 Access to the instance:: For Debian, the default cloud user is `admin`. Google Cloud creates and adds a certificates for the `admin` user when SSH access is requested through the Google Cloud console or gcloud command line. You can specify `sudo` to gain root privileges.
 
@@ -95,7 +95,7 @@ Unlike an ONTAP cluster, storage in a Cloud Volumes ONTAP HA pair in GCP is not 
 
 === Storage allocation
 
-When you create a new volume and additional disks are required, Cloud Manager allocates the same number of disks to both nodes, creates a mirrored aggregate, and then creates the new volume. For example, if two disks are required for the volume, Cloud Manager allocates two disks per node for a total of four disks.
+When you create a new volume and additional disks are required, BlueXP allocates the same number of disks to both nodes, creates a mirrored aggregate, and then creates the new volume. For example, if two disks are required for the volume, BlueXP allocates two disks per node for a total of four disks.
 
 === Storage configurations
 
@@ -117,7 +117,7 @@ Clients should access NFS and CIFS volumes by using the data IP address of the n
 
 TIP: If you move a volume between nodes in an HA pair, you should remount the volume by using the IP address of the other node. Otherwise, you can experience reduced performance. If clients support NFSv4 referrals or folder redirection for CIFS, you can enable those features on the Cloud Volumes ONTAP systems to avoid remounting the volume. For details, see ONTAP documentation.
 
-You can easily identify the correct IP address from Cloud Manager:
+You can easily identify the correct IP address from BlueXP:
 
 image:screenshot_mount.gif[Screen shot: Shows the Mount Command which is available when you select a volume.]
 

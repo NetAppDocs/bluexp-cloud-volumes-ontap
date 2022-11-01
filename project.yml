@@ -131,7 +131,7 @@ sidebar:
               url: /task-manage-capacity-settings.html
         - title: Storage VM administration
           entries:
-            - title: Work with storage VMs in Cloud Manager
+            - title: Work with storage VMs in BlueXP
               url: /task-managing-svms.html
             - title: Create storage VMs in AWS
               flavor: aws
@@ -264,9 +264,9 @@ sidebar:
     - title: Legal notices
       url: /legal-notices.html
 product-family:
-  name: Cloud Manager
+  name: BlueXP
   repo: cloud-manager-family
-  sidebar_label: All Cloud Manager documentation
+  sidebar_label: All BlueXP documentation
 homepage:
   tiles:
     - title: Get started
@@ -338,7 +338,7 @@ homepage:
       links:
         - title: NetApp Community
           url: https://community.netapp.com/t5/Cloud-Volumes-ONTAP/bd-p/CloudVolumes
-        - title: Cloud Central blog
+        - title: BlueXP website blog
           url: https://cloud.netapp.com/blog/topic/cloud-volumes-ontap
         - title: Cloud webinars
           url: https://cloud.netapp.com/events

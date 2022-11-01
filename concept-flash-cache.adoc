@@ -27,6 +27,6 @@ Flash Cache is supported with specific Cloud Volumes ONTAP configurations. View 
 
 * Compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements.
 +
-Choose no storage efficiency when creating a volume from Cloud Manager, or create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].
+Choose no storage efficiency when creating a volume from BlueXP, or create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].
 
 * Cache rewarming after a reboot is not supported with Cloud Volumes ONTAP.

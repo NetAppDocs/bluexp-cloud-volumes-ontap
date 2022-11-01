@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-aws-elastic-volumes.html
 keywords: elastic volumes, ev, ebs elastic volumes, ebs, amazon ebs, disk growth
-summary: Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling Cloud Manager to automatically increase the underlying disk capacity as needed.
+summary: Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling BlueXP to automatically increase the underlying disk capacity as needed.
 ---
 
 = Elastic Volumes in AWS
@@ -13,13 +13,13 @@ summary: Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes
 :imagesdir: ./media/
 
 [.lead]
-Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling Cloud Manager to automatically increase the underlying disk capacity as needed.
+Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling BlueXP to automatically increase the underlying disk capacity as needed.
 
 == Benefits
 
 * Dynamic disk growth
 +
-Cloud Manager can dynamically increase the size of disks while Cloud Volumes ONTAP is running and while disks are still attached.
+BlueXP can dynamically increase the size of disks while Cloud Volumes ONTAP is running and while disks are still attached.
 
 * Better performance
 +
@@ -62,13 +62,13 @@ An aggregate that has the Elastic Volumes feature enabled is comprised of one or
 
 image:diagram-aws-elastic-volumes-one-raid-group.png[A conceptual image that shows an aggregate and a RAID group that is comprised of four disks of equal size.]
 
-When Cloud Manager creates an aggregate, it starts with one RAID group. If additional capacity is needed, Cloud Manager grows the aggregate by increasing the capacity of all disks in the RAID group by the same amount. The capacity increase is either a minimum of 256 GiB or 10% of the aggregate’s size.
+When BlueXP creates an aggregate, it starts with one RAID group. If additional capacity is needed, BlueXP grows the aggregate by increasing the capacity of all disks in the RAID group by the same amount. The capacity increase is either a minimum of 256 GiB or 10% of the aggregate’s size.
 
 For example, if you have a 1 TiB aggregate, each disk is 250 GiB. 10% of the aggregate’s capacity is 100 GiB. That’s lower than 256 GiB, so the size of the aggregate is increased by the 256 GiB minimum (or 64 GiB for each disk).
 
-Cloud Manager increases the size of the disks while the Cloud Volumes ONTAP system is running and while the disks are still attached. The change is non-disruptive.
+BlueXP increases the size of the disks while the Cloud Volumes ONTAP system is running and while the disks are still attached. The change is non-disruptive.
 
-If an aggregate reaches 64 TiB (or 16 TiB on each disk), Cloud Manager creates a second RAID group for additional capacity. This second RAID group works just like the first one: it has four disks that have the exact same capacity and it can grow up to 64 TiB. That means an aggregate can have a maximum capacity of 128 TiB.
+If an aggregate reaches 64 TiB (or 16 TiB on each disk), BlueXP creates a second RAID group for additional capacity. This second RAID group works just like the first one: it has four disks that have the exact same capacity and it can grow up to 64 TiB. That means an aggregate can have a maximum capacity of 128 TiB.
 
 Here's an example of an aggregate with two RAID groups. The capacity limit has been reached on the first RAID group, while the disks in the second RAID group have plenty of free space.
 
@@ -76,11 +76,11 @@ image:diagram-aws-elastic-volumes-two-raid-groups.png[A conceptual image that sh
 
 === What happens when you create a volume
 
-If you create a volume that uses gp3 or io1 disks, Cloud Manager creates the volume on an aggregate as follows:
+If you create a volume that uses gp3 or io1 disks, BlueXP creates the volume on an aggregate as follows:
 
-* If there is an existing gp3 or io1 aggregate that has Elastic Volumes enabled, Cloud Manager creates the volume on that aggregate.
+* If there is an existing gp3 or io1 aggregate that has Elastic Volumes enabled, BlueXP creates the volume on that aggregate.
 
-* If there are multiple gp3 or io1 aggregates that have Elastic Volumes enabled, Cloud Manager creates the volume on the aggregate that requires the least amount of resources.
+* If there are multiple gp3 or io1 aggregates that have Elastic Volumes enabled, BlueXP creates the volume on the aggregate that requires the least amount of resources.
 
 * If the system only has gp3 or io1 aggregates that aren't enabled for Elastic Volumes, then the volume is created on that aggregate.
 +
@@ -92,7 +92,7 @@ While this scenario is unlikely, it's possible in two cases:
 * You created a new Cloud Volumes ONTAP system from the user interface, in which case the Elastic Volumes feature is disabled on the initial aggregate. Review <<Limitations>> below to learn more.
 ====
 
-* If no existing aggregates have enough capacity, Cloud Manager creates the aggregate with Elastic Volumes enabled and then creates the volume on that new aggregate.
+* If no existing aggregates have enough capacity, BlueXP creates the aggregate with Elastic Volumes enabled and then creates the volume on that new aggregate.
 +
 The size of the aggregate is based on the requested volume size plus an additional 10% capacity.
 
@@ -100,19 +100,19 @@ The size of the aggregate is based on the requested volume size plus an addition
 
 The Capacity Management Mode for a Connector works with Elastic Volumes similar to how it works with other types of aggregates:
 
-* When Automatic mode is enabled (this is the default setting), Cloud Manager automatically increases the size of aggregates if additional capacity is needed.
+* When Automatic mode is enabled (this is the default setting), BlueXP automatically increases the size of aggregates if additional capacity is needed.
 
-* If you change the capacity management mode to Manual, Cloud Manager asks for your approval to purchase additional capacity.
+* If you change the capacity management mode to Manual, BlueXP asks for your approval to purchase additional capacity.
 
 link:concept-storage-management.html#capacity-management[Learn more about the Capacity Management Mode].
 
 == Limitations
 
-Increasing the size of an aggregate can take up to 6 hours. During that time, Cloud Manager can't request any additional capacity for that aggregate.
+Increasing the size of an aggregate can take up to 6 hours. During that time, BlueXP can't request any additional capacity for that aggregate.
 
 == How to work with Elastic Volumes
 
-You can work with Elastic Volumes in Cloud Manager as follows:
+You can work with Elastic Volumes in BlueXP as follows:
 
 * Create a new system that has Elastic Volumes enabled on the initial aggregate when using gp3 or io1 disks
 +
@@ -120,7 +120,7 @@ link:task-deploying-otc-aws.html[Learn how to create Cloud Volumes ONTAP system]
 
 * Create a new volume on an aggregate that has Elastic Volumes enabled
 +
-If you create a volume that uses gp3 or io1 disks, Cloud Manager automatically creates the volume on an aggregate that has Elastic Volumes enabled. For more details, refer to <<What happens when you create a volume>>.
+If you create a volume that uses gp3 or io1 disks, BlueXP automatically creates the volume on an aggregate that has Elastic Volumes enabled. For more details, refer to <<What happens when you create a volume>>.
 +
 link:task-create-volumes.html[Learn how to create volumes].
 
@@ -128,7 +128,7 @@ link:task-create-volumes.html[Learn how to create volumes].
 +
 Elastic Volumes is automatically enabled on new aggregates that use gp3 or io1 disks, as long as the Cloud Volumes ONTAP system was created from version 9.11.0 or later.
 +
-When you create the aggregate, Cloud Manager will prompt you for the aggregate's capacity size. This is different than other configurations where you choose a disk size and number of disks.
+When you create the aggregate, BlueXP will prompt you for the aggregate's capacity size. This is different than other configurations where you choose a disk size and number of disks.
 +
 The following screenshot shows an example of a new aggregate comprised of gp3 disks.
 +
@@ -144,7 +144,7 @@ image:screenshot-elastic-volumes-enabled.png[A screenshot that shows two aggrega
 
 * Add capacity to an aggregate
 +
-While Cloud Manager automatically adds capacity to aggregates as needed, you can manually increase the capacity yourself.
+While BlueXP automatically adds capacity to aggregates as needed, you can manually increase the capacity yourself.
 +
 link:task-manage-aggregates.html[Learn how to increase aggregate capacity].
 

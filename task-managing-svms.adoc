@@ -5,7 +5,7 @@ keywords: storage virtual machine, vserver, svm, storage vm, supported number, n
 summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 ---
 
-= Manage storage VMs in Cloud Manager
+= Manage storage VMs in BlueXP
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -22,7 +22,7 @@ Multiple storage VMs are supported with certain configurations. Go to the https:
 
 == Work with multiple storage VMs
 
-Cloud Manager supports any additional storage VMs that you create from System Manager or the CLI.
+BlueXP supports any additional storage VMs that you create from System Manager or the CLI.
 
 For example, the following image shows how you can choose a storage VM when you create a volume.
 
@@ -34,9 +34,9 @@ image:screenshot_replicate_volume_svm.gif[A screenshot that shows the ability to
 
 == Modify the name of the default storage VM
 
-Cloud Manager automatically names the single storage VM that it creates for Cloud Volumes ONTAP. You can modify the name of the storage VM if you have strict naming standards. For example, you might want the name to match how you name the storage VMs for your ONTAP clusters.
+BlueXP automatically names the single storage VM that it creates for Cloud Volumes ONTAP. You can modify the name of the storage VM if you have strict naming standards. For example, you might want the name to match how you name the storage VMs for your ONTAP clusters.
 
-If you created any additional storage VMs for Cloud Volumes ONTAP, then you can't rename the storage VMs from Cloud Manager. You'll need to do so directly from Cloud Volumes ONTAP by using System Manager or the CLI.
+If you created any additional storage VMs for Cloud Volumes ONTAP, then you can't rename the storage VMs from BlueXP. You'll need to do so directly from Cloud Volumes ONTAP by using System Manager or the CLI.
 
 .Steps
 
@@ -50,7 +50,7 @@ image:screenshot_svm.gif[Screen shot: Shows the SVM Name field and the edit icon
 
 == Manage storage VMs for disaster recovery
 
-Cloud Manager doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
+BlueXP doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
 
 * https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
 * https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]

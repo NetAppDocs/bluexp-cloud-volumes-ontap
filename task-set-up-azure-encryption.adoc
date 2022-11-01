@@ -22,7 +22,7 @@ Cloud Volumes ONTAP data is automatically encrypted in Azure using https://azure
 If you want to use a customer-managed key with Cloud Volumes ONTAP, then you need to complete the following steps:
 
 . From Azure, create a key vault and then generate a key in that vault
-. From Cloud Manager, use the API to create a Cloud Volumes ONTAP working environment that uses the key
+. From BlueXP, use the API to create a Cloud Volumes ONTAP working environment that uses the key
 
 === Key rotation
 
@@ -42,7 +42,7 @@ Single node::
 
 * All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.
 
-* For root, boot, and data disks, Cloud Manager uses a https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption[disk encryption set^], which enables management of encryption keys with managed disks.
+* For root, boot, and data disks, BlueXP uses a https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption[disk encryption set^], which enables management of encryption keys with managed disks.
 
 * Any new data disks also use the same disk encryption set.
 
@@ -73,11 +73,11 @@ Note the following requirements for the key:
 
 == Create a working environment that uses the encryption key
 
-After you create the key vault and generate an encryption key, you can create a new Cloud Volumes ONTAP system that is configured to use the key. These steps are supported by using the Cloud Manager API.
+After you create the key vault and generate an encryption key, you can create a new Cloud Volumes ONTAP system that is configured to use the key. These steps are supported by using the BlueXP API.
 
 .Required permissions
 
-If you want to use a customer-managed key with a single node Cloud Volumes ONTAP system, ensure that the Cloud Manager Connector has the following permissions:
+If you want to use a customer-managed key with a single node Cloud Volumes ONTAP system, ensure that the BlueXP Connector has the following permissions:
 
 [source,json]
 "Microsoft.Compute/diskEncryptionSets/read"
@@ -93,7 +93,7 @@ NOTE: The first three permissions aren't required for HA pairs.
 
 .Steps
 
-. Obtain the list of key vaults in your Azure subscription by using the following Cloud Manager API call.
+. Obtain the list of key vaults in your Azure subscription by using the following BlueXP API call.
 +
 For an HA pair: `GET /azure/ha/metadata/vaults`
 +
@@ -103,7 +103,7 @@ Make note of the *name* and *resourceGroup*. You'll need to specify those values
 +
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#azure-hametadata[Learn more about this API call^].
 
-. Obtain the list of keys within the vault by using the following Cloud Manager API call.
+. Obtain the list of keys within the vault by using the following BlueXP API call.
 +
 For an HA pair: `GET /azure/ha/metadata/keys-vault`
 +
@@ -113,7 +113,7 @@ Make note of the *keyName*. You'll need to specify that value (along with the va
 +
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#azure-hametadata[Learn more about this API call^].
 
-. Create a Cloud Volumes ONTAP system by using the following Cloud Manager API call.
+. Create a Cloud Volumes ONTAP system by using the following BlueXP API call.
 
 .. For an HA pair:
 +

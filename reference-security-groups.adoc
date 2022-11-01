@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-security-groups.html
 keywords: security group, security groups, rules, ports, aws, inbound, outbound, rules
-summary: Cloud Manager creates AWS security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you need to use your own.
+summary: BlueXP creates AWS security groups that include the inbound and outbound rules that BlueXP and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you need to use your own.
 ---
 
 = Security group rules for AWS
@@ -13,7 +13,7 @@ summary: Cloud Manager creates AWS security groups that include the inbound and 
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager creates AWS security groups that include the inbound and outbound rules that the Connector and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
+BlueXP creates AWS security groups that include the inbound and outbound rules that the Connector and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
 == Rules for Cloud Volumes ONTAP
 
@@ -202,7 +202,7 @@ NOTE: Rather than open ports 443 and 53, you can create an interface VPC endpoin
 
 The predefined internal security group for a Cloud Volumes ONTAP HA configuration includes the following rules. This security group enables communication between the HA nodes and between the mediator and the nodes.
 
-Cloud Manager always creates this security group. You do not have the option to use your own.
+BlueXP always creates this security group. You do not have the option to use your own.
 
 === Inbound rules
 
@@ -292,6 +292,6 @@ NOTE: The source IP address is the Connector host.
 | API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
 .2+| API calls | TCP | 3000 | ONTAP HA mediator | Communication with the ONTAP HA mediator
 | TCP | 8088 | Backup to S3 | API calls to Backup to S3
-| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+| DNS | UDP	| 53 | DNS | Used for DNS resolve by BlueXP
 | Cloud Data Sense | HTTP | 80 | Cloud Data Sense instance | Cloud Data Sense for Cloud Volumes ONTAP
 |===

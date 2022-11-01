@@ -25,7 +25,9 @@ endif::aws[]
 
 .Steps
 
-. In Cloud Manager, identify the IP address of the cluster management interface:
+. In BlueXP, identify the IP address of the cluster management interface:
+
+.. From the left navigation menu, select *Storage > Canvas*.
 
 .. On the Canvas page, select the Cloud Volumes ONTAP system.
 

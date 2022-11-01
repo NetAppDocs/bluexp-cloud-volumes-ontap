@@ -68,7 +68,7 @@ If you don't have the license file yet, refer to the section below.
 
 .Result
 
-Cloud Manager adds the license to the Digital Wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the *BYOL* tab in the Digital Wallet.
+BlueXP adds the license to the Digital Wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the *BYOL* tab in the Digital Wallet.
 
 === Exchange unassigned node-based licenses
 
@@ -101,11 +101,11 @@ image:screenshot-exchange-license.png[A screenshot of the Exchange License optio
 
 .Result
 
-Cloud Manager converts the unassigned license to the service that you selected. You can view the new license in the *Data Services Licenses* tab.
+BlueXP converts the unassigned license to the service that you selected. You can view the new license in the *Data Services Licenses* tab.
 
 === Obtain a system license file
 
-In most cases, Cloud Manager can automatically obtain your license file using your NetApp Support Site account. But if it can't, then you'll need to manually upload the license file. If you don't have the license file, you can obtain it from netapp.com.
+In most cases, BlueXP can automatically obtain your license file using your NetApp Support Site account. But if it can't, then you'll need to manually upload the license file. If you don't have the license file, you can obtain it from netapp.com.
 
 .Steps
 
@@ -121,9 +121,9 @@ image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetA
 
 === Update a system license
 
-When you renew a BYOL subscription by contacting a NetApp representative, Cloud Manager automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
+When you renew a BYOL subscription by contacting a NetApp representative, BlueXP automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
 
-If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager.
+If BlueXP can't access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to BlueXP.
 
 .Steps
 
@@ -141,7 +141,7 @@ If Cloud Manager can't access the license file over the secure internet connecti
 
 .Result
 
-Cloud Manager updates the license on the Cloud Volumes ONTAP system.
+BlueXP updates the license on the Cloud Volumes ONTAP system.
 
 === Manage extra capacity licenses
 
@@ -151,7 +151,7 @@ The number of licenses that you can purchase for a single node system or HA pair
 
 ==== Add capacity licenses
 
-Purchase an extra capacity license by contacting us through the chat icon in the lower-right of Cloud Manager. After you purchase the license, you can apply it to a Cloud Volumes ONTAP system.
+Purchase an extra capacity license by contacting us through the chat icon in the lower-right of BlueXP. After you purchase the license, you can apply it to a Cloud Volumes ONTAP system.
 
 .Steps
 
@@ -169,7 +169,7 @@ Purchase an extra capacity license by contacting us through the chat icon in the
 
 ==== Update capacity licenses
 
-If you extended the term of an extra capacity license, you'll need to update the license in Cloud Manager.
+If you extended the term of an extra capacity license, you'll need to update the license in BlueXP.
 
 .Steps
 
@@ -205,7 +205,7 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 An evaluation license is good for 30 days. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade.
 
-When you convert an Eval license to a BYOL, Cloud Manager restarts the Cloud Volumes ONTAP system.
+When you convert an Eval license to a BYOL, BlueXP restarts the Cloud Volumes ONTAP system.
 
 * For a single-node system, the restart results in I/O interruption during the reboot process.
 * For an HA pair, the restart initiates takeover and giveback to continue serving I/O to clients.
@@ -226,7 +226,7 @@ When you convert an Eval license to a BYOL, Cloud Manager restarts the Cloud Vol
 
 .Result
 
-Cloud Manager starts the conversion process. Cloud Volumes ONTAP automatically restarts as part of this process. When it's back up, the licensing information will reflect the new license.
+BlueXP starts the conversion process. Cloud Volumes ONTAP automatically restarts as part of this process. When it's back up, the licensing information will reflect the new license.
 
 == Change between PAYGO and BYOL
 

@@ -32,9 +32,9 @@ Tiering data to object storage is not recommended when using Throughput Optimize
 
 Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single S3 bucket.
 +
-Cloud Manager creates a single S3 bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different S3 bucket is not created for each volume.
+BlueXP creates a single S3 bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different S3 bucket is not created for each volume.
 +
-When Cloud Manager creates the S3 bucket, it uses the following default settings:
+When BlueXP creates the S3 bucket, it uses the following default settings:
 
 * Storage class: Standard
 * Default encryption: Disabled
@@ -63,9 +63,9 @@ Performance tier:: The performance tier can be either SSDs or HDDs.
 
 Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single Blob container.
 +
-Cloud Manager creates a new storage account with a container for each Cloud Volumes ONTAP working environment. The name of the storage account is random. A different container is not created for each volume.
+BlueXP creates a new storage account with a container for each Cloud Volumes ONTAP working environment. The name of the storage account is random. A different container is not created for each volume.
 +
-Cloud Manager creates the storage account with the following settings:
+BlueXP creates the storage account with the following settings:
 
 * Access tier: Hot
 * Performance: Standard
@@ -96,9 +96,9 @@ Performance tier:: The performance tier can be either SSD persistent disks, bala
 
 Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single Google Cloud Storage bucket.
 +
-Cloud Manager creates a bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different bucket is not created for each volume.
+BlueXP creates a bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different bucket is not created for each volume.
 +
-When Cloud Manager creates the bucket, it uses the following default settings:
+When BlueXP creates the bucket, it uses the following default settings:
 
 * Location type: Region
 * Storage class: Standard
@@ -128,7 +128,7 @@ Some tiering policies have an associated minimum cooling period, which sets the 
 
 TIP: You can change the minimum cooling period and default aggregate threshold of 50% (more on that below). http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-AD522711-01F9-4413-A254-929EAE871EBF.html[Learn how to change the cooling period^] and http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-8FC4BFD5-F258-4AA6-9FCB-663D42D92CAA.html[learn how to change the threshold^].
 
-Cloud Manager enables you to choose from the following volume tiering policies when you create or modify a volume:
+BlueXP enables you to choose from the following volume tiering policies when you create or modify a volume:
 
 Snapshot Only:: After an aggregate has reached 50% capacity, Cloud Volumes ONTAP tiers cold user data of Snapshot copies that are not associated with the active file system to the capacity tier. The cooling period is approximately 2 days.
 +
@@ -146,7 +146,7 @@ If read by random reads, the cold data blocks in the capacity tier become hot an
 
 None:: Keeps data of a volume in the performance tier, preventing it from being moved to the capacity tier.
 
-When you replicate a volume, you can choose whether to tier the data to object storage. If you do, Cloud Manager applies the *Backup* policy to the data protection volume. Starting with Cloud Volumes ONTAP 9.6, the *All* tiering policy replaces the backup policy.
+When you replicate a volume, you can choose whether to tier the data to object storage. If you do, BlueXP applies the *Backup* policy to the data protection volume. Starting with Cloud Volumes ONTAP 9.6, the *All* tiering policy replaces the backup policy.
 
 === Turning off Cloud Volumes ONTAP impacts the cooling period
 
