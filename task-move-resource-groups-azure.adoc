@@ -15,7 +15,7 @@ summary: Cloud Volumes ONTAP supports Azure resource groups moves but the workfl
 [.lead]
 Cloud Volumes ONTAP supports Azure resource groups moves but the workflow happens in the Azure console only. 
 
-You can move a Working Environment from one Resource Group to a different Resource Group in Azure within the same Azure subscription. Moving resource groups between different Azure subscriptions is not supported. 
+You can move a Working Environment from one resource group to a different resource group in Azure within the same Azure subscription. Moving resource groups between different Azure subscriptions is not supported. 
 
 NOTE: Only Working Environments in Cloud Volumes ONTAP that were created with the configuration `create-private-link-for-storage-account` set to `false` will be available to move. 
 
