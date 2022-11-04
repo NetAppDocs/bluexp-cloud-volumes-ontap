@@ -26,7 +26,7 @@ The following changes were introduced with the 3.9.22 release of the Connector.
 
 === NDMP-copy certification  
 
-* NDMP-copy is now certified for use with the Cloud Volume ONTAP platform.
+NDMP-copy is now certified for use with the Cloud Volume ONTAP platform.
 
 == 18 September 2022
 
