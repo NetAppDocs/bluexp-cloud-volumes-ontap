@@ -20,6 +20,14 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
+== 6 November 2022
+
+The following changes were introduced with the 3.9.22 release of the Connector.
+
+=== NDMP-copy certification  
+
+* NDMP-copy is now certified for use with the Cloud Volume ONTAP platform.
+
 == 18 September 2022
 
 The following changes were introduced with the 3.9.22 release of the Connector.
