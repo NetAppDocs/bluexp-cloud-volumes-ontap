@@ -25,7 +25,9 @@ The enhancements described on this page are specific to BlueXP features that ena
 The following changes were introduced with the 3.9.22 release of the Connector.
 
 === Managed disk encryption support for Azure 
-* Added new Azure permission to encrypt all managed disks upon creation. For more information on this new functionality, see https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html[Set up Cloud Volumes ONTAP to use a customer-managed key in Azure] 
+* Added new Azure permission to encrypt all managed disks upon creation. 
++
+For more information on this new functionality, see https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html[Set up Cloud Volumes ONTAP to use a customer-managed key in Azure] 
 
 == 18 September 2022
 

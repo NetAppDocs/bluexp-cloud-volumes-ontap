@@ -34,7 +34,7 @@ After you create a Cloud Volumes ONTAP working environment that is configured to
 
 Azure HA multi availability zone::
 
-* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.*** 
+* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.^1^ 
 
 * For root, boot, NVRAM, core and data disks, Cloud Manager uses a disk encryption set, which enables management of encryption keys with managed disks.
 
