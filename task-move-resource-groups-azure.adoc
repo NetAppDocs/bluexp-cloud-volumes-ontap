@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-moving-resource-groups-azure.html
-keywords: move resource groups, azure, resource groups, azure console, Azure subscriptions
+keywords: move resource groups, azure, remove working environment, resource groups, azure console, Azure subscriptions
 summary: Cloud Volumes ONTAP supports Azure resource groups moves but the workflow happens in the Azure console only. 
 ---
 
