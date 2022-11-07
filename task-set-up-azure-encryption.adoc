@@ -32,21 +32,26 @@ If you create a new version of your key, Cloud Volumes ONTAP automatically uses 
 
 After you create a Cloud Volumes ONTAP working environment that is configured to use a customer-managed key, Cloud Volumes ONTAP data is encrypted as follows.
 
-HA pairs::
+Azure HA single availability zone::
 
-* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.
+* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.^1^
 
-* Any new storage accounts (for example, when you add disks or aggregates) also use the same key.
+* Any new storage accounts (for example, when you add disks or aggregates) also use the same key.^1^
+
+* From ONTAP 9.10.1P3, for NVRAM and the core disk, BlueXP uses a https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption[disk encryption set^], which enables management of encryption keys with managed disks. Lower versions will use Microsoft-managed key, instead of the customer-managed key.
 
 Single node::
 
-* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.
+* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key. ^1^
 
 * For root, boot, and data disks, BlueXP uses a https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption[disk encryption set^], which enables management of encryption keys with managed disks.
 
 * Any new data disks also use the same disk encryption set.
 
-* NVRAM and the core disk are encrypted using a Microsoft-managed key, instead of the customer-managed key.
+* From ONTAP 9.9.1P7, For NVRAM and the core disk, BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks. Lower versions will use Microsoft-managed key, instead of the customer-managed key.
+
+.Footnote
+. If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the Cloud Volumes ONTAP creation request. This applies for all type of deployments. If you do not provide this, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
 
 == Create a key vault and generate a key
 
@@ -62,7 +67,7 @@ Note the following requirements for the key vault:
 * The following options should be enabled:
 ** *Soft-delete* (this option is enabled by default, but must _not_ be disabled)
 ** *Purge protection*
-** *Azure Disk Encryption for volume encryption* (for single node Cloud Volumes ONTAP systems only)
+** *Azure Disk Encryption for volume encryption* 
 
 . https://docs.microsoft.com/en-us/azure/key-vault/keys/quick-create-portal#add-a-key-to-key-vault[Generate a key in the key vault^].
 +
@@ -86,6 +91,7 @@ If you want to use a customer-managed key with a single node Cloud Volumes ONTAP
 "Microsoft.KeyVault/vaults/deploy/action",
 "Microsoft.KeyVault/vaults/read",
 "Microsoft.KeyVault/vaults/accessPolicies/write"
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View the latest list of permissions^]
 
@@ -123,8 +129,9 @@ The request body must include the following fields:
 +
 [source, json, indent=0]
 "azureEncryptionParameters": {
-       "key": "keyName",
-       "vaultName": "vaultName"
+              "key": "keyName",
+              "vaultName": "vaultName",
+              "userAssignedIdentity": " userAssignedIdentityId", [Optional]***
 }
 +
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#azure-haworking-environments[Learn more about this API call^].
@@ -137,8 +144,9 @@ The request body must include the following fields:
 +
 [source, json]
 "azureEncryptionParameters": {
-       "key": "keyName",
-       "vaultName": "vaultName"
+              "key": "keyName",
+              "vaultName": "vaultName",
+              "userAssignedIdentity": " userAssignedIdentityId", [Optional]***
 }
 +
 https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html#azure-vsaworking-environments[Learn more about this API call^].
