@@ -195,7 +195,7 @@ sidebar:
                 - title: Use an Azure Private Link or service endpoints
                   url: /task-enabling-private-link.html
                 - title: Move resource groups 
-                  url: /task-move-resource-groups-azure.html 
+                  url: /task-moving-resource-groups-azure.html 
             - title: Google Cloud administration
               flavor: gcp
               entries:

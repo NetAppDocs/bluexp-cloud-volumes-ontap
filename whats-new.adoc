@@ -21,13 +21,13 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 6 November 2022
-The following changes were introduced with the 3.9.22 release of the Connector.
+The following changes were introduced with the 3.9.23 release of the Connector.
 
 === Moving resource groups in Azure
 
-You can now move a Working Environment from one resource group to a different resource group in Azure within the same Azure subscription. 
+You can now move a working environment from one resource group to a different resource group in Azure within the same Azure subscription. 
 
-For more information, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-move-resource-groups-azure.html[Move resource groups]. 
+For more information, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html[Moving resource groups]. 
 
 == 18 September 2022
 
