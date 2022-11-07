@@ -22,7 +22,7 @@ You can move a working environment from one resource group to a different resour
 . Open the Azure console. 
 . Execute the resource group move in the Azure console.
 +
-To complete the move, refer to link: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription[Move resources to a new resource group or subscription in Microsoft Azure’s documentation^].
+To complete the move, refer to link:https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription[Move resources to a new resource group or subscription in Microsoft Azure’s documentation^].
 . In *Canvas*, discover the working environment. 
 . Look for the new resource group in the information for the Working Environment. 
 
