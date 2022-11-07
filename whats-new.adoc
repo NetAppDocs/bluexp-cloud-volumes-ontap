@@ -22,11 +22,13 @@ The enhancements described on this page are specific to BlueXP features that ena
 //tag::whats-new[]
 == 6 November 2022
 
-The following changes were introduced with the 3.9.22 release of the Connector.
+The following changes were introduced with the 3.9.23 release of the Connector.
 
 === NDMP-copy certification  
 
-NDMP-copy is now certified for use with the Cloud Volume ONTAP platform.
+NDMP-copy is now certified for use with the Cloud Volume ONTAP.
+
+For information on how to configure and use NDMP, see https://docs.netapp.com/us-en/ontap/ndmp/index.html[NDMP configuration overview].
 
 == 18 September 2022
 
