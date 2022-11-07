@@ -47,56 +47,6 @@ Note that BlueXP creates an SVM management LIF on HA pairs, but not on single no
 
 TIP: A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
-==== IP addresses for a single node system
-
-Cloud Manager allocates 5 or 6 IP addresses to a single node system:
-
-** Cluster management IP
-** Node management IP
-** Intercluster IP for SnapMirror
-** NFS/CIFS IP
-** iSCSI IP 
-+
-NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted.
-** SVM management (optional - not configured by default)
-
-==== IP addresses for HA pairs
-
-Cloud Manager allocates IP addresses to 4 NICs (per node) during deployment. 
-
-Note that Cloud Manager creates an SVM management LIF on HA pairs, but not on single node systems in Azure.
-
-NIC0
-
-* Node management IP
-* Intercluster IP
-* iSCSI IP
-+
-NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted. 
-
-NIC1
-
-* Cluster network IP
-
-NIC2
-
-* Cluster Interconnect IP (HA IC)
-
-NIC3
-
-* Pageblob NIC IP (disk access)
-
-NOTE: NIC3 is only applicable to HA deployments with page blob systems. 
-
-The above IP addresses do not migrate on failover events.
-
-Additionally, 4 frontend IPs (FIPs) are configured to migrate on failover events. These frontend IPs live in the load balancer.
-
-* Cluster management IP
-* NodeA data IP (NFS/CIFS)
-* NodeB data IP (NFS/CIFS)
-* SVM management IP
-
 === Secure connections to Azure services
 
 By default, BlueXP enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure storage accounts.
