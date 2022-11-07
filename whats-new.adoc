@@ -22,7 +22,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 //tag::whats-new[]
 == 6 November 2022
 
-The following changes were introduced with the 3.9.22 release of the Connector.
+The following changes were introduced with the 3.9.23 release of the Connector.
 
 === Managed disk encryption support for Azure 
 
