@@ -47,6 +47,7 @@ NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by
 ==== IP addresses for a single node system
 
 BlueXP allocates 5 or 6 IP addresses to a single node system:
+
 ** Cluster management IP
 ** Node management IP
 ** Intercluster IP for SnapMirror
@@ -54,11 +55,13 @@ BlueXP allocates 5 or 6 IP addresses to a single node system:
 ** iSCSI IP 
 +
 NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted.
+
 ** SVM management (optional - not configured by default)
 
 ==== IP addresses for HA pairs
 
 BlueXP allocates IP addresses to 4 NICs (per node) during deployment. 
+
 Note that BlueXP creates an SVM management LIF on HA pairs, but not on single node systems in Azure.
 
 *NIC0*
