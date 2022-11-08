@@ -32,13 +32,13 @@ If you create a new version of your key, Cloud Volumes ONTAP automatically uses 
 
 After you create a Cloud Volumes ONTAP working environment that is configured to use a customer-managed key, Cloud Volumes ONTAP data is encrypted as follows.
 
-HA pairs::
+HA pairs in a single zone::
 
 * All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.
 
 * Any new storage accounts (for example, when you add disks or aggregates) also use the same key.
 
-Single node::
+Single node or HA pairs in multiple zones::
 
 * All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.
 
@@ -62,7 +62,7 @@ Note the following requirements for the key vault:
 * The following options should be enabled:
 ** *Soft-delete* (this option is enabled by default, but must _not_ be disabled)
 ** *Purge protection*
-** *Azure Disk Encryption for volume encryption* (for single node Cloud Volumes ONTAP systems only)
+** *Azure Disk Encryption for volume encryption* (for single node systems or HA pairs in multiple zones
 
 . https://docs.microsoft.com/en-us/azure/key-vault/keys/quick-create-portal#add-a-key-to-key-vault[Generate a key in the key vault^].
 +
@@ -89,7 +89,7 @@ If you want to use a customer-managed key with a single node Cloud Volumes ONTAP
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View the latest list of permissions^]
 
-NOTE: The first three permissions aren't required for HA pairs.
+NOTE: The permissions aren't required for HA pairs in a single zone. 
 
 .Steps
 
