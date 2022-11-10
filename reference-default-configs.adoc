@@ -134,7 +134,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 
 === Azure (HA pair)
 
-*	Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
 * Two 140 GiB Premium Storage page blobs for the root volume (one per node)
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)

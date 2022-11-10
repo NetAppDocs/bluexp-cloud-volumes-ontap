@@ -56,11 +56,10 @@ Availability Zones::
 Two Cloud Volumes ONTAP nodes are deployed to two Azure multiple availability zones. Multiple availability zones ensure that the nodes are fault and update domains to provide redundancy and availability. https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy[Learn more about Azure Storage redundancy in the Azure docs^].
 
 Disks::
-Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, and core data].
+Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, partner root, and core data].
 
 Storage accounts::
-* One storage account is required for managed disks.
-* Starting with Cloud Volumes ONTAP 9.7, the storage accounts that BlueXP creates for HA pairs are general-purpose v2 storage accounts.
+* One storage account is required for managed disks. Storage accounts that BlueXP creates for HA pairs are general-purpose v2 storage accounts.
 * You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
 
 == RPO and RTO
