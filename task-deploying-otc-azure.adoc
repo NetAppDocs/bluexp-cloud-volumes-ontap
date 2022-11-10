@@ -279,6 +279,7 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
 
 . *HA Deployment Models*: 
+
 .. Select *Single Availability Zone* or *Multiple Availability Zone*. 
 .. *Location and Connectivity* (single AZ) and *Region and Connectivity* (multiple AZs)
 * For single AZ, select a region, VNet, and subnet.
