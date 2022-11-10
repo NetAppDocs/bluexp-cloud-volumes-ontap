@@ -342,14 +342,6 @@ For help choosing a disk size, see link:task-planning-your-config-azure.html#siz
 +
 link:concept-data-tiering.html[Learn more about data tiering].
 
-. *Write Speed & WORM* (single node systems only): Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
-+
-link:concept-write-speed.html[Learn more about write speed].
-+
-WORM can't be enabled if data tiering was enabled.
-+
-link:concept-worm.html[Learn more about WORM storage].
-
 . *Secure Communication to Storage & WORM* (HA only): Choose whether to enable an HTTPS connection to Azure storage accounts, and activate write once, read many (WORM) storage, if desired.
 +
 The HTTPS connection is from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
