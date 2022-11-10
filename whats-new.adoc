@@ -20,6 +20,16 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
+== 15 November 2022
+
+The following changes were introduced with the 3.9.23 release of the Connector.
+
+=== ONTAP S3 license in GCP
+
+An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.12.1 or later in Google Cloud Platform.
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
+
 == 18 September 2022
 
 The following changes were introduced with the 3.9.22 release of the Connector.
