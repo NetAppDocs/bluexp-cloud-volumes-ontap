@@ -105,8 +105,6 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Availability Zone | For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, BlueXP will select one for you.
-
 | Resource Group
 
 a| Create a new resource group for Cloud Volumes ONTAP or use an existing resource group. The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. While it is possible to deploy Cloud Volumes ONTAP in an existing, shared resource group, it's not recommended due to the risk of data loss. See the warning above for more details.
@@ -150,17 +148,11 @@ For help choosing a disk type and size, see link:task-planning-your-config-azure
 +
 link:concept-data-tiering.html[Learn more about data tiering].
 
-. *Write Speed & WORM* (single node systems only): Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
+. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
 +
 WORM can't be enabled if data tiering was enabled.
-+
-link:concept-worm.html[Learn more about WORM storage].
-
-. *Secure Communication to Storage & WORM* (HA only): Choose whether to enable an HTTPS connection to Azure storage accounts, and activate write once, read many (WORM) storage, if desired.
-+
-The HTTPS connection is from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
 +
 link:concept-worm.html[Learn more about WORM storage].
 
@@ -294,8 +286,6 @@ The following table describes fields for which you might need guidance:
 |===
 | Field
 | Description
-
-| Availability Zone | For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, BlueXP will select one for you.
 
 | Resource Group
 
