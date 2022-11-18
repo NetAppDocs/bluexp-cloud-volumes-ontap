@@ -51,4 +51,4 @@ endif::azure,aws[]
 
 NVMe-TCP is supported for AWS, Azure, and GCP cloud providers if you are using Cloud Volumes ONTAP version 9.12.1 or newer. Configuration and workflows for NVMe-TCP are performed exclusively through ONTAP. 
 
-For more information on NVMe compatibility with ONTAP, see https://docs.netapp.com/us-en/ontap/nvme/support-limitations.html#namespace-limitations-and-support[NVMe support and limitations^].
+For more information on configuring NVMe through ONTAP, see https://docs.netapp.com/us-en/ontap/task_nvme_provision_suse_linux.html[Provision NVMe storage for SUSE Linux^].
