@@ -93,7 +93,7 @@ UNIX for NFS volumes
 
 |===
 +
-See the _volume create_ man page for information about these attributes.
+See the link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html[ONTAP _volume create_ man page] for information about these attributes.
 
 == Internal disks for system data
 
