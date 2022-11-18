@@ -335,7 +335,7 @@ link:concept-data-tiering.html[Learn more about data tiering].
 +
 link:concept-write-speed.html[Learn more about write speed].
 +
-This option is only available for the following VM types: DS5_v2, DS14_v2, DS15_v2, E48s_v3, E8ds_v4, E32ds_v4, E48ds_v4, E80ids_v4
+This option is only available for certain VM types. To find out which VM types are supported, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs]. 
 +
 WORM can't be enabled if data tiering was enabled.
 +
