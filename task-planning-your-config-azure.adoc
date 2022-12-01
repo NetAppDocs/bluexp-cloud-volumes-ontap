@@ -51,14 +51,20 @@ Look at the supported virtual machine types in the http://docs.netapp.com/cloud-
 Azure disk type::
 When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk.
 +
-HA systems use Premium page blobs. Meanwhile, single node systems can use two types of Azure Managed Disks:
+Single node systems can use three types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
 * _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
 
 * _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
-+
+
+HA systems use:
+
+* _Premium page blobs_ 
+
+* _Managed disks_
+
 For additional details about the use cases for these disks, see https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure Documentation: What disk types are available in Azure?^].
 
 Azure disk size::

@@ -74,7 +74,10 @@ Each managed disk type has a maximum disk size of 32 TiB.
 You can pair a managed disk with Azure Blob storage to link:concept-data-tiering.html[tier inactive data to low-cost object storage].
 
 HA pairs::
-HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.
+HA pairs use:
+
+* _Premium page blobs_ with a maximum disk size of 8 TiB
+* _Managed disks_ with a maximum disk size of 32 TiB
 
 *Related links*
 
