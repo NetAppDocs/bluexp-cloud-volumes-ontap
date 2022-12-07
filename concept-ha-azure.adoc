@@ -56,14 +56,14 @@ Availability Set::
 The Azure Availability Set is a logical grouping of the Cloud Volumes ONTAP nodes. The Availability Set ensures that the nodes are in different fault and update domains to provide redundancy and availability. https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview[Learn more about Availability Sets in the Azure docs^].
 
 Disks::
-Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, and core data].
+Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, partner root, core, and NVRAM data].
 
 Storage accounts::
-* One storage account is required for managed disks.
-* One or more storage accounts are required for the Premium Storage page blobs, as the disk capacity limit per storage account is reached.
+* Storage accounts are used for managed disk based deployments to handle diagnostic logs and tiering to blob storage.
 +
 https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets[Azure documentation: Azure Storage scalability and performance targets for storage accounts^].
-* One storage account is required for data tiering to Azure Blob storage.
+
+* You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
 
 === HA multiple availability zone configuration
 A Cloud Volumes ONTAP HA multiple availability zone configuration in Azure includes the following components:
