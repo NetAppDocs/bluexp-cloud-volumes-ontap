@@ -154,11 +154,12 @@ ifdef::gcp[]
 
 === Google Cloud (HA pair)
 
-* Two 10 GiB SSD persistent disks for boot data
-* Four 64 GiB SSD persistent disk for root data
+* Two 10 GiB SSD persistent disks for boot data 
+* Four 64 GiB SSD persistent disk for root data 
 * Two 500 GiB SSD persistent disk for NVRAM
-* Two 315 GiB Standard persistent disk for saving cores
+* Two 315 GiB Standard persistent disk for saving cores 
 * One 10 GiB Standard persistent disk for mediator data
+* One 10 GiB Standard persistent disk for mediator boot data
 * Snapshots for boot and root data
 * Boot and root disks are encrypted by default.
 endif::gcp[]
