@@ -20,6 +20,17 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
+== 4 December 2022
+The following changes were introduced with the 3.9.24 release of the Connector.
+
+=== WORM + Cloud Backup now available during Cloud Volumes ONTAP creation 
+
+The ability to activate both write once, read many (WORM) and Cloud Backup features is now available during the Cloud Volumes ONTAP creation process. 
+
+=== Israel region now supported in Google Cloud 
+
+The Israel region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.11.1 P3 and later.
+
 == 6 November 2022
 The following changes were introduced with the 3.9.23 release of the Connector.
 
@@ -68,6 +79,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-o
 === AutoSupport notifications
 
 BlueXP will now generate a notification if a Cloud Volumes ONTAP system is unable to send AutoSupport messages. The notification includes a link to instructions that you can use to troubleshoot networking issues.
+//end::whats-new[]
 
 == 31 July 2022
 
@@ -112,7 +124,6 @@ Two new capacity-based licensing packages are available for Cloud Volumes ONTAP 
 * *Edge Cache*: Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#packages[Learn more about these licensing packages].
-//end::whats-new[]
 
 == 3 July 2022
 

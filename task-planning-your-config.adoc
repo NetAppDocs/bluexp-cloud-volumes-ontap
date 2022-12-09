@@ -82,10 +82,6 @@ For more details about EBS disk performance, refer to http://docs.aws.amazon.com
 +
 As noted above, choosing a disk size is not supported with Cloud Volumes ONTAP configurations that support the Amazon EBS Elastic Volumes feature. link:concept-aws-elastic-volumes.html[Learn more about Elastic Volumes support].
 
-Watch the following video for more details about sizing your Cloud Volumes ONTAP system in AWS:
-
-video::GELcXmOuYPw[youtube, width=848, height=480]
-
 == View default system disks
 
 In addition to the storage for user data, BlueXP also purchases cloud storage for Cloud Volumes ONTAP system data (boot data, root data, core data, and NVRAM). For planning purposes, it might help for you to review these details before you deploy Cloud Volumes ONTAP.

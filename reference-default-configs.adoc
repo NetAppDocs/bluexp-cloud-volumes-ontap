@@ -93,7 +93,7 @@ UNIX for NFS volumes
 
 |===
 +
-See the _volume create_ man page for information about these attributes.
+See the link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html[ONTAP _volume create_ man page] for information about these attributes.
 
 == Internal disks for system data
 
@@ -130,16 +130,25 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 
 * One Azure snapshot for each boot disk and root disk
 
-* Boot and root disks are encrypted by default.
+* Every disk by default in Azure is encrypted at rest.
 
 === Azure (HA pair)
 
+.HA pairs with page blob
 * Two 10 GiB Premium SSD disks for the boot volume (one per node)
 * Two 140 GiB Premium Storage page blobs for the root volume (one per node)
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
-* Boot and root disks are encrypted by default.
+* Every disk by default in Azure is encrypted at rest.
+
+.HA pairs in multiple availability zones
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 512 GiB Premium Storage page blobs for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 512 GiB Premium SSD disks for NVRAM (one per node)
+* One Azure snapshot for each boot disk and root disk
+* Every disk by default in Azure is encrypted at rest.
 endif::azure[]
 
 ifdef::gcp[]
@@ -154,11 +163,12 @@ ifdef::gcp[]
 
 === Google Cloud (HA pair)
 
-* Two 10 GiB SSD persistent disks for boot data
-* Four 64 GiB SSD persistent disk for root data
+* Two 10 GiB SSD persistent disks for boot data 
+* Four 64 GiB SSD persistent disk for root data 
 * Two 500 GiB SSD persistent disk for NVRAM
-* Two 315 GiB Standard persistent disk for saving cores
+* Two 315 GiB Standard persistent disk for saving cores 
 * One 10 GiB Standard persistent disk for mediator data
+* One 10 GiB Standard persistent disk for mediator boot data
 * Snapshots for boot and root data
 * Boot and root disks are encrypted by default.
 endif::gcp[]
