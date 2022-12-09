@@ -38,20 +38,68 @@ If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify
 
 === IP addresses
 
-BlueXP allocates the following number of IP addresses to Cloud Volumes ONTAP in Azure:
+BlueXP automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP in Azure. You need to make sure that your networking has enough private IP addresses available.  
 
-* Single node: 5 IP addresses
-* HA pair: 16 IP addresses
+The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter. 
+
+NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted.
+
+==== IP addresses for a single node system
+
+BlueXP allocates 5 or 6 IP addresses to a single node system:
+
+** Cluster management IP
+** Node management IP
+** Intercluster IP for SnapMirror
+** NFS/CIFS IP
+** iSCSI IP 
++
+NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted.
+
+** SVM management (optional - not configured by default)
+
+==== IP addresses for HA pairs
+
+BlueXP allocates IP addresses to 4 NICs (per node) during deployment. 
 
 Note that BlueXP creates an SVM management LIF on HA pairs, but not on single node systems in Azure.
 
-TIP: A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
+*NIC0*
+
+* Node management IP
+* Intercluster IP
+* iSCSI IP
++
+NOTE: The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted. 
+
+*NIC1*
+
+* Cluster network IP
+
+*NIC2*
+
+* Cluster Interconnect IP (HA IC)
+
+*NIC3*
+
+* Pageblob NIC IP (disk access)
+
+NOTE: NIC3 is only applicable to HA deployments that use page blob storage. 
+
+The above IP addresses do not migrate on failover events.
+
+Additionally, 4 frontend IPs (FIPs) are configured to migrate on failover events. These frontend IPs live in the load balancer.
+
+* Cluster management IP
+* NodeA data IP (NFS/CIFS)
+* NodeB data IP (NFS/CIFS)
+* SVM management IP
 
 === Secure connections to Azure services
 
-By default, BlueXP enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure storage accounts.
+By default, BlueXP enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure page blob storage accounts.
 
-In most cases, there's nothing that you need to do—​BlueXP manages the Azure Private Link for you. But if you use Azure Private DNS, then you'll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
+In most cases, there's nothing that you need to do—BlueXP manages the Azure Private Link for you. But if you use Azure Private DNS, then you'll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
 
 You can also disable the Private Link connection, if required by your business needs. If you disable the link, BlueXP configures Cloud Volumes ONTAP to use a service endpoint instead.
 
@@ -315,9 +363,21 @@ The Connector requires outbound internet access to manage resources and processe
 | Purpose
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-| \https://*.cloudmanager.cloud.netapp.com
 
-\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within BlueXP.
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
