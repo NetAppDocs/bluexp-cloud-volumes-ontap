@@ -43,7 +43,7 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-target
 * You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
 
 === HA single availability zone configuration with shared managed disks
-A Cloud Volumes ONTAP HA single availability zone configuration runs on top of shared managed disks. In this configuration, Azure places the bulk of the resources into a single zone but this is not guaranteed. This configuration includes the following components:
+A Cloud Volumes ONTAP HA single availability zone configuration running on top of shared managed disk includes the following components:
 
 image:diagram_ha_azure_saz_lrs.png["A conceptual image that shows a load balancer managing incoming traffic from BlueXP and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and LRS managed disks for customer data."]
 
