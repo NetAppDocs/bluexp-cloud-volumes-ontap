@@ -31,6 +31,16 @@ The ability to activate both write once, read many (WORM) and Cloud Backup featu
 
 The Israel region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.11.1 P3 and later.
 
+== 15 November 2022
+
+The following changes were introduced with the 3.9.23 release of the Connector.
+
+=== ONTAP S3 license in GCP
+
+An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.12.1 or later in Google Cloud Platform.
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
+
 == 6 November 2022
 The following changes were introduced with the 3.9.23 release of the Connector.
 
