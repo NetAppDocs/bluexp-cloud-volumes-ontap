@@ -87,7 +87,7 @@ If data loss occurs due to high write speed, the Event Management System (EMS) r
 +
  NOTICE nv.data.loss.possible: An unexpected shutdown occurred while in high write speed mode, which possibly caused a loss of data.
 
-* Cloud Volumes ONTAP 9.11.0 to 9.12.0
+* Cloud Volumes ONTAP 9.11.0 to 9.11.1
 +
  DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown with High Write Speed mode"
 +
