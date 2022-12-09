@@ -64,7 +64,7 @@ For additional details about the use cases for these disks, see https://docs.mic
 
 
 Azure disk type with HA pairs:: 
-HA systems use Premium SSD Shared Managed Disks which both provide high performance for I/O-intensive workloads at a higher cost. HA deployments created before the 9.12.1 release used Premium page blobs. 
+HA systems use Premium SSD Shared Managed Disks which both provide high performance for I/O-intensive workloads at a higher cost. HA deployments created before the 9.12.1 release use Premium page blobs. 
 
 Azure disk size::
 When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. BlueXP uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task-create-aggregates.html[using the advanced allocation option].
