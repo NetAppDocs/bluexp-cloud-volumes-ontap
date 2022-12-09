@@ -363,9 +363,21 @@ The Connector requires outbound internet access to manage resources and processe
 | Purpose
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-| \https://*.cloudmanager.cloud.netapp.com
 
-\https://cloudmanager.cloud.netapp.com | To provide SaaS features and services within BlueXP.
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net
