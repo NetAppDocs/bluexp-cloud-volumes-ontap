@@ -17,7 +17,8 @@ A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliabilit
 
 == HA components
 
-A Cloud Volumes ONTAP HA configuration in Azure includes the following components:
+=== HA page blob configuration 
+A Cloud Volumes ONTAP HA page blob configuration in Azure includes the following components:
 
 image:diagram_ha_azure.png["A conceptual image that shows a load balancer managing incoming traffic from BlueXP and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and Page Blobs for customer data."]
 
@@ -39,6 +40,26 @@ Storage accounts::
 https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets[Azure documentation: Azure Storage scalability and performance targets for storage accounts^].
 * One storage account is required for data tiering to Azure Blob storage.
 * Starting with Cloud Volumes ONTAP 9.7, the storage accounts that BlueXP creates for HA pairs are general-purpose v2 storage accounts.
+* You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
+
+=== HA multiple availability zone configuration
+A Cloud Volumes ONTAP HA multiple availability zone configuration in Azure includes the following components:
+
+image:diagram_ha_azure_maz.png["A conceptual image that shows a load balancer managing incoming traffic from BlueXP and clients, two Cloud Volumes ONTAP nodes in two availability zones, SSD disks for boot data, and managed disks for customer data."]
+
+Note the following about the Azure components that BlueXP deploys for you:
+
+Azure Standard Load Balancer::
+The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
+
+Availability Zones::
+Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. Availability zones ensure that the nodes are in different fault domains. https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy[Learn more about Azure Storage redundancy in the Azure docs^].
+
+Disks::
+Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, partner root, and core data].
+
+Storage accounts::
+* One storage account is required for managed disks. Storage accounts that BlueXP creates for HA pairs are general-purpose v2 storage accounts.
 * You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
 
 == RPO and RTO
