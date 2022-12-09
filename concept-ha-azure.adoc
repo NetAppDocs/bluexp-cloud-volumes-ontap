@@ -58,10 +58,6 @@ Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. A
 Disks::
 Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, partner root, and core data].
 
-Storage accounts::
-* One storage account is required for managed disks. Storage accounts that BlueXP creates for HA pairs are general-purpose v2 storage accounts.
-* You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
-
 == RPO and RTO
 
 An HA configuration maintains high availability of your data as follows:
