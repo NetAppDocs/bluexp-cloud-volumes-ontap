@@ -24,8 +24,16 @@ After the retention period has elapsed, you are responsible for deleting any fil
 == Charging
 
 Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes.
-
-https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^].
+ 
+You should understand the following charging behavior with Cloud Volumes ONTAP 9.10.1 and later:
+ 
+* Beginning with ONTAP 9.10.1, WORM volumes and non-WORM volumes can exist on the same aggregate.
+ 
+* If you enable WORM when you create a Cloud Volumes ONTAP working environment, every volume that you create from BlueXP has WORM enabled. However, you can use the ONTAP CLI or System Manager to create volumes that have WORM disabled. Those volumes are not charged at the WORM rate.
+ 
+* If you don't enable WORM when you create a working environment, every volume that you create from BlueXP has WORM disabled. You are not charged at the WORM rate for those volumes. However, you can use the ONTAP CLI or System Manager to create WORM-enabled volumes. Those volumes will be charged at the WORM rate.
+ 
+https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^]
 
 == Activating WORM storage
 
