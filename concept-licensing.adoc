@@ -49,7 +49,7 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * Support from NetApp is not included.
 * You're limited to 500 GiB of provisioned capacity per Cloud Volumes ONTAP system.
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
-* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, Cloud Manager converts the system to the Essentials package.
+* If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, BlueXP converts the system to the Essentials package.
 +
 As soon as a system is converted to the Essentials package, the <<Notes about charging,minimum charge>> applies.
 +
@@ -135,7 +135,7 @@ link:task-manage-capacity-licenses.html[Learn how to change charging methods].
 
 === Pricing
 
-For details about pricing, go to https://cloud.netapp.com/pricing?hsCtaTracking=4f8b7b77-8f63-4b73-b5af-ee09eab4fbd6%7C5fefbc99-396c-4084-99e6-f1e22dc8ffe7[NetApp Cloud Central^].
+For details about pricing, go to https://cloud.netapp.com/pricing?hsCtaTracking=4f8b7b77-8f63-4b73-b5af-ee09eab4fbd6%7C5fefbc99-396c-4084-99e6-f1e22dc8ffe7[NetApp BlueXP website^].
 
 === Free trials
 
@@ -145,8 +145,8 @@ There are no instance or capacity limitations. You can deploy as many Cloud Volu
 
 There are no hourly software license charges for Cloud Volumes ONTAP, but infrastructure charges from your cloud provider still apply.
 
-TIP: You will receive a notification in Cloud Manager when the free trial starts, when there are 7 days left, and when there is 1 day remaining. For example:
-image:screenshot-free-trial-notification.png[A screenshot of a notification in the Cloud Manager interface that states there is only 7 days remaining on a free trial.]
+TIP: You will receive a notification in BlueXP when the free trial starts, when there are 7 days left, and when there is 1 day remaining. For example:
+image:screenshot-free-trial-notification.png[A screenshot of a notification in the BlueXP interface that states there is only 7 days remaining on a free trial.]
 
 === Supported configurations
 
@@ -188,7 +188,7 @@ The following details can help you understand how charging works with capacity-b
 
 ==== Minimum charge
 
-There is a 4 TiB minimum charge for each data-serving storage VM that has least one primary (read-write) volume. If the sum of the primary volumes is less than 4 TiB, then Cloud Manager applies the 4 TiB minimum charge to that storage VM.
+There is a 4 TiB minimum charge for each data-serving storage VM that has least one primary (read-write) volume. If the sum of the primary volumes is less than 4 TiB, then BlueXP applies the 4 TiB minimum charge to that storage VM.
 
 If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
 

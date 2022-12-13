@@ -15,7 +15,7 @@ summary: Understanding how Cloud Volumes ONTAP uses cloud storage can help you u
 [.lead]
 Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.
 
-CAUTION: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
+CAUTION: All disks and aggregates must be created and deleted directly from BlueXP. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
 
 == Overview
 
@@ -25,7 +25,7 @@ image:diagram_storage.png["This illustration shows an aggregate that is comprise
 
 Several types of cloud disks are supported. You choose the disk type when you create a volume and the default disk size when you deploy Cloud Volumes ONTAP.
 
-TIP: The total amount of storage purchased from a cloud provider is the _raw capacity_. The _usable capacity_ is less because approximately 12 to 14 percent is overhead that is reserved for Cloud Volumes ONTAP use. For example, if Cloud Manager creates a 500 GiB aggregate, the usable capacity is 442.94 GiB.
+TIP: The total amount of storage purchased from a cloud provider is the _raw capacity_. The _usable capacity_ is less because approximately 12 to 14 percent is overhead that is reserved for Cloud Volumes ONTAP use. For example, if BlueXP creates a 500 GiB aggregate, the usable capacity is 442.94 GiB.
 
 ifdef::aws[]
 == AWS storage
@@ -74,7 +74,10 @@ Each managed disk type has a maximum disk size of 32 TiB.
 You can pair a managed disk with Azure Blob storage to link:concept-data-tiering.html[tier inactive data to low-cost object storage].
 
 HA pairs::
-HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.
+HA pairs use two types of disks which provide high performance for I/O-intensive workloads at a higher cost:
+
+* _Premium page blobs_ with a maximum disk size of 8 TiB
+* _Managed disks_ with a maximum disk size of 32 TiB
 
 *Related links*
 

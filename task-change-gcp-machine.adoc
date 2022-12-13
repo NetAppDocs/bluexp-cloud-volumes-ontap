@@ -29,7 +29,7 @@ For single node systems, I/O is interrupted.
 +
 For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 +
-TIP: Cloud Manager gracefully changes one node at a time by initiating takeover and waiting for give back. NetApp's QA team tested both writing and reading files during this process and didn't see any issues on the client side. As connections changed, we did see retries on the I/O level, but the application layer overcame these short "re-wire" of NFS/CIFS connections.
+TIP: BlueXP gracefully changes one node at a time by initiating takeover and waiting for give back. NetApp's QA team tested both writing and reading files during this process and didn't see any issues on the client side. As connections changed, we did see retries on the I/O level, but the application layer overcame these short "re-wire" of NFS/CIFS connections.
 
 .Steps
 

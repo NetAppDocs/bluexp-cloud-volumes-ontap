@@ -26,7 +26,7 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 
-If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
+If an outbound internet connection isn't available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 
 If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
 
@@ -34,7 +34,7 @@ After you've verified that outbound internet access is available, you can test A
 
 == Troubleshoot your AutoSupport configuration
 
-If an outbound connection isn't available and Cloud Manager can't configure your Cloud Volumes ONTAP system to use the Connector as a proxy server, you'll receive a notification from Cloud Manager titled "<working environment name> is unable to send AutoSupport messages."
+If an outbound connection isn't available and BlueXP can't configure your Cloud Volumes ONTAP system to use the Connector as a proxy server, you'll receive a notification from BlueXP titled "<working environment name> is unable to send AutoSupport messages."
 
 You're most likely receiving this message because of networking issues.
 

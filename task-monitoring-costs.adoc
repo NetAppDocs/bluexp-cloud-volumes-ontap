@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-monitoring-costs.html
 keywords: cost, costs, storage, compute, savings, aws, aws costs, billing
-summary: Cloud Manager enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.
+summary: BlueXP enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.
 ---
 
 = Monitoring AWS resource costs
@@ -13,23 +13,25 @@ summary: Cloud Manager enables you to view the costs associated with running Clo
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to view the resource costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.
+BlueXP enables you to view the resource costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.
 
 .About this task
 
-Cloud Manager updates the costs when you refresh the page. You should refer to AWS for final cost details.
+BlueXP updates the costs when you refresh the page. You should refer to AWS for final cost details.
 
 .Step
 
-. Verify that Cloud Manager can obtain cost information from AWS:
+. Verify that BlueXP can obtain cost information from AWS:
 
-.. Ensure that the IAM policy that provides Cloud Manager with permissions includes the required permissions.
+.. Ensure that the IAM policy that provides BlueXP with permissions includes the required permissions.
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[View the required permissions^]
 
 .. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html[Activate the *WorkingEnvironmentId* tag^].
 +
-To track your AWS costs, Cloud Manager assigns a cost allocation tag to Cloud Volumes ONTAP instances. After you create your first working environment, activate the *WorkingEnvironmentId* tag. User-defined tags don't appear on AWS billing reports until you activate them in the Billing and Cost Management console.
+To track your AWS costs, BlueXP assigns a cost allocation tag to Cloud Volumes ONTAP instances. After you create your first working environment, activate the *WorkingEnvironmentId* tag. User-defined tags don't appear on AWS billing reports until you activate them in the Billing and Cost Management console.
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, select a Cloud Volumes ONTAP working environment and then click *Cost*.
 +

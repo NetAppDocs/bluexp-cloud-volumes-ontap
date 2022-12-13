@@ -17,19 +17,19 @@ The Account Admin can remove a Cloud Volumes ONTAP working environment to move i
 
 .About this task
 
-Removing a Cloud Volumes ONTAP working environment removes it from Cloud Manager. It does not delete the Cloud Volumes ONTAP system. You can later rediscover the working environment.
+Removing a Cloud Volumes ONTAP working environment removes it from BlueXP. It does not delete the Cloud Volumes ONTAP system. You can later rediscover the working environment.
 
-Removing a working environment from Cloud Manager enables you to do the following:
+Removing a working environment from BlueXP enables you to do the following:
 
 * Rediscover it in another workspace
-* Rediscover it from another Cloud Manager system
+* Rediscover it from another BlueXP system
 * Rediscover it if you had problems during the initial discovery
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Tools*.
+. In the upper right of the BlueXP console, click the Settings icon, and select *Tools*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 . From the Tools page, click *Launch*.
 
@@ -39,4 +39,4 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-Cloud Manager removes the working environment. Users can rediscover this working environment from the Canvas page at any time.
+BlueXP removes the working environment. Users can rediscover this working environment from the Canvas page at any time.

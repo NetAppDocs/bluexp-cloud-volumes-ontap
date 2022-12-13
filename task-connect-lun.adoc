@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-connect-lun.html
 keywords: lun, connect lun, iscsi lun, target iqn, iqn
-summary: When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, use the IQN to connect to the LUN from your hosts.
+summary: When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, use the IQN to connect to the LUN from your hosts.
 ---
 
 = Connect a LUN to a host
@@ -13,15 +13,17 @@ summary: When you create an iSCSI volume, Cloud Manager automatically creates a 
 :imagesdir: ./media/
 
 [.lead]
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, use the IQN to connect to the LUN from your hosts.
+When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there's no management involved. After you create the volume, use the IQN to connect to the LUN from your hosts.
 
 Note the following:
 
-* Cloud Manager's automatic capacity management doesn't apply to LUNs. When Cloud Manager creates a LUN, it disables the autogrow feature.
+* BlueXP's automatic capacity management doesn't apply to LUNs. When BlueXP creates a LUN, it disables the autogrow feature.
 
 * You can create additional LUNs from System Manager or the CLI.
 
 .Steps
+
+. From the left navigation menu, select *Storage > Canvas*.
 
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 

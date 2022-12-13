@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-networking-aws.html
 keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, tiering, storage tier, storage tiering, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, autosupport, ha, ha pair, high availability
-summary: Cloud Manager handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
+summary: BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 ---
 
 = Networking requirements for Cloud Volumes ONTAP in AWS
@@ -13,7 +13,7 @@ summary: Cloud Manager handles the set up of networking components for Cloud Vol
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
+BlueXP (formerly Cloud Manager) handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 
 == General requirements
 
@@ -30,13 +30,13 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 
 If you have a NAT instance, you must define an inbound security group rule that allows HTTPS traffic from the private subnet to the internet.
 
-If an outbound internet connection isn't available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
+If an outbound internet connection isn't available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
 
 If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
 
 After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
 
-If Cloud Manager notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
+If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
 === Outbound internet access for the HA mediator
 
@@ -46,20 +46,20 @@ The manual option can be a NAT gateway or an interface VPC endpoint from the tar
 
 === Private IP addresses
 
-Cloud Manager automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP. You need to ensure that your networking has enough private IP addresses available.
+BlueXP automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP. You need to ensure that your networking has enough private IP addresses available.
 
-The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port.
+The number of LIFs that BlueXP allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port.
 
 ==== IP addresses for a single node system
 
-Cloud Manager allocates 6 IP addresses to a single node system. 
+BlueXP allocates 6 IP addresses to a single node system.
 
 The following table provides details about the LIFs that are associated with each private IP address.
 
 [cols="20,40",options="header"]
 |===
-| LIF
-| Purpose
+|LIF
+|Purpose
 
 | Cluster management | Administrative management of the entire cluster (HA pair).
 | Node management | Administrative management of a node.
@@ -122,7 +122,7 @@ TIP: When deployed in multiple Availability Zones, several LIFs are associated w
 
 === Security groups
 
-You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference-security-groups.html[Security group rules].
+You do not need to create security groups because BlueXP does that for you. If you need to use your own, refer to link:reference-security-groups.html[Security group rules].
 
 === Connection for data tiering
 
@@ -152,7 +152,7 @@ link:task-deploy-aws-shared-vpc.html[Learn how to deploy an HA pair in a shared 
 
 == Requirements for HA pairs in multiple AZs
 
-Additional AWS networking requirements apply to Cloud Volumes ONTAP HA configurations that use multiple Availability Zones (AZs). You should review these requirements before you launch an HA pair because you must enter the networking details in Cloud Manager when you create the working environment.
+Additional AWS networking requirements apply to Cloud Volumes ONTAP HA configurations that use multiple Availability Zones (AZs). You should review these requirements before you launch an HA pair because you must enter the networking details in BlueXP when you create the working environment.
 
 To understand how HA pairs work, see link:concept-ha.html[High-availability pairs].
 
@@ -169,7 +169,7 @@ One floating IP address is for cluster management, one is for NFS/CIFS data on n
 +
 NOTE: A floating IP address is required for the SVM management LIF if you use SnapDrive for Windows or SnapCenter with the HA pair.
 +
-You need to enter the floating IP addresses in Cloud Manager when you create a Cloud Volumes ONTAP HA working environment. Cloud Manager allocates the IP addresses to the HA pair when it launches the system.
+You need to enter the floating IP addresses in BlueXP when you create a Cloud Volumes ONTAP HA working environment. BlueXP allocates the IP addresses to the HA pair when it launches the system.
 +
 The floating IP addresses must be outside of the CIDR blocks for all VPCs in the AWS region in which you deploy the HA configuration. Think of the floating IP addresses as a logical subnet that's outside of the VPCs in your region.
 +
@@ -177,15 +177,15 @@ The following example shows the relationship between floating IP addresses and t
 +
 image:diagram_ha_floating_ips.png[A conceptual image showing the CIDR blocks for five VPCs in an AWS region and three floating IP addresses that are outside the CIDR blocks of the VPCs.]
 +
-NOTE: Cloud Manager automatically creates static IP addresses for iSCSI access and for NAS access from clients outside the VPC. You don't need to meet any requirements for these types of IP addresses.
+NOTE: BlueXP automatically creates static IP addresses for iSCSI access and for NAS access from clients outside the VPC. You don't need to meet any requirements for these types of IP addresses.
 
 Transit gateway to enable floating IP access from outside the VPC::
 If needed, link:task-setting-up-transit-gateway.html[set up an AWS transit gateway] to enable access to an HA pair's floating IP addresses from outside the VPC where the HA pair resides.
 
 Route tables::
-After you specify the floating IP addresses in Cloud Manager, you are then prompted to select the route tables that should include routes to the floating IP addresses. This enables client access to the HA pair.
+After you specify the floating IP addresses in BlueXP, you are then prompted to select the route tables that should include routes to the floating IP addresses. This enables client access to the HA pair.
 +
-If you have just one route table for the subnets in your VPC (the main route table), then Cloud Manager automatically adds the floating IP addresses to that route table. If you have more than one route table, it's very important to select the correct route tables when launching the HA pair. Otherwise, some clients might not have access to Cloud Volumes ONTAP.
+If you have just one route table for the subnets in your VPC (the main route table), then BlueXP automatically adds the floating IP addresses to that route table. If you have more than one route table, it's very important to select the correct route tables when launching the HA pair. Otherwise, some clients might not have access to Cloud Volumes ONTAP.
 +
 For example, you might have two subnets that are associated with different route tables. If you select route table A, but not route table B, then clients in the subnet associated with route table A can access the HA pair, but clients in the subnet associated with route table B can't.
 +
@@ -226,7 +226,21 @@ The Connector requires outbound internet access to manage resources and processe
 | Purpose
 
 | \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-| \https://*.cloudmanager.cloud.netapp.com | To provide SaaS features and services within Cloud Manager.
+
+a| 
+
+\https://*.api.bluexp.netapp.com
+
+\https://api.bluexp.netapp.com
+
+\https://*.cloudmanager.cloud.netapp.com
+
+\https://cloudmanager.cloud.netapp.com
+
+a| To provide SaaS features and services within BlueXP.
+
+NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+
 | \https://cloudmanagerinfraprod.azurecr.io
 
 \https://*.blob.core.windows.net

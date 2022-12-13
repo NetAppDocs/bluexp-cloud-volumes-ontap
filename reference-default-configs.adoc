@@ -17,11 +17,11 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 
 == Default setup
 
-* Cloud Manager creates one data-serving storage VM when it deploys Cloud Volumes ONTAP. Some configurations support additional storage VMs. link:task-managing-svms.html[Learn more about managing storage VMs].
+* BlueXP creates one data-serving storage VM when it deploys Cloud Volumes ONTAP. Some configurations support additional storage VMs. link:task-managing-svms.html[Learn more about managing storage VMs].
 +
-Starting with the Cloud Manager 3.9.5 release, logical space reporting is enabled on the initial storage VM. When space is reported logically, ONTAP reports the volume space such that all the physical space saved by the storage efficiency features are also reported as used.
+Starting with the BlueXP 3.9.5 release, logical space reporting is enabled on the initial storage VM. When space is reported logically, ONTAP reports the volume space such that all the physical space saved by the storage efficiency features are also reported as used.
 
-* Cloud Manager automatically installs the following ONTAP feature licenses on Cloud Volumes ONTAP:
+* BlueXP automatically installs the following ONTAP feature licenses on Cloud Volumes ONTAP:
 ** CIFS
 ** FlexCache
 ** FlexClone
@@ -70,15 +70,15 @@ NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to cloud p
 +
 The backups are accessible from https://ipaddress/occm/offboxconfig/ where _ipaddress_ is the IP address of the Connector host.
 
-* Cloud Manager sets a few volume attributes differently than other management tools (System Manager or the CLI, for example).
+* BlueXP sets a few volume attributes differently than other management tools (System Manager or the CLI, for example).
 +
-The following table lists the volume attributes that Cloud Manager sets differently from the defaults:
+The following table lists the volume attributes that BlueXP sets differently from the defaults:
 +
 [cols=2*,options="header",cols="15,85"]
 |===
 
 | Attribute
-| Value set by Cloud Manager
+| Value set by BlueXP
 
 | Autosize mode |	grow
 | Maximum autosize
@@ -93,11 +93,11 @@ UNIX for NFS volumes
 
 |===
 +
-See the _volume create_ man page for information about these attributes.
+See the link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html[ONTAP _volume create_ man page] for information about these attributes.
 
 == Internal disks for system data
 
-In addition to the storage for user data, Cloud Manager also purchases cloud storage for system data.
+In addition to the storage for user data, BlueXP also purchases cloud storage for system data.
 
 ifdef::aws[]
 === AWS
@@ -130,16 +130,25 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 
 * One Azure snapshot for each boot disk and root disk
 
-* Boot and root disks are encrypted by default.
+* Every disk by default in Azure is encrypted at rest.
 
 === Azure (HA pair)
 
-*	Two 10 GiB Premium SSD disks for the boot volume (one per node)
+.HA pairs with page blob
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
 * Two 140 GiB Premium Storage page blobs for the root volume (one per node)
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
-* Boot and root disks are encrypted by default.
+* Every disk by default in Azure is encrypted at rest.
+
+.HA pairs in multiple availability zones
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 512 GiB Premium Storage page blobs for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 512 GiB Premium SSD disks for NVRAM (one per node)
+* One Azure snapshot for each boot disk and root disk
+* Every disk by default in Azure is encrypted at rest.
 endif::azure[]
 
 ifdef::gcp[]
@@ -154,18 +163,19 @@ ifdef::gcp[]
 
 === Google Cloud (HA pair)
 
-* Two 10 GiB SSD persistent disks for boot data
-* Four 64 GiB SSD persistent disk for root data
+* Two 10 GiB SSD persistent disks for boot data 
+* Four 64 GiB SSD persistent disk for root data 
 * Two 500 GiB SSD persistent disk for NVRAM
-* Two 315 GiB Standard persistent disk for saving cores
+* Two 315 GiB Standard persistent disk for saving cores 
 * One 10 GiB Standard persistent disk for mediator data
+* One 10 GiB Standard persistent disk for mediator boot data
 * Snapshots for boot and root data
 * Boot and root disks are encrypted by default.
 endif::gcp[]
 
 === Where the disks reside
 
-Cloud Manager lays out the storage as follows:
+BlueXP lays out the storage as follows:
 
 * Boot data resides on a disk attached to the instance or virtual machine.
 +
