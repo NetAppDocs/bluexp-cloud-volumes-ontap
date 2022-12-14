@@ -43,7 +43,6 @@ Data tiering to S3 is also supported with Cloud Volumes ONTAP in C2S.
 
 * Because there's no internet access in the C2S environment, the following features aren't available either:
 
-** Integration with Cloud Manager
 ** Automated software upgrades from Cloud Manager
 ** NetApp AutoSupport
 ** AWS cost information for Cloud Volumes ONTAP resources
