@@ -104,7 +104,7 @@ You must use Cloud Manager to launch Cloud Volumes ONTAP instances. You must not
 
 === Set up permissions
 
-Set up IAM policies and roles that provide Cloud Manager and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Commercial Cloud Services environment.
+Set up IAM policies and roles that provide the Connector and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Commercial Cloud Services environment.
 
 You need an IAM policy and IAM role for each of the following:
 
@@ -302,9 +302,9 @@ The CMK can be an AWS-managed CMK or a customer-managed CMK.
 
 . If the CMK is in an AWS account separate from the account where you plan to deploy Cloud Volumes ONTAP, then you need to obtain the ARN of that key.
 +
-You’ll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.
+You'll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.
 
-. Add the IAM role for the Cloud Manager instance to the list of key users for a CMK.
+. Add the IAM role for the Connector instance to the list of key users for a CMK.
 +
 This gives Cloud Manager permissions to use the CMK with Cloud Volumes ONTAP.
 
