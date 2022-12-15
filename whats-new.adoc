@@ -20,6 +20,13 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
+== 3 January 2023
+
+=== Licensing packages available in Google Cloud
+Optimized and Edge Cache capacity-based licensing packages are available for Cloud Volumes ONTAP in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract.
+
+See link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#packages[Cloud Volumes ONTAP licensing^].
+
 == 15 December 2022
 
 === Cloud Volumes ONTAP 9.12.0
@@ -35,6 +42,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new f
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.12.1, which includes support for new features and additional cloud provider regions.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
+//end::whats-new[]
 
 == 4 December 2022
 The following changes were introduced with the 3.9.24 release of the Connector.
@@ -46,7 +54,6 @@ The ability to activate both write once, read many (WORM) and Cloud Backup featu
 === Israel region now supported in Google Cloud 
 
 The Israel region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.11.1 P3 and later.
-//end::whats-new[]
 
 == 15 November 2022
 
