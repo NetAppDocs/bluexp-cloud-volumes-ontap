@@ -343,47 +343,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 
 == Requirements for the Connector
 
-Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
-
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
-
-=== Connections to target networks
-
-A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
-
-For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
-
-=== Outbound internet access
-
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
-
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-
-a| 
-
-\https://*.api.bluexp.netapp.com
-
-\https://api.bluexp.netapp.com
-
-\https://*.cloudmanager.cloud.netapp.com
-
-\https://cloudmanager.cloud.netapp.com
-
-a| To provide SaaS features and services within BlueXP.
-
-NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-
-| \https://cloudmanagerinfraprod.azurecr.io
-
-\https://*.blob.core.windows.net
-| To upgrade the Connector and its Docker components.
-
-|===
+include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/_include/connector-networking.adoc[]
 
 === Security group rules
 
