@@ -26,7 +26,6 @@ Starting with the BlueXP 3.9.5 release, logical space reporting is enabled on th
 ** FlexCache
 ** FlexClone
 ** iSCSI
-** Multi-tenant Encryption Key Management (MTEKM), starting with Cloud Volumes ONTAP 9.11.1
 ** NetApp Volume Encryption (only for BYOL or registered PAYGO systems)
 ** NFS
 ifdef::azure,aws[]
