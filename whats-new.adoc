@@ -27,6 +27,11 @@ Optimized and Edge Cache capacity-based licensing packages are available for Clo
 
 See link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#packages[Cloud Volumes ONTAP licensing^].
 
+=== Default configuration for Cloud Volumes ONTAP 
+The Multi-tenant Encryption Key Management (MTEKM) license is no longer included in new Cloud Volumes ONTAP deployments. 
+
+For more information on the ONTAP feature licenses automatically installed with Cloud Volumes ONTAP, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html[Default Configuration for Cloud Volumes ONTAP^].
+
 == 15 December 2022
 
 === Cloud Volumes ONTAP 9.12.0
