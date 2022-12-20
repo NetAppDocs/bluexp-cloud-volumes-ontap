@@ -25,7 +25,11 @@ You can manage volumes as your storage needs change. You can view, edit, clone, 
 
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
-. Manage your volumes:
+. On the Overview tab, navigate to the Volumes tile and then click *View Volumes*.  
+-or-
+Click the *Volumes* tab.
+
+. On the Volumes tab, navigate to the desired volume title and then click *Manage your volumes* to access the Manage Volumes right-side panel:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -33,64 +37,65 @@ You can manage volumes as your storage needs change. You can view, edit, clone, 
 | Task
 | Action
 
-| View information about a volume | Select a volume, and then click *Info*.
+| View information about a volume | Under Volume Actions in the Manage volumes panel, click *View volume details*.
 
-| Edit a volume (read-write volumes only)
+| Get the NFS mount command
 a|
-.. Select a volume, and then click *Edit*.
-.. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click *Update*.
-
-NOTE: If you need custom Snapshot policies, you can create them by using System Manager.
+.. Under Volume Actions in the Manage volumes panel, click *Mount Command*.
+.. Click *Copy*.
 
 | Clone a volume
 a|
-.. Select a volume, and then click *Clone*.
+.. Under Volume Actions in the Manage volumes panel, click *Clone the volume*.
 .. Modify the clone name as needed, and then click *Clone*.
 
 This process creates a FlexClone volume. A FlexClone volume is a writable, point-in-time copy that is space-efficient because it uses a small amount of space for metadata, and then only consumes additional space as data is changed or added.
 
 To learn more about FlexClone volumes, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
 
-| Restore data from a Snapshot copy to a new volume
+| Edit volume tags (read-write volumes only)
+a| 
+.. Under Volume Actions in the Manage volumes panel, click *Edit volume tags* to modify the volume tag assigned to the selected volume.
+.. Enter the volume tag key and value under the provided fields. 
+.. To include additional tags, click *Add New Tag*.
+.. Click *Save*.
+
+| Edit a volume (read-write volumes only)
 a|
-.. Select a volume, and then click *Restore from Snapshot copy*.
-.. Select a Snapshot copy, enter a name for the new volume, and then click *Restore*.
+.. Under Volume Actions in the Manage volumes panel, click *Edit volume settings*
+.. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click *Apply*.
+
+NOTE: If you need custom Snapshot policies, you can create them by using System Manager.
+
+| Delete a volume
+a|
+.. Under Volume Actions in the Manage volumes panel, click *Delete the volume*.
+.. Under the Delete Volume window, enter the name of the volume you want to delete.
+.. Click *Delete* again to confirm.
 
 | Create a Snapshot copy on demand
 a|
-.. Select a volume, and then click *Create a Snapshot copy*.
+.. Under Protection Actions in the Manage Volumes panel, click *Create a Snapshot copy*. 
 .. Change the name, if needed, and then click *Create*.
 
-| Get the NFS mount command
+| Restore data from a Snapshot copy to a new volume
 a|
-.. Select a volume, and then click *Mount Command*.
-.. Click *Copy*.
-
-| View the target iQN for an iSCSI volume
-a|
-.. Select a volume, and then click *Target iQN*.
-.. Click *Copy*.
-.. link:task-connect-lun.html[Use the IQN to connect to the LUN from your hosts].
+.. Under Protection Actions in the Manage Volumes panel, click *Restore from Snapshot copy*.
+.. Select a Snapshot copy, enter a name for the new volume, and then click *Restore*.
 
 | Change the underlying disk type
 a|
-.. Select a volume, and then click *Change Disk Type & Tiering Policy*.
+.. Under Advanced Actions in the Manage Volumes panel, click *Change Disk Type*.
 .. Select the disk type, and then click *Change*.
 
 NOTE: BlueXP moves the volume to an existing aggregate that uses the selected disk type or it creates a new aggregate for the volume.
 
 | Change the tiering policy
 a|
-.. Select a volume, and then click *Change Disk Type & Tiering Policy*.
-.. Click *Edit Policy*.
+.. Under Advanced Actions in the Manage Volumes panel, click *Change Tiering Policy*.
 .. Select a different policy and click *Change*.
 
 NOTE: BlueXP moves the volume to an existing aggregate that uses the selected disk type with tiering, or it creates a new aggregate for the volume.
-
-| Delete a volume
-a|
-.. Select a volume, and then click *Delete*.
-.. Click *Delete* again to confirm.
 
 |===
 
@@ -106,7 +111,8 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 
 .Steps
 
-. From the working environment, click the menu icon and then click *Advanced > CIFS setup*.
+. From the Overview tab of the working environment, click the Feature tab under the right-side panel.
+. Under the CIFS Setup field, click the *edit icon* to display the CIFS Setup window.
 
 . Specify settings for the CIFS server:
 +
@@ -116,6 +122,12 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 | Task
 | Action
 
+| Select Storage VM (SVM) |	Selecting the Cloud Volume ONTAP storage virtual machine (SVM) displays it's configured CIFS information.
+
+| Active Directory Domain to join |	The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
+
+| Credentials authorized to join the domain |	The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
 | DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
 
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
@@ -124,9 +136,7 @@ ifdef::gcp[]
 If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
 endif::gcp[]
 
-| Active Directory Domain to join |	The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
-
-| Credentials authorized to join the domain |	The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
 | CIFS server NetBIOS name | 	A CIFS server name that is unique in the AD domain.
 
@@ -143,8 +153,6 @@ ifdef::gcp[]
 *	To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
 https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
 endif::gcp[]
-
-| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
 |===
 
@@ -196,17 +204,17 @@ For example, the advanced information should say something similar to the follow
 
 . Identify one or more volumes to move out of the aggregate:
 
-.. In the working environment, click the menu icon, and then click *Advanced > Advanced allocation*.
+.. In the working environment, click the *Aggregates tab*.
+-Or-
+From the Overview tab, navigate to the Aggregates tile and then click *View Aggregates*. 
 
-.. Select the aggregate, and then click *Info*.
+.. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
 
-.. Expand the list of volumes.
-+
-image:screenshot_aggr_volumes.gif[Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box.]
-
-.. Review the size of each volume and choose one or more volumes to move out of the aggregate.
+.. Under the Overview tab of the Aggregate Details screen, review the size of each volume and choose one or more volumes to move out of the aggregate.
 +
 You should choose volumes that are large enough to free space in the aggregate so that you avoid additional capacity issues in the future.
++
+image:screenshot_aggr_volumes_121922.png[Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box.]
 
 . If the system has not reached the disk limit, you should move the volumes to an existing aggregate or a new aggregate on the same system.
 +
@@ -268,15 +276,17 @@ You can follow the steps in this task to correct the following Action Required m
 
 . Verify whether an existing aggregate has available capacity for the volumes that you need to move:
 
-.. In the working environment, click the menu icon, and then click *Advanced > Advanced allocation*.
+.. In the working environment, click the *Aggregates tab*.
+-Or-
+From the Overview tab, navigate to the Aggregates tile and then click *View Aggregates*. 
 
-.. Select each aggregate, click *Info*, and then view the available capacity (aggregate capacity minus used aggregate capacity).
-+
-image:screenshot_aggr_capacity.gif[Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box.]
+.. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
+
+.. Under the aggregate tile, view the available capacity (provisioned size minus used aggregate capacity).
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, and then click *Add disks*.
+.. Select the aggregate, then click the *... (ellipse icon) > Add Disks*.
 
 .. Select the number of disks to add, and then click *Add*.
 

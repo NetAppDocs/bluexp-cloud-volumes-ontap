@@ -31,7 +31,15 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
-. Click the menu icon and then click *Advanced > Advanced allocation*.
+. From the left navigation menu, select *Storage > Canvas*.
+
+. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
+
+. On the Overview tab, navigate to the Volumes tile and then click *View Aggregates*.  
+-or-
+Click the *Aggregates* tab.
+
+. On the Aggregates tab, navigate to the desired title and then click the *... (ellipse icon)*.
 
 . Manage your aggregates:
 +
@@ -41,13 +49,13 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 | Task
 | Action
 
-| View information about an aggregate | Select an aggregate and click *Info*.
+| View information about an aggregate | Under the ... (ellipse icon) menu, click *View aggregate details*.
 
-| Create a volume on a specific aggregate |	Select an aggregate and click *Create volume*.
+| Create a volume on a specific aggregate |	Under the ... (ellipse icon) menu, click *Add volume*.
 
 | Add disks to an aggregate
 a|
-.. Select an aggregate and click *Add disks*.
+.. Under the ... (ellipse icon) menu, click *Add disks*.
 .. Select the number of disks that you want to add and click *Add*.
 +
 TIP: All disks in an aggregate must be the same size.
@@ -55,8 +63,8 @@ TIP: All disks in an aggregate must be the same size.
 ifdef::aws[]
 | Increase the capacity of an aggregate that supports Amazon EBS Elastic Volumes
 a|
-.. Select an aggregate and click *Increase capacity*.
-.. Enter the additional capacity that you'd like to add and then click *Add*.
+.. Under the ... (ellipse icon) menu, click *Increase capacity*.
+.. Enter the additional capacity that you'd like to add and then click *Increase*.
 +
 Note that you must increase the capacity of the aggregate by a minimum of 256 GiB or 10% of the aggregate's size.
 +
@@ -65,7 +73,7 @@ endif::aws[]
 
 | Delete an aggregate
 a|
-.. Select an aggregate that does not contain any volumes and click *Delete*.
+.. Select an aggregate tile that does not contain any volumes click the *... (ellipse icon) > Delete*.
 .. Click *Delete* again to confirm.
 
 |===

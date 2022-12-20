@@ -27,7 +27,17 @@ Note the following:
 
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
-. Select a volume, and then click *Target iQN*.
+. From the left navigation menu, select *Storage > Canvas*.
+
+. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
+
+. On the Overview tab, navigate to the Volumes tile and then click *View Volumes*.  
+-or-
+Click the *Volumes* tab.
+
+. On the Volumes tab, navigate to the desired volume title and then click *Manage your volumes* to access the Manage Volumes right-side panel.
+
+. Click *Target iQN*.
 
 . Click *Copy* to copy the iQN name.
 
