@@ -21,6 +21,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 3 January 2023
+The following changes were introduced with the 3.9.25 release of the Connector.
 
 === Licensing packages available in Google Cloud
 Optimized and Edge Cache capacity-based licensing packages are available for Cloud Volumes ONTAP in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract.
