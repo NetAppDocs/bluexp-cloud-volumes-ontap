@@ -20,7 +20,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
-== 3 January 2023
+== 1 January 2023
 The following changes were introduced with the 3.9.25 release of the Connector.
 
 === Licensing packages available in Google Cloud
@@ -39,7 +39,7 @@ For more information on the ONTAP feature licenses automatically installed with 
 
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.12.0 in AWS and Google Cloud.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9120-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 8 December 2022
 
@@ -206,7 +206,7 @@ The following changes were introduced with the 3.9.19 release of the Connector.
 
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.11.1, which includes support for new features and additional cloud provider regions.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9111-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
 
 === New Advanced View
 
@@ -268,7 +268,7 @@ The following changes were introduced with the 3.9.18 release of the Connector.
 
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.11.0.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9110-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 === Enhancement to mediator upgrades
 
@@ -453,7 +453,7 @@ The following changes were introduced with the 3.9.13 release of the Connector.
 
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.10.1.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9101-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 === Keystone Flex Subscriptions
 
