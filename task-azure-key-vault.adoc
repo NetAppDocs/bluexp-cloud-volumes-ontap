@@ -20,7 +20,6 @@ When using AKV, be aware that by default a data SVM LIF is used to communicate w
 .Prerequisites
 * Cloud Volumes ONTAP must be running version 9.10.1 or later
 * Volume Encryption (VE) license installed (NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support)
-* Multi-tenant Encryption Key Management (MTEKM) license installed
 * You must be a cluster or SVM administrator
 * An Active Azure subscription
 
