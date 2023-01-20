@@ -179,11 +179,11 @@ If you want to enable data tiering on an existing volume, then you'll need to en
 
 . Open the working environment in BlueXP.
 
-. Click the menu icon, click *Advanced*, and then click *Advanced allocation*.
+. Click the Aggregates tab.
 
-. Verify whether tiering is enabled or disabled on the aggregate.
+. Navigate to the desired tile and verify whether tiering is enabled or disabled on the aggregate.
 +
-image:screenshot_aggr_tiering.gif[A screenshot that shows information about an aggregate in BlueXP which includes the tiering status.]
+image:screenshot_aggregate_tiering_enabled.png[A screenshot that shows information about an aggregate in BlueXP which includes the tiering status.]
 
 .Steps to enable tiering on an aggregate
 
@@ -203,7 +203,7 @@ Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effecti
 
 .Steps
 
-. In the working environment, create a new volume or change the tier of an existing volume:
+. In Volumes tab under the working environment, create a new volume or change the tier of an existing volume:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -213,7 +213,7 @@ Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effecti
 
 | Create a new volume	| Click *Add New Volume*.
 
-| Modify an existing volume | Select the volume and click *Change Disk Type & Tiering Policy*.
+| Modify an existing volume | Select the desired volume tile, click Advanced actions and *Change tiering policy* under the right panel.
 
 |===
 
@@ -223,7 +223,7 @@ For a description of these policies, see link:concept-data-tiering.html[Data tie
 +
 *Example*
 +
-image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to object storage.]
+image:screenshot_volumes_change_tiering_policy.png[Screenshot that shows the options available to change tiering policy for a volume.]
 +
 BlueXP creates a new aggregate for the volume if a data tiering-enabled aggregate does not already exist.
 

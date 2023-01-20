@@ -17,9 +17,11 @@ Ransomware attacks can cost a business time, resources, and reputation. BlueXP e
 
 .Steps
 
-. From the working environment, click the *Ransomware* icon.
+. On the Canvas page, double-click the name of the system you configure to ransomware protection.
+
+. On the Overview tab, click the Features panel and then click the pencil icon next to *Ransomware Protection*.
 +
-image:screenshot_ransomware_icon.gif[A screenshot that shows the Ransomware icon that is available in the top right of the page when viewing a working environment.]
+image:screenshot_features_ransomware.png[A screenshot that shows the Ransomware Protection setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
 . Implement the NetApp solution for ransomware:
 

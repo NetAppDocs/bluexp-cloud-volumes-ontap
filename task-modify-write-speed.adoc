@@ -27,10 +27,14 @@ Before you change the write speed, you should link:concept-write-speed.html[unde
 
 .Steps
 
-. From the working environment, click the menu icon, and then click *Advanced > Writing Speed*.
+. On the Canvas page, double-click the name of the system you configure to the write speed.
+
+. On the Overview tab, click the Features panel and then click the pencil icon next to *Write Speed*.
++
+image:screenshot_features_write_speed.png[A screenshot that shows the Write Speed setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
 . Select *Normal* or *High*.
 +
 If you choose High, then you'll need to read the "I understand..." statement and confirm by checking the box.
 
-. Click *Save*, review the confirmation message, and then click *Proceed*.
+. Click *Save*, review the confirmation message, and then click *Approve*.

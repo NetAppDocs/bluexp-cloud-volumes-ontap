@@ -112,7 +112,7 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 .Steps
 
 . From the Overview tab of the working environment, click the Feature tab under the right-side panel.
-. Under the CIFS Setup field, click the *edit icon* to display the CIFS Setup window.
+. Under the CIFS Setup field, click the *pencil icon* to display the CIFS Setup window.
 
 . Specify settings for the CIFS server:
 +

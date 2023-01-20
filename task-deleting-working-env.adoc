@@ -35,10 +35,10 @@ https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.
 
 .. On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment that you want to delete.
 
-.. Click menu icon and then click *Delete*.
+.. On the upper right of the BlueXP console, click the Ellipsis icon, and select *Delete*.
 +
-image:screenshot_delete_cloud_volumes_ontap.png[A screenshot that shows the menu available from the working environment that contains the Delete action.]
+image:screenshot_settings_delete.png[A screenshot that shows the menu available from the working environment that contains the Delete action.]
 
-.. Type the name of the working environment and then click *Delete*.
+.. Under the Delete Working Environment window, type the name of the working environment and then click *Delete*.
 +
 It can take up to 5 minutes to delete the working environment.
