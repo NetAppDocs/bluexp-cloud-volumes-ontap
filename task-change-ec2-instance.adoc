@@ -42,8 +42,6 @@ image:screenshot_features_instance_type.png[A screenshot that shows the Instance
 .. If you are using a node-based PAYGO license, you can optionally choose a different license and instance type by clicking the pencil icon next to *License type*.
 
 . Choose an instance type, select the check box to confirm that you understand the implications of the change, and then click *Change*.
-+
-image:screenshot_instance_type.png[A screenshot that shows the Change instance type window.]
 
 .Result
 
