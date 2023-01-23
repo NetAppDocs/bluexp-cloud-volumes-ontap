@@ -27,10 +27,6 @@ Note the following:
 
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
-. From the left navigation menu, select *Storage > Canvas*.
-
-. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
-
 . On the Overview tab, navigate to the Volumes tile and then click *View Volumes*.  
 -or-
 Click the *Volumes* tab.
