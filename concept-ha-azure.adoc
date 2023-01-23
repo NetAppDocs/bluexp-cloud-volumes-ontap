@@ -80,6 +80,8 @@ Customer data resides on zone-redundant storage (ZRS) managed disks. Each node h
 Storage accounts::
 Storage accounts are used for managed disk based deployments to handle diagnostic logs and tiering to blob storage.
 
+For available regions, refer to link:https://review.docs.netapp.com/us-en/cloud-volumes-ontap-relnotes_9121-rc-2022-hotfixes/reference-new.html#azure-ha-in-a-single-availability-zone-with-shared-managed-disks[Microsoft Azure's documentation]. 
+
 == RPO and RTO
 
 An HA configuration maintains high availability of your data as follows:
