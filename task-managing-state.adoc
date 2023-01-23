@@ -56,7 +56,6 @@ image:screenshot_schedule_downtime_window.png[Screen shot: Shows the Schedule do
 .Result
 
 BlueXP saves the schedule. The corresponding Scheduled Downtime line item under the Features panel displays 'On'.
-image:screenshot_schedule_downtime_on.png[Screen shot: Shows the Scheduled Downtime indicator set to 'On']
 
 == Stopping Cloud Volumes ONTAP
 
