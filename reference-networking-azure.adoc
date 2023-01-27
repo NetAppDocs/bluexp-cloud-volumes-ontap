@@ -343,64 +343,6 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 
 == Requirements for the Connector
 
-include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/_include/connector-networking.adoc[]
+If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-=== Security group rules
-
-The security group for the Connector requires both inbound and outbound rules.
-
-==== Inbound rules
-
-[cols=3*,options="header,autowidth"]
-|===
-
-| Port
-| Protocol
-| Purpose
-
-| 22 | SSH | Provides SSH access to the Connector host
-| 80 | HTTP |	Provides HTTP access from client web browsers to the local user interface
-| 443 |	HTTPS | Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.
-
-|===
-
-==== Outbound rules
-
-The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
-
-===== Basic outbound rules
-
-The predefined security group for the Connector includes the following outbound rules.
-
-[cols=3*,options="header,autowidth"]
-|===
-
-| Port
-| Protocol
-| Purpose
-
-| All | All TCP | All outbound traffic
-| All |	All UDP | All outbound traffic
-
-|===
-
-===== Advanced outbound rules
-
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
-
-NOTE: The source IP address is the Connector host.
-
-[cols=5*,options="header,autowidth"]
-|===
-
-| Service
-| Port
-| Protocol
-| Destination
-| Purpose
-
-| API calls and AutoSupport | 443 | HTTPS | Outbound internet and ONTAP cluster management LIF | API calls to Azure and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
-| DNS | 53 | UDP	| DNS | Used for DNS resolve by BlueXP
-
-|===
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[View networking requirements for the Connector^]

@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: reference-networking-gcp.html
 keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, tiering, data tiering, bucket, private google access, set up data tiering, data tiering requirement, gcp networking, google networking, shared vpc, host project, service project
-summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
+summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 ---
 
-= Networking requirements for Cloud Volumes ONTAP in GCP
+= Networking requirements for Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,13 +13,13 @@ summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP sys
 :imagesdir: ./media/
 
 [.lead]
-Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
+Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 
-If you want to deploy an HA pair, you should link:concept-ha-google-cloud.html[learn how HA pairs work in GCP].
+If you want to deploy an HA pair, you should link:concept-ha-google-cloud.html[learn how HA pairs work in Google Cloud].
 
 == Requirements for Cloud Volumes ONTAP
 
-The following requirements must be met in GCP.
+The following requirements must be met in Google Cloud.
 
 Internal load balancers::
 BlueXP automatically creates four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. No setup is required from your end. We've listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.
@@ -53,7 +53,7 @@ When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a sp
 This deployment model does lower your costs because there are no data egress charges between zones.
 
 Four Virtual Private Clouds for HA pairs::
-Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
+Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because Google Cloud requires that each network interface resides in a separate VPC network.
 +
 BlueXP will prompt you to choose four VPCs when you create the HA pair:
 +
@@ -105,7 +105,7 @@ TIP: If you're using an HA pair, the HA mediator doesn't require outbound intern
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
 Private IP addresses::
-BlueXP allocates the following number of private IP addresses to Cloud Volumes ONTAP in GCP:
+BlueXP allocates the following number of private IP addresses to Cloud Volumes ONTAP in Google Cloud:
 
 * *Single node*: 3 or 4 private IP addresses
 +
@@ -140,17 +140,13 @@ If you want to tier cold data to a Google Cloud Storage bucket, the subnet in wh
 For additional steps required to set up data tiering in BlueXP, see link:task-tiering.html[Tiering cold data to low-cost object storage].
 
 Connections to ONTAP systems in other networks::
-To replicate data between a Cloud Volumes ONTAP system in GCP and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.
+To replicate data between a Cloud Volumes ONTAP system in Google Cloud and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.
 +
 For instructions, refer to https://cloud.google.com/vpn/docs/concepts/overview[Google Cloud documentation: Cloud VPN overview^].
 
-== Requirements for the Connector
+== Firewall rules
 
-include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/_include/connector-networking.adoc[]
-
-== Firewall rules for Cloud Volumes ONTAP
-
-BlueXP creates GCP firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.
+BlueXP creates Google Cloud firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.
 
 The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules.
 
@@ -275,70 +271,16 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 
 |===
 
-== Firewall rules for VPC-1, VPC-2, and VPC-3
+=== Rules for VPC-1, VPC-2, and VPC-3
 
-In GCP, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <<Firewall rules for Cloud Volumes ONTAP,listed above for Cloud Volumes ONTAP>>.
+In Google Cloud, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <<Firewall rules,listed above for Cloud Volumes ONTAP>>.
 
 Meanwhile, the predefined firewall rules that BlueXP creates for instances in VPC-1, VPC-2, and VPC-3 enables ingress communication over _all_ protocols and ports. These rules enable communication between HA nodes.
 
 Communication from the HA nodes to the HA mediator takes place over port 3260 (iSCSI).
 
-== Firewall rules for the Connector
+== Requirements for the Connector
 
-The firewall rules for the Connector requires both inbound and outbound rules.
+If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-=== Inbound rules
-
-[cols="10,10,80",width=100%,options="header"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| SSH | 22 | Provides SSH access to the Connector host
-| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
-| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.
-
-|===
-
-=== Outbound rules
-
-The predefined firewall rules for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
-
-==== Basic outbound rules
-
-The predefined firewall rules for the Connector includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All TCP | All | All outbound traffic
-| All UDP | All |	All outbound traffic
-
-|===
-
-==== Advanced outbound rules
-
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
-
-NOTE: The source IP address is the Connector host.
-
-[cols=5*,options="header,autowidth"]
-|===
-
-| Service
-| Protocol
-| Port
-| Destination
-| Purpose
-
-| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to GCP and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
-| DNS | UDP	| 53 | DNS | Used for DNS resolve by BlueXP
-
-|===
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[View networking requirements for the Connector^]

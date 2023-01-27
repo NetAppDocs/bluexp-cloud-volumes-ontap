@@ -200,4 +200,6 @@ image:diagram_ha_networking.png["Conceptual image showing components in a Cloud 
 
 == Requirements for the Connector
 
-include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/_include/connector-networking.adoc[]
+If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[View networking requirements for the Connector^]
