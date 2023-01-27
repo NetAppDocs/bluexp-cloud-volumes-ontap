@@ -287,7 +287,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 
 |===
 
-=== Rules for VPC-1, VPC-2, and VPC-3
+==== Rules for VPC-1, VPC-2, and VPC-3
 
 In Google Cloud, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <<Firewall rules,listed above for Cloud Volumes ONTAP>>.
 
