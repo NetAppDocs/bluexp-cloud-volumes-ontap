@@ -17,13 +17,27 @@ Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate p
 
 If you want to deploy an HA pair, you should link:concept-ha-google-cloud.html[learn how HA pairs work in Google Cloud].
 
-== Requirements for Cloud Volumes ONTAP
+== Requirements specific to single node systems
 
-The following requirements must be met in Google Cloud.
+=== One VPC
 
-=== Requirements specific to HA pairs
+One Virtual Private Cloud (VPC) is required for a single node system.
 
-==== One or multiple zones
+=== Private IP addresses
+
+BlueXP allocates 3 or 4 private IP addresses to a single node system in Google Cloud.
+
+You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
+
+`skipSvmManagementLif: true`
+
+NOTE: A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
+
+== Requirements specific to HA pairs
+
+The following requirements must be met for HA pairs in Google Cloud.
+
+=== One or multiple zones
 
 You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. BlueXP will prompt you to choose multiple zones or a single zone when you create the HA pair.
 
@@ -37,7 +51,7 @@ When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a sp
 +
 This deployment model does lower your costs because there are no data egress charges between zones.
 
-==== Four Virtual Private Clouds
+=== Four Virtual Private Clouds
 
 Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because Google Cloud requires that each network interface resides in a separate VPC network.
 
@@ -48,7 +62,7 @@ BlueXP will prompt you to choose four VPCs when you create the HA pair:
 
 image:diagram_gcp_ha.png[A conceptual image showing a Cloud Volume HA pair and the four VPCs required for configuration.]
 
-==== Subnets
+=== Four subnets
 
 A private subnet is required for each VPC.
 
@@ -56,7 +70,7 @@ If you place the Connector in VPC-0, then you will need to enable Private Google
 
 The subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
 
-==== Private IP addresses
+=== Private IP addresses
 
 BlueXP allocates 14 or 15 private IP addresses to an HA pair in Google Cloud:
 
@@ -70,7 +84,7 @@ You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud
 * Two private IP addresses for VPC-2
 * Three private IP addresses for VPC-3
 
-==== Internal load balancers
+=== Internal load balancers
 
 BlueXP automatically creates four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. No setup is required from your end. We've listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.
 
@@ -90,21 +104,9 @@ By default, the ports used by the health check are 63001, 63002, and 63003.
 +
 Even though global access is disabled by default, enabling it post deployment is supported. We disabled it because cross region traffic will have significantly higher latencies. We wanted to ensure that you didn't have a negative experience due to accidental cross region mounts. Enabling this option is specific to your business needs.
 
-=== Requirements specific to single node systems
+== General requirements
 
-==== One VPC
-
-One Virtual Private Cloud (VPC) is required for a single node system.
-
-==== Private IP addresses
-
-BlueXP allocates 3 or 4 private IP addresses to a single node system in Google Cloud.
-
-You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
-
-`skipSvmManagementLif: true`
-
-NOTE: A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
+The following requirements must be met for both single node systems and HA pairs.
 
 === Shared VPCs
 
