@@ -13,7 +13,7 @@ summary: BlueXP handles the set up of networking components for Cloud Volumes ON
 :imagesdir: ./media/
 
 [.lead]
-BlueXP (formerly Cloud Manager) handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
+BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 
 == General requirements
 

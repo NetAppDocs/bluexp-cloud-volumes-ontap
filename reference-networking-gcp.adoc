@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-networking-gcp.html
 keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, tiering, data tiering, bucket, private google access, set up data tiering, data tiering requirement, gcp networking, google networking, shared vpc, host project, service project
-summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
+summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly.
 ---
 
 = Networking requirements for Cloud Volumes ONTAP in Google Cloud
@@ -13,7 +13,7 @@ summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can 
 :imagesdir: ./media/
 
 [.lead]
-Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
+Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly.
 
 If you want to deploy an HA pair, you should link:concept-ha-google-cloud.html[learn how HA pairs work in Google Cloud].
 
@@ -21,13 +21,63 @@ If you want to deploy an HA pair, you should link:concept-ha-google-cloud.html[l
 
 The following requirements must be met in Google Cloud.
 
-Internal load balancers::
+=== Requirements specific to HA pairs
+
+==== One or multiple zones
+
+You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. BlueXP will prompt you to choose multiple zones or a single zone when you create the HA pair.
+
+* Multiple zones (recommended)
++
+Deploying an HA configuration across three zones ensures continuous data availability if a failure occurs within a zone. Note that write performance is slightly lower compared to using a single zone, but it's minimal.
+
+* Single zone
++
+When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.
++
+This deployment model does lower your costs because there are no data egress charges between zones.
+
+==== Four Virtual Private Clouds
+
+Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because Google Cloud requires that each network interface resides in a separate VPC network.
+
+BlueXP will prompt you to choose four VPCs when you create the HA pair:
+
+* VPC-0 for inbound connections to the data and nodes
+* VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
+
+image:diagram_gcp_ha.png[A conceptual image showing a Cloud Volume HA pair and the four VPCs required for configuration.]
+
+==== Subnets
+
+A private subnet is required for each VPC.
+
+If you place the Connector in VPC-0, then you will need to enable Private Google Access on the subnet to access the APIs and to enable data tiering.
+
+The subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
+
+==== Private IP addresses
+
+BlueXP allocates 14 or 15 private IP addresses to an HA pair in Google Cloud:
+
+* 7 or 8 private IP addresses for VPC-0
++
+You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
++
+`skipSvmManagementLif: true`
+
+* Two private IP addresses for VPC-1
+* Two private IP addresses for VPC-2
+* Three private IP addresses for VPC-3
+
+==== Internal load balancers
+
 BlueXP automatically creates four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. No setup is required from your end. We've listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.
-+
+
 One load balancer is for cluster management, one is for storage VM (SVM) management, one is for NAS traffic to node 1, and the last is for NAS traffic to node 2.
-+
+
 The setup for each load balancer is as follows:
-+
+
 * One shared private IP address
 * One global health check
 +
@@ -40,119 +90,81 @@ By default, the ports used by the health check are 63001, 63002, and 63003.
 +
 Even though global access is disabled by default, enabling it post deployment is supported. We disabled it because cross region traffic will have significantly higher latencies. We wanted to ensure that you didn't have a negative experience due to accidental cross region mounts. Enabling this option is specific to your business needs.
 
-One or multiple zones for HA pairs::
-You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. BlueXP will prompt you to choose multiple zones or a single zone when you create the HA pair.
-+
-* Multiple zones (recommended)
-+
-Deploying an HA configuration across three zones ensures continuous data availability if a failure occurs within a zone. Note that write performance is slightly lower compared to using a single zone, but it's minimal.
-* Single zone
-+
-When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.
-+
-This deployment model does lower your costs because there are no data egress charges between zones.
+=== Requirements specific to single node systems
 
-Four Virtual Private Clouds for HA pairs::
-Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because Google Cloud requires that each network interface resides in a separate VPC network.
-+
-BlueXP will prompt you to choose four VPCs when you create the HA pair:
-+
-* VPC-0 for inbound connections to the data and nodes
-* VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
-+
-image:diagram_gcp_ha.png[A conceptual image showing a Cloud Volume HA pair and the four VPCs required for configuration.]
+==== One VPC
 
-Subnets for HA pairs::
-A private subnet is required for each VPC.
-+
-If you place the Connector in VPC-0, then you will need to enable Private Google Access on the subnet to access the APIs and to enable data tiering.
-+
-The subnets in these VPCs must have distinct CIDR ranges. They can't have overlapping CIDR ranges.
+One Virtual Private Cloud (VPC) is required for a single node system.
 
-One Virtual Private Cloud for single node systems::
-One VPC is required for a single node system.
+==== Private IP addresses
 
-Shared VPCs::
+BlueXP allocates 3 or 4 private IP addresses to a single node system in Google Cloud.
+
+You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
+
+`skipSvmManagementLif: true`
+
+NOTE: A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
+
+=== Shared VPCs
+
 Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs.
-+
+
 For a single node system, the VPC can be either a shared VPC or a standalone VPC.
-+
+
 For an HA pair, four VPCs are required. Each of those VPCs can be either shared or standalone. For example, VPC-0 could be a shared VPC, while VPC-1, VPC-2, and VPC-3 could be standalone VPCs.
-+
+
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
-+
+
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#shared-vpc-permissions[Review the required shared VPC permissions covered in Connector deployment^]
 
-Packet mirroring in VPCs::
+=== Packet mirroring in VPCs
+
 https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud VPC in which you deploy Cloud Volumes ONTAP. Cloud Volumes ONTAP can't operate properly if packet mirroring is enabled.
 
-Outbound internet access for Cloud Volumes ONTAP::
+=== Outbound internet access
+
 Cloud Volumes ONTAP requires outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
-+
+
 Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
-+
+
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
-+
+
 If an outbound internet connection isn't available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's firewall allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
-+
+
 If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP firewall allows _outbound_ connections over port 3128.
-+
+
 After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
-+
+
 TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
-Private IP addresses::
-BlueXP allocates the following number of private IP addresses to Cloud Volumes ONTAP in Google Cloud:
+=== Connection to Google Cloud Storage for data tiering
 
-* *Single node*: 3 or 4 private IP addresses
-+
-You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
-+
-`skipSvmManagementLif: true`
-+
-A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
-
-* *HA pair*: 14 or 15 private IP addresses
-+
-** 7 or 8 private IP addresses for VPC-0
-+
-You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
-+
-`skipSvmManagementLif: true`
-** Two private IP addresses for VPC-1
-** Two private IP addresses for VPC-2
-** Three private IP addresses for VPC-3
-
-Firewall rules::
-You don't need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.
-+
-Note that two sets of firewall rules are required for an HA configuration:
-+
-* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
-* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
-
-Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
-+
+
 For additional steps required to set up data tiering in BlueXP, see link:task-tiering.html[Tiering cold data to low-cost object storage].
 
-Connections to ONTAP systems in other networks::
+=== Connections to ONTAP systems in other networks
+
 To replicate data between a Cloud Volumes ONTAP system in Google Cloud and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.
-+
+
 For instructions, refer to https://cloud.google.com/vpn/docs/concepts/overview[Google Cloud documentation: Cloud VPN overview^].
 
-== Firewall rules
+=== Firewall rules
 
 BlueXP creates Google Cloud firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.
 
-The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules.
+The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules. If you're deploying an HA configuration, these are the firewall rules for Cloud Volumes ONTAP in VPC-0.
 
-If you're deploying an HA configuration, these are the firewall rules for Cloud Volumes ONTAP in VPC-0.
+Note that two sets of firewall rules are required for an HA configuration:
 
-=== Inbound rules
+* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP.
+* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Rules for VPC-1, VPC-2, and VPC-3,Learn more>>.
+
+==== Inbound rules
 
 When you create a working environment, you can choose the source filter for the predefined firewall policy during deployment:
 
@@ -197,11 +209,11 @@ If you use your own firewall policy, ensure that you add all networks that need 
 
 |===
 
-=== Outbound rules
+==== Outbound rules
 
 The predefined security group for Cloud Volumes ONTAP opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
-==== Basic outbound rules
+===== Basic outbound rules
 
 The predefined security group for Cloud Volumes ONTAP includes the following outbound rules.
 
@@ -218,7 +230,7 @@ The predefined security group for Cloud Volumes ONTAP includes the following out
 
 |===
 
-==== Advanced outbound rules
+===== Advanced outbound rules
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP.
 
