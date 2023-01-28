@@ -66,9 +66,13 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 ** **Key permissions**: 20 selected
 ** **Secret permissions**: 8 selected
 ** **Certificate permissions**: 16 selected
-. Click **Next** to select the **Principal** Azure registered application you creatred in <<azure-app>>. Select **Next**.
++
+image:screenshot-azure-key-secret-cert-all-list.png[screenshot]
+. Click **Next** to select the **Principal** Azure registered application you created in <<azure-app>>. Select **Next**.
 +
 NOTE: Only one principal can be assigned per policy.
++
+image:screenshot-azure-key-secret-cert-principal.png[screenshot]
 . Click **Next** two times until you arrive at **Review and create**. Then, click **Create**.
 . Select **Next** to advance to **Networking** options.
 . Choose the appropriate network access method or select **All networks** and **Review + Create** to create the key vault. (Network access method may be prescribed by a governance policy or your corporate cloud security team.)
@@ -97,7 +101,10 @@ NOTE: Only one principal can be assigned per policy.
 . Select the subnet name for you Cloud Volumes ONTAP deployment from the list.
 . Navigate to the **Service Endpoints** heading. In the drop-down menu, select the following: 
 * **Microsoft.AzureActiveDirectory**
-* **Microsoft.KeyVault** 
+* **Microsoft.KeyVault**
+* **Microsoft.Storage** (optional) 
++
+image:screenshot-azure-service-endpoints-services.png[Screenshot]
 . Select **Save** to capture your settings.
 
 [[ontap]]
