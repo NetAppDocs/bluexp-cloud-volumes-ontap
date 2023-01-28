@@ -53,7 +53,7 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 
 [[create-akv]]
 .Create an Azure Key Vault
-. If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration, however you must adapt the access policies to the settings in this process.
+. If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration; however, you must adapt the access policies to the settings in this process.
 . In the Azure portal, navigate to the **Key Vaults** section.
 . Click **+Create** and enter the required information including resource group, region, and pricing tier. In addition, enter the number of days to retain deleted vaults and select **Enable purge protection** on the key vault.
 . Select **Next** to choose an access policy.
@@ -67,12 +67,12 @@ The outlined steps capture how to register your Cloud Volumes ONTAP configuratio
 ** **Secret permissions**: 8 selected
 ** **Certificate permissions**: 16 selected
 +
-image:screenshot-azure-key-secret-cert-all-list.png[screenshot]
+image:screenshot-azure-key-secret-cert-all-list.png[screenshot of Create an access policy showing all permissions selections needed to create an access policy]
 . Click **Next** to select the **Principal** Azure registered application you created in <<azure-app>>. Select **Next**.
 +
 NOTE: Only one principal can be assigned per policy.
 +
-image:screenshot-azure-key-secret-cert-principal.png[screenshot]
+image:screenshot-azure-key-secret-cert-principal.png[screenshot of Create an access policy principal tab]
 . Click **Next** two times until you arrive at **Review and create**. Then, click **Create**.
 . Select **Next** to advance to **Networking** options.
 . Choose the appropriate network access method or select **All networks** and **Review + Create** to create the key vault. (Network access method may be prescribed by a governance policy or your corporate cloud security team.)
@@ -104,7 +104,7 @@ image:screenshot-azure-key-secret-cert-principal.png[screenshot]
 * **Microsoft.KeyVault**
 * **Microsoft.Storage** (optional) 
 +
-image:screenshot-azure-service-endpoints-services.png[Screenshot]
+image:screenshot-azure-service-endpoints-services.png[Screenshot of Service Endpoints showing three selected services]
 . Select **Save** to capture your settings.
 
 [[ontap]]
@@ -144,7 +144,7 @@ Category: kms_wrapped_key_status
 3 entries were displayed.
 ----
 +
-If the `service_reachability` status is not `OK`, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions. Ensure that your Azure network policies and routing don't block your private vNet from reaching the Azure KeyVault Public endpoint. If they are, consider using an Azure Private endpoint to access the Key vault from within the vNet. You may also need to add a static hosts entry on your SVM to resolve the private IP address for your endpoint.
+If the `service_reachability` status is not `OK`, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions. Ensure that your Azure network policies and routing don't block your private vNet from reaching the Azure KeyVault Public endpoint. If they do, consider using an Azure Private endpoint to access the Key vault from within the vNet. You may also need to add a static hosts entry on your SVM to resolve the private IP address for your endpoint.
 +
 The `kms_wrapped_key_status` will report `UNKNOWN` at initial configuration. Its status will change to `OK` after the first volume is encrypted.
 . OPTIONAL: Create a test volume to verify the functionality of NVE.
