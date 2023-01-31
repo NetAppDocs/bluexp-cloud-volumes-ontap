@@ -36,7 +36,7 @@ See all supported regions on link:https://bluexp.netapp.com/cloud-volumes-global
 === WORM storage and data tiering
 You can now enable both data tiering and WORM storage together when you create a Cloud Volumes ONTAP 9.8 system or later. Enabling data tiering with WORM storage allows you to tier the data to an object store in the cloud.
 
-link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html[Learn about WORM storage^.]
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html[Learn about WORM storage.^]
 
 ===
 
