@@ -38,8 +38,6 @@ You can now enable both data tiering and WORM storage together when you create a
 
 link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html[Learn about WORM storage.^]
 
-===
-
 == 1 January 2023
 The following changes were introduced with the 3.9.25 release of the Connector.
 
