@@ -96,6 +96,8 @@ The following video shows how to associate a pay-as-you-go Marketplace subscript
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Services*: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.
++
+TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *Location & Connectivity*: Select a location, choose a firewall policy, and confirm network connectivity to Google Cloud storage for data tiering.
 +
@@ -138,15 +140,16 @@ The disk size is for all disks in the initial aggregate and for any additional a
 +
 For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP].
 
-. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
-+
-Choosing a write speed is supported with single node systems only.
+. *Write Speed & WORM*: 
+.. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
+.. Activate write once, read many (WORM) storage, if desired.
 +
-WORM can't be enabled if data tiering was enabled.
+WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
 link:concept-worm.html[Learn more about WORM storage].
+.. If you activate WORM storage, select the retention period. 
 
 . *Data Tiering in Google Cloud Platform*: Choose whether to enable data tiering on the initial aggregate, choose a storage class for the tiered data, and then either select a service account that has the predefined Storage Admin role (required for Cloud Volumes ONTAP 9.7 or later), or select a GCP account (required for Cloud Volumes ONTAP 9.6).
 +
@@ -282,6 +285,8 @@ The following video shows how to associate a pay-as-you-go Marketplace subscript
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Services*: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.
++
+TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zones.
 +
@@ -328,9 +333,16 @@ The disk size is for all disks in the initial aggregate and for any additional a
 +
 For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP].
 
-. *WORM*: Activate write once, read many (WORM) storage, if desired.
+. *Write Speed & WORM*: 
+.. Choose *Normal* or *High* write speed, if desired.
 +
-WORM can't be enabled if data tiering was enabled. link:concept-worm.html[Learn more about WORM storage].
+link:concept-write-speed.html[Learn more about write speed].
+.. Activate write once, read many (WORM) storage, if desired.
++
+WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
++
+link:concept-worm.html[Learn more about WORM storage].
+.. If you activate WORM storage, select the retention period. 
 
 . *Data Tiering in Google Cloud Platform*: Choose whether to enable data tiering on the initial aggregate, choose a storage class for the tiered data, and then select a service account that has the predefined Storage Admin role.
 +
