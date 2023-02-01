@@ -31,9 +31,7 @@ Cloud Volumes ONTAP 9.11.1P4 is now supported in Azure China regions. Two new Az
 
 You can upgrade existing Cloud Volumes ONTAP systems in China regions to 9.11.1P4. 
 
-See all supported regions on link:https://bluexp.netapp.com/cloud-volumes-global-regions[the Cloud Volumes ONTAP Global Regions Maps page^].
-
-=== Support for AWS in China
+=== Updates for AWS China regions
 Cloud Volumes ONTAP 9.11.1 P4 is now supported in AWS China regions. You can upgrade existing Cloud Volumes ONTAP systems in China regions to 9.11.1P4.
 
 === WORM storage and data tiering
