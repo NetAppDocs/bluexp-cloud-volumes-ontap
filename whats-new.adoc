@@ -31,8 +31,12 @@ Cloud Volumes ONTAP 9.11.1P4 is now supported in Azure China regions. Two new Az
 
 You can upgrade existing Cloud Volumes ONTAP systems in China regions to 9.11.1P4. 
 
+Note that only single node systems with BYOL are supported in China regions.
+
 === Updates for AWS China regions
 Cloud Volumes ONTAP 9.11.1 P4 is now supported in AWS China regions. You can upgrade existing Cloud Volumes ONTAP systems in China regions to 9.11.1P4.
+
+Note that only single node systems with BYOL are supported in China regions.
 
 === WORM storage and data tiering
 You can now enable both data tiering and WORM storage together when you create a Cloud Volumes ONTAP 9.8 system or later. Enabling data tiering with WORM storage allows you to tier the data to an object store in the cloud.
