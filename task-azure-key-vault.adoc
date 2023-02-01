@@ -6,7 +6,7 @@ summary: Utilize Azure Key Vault for your third-party key management service.
 ---
 = Manage keys with Azure Key Vault
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 :hardbreaks:
 
 You can use link:https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts[Azure Key Vault (AKV)^] to protect your ONTAP encryption keys in an Azure-deployed application.
