@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-getting-started-gcp.html
 keywords: google cloud platform, gcp, cloud manager, deploy BlueXP, launch BlueXP, create BlueXP, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions
-summary: Get started with Cloud Volumes ONTAP for GCP in a few steps.
+summary: Get started with Cloud Volumes ONTAP for Google Cloud in a few steps.
 ---
 
 = Quick start for Cloud Volumes ONTAP in Google Cloud
@@ -13,15 +13,15 @@ summary: Get started with Cloud Volumes ONTAP for GCP in a few steps.
 :imagesdir: ./media/
 
 [.lead]
-Get started with Cloud Volumes ONTAP for GCP in a few steps.
+Get started with Cloud Volumes ONTAP for Google Cloud in a few steps.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
-If you don't have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Learn how to create a Connector in GCP^].
+If you don't have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Learn how to create a Connector in Google Cloud^].
 
 [role="quick-margin-para"]
-When you create your first Cloud Volumes ONTAP working environment, BlueXP (formerly Cloud Manager) prompts you to deploy a Connector if you don't have one yet.
+Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no internet access is available, you need to manually install the Connector and access the BlueXP user interface that's running on that Connector. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Learn how to manually install the Connector in a location without internet access^]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
 
@@ -42,9 +42,9 @@ link:task-planning-your-config-gcp.html[Learn more about planning your configura
 
 .. If you're using a shared VPC, provide the _Compute Network User_ role to the Connector service account.
 
-.. Enable outbound internet access from the target VPC so the Connector and Cloud Volumes ONTAP can contact several endpoints.
+.. Enable outbound internet access from the target VPC for NetApp AutoSupport.
 +
-This step is important because the Connector can't manage Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference-networking-gcp.html[the Connector and Cloud Volumes ONTAP].
+This step isn't required if you're deploying Cloud Volumes ONTAP in a region where no internet access is available.
 
 [role="quick-margin-para"]
 link:reference-networking-gcp.html[Learn more about networking requirements].
@@ -81,4 +81,4 @@ Click *Add Working Environment*, select the type of system that you would like t
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Creating a Connector from BlueXP^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector software on a Linux host^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[What BlueXP does with GCP permissions^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[What BlueXP does with Google Cloud permissions^]
