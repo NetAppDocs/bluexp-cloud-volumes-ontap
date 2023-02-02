@@ -17,9 +17,9 @@ Cloud Volumes ONTAP fails and rolls back new deployments for AWS High Availabili
 
 == Overview
 
-By default, deployments fail and rollback whenever a placement group fails the creation process for a HA single zone working environment. Creation of the placement group also fails and rolls back if both Cloud Volumes ONTAP nodes and the mediator instance are not included.
+By default, deployments fail and rollback whenever a placement group fails the creation process for a HA single zone working environment. Creation of the placement group also fails and rolls back if both Cloud Volumes ONTAP nodes and the mediator instance are not present.
 
-You can bypass the rollback process whenever the placement group creation fails and continue on with deployments by configuring the app.conf file. When bypassing the rollback process, deployments complete successfully and the system generates a notification to the user about the failed placement group creation. 
+You can bypass the rollback process whenever the placement group creation fails and continue on with deployments by configuring the app.conf file. When bypassing the rollback process, deployments complete successfully and the system generates a notification stating the placement group creation failed. 
 
 === Disable rollback on placement group failure
 To turn off placement group failure, the "rollback-on-placement-group-failure" flag must be set to "false".
