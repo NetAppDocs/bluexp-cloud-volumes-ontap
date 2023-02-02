@@ -42,6 +42,7 @@ To turn off placement group failure, the "rollback-on-placement-group-failure" f
 }
 ----
 +
+NOTE: By default, "rollback-on-placement-group-failure" parameter is set to "True". 
 . Save the file and log off the Connector.
 +
 A reboot is not required.
