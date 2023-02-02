@@ -23,25 +23,6 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 5 February 2023
 The following changes were introduced with the 3.9.26 release of the Connector.
 
-=== Updates for Azure China regions 
-Cloud Volumes ONTAP 9.11.1P4 is now supported in Azure China regions. Two new Azure China regions are supported:
-
-* Azure China North 3
-* Azure China East 3
-
-You can upgrade existing Cloud Volumes ONTAP systems in China regions to 9.11.1P4. 
-
-Note that only single node systems with BYOL are supported in China regions.
-
-See all supported regions on the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes ONTAP Global Regions Maps page^].
-
-=== Updates for AWS China regions
-Cloud Volumes ONTAP 9.11.1 P4 is now supported in AWS China regions. You can upgrade existing Cloud Volumes ONTAP systems in China regions to 9.11.1P4.
-
-Note that only single node systems with BYOL are supported in China regions.
-
-See all supported regions on the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes ONTAP Global Regions Maps page^].
-
 === WORM storage and data tiering
 You can now enable both data tiering and WORM storage together when you create a Cloud Volumes ONTAP 9.8 system or later. Enabling data tiering with WORM storage allows you to tier the data to an object store in the cloud.
 
