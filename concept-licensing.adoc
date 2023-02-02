@@ -138,6 +138,8 @@ Your license is always charged first, but you'll be charged from the hourly rate
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
 
+* Only single node systems with BYOL are supported in China regions.
+
 === Changing packages
 
 After deployment, you can change the package for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed.
