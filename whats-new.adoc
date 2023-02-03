@@ -24,7 +24,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 The following changes were introduced with the 3.9.26 release of the Connector.
 
 === Placement group creation in AWS
-A new configuration setting is now available for placement group creation with AWS HA single availability zone deployments. You can now chose to bypass failed placement group creations and allow AWS HA single AZ deployments to complete successfully. 
+A new configuration setting is now available for placement group creation with AWS HA single availability zone (AZ) deployments. Now you can choose to bypass failed placement group creations and allow AWS HA single AZ deployments to complete successfully. 
 
 For detailed information on how to configure the placement group creation setting, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-configure-placement-group-failure-aws.html#overview[Configure placement group creation for AWS HA Single AZ^].
 
