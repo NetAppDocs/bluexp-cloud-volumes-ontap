@@ -23,6 +23,16 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 5 February 2023
 The following changes were introduced with the 3.9.26 release of the Connector.
 
+=== Placement group creation setting for AWS HA single availability zone
+A new configuration setting is now available for placement group creation with AWS HA single availability zone deployments. You can now chose to bypass failed placement group creations and allow AWS HA single AZ deployments to complete successfully. 
+
+For detailed information on how to configure the placement group creation setting, see link: https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-configure-placement-group-failure-aws.html#overview[Configure placement group creation for AWS HA Single AZ^].
+
+=== Private DNS zone configuration update
+A new configuration setting is now available so that you can create a link between a private DNS zone and a virtual network when using Azure Private Links. Creation is enabled by default.  
+
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html#provide-bluexp-with-details-about-your-azure-private-dns[Provide BlueXP with details about your Azure Private DNS]
+
 === WORM storage and data tiering
 You can now enable both data tiering and WORM storage together when you create a Cloud Volumes ONTAP 9.8 system or later. Enabling data tiering with WORM storage allows you to tier the data to an object store in the cloud.
 
