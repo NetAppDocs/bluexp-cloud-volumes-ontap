@@ -91,6 +91,8 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 +
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
++
+TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.
 +
@@ -148,13 +150,18 @@ For help choosing a disk type and size, see link:task-planning-your-config-azure
 +
 link:concept-data-tiering.html[Learn more about data tiering].
 
-. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
+. *Write Speed & WORM*:  
+.. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
+.. Activate write once, read many (WORM) storage, if desired.
 +
-WORM can't be enabled if data tiering was enabled.
+This option is only available for certain VM types. To find out which VM types are supported, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs]. 
++
+WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
 link:concept-worm.html[Learn more about WORM storage].
+.. If you activate WORM storage, select the retention period. 
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
@@ -269,6 +276,8 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 +
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
++
+TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *HA Deployment Models*: 
 
@@ -331,15 +340,19 @@ For help choosing a disk size, see link:task-planning-your-config-azure.html#siz
 +
 link:concept-data-tiering.html[Learn more about data tiering].
 
-. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
+. *Write Speed & WORM*: 
+.. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
+.. Activate write once, read many (WORM) storage, if desired.
 +
 This option is only available for certain VM types. To find out which VM types are supported, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs]. 
 +
-WORM can't be enabled if data tiering was enabled.
+WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
 link:concept-worm.html[Learn more about WORM storage].
+.. If you activate WORM storage, select the retention period. 
+
 . *Secure Communication to Storage & WORM*: Choose whether to enable an HTTPS connection to Azure storage accounts, and activate write once, read many (WORM) storage, if desired.
 +
 The HTTPS connection is from a Cloud Volumes ONTAP 9.7 HA pair to Azure page blob storage accounts. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.

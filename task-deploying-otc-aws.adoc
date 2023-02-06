@@ -94,6 +94,8 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 +
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
++
+TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
 +
@@ -162,13 +164,16 @@ Note the following:
 +
 link:concept-data-tiering.html[Learn how data tiering works].
 
-. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
+. *Write Speed & WORM*: 
+.. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
+.. Activate write once, read many (WORM) storage, if desired.
 +
-WORM can't be enabled if data tiering was enabled.
+WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
 link:concept-worm.html[Learn more about WORM storage].
+.. If you activate WORM storage, select the retention period. 
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
@@ -298,6 +303,8 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 +
 * https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
 * https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html[Learn more about Cloud Backup^]
++
+TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *HA Deployment Models*: Choose an HA configuration.
 +
@@ -378,13 +385,16 @@ Note the following:
 +
 link:concept-data-tiering.html[Learn how data tiering works].
 
-. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
+. *Write Speed & WORM*: 
+.. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
+.. Activate write once, read many (WORM) storage, if desired.
 +
-WORM can't be enabled if data tiering was enabled.
+WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
 link:concept-worm.html[Learn more about WORM storage].
+.. If you activate WORM storage, select the retention period. 
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
