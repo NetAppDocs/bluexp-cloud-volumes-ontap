@@ -39,7 +39,7 @@ If required by your business, you can change a setting in BlueXP so that it conf
 
 == Work with Azure Private Links
 
-In most cases, there’s nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. ​BlueXP manages Azure Private Links for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
+In most cases, there's nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. BlueXP manages Azure Private Links for you. But if you use Azure Private DNS, then you'll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
 
 === How Private Link connections work
 
@@ -73,6 +73,7 @@ Note that the DNS name must match Azure DNS naming requirements https://docs.mic
     "resource-group" : "<resource group name of the DNS zone>",
     "subscription" : "<subscription ID>",
     "use-existing" : true
+    "create-private-dns-zone-link" : true 
  }
 +
 The parameter should be entered at the same level as "system-id" like shown below:
