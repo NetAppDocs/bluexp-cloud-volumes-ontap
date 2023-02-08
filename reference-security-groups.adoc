@@ -236,4 +236,4 @@ The predefined security group includes the following outbound rules.
 
 == Rules for the Connector
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html#rules-for-the-connector[View security group rules for the Connector^]
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[View security group rules for the Connector^]
