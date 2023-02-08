@@ -168,6 +168,8 @@ Note that two sets of firewall rules are required for an HA configuration:
 * One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP.
 * Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Rules for VPC-1, VPC-2, and VPC-3,Learn more>>.
 
+TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html[View firewall rules for the Connector^]
+
 ==== Inbound rules
 
 When you create a working environment, you can choose the source filter for the predefined firewall policy during deployment:
@@ -299,4 +301,5 @@ Communication from the HA nodes to the HA mediator takes place over port 3260 (i
 
 If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[View networking requirements for the Connector^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[View networking requirements for the Connector^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html[Firewall rules in Google Cloud^]
