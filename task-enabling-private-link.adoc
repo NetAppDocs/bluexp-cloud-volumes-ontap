@@ -41,7 +41,11 @@ The Connector should be deployed in the same Azure region as the Cloud Volumes O
 
 == Work with Azure Private Links
 
-In most cases, there's nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. BlueXP manages Azure Private Links for you. But if you use an existing Azure Private DNS, then you'll need to edit a configuration file. Optionally, if you work with custom DNS, you need to create a conditional forwarder to the Azure private DNS zone from your custom DNS servers. To learn more, refer to link:https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder[Azure's documentation on using a DNS forwarder^].
+In most cases, there's nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. BlueXP manages Azure Private Links for you. But if you use an existing Azure Private DNS zone, then you'll need to edit a configuration file. 
+
+=== Requirement for custom DNS
+
+Optionally, if you work with custom DNS, you need to create a conditional forwarder to the Azure private DNS zone from your custom DNS servers. To learn more, refer to link:https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder[Azure's documentation on using a DNS forwarder^].
 
 === How Private Link connections work
 
@@ -95,7 +99,9 @@ You can change this default behavior by enabling rollback if BlueXP fails to cre
 
 If you enable rollback, BlueXP stops the action and rolls back all resources that were created as part of the action.
 
-Enabling rollback is supported through the API only.
+You can enable rollback through the API or by updating the app.conf file. 
+
+*Enable rollback through the API*
 
 .Step
 
@@ -103,3 +109,12 @@ Enabling rollback is supported through the API only.
 +
 [source, json]
 { "rollbackOnAzurePrivateLinkFailure": true }
+
+*Enable rollback by updating app.conf*
+
+.Step
+
+. Use the `PUT /occm/config` API call with the following request body:
++
+[source, json]
+{ "rollbackOnAzurePrivateLinkFailure": false }
