@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-security-groups.html
 keywords: security group, security groups, rules, ports, aws, inbound, outbound, rules
-summary: BlueXP creates AWS security groups that include the inbound and outbound rules that BlueXP and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you need to use your own.
+summary: BlueXP creates AWS security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 ---
 
 = Security group rules for AWS
@@ -13,7 +13,7 @@ summary: BlueXP creates AWS security groups that include the inbound and outboun
 :imagesdir: ./media/
 
 [.lead]
-BlueXP creates AWS security groups that include the inbound and outbound rules that the Connector and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
+BlueXP creates AWS security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
 == Rules for Cloud Volumes ONTAP
 
@@ -230,68 +230,10 @@ The predefined security group includes the following outbound rules.
 | Port
 | Purpose
 
-| All traffic |	All |	Communication between the HA mediator and HA nodes
+| All traffic |	All | Communication between the HA mediator and HA nodes
 
 |===
 
 == Rules for the Connector
 
-The security group for the Connector requires both inbound and outbound rules.
-
-=== Inbound rules
-
-[cols="10,10,80",width=100%,options="header"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| SSH | 22 | Provides SSH access to the Connector host
-| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Data Sense
-| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.
-
-|===
-
-=== Outbound rules
-
-The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
-
-==== Basic outbound rules
-
-The predefined security group for the Connector includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All TCP | All | All outbound traffic
-| All UDP | All |	All outbound traffic
-
-|===
-
-==== Advanced outbound rules
-
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
-
-NOTE: The source IP address is the Connector host.
-
-[cols=5*,options="header,autowidth"]
-|===
-
-| Service
-| Protocol
-| Port
-| Destination
-| Purpose
-
-| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
-.2+| API calls | TCP | 3000 | ONTAP HA mediator | Communication with the ONTAP HA mediator
-| TCP | 8088 | Backup to S3 | API calls to Backup to S3
-| DNS | UDP	| 53 | DNS | Used for DNS resolve by BlueXP
-| Cloud Data Sense | HTTP | 80 | Cloud Data Sense instance | Cloud Data Sense for Cloud Volumes ONTAP
-|===
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html#rules-for-the-connector[View security group rules for the Connector^]
