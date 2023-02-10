@@ -20,7 +20,7 @@ When using AKV, be aware that by default a data SVM LIF is used to communicate w
 .Prerequisites
 * Cloud Volumes ONTAP must be running version 9.10.1 or later
 * Volume Encryption (VE) license installed (NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support)
-* You must have a Multi-tenant Encryption Key Management (MTEKM) license 
+* You must have a Multi-tenant Encryption Key Management (MT_EK_MGMT) license 
 * You must be a cluster or SVM administrator
 * An Active Azure subscription
 
@@ -119,7 +119,7 @@ image:screenshot-azure-service-endpoints-services.png[Screenshot of Service Endp
 .. Verify the DNS service has been created for the data SVM:
 `vserver services name-service dns show`
 . Enable Azure Key Vault using the client ID and tenant ID saved after the application registration:
-`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _Azure_key_name_ -key-id _Azure_key_ID_`
+`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _Azure_key_vault_name_ -key-id _Azure_key_ID_`
 . Check the status of the key manager:
 `security key-manager external azure check`
 The output will look like:
