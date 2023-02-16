@@ -190,9 +190,9 @@ If you need rigid rules for outbound traffic, you can use the following informat
 | Destination
 | Purpose
 
-| HTTP | 80 | Connector IP address | Download upgrades for the mediator
-| HTTPS | 443 | AWS API services | Assist with storage failover
-| UDP | 53 | AWS API services | Assist with storage failover
+| HTTP | 80 | IP address of the Connector on AWS EC2 instance | Download upgrades for the mediator
+| HTTPS | 443 | ec2.amazonaws.com | Assist with storage failover
+| UDP | 53 | ec2.amazonaws.com | Assist with storage failover
 
 |===
 
