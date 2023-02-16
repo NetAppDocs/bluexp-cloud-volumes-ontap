@@ -55,7 +55,7 @@ Choosing a specific aggregate is recommended only if you have a good understandi
 
 .Any aggregate
 --
-On the Overview tab, navigate to the Volumes tile and click *Add Volume* > *Add Volume*.
+On the Overview tab, navigate to the Volumes tile, and click *Add Volume* > *Add Volume*.
 
 --
 
