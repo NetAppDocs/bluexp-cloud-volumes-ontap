@@ -2,8 +2,7 @@
 sidebar: sidebar
 permalink: task-file-verification-windows.html
 keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, Windows
-summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP 
-Image Digest File tool on Linux
+summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool on Linux
 ---
 
 = File Signature Verification on Windows 
