@@ -1,8 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference-image-verification-links.html
-keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP,
-Cloud Volumes, CLI, reference, Python, OpenSSL, 
+keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, reference, Python, OpenSSL, 
 summary: Reference links Azure image verification
 ---
 
