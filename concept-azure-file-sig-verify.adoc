@@ -2,8 +2,7 @@
 sidebar: sidebar
 permalink: concept-azure-file-sig-verify.html
 keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, 
-summary: Understanding how to verify an exported VHD file signature through the Cloud Volumes ONTAP 
-Image Digest File tool. 
+summary: Understanding how to verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool. 
 ---
 
 = File Signature Verification
