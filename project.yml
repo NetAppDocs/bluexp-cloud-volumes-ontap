@@ -90,6 +90,7 @@ sidebar:
                   url: /task-azure-image-export.html
                 - title: File Signature Verification
                   url: concept-azure-file-sig-verify.html
+                  entries:
                     - title: File Signature Verification on Linux
                       url: /task-file-verification-linux.html
                     - title: File Signature Verification on Mac OS 
