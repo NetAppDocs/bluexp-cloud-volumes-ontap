@@ -1,0 +1,143 @@
+---
+sidebar: sidebar
+permalink: task-file-verification-windows.html
+keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP,
+Cloud Volumes, CLI, Windows
+summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP 
+Image Digest File tool on Linux
+---
+
+= File Signature Verification on Windows 
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool. The digest file tool removes the leading 1MB from the VHD file and then verifies the remaining portion of the exported VHD file. 
+
+NOTE: On Windows, a Python script is needed to verify the Azure image.  
+ 
+.Steps
+
+. Download and install Microsoft Visual Redistributable through the 
+https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170[Microsoft Visual C++ Redistributable latest supported downloads page^].
+
+. Download and install OpenSSL through the 
+https://slproweb.com/products/Win32OpenSSL.html[OpenSSL download page^].
+
+. Download and install Python through the 
+https://www.python.org/downloads/windows/[Pythong Releases for Windows page^].
+
+. Download the digest file(.sig), public key certificate file(.pem) and chain certificate 
+file(.pem) from NSS website.
+
+. Place the files in the same local directory as .vhd file. 
+
+. Create a new directory from command line (for example, c:\signing).
++
+----
+mkdir c:\signing
+cd c:\signing
+----
+
+. Copy the Azure image vhd file, signature file, certificate file, and chain certificate 
+file to the newly created directory.
++
+----
+copy C:\Users\Administrator\Downloads\NetApp-ONTAP-Cloud-for-Azure-9.12.0.vhd .
+copy C:\Users\Administrator\Downloads\csc-prod-CVO-AZURE.pem .
+copy C:\Users\Administrator\Downloads\csc-prod-chain-CVO-AZURE.pem .
+copy C:\Users\Administrator\Downloads\DataONTAPv-azure.vhd_azure_digest.sig .
+----
+
+. Save the script to a file 'verifyazure.py' and place it in the same directory.
++
+.Click to display the script
+[%collapsible]
++
+====
+
+----
+import os, sys
+  
+publicKey = 'public_key.pub'
+sigfile = 'digest.sig'
+dstfile = 'sign.tmp'
+resultfile = 'output.txt'
+BLOCK_SIZE = 65536
+
+def getParams():
+            n = len(sys.argv)
+            if n <= 4:
+                print("Please provide Certificate, Certificate Chain, Image File, and Signature File in order as input.")
+                return None
+            return (sys.argv[1:])
+  
+  
+def verify_img():
+            #To get input params
+            (cert, certChain, imgname, sigfile) = getParams()
+  
+            #To check files necessary for verification
+            if cert is None or certChain is None or imgname is None:
+                print("Cert, Cert Chain, or Image name missing. Verification Failed")
+                return
+  
+            for fp in (imgname, cert, certChain, sigfile):
+                filePresent = os.path.isfile(fp)
+                if not filePresent:
+                    print("'{}' file missing. Please provide it in current directory".format(fp))
+                    print("Verification Failed")
+                    return
+  
+            #To verify chain of trust
+            try:
+                os.system("openssl verify -CAfile {} {}".format(certChain, cert))
+            except OSError:
+                os.system("echo 'Verification Failed: Chain of Trust' > {}".format(resultfile))
+  
+            #To extract public key from certificate
+            try:
+                os.system("openssl x509 -pubkey -noout -in {} > {}".format(cert, publicKey))
+            except OSError:
+                os.system("echo 'Verification Failed: Public Key extraction' > {}".format(resultfile))
+  
+            #To construct a temp file with the first 1MB of image file removed
+            print("All required input files are present. Verifying image now...")
+            with open(imgname, 'rb') as f:
+                with open(dstfile, 'wb') as dst:
+                    f.seek(1024 * 1024)
+                    fb = f.read(BLOCK_SIZE)
+                    while len(fb) > 0:
+                        dst.write(fb)
+                        fb = f.read(BLOCK_SIZE)
+  
+            #A successful verification should print 'Verified OK' on screen
+            try:
+                os.system("openssl dgst -verify {} -keyform PEM -sha256 -signature {} -binary {} > {}".format(publicKey, sigfile, dstfile, resultfile))
+                with open(resultfile) as f:
+                        print(f.read())
+  
+            except OSError:
+                os.system("echo 'Verification Failed: Signature Verification' > {}".format(resultfile))
+  
+verify_img()
+----
+
+====
+
+. Execute the script from command line to verify the image. 
++ 
+The script takes Public Key Certificate, Chain Certificate, VHD file and Signature File in order as input.
++
+====
+c:\signing>py ./verifyazure.py csc-prod-CVO-AZURE.pem csc-prod-chain-CVO-AZURE.pem NetApp-ONTAP-Cloud-for-Azure-9.12.0.vhd DataONTAPv-azure.vhd_azure_digest.sig
+Starting to verify image.
+Verified OK
+ 
+#If the verification fails, the script will print "Verification Failed"
+====
+
+. Clean up the workspace. 

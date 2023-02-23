@@ -82,6 +82,20 @@ sidebar:
               url: /task-azure-high-availability-mode.html
             - title: Launch Cloud Volumes ONTAP in Azure
               url: /task-deploying-otc-azure.html
+            - title: Azure Image Verification
+              entries:
+                - title: Overview
+                  url: /concept-azure-image-verification.html
+                - title: Image Export from Azure Marketplace
+                  url: /task-azure-image-export.html
+                - title: File Signature Verification
+                  url: concept-azure-file-sig-verify.html
+                    - title: File Signature Verification on Linux
+                      url: /task-file-verification-linux.html
+                    - title: File Signature Verification on Mac OS 
+                      url: /task-file-verification-mac.html
+                    - title: File Signature Verification on Windows
+                      url: /task-file-verification-window.html                                          
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
