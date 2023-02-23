@@ -16,10 +16,14 @@ summary: Understanding how to verify an exported VHD file signature through the 
 The Azure image verification process will generate a digest from the VHD file with the leading 1MB striped by using hash function. To match the signing procedure, SHA256 is used to hash. You need to remove the leading 1MB from the VHD file and then verify the remaining portion of the VHD file. 
 
 == File signature verification workflow summary
-The following is an overview of the file signature verification workflow process:
+The following is an overview of the file signature verification workflow process.
+
+image:graphic_azure_check_signature.png[An image that shows the file signature verification process]
 
 * Download the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem) from NSS. 
 If tar.gz is the downloaded format, an extra step is needed to open it.
++
+image:screenshot_cloud_volumes_ontap_tar.gz.png[An image that shows the NSS page containing the digest file tar.gz downloads]
 
 * Verify the chain of trust.
 
@@ -37,7 +41,3 @@ openssl dgst -verify <public_key> -keyform <form> <hash_function>
 ----
 
 * OpenSSL CLI tool gives a "Verified OK" message if both the files match and "Verification Failure" if they do not match.
-+
-image:graphic_azure_check_signature.png[An image that shows the file signature verification process]
-+
-image:screenshot_cloud_volumes_ontap_tar.gz.png[An image that shows the NSS page containing the digest file tar.gz downloads]

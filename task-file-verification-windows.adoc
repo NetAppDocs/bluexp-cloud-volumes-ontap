@@ -130,12 +130,13 @@ verify_img()
 + 
 The script takes Public Key Certificate, Chain Certificate, VHD file and Signature File in order as input.
 +
-====
+
+----
 c:\signing>py ./verifyazure.py csc-prod-CVO-AZURE.pem csc-prod-chain-CVO-AZURE.pem NetApp-ONTAP-Cloud-for-Azure-9.12.0.vhd DataONTAPv-azure.vhd_azure_digest.sig
 Starting to verify image.
 Verified OK
  
 #If the verification fails, the script will print "Verification Failed"
-====
+----
 
 . Clean up the workspace. 
