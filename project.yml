@@ -97,7 +97,7 @@ sidebar:
                     - title: File signature verification on Mac OS 
                       url: /task-file-verification-mac.html
                     - title: File signature verification on Windows
-                      url: /task-file-verification-window.html
+                      url: /task-file-verification-windows.html
                 - title: Where to find additional information about Azure Image Verification
                   url: /reference-image-verification-links.html                                          
         - title: Get started in Google Cloud
