@@ -88,7 +88,7 @@ sidebar:
                   url: /concept-azure-image-verification.html
                 - title: Image export from Azure Marketplace
                   url: /task-azure-image-export.html
-            - title: File signature verification
+                - title: File signature verification
                   entries:
                     - title: File signature verification workflow summary
                       url: concept-azure-file-sig-verify.html
@@ -98,8 +98,8 @@ sidebar:
                       url: /task-file-verification-mac.html
                     - title: File signature verification on Windows
                       url: /task-file-verification-window.html
-                    - title: Where to find additional information about Azure Image Verification
-                      url: /reference-image-verification-links.html                                          
+                - title: Where to find additional information about Azure Image Verification
+                  url: /reference-image-verification-links.html                                          
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
