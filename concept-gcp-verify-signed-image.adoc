@@ -18,7 +18,7 @@ To verify the exported GCP signed image, you must download the image digest file
 == Signed image verification workflow summary
 The following is an overview of the GCP signed image verification workflow process.
 
-* From the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS], download the GCP archive containing the following files: 
+* From the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^], download the GCP archive containing the following files: 
 ** Signed digest (.sig)
 ** Certificate containing the public key (.pem)
 ** Certificate chain (.pem)

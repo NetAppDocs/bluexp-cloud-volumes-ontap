@@ -18,7 +18,7 @@ You can verify an exported VHD file signature through the Cloud Volumes ONTAP Im
 .Steps
 
 . Download the digest file(.sig), public key certificate file(.pem) and chain certificate 
-file(.pem) from NSS website.  
+file(.pem) from https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^] website.  
 . Place the download files in a local directory. 
 +
 If tar.gz is the downloaded format, "tar -xzf”

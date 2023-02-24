@@ -29,7 +29,7 @@ https://slproweb.com/products/Win32OpenSSL.html[OpenSSL download page^].
 https://www.python.org/downloads/windows/[Pythong Releases for Windows page^].
 
 . Download the digest file(.sig), public key certificate file(.pem) and chain certificate 
-file(.pem) from NSS website.
+file(.pem) from https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^] website.
 
 . Place the files in the same local directory as .vhd file. 
 

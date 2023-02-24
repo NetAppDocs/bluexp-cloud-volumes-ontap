@@ -13,7 +13,7 @@ summary: Convert an exported image into disk.raw format through the Google Cloud
 :imagesdir: ./media/
 
 [.lead]
-The image being used to deploy new instances or upgrades or being used in existing images will be shared with the clients through https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[the NetApp Support Site (NSS)]. The signed digest, and the certificates will be available to download through the NSS portal. Make sure you are downloading the digest and certificates for the right release corresponding to the image shared by NetApp Support. For instance, 9.13.0 images will have a 9.13.0 signed digest and certificates available on NSS.
+The image being used to deploy new instances, upgrades, or being used in existing images will be shared with the clients through https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[the NetApp Support Site (NSS)^]. The signed digest, and the certificates will be available to download through the NSS portal. Make sure you are downloading the digest and certificates for the right release corresponding to the image shared by NetApp Support. For instance, 9.13.0 images will have a 9.13.0 signed digest and certificates available on NSS.
 
 == Why is this step needed?
 The images from GCP cannot be downloaded directly. In order to verify the image against the signed digest and the certificates, you need to have a mechanism to compare the two files and download the image. To do so, you must export/convert the image into a disk.raw format and save the results in a storage bucket on GCP. The disk.raw file is tarred and gzipped in the process.
@@ -29,7 +29,7 @@ The user/service-account will need privileges to perform the following:
 To verify the image, it must be converted to a disk.raw format and then downloaded.
 
 == Use GCP command line to export GCP image
-The preferred way to export an image to Cloud Storage is to use the https://cloud.google.com/sdk/gcloud/reference/compute/images/export[gcloud compute images export command]. This command takes the provided image and converts it to a disk.raw file which gets tarred and gzipped. The generated file is saved at the destination URL and can then be downloaded for verification. 
+The preferred way to export an image to Cloud Storage is to use the https://cloud.google.com/sdk/gcloud/reference/compute/images/export[gcloud compute images export command^]. This command takes the provided image and converts it to a disk.raw file which gets tarred and gzipped. The generated file is saved at the destination URL and can then be downloaded for verification. 
 
 The user/account must have privileges to access and write to the desired bucket, export the image, and cloud builds (used by Google to export the image) to execute this operation.
 
@@ -138,4 +138,4 @@ total 1565036
 $ tar -xf CVO_GCP_Signed_Digest.tar.gz
 ----
 
-NOTE: See https://cloud.google.com/compute/docs/images/export-image#console[Google Cloud Platform doc on Exporting an image] for more information on how to export an image through GCP.  
+NOTE: See https://cloud.google.com/compute/docs/images/export-image#console[Google Cloud Platform doc on Exporting an image]^ for more information on how to export an image through GCP.  

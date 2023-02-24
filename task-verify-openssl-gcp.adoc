@@ -13,7 +13,7 @@ summary: Verify the GCP downloaded disk.raw file against the digest file content
 :imagesdir: ./media/
 
 [.lead]
-You can verify the GCP downloaded disk.raw file against the digest file contents available through the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS] using OpenSSL. 
+You can verify the GCP downloaded disk.raw file against the digest file contents available through the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^] using OpenSSL. 
 
 NOTE: The OpenSSL commands to validate the image are compatible with Linux, Mac OS, and Windows machines.
 

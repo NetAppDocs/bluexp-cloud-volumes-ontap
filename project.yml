@@ -131,7 +131,6 @@ sidebar:
                       url: /concept-gcp-verify-signed-image.html
                     - title: Verify contents using OpenSSL
                       url: /task-verify-openssl-gcp.html
-
     - title: Use Cloud Volumes ONTAP
       entries:
         - title: License management
