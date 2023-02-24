@@ -13,9 +13,9 @@ summary: Verify Azure VHD image file signatures files.
 :imagesdir: ./media/
 
 [.lead]
-Azure image verification complies with enhanced NetApp security requirements. While verifing an image file is a straightforward process, Azure image signature verification does require special handlings to the well-known Azure VHD image file due to an alternation made by the Azure marketplace.
+Azure image verification complies with enhanced NetApp security requirements. While verifying an image file is a straightforward process, Azure image signature verification does require special handlings to the well-known Azure VHD image file due to an alternation made by the Azure marketplace.
 
-NOTE: Azure image verifiction is supported from Cloud Volumes ONTAP software version 9.13.0 or greater. 
+NOTE: Azure image verification is supported on Cloud Volumes ONTAP software version 9.13.0 or greater. 
 
 == Azure's Alernation of Published VHD Files
 The leading 1MB(1048576 Bytes) of VHD file is modified by Azure marketplace. As a result, NetApp skips the leading 1MB and signs the 
