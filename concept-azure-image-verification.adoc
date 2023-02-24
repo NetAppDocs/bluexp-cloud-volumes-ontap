@@ -21,6 +21,6 @@ NOTE: Azure image verification is supported on Cloud Volumes ONTAP software vers
 The leading 1MB(1048576 Bytes) of VHD file is modified by Azure marketplace. As a result, NetApp skips the leading 1MB and signs the 
 VHD image portion beyond the leading 1MB.
 
-image:screenshot_azure_VHD_10gb.png[A screenshot that shows Azure's alternation of 10GB VHD file.]
+image:screenshot_azure_VHD_10gb.gif[A screenshot that shows Azure's alternation of 10GB VHD file.]
 
 As an example, the above diagram shows a VHD file sized 10GB. But the NetApp signed portion is marked in green with size of 10GB - 1MB.

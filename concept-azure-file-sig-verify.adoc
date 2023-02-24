@@ -20,7 +20,7 @@ The following is an overview of the file signature verification workflow process
 
 image:graphic_azure_check_signature.png[An image that shows the file signature verification process]
 
-* Download the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem) from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS]. 
+* Download the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem) from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^]. 
 If tar.gz is the downloaded format, an extra step is needed to open it.
 +
 image:screenshot_cloud_volumes_ontap_tar.gz.png[An image that shows the NSS page containing the digest file tar.gz downloads]
