@@ -337,6 +337,8 @@ For help choosing a disk type and size, see link:task-planning-your-config-gcp.h
 .. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
++
+NOTE: _Flash cache_, low durability mode (LDM), and Jumbo Frames (8896 Maximum transmission unit) features are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. 
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
