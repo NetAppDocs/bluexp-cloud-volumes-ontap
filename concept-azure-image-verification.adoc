@@ -18,8 +18,7 @@ Azure image verification complies with enhanced NetApp security requirements. Wh
 NOTE: Azure image verification is supported on Cloud Volumes ONTAP software version 9.13.0 or greater. 
 
 == Azure's Alernation of Published VHD Files
-The leading 1MB(1048576 Bytes) of VHD file is modified by Azure marketplace. As a result, NetApp skips the leading 1MB and signs the 
-VHD image portion beyond the leading 1MB.
+The leading 1MB(1048576 Bytes) of VHD file is modified by Azure marketplace. As a result, NetApp skips the leading 1MB and signs the VHD image portion beyond the leading 1MB.
 
 image:screenshot_azure_VHD_10gb.gif[A screenshot that shows Azure's alternation of 10GB VHD file.]
 
