@@ -24,12 +24,9 @@ The enhancements described on this page are specific to BlueXP features that ena
 The following changes were introduced with the 3.9.27 release of the Connector.
 
 === 16 TiB and 32 Tib support in Azure
-Cloud Volumes ONTAP now supports 16 TiB and 32 TiB disk sizes for high availability deployments running on managed disks in Azure. for more information, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs-2[Supported configurations in Azure^].
+Cloud Volumes ONTAP now supports 16 TiB and 32 TiB disk sizes for high availability deployments running on managed disks in Azure. 
 
-=== BlueXP Search bar 
-A new search bar is now available within the BlueXp user interface. Located under the top header, this new search bar allows you to locate services, features, and recent results based on your search query. The ability to search for content such as resources and documentation & knowledgebase will be available in a future release. 
-
-image:screenshot_bluexp_search_bar.jpg["A screenshot that shows the search bar under the BlueXP user interface."]
+Learn more about https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#supported-disk-sizes[supported disk sizes in Azure].
 
 === MTEKM license
 
