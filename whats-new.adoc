@@ -20,6 +20,25 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
+== 5 March 2023
+The following changes were introduced with the 3.9.27 release of the Connector.
+
+=== 16 TiB and 32 Tib support in Azure
+Cloud Volumes ONTAP now supports 16 TiB and 32 TiB disk sizes for high availability deployments running on managed disks in Azure. for more information, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs-2[Supported configurations in Azure^].
+
+=== BlueXP Search bar 
+A new search bar is now available within the BlueXp user interface. Located under the top header, this new search bar allows you to locate services, features, and recent results based on your search query. The ability to search for content such as resources and documentation & knowledgebase will be available in a future release. 
+
+image:screenshot_bluexp_search_bar.jpg["A screenshot that shows the search bar under the BlueXP user interface."]
+
+=== MTEKM license
+
+The Multi-tenant Encryption Key Management (MTEKM) license is now included with new and existing Cloud Volumes ONTAP systems running version 9.12.1 GA or later.
+
+Multi-tenant external key management enables individual storage VMs (SVMs) to maintain their own keys through a KMIP server when using NetApp Volume Encryption.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html[Learn how to encrypt volumes with NetApp encryption solutions].
+
 == 5 February 2023
 The following changes were introduced with the 3.9.26 release of the Connector.
 
