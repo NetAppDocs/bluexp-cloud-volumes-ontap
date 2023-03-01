@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-verify-openssl-gcp.html
-keywords: Google Cloud Platform, image, VHD, signature verification, encryption, sha256, ONTAP, Cloud Volumes ONTAP,OpenSSL,
-summary: Verify the GCP downloaded disk.raw file against the digest file contents using OpenSSL.
+keywords: Google Cloud, image, VHD, signature verification, encryption, sha256, ONTAP, Cloud Volumes ONTAP,OpenSSL,
+summary: Verify the Google Cloud downloaded disk.raw file against the digest file contents using OpenSSL.
 ---
 
 = Verification of disk.raw file and digest file contents using OpenSSL 
@@ -13,7 +13,7 @@ summary: Verify the GCP downloaded disk.raw file against the digest file content
 :imagesdir: ./media/
 
 [.lead]
-You can verify the GCP downloaded disk.raw file against the digest file contents available through the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^] using OpenSSL. 
+You can verify the Google Cloud downloaded disk.raw file against the digest file contents available through the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^] using OpenSSL. 
 
 NOTE: The OpenSSL commands to validate the image are compatible with Linux, Mac OS, and Windows machines.
 
