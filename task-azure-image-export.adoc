@@ -5,7 +5,7 @@ keywords: Azure, image, VHD, image signature file, export, marketplace,
 summary: You can export ONTAP images from the Azure Marketplace to verify the signature of the VHD file. 
 ---
 
-= Image Export from Azure Marketplace
+= Image export from Azure Marketplace
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -25,11 +25,11 @@ NOTE: For more information on how to install Azure CLI, see https://learn.micros
 
 .Steps
 
-. From BlueXp, find the Cloud ONTAP software version when configuring your deployment.
+. From BlueXP, find the Cloud Volumes ONTAP software version when configuring your deployment.
 +
 image:screenshot_cvo_software_version.png[A screenshot showing the Cloud Volumes ONTAP software versions available when configuring a deployment in BlueXP.]
 
-. From the Azure marketplace, verify the image is matches the Cloud ONTAP software version configured for your deployment.
+. From the Azure marketplace, verify the image is matches the Cloud Volumes ONTAP software version configured for your deployment.
 +
 For example, Cloud Volumes ONTAP softwre version 9.13.0, should be "9.130.20230216" for the Azure marketplace image version.
 

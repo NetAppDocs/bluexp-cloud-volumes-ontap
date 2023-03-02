@@ -5,7 +5,7 @@ keywords: Azure, image, VHD, image signature file,
 summary: Verify Azure VHD image file signatures files.
 ---
 
-= Azure Image Verification Overview
+= Azure image verification overview
 :hardbreaks:
 :nofooter:
 :icons: font
