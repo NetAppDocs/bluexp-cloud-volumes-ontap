@@ -81,7 +81,7 @@ sidebar:
             - title: Enable high availability mode
               url: /task-azure-high-availability-mode.html
             - title: Launch Cloud Volumes ONTAP in Azure
-              url: /task-deploying-otc-azure.html
+              url: /task-deploying-otc-azure.html                                 
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
@@ -101,6 +101,18 @@ sidebar:
               url: /task-set-up-licensing-google.html
             - title: Launch Cloud Volumes ONTAP in Google Cloud
               url: /task-deploying-gcp.html
+            - title: Google Cloud Platform Image Verification
+              entries:
+                - title: Overview
+                  url: /concept-gcp-image-verification.html
+                - title: Convert image to Raw format on GCP
+                  url: /task-gcp-convert-image-raw.html
+                - title: Image signature verification
+                  entries:
+                    - title: Verify GCP signed images
+                      url: /concept-gcp-verify-signed-image.html
+                    - title: Verify contents using OpenSSL
+                      url: /task-verify-openssl-gcp.html
     - title: Use Cloud Volumes ONTAP
       entries:
         - title: License management
