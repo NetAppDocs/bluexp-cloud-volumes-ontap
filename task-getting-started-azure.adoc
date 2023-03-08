@@ -18,10 +18,10 @@ Get started with Cloud Volumes ONTAP for Azure in a few steps.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Create a Connector
 
 [role="quick-margin-para"]
-If you don't have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[Learn how to create a Connector in Azure^].
+If you don't have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Connector^] yet, an Account Admin needs to create one. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[Learn how to create a Connector in Azure^]
 
 [role="quick-margin-para"]
-When you create your first Cloud Volumes ONTAP working environment, BlueXP (formerly Cloud Manager) prompts you to deploy a Connector if you don't have one yet.
+Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no internet access is available, then you need to manually install the Connector and access the BlueXP user interface that's running on that Connector. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html[Learn how to manually install the Connector in a location without internet access^]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Plan your configuration
 
@@ -33,9 +33,9 @@ BlueXP offers preconfigured packages that match your workload requirements, or y
 [role="quick-margin-list"]
 .. Ensure that your VNet and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
 
-.. Enable outbound internet access from the target VNet so the Connector and Cloud Volumes ONTAP can contact several endpoints.
+.. Enable outbound internet access from the target VPC for NetApp AutoSupport.
 +
-This step is important because the Connector can't manage Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference-networking-azure.html[the Connector and Cloud Volumes ONTAP].
+This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
 
 [role="quick-margin-para"]
 link:reference-networking-azure.html[Learn more about networking requirements].
