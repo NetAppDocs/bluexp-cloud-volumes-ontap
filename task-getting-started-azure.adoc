@@ -35,7 +35,7 @@ BlueXP offers preconfigured packages that match your workload requirements, or y
 
 .. Enable outbound internet access from the target VPC for NetApp AutoSupport.
 +
-This step isn't required if you're deploying Cloud Volumes ONTAP in a region where no internet access is available.
+This step isn't required if you're deploying Cloud Volumes ONTAP in a location where no internet access is available.
 
 [role="quick-margin-para"]
 link:reference-networking-azure.html[Learn more about networking requirements].
