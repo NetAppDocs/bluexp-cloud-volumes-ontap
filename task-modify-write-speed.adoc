@@ -33,6 +33,6 @@ Before you change the write speed, you should link:concept-write-speed.html[unde
 +
 If you choose High, then you'll need to read the "I understand..." statement and confirm by checking the box.
 +
-NOTE: For Google Cloud HA pairs running Cloud Volumes ONTAP version 9.12.1 or earlier, the *High* write speed option is not available.  
+NOTE: The *High* write speed option is supported with Cloud Volumes ONTAP HA pairs in Google Cloud starting with version 9.13.0.  
 
 . Click *Save*, review the confirmation message, and then click *Proceed*.
