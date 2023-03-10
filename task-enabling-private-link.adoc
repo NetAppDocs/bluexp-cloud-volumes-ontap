@@ -39,6 +39,12 @@ The Connector should be deployed in the same Azure region as the Cloud Volumes O
 
 .	Click *Save*.
 
+.After you finish
+
+If you disabled Azure Private Links and the Connector uses a proxy server, you must enable direct API traffic.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector[Learn how to enable direct API traffic on the Connector^]
+
 == Work with Azure Private Links
 
 In most cases, there's nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. BlueXP manages Azure Private Links for you. But if you use an existing Azure Private DNS zone, then you'll need to edit a configuration file. 

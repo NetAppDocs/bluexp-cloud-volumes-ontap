@@ -76,9 +76,9 @@ BlueXP creates the storage account with the following settings:
 * Minimum TLS version: Version 1.2
 * Infrastructure encryption: Disabled
 
-Storage access tiers:: The default storage access tier for tiered data in Azure is the _hot_ tier. The hot tier is ideal for frequently accessed data.
+Storage access tiers:: The default storage access tier for tiered data in Azure is the _hot_ tier. The hot tier is ideal for frequently accessed data in the capacity tier.
 +
-If you don't plan to access the inactive data, you can reduce your storage costs by changing to the _cool_ storage tier. When you change the storage tier, inactive data starts in the hot storage tier and transitions to the cool storage tier, if the data is not accessed after 30 days.
+If you don't plan to access the inactive data in the capacity tier, you can reduce your storage costs by changing to the _cool_ storage tier. When you change the storage tier to cool, inactive capacity tier data moves directly to the cool storage tier.
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage tier. https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Learn more about Azure Blob storage access tiers^].
 +
@@ -107,7 +107,7 @@ When BlueXP creates the bucket, it uses the following default settings:
 * Protection: None
 * Data encryption: Google-managed key
 
-Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, inactive data starts in the Standard Storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.
+Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, inactive data moves directly to the class that you selected.
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://cloud.google.com/storage/docs/storage-classes[Learn more about storage classes for Google Cloud Storage^].
 +
