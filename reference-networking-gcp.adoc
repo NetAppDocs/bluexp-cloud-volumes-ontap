@@ -297,6 +297,8 @@ Meanwhile, the predefined firewall rules that BlueXP creates for instances in VP
 
 Communication from the HA nodes to the HA mediator takes place over port 3260 (iSCSI).
 
+NOTE: To enable high write speed for new Google Cloud HA pair deployments, a maximum transmission unit (MTU) of at least 8,896 bytes is required for the VPC-1, VPC-2, and VPC-3 instances.
+
 == Requirements for the Connector
 
 If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
