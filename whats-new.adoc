@@ -23,6 +23,12 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 5 March 2023
 The following changes were introduced with the 3.9.27 release of the Connector.
 
+=== Cloud Volumes ONTAP 9.13.0
+
+BlueXP can now deploy and manage Cloud Volumes ONTAP 9.13.0 in AWS, Azure, and Google Cloud.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
 === 16 TiB and 32 Tib support in Azure
 Cloud Volumes ONTAP now supports 16 TiB and 32 TiB disk sizes for high availability deployments running on managed disks in Azure. 
 
@@ -75,6 +81,7 @@ See link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept
 The Multi-tenant Encryption Key Management (MTEKM) license is no longer included in new Cloud Volumes ONTAP deployments. 
 
 For more information on the ONTAP feature licenses automatically installed with Cloud Volumes ONTAP, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html[Default Configuration for Cloud Volumes ONTAP^].
+//end::whats-new[]
 
 == 15 December 2022
 
@@ -83,7 +90,6 @@ For more information on the ONTAP feature licenses automatically installed with 
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.12.0 in AWS and Google Cloud.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9120-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
-//end::whats-new[]
 
 == 8 December 2022
 
