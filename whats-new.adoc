@@ -20,6 +20,17 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
+== 13 March 2023
+
+=== China region support
+Starting with Cloud Volumes ONTAP 9.12.1 GA, China region support is now supported in Azure as follows.
+
+* Cloud Volumes ONTAP is supported in China North 3.
+* Single node systems are supported.
+* Licenses purchased directly from NetApp are supported.
+
+For regional availability, see link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+
 == 5 March 2023
 The following changes were introduced with the 3.9.27 release of the Connector.
 
