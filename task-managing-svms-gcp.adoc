@@ -84,13 +84,7 @@ Note that BlueXP allocates the required IP addresses in Google Cloud and creates
 
 .Required Google Cloud permissions
 
-Starting with the 3.9.19 release, the Connector requires the following permissions to create and manage storage VMs for Cloud Volumes ONTAP HA pairs:
-
-[source,yaml]
-- compute.instanceGroups.get
-- compute.addresses.get
-
-These permissions are included in https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp].
+The Connector requires specific permissions to create and manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp].
 
 .Steps
 

@@ -21,11 +21,13 @@ By default, BlueXP enables an Azure Private Link for connections between Cloud V
 
 If required, you can configure Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link.
 
-With either configuration, BlueXP always limits network access for connections between Cloud Volumes ONTAP and storage accounts. Network access is limited to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.
+With either configuration, BlueXP always limits network access for connections between Cloud Volumes ONTAP and storage accounts. Network access is limited to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed. 
 
 == Disable Azure Private Links and use service endpoints instead
 
-If required by your business, you can change a setting in BlueXP so that it configures Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link. Changing this setting applies to new Cloud Volumes ONTAP systems that you create.
+If required by your business, you can change a setting in BlueXP so that it configures Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link. Changing this setting applies to new Cloud Volumes ONTAP systems that you create. Service endpoints are only supported in link:https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pairs^] between the Connector and Cloud Volumes ONTAP VNets. 
+
+The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. 
 
 .Steps
 
@@ -37,23 +39,31 @@ If required by your business, you can change a setting in BlueXP so that it conf
 
 .	Click *Save*.
 
+.After you finish
+
+If you disabled Azure Private Links and the Connector uses a proxy server, you must enable direct API traffic.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector[Learn how to enable direct API traffic on the Connector^]
+
 == Work with Azure Private Links
 
-In most cases, there's nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. BlueXP manages Azure Private Links for you. But if you use Azure Private DNS, then you'll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.
+In most cases, there's nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. BlueXP manages Azure Private Links for you. But if you use an existing Azure Private DNS zone, then you'll need to edit a configuration file. 
+
+=== Requirement for custom DNS
+
+Optionally, if you work with custom DNS, you need to create a conditional forwarder to the Azure private DNS zone from your custom DNS servers. To learn more, refer to link:https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder[Azure's documentation on using a DNS forwarder^].
 
 === How Private Link connections work
 
 When BlueXP deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with storage accounts for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.
 
-Client access goes through the private link when clients are within the same VNet as Cloud Volumes ONTAP, within peered VNets, or in your on-premises network when using a private VPN or ExpressRoute connection to the VNet.
+Client access goes through the private link when clients are within the same VNet as Cloud Volumes ONTAP, within peered VNets, or in your on-premises network when using a private VPN or ExpressRoute connection to the VNet. 
 
 Here's an example that shows client access over a private link from within the same VNet and from an on-prem network that has either a private VPN or ExpressRoute connection.
 
 image:diagram_azure_private_link.png[A conceptual image that shows data access going to Cloud Volumes ONTAP and through a private endpoint and private link to the storage account.]
 
-=== Connector location in Azure
-
-The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies[Azure region pair^] for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts.
+NOTE: If the Connector and Cloud Volumes ONTAP systems are deployed in different VNets, then you must set up VNet peering between the VNet where the Connector is deployed and the VNet where the Cloud Volumes ONTAP systems are deployed.
 
 === Provide BlueXP with details about your Azure Private DNS
 
@@ -95,7 +105,9 @@ You can change this default behavior by enabling rollback if BlueXP fails to cre
 
 If you enable rollback, BlueXP stops the action and rolls back all resources that were created as part of the action.
 
-Enabling rollback is supported through the API only.
+You can enable rollback through the API or by updating the app.conf file. 
+
+*Enable rollback through the API*
 
 .Step
 
@@ -103,3 +115,12 @@ Enabling rollback is supported through the API only.
 +
 [source, json]
 { "rollbackOnAzurePrivateLinkFailure": true }
+
+*Enable rollback by updating app.conf*
+
+.Step
+
+. Use the `PUT /occm/config` API call with the following request body:
++
+[source, json]
+{ "rollbackOnAzurePrivateLinkFailure": false }

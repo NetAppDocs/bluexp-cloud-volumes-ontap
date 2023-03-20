@@ -94,7 +94,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 * Provides licensing for any Cloud Volumes ONTAP configuration
 +
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
-* Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems deployed with the Professional package
+* Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems that use the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
 ==== Edge Cache
@@ -137,6 +137,8 @@ Your license is always charged first, but you'll be charged from the hourly rate
 ** If the term of your license expires
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
+
+* Only single node systems with BYOL are supported in China regions.
 
 === Changing packages
 
