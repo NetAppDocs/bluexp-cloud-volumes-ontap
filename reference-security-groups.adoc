@@ -146,14 +146,15 @@ The predefined external security group for the Cloud Volumes ONTAP HA mediator i
 
 The predefined security group for the HA mediator includes the following inbound rule.
 
-[cols=3*,options="header",width=70%,cols="20,20,60"]
+[cols=4*,options="header",width=70%,cols="20,20,20,40"]
 |===
 
 | Protocol
 | Port
+| Source
 | Purpose
 
-| TCP |	3000 | RESTful API access from the Connector
+| TCP |	3000 | CIDR of the Connector | RESTful API access from the Connector
 
 |===
 
