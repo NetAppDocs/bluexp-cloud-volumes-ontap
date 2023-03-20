@@ -144,17 +144,17 @@ The predefined external security group for the Cloud Volumes ONTAP HA mediator i
 
 === Inbound rules
 
-The source for inbound rules is 0.0.0.0/0.
+The predefined security group for the HA mediator includes the following inbound rule.
 
-[cols=3*,options="header",width=70%,cols="20,20,60"]
+[cols=4*,options="header",width=70%,cols="20,20,20,40"]
 |===
 
 | Protocol
 | Port
+| Source
 | Purpose
 
-| SSH |	22 | SSH connections to the HA mediator
-| TCP |	3000 | RESTful API access from the Connector
+| TCP |	3000 | CIDR of the Connector | RESTful API access from the Connector
 
 |===
 
@@ -190,9 +190,9 @@ If you need rigid rules for outbound traffic, you can use the following informat
 | Destination
 | Purpose
 
-| HTTP | 80 | Connector IP address | Download upgrades for the mediator
-| HTTPS | 443 | AWS API services | Assist with storage failover
-| UDP | 53 | AWS API services | Assist with storage failover
+| HTTP | 80 | IP address of the Connector on AWS EC2 instance | Download upgrades for the mediator
+| HTTPS | 443 | ec2.amazonaws.com | Assist with storage failover
+| UDP | 53 | ec2.amazonaws.com | Assist with storage failover
 
 |===
 
