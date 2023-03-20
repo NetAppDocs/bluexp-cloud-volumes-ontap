@@ -144,8 +144,6 @@ The predefined external security group for the Cloud Volumes ONTAP HA mediator i
 
 === Inbound rules
 
-The source for inbound rules is 0.0.0.0/0.
-
 [cols=3*,options="header",width=70%,cols="20,20,60"]
 |===
 
@@ -153,7 +151,6 @@ The source for inbound rules is 0.0.0.0/0.
 | Port
 | Purpose
 
-| SSH |	22 | SSH connections to the HA mediator
 | TCP |	3000 | RESTful API access from the Connector
 
 |===
