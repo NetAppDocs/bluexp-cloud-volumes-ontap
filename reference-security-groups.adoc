@@ -144,6 +144,8 @@ The predefined external security group for the Cloud Volumes ONTAP HA mediator i
 
 === Inbound rules
 
+The predefined security group for the HA mediator includes the following inbound rule.
+
 [cols=3*,options="header",width=70%,cols="20,20,60"]
 |===
 
