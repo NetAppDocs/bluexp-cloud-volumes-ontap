@@ -593,10 +593,8 @@ vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2
 This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.
 
 . If you're running Cloud Volumes ONTAP 9.11.1 or later, modify the network service policies for the storage VM.
-* For a SAN SVM, only the iSCSI LIFs is needed and an optional SVM management LIF. 
-* For a NAS SVM, both the iSCSI LIFs, and the NAS Data LIFs are needed and an optional SVM management LIF.
 
-. Enter the following command to access advanced mode. 
+.. Enter the following command to access advanced mode. 
 [source,cli]
 ::> set adv -con off
 +
