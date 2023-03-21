@@ -324,7 +324,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 .3+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
 | HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
 | TCP | 3128 | Node management LIF | Connector | Sending AutoSupport messages through a proxy server on the Connector, if an outbound internet connection isn't available
-| Configuration backups | HTTP | 80 | Node management LIF | http://<connector-IP-address>/occm/offboxconfig | Send configuration backups to the Connector. link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html[Learn about configuration backup files^].
+| Configuration backups | HTTP | 80 | Node management LIF | \http://<connector-IP-address>/occm/offboxconfig | Send configuration backups to the Connector. link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html[Learn about configuration backup files^].
 | DHCP | 68 | UDP | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | 67 | UDP | Node management LIF | DHCP | DHCP server
 | DNS | 53 | UDP | Node management LIF and data LIF (NFS, CIFS) | DNS | DNS
