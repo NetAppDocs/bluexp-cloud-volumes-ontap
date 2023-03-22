@@ -55,19 +55,28 @@ As soon as a system is converted to the Essentials package, the <<Notes about ch
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
-ifdef::azure[]
 ==== Optimized
 
 Pay for provisioned capacity and I/O operations separately.
 
 * Cloud Volumes ONTAP single node or HA
-*	Charging is based on two cost components: storage and usage (I/O)
+* Charging is based on two cost components: storage and usage (I/O)
 +
 You will not be charged for I/O related to data replication (SnapMirror) or NDMP.
-*	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
-* Supported with selected VM types: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4
-* Add on any of NetApp's cloud data services at extra cost
+ifdef::azure[]
+* Available in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
 endif::azure[]
+ifdef::gcp[]
+* Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
+endif::gcp[]
+* Supported with selected VM types: 
+ifdef::azure[]
+** For Azure: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4 
+endif::azure[]
+ifdef::gcp[]
+** For Google Cloud: n2-standard-4, n2-standard-8
+endif::gcp[]
+* Add on any of NetApp's cloud data services at extra cost
 
 ==== Essentials
 
@@ -85,22 +94,24 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 * Provides licensing for any Cloud Volumes ONTAP configuration
 +
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
-* Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems deployed with the Professional package
+* Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems that use the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
-ifdef::azure[]
 ==== Edge Cache
 
 Provides licensing for Cloud Volumes Edge Cache.
 
-*	The same capabilities as the Professional package with business continuity and data protection for a distributed enterprise
+* The same capabilities as the Professional package with business continuity and data protection for a distributed enterprise
 * Intelligent edge caching through a small-footprint Windows VM at each location
-* 30 TiB minimum with six edge nodes included
-* One edge node with every 3 TiBs of additional capacity purchased
-*	Available only in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
+* One edge node with every 3 TiBs of capacity purchased
+ifdef::azure[]
+* Available in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
+endif::azure[]
+ifdef::gcp[]
+* Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
+endif::gcp[]
 
 https://cloud.netapp.com/cloud-volumes-edge-cache[Learn more about how Cloud Volumes Edge Cache can help your business^]
-endif::azure[]
 
 === Consumption models
 
@@ -126,6 +137,8 @@ Your license is always charged first, but you'll be charged from the hourly rate
 ** If the term of your license expires
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
+
+* Only single node systems with BYOL are supported in China regions.
 
 === Changing packages
 

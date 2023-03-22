@@ -13,7 +13,7 @@ summary: BlueXP handles the set up of networking components for Cloud Volumes ON
 :imagesdir: ./media/
 
 [.lead]
-BlueXP (formerly Cloud Manager) handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
+BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 
 == General requirements
 
@@ -122,7 +122,9 @@ TIP: When deployed in multiple Availability Zones, several LIFs are associated w
 
 === Security groups
 
-You do not need to create security groups because BlueXP does that for you. If you need to use your own, refer to link:reference-security-groups.html[Security group rules].
+You don't need to create security groups because BlueXP does that for you. If you need to use your own, refer to link:reference-security-groups.html[Security group rules].
+
+TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[View security group rules for the Connector^]
 
 === Connection for data tiering
 
@@ -206,44 +208,8 @@ image:diagram_ha_networking.png["Conceptual image showing components in a Cloud 
 
 == Requirements for the Connector
 
-Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
+If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html[Configuring the Connector to use a proxy server^].
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[View networking requirements for the Connector^]
 
-=== Connection to target networks
-
-A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
-
-For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
-
-=== Outbound internet access
-
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
-
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-
-a| 
-
-\https://*.api.bluexp.netapp.com
-
-\https://api.bluexp.netapp.com
-
-\https://*.cloudmanager.cloud.netapp.com
-
-\https://cloudmanager.cloud.netapp.com
-
-a| To provide SaaS features and services within BlueXP.
-
-NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-
-| \https://cloudmanagerinfraprod.azurecr.io
-
-\https://*.blob.core.windows.net
-| To upgrade the Connector and its Docker components.
-
-|===
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[Security group rules in AWS^]

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-networking-azure.html
 keywords: networking, network, requirements, connection, connections, vnet, security group, security groups, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, blob, service endpoint
-summary: Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
+summary: Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly.
 ---
 
 = Networking requirements for Cloud Volumes ONTAP in Azure
@@ -13,7 +13,7 @@ summary: Set up your Azure networking so Cloud Volumes ONTAP systems can operate
 :imagesdir: ./media/
 
 [.lead]
-Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
+Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly.
 
 == Requirements for Cloud Volumes ONTAP
 
@@ -40,7 +40,7 @@ If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify
 
 BlueXP automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP in Azure. You need to make sure that your networking has enough private IP addresses available.  
 
-The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter. 
+The number of LIFs that BlueXP allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter. 
 
 NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted.
 
@@ -123,15 +123,13 @@ You must use a _dedicated_ resource group for each Cloud Volumes ONTAP HA pair t
 
 BlueXP experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
 
-=== Security groups
-
-You don't need to create security groups because BlueXP does that for you. If you need to use your own, refer to the security group rules listed below.
-
 === Security group rules
 
 BlueXP creates Azure security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
 The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.
+
+TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html[View security group rules for the Connector^]
 
 ==== Inbound rules for single node systems
 
@@ -326,6 +324,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 .3+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
 | HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
 | TCP | 3128 | Node management LIF | Connector | Sending AutoSupport messages through a proxy server on the Connector, if an outbound internet connection isn't available
+| Configuration backups | HTTP | 80 | Node management LIF | \http://<connector-IP-address>/occm/offboxconfig | Send configuration backups to the Connector. link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html[Learn about configuration backup files^].
 | DHCP | 68 | UDP | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | 67 | UDP | Node management LIF | DHCP | DHCP server
 | DNS | 53 | UDP | Node management LIF and data LIF (NFS, CIFS) | DNS | DNS
@@ -338,109 +337,12 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 .2+| SnapMirror | 11104 | TCP | Intercluster LIF | ONTAP intercluster LIFs | Management of intercluster communication sessions for SnapMirror
 | 11105 | TCP | Intercluster LIF | ONTAP intercluster LIFs | SnapMirror data transfer
 | Syslog | 514 | UDP | Node management LIF | Syslog server | Syslog forward messages
-
 |===
 
 == Requirements for the Connector
 
-Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
+If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[View networking requirements for the Connector^]
 
-=== Connections to target networks
-
-A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
-
-For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
-
-=== Outbound internet access
-
-The Connector requires outbound internet access to manage resources and processes within your public cloud environment.
-
-[cols=2*,options="header,autowidth"]
-|===
-| Endpoints
-| Purpose
-
-| \https://support.netapp.com | To obtain licensing information and to send AutoSupport messages to NetApp support.
-
-a| 
-
-\https://*.api.bluexp.netapp.com
-
-\https://api.bluexp.netapp.com
-
-\https://*.cloudmanager.cloud.netapp.com
-
-\https://cloudmanager.cloud.netapp.com
-
-a| To provide SaaS features and services within BlueXP.
-
-NOTE: The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-
-| \https://cloudmanagerinfraprod.azurecr.io
-
-\https://*.blob.core.windows.net
-| To upgrade the Connector and its Docker components.
-
-|===
-
-=== Security group rules
-
-The security group for the Connector requires both inbound and outbound rules.
-
-==== Inbound rules
-
-[cols=3*,options="header,autowidth"]
-|===
-
-| Port
-| Protocol
-| Purpose
-
-| 22 | SSH | Provides SSH access to the Connector host
-| 80 | HTTP |	Provides HTTP access from client web browsers to the local user interface
-| 443 |	HTTPS | Provides HTTPS access from client web browsers to the local user interface
-| TCP | 3128 | Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.
-
-|===
-
-==== Outbound rules
-
-The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
-
-===== Basic outbound rules
-
-The predefined security group for the Connector includes the following outbound rules.
-
-[cols=3*,options="header,autowidth"]
-|===
-
-| Port
-| Protocol
-| Purpose
-
-| All | All TCP | All outbound traffic
-| All |	All UDP | All outbound traffic
-
-|===
-
-===== Advanced outbound rules
-
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
-
-NOTE: The source IP address is the Connector host.
-
-[cols=5*,options="header,autowidth"]
-|===
-
-| Service
-| Port
-| Protocol
-| Destination
-| Purpose
-
-| API calls and AutoSupport | 443 | HTTPS | Outbound internet and ONTAP cluster management LIF | API calls to Azure and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp
-| DNS | 53 | UDP	| DNS | Used for DNS resolve by BlueXP
-
-|===
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html[Security group rules in Azure^]

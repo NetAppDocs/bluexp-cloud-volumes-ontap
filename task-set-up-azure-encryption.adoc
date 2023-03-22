@@ -36,7 +36,7 @@ Azure HA multiple availability zone::
 
 * All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.^1^ 
 
-* For root, boot, NVRAM, core and data disks, Cloud Manager uses a disk encryption set, which enables management of encryption keys with managed disks.
+* For root, boot, NVRAM, core and data disks, BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks.
 
 * Any new data disks also use the same disk encryption set.
 
