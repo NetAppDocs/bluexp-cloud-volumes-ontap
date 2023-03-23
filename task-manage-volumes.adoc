@@ -90,6 +90,7 @@ NOTE: BlueXP moves the volume to an existing aggregate that uses the selected di
 | Delete a volume
 a|
 .. Select a volume, and then click *Delete*.
+.. Type the name of the volume in the dialog.
 .. Click *Delete* again to confirm.
 
 |===
