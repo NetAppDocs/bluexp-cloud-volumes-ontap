@@ -20,6 +20,20 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
 
 //tag::whats-new[]
+== 2 April 2023
+
+=== Turin region now supported in Google Cloud
+The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+=== Digital Wallet enhancement
+The Digital Wallet now shows consumed, entitled, and exceeded capacity for Marketplace private offers. 
++
+These details can help you better understand how you're being charged and whether you need to purchase additional capacity.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
+
+=== 
+
 == 13 March 2023
 
 === China region support
@@ -84,6 +98,7 @@ link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabli
 You can now enable both data tiering and WORM storage together when you create a Cloud Volumes ONTAP 9.8 system or later. Enabling data tiering with WORM storage allows you to tier the data to an object store in the cloud.
 
 link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html[Learn about WORM storage.^]
+//end::whats-new[]
 
 == 1 January 2023
 The following changes were introduced with the 3.9.25 release of the Connector.
@@ -97,7 +112,6 @@ See link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept
 The Multi-tenant Encryption Key Management (MTEKM) license is no longer included in new Cloud Volumes ONTAP deployments. 
 
 For more information on the ONTAP feature licenses automatically installed with Cloud Volumes ONTAP, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html[Default Configuration for Cloud Volumes ONTAP^].
-//end::whats-new[]
 
 == 15 December 2022
 
