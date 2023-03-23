@@ -39,6 +39,10 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 | Current version
 | Versions that you can directly upgrade to
 
+| 9.13.0 | 9.13.1
+
+| 9.12.1 | 9.13.0
+
 | 9.12.0 | 9.12.1
 
 .2+| 9.11.1 
@@ -164,7 +168,7 @@ These steps describe how to use System Manager for version 9.3 and later.
 
 . In the working environment, click the *Aggregates* tab.
 
-. Select an aggregate title, click the ellipse button, and then select *View Aggregate details*.
+. Under the aggregate title, click the ellipse button, and then select *View Aggregate details*.
 +
 image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field when you view information for an aggregate.]
 

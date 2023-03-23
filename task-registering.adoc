@@ -25,13 +25,11 @@ TIP: A system that isn't registered for support will still receive the software 
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts^].
 
-. From the left navigation menu, select *Storage > Canvas*.
+. On the Canvas page, double-click the name of the system you want to register..
 
-. On the Canvas page, double-click the name of the system that you want to register.
-
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Support registration*.
+. On the Overview tab, click the Features panel and then click the pencil icon next to *Ransomware Protection*.
 +
-image:screenshot_features_support_registration.png[Screen shot: Shows the Support registration option under the Features panel for a Cloud Volumes ONTAP system.]
+image:screenshot_features_support_registration_2.png[Screen shot: Shows the Support registration option under the Features panel for a Cloud Volumes ONTAP system.]
 
 . Select a NetApp Support Site account and click *Register*.
 

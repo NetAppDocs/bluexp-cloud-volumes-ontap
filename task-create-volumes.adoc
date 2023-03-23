@@ -55,13 +55,15 @@ Choosing a specific aggregate is recommended only if you have a good understandi
 
 .Any aggregate
 --
-On the Overview tab, navigate to the Volumes tile, and click *Add Volume* > *Add Volume*.
+On the Overview tab, navigate to the Volumes tile, and click *Add Volume*.
+image:screenshot_add_volume_button.png[A screenshot of the Add Volume button under the Overview tab.]
 
 --
 
 .Specific aggregate
 --
 On the Aggregates tab, navigate to the desired aggregate tile and click the menu icon, and then click *Add Volume*.
+image:screenshot_add_volume_button_agg.png[A screenshot of the Add Volume button under the Aggregates tab.]
 
 --
 
@@ -204,7 +206,7 @@ NOTE: You can only create NFS or CIFS volumes when using templates.
 
 . On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
 
-. On the Overview tab, navigate to the Volumes tile and click *Add Volume* > *Add Volume From Template*.
+. Navigate to the Volumes tab and click *Add Volume* > *New Volume From Template*.
 +
 image:screenshot_add_volume_template.png[A screenshot showing how to add a new volume from a template.]
 
@@ -212,25 +214,27 @@ image:screenshot_add_volume_template.png[A screenshot showing how to add a new v
 +
 image:screenshot_select_template_cvo.png[A screenshot of the available application templates.]
 +
-The _Define Parameters_ page is displayed.
+The _Editor_ page is displayed.
 +
 image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
-+
-NOTE: You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
+
+. Above the _Action_ panel, enter a name for the template. 
 
 . In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* where the volume will be created.
 
 . Add values for all of the parameters that are not hard-coded from the template. See <<create a volume,Create a volume>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
 
-. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Run Template*.
+. Click *Apply* to save the configured parameters to the selected Action. 
+
+. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Save Template*.
 +
 If there are other actions, click the action in the left pane to display the parameters you need to complete.
 +
 image:screenshot_template_select_next_action.png[A screenshot showing how to select additional actions that need to be completed.]
 +
-For example, if the Enable Cloud Backup action requires that you select a backup policy, you can do that now.
+For example, if the Enable Cloud Backup on Volume action requires that you select a backup policy, you can do that now.
 
-. Click *Run Template*.
+. Once configuration for the template actions are complete, click *Save Template*.
 
 .Result
 
@@ -251,6 +255,8 @@ By default, BlueXP creates volumes on the first node in an HA configuration. If 
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
 . On the Aggregates tab, click *Add Aggregate* and then create the aggregate.
++
+image:screenshot_add_aggregate_cvo.png[A screenshot showing the progress of adding an aggregate.]
 
 . For Home Node, choose the second node in the HA pair.
 

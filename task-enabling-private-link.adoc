@@ -30,6 +30,8 @@ If required by your business, you can change a setting in BlueXP so that it conf
 .Steps
 
 .	In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
++
+image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 .	Under *Azure*, click *Use Azure Private Link*.
 

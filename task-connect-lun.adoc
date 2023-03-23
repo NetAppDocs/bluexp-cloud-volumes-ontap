@@ -31,7 +31,7 @@ Note the following:
 -or-
 Click the *Volumes* tab.
 
-. On the Volumes tab, navigate to the desired volume title and then click *Manage your volumes* to access the Manage Volumes right-side panel.
+. On the Volumes tab, navigate to the desired volume title and then click *Manage volume* to access the Manage Volumes right-side panel.
 
 . Click *Target iQN*.
 

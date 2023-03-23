@@ -28,8 +28,10 @@ You can manage volumes as your storage needs change. You can view, edit, clone, 
 . On the Overview tab, navigate to the Volumes tile and then click *View Volumes*.  
 -or-
 Click the *Volumes* tab.
++
+image:screenshot_manage_vol_button.png[A screenshot of the Manage Volume button under the Volumes tab.]
 
-. On the Volumes tab, navigate to the desired volume title and then click *Manage your volumes* to access the Manage Volumes right-side panel:
+. On the Volumes tab, navigate to the desired volume title and then click *Manage volume* to access the Manage Volumes right-side panel.
 +
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -156,7 +158,7 @@ endif::gcp[]
 
 |===
 
-. Click *Save*.
+. Click *Set*.
 
 .Result
 
@@ -214,7 +216,7 @@ From the Overview tab, navigate to the Aggregates tile and then click *View Aggr
 +
 You should choose volumes that are large enough to free space in the aggregate so that you avoid additional capacity issues in the future.
 +
-image:screenshot_aggr_volumes_121922.png[Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box.]
+image:screenshot_aggr_volume_overview.png[Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box.]
 
 . If the system has not reached the disk limit, you should move the volumes to an existing aggregate or a new aggregate on the same system.
 +
@@ -286,9 +288,11 @@ From the Overview tab, navigate to the Aggregates tile and then click *View Aggr
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, then click the *... (ellipse icon) > Add Disks*.
+.. Select the aggregate, then click the *... (ellipse icon) > Increase Capacity*.
++
+image:screenshot_aggr_increase_capacity_button.png[A screenshot of the Increase Capacity button under the Aggregates tab.]
 
-.. Select the number of disks to add, and then click *Add*.
+.. Adjust the capacity as needed, and then click *Increase*.
 
 . If no aggregates have available capacity, create a new aggregate.
 +
