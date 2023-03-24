@@ -106,6 +106,7 @@ BlueXP allocates 14 IP addresses to an HA pair:
 NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted. 
 +
 ** 2 NAS LIFs (e0a)
+** 2 Intercluster LIFs (e0a)
 ** 2 Cluster LIFs (e0b)
 ** 2 HA Interconnect IP addresses (e0c)
 ** 2 RSM iSCSI IP addresses (e0d)
