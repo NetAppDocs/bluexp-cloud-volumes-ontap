@@ -98,18 +98,17 @@ You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud
 `skipSvmManagementLif: true`
 
 * *HA pair*
-BlueXP allocates 12-13 IP addresses to an HA pair:
+BlueXP allocates 14 IP addresses to an HA pair:
 +
-** 2 Node management LIFs
-** 1 Cluster management LIF
-** 2 Cluster LIFs
-** 2 iSCSI LIFs
+** 2 Node management LIFs (e0a)
+** 2 iSCSI LIFs (e0a)
 +
 NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted. 
 +
-** 1 or 2 NAS LIFs
-** 1 HA Interconnect LIF
-** 1 ONTAP replication LIF
+** 2 NAS LIFs (e0a)
+** 2 Cluster LIFs (e0b)
+** 2 HA Interconnect IP addresses (e0c)
+** 2 RSM iSCSI IP addresses (e0d)
 +
 You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
 +
