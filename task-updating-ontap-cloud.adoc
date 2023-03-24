@@ -215,6 +215,8 @@ image:screenshot_overview_upgrade.png[A screenshot that shows the "Upgrade now!"
 
 BlueXP starts the software upgrade. You can perform actions on the working environment once the software update is complete.
 
+NOTE: Currently, you can only upgrade to the latest available ONTAP version through the BlueXP user interface. The ability to upgrade to a specific ONTAP version through the BlueXP user interface will be available in a future release. 
+
 .After you finish
 
 If you suspended SnapMirror transfers, use System Manager to resume the transfers.
