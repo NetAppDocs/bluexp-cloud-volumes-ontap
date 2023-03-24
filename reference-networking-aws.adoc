@@ -13,7 +13,7 @@ summary: BlueXP handles the set up of networking components for Cloud Volumes ON
 :imagesdir: ./media/
 
 [.lead]
-BlueXP (formerly Cloud Manager) handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
+BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 
 == General requirements
 
@@ -116,7 +116,9 @@ TIP: When deployed in multiple Availability Zones, several LIFs are associated w
 
 === Security groups
 
-You do not need to create security groups because BlueXP does that for you. If you need to use your own, refer to link:reference-security-groups.html[Security group rules].
+You don't need to create security groups because BlueXP does that for you. If you need to use your own, refer to link:reference-security-groups.html[Security group rules].
+
+TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[View security group rules for the Connector^]
 
 === Connection for data tiering
 
@@ -200,4 +202,8 @@ image:diagram_ha_networking.png["Conceptual image showing components in a Cloud 
 
 == Requirements for the Connector
 
-include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/_include/connector-networking.adoc[]
+If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[View networking requirements for the Connector^]
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[Security group rules in AWS^]

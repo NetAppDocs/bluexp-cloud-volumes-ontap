@@ -115,7 +115,7 @@ In most cases, BlueXP can automatically obtain your license file using your NetA
 +
 *Example*
 +
-image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetApp License File Generator web page filled out, including a password, a product (NetApp Cloud Volumes ONTAP BYOL for AWS), and a product serial number.]
+image:screenshot-license-generator.png[Screen shot: Shows an example of the NetApp License Generator web page with the available product lines.]
 
 . Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
 

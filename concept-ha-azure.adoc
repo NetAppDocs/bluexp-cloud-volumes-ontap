@@ -72,7 +72,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Availability Zones::
-Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. Availability zones ensure that the nodes are in different fault domains. https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy[Learn more about Azure Storage redundancy in the Azure docs^].
+Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. Availability zones ensure that the nodes are in different fault domains. https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy#zone-redundant-storage-for-managed-disks[Learn more about Azure zone-redundant storage for managed disks in the Azure docs^].
 
 Disks::
 Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, partner root, and core data].

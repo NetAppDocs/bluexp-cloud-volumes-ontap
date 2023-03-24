@@ -105,7 +105,7 @@ NOTE: BlueXP moves the volume to an existing aggregate that uses the selected di
 
 By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times it's size. This value is configurable in a Connector's settings.
 
-If you need to resize your volume, you can do it through https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html[ONTAP System Manager^]. Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
+If you need to resize your volume, you can do it through link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html[ONTAP System Manager^]. Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
 
 == Modify the CIFS server
 
@@ -135,7 +135,9 @@ If you change your DNS servers or Active Directory domain, you need to modify th
 The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
 
 ifdef::gcp[]
+
 If you're configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.
+
 endif::gcp[]
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
@@ -148,12 +150,12 @@ ifdef::aws[]
 * To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=corp* in this field.
 endif::aws[]
 ifdef::azure[]
-* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field.
-https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
+* To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter *OU=AADDC Computers* or *OU=AADDC Users* in this field. 
+link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
 endif::azure[]
 ifdef::gcp[]
-*	To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
-https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
+*	To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field. 
+link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
 endif::gcp[]
 
 |===
@@ -176,23 +178,23 @@ You can move a volume in System Manager by selecting a volume and the destinatio
 +
 In most situations, you can use System Manager to move volumes.
 +
-For instructions, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
+For instructions, see the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
 
 == Move a volume when BlueXP displays an Action Required message
 
 BlueXP might display an Action Required message that says moving a volume is necessary to avoid capacity issues, but that you need to correct the issue yourself. If this happens, you need to identify how to correct the issue and then move one or more volumes.
 
-TIP: BlueXP displays these Action Required messages when an aggregate has reached 90% used capacity. If data tiering is enabled, the messages display when an aggregate has reached 80% used capacity. By default, 10% free space is reserved for data tiering. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering[Learn more about the free space ratio for data tiering].
+TIP: BlueXP displays these Action Required messages when an aggregate has reached 90% used capacity. If data tiering is enabled, the messages display when an aggregate has reached 80% used capacity. By default, 10% free space is reserved for data tiering. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering[Learn more about the free space ratio for data tiering^].
 
 .Steps
 
-. <<Identify how to correct capacity issues,Identify how to correct the issue>>.
+. <<Identify how to correct capacity issues>>.
 
 . Based on your analysis, move volumes to avoid capacity issues:
 
-* <<Move volumes to another system to avoid capacity issues,Move volumes to another system>>.
+* <<Move volumes to another system to avoid capacity issues>>.
 
-* <<Move volumes to another aggregate to avoid capacity issues,Move volumes to another aggregate on the same system>>.
+* <<Move volumes to another aggregate to avoid capacity issues>>.
 
 === Identify how to correct capacity issues
 
@@ -242,7 +244,9 @@ You can move one or more volumes to another Cloud Volumes ONTAP system to avoid 
 
 You can follow the steps in this task to correct the following Action Required message:
 
- Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you because the system has reached the disk limit.
+====
+Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you because the system has reached the disk limit. 
+====
 
 .Steps
 
@@ -250,15 +254,15 @@ You can follow the steps in this task to correct the following Action Required m
 
 . Drag and drop the source working environment on the target working environment to perform a one-time data replication of the volume.
 +
-For details, see https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicating data between systems^].
+For details, see link:https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicating data between systems^].
 
 . Go to the Replication Status page, and then break the SnapMirror relationship to convert the replicated volume from a data protection volume to a read/write volume.
 +
-For details, see https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
+For details, see link:https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
 
 . Configure the volume for data access.
 +
-For information about configuring a destination volume for data access, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
+For information about configuring a destination volume for data access, see the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
 
 . Delete the original volume.
 +
@@ -272,7 +276,9 @@ You can move one or more volumes to another aggregate to avoid capacity issues.
 
 You can follow the steps in this task to correct the following Action Required message:
 
- Moving two or more volumes is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you.
+====
+Moving two or more volumes is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you. 
+====
 
 .Steps
 
@@ -302,7 +308,7 @@ For details, see link:task-create-aggregates.html[Creating aggregates].
 
 . In most situations, you can use System Manager to move volumes.
 +
-For instructions, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
+For instructions, see the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
 
 == Reasons why a volume move might perform slowly
 
