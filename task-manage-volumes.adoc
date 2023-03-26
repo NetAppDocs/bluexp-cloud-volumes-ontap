@@ -291,14 +291,14 @@ From the Overview tab, navigate to the Aggregates tile and then click *View Aggr
 .. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
 
 .. Under the aggregate tile, view the available capacity (provisioned size minus used aggregate capacity).
++
+image:screenshot_aggr_capacity.png[Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box.]
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, then click the *... (ellipse icon) > Increase Capacity*.
-+
-image:screenshot_aggr_increase_capacity_button.png[A screenshot of the Increase Capacity button under the Aggregates tab.]
+.. Select the aggregate, then click the *... (ellipse icon) > Add Disks*.
 
-.. Adjust the capacity as needed, and then click *Increase*.
+.. Select the number of disks to add, and then click *Add*.
 
 . If no aggregates have available capacity, create a new aggregate.
 +
