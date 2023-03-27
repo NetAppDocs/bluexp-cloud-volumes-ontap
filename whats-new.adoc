@@ -21,18 +21,20 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 2 April 2023
+The following changes were introduced with the 3.9.28 release of the Connector. 
 
 === Turin region now supported in Google Cloud
 The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 
 === Digital Wallet enhancement
 The Digital Wallet now shows consumed, entitled, and exceeded capacity for Marketplace private offers. 
-+
+
 These details can help you better understand how you're being charged and whether you need to purchase additional capacity.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
 
-=== 
+=== Support for modifying volume size
+Cloud Volumes ONTAP 9.13.0 now includes support for increasing and decreasing volume size. This release of the Connector enables you to increase or decrease an ONTAP FlexGroup volume or FlexVol volume when using the API. 
 
 == 13 March 2023
 
