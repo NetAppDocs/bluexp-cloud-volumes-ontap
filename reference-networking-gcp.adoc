@@ -78,17 +78,42 @@ The subnets in these VPCs must have distinct CIDR ranges. They can't have overla
 
 ==== Private IP addresses
 
-BlueXP allocates 14 or 15 private IP addresses to an HA pair in Google Cloud:
+BlueXP automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP in GCP. You need to make sure that your networking has enough private addresses available.
++
+The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
-* 7 or 8 private IP addresses for VPC-0
+* *Single node*
+BlueXP allocates 4 IP addresses to a single node system:
+
+** Node management LIF
+** Cluster management LIF
+** iSCSI data LIF
++
+NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted.
++
+** NAS LIF
 +
 You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
 +
 `skipSvmManagementLif: true`
 
-* Two private IP addresses for VPC-1
-* Two private IP addresses for VPC-2
-* Three private IP addresses for VPC-3
+* *HA pair*
+BlueXP allocates 14 IP addresses to an HA pair:
++
+** 2 Node management LIFs (e0a)
+** 2 iSCSI LIFs (e0a)
++
+NOTE: An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted. 
++
+** 2 NAS LIFs (e0a)
+** 2 Intercluster LIFs (e0a)
+** 2 Cluster LIFs (e0b)
+** 2 HA Interconnect IP addresses (e0c)
+** 2 RSM iSCSI IP addresses (e0d)
++
+You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
++
+`skipSvmManagementLif: true`
 
 ==== Internal load balancers
 
@@ -145,7 +170,14 @@ TIP: If you're using an HA pair, the HA mediator doesn't require outbound intern
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
-=== Connection to Google Cloud Storage for data tiering
+
+Firewall rules::
+You don't need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.
++
+Note that two sets of firewall rules are required for an HA configuration:
++
+* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
+* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
 
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
 
