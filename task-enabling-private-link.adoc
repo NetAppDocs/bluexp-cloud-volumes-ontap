@@ -124,23 +124,9 @@ You can enable rollback through the API or by updating the app.conf file.
 
 . Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data
 
-. Edit app.conf by adding the "user-private-dns-zone-settings" parameter with the following keyword-value pairs:
-
+. Edit app.conf by changing or adding the following parameter and value: 
 +
- "user-private-dns-zone-settings" : {
-    "resource-group" : "<resource group name of the DNS zone>",
-    "subscription" : "<subscription ID>",
-    "use-existing" : true
-    "create-private-dns-zone-link" : true 
-    “rollback-on-private-link-failure”: true
- }
-+
-The parameter should be entered at the same level as "system-id" like shown below:
-+
- "system-id" : "<system ID>",
- "user-private-dns-zone-settings" : {
-+
-Note that the subscription keyword is required only if the Private DNS Zone exists in a different subscription than the Connector.
+ "rollback-on-private-link-failure": true
 
 . Save the file and log off the Connector.
 +
