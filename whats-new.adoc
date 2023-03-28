@@ -34,7 +34,10 @@ These details can help you better understand how you're being charged and whethe
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
 
 === Support for modifying volume size
-Cloud Volumes ONTAP 9.13.0 now includes support for increasing and decreasing volume size. This release of the Connector enables you to increase or decrease an ONTAP FlexGroup volume or FlexVol volume when using the API. 
+Cloud Volumes ONTAP now includes support for increasing and decreasing volume size. This release of the Connector enables you to increase or decrease a Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API. 
+
+=== Support for comments during volume creation
+Cloud Volumes ONTAP now includes support for adding comments during volume creation. This release of the Connector enables you to make comments when creating a Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API.
 
 == 13 March 2023
 
@@ -82,6 +85,7 @@ Cloud Volumes ONTAP is now supported in any cloud environment that has complete 
 Support for Flash Cache, high write speed, and a high maximum transmission unit (MTU) of 8,896 bytes is now available for select instances with the Cloud Volumes ONTAP 9.13.0 release. 
 
 Learn more about link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[supported configurations by license for Google Cloud^].
+//end::whats-new[]
 
 == 5 February 2023
 The following changes were introduced with the 3.9.26 release of the Connector.
@@ -100,7 +104,6 @@ link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabli
 You can now enable both data tiering and WORM storage together when you create a Cloud Volumes ONTAP 9.8 system or later. Enabling data tiering with WORM storage allows you to tier the data to an object store in the cloud.
 
 link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html[Learn about WORM storage.^]
-//end::whats-new[]
 
 == 1 January 2023
 The following changes were introduced with the 3.9.25 release of the Connector.
