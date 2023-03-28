@@ -51,15 +51,15 @@ image:screenshot_capacity-based-licenses.png[A screenshot that shows a Cloud Vol
 
 . Under the summary, view the consumed capacity for each of your licensing packages.
 +
-* _Consumed capacity_ shows you the total capacity of the volumes for that package. For more details about a specific package, hover your mouse over the tooltip.
+* _Consumed capacity_ shows you the capacity of the volumes for that package. For more details about a specific package, hover your mouse over the tooltip.
 +
 To better understand the capacities that display for the Essentials package, you should be familiar with how charging works. link:concept-licensing.html#notes-about-charging[Learn about charging for the Essentials package].
 +
-* _Precommitted capacity_ is the total licensed capacity (BYOL or Marketplace Contract) that you purchased from NetApp.
-** _BYOL_ shows you the total licensed capacity that you purchased from NetApp for this package type.
-** _Marketplace Contracts_ shows the total licensed capacity that you purchased with a marketplace contract for this package type.
+* _Precommitted capacity_ is the licensed capacity (BYOL or Marketplace Contract) that you purchased from NetApp.
+** _BYOL_ shows you the licensed capacity that you purchased from NetApp for this package type.
+** _Marketplace Contracts_ shows the licensed capacity that you purchased with a marketplace contract for this package type.
 +
-* _PAYGO_ shows you the total consumed capacity by license consumption model.
+* _PAYGO_ shows you the consumed capacity by license consumption model.
 +
 Here's an example for an account that has several licensing packages:
 +
