@@ -316,6 +316,6 @@ You can view FlexGroup volumes created through CLI or System Manager directly th
 
 image:screenshot_show_flexgroup_vol.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 
-NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create and edit FlexGroup volumes in BlueXP is not available but planned for a future release.  
+NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.  
 
 
