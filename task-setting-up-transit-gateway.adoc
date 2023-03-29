@@ -65,8 +65,7 @@ image:screenshot_transit_gateway3.png["A screenshot of the AWS console that show
 
 . Mount volumes to clients using the floating IP address.
 +
-You can find the correct IP address in BlueXP
-through the _Mount Command_ option under the Manage Volumes panel in BlueXP.
+You can find the correct IP address in BlueXP through the *Mount Command* option under the Manage Volumes panel in BlueXP.
 +
 image:screenshot_mount_option.png[Screen shot: Shows the Mount Command which is available when you select a volume.]
 
