@@ -34,10 +34,29 @@ These details can help you better understand how you're being charged and whethe
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
 
 === Support for modifying volume size
-Cloud Volumes ONTAP now includes support for increasing and decreasing volume size. This release of the Connector enables you to increase or decrease a Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API. 
+Cloud Volumes ONTAP now includes support for increasing and decreasing the size of a Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API. 
 
 === Support for comments during volume creation
-Cloud Volumes ONTAP now includes support for adding comments during volume creation. This release of the Connector enables you to make comments when creating a Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API.
+This release enables you to make comments when creating an Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API.
+
+=== BlueXP user interface redesign for Cloud Volumes ONTAP Overview, Volumes, and Aggregates pages
+BlueXP now has a redesigned user interface for Cloud Volumes ONTAP Overview, Volumes, and Aggregates pages. The tile-based design presents more comprehensive information in each tile for a better user experience. 
+
+image:screenshot-resource-page-rn.png[This screenshot shows the redesigned BlueXP user interface on the Cloud Volumes ONTAP overview page. Various tiles show storage efficiency, version, capacity distribution, information about the Cloud Volumes ONTAP deployment, volumes, aggregates, replications, and backups.]
+
+=== FlexGroup Volumes viewable through Cloud Volumes ONTAP
+FlexGroup volumes created through CLI or System Manager directly are now viewable through the redesigned Volumes tile in BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FlexGroup volumes through a dedicated Volumes tile.
+
+NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.
+
+image:screenshot-show-flexgroup-volume.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
+
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html[Learn more about viewing created FlexGroup volumes.^] 
+
+=== Updated Cloud Volumes ONTAP and Connector support for AWS C2S environments
+Cloud Volumes ONTAP version 9.12.1 and Connector version 3.9.27 are now supported for AWS C2S environments. 
+
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Learn more about getting started with AWS C2S environments.^]
 
 == 13 March 2023
 
