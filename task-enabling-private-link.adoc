@@ -125,7 +125,6 @@ You can enable rollback through the API or by updating the app.conf file.
 . Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data
 
 . Edit app.conf by adding the "user-private-dns-zone-settings" parameter with the following keyword-value pairs:
-
 +
  "user-private-dns-zone-settings" : {
     "resource-group" : "<resource group name of the DNS zone>",
