@@ -106,7 +106,7 @@ Support for Flash Cache, high write speed, and a high maximum transmission unit 
 
 Learn more about link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[supported configurations by license for Google Cloud^].
 endif::gcp[]
-//tag::whats-new[]
+//end::whats-new[]
 
 == 5 February 2023
 The following changes were introduced with the 3.9.26 release of the Connector.
