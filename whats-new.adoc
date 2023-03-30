@@ -17,7 +17,7 @@ Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud M
 
 The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
-//The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site.
+//The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
 == 2 April 2023
@@ -28,9 +28,7 @@ ifdef::gcp[]
 The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 endif::gcp[]
 === Digital Wallet enhancement
-The Digital Wallet now shows consumed, entitled, and exceeded capacity for Marketplace private offers. 
-
-These details can help you better understand how you're being charged and whether you need to purchase additional capacity.
+The Digital Wallet now shows the licensed capacity that you purchased with marketplace private offers. 
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
 
