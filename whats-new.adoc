@@ -33,9 +33,6 @@ These details can help you better understand how you're being charged and whethe
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
 
-=== Support for modifying volume size
-Cloud Volumes ONTAP now includes support for increasing and decreasing the size of a Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API. 
-
 === Support for comments during volume creation
 This release enables you to make comments when creating an Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API.
 
