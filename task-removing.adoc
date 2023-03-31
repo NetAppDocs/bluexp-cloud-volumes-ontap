@@ -29,7 +29,7 @@ Removing a working environment from BlueXP enables you to do the following:
 
 . On the Canvas page, double-click on the working environment you want to remove. 
 
-. On the upper right of the BlueXP console, click the Ellipsis icon, and select *Remove from workspace*.
+. On the upper right of the BlueXP console, click the ellipse icon, and select *Remove from workspace*.
 +
 image:screenshot_settings_remove.png[A screenshot that shows the "Remove from workspace" option in the upper right of the BlueXP console.]
 

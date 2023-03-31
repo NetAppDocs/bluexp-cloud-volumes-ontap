@@ -27,7 +27,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts
 
 . On the Canvas page, double-click the name of the system you want to register..
 
-. On the Overview tab, click the Features panel and then click the pencil icon next to *Ransomware Protection*.
+. On the Overview tab, click the Features panel and then click the pencil icon next to *Support Registration*.
 +
 image:screenshot_features_support_registration_2.png[Screen shot: Shows the Support registration option under the Features panel for a Cloud Volumes ONTAP system.]
 

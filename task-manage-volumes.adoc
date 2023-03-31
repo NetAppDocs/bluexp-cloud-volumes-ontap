@@ -25,9 +25,7 @@ You can manage volumes as your storage needs change. You can view, edit, clone, 
 
 . On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
-. On the Overview tab, navigate to the Volumes tile and then click *View Volumes*.  
--or-
-Click the *Volumes* tab.
+. In the working environment, click the *Volumes* tab.
 +
 image:screenshot_manage_vol_button.png[A screenshot of the Manage Volume button under the Volumes tab.]
 
@@ -209,8 +207,6 @@ For example, the advanced information should say something similar to the follow
 . Identify one or more volumes to move out of the aggregate:
 
 .. In the working environment, click the *Aggregates tab*.
--Or-
-From the Overview tab, navigate to the Aggregates tile and then click *View Aggregates*. 
 
 .. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
 
@@ -285,8 +281,6 @@ Moving two or more volumes is necessary to avoid capacity issues; however, BlueX
 . Verify whether an existing aggregate has available capacity for the volumes that you need to move:
 
 .. In the working environment, click the *Aggregates tab*.
--Or-
-From the Overview tab, navigate to the Aggregates tile and then click *View Aggregates*. 
 
 .. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
 

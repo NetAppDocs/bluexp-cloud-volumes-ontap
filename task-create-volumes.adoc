@@ -62,7 +62,7 @@ image:screenshot_add_volume_button.png[A screenshot of the Add Volume button und
 
 .Specific aggregate
 --
-On the Aggregates tab, navigate to the desired aggregate tile and click the menu icon, and then click *Add Volume*.
+On the Aggregates tab, navigate to the desired aggregate tile. Click the menu icon, and then click *Add Volume*.
 image:screenshot_add_volume_button_agg.png[A screenshot of the Add Volume button under the Aggregates tab.]
 
 --
@@ -220,9 +220,9 @@ image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank t
 
 . Above the _Action_ panel, enter a name for the template. 
 
-. In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* where the volume will be created.
+. Under _Context_, the Working Environment is filled in with the name of the working environment with which you started. Select the *Storage VM* where the volume will be created.
 
-. Add values for all of the parameters that are not hard-coded from the template. See <<create a volume,Create a volume>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
+. Add values for all of the parameters that are not hard-coded from the template. See <<create a volume,Create a volume>> for details about all the parameters needed to complete the deployment of a Cloud Volumes ONTAP volume.
 
 . Click *Apply* to save the configured parameters to the selected Action. 
 
@@ -254,7 +254,8 @@ By default, BlueXP creates volumes on the first node in an HA configuration. If 
 
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
-. On the Aggregates tab, click *Add Aggregate* and then create the aggregate.
+. On the Aggregates tab, click *Add Aggregate*. 
+. From the _Add Aggregate_ screen, create the aggregate.
 +
 image:screenshot_add_aggregate_cvo.png[A screenshot showing the progress of adding an aggregate.]
 
