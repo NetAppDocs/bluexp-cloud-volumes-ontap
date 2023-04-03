@@ -31,7 +31,7 @@ You need to create a Connector before you can change BlueXP settings. https://do
 
 . In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 . Under *Azure*, click *Azure CIFS locks for Azure HA working environments*.
 

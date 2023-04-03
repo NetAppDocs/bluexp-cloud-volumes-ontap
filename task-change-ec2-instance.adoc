@@ -33,19 +33,15 @@ TIP: BlueXP gracefully changes one node at a time by initiating takeover and wai
 
 .Steps
 
-. From the left navigation menu, select *Storage > Canvas*.
+. On the Canvas page, select the working environment.
 
-. From the Canvas, select the working environment.
-
-. In the right pane, click the menu icon and select *Optimize Cost & Performance*.
+. On the Overview tab, click the Features panel and then click the pencil icon next to *Instance type*.
 +
-image:screenshot-optimize-cost-performance.png[A screenshot of the Optimize Cost & Performance option that is available from the Canvas.]
-+
-TIP: This option is also available by entering the working environment, opening the action menu, and selecting *Change instance*.
+image:screenshot_features_instance_type.png[A screenshot that shows the Instance type setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
-. If you are using a node-based PAYGO license, you can optionally choose a different license.
+.. If you are using a node-based PAYGO license, you can optionally choose a different license and instance type by clicking the pencil icon next to *License type*.
 
-. Choose an instance type, select the check box to confirm that you understand the implications of the change, and then click *OK*.
+. Choose an instance type, select the check box to confirm that you understand the implications of the change, and then click *Change*.
 
 .Result
 
