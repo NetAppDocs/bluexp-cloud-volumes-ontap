@@ -27,6 +27,7 @@ ifdef::gcp[]
 === Turin region now supported in Google Cloud
 The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 endif::gcp[]
+
 === Digital Wallet enhancement
 The Digital Wallet now shows the licensed capacity that you purchased with marketplace private offers. 
 
