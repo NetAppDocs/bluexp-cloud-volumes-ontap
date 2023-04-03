@@ -21,7 +21,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 3 April 2023
-The following changes were introduced with the 3.9.28 release of the Connector. This release includes bug fixes.  
+The following changes were introduced with the 3.9.28 release of the Connector. 
 
 ifdef::gcp[]
 === Turin region now supported in Google Cloud
