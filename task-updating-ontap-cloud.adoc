@@ -25,7 +25,7 @@ Upgrades of Cloud Volumes ONTAP must be completed from BlueXP. You should not up
 
 === How to upgrade
 
-BlueXP provides two ways to upgrade Cloud Volumes ONTAP:
+BlueXP provides three ways to upgrade Cloud Volumes ONTAP:
 
 * By following upgrade notifications that appear in the working environment
 * By placing the upgrade image at an HTTPS location and then providing BlueXP with the URL
@@ -38,6 +38,8 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 |===
 | Current version
 | Versions that you can directly upgrade to
+
+| 9.12.1 | 9.13.0
 
 | 9.12.1 | 9.13.0
 | 9.12.0 | 9.12.1
@@ -163,11 +165,11 @@ These steps describe how to use System Manager for version 9.3 and later.
 
 .Steps
 
-. In the working environment, click the menu icon, and then click *Advanced > Advanced allocation*.
+. In the working environment, click the *Aggregates* tab.
 
-. Select an aggregate, click *Info*, and then verify that the state is online.
+. Under the aggregate title, click the ellipse button, and then select *View Aggregate details*.
 +
-image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view information for an aggregate.]
+image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field when you view information for an aggregate.]
 
 . If the aggregate is offline, use System Manager to bring the aggregate online:
 
@@ -185,7 +187,7 @@ Another way to perform software upgrades by using an image on an external URL. T
 
 BlueXP displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
 
-image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
+image:screenshot_overview_upgrade.png[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
 
 You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system.
 
@@ -199,21 +201,21 @@ BlueXP operations such as volume or aggregate creation must not be in progress o
 
 . Select a working environment.
 +
-A notification appears in the right pane if a new version is available:
+A notification appears in the Overview tab if a new version is available:
 +
-image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
+image:screenshot_overview_upgrade.png[A screenshot that shows the "Upgrade now!" link under the Overview tab.]
 
-. If a new version is available, click *Upgrade*.
+. If a new version is available, click *Upgrade Now!*
 
-. In the Release Information page, click the link to read the Release Notes for the specified version, and then select the *I have read...* check box.
+. In the Upgrade Cloud Volumes ONTAP page, read the EULA, and then select *I read and approve the EULA*.
 
-. In the End User License Agreement (EULA) page, read the EULA, and then select *I read and approve the EULA*.
-
-. In the Review and Approve page, read the important notes, select *I understand...*, and then click *Go*.
+. Click *Upgrade*.
 
 .Result
 
-BlueXP starts the software upgrade. You can perform actions on the working environment once the software update is complete.
+BlueXP starts the software upgrade. You can perform actions on the working environment when the software update is complete.
+
+NOTE: Currently, you can only upgrade to the latest available ONTAP version through the BlueXP user interface. The ability to upgrade to a specific ONTAP version through the BlueXP user interface will be available in a future release. 
 
 .After you finish
 

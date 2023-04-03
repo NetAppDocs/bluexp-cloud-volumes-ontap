@@ -138,9 +138,9 @@ link:task-create-aggregates.html[Learn how to create aggregates].
 
 * Identify aggregates that have Elastic Volumes enabled
 +
-When you go to the Advanced Allocation page, you can identify whether the Elastic Volumes feature is enabled on an aggregate. In the following example, aggr2 has Elastic Volumes enabled whereas aggr1 does not.
+When you go to the Advanced Allocation page, you can identify whether the Elastic Volumes feature is enabled on an aggregate. In the following example, aggr1 has Elastic Volumes enabled.
 +
-image:screenshot-elastic-volumes-enabled.png[A screenshot that shows two aggregates where one has a field with the text Elastic Volumes Enabled.]
+image:screenshot_elastic_volume_enabled.png[Screenshot that shows two aggregates where one has a field with the text Elastic Volumes Enabled.]
 
 * Add capacity to an aggregate
 +

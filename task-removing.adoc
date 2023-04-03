@@ -27,15 +27,13 @@ Removing a working environment from BlueXP enables you to do the following:
 
 .Steps
 
-. In the upper right of the BlueXP console, click the Settings icon, and select *Tools*.
+. On the Canvas page, double-click on the working environment you want to remove. 
+
+. On the upper right of the BlueXP console, click the ellipse icon, and select *Remove from workspace*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+image:screenshot_settings_remove.png[A screenshot that shows the "Remove from workspace" option in the upper right of the BlueXP console.]
 
-. From the Tools page, click *Launch*.
-
-. Select the Cloud Volumes ONTAP working environment that you want to remove.
-
-. On the Review and Approve page, click *Go*.
+. In the Review from Workspace window, click *Remove*.
 
 .Result
 

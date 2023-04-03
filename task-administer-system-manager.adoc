@@ -77,15 +77,13 @@ Open a Cloud Volumes ONTAP working environment and click the Advanced View optio
 
 . In the top-right, click *Switch to Advanced View*.
 +
-image:screenshot-cvo-advanced-view.png[A screenshot of a Cloud Volumes ONTAP working environment that shows the Switch to Advanced View option.]
+image:screenshot_advanced_view.png[A screenshot of a Cloud Volumes ONTAP working environment that shows the Switch to Advanced View option.]
 
 . If the confirmation message appears, read through it and click *Close*.
 
 . Use System Manager to manage Cloud Volumes ONTAP.
 
 . If needed, click *Switch to Standard View* to return to standard management through BlueXP.
-+
-image:screenshot-cvo-standard-view.png[A screenshot of a Cloud Volumes ONTAP working environment that shows the Switch to Standard View option.]
 
 == Help with using System Manager
 

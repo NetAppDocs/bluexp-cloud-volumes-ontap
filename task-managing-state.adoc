@@ -33,9 +33,11 @@ Snapshots are automatically created only when performing a manual shutdown, as d
 
 .Steps
 
-. From the working environment, click the clock icon:
+. On the Canvas page, double-click the desired working environment.
+
+. On the Overview tab, click the Features panel and then click the pencil icon next to *Scheduled Downtime*.
 +
-image:screenshot_shutdown_icon.gif[Screen shot: Shows the icon that loads the automatic shutdown page.]
+image:screenshot_schedule_downtime.png[Screen shot: Shows the icon that loads the automatic shutdown page.]
 
 . Specify the shutdown schedule:
 
@@ -45,15 +47,15 @@ image:screenshot_shutdown_icon.gif[Screen shot: Shows the icon that loads the au
 +
 *Example*
 +
-The following image shows a schedule that instructs BlueXP to shut down the system every Saturday at 12:00 a.m. for 48 hours. BlueXP restarts the system every Monday at 12:00 a.m.
+The following image shows a schedule that instructs BlueXP to shut down the system every Saturday at 20:00 P.M. (8:00 PM) for 12 hours. BlueXP restarts the system every Monday at 12:00 a.m.
 +
-image:screenshot_shutdown.gif[Screen shot: Shows a shutdown schedule that shuts down Cloud Volumes ONTAP every weekend at 12:00 AM for 48 hours.]
+image:screenshot_schedule_downtime_window.png[Screen shot: Shows the Schedule downtime screen.]
 
 . Click *Save*.
 
 .Result
 
-BlueXP saves the schedule. The clock icon changes to indicate that a schedule is set: image:screenshot_shutdown_icon_scheduled.gif[Screen shot: Shows the automatic shutdown icon after a schedule is defined.]
+BlueXP saves the schedule. The corresponding Scheduled Downtime line item under the Features panel displays 'On'.
 
 == Stopping Cloud Volumes ONTAP
 
@@ -69,7 +71,7 @@ When you stop an HA pair, BlueXP shuts down both nodes.
 
 . From the working environment, click the *Turn off* icon.
 +
-image:screenshot_otc_turn_off.gif[Screen shot: Shows the icon to turn off a Cloud Volumes ONTAP system.]
+image:screenshot_turn_off_redesign.png[Screen shot: Shows the icon to turn off a Cloud Volumes ONTAP system.]
 
 . Keep the option to create snapshots enabled because the snapshots can enable system recovery.
 
