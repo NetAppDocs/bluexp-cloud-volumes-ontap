@@ -279,7 +279,7 @@ image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in 
 
 == Changing the cooling period for the auto tiering policy
 
-If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API only.
+If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API and CLI only.
 
 The cooling period is the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to object storage.
 
