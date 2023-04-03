@@ -120,9 +120,16 @@ You can enable rollback through the API or by updating the app.conf file.
 
 *Enable rollback by updating app.conf*
 
-.Step
+.Steps
 
-. Use the `PUT /occm/config` API call with the following request body:
+. SSH to the Connector host and log in.
+
+. Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data
+
+. Edit app.conf by adding the following parameter and value: 
 +
-[source, json]
-{ "rollbackOnAzurePrivateLinkFailure": false }
+ "rollback-on-private-link-failure": true
+
+. Save the file and log off the Connector.
++
+A reboot isn't required.
