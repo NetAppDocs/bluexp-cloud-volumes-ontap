@@ -97,6 +97,12 @@ a|
 
 NOTE: BlueXP moves the volume to an existing aggregate that uses the selected disk type with tiering, or it creates a new aggregate for the volume.
 
+| Delete a volume
+a|
+.. Select a volume, and then click *Delete*.
+.. Type the name of the volume in the dialog.
+.. Click *Delete* again to confirm.
+
 |===
 
 == Resize a volume
@@ -317,3 +323,13 @@ An older naming scheme is used if data tiering was enabled on an aggregate in th
 * The encryption settings don't match on the source and destination aggregates, or a rekey is in progress.
 * The _-tiering-policy_ option was specified on the volume move to change the tiering policy.
 * The _-generate-destination-key_ option was specified on the volume move.
+
+== View FlexGroup Volumes 
+
+You can view FlexGroup volumes created through CLI or System Manager directly through the Volumes tab within BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FleGroup volumes through a dedicated Volumes tile. Under the Volumes tile, you can identify each FlexGroup volume group through the icon’s hover text. Additionally, you can identify and sort FlexGroup volumes under the volumes list view through the Volume Style column. 
+
+image:screenshot_show_flexgroup_vol.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
+
+NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.  
+
+
