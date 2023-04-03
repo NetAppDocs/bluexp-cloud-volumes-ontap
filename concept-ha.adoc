@@ -151,6 +151,6 @@ Clients should access NFS and CIFS volumes by using the data IP address of the n
 
 TIP: If you move a volume between nodes in an HA pair, you should remount the volume by using the IP address of the other node. Otherwise, you can experience reduced performance. If clients support NFSv4 referrals or folder redirection for CIFS, you can enable those features on the Cloud Volumes ONTAP systems to avoid remounting the volume. For details, see ONTAP documentation.
 
-You can easily identify the correct IP address from BlueXP:
+You can easily identify the correct IP address through the _Mount Command_ option under the manage volumes panel in BlueXP.
 
-image:screenshot_mount.gif[Screen shot: Shows the Mount Command which is available when you select a volume.]
+image:screenshot_mount_option.png[Screen shot: Shows the Mount Command which is available when you select a volume.]

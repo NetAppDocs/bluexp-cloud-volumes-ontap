@@ -55,15 +55,15 @@ Choosing a specific aggregate is recommended only if you have a good understandi
 
 .Any aggregate
 --
-In the Volumes tab, click *Add Volume* > *New volume*.
+On the Overview tab, navigate to the Volumes tile, and click *Add Volume*.
+image:screenshot_add_volume_button.png[A screenshot of the Add Volume button under the Overview tab.]
 
 --
 
 .Specific aggregate
 --
-.. Click the menu icon, and then click *Advanced > Advanced allocation*.
-.. Click the menu for an aggregate.
-.. Click *Create volume*.
+On the Aggregates tab, navigate to the desired aggregate tile. Click the menu icon, and then click *Add Volume*.
+image:screenshot_add_volume_button_agg.png[A screenshot of the Add Volume button under the Aggregates tab.]
 
 --
 
@@ -71,7 +71,7 @@ In the Volumes tab, click *Add Volume* > *New volume*.
 
 . Follow the steps in the wizard to create the volume.
 
-.. *Details, Protection, and Tags*: Enter basic details about the volume and select a Snapshot policy.
+.. *Volumes, Details, Protection, and Tags*: Enter basic details about the volume and select a Snapshot policy.
 +
 Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
 +
@@ -80,9 +80,13 @@ Some of the fields on this page are self-explanatory. The following list describ
 | Field
 | Description
 
+| Volume Name | The identifiable name you can enter for the new volume.
+
 | Volume Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
 
 | Tags | Tags that you add to a volume are associated with the https://docs.netapp.com/us-en/cloud-manager-app-template/task-using-tags.html[Application Templates service^], which can help you organize and simplify the management of your resources.
+
+| Storage VM (SVM) | A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs. You can specify the Storage VM for the new volume.  
 
 | Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 
@@ -202,33 +206,35 @@ NOTE: You can only create NFS or CIFS volumes when using templates.
 
 . On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
 
-. Click image:screenshot_gallery_options.gif[An icon of three side-by-side dots.] > *Add Volume From Template*.
+. Navigate to the Volumes tab and click *Add Volume* > *New Volume From Template*.
 +
-image:screenshot_template_add_vol_cvo.png[A screenshot showing how to add a new volume from a template.]
+image:screenshot_add_volume_template.png[A screenshot showing how to add a new volume from a template.]
 
 . In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
 +
 image:screenshot_select_template_cvo.png[A screenshot of the available application templates.]
 +
-The _Define Parameters_ page is displayed.
+The _Editor_ page is displayed.
 +
 image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
-+
-NOTE: You can click the checkbox *Show read-only parameters* to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
 
-. In the _Context_ area, the Working Environment is filled in with the name of the working environment you started with. You need to select the *Storage VM* where the volume will be created.
+. Above the _Action_ panel, enter a name for the template. 
 
-. Add values for all of the parameters that are not hard-coded from the template. See <<create a volume,Create a volume>> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.
+. Under _Context_, the Working Environment is filled in with the name of the working environment with which you started. Select the *Storage VM* where the volume will be created.
 
-. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Run Template*.
+. Add values for all of the parameters that are not hard-coded from the template. See <<create a volume,Create a volume>> for details about all the parameters needed to complete the deployment of a Cloud Volumes ONTAP volume.
+
+. Click *Apply* to save the configured parameters to the selected Action. 
+
+. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Save Template*.
 +
 If there are other actions, click the action in the left pane to display the parameters you need to complete.
 +
 image:screenshot_template_select_next_action.png[A screenshot showing how to select additional actions that need to be completed.]
 +
-For example, if the Enable Cloud Backup action requires that you select a backup policy, you can do that now.
+For example, if the Enable Cloud Backup on Volume action requires that you select a backup policy, you can do that now.
 
-. Click *Run Template*.
+. Once configuration for the template actions are complete, click *Save Template*.
 
 .Result
 
@@ -248,9 +254,10 @@ By default, BlueXP creates volumes on the first node in an HA configuration. If 
 
 . On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
-. Click the menu icon and then click *Advanced > Advanced allocation*.
-
-. Click *Add Aggregate* and then create the aggregate.
+. On the Aggregates tab, click *Add Aggregate*. 
+. From the _Add Aggregate_ screen, create the aggregate.
++
+image:screenshot_add_aggregate_cvo.png[A screenshot showing the progress of adding an aggregate.]
 
 . For Home Node, choose the second node in the HA pair.
 

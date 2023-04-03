@@ -151,13 +151,11 @@ BlueXP creates an object store for cold data when the system is created, as long
 
 . From the left navigation menu, select *Storage > Canvas*.
 
-. On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance.
+. On the Canvas page, select the name of the Cloud Volumes ONTAP instance.
 
 . Click the menu icon and select *Enable capacity tiering*.
 +
-image:screenshot_enable_capacity_tiering.gif[A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when BlueXP tried to enable data tiering.]
-+
-You'll only see this option if data tiering couldn't be enabled when BlueXP created the system.
+NOTE: You'll only see this option if data tiering couldn't be enabled when BlueXP created the system.
 +
 In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <<Requirements,Ensure that you've met all requirements>>.
 
@@ -179,11 +177,11 @@ If you want to enable data tiering on an existing volume, then you'll need to en
 
 . Open the working environment in BlueXP.
 
-. Click the menu icon, click *Advanced*, and then click *Advanced allocation*.
+. Click the Aggregates tab.
 
-. Verify whether tiering is enabled or disabled on the aggregate.
+. Navigate to the desired tile and verify whether tiering is enabled or disabled on the aggregate.
 +
-image:screenshot_aggr_tiering.gif[A screenshot that shows information about an aggregate in BlueXP which includes the tiering status.]
+image:screenshot_aggregate_tiering_enabled.png[A screenshot that shows information about an aggregate in BlueXP which includes the tiering status.]
 
 .Steps to enable tiering on an aggregate
 
@@ -203,7 +201,7 @@ Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effecti
 
 .Steps
 
-. In the working environment, create a new volume or change the tier of an existing volume:
+. In Volumes tab under the working environment, create a new volume or change the tier of an existing volume:
 +
 [cols=2*,options="header",cols="30,70"]
 |===
@@ -213,7 +211,7 @@ Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effecti
 
 | Create a new volume	| Click *Add New Volume*.
 
-| Modify an existing volume | Select the volume and click *Change Disk Type & Tiering Policy*.
+| Modify an existing volume | Select the desired volume tile, click *Manage volume* to access the Manage Volumes right-side panel, and then click *Advanced actions* and *Change tiering policy* under the right panel.
 
 |===
 
@@ -223,7 +221,7 @@ For a description of these policies, see link:concept-data-tiering.html[Data tie
 +
 *Example*
 +
-image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to object storage.]
+image:screenshot_volumes_change_tiering_policy.png[Screenshot that shows the options available to change tiering policy for a volume.]
 +
 BlueXP creates a new aggregate for the volume if a data tiering-enabled aggregate does not already exist.
 
@@ -273,7 +271,7 @@ The ratio is important for disaster recovery scenarios because as data is read f
 
 . In the upper right of the BlueXP console, click the *Settings* icon, and select *Connector Settings*.
 +
-image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
+image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
 . Under *Capacity*, click *Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering*.
 
@@ -281,7 +279,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 == Changing the cooling period for the auto tiering policy
 
-If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API only.
+If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API and CLI only.
 
 The cooling period is the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to object storage.
 
