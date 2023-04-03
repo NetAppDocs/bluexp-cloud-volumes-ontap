@@ -20,8 +20,8 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
-== 2 April 2023
-The following changes were introduced with the 3.9.28 release of the Connector. 
+== 3 April 2023
+The following changes were introduced with the 3.9.28 release of the Connector. This release includes bug fixes.  
 
 ifdef::gcp[]
 === Turin region now supported in Google Cloud
@@ -48,11 +48,6 @@ NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The 
 image:screenshot-show-flexgroup-volume.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 
 link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html[Learn more about viewing created FlexGroup volumes.^] 
-
-=== Updated Cloud Volumes ONTAP and Connector support for AWS C2S environments
-Cloud Volumes ONTAP version 9.12.1 and Connector version 3.9.27 are now supported for AWS C2S environments. 
-
-link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Learn more about getting started with AWS C2S environments.^]
 
 == 13 March 2023
 
