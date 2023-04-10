@@ -17,9 +17,11 @@ Known limitations identify platforms, devices, or functions that are not support
 
 These limitations are specific to Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager). To view limitations with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html[go to the Cloud Volumes ONTAP Release Notes^]
 
-== BlueXP doesn't support FlexGroup volumes
+== BlueXP doesn't support FlexGroup volumes creation
 
-While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set BlueXP's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
+While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not currently support FlexGroup volume creation. If you create a FlexGroup volume from System Manager or from the CLI, then you should set BlueXP's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
+
+NOTE: The ability to create FlexGroup volumes in BlueXP is planned for a future release. 
 
 == BlueXP doesn't support S3 with Cloud Volumes ONTAP
 
