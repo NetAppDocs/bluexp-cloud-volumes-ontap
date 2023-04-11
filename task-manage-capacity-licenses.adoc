@@ -15,11 +15,13 @@ summary: Manage your capacity-based licenses from the Digital Wallet to ensure t
 [.lead]
 Manage your capacity-based licenses from the Digital Wallet to ensure that your NetApp account has enough capacity for your Cloud Volumes ONTAP systems.
 
+//The contents of this page are reused in the bluexp-digital-wallet doc site. As a result, any links from this page to other pages must use absolute URLs so that the links resolve from the bluexp-digital wallet doc site.
+
 _Capacity-based licenses_ enable you to pay for Cloud Volumes ONTAP per TiB of capacity.
 
 The _Digital Wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 
-link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 == How licenses are added to the Digital Wallet
 
@@ -53,7 +55,7 @@ image:screenshot_capacity-based-licenses.png[A screenshot that shows a Cloud Vol
 +
 * _Consumed capacity_ shows you the capacity of the volumes for that package. For more details about a specific package, hover your mouse over the tooltip.
 +
-To better understand the capacities that display for the Essentials package, you should be familiar with how charging works. link:concept-licensing.html#notes-about-charging[Learn about charging for the Essentials package].
+To better understand the capacities that display for the Essentials package, you should be familiar with how charging works. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#notes-about-charging[Learn about charging for the Essentials package].
 +
 * _Precommitted capacity_ is the licensed capacity (BYOL or Marketplace Contract) that you purchased from NetApp.
 ** _BYOL_ shows you the licensed capacity that you purchased from NetApp for this package type.

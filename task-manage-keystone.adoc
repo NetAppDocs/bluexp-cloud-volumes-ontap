@@ -15,11 +15,13 @@ summary: The Digital Wallet page enables you to manage licenses for Cloud Volume
 [.lead]
 Manage your Keystone Flex Subscriptions from the Digital Wallet by enabling subscriptions for use with Cloud Volumes ONTAP. You can also request changes to the committed capacity and you can unlink subscriptions.
 
+//The contents of this page are reused in the bluexp-digital-wallet doc site. As a result, any links from this page to other pages must use absolute URLs so that the links resolve from the bluexp-digital wallet doc site.
+
 A _Keystone Flex Subscription_ is a pay-as-you-grow storage service offered by NetApp.
 
 The _Digital Wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 
-link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 == Authorize your account
 
