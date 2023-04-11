@@ -15,6 +15,8 @@ summary: Manage your node-based licenses in the Digital Wallet to ensure that ea
 [.lead]
 Manage node-based licenses in the Digital Wallet to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
 
+//The contents of this page are reused in the bluexp-digital-wallet doc site. As a result, any links from this page to other pages must use absolute URLs so that the links resolve from the bluexp-digital wallet doc site.
+
 _Node-based licenses_ are the previous generation licensing model (and not available for new customers):
 
 * BYOL licenses purchased from NetApp
@@ -22,7 +24,7 @@ _Node-based licenses_ are the previous generation licensing model (and not avail
 
 The _Digital Wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 
-link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 == Manage PAYGO licenses
 
@@ -242,4 +244,4 @@ https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.ht
 
 . Terminate the Cloud Volumes ONTAP system that you no longer need by deleting the original working environment.
 +
-link:task-deleting-working-env.html[Learn how to delete a Cloud Volumes ONTAP working environment].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html[Learn how to delete a Cloud Volumes ONTAP working environment].
