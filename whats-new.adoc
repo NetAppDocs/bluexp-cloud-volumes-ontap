@@ -45,14 +45,14 @@ This release enables you to make comments when creating an Cloud Volumes ONTAP F
 === BlueXP user interface redesign for Cloud Volumes ONTAP Overview, Volumes, and Aggregates pages
 BlueXP now has a redesigned user interface for Cloud Volumes ONTAP Overview, Volumes, and Aggregates pages. The tile-based design presents more comprehensive information in each tile for a better user experience. 
 
-image:screenshot-resource-page-rn.png["This screenshot shows the redesigned BlueXP user interface on the Cloud Volumes ONTAP overview page. Various tiles show storage efficiency, version, capacity distribution, information about the Cloud Volumes ONTAP deployment, volumes, aggregates, replications, and backups."]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-resource-page-rn.png["This screenshot shows the redesigned BlueXP user interface on the Cloud Volumes ONTAP overview page. Various tiles show storage efficiency, version, capacity distribution, information about the Cloud Volumes ONTAP deployment, volumes, aggregates, replications, and backups."]
 
 === FlexGroup Volumes viewable through Cloud Volumes ONTAP
 FlexGroup volumes created through CLI or System Manager directly are now viewable through the redesigned Volumes tile in BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FlexGroup volumes through a dedicated Volumes tile.
 
 NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.
 
-image:screenshot-show-flexgroup-volume.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-show-flexgroup-volume.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 
 link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html[Learn more about viewing created FlexGroup volumes.^] 
 
