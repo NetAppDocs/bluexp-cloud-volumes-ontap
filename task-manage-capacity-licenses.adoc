@@ -37,9 +37,11 @@ The Digital Wallet shows you the total consumed capacity in your account and the
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. With *Capacity Based Licenses* selected, view the packages summary, which shows you consumed capacity, total precommitted capacity, and total PAYGO capacity.
+. On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected.
+
+. View the packages summary, which shows you consumed capacity, total precommitted capacity, and total PAYGO capacity.
 +
 * _Total consumed capacity_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
 +
@@ -79,7 +81,7 @@ If you don't see your purchased licenses in the Digital Wallet, you'll need to a
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected and click *Add License*.
 
@@ -101,7 +103,7 @@ The license file (or _files_ if you have an HA pair).
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Update License*.
 
@@ -125,7 +127,7 @@ If you have a private offer or contract from your cloud provider's marketplace, 
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, click *Change Charging Method*.
 +
@@ -149,7 +151,7 @@ If a capacity-based license expired and is no longer in use, then you can remove
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Remove License*.
 
