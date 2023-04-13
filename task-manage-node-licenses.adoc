@@ -32,7 +32,7 @@ The Digital Wallet page enables you to view details about each of your PAYGO Clo
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -54,7 +54,7 @@ Add a node-based license to the Digital Wallet so that you can select the licens
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -85,7 +85,7 @@ The converted license has the same expiry date as the Cloud Volumes ONTAP licens
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -129,7 +129,7 @@ If BlueXP can't access the license file over the secure internet connection, you
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -157,7 +157,7 @@ Purchase an extra capacity license by contacting us through the chat icon in the
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -175,7 +175,7 @@ If you extended the term of an extra capacity license, you'll need to update the
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -193,7 +193,7 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
@@ -214,7 +214,7 @@ When you convert an Eval license to a BYOL, BlueXP restarts the Cloud Volumes ON
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
 . On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
 
