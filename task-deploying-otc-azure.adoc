@@ -22,7 +22,7 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html[Connector that is associated with your workspace^].
 
 ** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
@@ -58,7 +58,7 @@ If you want to launch a single-node Cloud Volumes ONTAP system in Azure, you nee
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node*.
 
-. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[create a Connector^].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html[create a Connector^].
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
@@ -243,7 +243,7 @@ If you want to launch a Cloud Volumes ONTAP HA pair in Azure, you need to create
 
 . [[subscribe]]On the Canvas page, click *Add Working Environment* and follow the prompts.
 
-. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[create a Connector^].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html[create a Connector^].
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name, add tags if needed, and then specify credentials.
 +
