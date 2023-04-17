@@ -17,7 +17,7 @@ Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud M
 
 The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
-//The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
+//The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
 == 4 April 2023
