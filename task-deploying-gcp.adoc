@@ -22,7 +22,7 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[Connector that is associated with your workspace^].
 
 ** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
@@ -56,7 +56,7 @@ Create a working environment in BlueXP to launch Cloud Volumes ONTAP in Google C
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
 
-. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[create a Connector^].
+. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[create a Connector^].
 
 . *Details & Credentials*: Select a project, specify a cluster name, optionally select a service account, optionally add labels, and then specify credentials.
 +
@@ -83,7 +83,7 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 If you don't see any additional projects in the drop-down list, then you haven't yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
 
-NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector[as described on this page^].
+NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[as described on this page^].
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 
@@ -272,7 +272,7 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 If you don't see any additional projects in the drop-down list, then you haven't yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
 
-NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector[as described on this page^].
+NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[as described on this page^].
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 

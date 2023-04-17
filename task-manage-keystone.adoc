@@ -29,9 +29,9 @@ Before you can use and manage Keystone Flex Subscriptions in BlueXP, you need to
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. Click *Keystone Flex Subscription*.
+. Select *Keystone*.
 
 . If you see the *Welcome to NetApp Keystone* page, send an email to the address listed on the page.
 +
@@ -51,9 +51,9 @@ After NetApp authorizes your account, you need to link Keystone Flex Subscriptio
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. Click *Keystone Flex Subscription*.
+. Select *Keystone*.
 
 . For the subscription that you want to link, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Link*.
 +
@@ -69,9 +69,9 @@ If you need to adjust the committed capacity for a subscription, you can send a 
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. Click *Keystone Flex Subscription*.
+. Select *Keystone*.
 
 . For the subscription that you want adjust the capacity, click image:icon-action.png["An icon that is three side-by-side dots"] and select *View detail and edit*.
 
@@ -91,9 +91,9 @@ If you no longer want to use a Keystone Flex Subscription with new Cloud Volumes
 
 .Steps
 
-. From the left navigation menu, select *Digital Wallet*.
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. Click *Keystone Flex Subscription*.
+. Select *Keystone*.
 
 . For the subscription that you want to unlink, click image:icon-action.png["An icon that is three side-by-side dots"] and select *Unlink*.
 

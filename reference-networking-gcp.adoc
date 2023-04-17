@@ -145,7 +145,7 @@ For an HA pair, four VPCs are required. Each of those VPCs can be either shared 
 
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#shared-vpc-permissions[Review the required shared VPC permissions covered in Connector deployment^]
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[Review the required shared VPC permissions covered in Connector deployment^]
 
 === Packet mirroring in VPCs
 
@@ -336,5 +336,5 @@ NOTE: To enable high write speed for new Google Cloud HA pair deployments, a max
 
 If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html[View networking requirements for the Connector^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[View networking requirements for the Connector^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html[Firewall rules in Google Cloud^]

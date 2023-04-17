@@ -210,6 +210,6 @@ image:diagram_ha_networking.png["Conceptual image showing components in a Cloud 
 
 If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[View networking requirements for the Connector^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html[View networking requirements for the Connector^]
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[Security group rules in AWS^]
