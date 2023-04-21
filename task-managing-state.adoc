@@ -78,3 +78,5 @@ image:screenshot_turn_off_redesign.png[Screen shot: Shows the icon to turn off a
 . Click *Turn Off*.
 +
 It can take up to a few minutes to stop the system. You can restart systems at a later time from the working environment page.
+
+NOTE: Snapshots are created automatically upon reboot. 

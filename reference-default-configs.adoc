@@ -108,6 +108,7 @@ ifdef::aws[]
 ** 540 GiB gp2 disk for core data
 
 * One EBS snapshot for each boot disk and root disk
+NOTE: Snapshots are created automatically upon reboot.
 
 * For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GiB
 
@@ -140,6 +141,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
+NOTE: Snapshots are created automatically upon reboot.
 * Every disk by default in Azure is encrypted at rest.
 
 .HA pairs in multiple availability zones
@@ -148,6 +150,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
+NOTE: Snapshots are created automatically upon reboot.
 * Every disk by default in Azure is encrypted at rest.
 endif::azure[]
 
@@ -159,6 +162,7 @@ ifdef::gcp[]
 * One 500 GiB SSD persistent disk for NVRAM
 * One 315 GiB Standard persistent disk for saving cores
 * Snapshots for boot and root data
+NOTE: Snapshots are created automatically upon reboot.
 * Boot and root disks are encrypted by default.
 
 === Google Cloud (HA pair)
@@ -170,6 +174,7 @@ ifdef::gcp[]
 * One 10 GiB Standard persistent disk for mediator data
 * One 10 GiB Standard persistent disk for mediator boot data
 * Snapshots for boot and root data
+NOTE: Snapshots are created automatically upon reboot.
 * Boot and root disks are encrypted by default.
 endif::gcp[]
 
