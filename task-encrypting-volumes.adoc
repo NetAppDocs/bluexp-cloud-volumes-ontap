@@ -55,7 +55,7 @@ TIP: Search for the *Key Managers* solution.
 . Configure external key management.
 +
 ifdef::aws[]
-* AWS: https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-overview-concept.html[Go to the ONTAP documentation for instructions^]
+* AWS: link:task-aws-key-management.html[AWS Key Management Service]
 endif::aws[]
 ifdef::azure[]
 * Azure: link:task-azure-key-vault.html[Azure Key Vault (AKV)]
