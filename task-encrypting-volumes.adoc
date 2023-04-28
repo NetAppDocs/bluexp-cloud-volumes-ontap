@@ -17,9 +17,12 @@ Cloud Volumes ONTAP supports NetApp Volume Encryption (NVE) and NetApp Aggregate
 
 Both NVE and NAE are supported with an external key manager.
 
-ifdef::azure,gcp[]
+ifdef::aws,azure,gcp[]
 If you use NVE, you have the option to use your cloud provider's key vault to protect ONTAP encryption keys:
 
+ifdef::aws[]
+* AWS Key Management Service (beginning in 9.12.0)
+endif::aws[]
 ifdef::azure[]
 * Azure Key Vault (AKV)
 endif::azure[]
@@ -60,3 +63,5 @@ endif::azure[]
 ifdef::gcp[]
 * Google Cloud: link:task-google-key-manager.html[Google Cloud Key Management Service]
 endif::gcp[]
+
+// BLUEXPDOC-10

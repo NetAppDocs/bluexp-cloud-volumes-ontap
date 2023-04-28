@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-google-key-manager.html
 keywords: google cloud, encryption, NVE, NetApp volume encryption, KMIP, GCP, GCP KMS, key manager service, encryption
-summary: Utilize Azure Key Vault for your third-party key management service.
+summary: Utilize Google's key management service for your third-party key management service.
 ---
 = Manage keys with Google's Cloud Key Management Service
 :icons: font
