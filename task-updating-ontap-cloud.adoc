@@ -206,16 +206,18 @@ A notification appears in the Overview tab if a new version is available:
 image:screenshot_overview_upgrade.png[A screenshot that shows the "Upgrade now!" link under the Overview tab.]
 
 . If a new version is available, click *Upgrade Now!*
++ 
+NOTE: Before you can upgrade Cloud Volumes ONTAP through the BlueXP notification, you must have a NetApp Support Site account. 
 
 . In the Upgrade Cloud Volumes ONTAP page, read the EULA, and then select *I read and approve the EULA*.
+
+. If applicable, select which version of Cloud Volumes ONTAP you want to upgrade to.  
 
 . Click *Upgrade*.
 
 .Result
 
 BlueXP starts the software upgrade. You can perform actions on the working environment when the software update is complete.
-
-NOTE: Currently, you can only upgrade to the latest available ONTAP version through the BlueXP user interface. The ability to upgrade to a specific ONTAP version through the BlueXP user interface will be available in a future release. 
 
 .After you finish
 
