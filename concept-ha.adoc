@@ -56,8 +56,8 @@ An HA configuration maintains high availability of your data as follows:
 * The recovery point objective (RPO) is 0 seconds.
 Your data is transactionally consistent with no data loss.
 
-* The recovery time objective (RTO) is 60 seconds.
-In the event of an outage, data should be available in 60 seconds or less.
+* The recovery time objective (RTO) is 120 seconds.
+In the event of an outage, data should be available in 120 seconds or less.
 
 == HA deployment models
 
