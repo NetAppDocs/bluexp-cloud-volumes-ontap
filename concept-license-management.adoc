@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-license-management.html
-keywords: byol, bring your own license, expiration, warning, node-based byol, node license
+keywords: byol, bring your own license, expiration, warning, node-based byol, node license, capacity
 summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a system license installed with an active subscription. BlueXP simplifies the process by managing licenses for you and by displaying a warning before they expire.
 ---
 
@@ -19,6 +19,8 @@ TIP: A node-based license is the previous generation BYOL for Cloud Volumes ONTA
 
 link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licensing options].
 
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html[Learn more about how to manage node-based licenses^].
+
 == BYOL system licenses
 
 A node-based license provides up to 368 TiB of capacity for a single node or HA pair.
@@ -26,8 +28,6 @@ A node-based license provides up to 368 TiB of capacity for a single node or HA 
 You can purchase multiple licenses for a Cloud Volumes ONTAP BYOL system to allocate more than 368 TiB of capacity. For example, you might purchase two licenses to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you could purchase four licenses to get up to 1.4 PiB.
 
 The number of licenses that you can purchase for a single node system or HA pair is unlimited.
-
-NOTE: Some on-premises ONTAP storage systems that you purchased may have included a free Cloud Volumes ONTAP license. You can use the license to create a new Cloud Volumes ONTAP system, or you can apply the license to an existing Cloud Volumes ONTAP system to expand the capacity. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-managing-ontap.html#viewing-unused-cloud-volumes-ontap-licenses[See if you have any available licenses to use^].
 
 Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by link:concept-data-tiering.html[tiering inactive data to object storage]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 

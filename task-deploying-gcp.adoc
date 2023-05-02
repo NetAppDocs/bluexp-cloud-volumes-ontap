@@ -34,7 +34,7 @@ You should have prepared by choosing a configuration and by obtaining Google Clo
 
 * An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
 +
-link:task-set-up-licensing-gcp.html[Learn how to set up licensing].
+link:task-set-up-licensing-google.html[Learn how to set up licensing].
 
 * Google Cloud APIs should be https://cloud.google.com/apis/docs/getting-started#enabling_apis[enabled in your project^]:
 +
@@ -122,7 +122,7 @@ The following table describes fields for which you might need guidance:
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-gcp.html[Learn how to set up licensing].
+* link:task-set-up-licensing-google.html[Learn how to set up licensing].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -315,7 +315,7 @@ The following table describes fields for which you might need guidance:
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
 * link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-gcp.html[Learn how to set up licensing].
+* link:task-set-up-licensing-google.html[Learn how to set up licensing].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
