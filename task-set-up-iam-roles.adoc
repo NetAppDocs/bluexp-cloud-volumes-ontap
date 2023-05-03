@@ -250,6 +250,8 @@ If you plan to use Cloud Backup with your Cloud Volumes ONTAP systems, the IAM r
 				"ec2:DescribeVpcs",
 				"ec2:ReplaceRoute",
 				"ec2:UnassignPrivateIpAddresses"
+                "sts:AssumeRole" 
+                "ec2:DescribeSubnets" 
 			],
 			"Resource": "*"
 		}
