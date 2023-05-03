@@ -212,7 +212,7 @@ NOTE: Before you can upgrade Cloud Volumes ONTAP through the BlueXP notification
 . Click *Upgrade*.
 +
 NOTE: The Upgrade Cloud Volumes ONTAP page selects the latest available Cloud Volumes ONTAP version for upgrade by default. If available, older versions of Cloud Volumes ONTAP can instead be selected for your upgrade by clicking *Select older versions*.
-Refer to the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths list] for the appropriate upgrade path based on your current Cloud Volumes ONTAP version.   
+Refer to the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths list^] for the appropriate upgrade path based on your current Cloud Volumes ONTAP version.   
 +
 image:screenshot_upgrade_select_versions.png[A screenshot of the Upgrade Cloud Volumes ONTAP version page.]
 
