@@ -30,14 +30,22 @@ The Qatar region is now supported in Google Cloud for Cloud Volumes ONTAP and th
 The Australia East region in Azure now supports HA multi-availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
 
 === Charging usage breakdown
-Now you can find out what you're being charged for when using capacity-based licenses. The following types of usage reports are available for download from the digital wallet in BlueXP.
+Now you can find out what you're being charged for when you're subscribed to capacity-based licenses. The following types of usage reports are available for download from the digital wallet in BlueXP. The usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports can be easily shared with others.
 
 * Cloud Volumes ONTAP package usage
 * High-level usage 
 * Storage VMs usage
 * Volumes usage
 
-For more information, see 
+For more information, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licenses^].
+
+=== Cloud Volumes ONTAP upgrade version selector update 
+Through the Upgrade Cloud Volumes ONTAP page, you can now choose to upgrade to the latest available version of Cloud Volumes ONTAP or an older version. 
+
+To learn more about upgrading Cloud Volumes ONTAP through BlueXP, see https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-cloud-volumes-ontap[Upgrade Cloud Volumes ONTAP^].
+
+=== Notification now displays when accessing BlueXP without a marketplace subscription
+A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
 
 == 4 April 2023
 Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in AWS as follows.
@@ -56,7 +64,7 @@ The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and th
 === Digital Wallet enhancement
 The Digital Wallet now shows the licensed capacity that you purchased with marketplace private offers. 
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account^].
 
 === Support for comments during volume creation
 This release enables you to make comments when creating an Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API.
