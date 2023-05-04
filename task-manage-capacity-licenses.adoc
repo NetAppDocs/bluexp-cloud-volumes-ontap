@@ -71,11 +71,11 @@ image:screenshot-digital-wallet-packages.png[A screenshot that shows consumed ca
 
 == Download usage reports
 
-Account administrators can download four usage reports from the digital wallet in BlueXP. The usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports can be easily shared with others. 
+Account administrators can download four usage reports from the digital wallet in BlueXP. These usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports capture data at a point in time and can be easily shared with others. 
 
 image:screenshot-digital-wallet-usage-report.png[Screenshot shows the digital wallet Cloud Volumes ONTAP capacity based licenses page and highlights the usage report button.]
 
-The following reports are available for download: 
+The following reports are available for download. Capacity values shown are in GiB. 
 
 * *High-level usage*: This report shows you exactly what's in the “Cloud Volumes ONTAP Packages Summary” card in the digital wallet. It includes the following information: 
 +
@@ -114,6 +114,8 @@ The following reports are available for download:
 ** Volume ID 
 ** Volume type
 ** Volume provisioned capacity
++
+NOTE: FlexClone volumes are not included in the report because these types of volumes do not change. 
 
 .Steps
 
