@@ -226,7 +226,7 @@ image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank t
 
 . Click *Apply* to save the configured parameters to the selected Action. 
 
-. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Save Template*.
+. If there are no other Actions that you need to define (for example, configuring BlueXP backup and recovery (Cloud Backup)), click *Save Template*.
 +
 If there are other actions, click the action in the left pane to display the parameters you need to complete.
 +
@@ -242,7 +242,7 @@ Cloud Volumes ONTAP provisions the volume and displays a page so that you can se
 
 image:screenshot_template_creating_resource_cvo.png[A screenshot showing the progress of creating your new volume from the template.]
 
-Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
+Additionally, if any secondary action is implemented in the template, for example, enabling BlueXP backup and recovery (Cloud Backup) on the volume, that action is also performed.
 
 == Create a volume on the second node in an HA configuration
 

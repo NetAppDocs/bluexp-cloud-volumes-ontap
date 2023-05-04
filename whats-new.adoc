@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: whats-new.html
-keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud manager
-summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager).
+keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud manager, BlueXP
+summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP (Cloud Manager).
 ---
 
 = What's new
@@ -13,7 +13,7 @@ summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerl
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager).
+Learn what's new with Cloud Volumes ONTAP management in BlueXP (Cloud Manager).
 
 The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
@@ -154,9 +154,9 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new f
 == 4 December 2022
 The following changes were introduced with the 3.9.24 release of the Connector.
 
-=== WORM + Cloud Backup now available during Cloud Volumes ONTAP creation 
+=== WORM + BlueXP backup and recovery (Cloud Backup) now available during Cloud Volumes ONTAP creation 
 
-The ability to activate both write once, read many (WORM) and Cloud Backup features is now available during the Cloud Volumes ONTAP creation process. 
+The ability to activate both write once, read many (WORM) and BlueXP backup and recovery (Cloud Backup) features is now available during the Cloud Volumes ONTAP creation process. 
 
 === Israel region now supported in Google Cloud 
 

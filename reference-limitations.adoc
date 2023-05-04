@@ -15,7 +15,7 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-These limitations are specific to Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager). To view limitations with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html[go to the Cloud Volumes ONTAP Release Notes^]
+These limitations are specific to Cloud Volumes ONTAP management in BlueXP (Cloud Manager). To view limitations with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html[go to the Cloud Volumes ONTAP Release Notes^]
 
 == BlueXP doesn't support FlexGroup volumes creation
 

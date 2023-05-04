@@ -119,7 +119,7 @@ NOTE: Providing your own IAM role is required in the AWS Commercial Cloud Servic
 
 * Backup policy for Cloud Volumes ONTAP nodes
 +
-If you plan to use Cloud Backup with your Cloud Volumes ONTAP systems, the IAM role for the nodes must include the second policy shown below.
+If you plan to use BlueXP backup and recovery (Cloud Backup) with your Cloud Volumes ONTAP systems, the IAM role for the nodes must include the second policy shown below.
 +
 [role="tabbed-block"]
 ====
