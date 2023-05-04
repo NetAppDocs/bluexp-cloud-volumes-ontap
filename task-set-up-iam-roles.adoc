@@ -236,6 +236,11 @@ If you plan to use Cloud Backup with your Cloud Volumes ONTAP systems, the IAM r
 
 * HA mediator
 +
+The following permissions are version-dependent: 
+
+** `"sts:AssumeRole"`: Available starting with Cloud Volumes ONTAP 9.11.1
+** `"ec2:DescribeSubnets"`: Available starting with Cloud Volumes ONTAP 9.12.0
++
 [source,json]
 {
 	"Version": "2012-10-17",
