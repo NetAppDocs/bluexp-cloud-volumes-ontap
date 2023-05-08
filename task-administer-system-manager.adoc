@@ -51,9 +51,9 @@ System Manager integration is not supported in GovCloud regions or in regions th
 
 A few features that appear in the System Manager interface are not supported with Cloud Volumes ONTAP:
 
-* Cloud Tiering
+* BlueXP tiering (Cloud Tiering)
 +
-The Cloud Tiering service is not supported with Cloud Volumes ONTAP. Tiering data to object storage must be set up directly from BlueXP's Standard View when creating volumes.
+The BlueXP tiering (Cloud Tiering) service is not supported with Cloud Volumes ONTAP. Tiering data to object storage must be set up directly from BlueXP's Standard View when creating volumes.
 
 * Tiers
 +
