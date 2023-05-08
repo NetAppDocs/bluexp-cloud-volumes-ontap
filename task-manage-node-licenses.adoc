@@ -74,7 +74,7 @@ BlueXP adds the license to the digital wallet. The license will be identified as
 
 === Exchange unassigned node-based licenses
 
-If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can exchange the license by converting it to a Cloud Backup license, a Cloud Data Sense license, or a Cloud Tiering license.
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can exchange the license by converting it to a BlueXP backup and recovery license, a BlueXP classification license, or a BlueXP tiering license.
 
 Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service:
 

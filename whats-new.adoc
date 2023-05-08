@@ -484,7 +484,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensin
 
 === Exchange unassigned licenses
 
-If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a BlueXP backup and recovery license, BlueXP classification license, or BlueXP tiering license.
 
 This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
 
@@ -677,7 +677,7 @@ The following changes were introduced with the 3.9.7 release of the Connector.
 
 === New Professional Package in AWS
 
-A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
+A new Professional Package enables you to bundle Cloud Volumes ONTAP and BlueXP backup and recovery service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
 
 If you choose this payment option, you can provision up to 2 PiB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
 
