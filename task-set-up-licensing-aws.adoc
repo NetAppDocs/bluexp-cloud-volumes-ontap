@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-licensing-aws.html
-keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone
 summary: After you decide which licensing option you want to use for Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when deploying a new system.
 ---
 
@@ -125,7 +125,7 @@ link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud 
 
 == Keystone Subscription
 
-A Keystone Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-subscription[Learn more about Keystone Subscriptions].
+A Keystone Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-subscription[Learn more about NetApp Keystone Subscriptions].
 
 .Steps
 

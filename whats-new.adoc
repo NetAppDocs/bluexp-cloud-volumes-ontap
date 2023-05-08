@@ -561,7 +561,7 @@ A Keystone Subscription is a pay-as-you-grow subscription-based service that del
 
 A Keystone Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from BlueXP.
 
-* https://www.netapp.com/services/keystone/[Learn more about Keystone Subscriptions^].
+* https://www.netapp.com/services/keystone/[Learn more about NetApp Keystone Subscriptions^].
 
 * link:task-manage-keystone.html[Learn how to get started with Keystone Subscriptions in BlueXP].
 
