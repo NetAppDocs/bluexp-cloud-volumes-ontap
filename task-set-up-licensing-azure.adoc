@@ -127,22 +127,22 @@ image:screenshot-professional.png[A screenshot of the Professional option when c
 
 link:task-deploying-otc-azure.html[View step-by-step instructions to launch Cloud Volumes ONTAP in Azure].
 
-== Keystone Flex Subscription
+== Keystone Subscription
 
-A Keystone Flex Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-flex-subscription[Learn more about Keystone Flex Subscriptions].
+A Keystone Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-subscription[Learn more about Keystone Subscriptions].
 
 .Steps
 
 . If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^]
 
-. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your BlueXP user account with one or more Keystone Flex Subscriptions.
+. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your BlueXP user account with one or more Keystone Subscriptions.
 
 . After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in BlueXP.
 
-.. Select the Keystone Flex Subscription charging method when prompted to choose a charging method.
+.. Select the Keystone Subscription charging method when prompted to choose a charging method.
 +
-image:screenshot-keystone.png[A screenshot of the Keystone Flex Subscription option when creating a Cloud Volumes ONTAP working environment.]
+image:screenshot-keystone.png[A screenshot of the Keystone Subscription option when creating a Cloud Volumes ONTAP working environment.]
 
 link:task-deploying-otc-azure.html[View step-by-step instructions to launch Cloud Volumes ONTAP in Azure].

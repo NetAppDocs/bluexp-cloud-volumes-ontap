@@ -5,7 +5,7 @@ keywords: license, licensing, install, keystone, requst capacity, link subscript
 summary: The BlueXP digital wallet page enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 ---
 
-= Manage Keystone Flex Subscriptions
+= Manage Keystone Subscriptions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: The BlueXP digital wallet page enables you to manage licenses for Cloud
 :imagesdir: ./media/
 
 [.lead]
-Manage your Keystone Flex Subscriptions from the BlueXP digital wallet by enabling subscriptions for use with Cloud Volumes ONTAP. You can also request changes to the committed capacity and you can unlink subscriptions.
+Manage your Keystone Subscriptions from the BlueXP digital wallet by enabling subscriptions for use with Cloud Volumes ONTAP. You can also request changes to the committed capacity and you can unlink subscriptions.
 
 //The contents of this page are reused in the bluexp-digital-wallet doc site. As a result, any links from this page to other pages must use absolute URLs so that the links resolve from the bluexp-digital wallet doc site.
 
-A _Keystone Flex Subscription_ is a pay-as-you-grow storage service offered by NetApp.
+A _Keystone Subscription_ is a pay-as-you-grow storage service offered by NetApp.
 
 The _BlueXP digital wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 
@@ -25,7 +25,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensin
 
 == Authorize your account
 
-Before you can use and manage Keystone Flex Subscriptions in BlueXP, you need to contact NetApp to authorize your BlueXP user account with your Keystone Flex Subscriptions.
+Before you can use and manage Keystone Subscriptions in BlueXP, you need to contact NetApp to authorize your BlueXP user account with your Keystone Subscriptions.
 
 .Steps
 
@@ -37,9 +37,9 @@ Before you can use and manage Keystone Flex Subscriptions in BlueXP, you need to
 +
 A NetApp representative will process your request by authorizing your user account to access the subscriptions.
 
-. Come back to the *Keystone Flex Subscription* to view your subscriptions.
+. Come back to the *Keystone Subscription* to view your subscriptions.
 +
-image:screenshot-keystone-overview.png[A screenshot that shows a list of Keystone Flex Subscriptions.]
+image:screenshot-keystone-overview.png[A screenshot that shows a list of Keystone Subscriptions.]
 
 .What's next?
 
@@ -47,7 +47,7 @@ Link the subscriptions that you want to use with Cloud Volumes ONTAP.
 
 == Link a subscription
 
-After NetApp authorizes your account, you need to link Keystone Flex Subscriptions for use with Cloud Volumes ONTAP. This action enables users to select the subscription as the charging method for new Cloud Volumes ONTAP systems.
+After NetApp authorizes your account, you need to link Keystone Subscriptions for use with Cloud Volumes ONTAP. This action enables users to select the subscription as the charging method for new Cloud Volumes ONTAP systems.
 
 .Steps
 
@@ -87,7 +87,7 @@ Your request creates a ticket in NetApp's system for processing.
 
 == Unlink a subscription
 
-If you no longer want to use a Keystone Flex Subscription with new Cloud Volumes ONTAP systems, you can unlink the subscription. Note that you can only unlink a subscription that isn't attached to an existing Cloud Volumes ONTAP subscription.
+If you no longer want to use a Keystone Subscription with new Cloud Volumes ONTAP systems, you can unlink the subscription. Note that you can only unlink a subscription that isn't attached to an existing Cloud Volumes ONTAP subscription.
 
 .Steps
 

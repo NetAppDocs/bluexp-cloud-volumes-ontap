@@ -553,17 +553,17 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.10.1.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9101-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-=== Keystone Flex Subscriptions
+=== Keystone Subscriptions
 
-You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
+You can now use Keystone Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
 
-A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
+A Keystone Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 
-A Keystone Flex Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from BlueXP.
+A Keystone Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from BlueXP.
 
-* https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
+* https://www.netapp.com/services/keystone/[Learn more about Keystone Subscriptions^].
 
-* link:task-manage-keystone.html[Learn how to get started with Keystone Flex Subscriptions in BlueXP].
+* link:task-manage-keystone.html[Learn how to get started with Keystone Subscriptions in BlueXP].
 
 === New AWS region support
 

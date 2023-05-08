@@ -22,7 +22,7 @@ The following licensing options are available for new customers.
 Capacity-based licensing::
 Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services.
 
-Keystone Flex Subscription::
+Keystone Subscription::
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
 
 The previous by-node licensing model remains available for existing customers who have already purchased a license or who have an active marketplace subscription.
@@ -256,19 +256,20 @@ ifdef::gcp[]
 * link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
-== Keystone Flex Subscription
+== Keystone Subscription
 
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 
-Charging is based on the size of your committed capacity for one or more Cloud Volumes ONTAP HA pairs in your Keystone Flex Subscription.
+Charging is based on the size of your committed capacity for one or more Cloud Volumes ONTAP HA pairs in your Keystone Subscription.
 
-The provisioned capacity for each volume is aggregated and compared to the committed capacity on your Keystone Flex Subscription periodically, and any overages are charged as burst on your Keystone Flex Subscription.
+The provisioned capacity for each volume is aggregated and compared to the committed capacity on your Keystone Subscription periodically, and any overages are charged as burst on your Keystone Subscription.
 
-https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
+https://www.netapp.com/services/keystone/
+[Learn more about Keystone Subscriptions^].
 
 === Supported configurations
 
-Keystone Flex Subscriptions are supported with HA pairs. This licensing option isn't supported with single node systems at this time.
+Keystone Subscriptions are supported with HA pairs. This licensing option isn't supported with single node systems at this time.
 
 === Capacity limit
 
@@ -276,7 +277,7 @@ Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity thro
 
 === How to get started
 
-Learn how to get started with a Keystone Flex Subscription:
+Learn how to get started with a Keystone Subscription:
 
 ifdef::aws[]
 * link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
@@ -299,7 +300,7 @@ Node-based licensing is still available for existing customers:
 
 == License conversions
 
-Converting an existing Cloud Volumes ONTAP system to another licensing method isn't supported. The three current licensing methods are capacity-based licensing, Keystone Flex Subscriptions, and node-based licensing. For example, you can't convert a system from node-based licensing to capacity-based licensing (and vice versa).
+Converting an existing Cloud Volumes ONTAP system to another licensing method isn't supported. The three current licensing methods are capacity-based licensing, Keystone Subscriptions, and node-based licensing. For example, you can't convert a system from node-based licensing to capacity-based licensing (and vice versa).
 
 If you want to transition to another licensing method, you can purchase a license, deploy a new Cloud Volumes ONTAP system using that license, and then replicate the data to that new system.
 
