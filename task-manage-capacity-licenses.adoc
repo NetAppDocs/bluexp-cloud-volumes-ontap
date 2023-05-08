@@ -69,6 +69,64 @@ Here's an example for an account that has several licensing packages:
 +
 image:screenshot-digital-wallet-packages.png[A screenshot that shows consumed capacity, precommitted capacity, and PAYGO, or provisioned, capacity for the essentials and professional packages.]
 
+== Download usage reports
+
+Account administrators can download four usage reports from the digital wallet in BlueXP. These usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports capture data at a point in time and can be easily shared with others. 
+
+image:screenshot-digital-wallet-usage-report.png[Screenshot shows the digital wallet Cloud Volumes ONTAP capacity based licenses page and highlights the usage report button.]
+
+The following reports are available for download. Capacity values shown are in TiB. 
+
+* *High-level usage*: This report shows you exactly what's in the “Cloud Volumes ONTAP Packages Summary” card in the digital wallet. It includes the following information: 
++
+** Total consumed capacity 
+** Total precommitted capacity 
+** Total BYOL capacity 
+** Total Marketplace contracts capacity
+** Total PAYGO capacity
+
+* *Cloud Volumes ONTAP package usage*: This report shows you exactly what's on the package cards in the digital wallet. It includes the following information for each package except the Optimized I/O package: 
++
+** Total consumed capacity
+** Total precommitted capacity 
+** Total BYOL capacity 
+** Total Marketplace contracts capacity 
+** Total PAYGO capacity
+
+* *Storage VMs usage*: This report shows how charged capacity is broken down across Cloud Volumes ONTAP systems and storage virtual machines (SVMs). This information is not available on any screen in the digital wallet. It includes the following information: 
++
+** Working environment ID (appears as the UUID)
+** Cloud
+** NetApp account ID
+** Working environment configuration
+** SVM name
+** Provisioned capacity
+** Charged capacity roundup
+** Marketplace billing term
+** Cloud Volumes ONTAP package or feature
+** Charging SaaS Marketplace subscription name
+** Charging SaaS Marketplace subscription ID
+
+* *Volumes usage*: This report shows how charged capacity is broken down by volumes in a working environment. This information is not available on any screen in the digital wallet. It includes the following information: 
++
+** Working environment ID (appears as the UUID)
+** SVN name
+** Volume ID 
+** Volume type
+** Volume provisioned capacity
++
+NOTE: FlexClone volumes aren't included in this report because these types of volumes don't incur charges. 
+
+.Steps
+
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
+
+. On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected and click *Usage report*.
++
+The usage report downloads. 
+
+. Open the downloaded file to access the reports. 
+
 == Add purchased licenses to your account
 
 If you don't see your purchased licenses in the Digital Wallet, you'll need to add the licenses to BlueXP so that the capacity is available for Cloud Volumes ONTAP.
