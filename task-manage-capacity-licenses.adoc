@@ -75,7 +75,7 @@ Account administrators can download four usage reports from the digital wallet i
 
 image:screenshot-digital-wallet-usage-report.png[Screenshot shows the digital wallet Cloud Volumes ONTAP capacity based licenses page and highlights the usage report button.]
 
-The following reports are available for download. Capacity values shown are in GiB. 
+The following reports are available for download. Capacity values shown are in TiB. 
 
 * *High-level usage*: This report shows you exactly what's in the “Cloud Volumes ONTAP Packages Summary” card in the digital wallet. It includes the following information: 
 +
@@ -115,7 +115,7 @@ The following reports are available for download. Capacity values shown are in G
 ** Volume type
 ** Volume provisioned capacity
 +
-NOTE: FlexClone volumes are not included in the report because these types of volumes do not change. 
+NOTE: FlexClone volumes aren't included in this report because these types of volumes don't incur charges. 
 
 .Steps
 
