@@ -26,6 +26,9 @@ The following changes were introduced with the 3.9.29 release of the Connector.
 === Qatar region now supported in Google Cloud
 The Qatar region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 
+=== Sweden Central region now supported in Azure
+The Sweden Central region is now supported in Azure for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
+
 === Support for HA multi-availability zone deployments in Azure Australia East
 The Australia East region in Azure now supports HA multi-availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
 
