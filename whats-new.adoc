@@ -20,6 +20,31 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the cloud-manager-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
+== 7 May 2023
+The following changes were introduced with the 3.9.29 release of the Connector. 
+
+=== Qatar region now supported in Google Cloud
+The Qatar region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+=== Sweden Central region now supported in Azure
+The Sweden Central region is now supported in Azure for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+=== Support for HA multi-availability zone deployments in Azure Australia East
+The Australia East region in Azure now supports HA multi-availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+=== Charging usage breakdown
+Now you can find out what you're being charged for when you're subscribed to capacity-based licenses. The following types of usage reports are available for download from the digital wallet in BlueXP. The usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports can be easily shared with others.
+
+* Cloud Volumes ONTAP package usage
+* High-level usage 
+* Storage VMs usage
+* Volumes usage
+
+For more information, see link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licenses^].
+
+=== Notification now displays when accessing BlueXP without a marketplace subscription
+A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
+
 == 4 April 2023
 Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in AWS as follows.
 
@@ -37,7 +62,7 @@ The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and th
 === BlueXP digital wallet enhancement
 The BlueXP digital wallet now shows the licensed capacity that you purchased with marketplace private offers. 
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account^].
 
 === Support for comments during volume creation
 This release enables you to make comments when creating an Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API.
@@ -55,6 +80,7 @@ NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The 
 image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-show-flexgroup-volume.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 
 link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html[Learn more about viewing created FlexGroup volumes.^] 
+//end::whats-new[]
 
 == 13 March 2023
 
@@ -66,7 +92,6 @@ Starting with Cloud Volumes ONTAP 9.12.1 GA, China region support is now support
 * Licenses purchased directly from NetApp are supported.
 
 For regional availability, see link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
-//end::whats-new[]
 
 == 5 March 2023
 The following changes were introduced with the 3.9.27 release of the Connector.

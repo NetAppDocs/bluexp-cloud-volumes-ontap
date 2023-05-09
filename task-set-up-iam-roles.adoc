@@ -236,6 +236,7 @@ If you plan to use BlueXP backup and recovery with your Cloud Volumes ONTAP syst
 
 * HA mediator
 +
+--
 [source,json]
 {
 	"Version": "2012-10-17",
@@ -250,11 +251,14 @@ If you plan to use BlueXP backup and recovery with your Cloud Volumes ONTAP syst
 				"ec2:DescribeVpcs",
 				"ec2:ReplaceRoute",
 				"ec2:UnassignPrivateIpAddresses"
+                "sts:AssumeRole" 
+                "ec2:DescribeSubnets" 
 			],
 			"Resource": "*"
 		}
 	]
 }
+--
 
 . Create an IAM role and attach the policies that you created to the role.
 
