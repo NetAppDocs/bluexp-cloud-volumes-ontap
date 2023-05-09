@@ -90,8 +90,8 @@ Multi-tenant external key management enables individual storage VMs (SVMs) to ma
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html[Learn how to encrypt volumes with NetApp encryption solutions^].
 
-=== Support for environments without internet 
-Cloud Volumes ONTAP is now supported in any cloud environment that has complete isolation from the internet. Only node-based licensing (BYOL) is supported in these environments. Capacity-based licensing is not supported. To get started, manually install the Connector software, log in to the BlueXP console that's running on the Connector, add your BYOL license to the BlueXP digital wallet, and then deploy Cloud Volumes ONTAP. 
+=== Support for environments without internet
+Cloud Volumes ONTAP is now supported in any cloud environment that has complete isolation from the internet. Only node-based licensing (BYOL) is supported in these environments. Capacity-based licensing is not supported. To get started, manually install the Connector software, log in to the BlueXP console that's running on the Connector, add your BYOL license to the BlueXP digital wallet, and then deploy Cloud Volumes ONTAP.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html[Install the Connector in a location without internet access^]
 +
@@ -154,9 +154,9 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new f
 == 4 December 2022
 The following changes were introduced with the 3.9.24 release of the Connector.
 
-=== WORM + BlueXP backup and recovery (Cloud Backup) now available during Cloud Volumes ONTAP creation 
+=== WORM + Cloud Backup now available during Cloud Volumes ONTAP creation 
 
-The ability to activate both write once, read many (WORM) and BlueXP backup and recovery (Cloud Backup) features is now available during the Cloud Volumes ONTAP creation process. 
+The ability to activate both write once, read many (WORM) and Cloud Backup features is now available during the Cloud Volumes ONTAP creation process. 
 
 === Israel region now supported in Google Cloud 
 
@@ -197,9 +197,9 @@ For more information on this new functionality, see https://docs.netapp.com/us-e
 
 The following changes were introduced with the 3.9.22 release of the Connector.
 
-=== BlueXP digital wallet enhancements
+=== Digital Wallet enhancements
 
-* The BlueXP digital wallet now shows a summary of the Optimized I/O licensing package and the provisioned WORM capacity for Cloud Volumes ONTAP systems across your account.
+* The Digital Wallet now shows a summary of the Optimized I/O licensing package and the provisioned WORM capacity for Cloud Volumes ONTAP systems across your account.
 +
 These details can help you better understand how you're being charged and whether you need to purchase additional capacity.
 +
@@ -243,7 +243,7 @@ The only requirement is to ensure that the Connector's security group allows _in
 
 === Change charging method
 
-You can now change the charging method for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed. This feature is available from the BlueXP digital wallet.
+You can now change the charging method for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed. This feature is available from the Digital Wallet.
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to change charging methods].
 
@@ -269,11 +269,11 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensin
 
 The following changes were introduced with the 3.9.20 release of the Connector.
 
-=== BlueXP digital wallet
+=== Digital Wallet
 
-The BlueXP digital wallet now shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you're being charged and whether you need to purchase additional capacity.
+The Digital Wallet now shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you're being charged and whether you need to purchase additional capacity.
 
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["A screenshot that shows the BlueXP digital wallet page for capacity-based licenses. The page provides an overview of the consumed capacity in your account and then breaks down the consumed capacity by licensing package."]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["A screenshot that shows the Digital Wallet page for capacity-based licenses. The page provides an overview of the consumed capacity in your account and then breaks down the consumed capacity by licensing package."]
 
 === Elastic Volumes enhancement
 
@@ -484,7 +484,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensin
 
 === Exchange unassigned licenses
 
-If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a BlueXP backup and recovery license, BlueXP classification license, or BlueXP tiering license.
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can now exchange the license by converting it to a Cloud Backup license, Cloud Data Sense license, or Cloud Tiering license.
 
 This action revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service with the same expiry date.
 
@@ -498,9 +498,9 @@ The following changes were introduced with the 3.9.15 release of the Connector.
 
 We redesigned the licensing selection screen when creating a new Cloud Volumes ONTAP working environment. The changes highlight the by-capacity charging methods that were introduced in July 2021 and support upcoming offerings through the cloud provider marketplaces.
 
-=== BlueXP digital wallet update
+=== Digital Wallet update
 
-We updated the *BlueXP digital wallet* by consolidating Cloud Volumes ONTAP licenses in a single tab.
+We updated the *Digital Wallet* by consolidating Cloud Volumes ONTAP licenses in a single tab.
 
 == 2 January 2022
 
@@ -553,7 +553,7 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.10.1.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9101-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-=== Keystone Subscriptions
+=== NetApp Keystone Subscriptions
 
 You can now use Keystone Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
 
@@ -677,7 +677,7 @@ The following changes were introduced with the 3.9.7 release of the Connector.
 
 === New Professional Package in AWS
 
-A new Professional Package enables you to bundle Cloud Volumes ONTAP and BlueXP backup and recovery service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
+A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
 
 If you choose this payment option, you can provision up to 2 PiB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
 
