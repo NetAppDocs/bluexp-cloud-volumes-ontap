@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-cvo-aiq-digital-advisor.html
-keywords: concepts, active iq digital advisor, cloud volumes ontap, BlueXP
+keywords: concepts, active iq digital advisor, cloud volumes ontap, cloud manager, BlueXP
 summary: Active IQ Digital Advisor is integrated into the BlueXP UI so that you can optimize the operations, security, and performance of your ONTAP clusters in a single pane of glass.
 ---
 
