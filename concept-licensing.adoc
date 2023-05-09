@@ -94,7 +94,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 * Provides licensing for any Cloud Volumes ONTAP configuration
 +
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
-* Includes unlimited volume backups using BlueXP backup and recovery (Cloud Backup), but only for Cloud Volumes ONTAP systems that use the Professional package
+* Includes unlimited volume backups using BlueXP backup and recovery, but only for Cloud Volumes ONTAP systems that use the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
 ==== Edge Cache
@@ -152,7 +152,7 @@ For details about pricing, go to https://cloud.netapp.com/pricing?hsCtaTracking=
 
 === Free trials
 
-A 30-day free trial is available from the pay-as-you-go subscription in your cloud provider's marketplace. The free trial includes Cloud Volumes ONTAP and BlueXP backup and recovery (Cloud Backup). The trial starts when you subscribe to the offering in the marketplace.
+A 30-day free trial is available from the pay-as-you-go subscription in your cloud provider's marketplace. The free trial includes Cloud Volumes ONTAP and BlueXP backup and recovery. The trial starts when you subscribe to the offering in the marketplace.
 
 There are no instance or capacity limitations. You can deploy as many Cloud Volumes ONTAP systems as you'd like and allocate as much capacity as needed, free of charge for 30 days. The free trial automatically converts to a paid hourly subscription after 30 days.
 
