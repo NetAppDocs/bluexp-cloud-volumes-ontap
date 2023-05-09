@@ -49,9 +49,9 @@ Cloud Volumes ONTAP supports data encryption and provides protection against vir
 
 * Privacy compliance controls
 +
-Integration with BlueXP classification (Cloud Data Sense) helps you understand data context and identify sensitive data.
+Integration with BlueXP classification helps you understand data context and identify sensitive data.
 +
-https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about BlueXP classification (Cloud Data Sense)^]
+https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about BlueXP classification^]
 
 NOTE: Licenses for ONTAP features are included with Cloud Volumes ONTAP.
 
