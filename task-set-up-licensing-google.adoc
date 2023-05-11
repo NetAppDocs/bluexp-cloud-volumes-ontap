@@ -57,7 +57,7 @@ Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes O
 
 . https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to BlueXP^]
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to BlueXP^]
 +
 BlueXP automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, BlueXP automatically adds the licenses to the Digital Wallet.
 +
@@ -95,7 +95,7 @@ image:screenshot-professional.png[A screenshot of the Professional option when c
 
 link:task-deploying-gcp.html[View step-by-step instructions to launch Cloud Volumes ONTAP in Google Cloud].
 
-TIP: You can manage the Google Cloud Marketplace subscriptions associated with your accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Learn how to manage your Google Cloud credentials and subscriptions^]
+TIP: You can manage the Google Cloud Marketplace subscriptions associated with your accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Learn how to manage your Google Cloud credentials and subscriptions^]
 
 === Annual contract
 

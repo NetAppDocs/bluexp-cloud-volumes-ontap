@@ -19,7 +19,7 @@ While Google Cloud Storage always encrypts your data before it's written to disk
 
 . Ensure that the BlueXP Connector service account has the correct permissions at the project level, in the project where the key is stored.
 +
-The permissions are provided in the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[Connector service account permissions by default^], but may not be applied if you use an alternate project for the Cloud Key Management Service.
+The permissions are provided in the https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[Connector service account permissions by default^], but may not be applied if you use an alternate project for the Cloud Key Management Service.
 +
 The permissions are as follows:
 +
@@ -55,4 +55,4 @@ For more information, refer to https://cloud.google.com/storage/docs/encryption/
     "key": "projects/project-1/locations/us-east4/keyRings/keyring-1/cryptoKeys/generatedkey1"
   }
 
-Refer to the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for more details about using the "GcpEncryption" parameter.
+Refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for more details about using the "GcpEncryption" parameter.
