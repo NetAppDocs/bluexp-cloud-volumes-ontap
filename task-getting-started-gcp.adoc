@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-getting-started-gcp.html
-keywords: google cloud platform, gcp, cloud manager, deploy BlueXP, launch BlueXP, create BlueXP, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions
+keywords: google cloud platform, gcp, cloud manager, deploy BlueXP, launch BlueXP, create BlueXP, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions, cloud backup
 summary: Get started with Cloud Volumes ONTAP for Google Cloud in a few steps.
 ---
 
@@ -52,7 +52,7 @@ link:reference-networking-gcp.html[Learn more about networking requirements].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up a service account
 
 [role="quick-margin-para"]
-Cloud Volumes ONTAP requires a Google Cloud service account for two purposes. The first is when you enable link:concept-data-tiering.html[data tiering] to tier cold data to low-cost object storage in Google Cloud. The second is when you enable the https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Cloud Backup Service^] to back up volumes to low-cost object storage.
+Cloud Volumes ONTAP requires a Google Cloud service account for two purposes. The first is when you enable link:concept-data-tiering.html[data tiering] to tier cold data to low-cost object storage in Google Cloud. The second is when you enable the https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[BlueXP backup and recovery^] to back up volumes to low-cost object storage.
 
 [role="quick-margin-para"]
 You can set up one service account and use it for both purposes. The service account must have the *Storage Admin* role.

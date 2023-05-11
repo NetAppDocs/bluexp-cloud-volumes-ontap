@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-manage-node-licenses.html
-keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator, extra, by-node
-summary: Manage your node-based licenses in the Digital Wallet to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
+keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator, extra, by-node, digital wallet, cloud backup, cloud data sense, cloud tiering
+summary: Manage your node-based licenses in the BlueXP digital wallet to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
 ---
 
 = Manage node-based licenses
@@ -22,13 +22,13 @@ _Node-based licenses_ are the previous generation licensing model (and not avail
 * BYOL licenses purchased from NetApp
 * Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace
 
-The _Digital Wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
+The _BlueXP digital wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 == Manage PAYGO licenses
 
-The Digital Wallet page enables you to view details about each of your PAYGO Cloud Volumes ONTAP systems, including the serial number and PAYGO license type.
+The BlueXP digital wallet page enables you to view details about each of your PAYGO Cloud Volumes ONTAP systems, including the serial number and PAYGO license type.
 
 .Steps
 
@@ -40,7 +40,7 @@ The Digital Wallet page enables you to view details about each of your PAYGO Clo
 
 . View details in the table about each of your PAYGO licenses.
 +
-image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Digital Wallet page with three paygo licenses. Each row shows the name, type of system, serial number, package, and a link to manage the license."]
+image:screenshot_paygo_licenses.png["A screenshot that shows a table in the BlueXP digital wallet page with three paygo licenses. Each row shows the name, type of system, serial number, package, and a link to manage the license."]
 
 . If needed, click *Manage PAYGO License* to change the PAYGO license or to change the instance type.
 
@@ -50,7 +50,7 @@ Manage licenses that you purchased directly from NetApp by adding and removing s
 
 === Add unassigned licenses
 
-Add a node-based license to the Digital Wallet so that you can select the license when you create a new Cloud Volumes ONTAP system. The Digital Wallet identifies these licenses as _unassigned_.
+Add a node-based license to the BlueXP digital wallet so that you can select the license when you create a new Cloud Volumes ONTAP system. The digital wallet identifies these licenses as _unassigned_.
 
 .Steps
 
@@ -70,11 +70,11 @@ If you don't have the license file yet, refer to the section below.
 
 .Result
 
-BlueXP adds the license to the Digital Wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the *BYOL* tab in the Digital Wallet.
+BlueXP adds the license to the digital wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the *BYOL* tab in the digital wallet.
 
 === Exchange unassigned node-based licenses
 
-If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can exchange the license by converting it to a Cloud Backup license, a Cloud Data Sense license, or a Cloud Tiering license.
+If you have an unassigned node-based license for Cloud Volumes ONTAP that you haven't used, you can exchange the license by converting it to a BlueXP backup and recovery license, a BlueXP classification license, or a BlueXP tiering license.
 
 Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service:
 
