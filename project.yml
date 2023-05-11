@@ -120,7 +120,7 @@ sidebar:
           entries:
             - title: Manage capacity-based licenses
               url: /task-manage-capacity-licenses.html
-            - title: Manage Keystone Flex Subscriptions
+            - title: Manage Keystone Subscriptions
               url: /task-manage-keystone.html
             - title: Manage node-based licenses
               url: /task-manage-node-licenses.html
@@ -309,7 +309,7 @@ homepage:
           url: task-manage-capacity-licenses.html
         - title: Exchange unassigned node-based licenses
           url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
-        - title: Manage Keystone Flex Subscriptions
+        - title: Manage Keystone Subscriptions
           url: task-manage-keystone.html
     - title: Storage management
       links:

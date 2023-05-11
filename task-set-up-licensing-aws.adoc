@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-licensing-aws.html
-keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, digital wallet
 summary: After you decide which licensing option you want to use for Cloud Volumes ONTAP, a few steps are required before you can choose that licensing option when deploying a new system.
 ---
 
@@ -61,9 +61,9 @@ Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes O
 
 . https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to BlueXP^]
 +
-BlueXP automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, BlueXP automatically adds the licenses to the Digital Wallet.
+BlueXP automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, BlueXP automatically adds the licenses to the digital wallet.
 +
-Your license must be available from the Digital Wallet before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account[manually add the license to the Digital Wallet].
+Your license must be available from the BlueXP digital wallet before you can use it with Cloud Volumes ONTAP. If needed, you can link:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account[manually add the license to the BlueXP digital wallet].
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in BlueXP.
 
@@ -123,22 +123,22 @@ image:screenshot-professional.png[A screenshot of the Professional option when c
 
 link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].
 
-== Keystone Flex Subscription
+== Keystone Subscription
 
-A Keystone Flex Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-flex-subscription[Learn more about Keystone Flex Subscriptions].
+A Keystone Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-subscription[Learn more about NetApp Keystone Subscriptions].
 
 .Steps
 
 . If you don't have a subscription yet, https://www.netapp.com/forms/keystone-sales-contact/[contact NetApp^]
 
-. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your BlueXP user account with one or more Keystone Flex Subscriptions.
+. mailto:ng-keystone-success@netapp.com[Contact NetApp] to authorize your BlueXP user account with one or more Keystone Subscriptions.
 
 . After NetApp authorizes your account, link:task-manage-keystone.html#link-a-subscription[link your subscriptions for use with Cloud Volumes ONTAP].
 
 . On the Canvas page, click *Add Working Environment* and follow the steps in BlueXP.
 
-.. Select the Keystone Flex Subscription charging method when prompted to choose a charging method.
+.. Select the Keystone Subscription charging method when prompted to choose a charging method.
 +
-image:screenshot-keystone.png[A screenshot of the Keystone Flex Subscription option when creating a Cloud Volumes ONTAP working environment.]
+image:screenshot-keystone.png[A screenshot of the Keystone Subscription option when creating a Cloud Volumes ONTAP working environment.]
 
 link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud Volumes ONTAP in AWS].

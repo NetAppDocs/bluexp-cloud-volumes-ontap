@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-set-up-iam-roles.html
-keywords: iam role, mediator role, cloud volumes ontap role, policy, iam policy, permissions
+keywords: iam role, mediator role, cloud volumes ontap role, policy, iam policy, permissions, cloud backup
 summary: IAM roles with the required permissions must be attached to each Cloud Volumes ONTAP node. The same is true for the HA mediator. It's easiest to let BlueXP create the IAM roles for you, but you can use your own roles.
 ---
 
@@ -119,7 +119,7 @@ NOTE: Providing your own IAM role is required in the AWS Commercial Cloud Servic
 
 * Backup policy for Cloud Volumes ONTAP nodes
 +
-If you plan to use Cloud Backup with your Cloud Volumes ONTAP systems, the IAM role for the nodes must include the second policy shown below.
+If you plan to use BlueXP backup and recovery with your Cloud Volumes ONTAP systems, the IAM role for the nodes must include the second policy shown below.
 +
 [role="tabbed-block"]
 ====
