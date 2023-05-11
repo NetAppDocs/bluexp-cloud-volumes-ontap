@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: whats-new.html
-keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud manager
-summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager).
+keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud manager, BlueXP, digital wallet, cloud backup, cloud data sense, cloud tiering, keystone flex, keystone
+summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 ---
 
 = What's new
@@ -13,7 +13,7 @@ summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerl
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager).
+Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 
 The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
@@ -59,8 +59,8 @@ The following changes were introduced with the 3.9.28 release of the Connector.
 === Turin region now supported in Google Cloud
 The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-=== Digital Wallet enhancement
-The Digital Wallet now shows the licensed capacity that you purchased with marketplace private offers. 
+=== BlueXP digital wallet enhancement
+The BlueXP digital wallet now shows the licensed capacity that you purchased with marketplace private offers. 
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html[Learn how to view the consumed capacity in your account^].
 
@@ -115,8 +115,8 @@ Multi-tenant external key management enables individual storage VMs (SVMs) to ma
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html[Learn how to encrypt volumes with NetApp encryption solutions^].
 
-=== Support for environments without internet 
-Cloud Volumes ONTAP is now supported in any cloud environment that has complete isolation from the internet. Only node-based licensing (BYOL) is supported in these environments. Capacity-based licensing is not supported. To get started, manually install the Connector software, log in to the BlueXP console that's running on the Connector, add your BYOL license to the Digital Wallet, and then deploy Cloud Volumes ONTAP. 
+=== Support for environments without internet
+Cloud Volumes ONTAP is now supported in any cloud environment that has complete isolation from the internet. Only node-based licensing (BYOL) is supported in these environments. Capacity-based licensing is not supported. To get started, manually install the Connector software, log in to the BlueXP console that's running on the Connector, add your BYOL license to the BlueXP digital wallet, and then deploy Cloud Volumes ONTAP.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html[Install the Connector in a location without internet access^]
 +
@@ -578,17 +578,17 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.10.1.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-9101-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-=== Keystone Flex Subscriptions
+=== NetApp Keystone Subscriptions
 
-You can now use Keystone Flex Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
+You can now use Keystone Subscriptions to pay for Cloud Volumes ONTAP HA pairs.
 
-A Keystone Flex Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
+A Keystone Subscription is a pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 
-A Keystone Flex Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from BlueXP.
+A Keystone Subscription is supported with all new versions of Cloud Volumes ONTAP that you can deploy from BlueXP.
 
-* https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
+* https://www.netapp.com/services/keystone/[Learn more about NetApp Keystone Subscriptions^].
 
-* link:task-manage-keystone.html[Learn how to get started with Keystone Flex Subscriptions in BlueXP].
+* link:task-manage-keystone.html[Learn how to get started with Keystone Subscriptions in BlueXP].
 
 === New AWS region support
 
