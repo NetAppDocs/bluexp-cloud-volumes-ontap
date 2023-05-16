@@ -68,7 +68,7 @@ You have the option to create a resource called a User Assigned Managed Identity
 The resource has the following ID: `userassignedidentity`. 
 
 .Steps
-. In Azure, go to Azure services and select *Managed Identites*. 
+. In Azure, go to Azure services and select *Managed Identities*. 
 . Click *Create*.
 . Provide the following details:
 +
