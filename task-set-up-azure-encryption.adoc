@@ -61,9 +61,9 @@ Single node::
 .Footnote
 . If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the Cloud Volumes ONTAP creation request. This applies for all types of deployments. If you do not provide it, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
 
-== Create User Assigned Managed Identity 
+== Create a user-assigned managed identity 
 
-You have the option to create a resource called User Assigned Managed Identity. Doing so allows you to encrypt your storage accounts when you create a Cloud Volumes ONTAP working environment. We recommend creating this resource prior to creating a key vault and generating a key. 
+You have the option to create a resource called a user-assigned managed identity. Doing so allows you to encrypt your storage accounts when you create a Cloud Volumes ONTAP working environment. We recommend creating this resource prior to creating a key vault and generating a key. 
 
 The resource has the following ID: `userassignedidentity`. 
 
