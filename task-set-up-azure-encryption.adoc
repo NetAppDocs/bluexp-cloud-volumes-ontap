@@ -72,10 +72,10 @@ The resource has the following ID: `userassignedidentity`.
 . Click *Create*.
 . Provide the following details:
 +
-* Subscription: Choose a subscription. We recommend choosing the same subscription as the Connector subscription. 
-* Resource group: Use an existing resource group or create a new one.
-* Region: Optionally, select the same region as the Connector. 
-* Name: Enter a name for the resource.
+* *Subscription*: Choose a subscription. We recommend choosing the same subscription as the Connector subscription. 
+* *Resource group*: Use an existing resource group or create a new one.
+* *Region*: Optionally, select the same region as the Connector. 
+* *Name*: Enter a name for the resource.
 . Optionally, add tags.  
 . Click *Create*.
 
@@ -96,7 +96,7 @@ Note the following requirements for the key vault:
 ** *Soft-delete* (this option is enabled by default, but must _not_ be disabled)
 ** *Purge protection*
 ** *Azure Disk Encryption for volume encryption* (for single node systems or HA pairs in multiple zones)
-* The following option should be enabled if you created a User Assigned Managed Identity:
+* The following option should be enabled if you created a user-assigned managed identity:
 ** *Vault access policy* 
 . If you selected *Vault access policy*, click *Create* to create an access policy for the key vault. If not, skip to step 3.
 .. Select the following permissions: 
@@ -109,7 +109,7 @@ Note the following requirements for the key vault:
 ** wrap key
 ** verify
 ** sign
-.. Select the User Assigned Managed Identity (resource) as the principal.
+.. Select the user-assigned managed identity (resource) as the principal.
 .. Review and create the access policy. 
 
 . https://docs.microsoft.com/en-us/azure/key-vault/keys/quick-create-portal#add-a-key-to-key-vault[Generate a key in the key vault^].
