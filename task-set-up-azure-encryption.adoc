@@ -138,8 +138,6 @@ If you want to use a customer-managed key with a single node Cloud Volumes ONTAP
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View the latest list of permissions^]
 
-NOTE: The permissions aren't required for HA pairs in a single zone. 
-
 .Steps
 
 . Obtain the list of key vaults in your Azure subscription by using the following BlueXP API call.
