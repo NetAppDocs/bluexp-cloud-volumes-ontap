@@ -261,6 +261,8 @@ Two paths are available. The correct path depends on your Connector version.
 If you copied the software image to the Connector in the path shown above, you would enter the following URL:
 +
 \http://<Connector-private-IP-address>/ontap/images/<image-file-name>
++
+NOTE: In the URL, *image-file-name* must follow the format "cot.image.9.13.1P2.tgz".
 
 . Click *Proceed* to confirm.
 
