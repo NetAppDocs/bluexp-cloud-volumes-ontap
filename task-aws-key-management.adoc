@@ -15,7 +15,7 @@ Key management with the AWS KMS can be enabled with the CLI or the ONTAP REST AP
 
 When using the KMS, be aware that by default a data SVM's LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with AWS's authentication services. If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.
 
-.Prerequisites
+.Before you begin
 * Cloud Volumes ONTAP must be running version 9.12.0 or later
 * You must have installed the Volume Encryption (VE) license and
 * You must have installed the Multi-tenant Encryption Key Management (MTEKM) license installed.

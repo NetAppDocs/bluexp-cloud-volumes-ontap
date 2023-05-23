@@ -17,7 +17,7 @@ Key management with AKV can be enabled with the CLI or the ONTAP REST API.
 
 When using AKV, be aware that by default a data SVM LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider's authentication services (login.microsoftonline.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.
 
-.Prerequisites
+.Before you begin 
 * Cloud Volumes ONTAP must be running version 9.10.1 or later
 * Volume Encryption (VE) license installed (NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support)
 * You must have a Multi-tenant Encryption Key Management (MT_EK_MGMT) license 
