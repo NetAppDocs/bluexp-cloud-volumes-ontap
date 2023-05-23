@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-updating-ontap-cloud.html
-keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading
+keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading, cloud backup
 summary: Upgrade Cloud Volumes ONTAP from BlueXP to gain access to the latest new features and enhancements. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 ---
 
@@ -25,7 +25,7 @@ Upgrades of Cloud Volumes ONTAP must be completed from BlueXP. You should not up
 
 === How to upgrade
 
-BlueXP provides three ways to upgrade Cloud Volumes ONTAP:
+BlueXP provides two ways to upgrade Cloud Volumes ONTAP:
 
 * By following upgrade notifications that appear in the working environment
 * By placing the upgrade image at an HTTPS location and then providing BlueXP with the URL
@@ -38,8 +38,6 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 |===
 | Current version
 | Versions that you can directly upgrade to
-
-| 9.12.1 | 9.13.0
 
 | 9.12.1 | 9.13.0
 | 9.12.0 | 9.12.1
@@ -137,7 +135,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 
 If a Cloud Volumes ONTAP system has active SnapMirror relationships, it is best to suspend transfers before you update the Cloud Volumes ONTAP software. Suspending the transfers prevents SnapMirror failures. You must suspend the transfers from the destination system.
 
-NOTE: Even though Cloud Backup uses an implementation of SnapMirror to create backup files (called SnapMirror Cloud), backups do not need to be suspended when a system is upgraded.
+NOTE: Even though BlueXP backup and recovery uses an implementation of SnapMirror to create backup files (called SnapMirror Cloud), backups do not need to be suspended when a system is upgraded.
 
 .About this task
 
@@ -256,13 +254,15 @@ Two paths are available. The correct path depends on your Connector version.
 *	`/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. From the working environment in BlueXP, click the menu icon, and then click *Advanced > Update Cloud Volumes ONTAP*.
+. From the working environment in BlueXP, click the *... (ellipse icon)*, and then click *Update Cloud Volumes ONTAP*.
 
-. On the update software page, enter the URL, and then click *Change Image*.
+. On the Update Cloud Volumes ONTAP version page, enter the URL, and then click *Change Image*.
 +
 If you copied the software image to the Connector in the path shown above, you would enter the following URL:
 +
 \http://<Connector-private-IP-address>/ontap/images/<image-file-name>
++
+NOTE: In the URL, *image-file-name* must follow the format "cot.image.9.13.1P2.tgz".
 
 . Click *Proceed* to confirm.
 

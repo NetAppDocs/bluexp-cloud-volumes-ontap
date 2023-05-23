@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-licensing.html
-keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet
 summary: Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
 ---
 
@@ -22,7 +22,7 @@ The following licensing options are available for new customers.
 Capacity-based licensing::
 Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services.
 
-Keystone Flex Subscription::
+Keystone Subscription::
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
 
 The previous by-node licensing model remains available for existing customers who have already purchased a license or who have an active marketplace subscription.
@@ -94,7 +94,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 * Provides licensing for any Cloud Volumes ONTAP configuration
 +
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
-* Includes unlimited volume backups using Cloud Backup, but only for Cloud Volumes ONTAP systems that use the Professional package
+* Includes unlimited volume backups using BlueXP backup and recovery, but only for Cloud Volumes ONTAP systems that use the Professional package
 * Add on any of NetApp's cloud data services at extra cost
 
 ==== Edge Cache
@@ -152,7 +152,7 @@ For details about pricing, go to https://cloud.netapp.com/pricing?hsCtaTracking=
 
 === Free trials
 
-A 30-day free trial is available from the pay-as-you-go subscription in your cloud provider's marketplace. The free trial includes Cloud Volumes ONTAP and Cloud Backup. The trial starts when you subscribe to the offering in the marketplace.
+A 30-day free trial is available from the pay-as-you-go subscription in your cloud provider's marketplace. The free trial includes Cloud Volumes ONTAP and BlueXP backup and recovery. The trial starts when you subscribe to the offering in the marketplace.
 
 There are no instance or capacity limitations. You can deploy as many Cloud Volumes ONTAP systems as you'd like and allocate as much capacity as needed, free of charge for 30 days. The free trial automatically converts to a paid hourly subscription after 30 days.
 
@@ -215,16 +215,16 @@ If you exceed your BYOL capacity or if your license expires, you'll be charged f
 
 With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). For example, _Essentials HA_ has different pricing than _Essentials Secondary HA_.
 
-If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the Digital Wallet charges overages against a higher priced Essentials license (if you have one). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. Charging to the marketplace would add costs to your monthly bill.
+If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the BlueXP digital wallet charges overages against a higher priced Essentials license (if you have one). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. Charging to the marketplace would add costs to your monthly bill.
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
 * A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
 * A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
 
-Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the Digital Wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's cheaper than the PAYGO rate.
+Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the BlueXP digital wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's cheaper than the PAYGO rate.
 
-In the Digital Wallet, that 50 TiB will be shown as charged against the _Essentials Single Node_ license.
+In the BlueXP digital wallet, that 50 TiB will be shown as charged against the _Essentials Single Node_ license.
 
 ==== Storage VMs
 
@@ -256,19 +256,19 @@ ifdef::gcp[]
 * link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
-== Keystone Flex Subscription
+== Keystone Subscription
 
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for those preferring OpEx consumption models to upfront CapEx or leasing.
 
-Charging is based on the size of your committed capacity for one or more Cloud Volumes ONTAP HA pairs in your Keystone Flex Subscription.
+Charging is based on the size of your committed capacity for one or more Cloud Volumes ONTAP HA pairs in your Keystone Subscription.
 
-The provisioned capacity for each volume is aggregated and compared to the committed capacity on your Keystone Flex Subscription periodically, and any overages are charged as burst on your Keystone Flex Subscription.
+The provisioned capacity for each volume is aggregated and compared to the committed capacity on your Keystone Subscription periodically, and any overages are charged as burst on your Keystone Subscription.
 
-https://www.netapp.com/services/subscriptions/keystone/flex-subscription/[Learn more about Keystone Flex Subscriptions^].
+https://www.netapp.com/services/keystone/[Learn more about NetApp Keystone Subscriptions^].
 
 === Supported configurations
 
-Keystone Flex Subscriptions are supported with HA pairs. This licensing option isn't supported with single node systems at this time.
+Keystone Subscriptions are supported with HA pairs. This licensing option isn't supported with single node systems at this time.
 
 === Capacity limit
 
@@ -276,7 +276,7 @@ Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity thro
 
 === How to get started
 
-Learn how to get started with a Keystone Flex Subscription:
+Learn how to get started with a Keystone Subscription:
 
 ifdef::aws[]
 * link:task-set-up-licensing-aws.html[Set up licensing for Cloud Volumes ONTAP in AWS]
@@ -299,7 +299,7 @@ Node-based licensing is still available for existing customers:
 
 == License conversions
 
-Converting an existing Cloud Volumes ONTAP system to another licensing method isn't supported. The three current licensing methods are capacity-based licensing, Keystone Flex Subscriptions, and node-based licensing. For example, you can't convert a system from node-based licensing to capacity-based licensing (and vice versa).
+Converting an existing Cloud Volumes ONTAP system to another licensing method isn't supported. The three current licensing methods are capacity-based licensing, Keystone Subscriptions, and node-based licensing. For example, you can't convert a system from node-based licensing to capacity-based licensing (and vice versa).
 
 If you want to transition to another licensing method, you can purchase a license, deploy a new Cloud Volumes ONTAP system using that license, and then replicate the data to that new system.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-deploying-otc-aws.html
-keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, aws, serial number, license key, byol, test instance, aws tags, tags, location, vpc, encryption, security group, aws-managed encryption, disk size, disk type, write speed, licensing, IAM role, preconfigured package, access control, volume protection, usage profile, register, CIFS share, quota, qtree, WorkingEnvironmentId, HA, high availability, subscription
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, aws, serial number, license key, byol, test instance, aws tags, tags, location, vpc, encryption, security group, aws-managed encryption, disk size, disk type, write speed, licensing, IAM role, preconfigured package, access control, volume protection, usage profile, register, CIFS share, quota, qtree, WorkingEnvironmentId, HA, high availability, subscription, cloud data sense, cloud backup
 summary: You can launch Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS.
 ---
 
@@ -92,10 +92,10 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about BlueXP classification^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
 +
-TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
+TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
 +
@@ -301,10 +301,10 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html[Learn more about Cloud Backup^]
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about BlueXP classification^]
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
 +
-TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
+TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *HA Deployment Models*: Choose an HA configuration.
 +
