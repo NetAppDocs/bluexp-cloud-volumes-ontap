@@ -258,7 +258,7 @@ The following table describes fields for which you might need guidance:
 
 | Working Environment Name | BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the Google Cloud VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Service Account Name | If you plan to use the link:concept-data-tiering.html[BlueXP tiering] or https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[BlueXP backup and recovery^] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
+| Service Account Name | If you plan to use the link:concept-data-tiering.html[BlueXP tiering] or https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[BlueXP backup and recovery^] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
 
 | Add Labels |	Labels are metadata for your Google Cloud resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and Google Cloud resources associated with the system.
 
