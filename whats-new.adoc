@@ -588,7 +588,7 @@ A Keystone Subscription is supported with all new versions of Cloud Volumes ONTA
 
 * https://www.netapp.com/services/keystone/[Learn more about NetApp Keystone Subscriptions^].
 
-* link:task-manage-keystone.html[Learn how to get started with Keystone Subscriptions in BlueXP].
+* link:task-manage-keystone.html[Learn how to get started with Keystone Subscriptions in BlueXP^].
 
 === New AWS region support
 

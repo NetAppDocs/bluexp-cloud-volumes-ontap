@@ -125,7 +125,7 @@ link:task-deploying-otc-aws.html[View step-by-step instructions to launch Cloud 
 
 == Keystone Subscription
 
-A Keystone Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-subscription[Learn more about NetApp Keystone Subscriptions].
+A Keystone Subscription is a pay-as-you-grow subscription-based service. link:concept-licensing.html#keystone-subscription[Learn more about NetApp Keystone Subscriptions^].
 
 .Steps
 
