@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-google-key-manager.html
 keywords: google cloud, encryption, NVE, NetApp volume encryption, KMIP, GCP, GCP KMS, key manager service, encryption
-summary: Utilize Azure Key Vault for your third-party key management service.
+summary: Utilize Google's key management service for your third-party key management service.
 ---
 = Manage keys with Google's Cloud Key Management Service
 :icons: font
@@ -13,9 +13,9 @@ You can use link:https://cloud.google.com/kms/docs[Google Cloud Platform's Key M
 
 Key management with Cloud KMS can be enabled with the CLI or the ONTAP REST API.
 
-When using Cloud KMS, be aware that by default a data SVMs LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider's authentication services (oauth2.googleapis.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.
+When using Cloud KMS, be aware that by default a data SVM's LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider's authentication services (oauth2.googleapis.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.
 
-.Prerequisites
+.Before you begin
 * Cloud Volumes ONTAP must be running version 9.10.1 or later
 * Volume Encryption (VE) license installed
 * Multi-tenant Encryption Key Management (MTEKM) license installed, starting with Cloud Volumes ONTAP 9.12.1 GA.
@@ -23,7 +23,6 @@ When using Cloud KMS, be aware that by default a data SVMs LIF is used to commun
 * An active Google Cloud Platform subscription
 
 .Limitations
-* Cloud Volumes ONTAP must be running version 9.10.1 or later
 * Cloud KMS can only be configured on a data SVM
 
 == Configuration
@@ -47,7 +46,7 @@ gcloud iam roles create kmsCustomRole
 `gcloud iam service-accounts keys create key-file --iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com`
 
 .Cloud Volumes ONTAP
-. Switch to your Cloud Volumes ONTAP environment:
+. Connect to the cluster management LIF with your preferred SSH client.
 . Switch to the advanced privilege level:
 `set -privilege advanced`
 . Create a DNS for the data SVM.
