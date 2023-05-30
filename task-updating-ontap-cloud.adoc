@@ -39,7 +39,12 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 | Current version
 | Versions that you can directly upgrade to
 
-| 9.12.1 | 9.13.0
+| 9.13.0 | 9.13.1
+
+.2+| 9.12.1 
+| 9.13.1
+| 9.13.0
+
 | 9.12.0 | 9.12.1
 
 .2+| 9.11.1 
@@ -95,6 +100,14 @@ Note the following:
 * In some cases, you might need to upgrade a few times to reach your target release.
 +
 For example, if you're running version 9.8 and you want to upgrade to 9.10.1, you first need to upgrade to version 9.9.1 and then to 9.10.1.
+
+* For patch (P) releases, you can upgrade from one version release to any P-release of the next version. 
++
+Here are a couple examples:
+
+**	9.13.0 > 9.13.1P15
+**	9.12.1 > 9.13.1P2
+
 
 === Reverting or downgrading
 
@@ -263,6 +276,8 @@ If you copied the software image to the Connector in the path shown above, you w
 \http://<Connector-private-IP-address>/ontap/images/<image-file-name>
 +
 NOTE: In the URL, *image-file-name* must follow the format "cot.image.9.13.1P2.tgz".
+
+. Click 
 
 .Result
 
