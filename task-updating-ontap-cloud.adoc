@@ -277,7 +277,7 @@ If you copied the software image to the Connector in the path shown above, you w
 +
 NOTE: In the URL, *image-file-name* must follow the format "cot.image.9.13.1P2.tgz".
 
-. Click 
+. Click *Proceed* to confirm.
 
 .Result
 
