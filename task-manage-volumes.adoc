@@ -256,11 +256,11 @@ Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot pe
 
 . Drag and drop the source working environment on the target working environment to perform a one-time data replication of the volume.
 +
-For details, see link:https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicating data between systems^].
+For details, see link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data between systems^].
 
 . Go to the Replication Status page, and then break the SnapMirror relationship to convert the replicated volume from a data protection volume to a read/write volume.
 +
-For details, see link:https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
+For details, see link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
 
 . Configure the volume for data access.
 +
