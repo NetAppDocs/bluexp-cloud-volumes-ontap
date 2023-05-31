@@ -237,4 +237,4 @@ The predefined security group includes the following outbound rules.
 
 == Rules for the Connector
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[View security group rules for the Connector^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html[View security group rules for the Connector^]
