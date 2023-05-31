@@ -120,7 +120,7 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
-The permissions are included in the custom role by default. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
+The permissions are included in the custom role by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
 endif::azure[]
 
 ifdef::gcp[]
@@ -241,7 +241,7 @@ Cloud Volumes ONTAP can tier data from a data protection volume to a capacity ti
 +
 image:screenshot_replication_tiering.gif[Screenshot that shows the S3 tiering option when replicating a volume.]
 +
-For help with replicating data, see https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicating data to and from the cloud^].
+For help with replicating data, see https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data to and from the cloud^].
 
 == Changing the storage class for tiered data
 

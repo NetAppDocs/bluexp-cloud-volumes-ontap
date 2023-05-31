@@ -80,7 +80,7 @@ In addition to the storage for user data, BlueXP also purchases cloud storage fo
 +
 Google Cloud Compute Engine enforces quotas on resource usage so you should ensure that you haven't reached your limit before you deploy Cloud Volumes ONTAP.
 
-TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-connector-default-config.html[View details about the Connector's default configuration^].
+TIP: The Connector also requires a system disk. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-default-config.html[View details about the Connector's default configuration^].
 
 == Collect networking information
 

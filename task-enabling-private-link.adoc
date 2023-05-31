@@ -45,7 +45,7 @@ image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in 
 
 If you disabled Azure Private Links and the Connector uses a proxy server, you must enable direct API traffic.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector[Learn how to enable direct API traffic on the Connector^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector[Learn how to enable direct API traffic on the Connector^]
 
 == Work with Azure Private Links
 
