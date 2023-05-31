@@ -19,7 +19,7 @@ TIP: A node-based license is the previous generation BYOL for Cloud Volumes ONTA
 
 link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licensing options].
 
-link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html[Learn more about how to manage node-based licenses^].
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html[Learn more about how to manage node-based licenses^].
 
 == BYOL system licenses
 
@@ -35,7 +35,7 @@ Be aware that disk limits can prevent you from reaching the capacity limit by us
 
 When you create a node-based BYOL system, BlueXP prompts you for the serial number of your license and your NetApp Support Site account. BlueXP uses the account to download the license file from NetApp and to install it on the Cloud Volumes ONTAP system.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts to BlueXP^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[Learn how to add NetApp Support Site accounts to BlueXP^].
 
 If BlueXP can't access the license file over the secure internet connection, you can link:task-manage-node-licenses.html[obtain the file yourself and then manually upload the file to BlueXP].
 
