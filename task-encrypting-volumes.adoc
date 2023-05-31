@@ -17,9 +17,12 @@ Cloud Volumes ONTAP supports NetApp Volume Encryption (NVE) and NetApp Aggregate
 
 Both NVE and NAE are supported with an external key manager.
 
-ifdef::azure,gcp[]
+ifdef::aws,azure,gcp[]
 If you use NVE, you have the option to use your cloud provider's key vault to protect ONTAP encryption keys:
 
+ifdef::aws[]
+* AWS Key Management Service (beginning in 9.12.0)
+endif::aws[]
 ifdef::azure[]
 * Azure Key Vault (AKV)
 endif::azure[]
@@ -36,7 +39,7 @@ Cloud Volumes ONTAP doesn't support onboard key management.
 
 Your Cloud Volumes ONTAP system should be registered with NetApp support. A NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[Adding NetApp Support Site accounts to BlueXP^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[Adding NetApp Support Site accounts to BlueXP^]
 * link:task-registering.html[Registering pay-as-you-go systems]
 
 NOTE: BlueXP doesn't install the NVE license on systems that reside in the China region.
@@ -52,7 +55,7 @@ TIP: Search for the *Key Managers* solution.
 . Configure external key management.
 +
 ifdef::aws[]
-* AWS: https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-overview-concept.html[Go to the ONTAP documentation for instructions^]
+* AWS: link:task-aws-key-management.html[AWS Key Management Service]
 endif::aws[]
 ifdef::azure[]
 * Azure: link:task-azure-key-vault.html[Azure Key Vault (AKV)]
@@ -60,3 +63,5 @@ endif::azure[]
 ifdef::gcp[]
 * Google Cloud: link:task-google-key-manager.html[Google Cloud Key Management Service]
 endif::gcp[]
+
+// BLUEXPDOC-10
