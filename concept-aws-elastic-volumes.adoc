@@ -54,7 +54,7 @@ Starting with the 3.9.19 release, the Connector requires the following permissio
 * ec2:DescribeVolumesModifications
 * ec2:ModifyVolume
 
-These permissions are included in https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[the policies provided by NetApp^]
+These permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html[the policies provided by NetApp^]
 
 == How support for Elastic Volumes works
 
@@ -152,4 +152,4 @@ link:task-manage-aggregates.html[Learn how to increase aggregate capacity].
 +
 If the destination Cloud Volumes ONTAP system supports Elastic Volumes, a destination volume will be placed on an aggregate that has Elastic Volumes enabled (as long as you choose a gp3 or io1 disk).
 +
-https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Learn how to set up data replication^]
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Learn how to set up data replication^]

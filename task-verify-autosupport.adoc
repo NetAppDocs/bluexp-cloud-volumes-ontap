@@ -102,7 +102,7 @@ If the status of the http-https category is "ok" then it means AutoSupport is co
 
 . If the status ID is still failed after verifying that there is connectivity, SSH to the Connector.
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm[Learn more about Connecting to the Linux VM for the Connector^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm[Learn more about Connecting to the Linux VM for the Connector^]
 
 . Go to `/opt/application/netapp/cloudmanager/docker_occm/data/`
 
