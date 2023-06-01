@@ -333,7 +333,8 @@ The disk size is for all disks in the initial aggregate and for any additional a
 +
 For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in Google Cloud].
 
-. *Write Speed & WORM*: 
+. *Flash Cache, Write Speed & WORM*: 
+.. Enable *Flash Cache*, if desired.
 .. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
