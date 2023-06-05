@@ -84,7 +84,7 @@ Note that the DNS name must match Azure DNS naming requirements https://docs.mic
  "user-private-dns-zone-settings" : {
     "resource-group" : "<resource group name of the DNS zone>",
     "subscription" : "<subscription ID>",
-    "use-existing" : true
+    "use-existing" : true,
     "create-private-dns-zone-link" : true 
  }
 +
