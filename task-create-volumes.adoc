@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-create-volumes.html
-keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, templates
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, templates, cloud backup
 summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP.
 ---
 
@@ -84,7 +84,7 @@ Some of the fields on this page are self-explanatory. The following list describ
 
 | Volume Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
 
-| Tags | Tags that you add to a volume are associated with the https://docs.netapp.com/us-en/cloud-manager-app-template/task-using-tags.html[Application Templates service^], which can help you organize and simplify the management of your resources.
+| Tags | Tags that you add to a volume are associated with the https://docs.netapp.com/us-en/bluexp-remediation/task-using-tags.html[Application Templates service^], which can help you organize and simplify the management of your resources.
 
 | Storage VM (SVM) | A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs. You can specify the Storage VM for the new volume.  
 
@@ -145,7 +145,7 @@ endif::gcp[]
 
 DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
+NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 +
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 
@@ -226,7 +226,7 @@ image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank t
 
 . Click *Apply* to save the configured parameters to the selected Action. 
 
-. If there are no other Actions that you need to define (for example, configuring Cloud Backup), click *Save Template*.
+. If there are no other Actions that you need to define (for example, configuring BlueXP backup and recovery), click *Save Template*.
 +
 If there are other actions, click the action in the left pane to display the parameters you need to complete.
 +
@@ -242,7 +242,7 @@ Cloud Volumes ONTAP provisions the volume and displays a page so that you can se
 
 image:screenshot_template_creating_resource_cvo.png[A screenshot showing the progress of creating your new volume from the template.]
 
-Additionally, if any secondary action is implemented in the template, for example, enabling Cloud Backup on the volume, that action is also performed.
+Additionally, if any secondary action is implemented in the template, for example, enabling BlueXP backup and recovery on the volume, that action is also performed.
 
 == Create a volume on the second node in an HA configuration
 

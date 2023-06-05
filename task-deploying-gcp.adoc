@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-deploying-gcp.html
-keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create,  BYOL, license key, serial number, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, high availability, google cloud ha, ha in google cloud, ha pair
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create,  BYOL, license key, serial number, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, high availability, google cloud ha, ha in google cloud, ha pair, cloud backup, cloud tiering
 summary: You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in Google Cloud Platform.
 ---
 
@@ -22,11 +22,11 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Connector that is associated with your workspace^].
 
-** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
+** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
-** The service account associated with the Connector https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html[should have the required permissions^]
+** The service account associated with the Connector https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[should have the required permissions^]
 
 * An understanding of the configuration that you want to use.
 +
@@ -56,7 +56,7 @@ Create a working environment in BlueXP to launch Cloud Volumes ONTAP in Google C
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
 
-. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[create a Connector^].
+. If you're prompted, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[create a Connector^].
 
 . *Details & Credentials*: Select a project, specify a cluster name, optionally select a service account, optionally add labels, and then specify credentials.
 +
@@ -69,7 +69,7 @@ The following table describes fields for which you might need guidance:
 
 | Working Environment Name | BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the Google Cloud VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Service Account Name | If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup^] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account].
+| Service Account Name | If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[BlueXP backup and recovery^] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account].
 
 | Add Labels |	Labels are metadata for your Google Cloud resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and Google Cloud resources associated with the system.
 
@@ -83,7 +83,7 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 If you don't see any additional projects in the drop-down list, then you haven't yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
 
-NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[as described on this page^].
+NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[as described on this page^].
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 
@@ -91,13 +91,13 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Googl
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your Google Cloud project. Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with Google Cloud credentials^] section.
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your Google Cloud project. Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with Google Cloud credentials^] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
-. *Services*: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.
+. *Services*: Select the services that you want to use on this system. In order to select BlueXP backup and recovery, or to use BlueXP tiering, you must have specified the Service Account in step 3.
 +
-TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
+TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *Location & Connectivity*: Select a location, choose a firewall policy, and confirm network connectivity to Google Cloud storage for data tiering.
 +
@@ -156,7 +156,7 @@ link:concept-worm.html[Learn more about WORM storage].
 Note the following:
 +
 * BlueXP sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from BlueXP
-* For help with adding a Google Cloud account, see https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Setting up and adding Google Cloud accounts for data tiering with 9.6^].
+* For help with adding a Google Cloud account, see https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Setting up and adding Google Cloud accounts for data tiering with 9.6^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud console.
 +
@@ -200,7 +200,7 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
@@ -258,7 +258,7 @@ The following table describes fields for which you might need guidance:
 
 | Working Environment Name | BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the Google Cloud VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Service Account Name | If you plan to use the link:concept-data-tiering.html[Tiering] or https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Cloud Backup^] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
+| Service Account Name | If you plan to use the link:concept-data-tiering.html[BlueXP tiering] or https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[BlueXP backup and recovery^] services, you need to enable the *Service Account* switch and then select the Service Account that has the predefined Storage Admin role.
 
 | Add Labels |	Labels are metadata for your Google Cloud resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and Google Cloud resources associated with the system.
 
@@ -272,7 +272,7 @@ For information about labels, refer to https://cloud.google.com/compute/docs/lab
 
 If you don't see any additional projects in the drop-down list, then you haven't yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You'll need to repeat this step for each project.
 
-NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html[as described on this page^].
+NOTE: This is the service account that you set up for BlueXP, link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[as described on this page^].
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 
@@ -280,13 +280,13 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Googl
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your Google Cloud project.  Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with Google Cloud credentials^] section.
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your Google Cloud project.  Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with Google Cloud credentials^] section.
 +
 video::video_subscribing_gcp.mp4[width=848, height=480]
 
-. *Services*: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.
+. *Services*: Select the services that you want to use on this system. In order to select BlueXP backup and recovery, or to use BlueXP Tiering, you must have specified the Service Account in step 3.
 +
-TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
+TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zones.
 +
@@ -338,7 +338,7 @@ For help choosing a disk type and size, see link:task-planning-your-config-gcp.h
 +
 link:concept-write-speed.html[Learn more about write speed].
 +
-NOTE: _Flash Cache_, high write speed, and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. _Flash Cache_, high write speed, and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3].
+NOTE: _Flash Cache_, high write speed, and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. _Flash Cache_, high write speed, and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3].
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
@@ -394,7 +394,7 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===

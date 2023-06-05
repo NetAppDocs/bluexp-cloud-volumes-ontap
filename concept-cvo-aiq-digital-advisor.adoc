@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-cvo-aiq-digital-advisor.html
-keywords: concepts, active iq digital advisor, cloud volumes ontap
+keywords: concepts, active iq digital advisor, cloud volumes ontap, cloud manager, BlueXP
 summary: Active IQ Digital Advisor is integrated into the BlueXP UI so that you can optimize the operations, security, and performance of your ONTAP clusters in a single pane of glass.
 ---
 
@@ -13,7 +13,7 @@ summary: Active IQ Digital Advisor is integrated into the BlueXP UI so that you 
 :imagesdir: ./media/
 
 [.lead]
-https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor] is integrated into the BlueXP (formerly Cloud Manager) UI so that you can optimize the operations, security, and performance of your Cloud Volumes ONTAP systems in a single pane of glass.
+https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor] is integrated into the BlueXP UI so that you can optimize the operations, security, and performance of your Cloud Volumes ONTAP systems in a single pane of glass.
 
 == Features
 
@@ -42,7 +42,7 @@ In BlueXP, click the *Active IQ* service.
 +
 image:screenshot_aiq_digital_advisor.png[A screenshot of the Active IQ Digital Advisor user interface in BlueXP.]
 
-* If you haven't registered an NSS account in BlueXP, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[register an NSS account now^] and then the Active IQ Digital Advisor UI appears.
+* If you haven't registered an NSS account in BlueXP, https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[register an NSS account now^] and then the Active IQ Digital Advisor UI appears.
 
 NOTE: As of December 3, 2021, NetApp has switched to a new methodology of registering credentials for NSS accounts. https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[See this FAQ for details]. If your NSS account uses the old set of credentials you will need to update the account to the new credentials.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-deploying-otc-aws.html
-keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, aws, serial number, license key, byol, test instance, aws tags, tags, location, vpc, encryption, security group, aws-managed encryption, disk size, disk type, write speed, licensing, IAM role, preconfigured package, access control, volume protection, usage profile, register, CIFS share, quota, qtree, WorkingEnvironmentId, HA, high availability, subscription
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, aws, serial number, license key, byol, test instance, aws tags, tags, location, vpc, encryption, security group, aws-managed encryption, disk size, disk type, write speed, licensing, IAM role, preconfigured package, access control, volume protection, usage profile, register, CIFS share, quota, qtree, WorkingEnvironmentId, HA, high availability, subscription, cloud data sense, cloud backup
 summary: You can launch Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS.
 ---
 
@@ -22,9 +22,9 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Connector that is associated with your workspace^].
 
-** https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
+** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
 * An understanding of the configuration that you want to use.
 +
@@ -54,7 +54,7 @@ Immediately after you create the working environment, BlueXP launches a test ins
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
-. If you're prompted, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html[create a Connector^].
+. If you're prompted, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[create a Connector^].
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -79,7 +79,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to BlueXP^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to BlueXP^].
 
 |===
 +
@@ -92,10 +92,10 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html[Learn more about Cloud Backup^]
+* https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about BlueXP classification^]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
 +
-TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
+TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
 +
@@ -208,7 +208,7 @@ If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONT
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
@@ -288,7 +288,7 @@ Click *Add Subscription* to associate the selected credentials with a new AWS Ma
 
 If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to BlueXP^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to BlueXP^].
 
 |===
 +
@@ -301,10 +301,10 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
-* https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html[Learn more about Cloud Data Sense^]
-* https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html[Learn more about Cloud Backup^]
+* https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about BlueXP classification^]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html[Learn more about BlueXP backup and recovery^]
 +
-TIP: If you would like to utilize WORM and data tiering, you must disable Cloud Backup and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
+TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
 . *HA Deployment Models*: Choose an HA configuration.
 +
@@ -429,7 +429,7 @@ If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONT
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/cloud-manager-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
