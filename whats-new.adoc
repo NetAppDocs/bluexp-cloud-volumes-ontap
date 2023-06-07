@@ -21,7 +21,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 4 June 2023
-The following changes were introduced with the 3.9.30 release of the Connector. 
+The following change was introduced with the 3.9.30 release of the Connector. 
 
 === Cloud Volumes ONTAP 9.13.1
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.13.1 in AWS, Azure, and Google Cloud.
