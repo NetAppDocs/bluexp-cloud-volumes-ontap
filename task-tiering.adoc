@@ -120,7 +120,7 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
-The permissions are included in the custom role by default. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
+The permissions are included in the custom role by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
 endif::azure[]
 
 ifdef::gcp[]
@@ -143,23 +143,25 @@ endif::gcp[]
 
 === Enabling data tiering after implementing the requirements
 
-BlueXP creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering, which creates the object store.
+BlueXP creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering through the API or System Manager, which creates the object store. 
+//
+//.Steps
+//
+//. <<Requirements,Ensure that you've met all requirements>>.
+//
+//. From the left navigation menu, select *Storage > Canvas*.
+//
+//. On the Canvas page, select the name of the Cloud Volumes ONTAP instance.
+//
+//. Click the menu icon and select *Enable capacity tiering*.
+//+
+//NOTE: You'll only see this option if data tiering couldn't be enabled when BlueXP created the system.
+//+
+//In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <<Requirements,Ensure that you've met all requirements>>.
+//
+//. Click *Enable* so BlueXP can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
 
-.Steps
-
-. <<Requirements,Ensure that you've met all requirements>>.
-
-. From the left navigation menu, select *Storage > Canvas*.
-
-. On the Canvas page, select the name of the Cloud Volumes ONTAP instance.
-
-. Click the menu icon and select *Enable capacity tiering*.
-+
-NOTE: You'll only see this option if data tiering couldn't be enabled when BlueXP created the system.
-+
-In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <<Requirements,Ensure that you've met all requirements>>.
-
-. Click *Enable* so BlueXP can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
+NOTE: The ability to enable tiering through the BlueXP user interface will be available in a future Cloud Volumes ONTAP release.
 
 == Ensuring that tiering is enabled on aggregates
 
@@ -241,7 +243,7 @@ Cloud Volumes ONTAP can tier data from a data protection volume to a capacity ti
 +
 image:screenshot_replication_tiering.gif[Screenshot that shows the S3 tiering option when replicating a volume.]
 +
-For help with replicating data, see https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html[Replicating data to and from the cloud^].
+For help with replicating data, see https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data to and from the cloud^].
 
 == Changing the storage class for tiered data
 

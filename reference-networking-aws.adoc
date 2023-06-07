@@ -124,7 +124,7 @@ TIP: When deployed in multiple Availability Zones, several LIFs are associated w
 
 You don't need to create security groups because BlueXP does that for you. If you need to use your own, refer to link:reference-security-groups.html[Security group rules].
 
-TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[View security group rules for the Connector^]
+TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html[View security group rules for the Connector^]
 
 === Connection for data tiering
 
@@ -210,6 +210,6 @@ image:diagram_ha_networking.png["Conceptual image showing components in a Cloud 
 
 If you haven't created a Connector yet, you should review networking requirements for the Connector as well.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html[View networking requirements for the Connector^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[View networking requirements for the Connector^]
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html[Security group rules in AWS^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html[Security group rules in AWS^]

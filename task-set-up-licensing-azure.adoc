@@ -59,7 +59,7 @@ Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes O
 
 . https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to BlueXP^]
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to BlueXP^]
 +
 BlueXP automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, BlueXP automatically adds the licenses to the digital wallet.
 +
@@ -101,7 +101,7 @@ image:screenshot-professional.png[A screenshot of the Professional option when c
 
 link:task-deploying-otc-azure.html[View step-by-step instructions to launch Cloud Volumes ONTAP in Azure].
 
-TIP: You can manage the Azure Marketplace subscriptions associated with your Azure accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html[Learn how to manage your Azure accounts and subscriptions^]
+TIP: You can manage the Azure Marketplace subscriptions associated with your Azure accounts from the Settings > Credentials page. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Learn how to manage your Azure accounts and subscriptions^]
 
 === Annual contract
 

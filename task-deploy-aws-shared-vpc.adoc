@@ -74,4 +74,4 @@ For example:
      "assumeRoleArn": "arn:aws:iam::642991768967:role/mediator_role_assume_fromdev"
 }
 +
-https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html[Learn about the Cloud Volumes ONTAP API^]
+https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html[Learn about the Cloud Volumes ONTAP API^]
