@@ -264,7 +264,7 @@ Charging is based on the size of your committed capacity for one or more Cloud V
 
 The provisioned capacity for each volume is aggregated and compared to the committed capacity on your Keystone Subscription periodically, and any overages are charged as burst on your Keystone Subscription.
 
-https://www.netapp.com/services/keystone/[Learn more about NetApp Keystone Subscriptions^].
+link:https://docs.netapp.com/us-en/keystone-staas/index.html[Learn more about NetApp Keystone^].
 
 === Supported configurations
 
