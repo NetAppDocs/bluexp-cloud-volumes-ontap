@@ -25,7 +25,7 @@ BlueXP updates the costs when you refresh the page. You should refer to AWS for 
 
 .. Ensure that the IAM policy that provides BlueXP with permissions includes the required permissions.
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html[View the required permissions^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html[View the required permissions^]
 
 .. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html[Activate the *WorkingEnvironmentId* tag^].
 +
