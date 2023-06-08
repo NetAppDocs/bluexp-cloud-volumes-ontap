@@ -20,13 +20,16 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
-== 4 June 2023
+== 16 June 2023
 The following change was introduced with the 3.9.30 release of the Connector. 
 
 === Cloud Volumes ONTAP 9.13.1
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.13.1 in AWS, Azure, and Google Cloud.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+== 4 June 2023
+The following change was introduced with the 3.9.30 release of the Connector. 
 
 === Cloud Volumes ONTAP upgrade version selector update
 Through the Upgrade Cloud Volumes ONTAP page, you can now choose to upgrade to the latest available version of Cloud Volumes ONTAP or an older version.
@@ -57,6 +60,7 @@ For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volume
 
 === Notification now displays when accessing BlueXP without a marketplace subscription
 A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
+//end::whats-new[]
 
 == 4 April 2023
 Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in AWS as follows.
@@ -65,7 +69,6 @@ Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in 
 * Licenses purchased directly from NetApp are supported.
 
 For regional availability, see link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
-//end::whats-new[]
 
 == 3 April 2023
 The following changes were introduced with the 3.9.28 release of the Connector. 
