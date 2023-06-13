@@ -31,6 +31,10 @@ For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 +
 TIP: BlueXP gracefully changes one node at a time by initiating takeover and waiting for give back. NetApp's QA team tested both writing and reading files during this process and didn't see any issues on the client side. As connections changed, we did see retries on the I/O level, but the application layer overcame these short "re-wire" of NFS/CIFS connections.
 
+.Reference
+
+For a list of supported instance types in AWS, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute[Supported EC2 instances^].
+
 .Steps
 
 . On the Canvas page, select the working environment.
