@@ -61,9 +61,32 @@ Single node::
 .Footnote
 . If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the CVO creation request. This applies for all type of deployments. If you do not provide it, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
 
+== Create a user-assigned managed identity
+You have the option to create a resource called a user-assigned managed identity. Doing so allows you to encrypt your storage accounts when you create a Cloud Volumes ONTAP working environment. We recommend creating this resource prior to creating a key vault and generating a key.
+
+The resource has the following ID: `userassignedidentity`.
+
+.Steps
+. In Azure, go to Azure services and select *Managed Identities*.
+
+. Click *Create*.
+
+. Provide the following details:
++
+* *Subscription*: Choose a subscription. We recommend choosing the same subscription as the Connector subscription.
+* *Resource group*: Use an existing resource group or create a new one.
+* *Region*: Optionally, select the same region as the Connector.
+* *Name*: Enter a name for the resource.
+
+. Optionally, add tags.
+
+. Click *Create*.
+
 == Create a key vault and generate a key
 
 The key vault must reside in the same Azure subscription and region in which you plan to create the Cloud Volumes ONTAP system.
+
+If you <<Create a user-assigned managed identity,created a user-assigned managed identity>>, while creating the key vault, you should also create an access policy for the key vault.
 
 .Steps
 
@@ -76,7 +99,21 @@ Note the following requirements for the key vault:
 ** *Soft-delete* (this option is enabled by default, but must _not_ be disabled)
 ** *Purge protection*
 ** *Azure Disk Encryption for volume encryption* (for single node systems or HA pairs in multiple zones)
-
+* The following option should be enabled if you created a user-assigned managed identity:
+** *Vault access policy*
+. If you selected Vault access policy, click Create to create an access policy for the key vault. If not, skip to step 3.
+.. Select the following permissions:
++
+* get
+* list
+* decrypt
+* encrypt
+* unwrap key
+* wrap key
+* verify
+* sign
+.. Select the user-assigned managed identity (resource) as the principal.
+.. Review and create the access policy.
 . https://docs.microsoft.com/en-us/azure/key-vault/keys/quick-create-portal#add-a-key-to-key-vault[Generate a key in the key vault^].
 +
 Note the following requirements for the key:
@@ -93,17 +130,15 @@ After you create the key vault and generate an encryption key, you can create a 
 If you want to use a customer-managed key with a single node Cloud Volumes ONTAP system, ensure that the BlueXP Connector has the following permissions:
 
 [source,json]
-"Microsoft.Compute/diskEncryptionSets/read"
+"Microsoft.Compute/diskEncryptionSets/read",
 "Microsoft.Compute/diskEncryptionSets/write",
 "Microsoft.Compute/diskEncryptionSets/delete"
 "Microsoft.KeyVault/vaults/deploy/action",
 "Microsoft.KeyVault/vaults/read",
-"Microsoft.KeyVault/vaults/accessPolicies/write"
+"Microsoft.KeyVault/vaults/accessPolicies/write",
 "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View the latest list of permissions^]
-
-NOTE: The permissions aren't required for HA pairs in a single zone. 
 
 .Steps
 
@@ -138,9 +173,10 @@ The request body must include the following fields:
 [source, json, indent=0]
 "azureEncryptionParameters": {
               "key": "keyName",
-              "vaultName": "vaultName",
-              "userAssignedIdentity": " userAssignedIdentityId", [Optional]***
+              "vaultName": "vaultName"
 }
++
+NOTE: Include the `userAssignedIdentityId` parameter if you created this resource to be used for storage account encryption.
 +
 https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments[Learn more about this API call^].
 
@@ -153,9 +189,10 @@ The request body must include the following fields:
 [source, json]
 "azureEncryptionParameters": {
               "key": "keyName",
-              "vaultName": "vaultName",
-              "userAssignedIdentity": " userAssignedIdentityId", [Optional]***
+              "vaultName": "vaultName"
 }
++
+NOTE: Include the `userAssignedIdentityId` parameter if you created this resource to be used for storage account encryption.
 +
 https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-vsaworking-environments[Learn more about this API call^].
 
