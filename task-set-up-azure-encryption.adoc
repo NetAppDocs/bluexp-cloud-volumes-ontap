@@ -176,7 +176,7 @@ The request body must include the following fields:
               "vaultName": "vaultName"
 }
 +
-NOTE: Include the `userAssignedIdentityId` parameter if you created this resource to be used for storage account encryption.
+NOTE: Include the `"userAssignedIdentity": " userAssignedIdentityId"` field if you created this resource to be used for storage account encryption.
 +
 https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments[Learn more about this API call^].
 
@@ -192,7 +192,7 @@ The request body must include the following fields:
               "vaultName": "vaultName"
 }
 +
-NOTE: Include the `userAssignedIdentityId` parameter if you created this resource to be used for storage account encryption.
+NOTE: Include the `"userAssignedIdentity": " userAssignedIdentityId"` field if you created this resource to be used for storage account encryption.
 +
 https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-vsaworking-environments[Learn more about this API call^].
 
