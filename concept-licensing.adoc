@@ -205,7 +205,7 @@ There is a 4 TiB minimum charge for each data-serving storage VM that has least 
 
 If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
 
-The 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data.
+For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With all other non-Essentials package types (Optimized, Professional, and Edge Cache), the minimum capacity charging of 4 TiB applies regardless of the volume type. 
 
 ==== Overages
 
