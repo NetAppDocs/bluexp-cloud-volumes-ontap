@@ -21,7 +21,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 2 July 2023
-The following change was introduced with the 3.9.31 release of the Connector.
+The following changes were introduced with the 3.9.31 release of the Connector.
 
 === Support for HA multiple availability zone deployments in Azure
 The Japan East and Korea Central in Azure now supports HA multiple availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
