@@ -49,6 +49,8 @@ The ARP feature is available for use with a BYOL licenses only (one, two, and th
 
 Upon purchase of a license and adding it to the Digital Wallet, you can enable ARP on a per volume basis with Cloud Volumes ONTAP. Configuration of ARP for volumes is performed through ONTAP System Manager and ONTAP CLI. For more information on how to enable ARP with ONTAP System Manager and CLI, see https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html[Enable Autonomous Ransomware Protection^]. 
 
+NOTE: ARP support requires a Cloud Volumes ONTAP version 9.12.1 or higher.   
+
 
 
 
