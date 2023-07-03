@@ -43,7 +43,7 @@ You can activate WORM storage on a Cloud Volumes ONTAP system when you create a 
 
 == Charging
 
-Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes.
+Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes. 
  
 You should understand the following charging behavior with Cloud Volumes ONTAP 9.10.1 and later:
  
@@ -52,7 +52,7 @@ You should understand the following charging behavior with Cloud Volumes ONTAP 9
 * If you enable WORM when you create a Cloud Volumes ONTAP working environment, every volume that you create from BlueXP has WORM enabled. However, you can use the ONTAP CLI or System Manager to create volumes that have WORM disabled. Those volumes are not charged at the WORM rate.
  
 * If you don't enable WORM when you create a working environment, every volume that you create from BlueXP has WORM disabled. You are not charged at the WORM rate for those volumes.
- 
+
 https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^]
 
 == Committing files to WORM
