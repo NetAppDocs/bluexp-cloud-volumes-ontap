@@ -29,7 +29,7 @@ The Japan East and Korea Central in Azure now supports HA multiple availability 
 For a list of all regions that support multiple availability zones, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
 === Autonomous Ransomware Protection support
-Autonomous Ransomware Protection (ARP) is now supported on Cloud Volumes ONTAP. 
+Autonomous Ransomware Protection (ARP) is now supported on Cloud Volumes ONTAP. ARP support is available on Cloud Volumes ONTAP version 9.12.1 and higher.
 
 To learn more about ARP with Cloud Volumes ONTAP, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html#autonomous-ransomware-protection[Autonomous Ransomware Protection].
 
