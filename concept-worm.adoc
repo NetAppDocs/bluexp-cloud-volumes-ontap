@@ -43,7 +43,11 @@ You can activate WORM storage on a Cloud Volumes ONTAP system when you create a 
 
 == Charging
 
-Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes. 
+Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes.
+
+Available for PAYGO or annual commitment terms only, licensing for WORM is purchasable through the Cloud Provider's marketplace. WORM supports both node-based and capacity-based licensing models. 
+
+NOTE: BYOL licensing is not available for WORM storage on Cloud Volumes ONTAP. 
  
 You should understand the following charging behavior with Cloud Volumes ONTAP 9.10.1 and later:
  
