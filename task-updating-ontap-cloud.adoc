@@ -131,6 +131,7 @@ Before performing an upgrade, you must verify that your systems are ready and ma
 * <<Verify that automatic giveback is still enabled>>
 * <<Suspend SnapMirror transfers>>
 * <<Verify that aggregates are online>>
+* <<Verify that LIFs are on the home node>>
 
 === Plan for downtime
 
@@ -189,6 +190,16 @@ image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field
 .. Click *Storage > Aggregates & Disks > Aggregates*.
 
 .. Select the aggregate, and then click *More Actions > Status > Online*.
+
+=== Verify that LIFs are on the home node
+
+.About this task
+
+These steps describe how to verify that LIFs are on the home node before upgrading Cloud Volumes ONTAP.
+
+.Steps
+
+. This is step 1.
 
 == Upgrade Cloud Volumes ONTAP
 
