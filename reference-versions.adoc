@@ -21,6 +21,7 @@ ifdef::aws[]
 == AWS
 
 Single node::
+* 9.13.1 GA
 * 9.13.1 RC1
 * 9.13.0
 * 9.12.1 GA
@@ -34,6 +35,7 @@ Single node::
 * 9.5 P6
 
 HA pair::
+* 9.13.1 GA
 * 9.13.1 RC1
 * 9.13.0
 * 9.12.1 GA
@@ -51,6 +53,7 @@ ifdef::azure[]
 == Azure
 
 Single node::
+* 9.13.1 GA
 * 9.13.1 RC1
 * 9.13.0
 * 9.12.1 GA
@@ -64,6 +67,7 @@ Single node::
 * 9.5 P6
 
 HA pair::
+* 9.13.1 GA
 * 9.13.1 RC1
 * 9.13.0
 * 9.12.1 GA
@@ -80,6 +84,7 @@ ifdef::gcp[]
 == Google Cloud
 
 Single node::
+* 9.13.1 GA
 * 9.13.1 RC1
 * 9.13.0
 * 9.12.1 GA
@@ -92,6 +97,7 @@ Single node::
 * 9.7 P5
 
 HA pair::
+* 9.13.1 GA
 * 9.13.1 RC1
 * 9.13.0
 * 9.12.1 GA
