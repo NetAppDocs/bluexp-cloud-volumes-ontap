@@ -21,17 +21,12 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 26 July 2023
+The following changes were introduced with the 3.9.31 release of the Connector.
 
 === Cloud Volumes ONTAP 9.13.1 GA
-BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.13.1 General Availability release in AWS, Azure, and Google Cloud. 
+BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.13.1 General Availability release in Azure and Google Cloud. 
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
-
-=== Support for Lsv3-series VMs in Azure
-The L16s_v3, L32s_v3, L48s_v3, and L64s_v3 instance types are now supported with Cloud Volumes ONTAP in Azure for single node systems and for HA pairs with shared managed disks in a single availability zone and in multiple availability zones, starting with the 9.13.1 release. These instance types support Flash Cache. 
-
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[View supported configurations for Cloud Volumes ONTAP in Azure^]
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[View storage limits for Cloud Volumes ONTAP in Azure^]
 
 == 2 July 2023
 The following changes were introduced with the 3.9.31 release of the Connector.
