@@ -39,7 +39,12 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 | Current version
 | Versions that you can directly upgrade to
 
-| 9.12.1 | 9.13.0
+| 9.13.0 | 9.13.1
+
+.2+| 9.12.1 
+| 9.13.1
+| 9.13.0
+
 | 9.12.0 | 9.12.1
 
 .2+| 9.11.1 
@@ -96,6 +101,14 @@ Note the following:
 +
 For example, if you're running version 9.8 and you want to upgrade to 9.10.1, you first need to upgrade to version 9.9.1 and then to 9.10.1.
 
+* For patch (P) releases, you can upgrade from one version release to any P-release of the next version. 
++
+Here are a couple examples:
+
+**	9.13.0 > 9.13.1P15
+**	9.12.1 > 9.13.1P2
+
+
 === Reverting or downgrading
 
 Reverting or downgrading Cloud Volumes ONTAP to a previous release is not supported.
@@ -123,7 +136,9 @@ Before performing an upgrade, you must verify that your systems are ready and ma
 
 When you upgrade a single-node system, the upgrade process takes the system offline for up to 25 minutes, during which I/O is interrupted.
 
-Upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients.
+In many cases, upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients. 
+
+Session-oriented protocols might cause adverse effects on clients and applications in certain areas during upgrades. For details, https://docs.netapp.com/us-en/ontap/upgrade/concept_considerations_for_session_oriented_protocols.html[refer to ONTAP documentation^]
 
 === Verify that automatic giveback is still enabled
 
@@ -268,6 +283,8 @@ If you copied the software image to the Connector in the path shown above, you w
 \http://<Connector-private-IP-address>/ontap/images/<image-file-name>
 +
 NOTE: In the URL, *image-file-name* must follow the format "cot.image.9.13.1P2.tgz".
+
+. Click *Proceed* to confirm.
 
 .Result
 
