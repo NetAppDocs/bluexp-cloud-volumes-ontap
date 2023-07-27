@@ -24,7 +24,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 The following changes were introduced with the 3.9.32 release of the Connector.
 
 === Flash Cache and high write speed support in Google Cloud
-Flash Cache and high write speed can now be enabled separately in Google Cloud. High write speed is available on all supported instance types. Flash Cache is supported on the following instance types: 
+Flash Cache and high write speed can be enabled separately in Google Cloud for Cloud Volumes ONTAP 9.13.1 and later. High write speed is available on all supported instance types. Flash Cache is supported on the following instance types: 
 
 * n2-standard-16
 * n2-standard-32
