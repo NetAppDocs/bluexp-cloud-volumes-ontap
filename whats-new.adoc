@@ -94,8 +94,8 @@ The Qatar region is now supported in Google Cloud for Cloud Volumes ONTAP and th
 === Sweden Central region now supported in Azure
 The Sweden Central region is now supported in Azure for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-=== Support for HA multi-availability zone deployments in Azure Australia East
-The Australia East region in Azure now supports HA multi-availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
+=== Support for HA multiple availability zone deployments in Azure Australia East
+The Australia East region in Azure now supports HA multiple availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
 
 === Charging usage breakdown
 Now you can find out what you're being charged for when you're subscribed to capacity-based licenses. The following types of usage reports are available for download from the digital wallet in BlueXP. The usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports can be easily shared with others.
@@ -922,4 +922,4 @@ The following changes were introduced with the 3.9.0 release of the Connector.
 By default, BlueXP now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure.
 
 * https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more about Azure Private Links^]
-* link:task-enabling-private-link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP]
+* link:task-enabling-private-link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP^]
