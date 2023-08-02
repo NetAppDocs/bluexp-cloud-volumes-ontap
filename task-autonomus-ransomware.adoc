@@ -27,4 +27,4 @@ For more information on how to enable ARP with ONTAP System Manager and CLI, see
 
 NOTE: Support is not available for the use of licensed features without a license. 
 
-image::screenshot_arp.png[width=300 Screenshot shows the add-on license for Autonomous Ransomware Protection.]
+image::screenshot_arp.png[width=500 Screenshot shows the add-on license for Autonomous Ransomware Protection.]
