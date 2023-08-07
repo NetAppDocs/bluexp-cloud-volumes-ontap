@@ -1,0 +1,71 @@
+
+
+= Add a new NIC in Azure
+[.lead]
+You can separate networking traffic in SnapMirror replication relationships with a new NIC and Intercluster LIF. 
+
+== Create an additional NIC and attach to the destination VM
+
+.Steps
+For the first step, use the ONTAP CLI.
+. Stop the node using ONTAP CLI command for graceful shutdown
++
+`dest::> halt -node dest_node-vm``
+
+For the following steps, use the Azure Bash Shell
+. Stop the node.
+.. `az vm stop --resource-group dest_node-rg --name dest_node-vm``
+.. `az vm deallocate --resource-group dest_node-rg --name dest_node-vm``
+
+. Add a new NIC (e.g., nic-new)
+.. Create New NIC on VM
++ 
+`az network nic create -g dest_node-rg -n dest_node-vm-nic-new --vnet-name vnet --subnet src_subnet --network-security-group security group --accelerated-networking true``
+.. If the VNET is in a different resource group than the vm
+... `az network vnet subnet show -g src_vnet-rg -n src_subnet --vnet-name vnet --query id``
+... `az network nic create -g dest_node-rg -n dest_node-vm-nic-new --subnet id_from_prev_command --accelerated-networking true``
+
+. Attach New NIC to the VM
++
+`az vm nic add -g dest_node-rg --vm-name dest_node-vm --nics dest_node-vm-nic-new``
+
+. Start the node
++
+`az vm start --resource-group dest_node-rg  --name dest_node-vm``
+
+. Confirm that the second NIC, e.g. nic-new exists and accelerated networking is enabled
+
+Repeat the steps for the partner node in case of HA.
+
+== Create a separate IPSpace and broadcast domain for the new NIC
+IPSpaces can help provide logical separation between networking functionality. We created a separate IPSpace for Intercluster LIFs for replication between clusters.
+
+.Steps
+
+. Create a IPSpace and Broadcast domain for the new nic-new, and also create a intercluster LIF with nic-new on destination:
+
+.. Create IPSpace
++
+`dest::> network ipspace create -ipspace new_ipspace``
+
+.. Create Broadcast domain on new_ipspace Ipspace and add nic-new ports
++
+`dest::> Network port show``
+
+.. Use any of the unused ports, in this case e0b. Also note that node name can be different from the vm name.
++
+`dest::> broadcast-domain create -broadcast-domain new_bd -mtu 1500 -ipspace new_ipspace -ports dest_node-cot-vm:e0b``
+
+.. Create intercluster LIF on new_bd broadcast-domain and the new NIC, e.g. nic-new
++
+`dest::> net int create -vserver new_ipspace -lif new_dest_node-ic-lif -service-policy default-intercluster -address new_added_nic_primary_addr -home-port e0b -home-node node -netmask new_netmask_ip -broadcast-domain new_bd ``
+
+Repeat steps 2 and 3 for partner node incase of HA.
+
+== Create cluster peering between the source and destination system
+
+== Create vserver peering between the source and destination system
+
+== Create a SnapMirror relationship between the source and destination system
+
+== Validate the SnapMirror relationship is healthy
