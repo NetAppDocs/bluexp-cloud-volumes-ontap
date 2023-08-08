@@ -20,7 +20,7 @@ You can review performance results to help you decide which workloads are approp
 ifdef::aws[]
 * Cloud Volumes ONTAP for AWS
 +
-https://www.netapp.com/us/media/tr-4383.pdf[NetApp Technical Report 4383: Performance Characterization of Cloud Volumes ONTAP in Amazon Web Services with Application Workloads^]
+link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383pdf.pdf[NetApp Technical Report 4383: Performance Characterization of Cloud Volumes ONTAP in Amazon Web Services with Application Workloads^]
 endif::aws[]
 
 ifdef::azure[]
