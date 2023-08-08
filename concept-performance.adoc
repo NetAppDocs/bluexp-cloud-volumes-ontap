@@ -26,13 +26,13 @@ endif::aws[]
 ifdef::azure[]
 * Cloud Volumes ONTAP for Microsoft Azure
 +
-https://www.netapp.com/us/media/tr-4671.pdf[NetApp Technical Report 4671: Performance Characterization of Cloud Volumes ONTAP in Azure with Application Workloads^]
+link:https://www.netapp.com/pdf.html?item=/media/9089-tr-4671pdf.pdf[NetApp Technical Report 4671: Performance Characterization of Cloud Volumes ONTAP in Azure with Application Workloads^]
 endif::azure[]
 
 ifdef::gcp[]
 * Cloud Volumes ONTAP for Google Cloud
 +
-https://www.netapp.com/us/media/tr-4816.pdf[NetApp Technical Report 4816: Performance Characterization of Cloud Volumes ONTAP for Google Cloud^]
+link:https://www.netapp.com/pdf.html?item=/media/9090-tr4816pdf.pdf[NetApp Technical Report 4816: Performance Characterization of Cloud Volumes ONTAP for Google Cloud^]
 endif::gcp[]
 
 == CPU performance
