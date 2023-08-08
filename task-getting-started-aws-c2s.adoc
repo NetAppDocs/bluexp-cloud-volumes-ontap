@@ -334,7 +334,7 @@ Note the following as you configure the instance:
 
 . Set up Cloud Manager from a host that has a connection to the Connector instance:
 
-.. Open a web browser and enter the following URL: http://ipaddress
+.. Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host where you installed the Connector.
 
 .. Specify a proxy server for connectivity to AWS services.
 
