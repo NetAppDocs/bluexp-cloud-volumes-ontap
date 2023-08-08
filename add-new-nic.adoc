@@ -15,8 +15,10 @@ You can separate networking traffic in SnapMirror replication relationships with
 .Steps
 . In ONTAP CLI, stop the node.
 +
-`dest::> halt -node <dest_node-vm>``
-
+[source,asciidoc]
+----
+dest::> halt -node <dest_node-vm>
+----
 . In Azure Bash Shell, stop the node.
 .. `az vm stop --resource-group <dest_node-rg> --name <dest_node-vm>``
 .. `az vm deallocate --resource-group <dest_node-rg> --name <dest_node-vm>``
