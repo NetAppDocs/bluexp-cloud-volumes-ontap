@@ -136,7 +136,9 @@ Before performing an upgrade, you must verify that your systems are ready and ma
 
 When you upgrade a single-node system, the upgrade process takes the system offline for up to 25 minutes, during which I/O is interrupted.
 
-Upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients.
+In many cases, upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients. 
+
+Session-oriented protocols might cause adverse effects on clients and applications in certain areas during upgrades. For details, https://docs.netapp.com/us-en/ontap/upgrade/concept_considerations_for_session_oriented_protocols.html[refer to ONTAP documentation^]
 
 === Verify that automatic giveback is still enabled
 
