@@ -13,7 +13,7 @@ summary: "Similar to a standard AWS region, you can use BlueXP in the AWS Commer
 :imagesdir: ./media/
 
 [.lead]
-Similar to a standard AWS region, you can use Cloud Manager in the https://aws.amazon.com/federal/us-intelligence-community/[AWS Commercial Cloud Services (C2S)] environment to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS C2S is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS C2S region users.
+Similar to a standard AWS region, you can use Cloud Manager in the link:https://aws.amazon.com/federal/us-intelligence-community/[AWS Commercial Cloud Services (C2S)^] environment to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS C2S is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS C2S region users.
 
 == Supported versions in C2S	
 
@@ -334,7 +334,7 @@ Note the following as you configure the instance:
 
 . Set up Cloud Manager from a host that has a connection to the Connector instance:
 
-.. Open a web browser and enter the following URL: http://ipaddress
+.. Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host where you installed the Connector.
 
 .. Specify a proxy server for connectivity to AWS services.
 
