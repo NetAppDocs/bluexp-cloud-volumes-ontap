@@ -67,7 +67,7 @@ image:screenshot_transit_gateway3.png["A screenshot of the AWS console that show
 +
 You can find the correct IP address in BlueXP through the *Mount Command* option under the Manage Volumes panel in BlueXP.
 +
-image:screenshot_mount_option.png[Screen shot: Shows the Mount Command which is available when you select a volume.]
+image::screenshot_mount_option.png[400,300 Screen shot: Shows the Mount Command which is available when you select a volume.]
 
 . If you're mounting an NFS volume, configure the export policy to match the subnet of the client VPC.
 +

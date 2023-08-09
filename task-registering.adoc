@@ -29,7 +29,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[L
 
 . On the Overview tab, click the Features panel and then click the pencil icon next to *Support Registration*.
 +
-image:screenshot_features_support_registration_2.png[Screen shot: Shows the Support registration option under the Features panel for a Cloud Volumes ONTAP system.]
+image::screenshot_features_support_registration_2.png[400,300 Screen shot: Shows the Support registration option under the Features panel for a Cloud Volumes ONTAP system.]
 
 . Select a NetApp Support Site account and click *Register*.
 

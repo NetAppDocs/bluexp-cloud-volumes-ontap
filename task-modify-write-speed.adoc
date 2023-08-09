@@ -31,7 +31,7 @@ Before you change the write speed, you should link:concept-write-speed.html[unde
 
 . On the Overview tab, click the Features panel and then click the pencil icon next to *Write Speed*.
 +
-image:screenshot_features_write_speed.png[A screenshot that shows the Write Speed setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
+image::screenshot_features_write_speed.png[400,300 A screenshot that shows the Write Speed setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
 . Select *Normal* or *High*.
 +

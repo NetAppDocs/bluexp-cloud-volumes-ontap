@@ -29,6 +29,8 @@ The previous by-node licensing model remains available for existing customers wh
 
 The following sections provide more details about each of these options.
 
+NOTE: Support is not available for the use of licensed features without a license.   
+
 == Capacity-based licensing
 
 Capacity-based licensing packages enable you to pay for Cloud Volumes ONTAP per TiB of capacity. The license is associated with your NetApp account and enables you to charge multiple systems against the license, as long as enough capacity is available through the license.
