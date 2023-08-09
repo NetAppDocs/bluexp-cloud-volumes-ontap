@@ -15,7 +15,7 @@ You can separate networking traffic in SnapMirror replication relationships with
 .Steps
 . In ONTAP CLI, stop the node.
 +
-[source,asciidoc]
+[source,json]
 ----
 dest::> halt -node <dest_node-vm>
 ----
