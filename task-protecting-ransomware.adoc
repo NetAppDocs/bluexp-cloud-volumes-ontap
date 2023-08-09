@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-protecting-ransomware.html
-keywords: snapshot policy, ransomware, protection, fpolicy, block, extension, attacks
+keywords: snapshot policy, ransomware, protection, fpolicy, block, extension, attacks, arp, autonomous, monitor, alert, attacks
 summary: Ransomware attacks can cost a business time, resources, and reputation. BlueXP enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
 ---
 
@@ -13,7 +13,12 @@ summary: Ransomware attacks can cost a business time, resources, and reputation.
 :imagesdir: ./media/
 
 [.lead]
-Ransomware attacks can cost a business time, resources, and reputation. BlueXP enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
+Ransomware attacks can cost a business time, resources, and reputation. BlueXP enables you to implement two NetApp solutions for ransomware: Protection from common ransomware file extensions and Autonomous Ransomware Protection (ARP). These solutions provide effective tools for visibility, detection, and remediation.
+
+== Protection from common ransomware file extensions 
+
+[.lead]
+Available through BlueXP, the Ransomware Protection setting allows you to utilize the ONTAP FPolicy functionality to guard against common ransomware file extension types.  
 
 .Steps
 
@@ -21,7 +26,7 @@ Ransomware attacks can cost a business time, resources, and reputation. BlueXP e
 
 . On the Overview tab, click the Features panel and then click the pencil icon next to *Ransomware Protection*.
 +
-image:screenshot_features_ransomware.png[A screenshot that shows the Ransomware Protection setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
+image::screenshot_features_ransomware.png[400,300 A screenshot that shows the Ransomware Protection setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
 . Implement the NetApp solution for ransomware:
 
@@ -38,19 +43,25 @@ The default FPolicy scope blocks files that have the following extensions:
 micro, encrypted, locked, crypto, crypt, crinf, r5a, XRNT, XTBL, R16M01D05, pzdc, good, LOL!, OMG!, RDM, RRK, encryptedRS, crjoker, EnCiPhErEd, LeChiffre
 +
 TIP: BlueXP creates this scope when you activate FPolicy on Cloud Volumes ONTAP. The list is based on common ransomware file types. You can customize the blocked file extensions by using the _vserver fpolicy policy scope_ commands from the Cloud Volumes ONTAP CLI.
-
++
 image:screenshot_ransomware_protection.gif[A screenshot that shows the Ransomware Protection page that is available from within a working environment. The screen shows the number of volumes without a Snapshot Policy and the ability to block ransomware file extensions.]
 
 == Autonomous Ransomware Protection 
 
+[.lead]
 Cloud Volumes ONTAP supports the Autonomous Ransomware Protection (ARP) feature, which performs analyses on workloads to proactively detect and warn about abnormal activity that might indicate a ransomware attack.
 
-The ARP feature is available for use with BYOL licenses only (one, two, and three year terms) on both node-based and capacity-based licensing models. You must contact your NetApp sales representative to purchase a new, separate, add-on license for use with the ARP feature in Cloud Volumes ONTAP.
+Separate from the file extension protections provided through the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html#protection-from-common-ransomware-file-extensions[ransomware protection setting], the ARP feature uses workload analysis to alert the user on potential attacks based on detected “abnormal activity”. Both the ransomware protection setting and the ARP feature can be used in conjunction for comprehensive ransomware protection.    
 
-Upon purchase of an add-on license and adding it to the Digital Wallet, you can enable ARP on a per volume basis with Cloud Volumes ONTAP. Configuration of ARP for volumes is performed through ONTAP System Manager and ONTAP CLI. For more information on how to enable ARP with ONTAP System Manager and CLI, see https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html[Enable Autonomous Ransomware Protection^]. 
+The ARP feature is available for use with BYOL licenses only (one, two, and three year terms) on both node-based and capacity-based licensing models. You must contact your NetApp sales representative to purchase a new, separate, add-on license for use with the ARP feature in Cloud Volumes ONTAP.  
 
-image:screenshot_arp.png[Screenshot shows the add-on license for Autonomous Ransomware Protection.]
+Upon purchase of an add-on license and adding it to the Digital Wallet, you can enable ARP on a per volume basis with Cloud Volumes ONTAP. Configuration of ARP for volumes is performed through ONTAP System Manager and ONTAP CLI. 
 
+For more information on how to enable ARP with ONTAP System Manager and CLI, see https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html[Enable Autonomous Ransomware Protection^]. 
+
+NOTE: Support is not available for the use of licensed features without a license. 
+
+image::screenshot_arp.png[width=500 Screenshot shows the add-on license for Autonomous Ransomware Protection.]
 
 
 

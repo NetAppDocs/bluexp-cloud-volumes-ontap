@@ -41,7 +41,7 @@ For a list of supported instance types in AWS, see link:https://docs.netapp.com/
 
 . On the Overview tab, click the Features panel and then click the pencil icon next to *Instance type*.
 +
-image:screenshot_features_instance_type.png[A screenshot that shows the Instance type setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
+image::screenshot_features_instance_type.png[400,300 A screenshot that shows the Instance type setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
 .. If you are using a node-based PAYGO license, you can optionally choose a different license and instance type by clicking the pencil icon next to *License type*.
 

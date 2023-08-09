@@ -153,4 +153,4 @@ TIP: If you move a volume between nodes in an HA pair, you should remount the vo
 
 You can easily identify the correct IP address through the _Mount Command_ option under the manage volumes panel in BlueXP.
 
-image:screenshot_mount_option.png[Screen shot: Shows the Mount Command which is available when you select a volume.]
+image::screenshot_mount_option.png[400,300 Screen shot: Shows the Mount Command which is available when you select a volume.]
