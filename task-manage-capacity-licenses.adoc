@@ -95,7 +95,7 @@ The following reports are available for download. Capacity values shown are in T
 
 * *Storage VMs usage*: This report shows how charged capacity is broken down across Cloud Volumes ONTAP systems and storage virtual machines (SVMs). This information is not available on any screen in the digital wallet. It includes the following information: 
 +
-** Working environment ID (appears as the UUID)
+** Working environment ID and name (appears as the UUID)
 ** Cloud
 ** NetApp account ID
 ** Working environment configuration
@@ -106,10 +106,11 @@ The following reports are available for download. Capacity values shown are in T
 ** Cloud Volumes ONTAP package or feature
 ** Charging SaaS Marketplace subscription name
 ** Charging SaaS Marketplace subscription ID
+** Workload type
 
 * *Volumes usage*: This report shows how charged capacity is broken down by volumes in a working environment. This information is not available on any screen in the digital wallet. It includes the following information: 
 +
-** Working environment ID (appears as the UUID)
+** Working environment ID and name (appears as the UUID)
 ** SVN name
 ** Volume ID 
 ** Volume type
