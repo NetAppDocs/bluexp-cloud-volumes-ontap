@@ -1,4 +1,9 @@
-
+---
+sidebar: sidebar
+permalink: add-new-nic.html
+keywords: NIC, networking, SnapMirror replication, add, additional NIC, new NIC
+summary: You can separate networking traffic in SnapMirror replication relationships with a new NIC and Intercluster LIF. 
+---
 
 = Add a new NIC in Azure
 :hardbreaks:
