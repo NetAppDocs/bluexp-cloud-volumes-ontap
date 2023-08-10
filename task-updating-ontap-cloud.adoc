@@ -127,11 +127,12 @@ BlueXP also updates the mediator instance as needed during the Cloud Volumes ONT
 Starting with Cloud Volumes ONTAP 9.8 in AWS, new deployments of Cloud Volumes ONTAP no longer support the c4, m4, and r4 EC2 instance types. You can upgrade existing deployments to Cloud Volumes ONTAP software versions 9.8-9.12.0 with these instance types. Before you upgrade we recommend that you <<change the instance type>>. If you can't change the instance type, you need to enable <<_enhanced networking_>> before you upgrade. Read the following sections to learn more. 
 
 ==== Change the instance type
-c4, m4, and r4 EC2 instance types allow for more disks per node than the c5, m5, and r5 EC2 instance types. If the disk count per node for the c4, m4, or r4 EC2 instance you're running is below the max disk allowance per node for c5, m5, and r5 instances, you can change the EC2 instance type to c5, m5, or r5. For your reference, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance[Disk and tiering limits by EC2 instance^]. 
+c4, m4, and r4 EC2 instance types allow for more disks per node than the c5, m5, and r5 EC2 instance types. If the disk count per node for the c4, m4, or r4 EC2 instance you're running is below the max disk allowance per node for c5, m5, and r5 instances, you can change the EC2 instance type to c5, m5, or r5. 
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance[Check disk and tiering limits by EC2 instance^]
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html[Change the EC2 instance type for Cloud Volumes ONTAP^]
 
 If you can't change the instance type, follow the steps in <<Enable enhanced networking>>. 
-
-NOTE: If you have too many disks and you want to change the instance type, you can contact NetApp Support to help replan your aggregates. 
 
 ==== Enable enhanced networking 
 To upgrade to Cloud Volumes ONTAP software versions 9.8 and later, you must enable _enhanced networking_ on the cluster running the c4, m4, or r4 instance type. To enable ENA, refer to the Knowledge Base article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/How_to_enable_Enhanced_networking_like_SR-IOV_or_ENA_on_AWS_CVO_instances["How to enable Enhanced networking like SR-IOV or ENA on AWS Cloud Volumes ONTAP instances"^]. 
