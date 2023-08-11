@@ -59,8 +59,8 @@ az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> 
 ----
 az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_from_prev_command> --accelerated-networking true
 ----
-
-NOTE: Save the privateIPAddress. 
++
+NOTE: Save the privateIPAddress. This IP address, <new_netmask_ip>, is used in Create a separate IPSpace and broadcast domain for the new NIC.
 
 . Attach the new NIC to the VM.
 +
@@ -84,7 +84,6 @@ A separate IPSpace for intercluster LIFs provides logical separation between net
 Use the ONTAP CLI to do the following steps.
 
 .Steps
-
 . Create an IPSpace and broadcast domain for the new NIC (nic-new), and also create an intercluster LIF with the new NIC (nic-new) on destination:
 
 .. Create the new IPSpace (new_ipspace).
@@ -97,9 +96,9 @@ dest::> network ipspace create -ipspace <new_ipspace>
 +
 [source,json]
 ----
-dest::> Network port show
+dest::> network port show
 ----
-.. Use any of the unused ports. For single node systems, the port is _e0b_. For HA-pair deployments with managed disks, the port is _e0d_. For HA-pair deployments with page blobs, the port is _e0e_. Also note that node name can be different from the VM name.
+.. Use any of the unused ports. For single node systems, the port is _e0b_. For HA-pair deployments with managed disks, the port is _e0d_. For HA-pair deployments with page blobs, the port is _e0e_. Use the node name not the VM name. Find the node name by running `node show`.  
 +
 [source,json]
 ----
@@ -112,18 +111,24 @@ dest::> broadcast-domain create -broadcast-domain <new_bd> -mtu 1500 -ipspace <n
 dest::> net int create -vserver <new_ipspace> -lif <new_dest_node-ic-lif> -service-policy default-intercluster -address <new_added_nic_primary_addr> -home-port <e0b> -home-node <node> -netmask <new_netmask_ip> -broadcast-domain <new_bd>
 ----
 
+.. Verify creation of the new intercluster LIF.
+[source,json]
+----
+dest::>net int show
+----
+
 For HA-pair deployments, repeat steps 2 and 3 for the partner node.
 
-== Create cluster peering between the source and destination system
+== Create cluster peering between the source and destination systems
 .Steps
 
-. Make sure the destination system intercluster LIF can talk to/connect with the intercluster LIF of the source cluster. The destination is the intercluster LIF IP addr on the source. *(Rachel - Does this last sentence make sense?)*
+. Make sure the destination system intercluster LIF can talk to the intercluster LIF of the source cluster. The destination is the intercluster LIF IP address on the source. 
 +
 [source,json]
 ----
 dest::> ping -lif <new_dest_node-ic-lif> -vserver <new_ipspace> -destination <10.161.189.6> 
 ----
-. Make sure the intercluster LIF of the source can talk to the intercluster LIF of the destination cluster. The destination is the IP address of the new NIC created on the destination. *(Rachel - Does this last sentence make sense?)*
+. Make sure the intercluster LIF of the source can talk to the intercluster LIF of the destination cluster. The destination is the IP address of the new NIC created on the destination. 
 +
 [source,json]
 ----
