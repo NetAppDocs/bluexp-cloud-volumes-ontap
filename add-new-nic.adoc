@@ -13,19 +13,23 @@ summary: You can separate networking traffic in SnapMirror replication relations
 :imagesdir: ./media/
 
 [.lead]
-You can separate networking traffic in SnapMirror replication relationships with a new network interface card (NIC) and Intercluster LIF. The separation allows you to back your data up using SnapMirror replication to a destination Cloud Volumes ONTAP which is on a different subnet using a new NIC. 
+#2: SnapMirror replication relationships typically replicate data between two routable subnets. You can segregate the replication to nonroutable subnets by adding a new network interface card (NIC). 
+
+#1: You can separate network traffic in SnapMirror replication relationships by adding a network interface card (NIC) and Intercluster LIF in a nonroutable subnet. The separation allows you to back your data up using SnapMirror replication to a destination Cloud Volumes ONTAP which is on a different subnet using a new NIC. 
+
+NOTE: The storage VM instance type you deploy must have an additional and unused NIC to add a new NIC.
 
 == Create an additional NIC and attach to the destination VM
 
 .Steps
-. In ONTAP CLI, stop the node.
+. In the ONTAP CLI, stop the node.
 +
 [source,json]
 ----
 dest::> halt -node <dest_node-vm>
 ----
-. In the Azure portal, check that the VM status is offline/down. *(Rachel: How do you check this and is "offline/down" or other term correct?)*
-. In Azure Bash Shell, stop the node.
+. In the Azure portal, check that the VM (node) status is stopped. 
+. Use the Bash environment in Azure Cloud Shell to stop the node.
 .. Stop the resource group.
 +
 [source,json]
@@ -39,40 +43,38 @@ az vm stop --resource-group <dest_node-rg> --name <dest_node-vm>
 az vm deallocate --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
 . Add a new NIC (e.g., nic-new)
-.. Create the new NIC on the VM. *(Rachel: Is there only one VM or should it be defined?)*
+.. Create the new NIC on the VM. 
 +
 The _security group_ should be defined such that the new subnet is non-routable to the existing subnet attached to NIC0.
-+
-[source,json]
----- 
-az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --vnet-name <vnet> --subnet <src_subnet> --network-security-group <security group> --accelerated-networking true
-----
-.. If the VNET is in a different resource group than the VM, run the following commands: 
+ 
 ... Look up the subnet ID for the resource group. 
 +
 [source,json]
 ----
 az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> --query id
 ----
-... Create the new NIC on the VM with the subnet ID.
+... Create the new NIC on the VM with the subnet ID. Here you enter the name for the new NIC. 
 +
 [source,json]
 ----
 az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_from_prev_command> --accelerated-networking true
 ----
-. Attach New NIC to the VM
+
+NOTE: Save the privateIPAddress. 
+
+. Attach the new NIC to the VM.
 +
 [source,json]
 ----
 az vm nic add -g <dest_node-rg> --vm-name <dest_node-vm> --nics <dest_node-vm-nic-new>
 ----
-. Start the node
+. Start the VM (node).
 +
 [source,json]
 ----
 az vm start --resource-group <dest_node-rg>  --name <dest_node-vm>
 ----
-. Confirm that the second NIC, e.g. nic-new, exists and accelerated networking is enabled. *(Rachel: How do users confirm this?)*
+. In the Azure portal, go to *Networking* and confirm that the new NIC, e.g. nic-new, exists and accelerated networking is enabled. 
 
 Repeat the steps for the partner node in case of HA.
 
