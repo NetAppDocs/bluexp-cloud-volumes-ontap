@@ -20,7 +20,7 @@ BlueXP provides several ways to create a new volume:
 * Specify details for a new volume and let BlueXP handle the underlying data aggregates for you. <<create-a-volume,Learn more>>
 * Create a volume on a data aggregate of your choice. <<create-a-volume,Learn more>>
 * Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<create-a-volume-from-a-template,Learn more>>
-* Create a volume on the second node in an HA configuration. <<create-a -volume-on-the-second-node-in-an-HA-configuration,Learn more>>
+* Create a volume on the second node in an HA configuration. <<create-volume-second-node,Learn more>>
 
 == Before you get started
 
@@ -244,6 +244,7 @@ image:screenshot_template_creating_resource_cvo.png[A screenshot showing the pro
 
 Additionally, if any secondary action is implemented in the template, for example, enabling BlueXP backup and recovery on the volume, that action is also performed.
 
+[[create-volume-second-node]]
 == Create a volume on the second node in an HA configuration
 
 By default, BlueXP creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.
