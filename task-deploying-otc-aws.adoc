@@ -97,7 +97,7 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
-. *Location & Connectivity*: Enter the network information that you recorded in the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information[AWS worksheet^].
+. *Location & Connectivity*: Enter the network information that you recorded in the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information[AWS worksheet^].
 +
 The following table describes fields for which you might need guidance:
 +
