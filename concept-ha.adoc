@@ -75,7 +75,7 @@ If you can't set up a transit gateway, private IP addresses are available for NA
 
 You should review requirements for floating IP addresses and route tables before you deploy an HA configuration across multiple Availability Zones. You must specify the floating IP addresses when you deploy the configuration. The private IP addresses are automatically created by BlueXP.
 
-For details, see link:reference-networking-aws.html#aws-networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
+For details, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
 
 ==== iSCSI data access
 
