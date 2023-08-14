@@ -16,8 +16,6 @@ summary: Ransomware attacks can cost a business time, resources, and reputation.
 Ransomware attacks can cost a business time, resources, and reputation. BlueXP enables you to implement two NetApp solutions for ransomware: Protection from common ransomware file extensions and Autonomous Ransomware Protection (ARP). These solutions provide effective tools for visibility, detection, and remediation.
 
 == Protection from common ransomware file extensions 
-
-[.lead]
 Available through BlueXP, the Ransomware Protection setting allows you to utilize the ONTAP FPolicy functionality to guard against common ransomware file extension types.  
 
 .Steps
