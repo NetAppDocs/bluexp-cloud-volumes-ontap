@@ -115,7 +115,7 @@ The following table describes fields for which you might need guidance:
 * If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing firewall policy | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+| Use existing firewall policy | If you use an existing firewall policy, ensure that it includes the required rules. link: https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#firewall-rules[Learn about firewall rules for Cloud Volumes ONTAP^].
 
 |===
 
@@ -138,7 +138,7 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in Google Cloud].
+For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud].
 
 . *Flash Cache, Write Speed & WORM*: 
 
@@ -213,7 +213,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile] and link:concept-data-tiering.html[Data tiering overview].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -314,7 +314,7 @@ The following table describes fields for which you might need guidance:
 * If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+| Use existing | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules[Learn about firewall rules for Cloud Volumes ONTAP].
 
 |===
 
@@ -337,7 +337,7 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in Google Cloud].
+For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud].
 
 . *Flash Cache, Write Speed & WORM*: 
 .. Enable *Flash Cache*, if desired.
@@ -410,7 +410,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile] and link:concept-data-tiering.html[Data tiering overview].
 
 . *Review & Approve*: Review and confirm your selections.
 
