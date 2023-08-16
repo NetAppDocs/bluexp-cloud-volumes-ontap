@@ -138,7 +138,7 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in Google Cloud].
+For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud].
 
 . *Flash Cache, Write Speed & WORM*: 
 
