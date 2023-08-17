@@ -304,7 +304,7 @@ image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggre
 
 . If no aggregates have available capacity, create a new aggregate.
 +
-For details, see link:task-create-aggregates.html[Creating aggregates].
+For details, see link:task-create-aggregates.html[Creating aggregates^].
 
 . Use System Manager or the CLI to move the volumes to the aggregate.
 
