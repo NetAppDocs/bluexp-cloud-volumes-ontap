@@ -160,8 +160,8 @@ src::> cluster peer show
 ----
 .Output
 Successful peering shows available in the availability field. 
-. Create Vserver peering on the destination. Both source and destination vservers should be data vservers.
-.. View the list of vservers and the cluster name on source and destination *(vserver show, cluster identity show) - Why is this here?*  
+. Create Vserver peering on the destination. Both source and destination Vservers should be data Vservers.
+.. View the list of Vservers and the cluster name on source and destination *Rachel - Why is this step here? Is it necessary? The actual code is for step 4 I think, not step 4.a.*  
 +
 [source,json]
 ----
@@ -177,8 +177,11 @@ src::> vserver peer accept -vserver <src_svm> -peer-vserver <dest_svm>
 +
 [source,json]
 ----
-`Vserver Peer show`` (Peer state should show peered and peering application should show Snapmirror)
+Vserver Peer show
 ----
+
+.Result
+Peer state should show `peered` and peering application should show `Snapmirror`. *Rachel - Is the output for `Vserver Peer show` correct as I have placed in mono font?*
 
 == Create a SnapMirror relationship between the source and destination system
 *Rachel - Why do this?*
@@ -218,8 +221,8 @@ In the ONTAP CLI, run the following commands to validate the SnapMirror relation
 | Command
 | Output
 
-| snapmirror show | healthy
-| snapmirror show-history | successful creation and initialization
+| snapmirror show | Healthy
+| snapmirror show-history | Successful creation and initialization
 
 |===
 If you check after the scheduled time has passed it should show a successful update as well (*Rachel: What is the scheduled time?)*
