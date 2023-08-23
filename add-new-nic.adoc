@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: add-new-nic.html
-keywords: NIC, networking, SnapMirror replication, add, additional NIC, new NIC
+keywords: NIC, networking, SnapMirror replication, add, additional NIC, new NIC, SVM
 summary: You can separate networking traffic in SnapMirror replication relationships with a new NIC and Intercluster LIF. 
 ---
 
@@ -13,11 +13,11 @@ summary: You can separate networking traffic in SnapMirror replication relations
 :imagesdir: ./media/
 
 [.lead]
-#2: SnapMirror replication relationships typically replicate data between two routable subnets. You can segregate the replication to nonroutable subnets by adding a new network interface card (NIC). 
+Lead option #2: SnapMirror replication relationships typically replicate data between two routable subnets. You can segregate the replication to nonroutable subnets by adding a new network interface card (NIC). 
 
-#1: You can separate network traffic in SnapMirror replication relationships by adding a network interface card (NIC) and Intercluster LIF in a nonroutable subnet. The separation allows you to back your data up using SnapMirror replication to a destination Cloud Volumes ONTAP which is on a different subnet using a new NIC. 
+Lead option #1: You can separate network traffic in SnapMirror replication relationships by adding a network interface card (NIC) and Intercluster LIF in a nonroutable subnet. The separation allows you to back your data up using SnapMirror replication to a destination Cloud Volumes ONTAP which is on a different subnet using a new NIC. 
 
-NOTE: The storage VM instance type you deploy must have an additional and unused NIC to add a new NIC.
+NOTE: The storage VM (SVM) instance type you deploy must have an additional and unused NIC to add a new NIC.
 
 == Create an additional NIC and attach to the destination VM
 
@@ -112,6 +112,7 @@ dest::> net int create -vserver <new_ipspace> -lif <new_dest_node-ic-lif> -servi
 ----
 
 .. Verify creation of the new intercluster LIF.
++
 [source,json]
 ----
 dest::>net int show
@@ -119,16 +120,16 @@ dest::>net int show
 
 For HA-pair deployments, repeat steps 2 and 3 for the partner node.
 
-== Create cluster peering between the source and destination systems
+== Verify cluster peering between the source and destination systems
 .Steps
 
-. Make sure the destination system intercluster LIF can talk to the intercluster LIF of the source cluster. The destination is the intercluster LIF IP address on the source. 
+. Verify that the intercluster LIF of the destination cluster can talk to the intercluster LIF or the source cluster. The destination is the intercluster LIF IP address on the source. 
 +
 [source,json]
 ----
 dest::> ping -lif <new_dest_node-ic-lif> -vserver <new_ipspace> -destination <10.161.189.6> 
 ----
-. Make sure the intercluster LIF of the source can talk to the intercluster LIF of the destination cluster. The destination is the IP address of the new NIC created on the destination. 
+. Verify that the intercluster LIF of the source cluster can talk to the intercluster LIF of the destination cluster. The destination is the IP address of the new NIC created on the destination. 
 +
 [source,json]
 ----
@@ -137,7 +138,7 @@ src::> ping -lif <src_node-ic-lif> -vserver <src_svm> -destination <10.161.189.1
 
 For HA-pair deployments, repeat the steps for the partner node.
 
-== Create vserver peering between the source and destination system
+== Create SVM peering between the source and destination system
 .Steps
 
 . Create cluster peering on the destination.
@@ -146,85 +147,106 @@ For HA-pair deployments, repeat the steps for the partner node.
 ----
 dest::> cluster peer create -peer-addrs <10.161.189.6> -ipspace <new_ipspace>
 ----
+
+. Enter and confirm the passphrase. *(Rachel - This wasn't mentioned in the guide but Shreyans showed this step in the demo. Does this added step provide enough information as is?)*
+
 . Create cluster peering on the source. For systems with HA pairs, use <partner_new_nic_ip_addr> for the -peer-addrs. *(Rachel - Does this last sentence make sense?)*
 +
 [source,json]
 ----
 src::> cluster peer create -peer-addrs <10.161.189.18>
 ----
+
+. Enter and confirm the passphrase.
+
 . Check that the cluster peered.
 +
 [source,json]
 ----
 src::> cluster peer show 
 ----
++
 .Output
-Successful peering shows available in the availability field. 
-. Create Vserver peering on the destination. Both source and destination Vservers should be data Vservers.
-.. View the list of Vservers and the cluster name on source and destination *Rachel - Why is this step here? Is it necessary? The actual code is for step 4 I think, not step 4.a.*  
+Successful peering shows *Available* in the availability field. 
+
+. Create SVM peering on the destination. Both source and destination SVMs should be data SVMs.  
 +
 [source,json]
 ----
 dest::> vserver peer create -vserver <dest_svm> -peer-vserver <src_svm> -peer-cluster <src_cluster> -applications snapmirror``
 ----
-. Accept the Vserver peering.
+. Accept SVM peering.
 +
 [source,json]
 ----
 src::> vserver peer accept -vserver <src_svm> -peer-vserver <dest_svm>
 ----
-. Check that the Vserver peered.
+. Check that the SVM peered.
 +
 [source,json]
 ----
-Vserver Peer show
+vserver peer show
 ----
 
-.Result
-Peer state should show `peered` and peering application should show `Snapmirror`. *Rachel - Is the output for `Vserver Peer show` correct as I have placed in mono font?*
+.Output
+Peer state shows *`peered`* and peering applications shows *`snapmirror`*. 
 
-== Create a SnapMirror relationship between the source and destination system
+== Create a SnapMirror replication relationship between the source and destination system
 *Rachel - Why do this?*
 
 .Steps
-. Create a data protected volume on the destination vserver. 
+. Create a data protected volume on the destination SVM. 
 +
 [source,json]
 ----
 dest::> vol create -volume <new_dest_vol> -vserver <dest_svm> -type DP -size <10GB> -aggregate <aggr1>
 ----
-. Add an export policy rule to the volume. *(Rachel: Is this the correct step and is it necessary for all volumes?)* 
+. Optional: Add an export policy rule to the volume if you want to mount the volume. This step is required for disaster recovery. *(Rachel-Is this last sentence helpful? Does it need tweaking? If we mention this, should we also refer customers to some other information about disaster recovery?)* 
 +
 [source,json]
 ----
 dest::> vserver export-policy rule create -clientmatch 0.0.0.0/0 -policyname default -vserver <dest_svm> -rwrule any -allow-dev true -superuser any -allow-suid true -rorule any``
 ----
 . Create and initialize the SnapMirror replication relationship on the destination. 
+*(Rachel - In this command, you have two names for the same destination SVM in the code. dest_vs and dest_svm. Can these be the same?)*
 +
 [source,json]
 ----
-dest::> snapmirror create -source-path <src_svm:src_vol>  -destination-path  <dest_vs:new_dest_vol> -vserver <dest_svm> -policy <MirrorAllSnapshots> -schedule <5min>
+dest::> snapmirror create -source-path <src_svm:src_vol>  -destination-path  <dest_vs:new_dest_vol> -vserver <dest_svm> -policy <MirrorAllSnapshots> -schedule <5min> 
 ----
-. Choose the SnapMirror policy and schedule according to the requirements.
+. Choose the SnapMirror policy and schedule for the replication. *(Rachel - In this step in the demo, you use the source rather than the destination to choose the snapmirror policy and schedule for the replication. Can you use either source or destination to do this? Also, does this command choose the snapmirror policy and schedule? That's not clear from the demo.)*
 +
 [source,json]
 ----
 dest::> snapmirror initialize -destination-path  <dest_vs:new_dest_vol>
 ----
+*or code from demo*
++
+[source,json]
+----
+dest::> snapmirror initialize -source-path  <src_vs:new_dest_vol> -destination-path  <dest_vs:new_dest_vol>
+----
 
 == Validate the SnapMirror relationship is healthy
 In the ONTAP CLI, run the following commands to validate the SnapMirror relationship is healthy. 
 
-[cols=2*,options="header",cols="20,30"]
-|===
+.Steps
+. Run the following command to learn the health of the relationship. 
++
+[source,json]
+----
+dest::>snapmirror show
+----
 
-| Command
-| Output
+.Output
+The relationship status is `Snapmirrored` and the health of the relationship is `true`.
 
-| snapmirror show | Healthy
-| snapmirror show-history | Successful creation and initialization
+. Run the following command to view the history of actions and results for the SnapMirror relationship. 
 
-|===
-If you check after the scheduled time has passed it should show a successful update as well (*Rachel: What is the scheduled time?)*
++
+[source,json]
+----
+dest::>snapmirror show-history
+----
 
-Optionally, you can mount the source and destination volumes using "vol mount", write a file to the source, and verify the volume is replicating to the destination. *(Rachel: Are there commands or specific instructions for how to do this)*
+Optionally, you can mount the source and destination volumes using "vol mount", write a file to the source, and verify the volume is replicating to the destination. *(Rachel: Are there commands or specific instructions for how to do this? If you want to include these steps, where would they go?)*
