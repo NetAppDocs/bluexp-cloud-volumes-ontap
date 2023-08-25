@@ -254,19 +254,17 @@ dest::> snapmirror initialize -destination-path  <dest_vs:new_dest_vol>
 == Validate the SnapMirror relationship is healthy
 In the ONTAP CLI, run the following commands to validate the SnapMirror relationship is healthy. 
 
-.Steps
-. Run the following command to learn the health of the relationship. 
+* Run the following command to learn the health of the relationship. 
 +
 [source]
 ----
 dest::>snapmirror show
 ----
-
++
 .Output
 The relationship status is `Snapmirrored` and the health of the relationship is `true`.
 
-. Run the following command to view the history of actions and results for the SnapMirror relationship. 
-
+* Run the following command to view the history of actions and results for the SnapMirror relationship. 
 +
 [source]
 ----
