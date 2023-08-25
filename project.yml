@@ -214,8 +214,8 @@ sidebar:
                   url: /task-enabling-private-link.html
                 - title: Move resource groups 
                   url: /task-moving-resource-groups-azure.html 
-                - title: Add a new NIC in Azure
-                  url: /add-new-nic.html  
+                - title: Segregate SnapMirror traffic in Azure
+                  url: /segregate-snapmirror-azure.html  
             - title: Google Cloud administration
               flavor: gcp
               entries:
