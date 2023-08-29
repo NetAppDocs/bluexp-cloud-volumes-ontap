@@ -15,7 +15,7 @@ summary: You can segregate SnapMirror replication traffic with a new NIC and Int
 [.lead]
 In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically replicates between two routable subnets. With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic from your data traffic by adding a new network interface card (NIC), an associated intercluster LIF and a non-routable subnet. 
 
-== Visualize the segregation of SnapMirror replication traffic in single node and high-availability pair configurations
+== Segregation of SnapMirror replication traffic in single node and high-availability pair configurations
 
 .Figure 1
 The following diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration. 
@@ -61,7 +61,7 @@ az vm get-instance-view --resource-group <dest-rg> --name <dest-vm> --query inst
 ----
 az vm stop --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
-.. De-allocate the node.
+.. Deallocate the node.
 + 
 [source]
 ----
@@ -86,7 +86,7 @@ az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> 
 az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_from_prev_command> --accelerated-networking true
 ----
 +
-NOTE: Save the privateIPAddress. This IP address, <new_netmask_ip>, is used to create an intercluster LIF in <<Create a separate IPSpace and broadcast domain for the new NIC>>.
+NOTE: Save the privateIPAddress. This IP address, <new_added_nic_primary_addr>, is used to create an intercluster LIF in <<Create a separate IPSpace and broadcast domain for the new NIC>>.
 
 . Attach the new NIC to the VM.
 +
@@ -185,9 +185,9 @@ This section provides instructions for how to create SVM peering between the sou
 dest::> cluster peer create -peer-addrs <10.161.189.6> -ipspace <new_ipspace>
 ----
 
-. Enter and confirm the passphrase. *(Rachel - This wasn't mentioned in the guide but Shreyans showed this step in the demo. Does this added step provide enough information as is?)*
+. Enter and confirm the passphrase. 
 
-. Create cluster peering on the source. For systems with HA pairs, use <partner_new_nic_ip_addr> for the -peer-addrs. *(Rachel - Does this last sentence make sense?)*
+. Create cluster peering on the source. For systems with HA pairs, use <new_added_nic_primary_addr> for the -peer-addrs. 
 +
 [source]
 ----
@@ -248,13 +248,13 @@ dest::> vserver export-policy rule create -clientmatch 0.0.0.0/0 -policyname def
 +
 [source]
 ----
-dest::> snapmirror create -source-path src_svm:src_vol  -destination-path  dest_vs:new_dest_vol -vserver dest_svm -policy MirrorAllSnapshots -schedule 5min
+dest::> snapmirror create -source-path src_svm:src_vol  -destination-path  dest_svm:new_dest_vol -vserver dest_svm -policy MirrorAllSnapshots -schedule 5min
 ----
 . Initialize the SnapMirror replication relationship on the destination. 
 +
 [source]
 ----
-dest::> snapmirror initialize -destination-path  <dest_vs:new_dest_vol>
+dest::> snapmirror initialize -destination-path  <dest_svm:new_dest_vol>
 ----
 
 == Validate the SnapMirror relationship is healthy
