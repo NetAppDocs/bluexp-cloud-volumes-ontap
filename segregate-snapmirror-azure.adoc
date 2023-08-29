@@ -13,7 +13,7 @@ summary: You can segregate SnapMirror replication traffic with a new NIC and Int
 :imagesdir: ./media/
 
 [.lead]
-In Cloud Volumes ONTAP deployments with SnapMirror replication, data replicates between two routable subnets. With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic from your data traffic by adding a new network interface card (NIC), an associated intercluster LIF and a non-routable subnet. 
+In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically replicates between two routable subnets. With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic from your data traffic by adding a new network interface card (NIC), an associated intercluster LIF and a non-routable subnet. 
 
 == Visualize the segregation of SnapMirror replication traffic in single node and high-availability pair configurations
 
@@ -30,9 +30,12 @@ image:diagram-snapmirror-segregation-azure-HA.png[Diagram illustrates the segreg
 == Considerations
 This section provides considerations for segregating SnapMirror replication traffic. 
 
-* The new SnapMirror subnet must be non-routable to the existing data subset. 
+* The new SnapMirror subnet must be non-routable to the existing data subnet. This can be achieved by configuring network security group rules. 
 * You can only add a single NIC to a VM for SnapMirror traffic segregation.
-* To add a new NIC, the storage VM (SVM) instance type you deploy must have an additional and unused NIC.
+* To add a new NIC, the storage VM (SVM) instance type you deploy must have an unused NIC.
+
+== Before you begin
+The source and destination clusters must be in the same VNET (Virtual Network) but not in the same subnet. 
 
 == Create an additional NIC and attach to the destination VM
 This section provides instructions for how to create an additional NIC and attach it to the destination VM. 
@@ -64,7 +67,8 @@ az vm stop --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
 az vm deallocate --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
-. Create a new, non-routable SnapMirror subnet by adding the new NIC (e.g., nic-new) to the VM. 
+
+. Configure network security group rules to make the two subnets (source cluster subnet and destination cluster subnet) non-routable to each other.  
 .. Create the new NIC on the VM. 
 +
 The _security group_ should be defined such that the new subnet is non-routable to the existing subnet attached to NIC0.
@@ -75,7 +79,7 @@ The _security group_ should be defined such that the new subnet is non-routable 
 ----
 az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> --query id
 ----
-... Create the new NIC on the VM with the subnet ID. Here you enter the name for the new NIC. 
+... Create the new NIC on the VM with the subnet ID from the previous step. Here you enter the name for the new NIC. 
 +
 [source]
 ----
@@ -103,7 +107,7 @@ az vm start --resource-group <dest_node-rg>  --name <dest_node-vm>
 az network nic list --resource-group azure-59806175-60147103-azure-rg --query "[].{NIC: name, VM: virtualMachine.id}"
 ----
 
-Repeat the steps for the partner node in case of HA.
+For HA-pair deployments, repeat these steps for the partner node.
 
 == Create a separate IPSpace and broadcast domain for the new NIC
 This section provides instructions for how to create a separate IPspace and broadcast domain for the new NIC. 
