@@ -154,6 +154,8 @@ dest::>net int show
 For HA-pair deployments, repeat steps 2 and 3 for the partner node.
 
 == Verify cluster peering between the source and destination systems
+This section provides instructions for how to verify peering between the source and destination systems. 
+
 .Steps
 
 . Verify that the intercluster LIF of the destination cluster can talk to the intercluster LIF or the source cluster. The destination is the intercluster LIF IP address on the source. 
