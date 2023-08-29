@@ -69,17 +69,17 @@ az vm deallocate --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
 
 . Configure network security group rules to make the two subnets (source cluster subnet and destination cluster subnet) non-routable to each other.  
-.. Create the new NIC on the VM. 
+.. Create the new NIC on the destination VM. 
 +
-The _security group_ should be defined such that the new subnet is non-routable to the existing subnet attached to NIC0.
+The _security group_ should be defined such that the destination cluster subnet is non-routable to the source cluster subnet.
  
-... Look up the subnet ID for the new SnapMirror subnet. 
+... Look up the subnet ID for the source cluster subnet. 
 +
 [source]
 ----
 az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> --query id
 ----
-... Create the new NIC on the VM with the subnet ID from the previous step. Here you enter the name for the new NIC. 
+... Create the new NIC on the destination VM with the subnet ID for the source cluster subnet. Here you enter the name for the new NIC. 
 +
 [source]
 ----
