@@ -50,3 +50,5 @@ image::screenshot_features_instance_type.png[400,300 A screenshot that shows the
 .Result
 
 Cloud Volumes ONTAP reboots with the new configuration.
+
+If you can't change the instance type from c4, m4, or r4 instances, refer to KB article "..."
