@@ -157,6 +157,8 @@ sidebar:
             - title: Create storage VMs in Google Cloud
               flavor: gcp
               url: /task-managing-svms-gcp.html
+            - title: Set up SVM disaster recovery
+              url: /task-manage-svm-dr.html
         - title: Security and data encryption
           entries:
             - title: Encrypt volumes with NetApp encryption
