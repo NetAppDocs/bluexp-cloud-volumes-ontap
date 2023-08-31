@@ -247,6 +247,8 @@ Refer to the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updat
 +
 image:screenshot_upgrade_select_versions.png[A screenshot of the Upgrade Cloud Volumes ONTAP version page.]
 
+. To check the status of the upgrade, click the Settings icon and select *Timeline*. 
+
 .Result
 
 BlueXP starts the software upgrade. You can perform actions on the working environment when the software update is complete.
