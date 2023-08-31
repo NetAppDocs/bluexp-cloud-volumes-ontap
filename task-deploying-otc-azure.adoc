@@ -28,11 +28,11 @@ You need the following to create a working environment.
 
 * An understanding of the configuration that you want to use.
 +
-You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task-planning-your-config-azure.html[Planning your Cloud Volumes ONTAP configuration].
+You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task-planning-your-config-azure.html[Planning your Cloud Volumes ONTAP configuration^].
 
 * An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
 +
-link:task-set-up-licensing-azure.html[Learn how to set up licensing].
+link:task-set-up-licensing-azure.html[Learn how to set up licensing^].
 
 .About this task
 
@@ -118,14 +118,14 @@ TIP: If the Azure account that you're using has the https://docs.netapp.com/us-e
 * If you choose *Selected VNet only*, the source for inbound traffic is the subnet range of the selected VNet and the subnet range of the VNet where the Connector resides. This is the recommended option.
 * If you choose *All VNets*, the source for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap[View the default security group].
+| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[View the default security group^].
 
 |===
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-azure.html[Learn how to set up licensing].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
+* link:task-set-up-licensing-azure.html[Learn how to set up licensing^].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -144,28 +144,28 @@ Note the following:
 * The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 * The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-azure.html#sizing-your-system-in-azure[Sizing your system in Azure].
+For help choosing a disk type and size, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Sizing your system in Azure^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
-link:concept-data-tiering.html[Learn more about data tiering].
+link:concept-data-tiering.html[Learn more about data tiering^].
 
 . *Write Speed & WORM*:  
 .. Choose *Normal* or *High* write speed, if desired.
 +
-link:concept-write-speed.html[Learn more about write speed].
+link:concept-write-speed.html[Learn more about write speed^].
 .. Activate write once, read many (WORM) storage, if desired.
 +
-This option is only available for certain VM types. To find out which VM types are supported, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs]. 
+This option is only available for certain VM types. To find out which VM types are supported, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs^]. 
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
-link:concept-client-protocols.html[Learn about supported client protocols and versions].
+link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -205,7 +205,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-azure.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile[Understanding volume usage profiles^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -309,14 +309,14 @@ TIP: If the Azure account that you're using has the https://docs.netapp.com/us-e
 * If you choose *Selected VNet only*, the source for inbound traffic is the subnet range of the selected VNet and the subnet range of the VNet where the Connector resides. This is the recommended option.
 * If you choose *All VNets*, the source for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap[View the default security group].
+| Use existing | If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[View the default security group^].
 
 |===
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-azure.html[Learn how to set up licensing].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
+* link:task-set-up-licensing-azure.html[Learn how to set up licensing^].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Change configuration*.
 +
@@ -334,38 +334,38 @@ Note the following:
 +
 * The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk size, see link:task-planning-your-config-azure.html#sizing-your-system-in-azure[Sizing your system in Azure].
+For help choosing a disk size, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure[Size your system in Azure^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
-link:concept-data-tiering.html[Learn more about data tiering].
+link:concept-data-tiering.html[Learn more about data tiering^].
 
 . *Write Speed & WORM*: 
 .. Choose *Normal* or *High* write speed, if desired.
 +
-link:concept-write-speed.html[Learn more about write speed].
+link:concept-write-speed.html[Learn more about write speed^].
 .. Activate write once, read many (WORM) storage, if desired.
 +
-This option is only available for certain VM types. To find out which VM types are supported, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs]. 
+This option is only available for certain VM types. To find out which VM types are supported, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Supported configurations by license for HA pairs^]. 
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
 . *Secure Communication to Storage & WORM*: Choose whether to enable an HTTPS connection to Azure storage accounts, and activate write once, read many (WORM) storage, if desired.
 +
 The HTTPS connection is from a Cloud Volumes ONTAP 9.7 HA pair to Azure page blob storage accounts. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 +
 WORM can't be enabled if data tiering was enabled.
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
-link:concept-client-protocols.html[Learn about supported client protocols and versions].
+link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -405,7 +405,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-azure.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 

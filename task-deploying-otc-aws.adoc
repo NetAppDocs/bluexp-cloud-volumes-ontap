@@ -28,15 +28,15 @@ You need the following to create a working environment.
 
 * An understanding of the configuration that you want to use.
 +
-You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration].
+You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration^].
 
 * An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
 +
-link:task-set-up-licensing-aws.html[Learn how to set up licensing].
+link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
 
 * DNS and Active Directory for CIFS configurations.
 +
-For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
+For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS^].
 
 == Launching a single-node Cloud Volumes ONTAP system in AWS
 
@@ -97,7 +97,7 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
 
-. *Location & Connectivity*: Enter the network information that you recorded in the link:task-planning-your-config.html#aws-network-information-worksheet[AWS worksheet].
+. *Location & Connectivity*: Enter the network information that you recorded in the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information[AWS worksheet^].
 +
 The following table describes fields for which you might need guidance:
 +
@@ -113,7 +113,7 @@ The following table describes fields for which you might need guidance:
 * If you choose *Selected VPC only*, the source for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing security group | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-security-groups.html[Learn about firewall rules for Cloud Volumes ONTAP].
+| Use existing security group | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-security-groups.html[Learn about firewall rules for Cloud Volumes ONTAP^].
 
 |===
 
@@ -123,14 +123,14 @@ For AWS-managed encryption, you can choose a different Customer Master Key (CMK)
 +
 TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
 +
-link:task-setting-up-kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP].
+link:task-setting-up-kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP^].
 +
-link:concept-security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
+link:concept-security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies^].
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-aws.html[Learn how to set up licensing].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
+* link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
 
 . *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
@@ -142,7 +142,7 @@ If you choose one of the packages, then you only need to specify a volume and th
 
 . *IAM Role*: It's best to keep the default option to let BlueXP create the role for you.
 +
-If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.html[policy requirements for Cloud Volumes ONTAP nodes].
+If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.html[policy requirements for Cloud Volumes ONTAP nodes^].
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
@@ -154,7 +154,7 @@ Note the following:
 +
 * The disk type is for the initial volume (and aggregate). You can choose a different disk type for subsequent volumes (and aggregates).
 
-* If you choose a gp3 or io1 disk, BlueXP uses the Elastic Volumes feature in AWS to automatically increase the underlying storage disk capacity as needed. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS].
+* If you choose a gp3 or io1 disk, BlueXP uses the Elastic Volumes feature in AWS to automatically increase the underlying storage disk capacity as needed. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS^].
 
 * If you choose a gp2 or st1 disk, you can select a disk size for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 
@@ -162,22 +162,22 @@ Note the following:
 
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
-link:concept-data-tiering.html[Learn how data tiering works].
+link:concept-data-tiering.html[Learn how data tiering works^].
 
 . *Write Speed & WORM*: 
 .. Choose *Normal* or *High* write speed, if desired.
 +
-link:concept-write-speed.html[Learn more about write speed].
+link:concept-write-speed.html[Learn more about write speed^].
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
-link:concept-client-protocols.html[Learn about supported client protocols and versions].
+link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -215,7 +215,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile[Understanding volume usage profiles^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -308,7 +308,7 @@ TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP
 
 . *HA Deployment Models*: Choose an HA configuration.
 +
-For an overview of the deployment models, see link:concept-ha.html[Cloud Volumes ONTAP HA for AWS].
+For an overview of the deployment models, see link:concept-ha.html[Cloud Volumes ONTAP HA for AWS^].
 
 . *Location and Connectivity* (single AZ) or *Region & VPC* (multiple AZs): Enter the network information that you recorded in the AWS worksheet.
 +
@@ -324,7 +324,7 @@ The following table describes fields for which you might need guidance:
 * If you choose *Selected VPC only*, the source for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing security group | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-security-groups.html[Learn about firewall rules for Cloud Volumes ONTAP].
+| Use existing security group | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-security-groups.html[Learn about firewall rules for Cloud Volumes ONTAP^].
 
 |===
 
@@ -332,7 +332,7 @@ The following table describes fields for which you might need guidance:
 
 . *Floating IPs*: If you chose multiple AZs, specify the floating IP addresses.
 +
-The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:reference-networking-aws.html#aws-networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
+The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
 
 . *Route Tables*: If you chose multiple AZs, select the route tables that should include routes to the floating IP addresses.
 +
@@ -344,14 +344,14 @@ For AWS-managed encryption, you can choose a different Customer Master Key (CMK)
 +
 TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
 +
-link:task-setting-up-kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP].
+link:task-setting-up-kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP^].
 +
-link:concept-security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
+link:concept-security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies^].
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-aws.html[Learn how to set up licensing].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
+* link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
 
 . *Cloud Volumes ONTAP Configuration* (annual AWS Marketplace contract only): Review the default configuration and click *Continue* or click *Change Configuration* to select your own configuration.
 +
@@ -363,7 +363,7 @@ If you choose one of the packages, then you only need to specify a volume and th
 
 . *IAM Role*: It's best to keep the default option to let BlueXP create the role for you.
 +
-If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.html[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator].
+If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.html[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator^].
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
@@ -375,7 +375,7 @@ Note the following:
 +
 * The disk type is for the initial volume (and aggregate). You can choose a different disk type for subsequent volumes (and aggregates).
 
-* If you choose a gp3 or io1 disk, BlueXP uses the Elastic Volumes feature in AWS to automatically increase the underlying storage disk capacity as needed. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS].
+* If you choose a gp3 or io1 disk, BlueXP uses the Elastic Volumes feature in AWS to automatically increase the underlying storage disk capacity as needed. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes in AWS^].
 
 * If you choose a gp2 or st1 disk, you can select a disk size for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 
@@ -383,22 +383,22 @@ Note the following:
 
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
-link:concept-data-tiering.html[Learn how data tiering works].
+link:concept-data-tiering.html[Learn how data tiering works^].
 
 . *Write Speed & WORM*: 
 .. Choose *Normal* or *High* write speed, if desired.
 +
-link:concept-write-speed.html[Learn more about write speed].
+link:concept-write-speed.html[Learn more about write speed^].
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
-link:concept-client-protocols.html[Learn about supported client protocols and versions].
+link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -436,7 +436,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 

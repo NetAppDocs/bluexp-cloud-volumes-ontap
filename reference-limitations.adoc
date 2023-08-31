@@ -31,7 +31,6 @@ link:concept-client-protocols.html[Learn more about Cloud Volumes ONTAP support 
 
 == BlueXP doesn't support disaster recovery for storage VMs
 
-BlueXP doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
+BlueXP doesn't provide any setup or orchestration support for storage VM (SVM) disaster recovery. You must use System Manager or the CLI.
 
-* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
-* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]
+link:task-manage-svm-dr.html[Learn more about SVM disaster recovery].
