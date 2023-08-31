@@ -124,9 +124,9 @@ TIP: A system that isn't registered for support will still receive the software 
 BlueXP also updates the mediator instance as needed during the Cloud Volumes ONTAP upgrade process.
 
 === Upgrades in AWS with c4, m4, and r4 EC2 instance types
-Cloud Volumes ONTAP no longer supports the c4, m4, and r4 EC2 instance types. You can upgrade existing deployments to Cloud Volumes ONTAP versions 9.8-9.12.1 with these instance types. Before you upgrade we recommend that you <<change the instance type>>. If you can't change the instance type, you need to <<enable enhanced networking>> before you upgrade. Read the following sections to learn more about changing the instance type and enabling enhanced networking. 
+Cloud Volumes ONTAP no longer supports the c4, m4, and r4 EC2 instance types. You can upgrade existing deployments to Cloud Volumes ONTAP versions 9.8-9.12.1 with these instance types. Before you upgrade we recommend that you <<Change the instance type,change the instance type>>. If you can't change the instance type, you need to <<Enable enhanced networking,enable enhanced networking>> before you upgrade. Read the following sections to learn more about changing the instance type and enabling enhanced networking. 
 
-In Cloud Volumes ONTAP running versions 9.13.0 and above, you cannot upgrade with c4, m4, and r4 EC2 instance types. In this case, you need to reduce the number of disks and then <<change the instance type>> or deploy a new HA-pair configuration with the c5, m5, and r5 EC2 instance types and migrate the data. 
+In Cloud Volumes ONTAP running versions 9.13.0 and above, you cannot upgrade with c4, m4, and r4 EC2 instance types. In this case, you need to reduce the number of disks and then <<Change the instance type,change the instance type>> or deploy a new HA-pair configuration with the c5, m5, and r5 EC2 instance types and migrate the data. 
 
 ==== Change the instance type
 c4, m4, and r4 EC2 instance types allow for more disks per node than the c5, m5, and r5 EC2 instance types. If the disk count per node for the c4, m4, or r4 EC2 instance you're running is below the max disk allowance per node for c5, m5, and r5 instances, you can change the EC2 instance type to c5, m5, or r5. 
