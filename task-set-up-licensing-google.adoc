@@ -17,7 +17,7 @@ After you decide which licensing option you want to use with Cloud Volumes ONTAP
 
 == Freemium
 
-Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up to 500 GiB of provisioned capacity. link:concept-licensing.html#freemium-offering[Learn more about the Freemium offering].
+Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up to 500 GiB of provisioned capacity. link:concept-licensing.html#packages[Learn more about the Freemium offering].
 
 .Steps
 
@@ -27,7 +27,7 @@ Select the Freemium offering to use Cloud Volumes ONTAP free of charge with up t
 
 .. On the *Details and Credentials* page, click *Edit Credentials > Add Subscription* and then follow the prompts to subscribe to the pay-as-you-go offering in the Google Cloud Marketplace.
 +
-You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#capacity-based-licensing-packages[Essentials package].
+You won't be charged through the marketplace subscription unless you exceed 500 GiB of provisioned capacity, at which time the system is automatically converted to the link:concept-licensing.html#packages[Essentials package].
 
 .. After you return to BlueXP, select *Freemium* when you reach the charging methods page.
 +
@@ -45,7 +45,7 @@ The Essentials and Professional packages are available with the following consum
 * An hourly, pay-as-you-go (PAYGO) subscription from the Google Cloud Marketplace
 * An annual contract
 
-link:concept-licensing.html#freemium-offering[Learn more about capacity-based licensing].
+link:concept-licensing.html#capacity-based-licensing[Learn more about capacity-based licensing].
 
 The following sections describe how to get started with each of these consumption models.
 

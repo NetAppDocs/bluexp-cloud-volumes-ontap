@@ -31,7 +31,7 @@ Availability Set::
 The Azure Availability Set is a logical grouping of the Cloud Volumes ONTAP nodes. The Availability Set ensures that the nodes are in different fault and update domains to provide redundancy and availability. https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview[Learn more about Availability Sets in the Azure docs^].
 
 Disks::
-Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, and core data].
+Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, and core data^].
 
 Storage accounts::
 * One storage account is required for managed disks.
@@ -56,7 +56,7 @@ Availability Set::
 The Azure Availability Set is a logical grouping of the Cloud Volumes ONTAP nodes. The Availability Set ensures that the nodes are in different fault and update domains to provide redundancy and availability. https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview[Learn more about Availability Sets in the Azure docs^].
 
 Disks::
-Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, partner root, core, and NVRAM data].
+Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data^].
 
 Storage accounts::
 Storage accounts are used for managed disk based deployments to handle diagnostic logs and tiering to blob storage.
@@ -75,7 +75,7 @@ Availability Zones::
 Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. Availability zones ensure that the nodes are in different fault domains. https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy#zone-redundant-storage-for-managed-disks[Learn more about Azure zone-redundant storage for managed disks in the Azure docs^].
 
 Disks::
-Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, partner root, and core data].
+Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, and core data^].
 
 Storage accounts::
 Storage accounts are used for managed disk based deployments to handle diagnostic logs and tiering to blob storage.

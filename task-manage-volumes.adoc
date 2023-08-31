@@ -224,7 +224,7 @@ image::screenshot_aggr_volume_overview.png[width=500 Screen shot: Shows the list
 
 . If the system has not reached the disk limit, you should move the volumes to an existing aggregate or a new aggregate on the same system.
 +
-For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
+For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>. 
 
 . If the system has reached the disk limit, do any of the following:
 
@@ -232,11 +232,11 @@ For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggrega
 
 .. Rearrange volumes to free space on an aggregate.
 +
-For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
+For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
 
 .. Move two or more volumes to another system that has space.
 +
-For details, see link:task-manage-volumes.html#moving-volumes-to-another-system-to-avoid-capacity-issues[Moving volumes to another system to avoid capacity issues].
+For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
 
 === Move volumes to another system to avoid capacity issues
 
@@ -270,6 +270,8 @@ For information about configuring a destination volume for data access, see the 
 +
 For details, see link:task-manage-volumes.html#manage-volumes[Manage volumes].
 
+[[move-volumes-aggregate-capacity]]
+
 === Move volumes to another aggregate to avoid capacity issues
 
 You can move one or more volumes to another aggregate to avoid capacity issues.
@@ -302,7 +304,7 @@ image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggre
 
 . If no aggregates have available capacity, create a new aggregate.
 +
-For details, see link:task-create-aggregates.html[Creating aggregates].
+For details, see link:task-create-aggregates.html[Creating aggregates^].
 
 . Use System Manager or the CLI to move the volumes to the aggregate.
 
