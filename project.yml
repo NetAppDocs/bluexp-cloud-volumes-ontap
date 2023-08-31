@@ -217,7 +217,7 @@ sidebar:
                 - title: Move resource groups 
                   url: /task-moving-resource-groups-azure.html 
                 - title: Segregate SnapMirror traffic in Azure
-                  url: /segregate-snapmirror-azure.html  
+                  url: /task-segregate-snapmirror-azure.html  
             - title: Google Cloud administration
               flavor: gcp
               entries:
