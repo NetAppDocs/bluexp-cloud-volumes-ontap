@@ -51,4 +51,4 @@ image::screenshot_features_instance_type.png[400,300 A screenshot that shows the
 
 Cloud Volumes ONTAP reboots with the new configuration.
 
-If you can't change the instance type from c4, m4, or r4 instances, refer to KB article "..."
+If you can't change the instance type from c4, m4, or r4 instances, see KB article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Unable_to_change_the_instance_type_from_r4.2xlarge_to_r5.2xlarge["Unable to change the instance type from r4.2xlarge to r5.2xlarge"^].
