@@ -35,6 +35,8 @@ TIP: BlueXP gracefully changes one node at a time by initiating takeover and wai
 
 For a list of supported instance types in AWS, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute[Supported EC2 instances^].
 
+If you can't change the instance type from c4, m4, or r4 instances, see KB article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Unable_to_change_the_instance_type_from_r4_to_r5_with_disk_count_error["Unable to change the instance type from r4 to r5 with disk count error"^].
+
 .Steps
 
 . On the Canvas page, select the working environment.
@@ -50,5 +52,3 @@ image::screenshot_features_instance_type.png[400,300 A screenshot that shows the
 .Result
 
 Cloud Volumes ONTAP reboots with the new configuration.
-
-If you can't change the instance type from c4, m4, or r4 instances, see KB article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Unable_to_change_the_instance_type_from_r4_to_r5_with_disk_count_error["Unable to change the instance type from r4 to r5 with disk count error"^].
