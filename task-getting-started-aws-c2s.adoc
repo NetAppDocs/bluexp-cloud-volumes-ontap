@@ -32,7 +32,7 @@ To learn more about how private mode works, refer to link:https://docs.netapp.co
 
 Getting started with Cloud Volumes ONTAP in AWS Top Secret Cloud includes a few steps.
 
-. <<Prepare your AWS environmentPreparing your AWS environment>>
+. <<Prepare your AWS environment,Preparing your AWS environment>>
 +
 This includes setting up networking, subscribing to Cloud Volumes ONTAP, setting up permissions, and optionally setting up the AWS KMS.
 
@@ -46,7 +46,7 @@ You'll log in to BlueXP from the software that gets installed on the Connector i
 
 Each of these steps are described below.
 
-== Prepare your AWS environment
+== Step 1: Prepare your AWS environment
 
 Your AWS environment must meet a few requirements.
 
@@ -95,7 +95,7 @@ You need an IAM policy and IAM role for each of the following:
 . Go to the AWS IAM console and click *Policies*.
 
 . Create a policy for the Connector instance.
-
++
 [role="tabbed-block"]
 ====
 
@@ -338,7 +338,7 @@ You need an IAM policy and IAM role for each of the following:
 ====
 
 . Create a policy for Cloud Volumes ONTAP.
-
++
 [role="tabbed-block"]
 ====
 
@@ -448,9 +448,9 @@ You'll need to provide the ARN to BlueXP when you create the Cloud Volumes ONTAP
 +
 This gives BlueXP permissions to use the CMK with Cloud Volumes ONTAP.
 
-== Install the Connector and set up BlueXP
+== Step 2: Install the Connector and set up BlueXP
 
-Before you can launch Cloud Volumes ONTAP systems in AWS, you must first launch the Connector instance from the AWS Marketplace and then log in and set up BlueXP.
+Before you can launch Cloud Volumes ONTAP systems in AWS, you must first launch the Connector instance from the AWS Marketplace and then log in, set up BlueXP, and install a certificate for private mode.
 
 .Steps
 
@@ -495,27 +495,86 @@ This user account runs locally on the system. There's no connection to the auth0
 
 . After the Connector restarts, log in using the administrator user account that you created in the Setup wizard.
 
-== Install a private mode certificate
+=== Install a private mode certificate
 To complete Connector installation and BlueXP setup, you need to manually install a private mode certificate using Docker.
 
 .Steps
 . List existing installed certificates. 
-.. To collect the occm container docker id (identified name “ds-occm-1”), run `docker ps`.
-.. To get inside occm container, run `docker exec -it <docker-id> /bin/sh`.
-.. To collect the password from “TRUST_STORE_PASSWORD” environment variable, run `env`.
-.. To list all installed certificates in truststore, run `keytool -list -v -keystore occm.truststore` and use the password collected in the previous step. 
+.. To collect the occm container docker id (identified name “ds-occm-1”), run the following command: 
++
+[source,CLI]
+----
+docker ps
+----
+.. To get inside occm container, run the following command: 
++
+[source,CLI]
+----
+docker exec -it <docker-id> /bin/sh
+----
+.. To collect the password from “TRUST_STORE_PASSWORD” environment variable, run the following command:
++ 
+[source,CLI]
+----
+env
+----
+.. To list all installed certificates in truststore, run the following command: 
++ 
+[source,CLI]
+----
+keytool -list -v -keystore occm.truststore
+----
+Use the password collected in the previous step. 
 
 . Add a certificate. 
-.. To collect occm container docker id (identified name “ds-occm-1”), run `docker ps`.  
-.. To get inside occm container, run `docker exec -it <docker-id> /bin/sh`.  
+.. To collect occm container docker id (identified name “ds-occm-1”), run the following command: 
++ 
+[source,CLI]
+----
+docker ps
+----
+.. To get inside occm container, run the following command: 
 Save the new certificate file inside.
-.. To collect the password from “TRUST_STORE_PASSWORD” environment variable, run  `env`. 
-.. To add the certificate to the truststore, run `keytool -import -alias <alias-name> -file <certificate-file-name> -keystore occm.truststore` and use the password collected in the previous step. 
-.. To check that the certificate installed, run `keytool -list -v -keystore occm.truststore -alias <alias-name>`. 
-.. To exit occm container, run `exit`.
-.. To reset occm container, run `docker restart <docker-id>`.  
++ 
+[source,CLI]
+----
+docker exec -it <docker-id> /bin/sh
+----
+Save the new certificate file inside.
+.. To collect the password from “TRUST_STORE_PASSWORD” environment variable, run the following command: 
++ 
+[source,CLI]
+----
+env
+----
+.. To add the certificate to the truststore, run the following command: 
++ 
+[source,CLI]
+----
+keytool -import -alias <alias-name> -file <certificate-file-name> -keystore occm.truststore
+----
+Use the password collected in the previous step. 
+.. To check that the certificate installed, run the following command: 
++
+[source,CLI]
+----
+keytool -list -v -keystore occm.truststore -alias <alias-name>
+---- 
+.. To exit occm container, run the following command: 
++
+[source,CLI]
+----
+exit
+---- 
+.. To reset occm container, run the following command:
++
+[source,CLI]
+----
+docker restart <docker-id>
+----
+  
 
-== Launch Cloud Volumes ONTAP from BlueXP
+== Step 3: Launch Cloud Volumes ONTAP from BlueXP
 
 You can launch Cloud Volumes ONTAP instances in the AWS Top Secret Cloud by creating new working environments in BlueXP.
 
