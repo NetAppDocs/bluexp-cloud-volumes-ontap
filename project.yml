@@ -64,7 +64,7 @@ sidebar:
               url: /task-set-up-licensing-aws.html
             - title: Launch Cloud Volumes ONTAP in AWS
               url: /task-deploying-otc-aws.html
-            - title: Get started in AWS C2S
+            - title: Get started in AWS Top Secret Cloud
               url: /task-getting-started-aws-c2s.html
         - title: Get started in Microsoft Azure
           flavor: azure

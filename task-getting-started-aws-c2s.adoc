@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-getting-started-aws-c2s.html
-keywords: commercial cloud services, c2s, secret region, aws secret region, cloud manager, BlueXP
+keywords: commercial cloud services, c2s, secret cloud, top secret cloud, aws secret region, BlueXP
 summary: "Similar to a standard AWS region, you can use BlueXP in the AWS Commercial Cloud Services (C2S) environment to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS C2S is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS C2S region users."
 ---
 
-= Get started with Cloud Volumes ONTAP in the AWS C2S environment
+= Get started with Cloud Volumes ONTAP in the AWS Top Secret Cloud environment
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,61 +13,40 @@ summary: "Similar to a standard AWS region, you can use BlueXP in the AWS Commer
 :imagesdir: ./media/
 
 [.lead]
-Similar to a standard AWS region, you can use Cloud Manager in the link:https://aws.amazon.com/federal/us-intelligence-community/[AWS Commercial Cloud Services (C2S)^] environment to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS C2S is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS C2S region users.
+Similar to a standard AWS region, you can use BlueXP in link:https://aws.amazon.com/federal/top-secret-cloud/[AWS Top Secret Cloud^] to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS Top Secret Cloud is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS Top Secret Cloud region users.
 
-== Supported versions in C2S	
+== Supported versions in AWS Top Secret Cloud	
 
-* Cloud Volumes ONTAP 9.8 is supported
+* Cloud Volumes ONTAP 9.12.1 P1 is supported
  
-* Version 3.9.4 of the Connector is supported
+* Version 3.9.32 of the Connector is supported
 + 
-The Connector is software that's required to deploy and manage Cloud Volumes ONTAP in AWS. You'll log in to Cloud Manager from the software that gets installed on the Connector instance. The SaaS website for Cloud Manager isn't supported in the C2S environment.
- 
-NOTE: Cloud Manager was recently renamed to BlueXP, but we're continuing to refer to it as Cloud Manager in C2S because the user interface that's included with version 3.9.4 of the Connector is still called Cloud Manager.
+The Connector is software that's required to deploy and manage Cloud Volumes ONTAP in AWS. You'll log in to BlueXP from the software that gets installed on the Connector instance. The SaaS website for BlueXP isn't supported in AWS Top Secret Cloud.
 
-== Supported features in C2S
+== Private mode
+When BlueXP deploys Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud, deployment is in private mode. In private mode, a BlueXP Connector is installed on premises or in the cloud (in a secure region, sovereign cloud region, or commercial region) and has no connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that's available from the Connector, not from the SaaS layer.
 
-The following features are available from Cloud Manager in the C2S environment:
-
-* Cloud Volumes ONTAP
-* Data replication
-* A timeline for auditing
-
-For Cloud Volumes ONTAP, you can create a single node system or an HA pair. Both licensing options are available: pay-as-you-go and bring your own license (BYOL).
-
-Data tiering to S3 is also supported with Cloud Volumes ONTAP in C2S.
-
-== Limitations
-
-* None of NetApp's cloud services are available from Cloud Manager.
-
-* Because there's no internet access in the C2S environment, the following features aren't available either:
-
-** Automated software upgrades from Cloud Manager
-** NetApp AutoSupport
-** AWS cost information for Cloud Volumes ONTAP resources
-
-* Freemium licenses are not supported in the C2S environment.
+To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode[BlueXP private deployment mode^]. 
 
 == Deployment overview
 
-Getting started with Cloud Volumes ONTAP in C2S includes a few steps.
+Getting started with Cloud Volumes ONTAP in AWS Top Secret Cloud includes a few steps.
 
-. <<Preparing your AWS environment>>
+. <<Prepare your AWS environmentPreparing your AWS environment>>
 +
 This includes setting up networking, subscribing to Cloud Volumes ONTAP, setting up permissions, and optionally setting up the AWS KMS.
 
-. <<Installing the Connector and setting up Cloud Manager>>
+. <<Install the Connector and set up BlueXP,Installing the Connector and setting up BlueXP>>
 +
-Before you can start using Cloud Manager to deploy Cloud Volumes ONTAP, you'll need to create a _Connector_. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP).
+Before you can start using BlueXP to deploy Cloud Volumes ONTAP, you'll need to create a _Connector_. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP).
 +
-You'll log in to Cloud Manager from the software that gets installed on the Connector instance.
+You'll log in to BlueXP from the software that gets installed on the Connector instance.
 
-. <<Launching Cloud Volumes ONTAP from Cloud Manager>>
+. <<Launch Cloud Volumes ONTAP from BlueXP,Launching Cloud Volumes ONTAP from BlueXP>>
 
 Each of these steps are described below.
 
-== Preparing your AWS environment
+== Prepare your AWS environment
 
 Your AWS environment must meet a few requirements.
 
@@ -87,7 +66,7 @@ A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTA
 
 === Subscribe to Cloud Volumes ONTAP
 
-A Marketplace subscription is required to deploy Cloud Volumes ONTAP from Cloud Manager.
+A Marketplace subscription is required to deploy Cloud Volumes ONTAP from BlueXP.
 
 .Steps
 
@@ -99,11 +78,11 @@ A Marketplace subscription is required to deploy Cloud Volumes ONTAP from Cloud 
 
 . Repeat these steps for the other offerings, if you plan to deploy them.
 +
-You must use Cloud Manager to launch Cloud Volumes ONTAP instances. You must not launch Cloud Volumes ONTAP instances from the EC2 console.
+You must use BlueXP to launch Cloud Volumes ONTAP instances. You must not launch Cloud Volumes ONTAP instances from the EC2 console.
 
 === Set up permissions
 
-Set up IAM policies and roles that provide the Connector and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Commercial Cloud Services environment.
+Set up IAM policies and roles that provide the Connector and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Top Secret Cloud.
 
 You need an IAM policy and IAM role for each of the following:
 
@@ -116,7 +95,12 @@ You need an IAM policy and IAM role for each of the following:
 . Go to the AWS IAM console and click *Policies*.
 
 . Create a policy for the Connector instance.
-+
+
+[role="tabbed-block"]
+====
+
+.Secret regions
+--
 [source,json]
 {
     "Version": "2012-10-17",
@@ -231,9 +215,135 @@ You need an IAM policy and IAM role for each of the following:
         }
     ]
 }
+--
+
+.Top Secret regions
+--
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:DescribeInstanceStatus",
+                "ec2:RunInstances",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeImages",
+                "ec2:CreateTags",
+                "ec2:CreateVolume",
+                "ec2:DescribeVolumes",
+                "ec2:ModifyVolumeAttribute",
+                "ec2:DeleteVolume",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DescribeSecurityGroups",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeDhcpOptions",
+                "ec2:CreateSnapshot",
+                "ec2:DeleteSnapshot",
+                "ec2:DescribeSnapshots",
+                "ec2:GetConsoleOutput",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeRegions",
+                "ec2:DeleteTags",
+                "ec2:DescribeTags",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:ValidateTemplate",
+                "iam:PassRole",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:PutRolePolicy",
+                "iam:ListInstanceProfiles",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteRolePolicy",
+                "iam:AddRoleToInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:ListAllMyBuckets",
+                "kms:List*",
+                "kms:Describe*",
+                "ec2:AssociateIamInstanceProfile",
+                "ec2:DescribeIamInstanceProfileAssociations",
+                "ec2:DisassociateIamInstanceProfile",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:CreatePlacementGroup",
+                "ec2:DeletePlacementGroup"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "fabricPoolPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions"
+            ],
+            "Resource": [
+                "arn:aws-iso-b:s3:::fabric-pool*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:TerminateInstances",
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/WorkingEnvironment": "*"
+                }
+            },
+            "Resource": [
+                "arn:aws-iso-b:ec2:*:*:instance/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": [
+                "arn:aws-iso-b:ec2:*:*:volume/*"
+            ]
+        }
+    ]
+}
+--
+
+====
 
 . Create a policy for Cloud Volumes ONTAP.
-+
+
+[role="tabbed-block"]
+====
+
+.Secret regions
+--
 [source,json]
 {
     "Version": "2012-10-17",
@@ -258,6 +368,37 @@ You need an IAM policy and IAM role for each of the following:
         "Effect": "Allow"
     }]
 }
+--
+
+.Top Secret regions
+--
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws-iso-b:s3:::*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+        ],
+        "Resource": "arn:aws-iso-b:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws-iso-b:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }]
+}
+--
+
+====
 
 . If you plan to deploy a Cloud Volumes ONTAP HA pair, create a policy for the HA mediator.
 +
@@ -287,7 +428,7 @@ Similar to the policies, you should have one IAM role for the Connector, one for
 +
 You must select the Connector IAM role when you launch the Connector instance.
 +
-You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from Cloud Manager.
+You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
 
 === Set up the AWS KMS
 
@@ -301,25 +442,25 @@ The CMK can be an AWS-managed CMK or a customer-managed CMK.
 
 . If the CMK is in an AWS account separate from the account where you plan to deploy Cloud Volumes ONTAP, then you need to obtain the ARN of that key.
 +
-You'll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.
+You'll need to provide the ARN to BlueXP when you create the Cloud Volumes ONTAP system.
 
 . Add the IAM role for the Connector instance to the list of key users for a CMK.
 +
-This gives Cloud Manager permissions to use the CMK with Cloud Volumes ONTAP.
+This gives BlueXP permissions to use the CMK with Cloud Volumes ONTAP.
 
-== Installing the Connector and setting up Cloud Manager
+== Install the Connector and set up BlueXP
 
-Before you can launch Cloud Volumes ONTAP systems in AWS, you must first launch the Connector instance from the AWS Marketplace and then log in and set up Cloud Manager.
+Before you can launch Cloud Volumes ONTAP systems in AWS, you must first launch the Connector instance from the AWS Marketplace and then log in and set up BlueXP.
 
 .Steps
 
 . Obtain a root certificate signed by a certificate authority (CA) in the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format. Consult your organization's policies and procedures for obtaining the certificate.
 +
-You'll need to upload the certificate during the setup process. Cloud Manager uses the trusted certificate when sending requests to AWS over HTTPS.
+You'll need to upload the certificate during the setup process. BlueXP uses the trusted certificate when sending requests to AWS over HTTPS.
 
 . Launch the Connector instance:
 
-.. Go to the AWS Intelligence Community Marketplace page for Cloud Manager.
+.. Go to the AWS Intelligence Community Marketplace page for BlueXP.
 
 .. On the Custom Launch tab, choose the option to launch the instance from the EC2 console.
 
@@ -332,7 +473,7 @@ Note the following as you configure the instance:
 * You should keep the default storage options.
 * The required connection methods for the Connector are as follows: SSH, HTTP, and HTTPS.
 
-. Set up Cloud Manager from a host that has a connection to the Connector instance:
+. Set up BlueXP from a host that has a connection to the Connector instance:
 
 .. Open a web browser and enter https://_ipaddress_ where _ipaddress_ is the IP address of the Linux host where you installed the Connector.
 
@@ -340,23 +481,47 @@ Note the following as you configure the instance:
 
 .. Upload the certificate that you obtained in step 1.
 
-.. Complete the steps in the Setup wizard to set up Cloud Manager.
+.. Select *Set Up New BlueXP* and follow the prompts to set up the system.
+ 
+* *System Details*: Enter a name for the Connector and your company name.
+ 
+* *Create Admin User*: Create the admin user for the system.
 +
-* *System Details*: Enter a name for this instance of Cloud Manager and provide your company name.
-* *Create User*: Create the Admin user that you'll use to administer Cloud Manager.
-* *Review*: Review the details and approve the end user license agreement.
+This user account runs locally on the system. There's no connection to the auth0 service available through BlueXP.
+ 
+* *Review*: Review the details, accept the license agreement, and then select *Set Up*.
 
 .. To complete installation of the CA-signed certificate, restart the Connector instance from the EC2 console.
 
 . After the Connector restarts, log in using the administrator user account that you created in the Setup wizard.
 
-== Launching Cloud Volumes ONTAP from Cloud Manager
+== Install a private mode certificate
+To complete Connector installation and BlueXP setup, you need to manually install a private mode certificate using Docker.
 
-You can launch Cloud Volumes ONTAP instances in the AWS Commercial Cloud Services environment by creating new working environments in Cloud Manager.
+.Steps
+. List existing installed certificates. 
+.. To collect the occm container docker id (identified name “ds-occm-1”), run `docker ps`.
+.. To get inside occm container, run `docker exec -it <docker-id> /bin/sh`.
+.. To collect the password from “TRUST_STORE_PASSWORD” environment variable, run `env`.
+.. To list all installed certificates in truststore, run `keytool -list -v -keystore occm.truststore` and use the password collected in the previous step. 
 
-.What you'll need
+. Add a certificate. 
+.. To collect occm container docker id (identified name “ds-occm-1”), run `docker ps`.  
+.. To get inside occm container, run `docker exec -it <docker-id> /bin/sh`.  
+Save the new certificate file inside.
+.. To collect the password from “TRUST_STORE_PASSWORD” environment variable, run  `env`. 
+.. To add the certificate to the truststore, run `keytool -import -alias <alias-name> -file <certificate-file-name> -keystore occm.truststore` and use the password collected in the previous step. 
+.. To check that the certificate installed, run `keytool -list -v -keystore occm.truststore -alias <alias-name>`. 
+.. To exit occm container, run `exit`.
+.. To reset occm container, run `docker restart <docker-id>`.  
 
-* If you purchased a license, you must have the license file that you received from NetApp. The license file is a .NLF file in JSON format.
+== Launch Cloud Volumes ONTAP from BlueXP
+
+You can launch Cloud Volumes ONTAP instances in the AWS Top Secret Cloud by creating new working environments in BlueXP.
+
+.Before you begin
+
+* If you purchased a license from NetApp, you need to add it to the BlueXP digital wallet. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-node-based-licenses.html#add-unassigned-licenses[Learn how to add a license^].
 
 * A key pair is required to enable key-based SSH authentication to the HA mediator.
 
@@ -370,7 +535,7 @@ You can launch Cloud Volumes ONTAP instances in the AWS Commercial Cloud Service
 +
 Note the following as you complete the wizard:
 +
-* If you want to deploy Cloud Volumes ONTAP HA in multiple Availability Zones, deploy the configuration as follows because only two AZs were available in the AWS Commercial Cloud Services environment at the time of publication:
+* If you want to deploy Cloud Volumes ONTAP HA in multiple Availability Zones, deploy the configuration as follows because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
 ** Node 1: Availability Zone A
 ** Node 2: Availability Zone B
 ** Mediator: Availability Zone A or B
@@ -397,11 +562,7 @@ NOTE: If you need a different size later, you can use the Advanced allocation op
 
 .Result
 
-Cloud Manager launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.
-
-== Security group rules
-
-Cloud Manager creates security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully in the cloud. You might want to refer to the ports for testing purposes or if you prefer to use your own security groups.
+BlueXP launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.
 
 === Security group for the Connector
 
@@ -539,7 +700,7 @@ The predefined security group for the HA mediator includes the following outboun
 
 === Internal security group for the HA mediator
 
-The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. Cloud Manager always creates this security group. You don't have the option to use your own.
+The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. BlueXP always creates this security group. You don't have the option to use your own.
 
 ==== Inbound rules
 
