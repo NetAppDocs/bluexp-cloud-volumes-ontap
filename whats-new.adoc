@@ -29,6 +29,14 @@ The L48s_v3 and L64s_v3 instance types are now supported with Cloud Volumes ONTA
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[View supported configurations for Cloud Volumes ONTAP in Azure]
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[View storage limits for Cloud Volumes ONTAP in Azure]
 
+== Date?
+The following change was introduced with the 3.9.32 release of the Connector. 
+
+=== Version support for AWS Secret regions
+Cloud Volumes ONTAP software version 9.12.1 is now available in AWS Secret Cloud and Top Secret Cloud regions. 
+
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-getting-started-aws-c2s.html[Get started in AWS Secret regions]
+
 == 30 July 2023
 The following changes were introduced with the 3.9.32 release of the Connector.
 
