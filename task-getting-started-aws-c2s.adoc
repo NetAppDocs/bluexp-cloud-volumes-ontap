@@ -5,7 +5,7 @@ keywords: commercial cloud services, c2s, secret cloud, top secret cloud, aws se
 summary: "Similar to a standard AWS region, you can use BlueXP in the AWS Commercial Cloud Services (C2S) environment to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS C2S is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS C2S region users."
 ---
 
-= Get started with Cloud Volumes ONTAP in the AWS Top Secret Cloud environment
+= Get started with Cloud Volumes ONTAP in AWS Secret regions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,45 +13,25 @@ summary: "Similar to a standard AWS region, you can use BlueXP in the AWS Commer
 :imagesdir: ./media/
 
 [.lead]
-Similar to a standard AWS region, you can use BlueXP in link:https://aws.amazon.com/federal/top-secret-cloud/[AWS Top Secret Cloud^] to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS Top Secret Cloud is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS Top Secret Cloud region users.
+Similar to a standard AWS region, you can use BlueXP in link:https://aws.amazon.com/federal/secret-cloud/[AWS Secret Cloud^] and in link:https://aws.amazon.com/federal/top-secret-cloud/[AWS Top Secret Cloud^] to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS Secret Cloud and Top Secret Cloud are closed regions specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS Secret Cloud and Top Secret Cloud region users.
 
-== Supported versions in AWS Top Secret Cloud	
+== Before you begin
+Before you get started, review the supported versions in AWS Secret Cloud and Top Secret Cloud, and learn about private mode in BlueXP. 
+
+=== Supported versions in AWS Secret Cloud and Top Secret Cloud
 
 * Cloud Volumes ONTAP 9.12.1 P1 is supported
  
 * Version 3.9.32 of the Connector is supported
 + 
-The Connector is software that's required to deploy and manage Cloud Volumes ONTAP in AWS. You'll log in to BlueXP from the software that gets installed on the Connector instance. The SaaS website for BlueXP isn't supported in AWS Top Secret Cloud.
+The Connector is software that's required to deploy and manage Cloud Volumes ONTAP in AWS. You'll log in to BlueXP from the software that gets installed on the Connector instance. The SaaS website for BlueXP isn't supported in AWS Secret Cloud and Top Secret Cloud.
 
-== Private mode
+=== Private mode
 When BlueXP deploys Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud, deployment is in private mode. In private mode, a BlueXP Connector is installed on premises or in the cloud (in a secure region, sovereign cloud region, or commercial region) and has no connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that's available from the Connector, not from the SaaS layer.
 
 To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode[BlueXP private deployment mode^]. 
 
-== Deployment overview
-
-Getting started with Cloud Volumes ONTAP in AWS Top Secret Cloud includes a few steps.
-
-. <<Prepare your AWS environment,Preparing your AWS environment>>
-+
-This includes setting up networking, subscribing to Cloud Volumes ONTAP, setting up permissions, and optionally setting up the AWS KMS.
-
-. <<Install the Connector and set up BlueXP,Installing the Connector and setting up BlueXP>>
-+
-Before you can start using BlueXP to deploy Cloud Volumes ONTAP, you'll need to create a _Connector_. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP).
-+
-You'll log in to BlueXP from the software that gets installed on the Connector instance.
-
-. <<Launch Cloud Volumes ONTAP from BlueXP,Launching Cloud Volumes ONTAP from BlueXP>>
-
-Each of these steps are described below.
-
-== Step 1: Prepare your AWS environment
-
-Your AWS environment must meet a few requirements.
-
-=== Set up your networking
-
+== Step 1: Set up your networking
 Set up your AWS networking so Cloud Volumes ONTAP can operate properly.
 
 .Steps
@@ -64,8 +44,7 @@ Set up your AWS networking so Cloud Volumes ONTAP can operate properly.
 +
 A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage.
 
-=== Subscribe to Cloud Volumes ONTAP
-
+== Step 2: Subscribe to Cloud Volumes ONTAP
 A Marketplace subscription is required to deploy Cloud Volumes ONTAP from BlueXP.
 
 .Steps
@@ -80,8 +59,7 @@ A Marketplace subscription is required to deploy Cloud Volumes ONTAP from BlueXP
 +
 You must use BlueXP to launch Cloud Volumes ONTAP instances. You must not launch Cloud Volumes ONTAP instances from the EC2 console.
 
-=== Set up permissions
-
+== Step 3: Set up permissions
 Set up IAM policies and roles that provide the Connector and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Top Secret Cloud.
 
 You need an IAM policy and IAM role for each of the following:
@@ -430,8 +408,7 @@ You must select the Connector IAM role when you launch the Connector instance.
 +
 You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
 
-=== Set up the AWS KMS
-
+== Step 4: Set up the AWS KMS
 If you want to use Amazon encryption with Cloud Volumes ONTAP, ensure that requirements are met for the AWS Key Management Service.
 
 .Steps
@@ -448,9 +425,8 @@ You'll need to provide the ARN to BlueXP when you create the Cloud Volumes ONTAP
 +
 This gives BlueXP permissions to use the CMK with Cloud Volumes ONTAP.
 
-== Step 2: Install the Connector and set up BlueXP
-
-Before you can launch Cloud Volumes ONTAP systems in AWS, you must first launch the Connector instance from the AWS Marketplace and then log in, set up BlueXP, and install a certificate for private mode.
+== Step 5: Install the Connector and set up BlueXP
+Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must create a _Connector_. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP). After you install the Connector, you must launch the Connector instance from the AWS Marketplace and then log in and set up BlueXP. 
 
 .Steps
 
@@ -495,8 +471,8 @@ This user account runs locally on the system. There's no connection to the auth0
 
 . After the Connector restarts, log in using the administrator user account that you created in the Setup wizard.
 
-=== Install a private mode certificate
-To complete Connector installation and BlueXP setup, you need to manually install a private mode certificate using Docker.
+== Step 6: Install a private mode certificate
+This section provides the steps for installing a private mode certificate.
 
 .Steps
 . List existing installed certificates. 
@@ -574,8 +550,7 @@ docker restart <docker-id>
 ----
   
 
-== Step 3: Launch Cloud Volumes ONTAP from BlueXP
-
+== Step 7: Launch Cloud Volumes ONTAP from BlueXP
 You can launch Cloud Volumes ONTAP instances in the AWS Top Secret Cloud by creating new working environments in BlueXP.
 
 .Before you begin
@@ -622,171 +597,3 @@ NOTE: If you need a different size later, you can use the Advanced allocation op
 .Result
 
 BlueXP launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.
-
-=== Security group for the Connector
-
-The security group for the Connector requires both inbound and outbound rules.
-
-==== Inbound rules
-
-[cols="10,10,80",width=100%,options="header"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| SSH | 22 | Provides SSH access to the Connector host
-| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
-| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
-
-|===
-
-==== Outbound rules
-
-The predefined security group for the Connector includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All TCP | All | All outbound traffic
-| All UDP | All |	All outbound traffic
-
-|===
-
-=== Security group for Cloud Volumes ONTAP
-
-The security group for Cloud Volumes ONTAP nodes requires both inbound and outbound rules.
-
-==== Inbound rules
-
-When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
-
-* *Selected VPC only*: the source for inbound traffic is the subnet range of the VPC for the Cloud Volumes ONTAP system and the subnet range of the VPC where the Connector resides. This is the recommended option.
-
-* *All VPCs*: the source for inbound traffic is the 0.0.0.0/0 IP range.
-
-[cols="10,10,80",width=100%,options="header"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All ICMP | All | Pinging the instance
-| HTTP | 80 |	HTTP access to the System Manager web console using the IP address of the cluster management LIF
-| HTTPS |	443 |	HTTPS access to the System Manager web console using the IP address of the cluster management LIF
-| SSH |	22 | SSH access to the IP address of the cluster management LIF or a node management LIF
-| TCP |	111 |	Remote procedure call for NFS
-| TCP |	139 | NetBIOS service session for CIFS
-| TCP |	161-162 |	Simple network management protocol
-| TCP |	445 |	Microsoft SMB/CIFS over TCP with NetBIOS framing
-| TCP |	635 |	NFS mount
-| TCP |	749 |	Kerberos
-| TCP |	2049 |	NFS server daemon
-| TCP |	3260 |	iSCSI access through the iSCSI data LIF
-| TCP |	4045 |	NFS lock daemon
-| TCP | 4046 | Network status monitor for NFS
-| TCP |	10000 |	Backup using NDMP
-| TCP |	11104 |	Management of intercluster communication sessions for SnapMirror
-| TCP | 11105 | SnapMirror data transfer using intercluster LIFs
-| UDP |	111 | Remote procedure call for NFS
-| UDP |	161-162 |	Simple network management protocol
-| UDP |	635 |	NFS mount
-| UDP |	2049 | NFS server daemon
-| UDP |	4045 | NFS lock daemon
-| UDP | 4046 | Network status monitor for NFS
-| UDP | 4049 | NFS rquotad protocol
-
-|===
-
-==== Outbound rules
-
-The predefined security group for Cloud Volumes ONTAP includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All ICMP |	All |	All outbound traffic
-| All TCP |	All |	All outbound traffic
-| All UDP |	All |	All outbound traffic
-
-|===
-
-=== External security group for the HA mediator
-
-The predefined external security group for the Cloud Volumes ONTAP HA mediator includes the following inbound and outbound rules.
-
-==== Inbound rules
-
-The source for inbound rules is traffic from the VPC where the Connector resides.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| SSH |	22 | SSH connections to the HA mediator
-| TCP |	3000 | RESTful API access from the Connector
-
-|===
-
-==== Outbound rules
-
-The predefined security group for the HA mediator includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All TCP |	All |	All outbound traffic
-| All UDP |	All |	All outbound traffic
-
-|===
-
-=== Internal security group for the HA mediator
-
-The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. BlueXP always creates this security group. You don't have the option to use your own.
-
-==== Inbound rules
-
-The predefined security group includes the following inbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All traffic | All | Communication between the HA mediator and HA nodes
-
-|===
-
-==== Outbound rules
-
-The predefined security group includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All traffic |	All |	Communication between the HA mediator and HA nodes
-
-|===
