@@ -160,7 +160,7 @@ You need an IAM policy and IAM role for each of the following:
                 "s3:ListBucketVersions"
             ],
             "Resource": [
-                "arn:aws-iso:s3:::fabric-pool*"
+                "arn:aws-iso-b:s3:::fabric-pool*"
             ]
         },
         {
@@ -178,7 +178,7 @@ You need an IAM policy and IAM role for each of the following:
                 }
             },
             "Resource": [
-                "arn:aws-iso:ec2:*:*:instance/*"
+                "arn:aws-iso-b:ec2:*:*:instance/*"
             ]
         },
         {
@@ -188,7 +188,7 @@ You need an IAM policy and IAM role for each of the following:
                 "ec2:DetachVolume"
             ],
             "Resource": [
-                "arn:aws-iso:ec2:*:*:volume/*"
+                "arn:aws-iso-b:ec2:*:*:volume/*"
             ]
         }
     ]
@@ -278,7 +278,7 @@ You need an IAM policy and IAM role for each of the following:
                 "s3:ListBucketVersions"
             ],
             "Resource": [
-                "arn:aws-iso-b:s3:::fabric-pool*"
+                "arn:aws-iso:s3:::fabric-pool*"
             ]
         },
         {
@@ -296,7 +296,7 @@ You need an IAM policy and IAM role for each of the following:
                 }
             },
             "Resource": [
-                "arn:aws-iso-b:ec2:*:*:instance/*"
+                "arn:aws-iso:ec2:*:*:instance/*"
             ]
         },
         {
@@ -306,7 +306,7 @@ You need an IAM policy and IAM role for each of the following:
                 "ec2:DetachVolume"
             ],
             "Resource": [
-                "arn:aws-iso-b:ec2:*:*:volume/*"
+                "arn:aws-iso:ec2:*:*:volume/*"
             ]
         }
     ]
@@ -321,34 +321,6 @@ You need an IAM policy and IAM role for each of the following:
 ====
 
 .Secret regions
---
-[source,json]
-{
-    "Version": "2012-10-17",
-    "Statement": [{
-        "Action": "s3:ListAllMyBuckets",
-        "Resource": "arn:aws-iso:s3:::*",
-        "Effect": "Allow"
-    }, {
-        "Action": [
-            "s3:ListBucket",
-            "s3:GetBucketLocation"
-        ],
-        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
-        "Effect": "Allow"
-    }, {
-        "Action": [
-            "s3:GetObject",
-            "s3:PutObject",
-            "s3:DeleteObject"
-        ],
-        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
-        "Effect": "Allow"
-    }]
-}
---
-
-.Top Secret regions
 --
 [source,json]
 {
@@ -371,6 +343,34 @@ You need an IAM policy and IAM role for each of the following:
             "s3:DeleteObject"
         ],
         "Resource": "arn:aws-iso-b:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }]
+}
+--
+
+.Top Secret regions
+--
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws-iso:s3:::*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+        ],
+        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
         "Effect": "Allow"
     }]
 }
@@ -426,7 +426,7 @@ You'll need to provide the ARN to BlueXP when you create the Cloud Volumes ONTAP
 This gives BlueXP permissions to use the CMK with Cloud Volumes ONTAP.
 
 == Step 5: Install the Connector and set up BlueXP
-Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must create a _Connector_. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP). After you install the Connector, you must launch the Connector instance from the AWS Marketplace and then log in and set up BlueXP. 
+Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must create and install a _Connector_. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP). After Connector creation and installation, you must launch the Connector instance from the AWS Marketplace and then log in and set up BlueXP. 
 
 .Steps
 
@@ -445,7 +445,7 @@ You'll need to upload the certificate during the setup process. BlueXP uses the 
 Note the following as you configure the instance:
 +
 * We recommend t3.xlarge.
-* You must choose the IAM role that you created when preparing your AWS environment.
+* You must choose the IAM role that you created when you set up permissions.
 * You should keep the default storage options.
 * The required connection methods for the Connector are as follows: SSH, HTTP, and HTTPS.
 
@@ -494,13 +494,12 @@ docker exec -it <docker-id> /bin/sh
 ----
 env
 ----
-.. To list all installed certificates in truststore, run the following command: 
+.. To list all installed certificates in truststore, run the following command and use the password collected in the previous step: 
 + 
 [source,CLI]
 ----
 keytool -list -v -keystore occm.truststore
 ----
-Use the password collected in the previous step. 
 
 . Add a certificate. 
 .. To collect occm container docker id (identified name “ds-occm-1”), run the following command: 
@@ -510,7 +509,6 @@ Use the password collected in the previous step.
 docker ps
 ----
 .. To get inside occm container, run the following command: 
-Save the new certificate file inside.
 + 
 [source,CLI]
 ----
@@ -523,13 +521,13 @@ Save the new certificate file inside.
 ----
 env
 ----
-.. To add the certificate to the truststore, run the following command: 
+.. To add the certificate to the truststore, run the following command and use the password from the previous step: 
 + 
 [source,CLI]
 ----
 keytool -import -alias <alias-name> -file <certificate-file-name> -keystore occm.truststore
 ----
-Use the password collected in the previous step. 
+
 .. To check that the certificate installed, run the following command: 
 +
 [source,CLI]
@@ -551,7 +549,7 @@ docker restart <docker-id>
   
 
 == Step 7: Launch Cloud Volumes ONTAP from BlueXP
-You can launch Cloud Volumes ONTAP instances in the AWS Top Secret Cloud by creating new working environments in BlueXP.
+You can launch Cloud Volumes ONTAP instances in AWS Secret Cloud and Top Secret Cloud by creating new working environments in BlueXP.
 
 .Before you begin
 
