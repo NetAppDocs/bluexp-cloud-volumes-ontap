@@ -15,20 +15,21 @@ summary: "Similar to a standard AWS region, you can use BlueXP in the AWS Commer
 [.lead]
 Similar to a standard AWS region, you can use BlueXP in link:https://aws.amazon.com/federal/secret-cloud/[AWS Secret Cloud^] and in link:https://aws.amazon.com/federal/top-secret-cloud/[AWS Top Secret Cloud^] to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS Secret Cloud and Top Secret Cloud are closed regions specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS Secret Cloud and Top Secret Cloud region users.
 
-== Before you begin
+.Before you begin
 Before you get started, review the supported versions in AWS Secret Cloud and Top Secret Cloud, and learn about private mode in BlueXP. 
 
-=== Supported versions in AWS Secret Cloud and Top Secret Cloud
+* Review the following supported versions in AWS Secret Cloud and Top Secret Cloud:
 
-* Cloud Volumes ONTAP 9.12.1 P1 is supported
+** Cloud Volumes ONTAP 9.12.1 P1
  
-* Version 3.9.32 of the Connector is supported
-+ 
+** Version 3.9.32 of the Connector
++
 The Connector is software that's required to deploy and manage Cloud Volumes ONTAP in AWS. You'll log in to BlueXP from the software that gets installed on the Connector instance. The SaaS website for BlueXP isn't supported in AWS Secret Cloud and Top Secret Cloud.
 
-=== Private mode
+* Learn about private mode
++
 When BlueXP deploys Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud, deployment is in private mode. In private mode, a BlueXP Connector is installed on premises or in the cloud (in a secure region, sovereign cloud region, or commercial region) and has no connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that's available from the Connector, not from the SaaS layer.
-
++
 To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode[BlueXP private deployment mode^]. 
 
 == Step 1: Set up your networking
