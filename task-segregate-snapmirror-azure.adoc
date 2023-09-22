@@ -31,13 +31,12 @@ The following diagram illustrates the segregation of SnapMirror replication traf
 image:diagram-snapmirror-segregation-azure-HA.png[Diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration]
 
 .Before you begin
-Review the following considerations before you begin: 
 
-* The new SnapMirror subnet must be non-routable to the existing data subnet. This can be achieved by configuring network security group rules. 
-* You can only add a single NIC to a VM for SnapMirror traffic segregation.
-* To add a new NIC, the storage VM (SVM) instance type you deploy must have an unused NIC.
-* The source and destination clusters must be in the same VNET (Virtual Network) but not in the same subnet. 
-
+* Review the following considerations: 
+** You can only add a single NIC to a VM for SnapMirror traffic segregation.
+** To add a new NIC, the storage VM (SVM) instance type you deploy must have an unused NIC.
+** The source and destination clusters must be in the same VNET (Virtual Network) but not in the same subnet. 
+* Configure link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[network security group rules^] so that the new SnapMirror subnet is non-routable to the existing data subnet. 
 
 == Step 1: Create an additional NIC and attach to the destination VM
 This section provides instructions for how to create an additional NIC and attach it to the destination VM. 
@@ -262,7 +261,7 @@ dest::> snapmirror initialize -destination-path  <dest_svm:new_dest_vol>
 == Validate the SnapMirror relationship is healthy
 In the ONTAP CLI, run the following commands to validate the SnapMirror relationship is healthy. 
 
-* Run the following command to learn the health of the relationship. 
+* Run the following command to get the relationship status. 
 +
 [source,cli]
 ----
@@ -272,7 +271,7 @@ dest::>snapmirror show
 .Output
 The relationship status is `Snapmirrored` and the health of the relationship is `true`.
 
-* Run the following command to view the actions history and results for the SnapMirror relationship. 
+* Run the following command to view the actions history for the SnapMirror relationship. 
 +
 [source,cli]
 ----
