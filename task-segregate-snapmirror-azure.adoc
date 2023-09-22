@@ -13,9 +13,12 @@ summary: You can segregate SnapMirror replication traffic with a new NIC and Int
 :imagesdir: ./media/
 
 [.lead]
-In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically replicates between two routable subnets. With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic from your data traffic by adding a new network interface card (NIC), an associated intercluster LIF and a non-routable subnet. 
+With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic from your data traffic by adding a new network interface card (NIC), an associated intercluster LIF and a non-routable subnet. 
 
-== Segregation of SnapMirror replication traffic in single node and high-availability pair configurations
+== About SnapMirror traffic segregation in Azure
+In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically replicates between two routable subnets. When you segregate SnapMirror traffic, data traffic is separate from replication data by use of a non-routable subnet. 
+
+The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in single node and high-availability pair configurations.  
 
 .Figure 1
 The following diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration. 
@@ -27,17 +30,16 @@ The following diagram illustrates the segregation of SnapMirror replication traf
 
 image:diagram-snapmirror-segregation-azure-HA.png[Diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration]
 
-== Considerations
-This section provides considerations for segregating SnapMirror replication traffic. 
+.Before you begin
+Review the following considerations before you begin: 
 
 * The new SnapMirror subnet must be non-routable to the existing data subnet. This can be achieved by configuring network security group rules. 
 * You can only add a single NIC to a VM for SnapMirror traffic segregation.
 * To add a new NIC, the storage VM (SVM) instance type you deploy must have an unused NIC.
+* The source and destination clusters must be in the same VNET (Virtual Network) but not in the same subnet. 
 
-== Before you begin
-The source and destination clusters must be in the same VNET (Virtual Network) but not in the same subnet. 
 
-== Create an additional NIC and attach to the destination VM
+== Step 1: Create an additional NIC and attach to the destination VM
 This section provides instructions for how to create an additional NIC and attach it to the destination VM. 
 
 .Steps
@@ -109,7 +111,7 @@ az network nic list --resource-group azure-59806175-60147103-azure-rg --query "[
 
 For HA-pair deployments, repeat these steps for the partner node.
 
-== Create a separate IPSpace and broadcast domain for the new NIC
+== Step 2: Create a separate IPSpace and broadcast domain for the new NIC
 This section provides instructions for how to create a separate IPspace and broadcast domain for the new NIC. 
 
 A separate IPSpace for intercluster LIFs provides logical separation between networking functionality for replication between clusters. 
@@ -153,7 +155,7 @@ dest::>net int show
 
 For HA-pair deployments, repeat steps 2 and 3 for the partner node.
 
-== Verify cluster peering between the source and destination systems
+== Step 3: Verify cluster peering between the source and destination systems
 This section provides instructions for how to verify peering between the source and destination systems. 
 
 .Steps
@@ -173,7 +175,7 @@ src::> ping -lif <src_node-ic-lif> -vserver <src_svm> -destination <10.161.189.1
 
 For HA-pair deployments, repeat the steps for the partner node.
 
-== Create SVM peering between the source and destination system
+== Step 4: Create SVM peering between the source and destination system
 This section provides instructions for how to create SVM peering between the source and destination system. 
 
 .Steps
@@ -228,7 +230,7 @@ dest::> vserver peer show
 .Output
 Peer state shows *`peered`* and peering applications shows *`snapmirror`*. 
 
-== Create a SnapMirror replication relationship between the source and destination system
+== Step 5: Create a SnapMirror replication relationship between the source and destination system
 This section provides instructions for how to create a SnapMirror replication relationship between the source and destination system. 
 
 .Steps
@@ -238,7 +240,7 @@ This section provides instructions for how to create a SnapMirror replication re
 ----
 dest::> vol create -volume <new_dest_vol> -vserver <dest_svm> -type DP -size <10GB> -aggregate <aggr1>
 ----
-. Optional: Add an export policy rule to the volume if you want to mount the volume. This step is required for disaster recovery. *(Rachel-Is this last sentence helpful? Does it need tweaking? If we mention this, should we also refer customers to some other information about disaster recovery?)* 
+. Optional: Add an export policy rule to the volume if you want to mount the volume. This step is required for disaster recovery. 
 +
 [source,cli]
 ----
@@ -270,11 +272,11 @@ dest::>snapmirror show
 .Output
 The relationship status is `Snapmirrored` and the health of the relationship is `true`.
 
-* Run the following command to view the history of actions and results for the SnapMirror relationship. 
+* Run the following command to view the actions history and results for the SnapMirror relationship. 
 +
 [source,cli]
 ----
 dest::>snapmirror show-history
 ----
 
-Optionally, you can mount the source and destination volumes using "vol mount", write a file to the source, and verify the volume is replicating to the destination. *(Rachel: Are there commands or specific instructions for how to do this? If you want to include these steps, where would they go?)*
+Optionally, you can mount the source and destination volumes, write a file to the source, and verify the volume is replicating to the destination. 
