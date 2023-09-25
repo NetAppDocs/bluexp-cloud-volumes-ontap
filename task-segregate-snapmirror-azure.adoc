@@ -264,7 +264,7 @@ dest::> snapmirror show
 +
 The relationship status is `Snapmirrored` and the health of the relationship is `true`.
 
-. Optionally, in the ONTAP CLI, run the following command to view the actions history for the SnapMirror relationship. 
+. Optional: In the ONTAP CLI, run the following command to view the actions history for the SnapMirror relationship. 
 +
 [source,cli]
 ----
