@@ -63,6 +63,13 @@ The following sample image shows the route table for VPC 1. It includes a route 
 +
 image:screenshot_transit_gateway3.png["A screenshot of the AWS console that shows the route table for VPC 1. It includes a route to the floating IP addresses and to VPC 2, which is where a client resides."]
 
+. Update the security groups settings to All traffic for the VPC.   
+.. Under the Route table for the VPC subnet, select the target environment for the desired VPC IP address.    
+.. Click the *Security groups hyperlink* and edit the inbound rules. 
+.. Click *Add rule*.
+.. Under Type, select *All traffic*, and then select the VPC IP address. 
+.. Click *Save Rules* to apply the changes.   
+
 . Mount volumes to clients using the floating IP address.
 +
 You can find the correct IP address in BlueXP through the *Mount Command* option under the Manage Volumes panel in BlueXP.
