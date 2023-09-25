@@ -65,8 +65,8 @@ image:screenshot_transit_gateway3.png["A screenshot of the AWS console that show
 
 . Update the security groups settings to All traffic for the VPC.   
 .. Under the Route table for the VPC subnet, select the target environment for the desired VPC IP address.    
-.. Click the *Security groups hyperlink* and edit the inbound rules. 
-.. Click *Add rule*.
+.. Click the *Security groups hyperlink* to edit the inbound rules. 
+.. For inbound rules, click *Add rule*.
 .. Under Type, select *All traffic*, and then select the VPC IP address. 
 .. Click *Save Rules* to apply the changes.   
 
