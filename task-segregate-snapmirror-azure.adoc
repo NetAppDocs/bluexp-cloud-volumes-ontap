@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-segregate-snapmirror-azure.html
 keywords: segregate, SnapMirror, SnapMirror traffic, SnapMirror replication, add, additional NIC, new NIC, intercluster LIF, non-routable subnet, subnet
-summary: You can segregate SnapMirror replication traffic with a new NIC and Intercluster LIF in a non-routable subnet. 
+summary: With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic using a different network to enhance the security and performance of the data.
 ---
 
 = Segregate SnapMirror traffic in Azure
@@ -13,33 +13,33 @@ summary: You can segregate SnapMirror replication traffic with a new NIC and Int
 :imagesdir: ./media/
 
 [.lead]
-With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic from your data traffic by adding a new network interface card (NIC), an associated intercluster LIF and a non-routable subnet. 
+With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traffic using a different network to enhance the security and performance of the data. To segregate SnapMirror replication traffic from your data traffic, you'll add a new network interface card (NIC), an associated intercluster LIF and a non-routable subnet. 
 
 == About SnapMirror traffic segregation in Azure
-In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically replicates between two routable subnets. When you segregate SnapMirror traffic, data traffic is separate from replication data by use of a non-routable subnet. 
+In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically replicates between two routable subnets. When you segregate SnapMirror traffic, data traffic is separate from replication data with a non-routable subnet. 
 
-The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in single node and high-availability pair configurations.  
+//The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in single node and high-availability pair configurations.  
 
-.Figure 1
-The following diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration. 
+//.Figure 1
+//The following diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration. 
 
-image:diagram-snapmirror-segregation-azure-SN.png[Diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration]
+//image:diagram-snapmirror-segregation-azure-SN.png[Diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration]
 
-.Figure 2
-The following diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration. 
+//.Figure 2
+//The following diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration. 
 
-image:diagram-snapmirror-segregation-azure-HA.png[Diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration]
+//image:diagram-snapmirror-segregation-azure-HA.png[Diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration]
 
 .Before you begin
 
 * Review the following considerations: 
-** You can only add a single NIC to a VM for SnapMirror traffic segregation.
-** To add a new NIC, the storage VM (SVM) instance type you deploy must have an unused NIC.
-** The source and destination clusters must be in the same VNET (Virtual Network) but not in the same subnet. 
+** You can only add a single NIC to a storage VM (SVM) for SnapMirror traffic segregation.
+** To add a new NIC, the storage VM instance type you deploy must have an unused NIC. 
+** The source and destination clusters must be in the same Virtual Network (VNet) but not in the same subnet. 
 * Configure link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[network security group rules^] so that the new SnapMirror subnet is non-routable to the existing data subnet. 
 
-== Step 1: Create an additional NIC and attach to the destination VM
-This section provides instructions for how to create an additional NIC and attach it to the destination VM. 
+== Step 1: Create an additional NIC and attach to the destination SVM
+This section provides instructions for how to create an additional NIC and attach it to the destination SVM. 
 
 .Steps
 . In the ONTAP CLI, stop the node.
@@ -48,7 +48,7 @@ This section provides instructions for how to create an additional NIC and attac
 ----
 dest::> halt -node <dest_node-vm>
 ----
-. In the Azure portal, check that the VM (node) status is stopped. 
+. In the Azure portal, check that the SVM (node) status is stopped. 
 +
 [source,cli]
 ----
@@ -70,26 +70,26 @@ az vm deallocate --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
 
 . Configure network security group rules to make the two subnets (source cluster subnet and destination cluster subnet) non-routable to each other.  
-.. Create the new NIC on the destination VM. 
+.. Create the new NIC on the destination SVM. 
 +
 The _security group_ should be defined such that the destination cluster subnet is non-routable to the source cluster subnet.
  
-... Look up the subnet ID for the source cluster subnet. 
+.. Look up the subnet ID for the source cluster subnet. 
 +
 [source,cli]
 ----
 az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> --query id
 ----
-... Create the new NIC on the destination VM with the subnet ID for the source cluster subnet. Here you enter the name for the new NIC. 
+.. Create the new NIC on the destination SVM with the subnet ID for the source cluster subnet. Here you enter the name for the new NIC. 
 +
 [source,cli]
 ----
 az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_from_prev_command> --accelerated-networking true
 ----
-+
-NOTE: Save the privateIPAddress. This IP address, <new_added_nic_primary_addr>, is used to create an intercluster LIF in <<Create a separate IPSpace and broadcast domain for the new NIC>>.
 
-. Attach the new NIC to the VM.
+.. Save the privateIPAddress. This IP address, <new_added_nic_primary_addr>, is used to create an intercluster LIF in <<Step 2: Create a separate IPspace and broadcast domain for the new NIC>>.
+
+. Attach the new NIC to the SVM.
 +
 [source,cli]
 ----
@@ -108,51 +108,49 @@ az vm start --resource-group <dest_node-rg>  --name <dest_node-vm>
 az network nic list --resource-group azure-59806175-60147103-azure-rg --query "[].{NIC: name, VM: virtualMachine.id}"
 ----
 
-For HA-pair deployments, repeat these steps for the partner node.
+For HA-pair deployments, repeat the steps for the partner node.
 
-== Step 2: Create a separate IPSpace and broadcast domain for the new NIC
+== Step 2: Create a separate IPspace and broadcast domain for the new NIC
 This section provides instructions for how to create a separate IPspace and broadcast domain for the new NIC. 
 
-A separate IPSpace for intercluster LIFs provides logical separation between networking functionality for replication between clusters. 
+A separate IPspace for intercluster LIFs provides logical separation between networking functionality for replication between clusters. 
 
 Use the ONTAP CLI for the following steps.
 
 .Steps
-. Create an IPSpace and broadcast domain for the new NIC (nic-new), and also create an intercluster LIF with the new NIC (nic-new) on destination:
-
-.. Create the new IPSpace (new_ipspace).
+. Create the new IPspace (new_ipspace).
 +
 [source,cli]
 ----
 dest::> network ipspace create -ipspace <new_ipspace>
 ----
-.. Create a broadcast domain on the new IPSpace (new_ipspace) and add the nic-new port.
+. Create a broadcast domain on the new IPspace (new_ipspace) and add the nic-new port.
 +
 [source,cli]
 ----
 dest::> network port show
 ----
-.. For single node systems, the newly added port is _e0b_. For HA-pair deployments with managed disks, the newly added port is _e0d_. For HA-pair deployments with page blobs, the newly added port is _e0e_. Use the node name not the VM name. Find the node name by running `node show`.  
+. For single node systems, the newly added port is _e0b_. For HA-pair deployments with managed disks, the newly added port is _e0d_. For HA-pair deployments with page blobs, the newly added port is _e0e_. Use the node name not the VM name. Find the node name by running `node show`.  
 +
 [source,cli]
 ----
 dest::> broadcast-domain create -broadcast-domain <new_bd> -mtu 1500 -ipspace <new_ipspace> -ports <dest_node-cot-vm:e0b>
 ----
-.. Create an intercluster LIF on the new broadcast-domain (new_bd) and on the new NIC (nic-new).
+. Create an intercluster LIF on the new broadcast-domain (new_bd) and on the new NIC (nic-new).
 +
 [source,cli]
 ----
 dest::> net int create -vserver <new_ipspace> -lif <new_dest_node-ic-lif> -service-policy default-intercluster -address <new_added_nic_primary_addr> -home-port <e0b> -home-node <node> -netmask <new_netmask_ip> -broadcast-domain <new_bd>
 ----
 
-.. Verify creation of the new intercluster LIF.
+. Verify creation of the new intercluster LIF.
 +
 [source,cli]
 ----
-dest::>net int show
+dest::> net int show
 ----
 
-For HA-pair deployments, repeat steps 2 and 3 for the partner node.
+For HA-pair deployments, repeat the steps for the partner node.
 
 == Step 3: Verify cluster peering between the source and destination systems
 This section provides instructions for how to verify peering between the source and destination systems. 
@@ -204,7 +202,6 @@ src::> cluster peer create -peer-addrs <10.161.189.18>
 src::> cluster peer show 
 ----
 +
-.Output
 Successful peering shows *Available* in the availability field. 
 
 . Create SVM peering on the destination. Both source and destination SVMs should be data SVMs.  
@@ -258,24 +255,20 @@ dest::> snapmirror create -source-path src_svm:src_vol  -destination-path  dest_
 dest::> snapmirror initialize -destination-path  <dest_svm:new_dest_vol>
 ----
 
-== Validate the SnapMirror relationship is healthy
-In the ONTAP CLI, run the following commands to validate the SnapMirror relationship is healthy. 
-
-* Run the following command to get the relationship status. 
+. In the ONTAP CLI, validate the SnapMirror relationship status by running the following command:
 +
 [source,cli]
 ----
-dest::>snapmirror show
+dest::> snapmirror show
 ----
 +
-.Output
 The relationship status is `Snapmirrored` and the health of the relationship is `true`.
 
-* Run the following command to view the actions history for the SnapMirror relationship. 
+. Optionally, in the ONTAP CLI, run the following command to view the actions history for the SnapMirror relationship. 
 +
 [source,cli]
 ----
-dest::>snapmirror show-history
+dest::> snapmirror show-history
 ----
 
 Optionally, you can mount the source and destination volumes, write a file to the source, and verify the volume is replicating to the destination. 
