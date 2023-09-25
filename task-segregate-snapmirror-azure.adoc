@@ -36,7 +36,6 @@ In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically r
 ** You can only add a single NIC to a storage VM (SVM) for SnapMirror traffic segregation.
 ** To add a new NIC, the storage VM instance type you deploy must have an unused NIC. 
 ** The source and destination clusters must be in the same Virtual Network (VNet) but not in the same subnet. 
-* Configure link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[network security group rules^] so that the new SnapMirror subnet is non-routable to the existing data subnet. 
 
 == Step 1: Create an additional NIC and attach to the destination SVM
 This section provides instructions for how to create an additional NIC and attach it to the destination SVM. 
