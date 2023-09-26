@@ -11,7 +11,7 @@ summary: Utilize AWS's key management service for your third-party key managemen
 :imagesdir: ../media/
 
 [.lead]
-You can use link:https://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS's Key Management Service (KMS)^] to protect your ONTAP encryption keys in a Google Cloud Platform-deployed application.
+You can use link:https://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS's Key Management Service (KMS)^] to protect your ONTAP encryption keys in an AWS-deployed application.
 
 Key management with the AWS KMS can be enabled with the CLI or the ONTAP REST API.
 
