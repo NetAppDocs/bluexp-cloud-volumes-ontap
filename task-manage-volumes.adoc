@@ -220,11 +220,11 @@ For example, the advanced information should say something similar to the follow
 +
 You should choose volumes that are large enough to free space in the aggregate so that you avoid additional capacity issues in the future.
 +
-image:screenshot_aggr_volume_overview.png[Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box.]
+image::screenshot_aggr_volume_overview.png[width=500 Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box.]
 
 . If the system has not reached the disk limit, you should move the volumes to an existing aggregate or a new aggregate on the same system.
 +
-For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
+For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>. 
 
 . If the system has reached the disk limit, do any of the following:
 
@@ -232,11 +232,11 @@ For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggrega
 
 .. Rearrange volumes to free space on an aggregate.
 +
-For details, see link:task-manage-volumes.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
+For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
 
 .. Move two or more volumes to another system that has space.
 +
-For details, see link:task-manage-volumes.html#moving-volumes-to-another-system-to-avoid-capacity-issues[Moving volumes to another system to avoid capacity issues].
+For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
 
 === Move volumes to another system to avoid capacity issues
 
@@ -270,6 +270,8 @@ For information about configuring a destination volume for data access, see the 
 +
 For details, see link:task-manage-volumes.html#manage-volumes[Manage volumes].
 
+[[move-volumes-aggregate-capacity]]
+
 === Move volumes to another aggregate to avoid capacity issues
 
 You can move one or more volumes to another aggregate to avoid capacity issues.
@@ -292,7 +294,7 @@ Moving two or more volumes is necessary to avoid capacity issues; however, BlueX
 
 .. Under the aggregate tile, view the available capacity (provisioned size minus used aggregate capacity).
 +
-image:screenshot_aggr_capacity.png[Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box.]
+image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box.]
 
 . If needed, add disks to an existing aggregate:
 
@@ -302,7 +304,7 @@ image:screenshot_aggr_capacity.png[Screen shot: Shows the total aggregate capaci
 
 . If no aggregates have available capacity, create a new aggregate.
 +
-For details, see link:task-create-aggregates.html[Creating aggregates].
+For details, see link:task-create-aggregates.html[Creating aggregates^].
 
 . Use System Manager or the CLI to move the volumes to the aggregate.
 
@@ -328,7 +330,7 @@ An older naming scheme is used if data tiering was enabled on an aggregate in th
 
 You can view FlexGroup volumes created through CLI or System Manager directly through the Volumes tab within BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FleGroup volumes through a dedicated Volumes tile. Under the Volumes tile, you can identify each FlexGroup volume group through the icon’s hover text. Additionally, you can identify and sort FlexGroup volumes under the volumes list view through the Volume Style column. 
 
-image:screenshot_show_flexgroup_vol.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
+image::screenshot_show_flexgroup_vol.png[width=500 A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 
 NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.  
 

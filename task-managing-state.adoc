@@ -37,7 +37,7 @@ Snapshots are automatically created only when performing a manual shutdown, as d
 
 . On the Overview tab, click the Features panel and then click the pencil icon next to *Scheduled Downtime*.
 +
-image:screenshot_schedule_downtime.png[Screen shot: Shows the icon that loads the automatic shutdown page.]
+image::screenshot_schedule_downtime.png[400,300 Screen shot: Shows the icon that loads the automatic shutdown page.]
 
 . Specify the shutdown schedule:
 

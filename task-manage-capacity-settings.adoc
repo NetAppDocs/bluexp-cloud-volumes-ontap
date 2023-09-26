@@ -25,7 +25,7 @@ Account Admin privileges are required to modify Connector settings.
 
 .	In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
 +
-image:screenshot_settings_connector_button.png[A screenshot of the Connector Settings option under teh Settings icon.]
+image::screenshot_settings_connector_button.png[width=400 A screenshot of the Connector Settings option under teh Settings icon.]
 
 .	Under *Capacity*, modify any of the following settings:
 +

@@ -69,7 +69,7 @@ The following table describes fields for which you might need guidance:
 
 | Working Environment Name | BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the Google Cloud VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Service Account Name | If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[BlueXP backup and recovery^] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account].
+| Service Account Name | If you plan to use link:concept-data-tiering.html[data tiering] or https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[BlueXP backup and recovery^] with Cloud Volumes ONTAP, then you need to enable *Service Account* and select a service account that has the predefined Storage Admin role. link:task-creating-gcp-service-account.html[Learn how to create a service account^].
 
 | Add Labels |	Labels are metadata for your Google Cloud resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and Google Cloud resources associated with the system.
 
@@ -115,14 +115,14 @@ The following table describes fields for which you might need guidance:
 * If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing firewall policy | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+| Use existing firewall policy | If you use an existing firewall policy, ensure that it includes the required rules. link: https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#firewall-rules[Learn about firewall rules for Cloud Volumes ONTAP^].
 
 |===
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-google.html[Learn how to set up licensing].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
+* link:task-set-up-licensing-google.html[Learn how to set up licensing^].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -138,17 +138,23 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in Google Cloud].
+For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
 
-. *Write Speed & WORM*: 
+. *Flash Cache, Write Speed & WORM*: 
+
+.. Enable *Flash Cache*, if desired.
++
+NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. You cannot disable Flash Cache after deployment. 
 .. Choose *Normal* or *High* write speed, if desired.
 +
 link:concept-write-speed.html[Learn more about write speed].
++
+NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
 . *Data Tiering in Google Cloud Platform*: Choose whether to enable data tiering on the initial aggregate, choose a storage class for the tiered data, and then either select a service account that has the predefined Storage Admin role (required for Cloud Volumes ONTAP 9.7 or later), or select a Google Cloud account (required for Cloud Volumes ONTAP 9.6).
@@ -160,11 +166,11 @@ Note the following:
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud console.
 +
-link:concept-data-tiering.html[Learn more about data tiering].
+link:concept-data-tiering.html[Learn more about data tiering^].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
-link:concept-client-protocols.html[Learn about supported client protocols and versions].
+link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -207,7 +213,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -290,11 +296,11 @@ TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP
 
 . *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zones.
 +
-link:concept-ha-google-cloud.html[Learn more about HA deployment models].
+link:concept-ha-google-cloud.html[Learn more about HA deployment models^].
 
 . *Connectivity*: Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.
 +
-link:reference-networking-gcp.html[Learn more about networking requirements].
+link:reference-networking-gcp.html[Learn more about networking requirements^].
 +
 The following table describes fields for which you might need guidance:
 +
@@ -308,14 +314,14 @@ The following table describes fields for which you might need guidance:
 * If you choose *Selected VPC only*, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.
 * If you choose *All VPCs*, the source filter for inbound traffic is the 0.0.0.0/0 IP range.
 
-| Use existing | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap[Learn about firewall rules for Cloud Volumes ONTAP].
+| Use existing | If you use an existing firewall policy, ensure that it includes the required rules. link:reference-networking-gcp.html#firewall-rules[Learn about firewall rules for Cloud Volumes ONTAP^].
 
 |===
 
 . *Charging Methods and NSS Account*: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.
 +
-* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP].
-* link:task-set-up-licensing-google.html[Learn how to set up licensing].
+* link:concept-licensing.html[Learn about licensing options for Cloud Volumes ONTAP^].
+* link:task-set-up-licensing-google.html[Learn how to set up licensing^].
 
 . *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -331,19 +337,22 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#sizing-your-system-in-gcp[Sizing your system in Google Cloud].
+For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
 
-. *Write Speed & WORM*: 
+. *Flash Cache, Write Speed & WORM*: 
+.. Enable *Flash Cache*, if desired.
++
+NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. You cannot disable Flash Cache after deployment. 
 .. Choose *Normal* or *High* write speed, if desired.
 +
-link:concept-write-speed.html[Learn more about write speed].
+link:concept-write-speed.html[Learn more about write speed^].
 +
-NOTE: _Flash Cache_, high write speed, and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. _Flash Cache_, high write speed, and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3].
+NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. High write speed and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
 +
-link:concept-worm.html[Learn more about WORM storage].
+link:concept-worm.html[Learn more about WORM storage^].
 .. If you activate WORM storage, select the retention period. 
 
 . *Data Tiering in Google Cloud*: Choose whether to enable data tiering on the initial aggregate, choose a storage class for the tiered data, and then select a service account that has the predefined Storage Admin role.
@@ -354,11 +363,11 @@ Note the following:
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud console.
 +
-link:concept-data-tiering.html[Learn more about data tiering].
+link:concept-data-tiering.html[Learn more about data tiering^].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
-link:concept-client-protocols.html[Learn about supported client protocols and versions].
+link:concept-client-protocols.html[Learn about supported client protocols and versions^].
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
@@ -401,7 +410,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It's
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept-data-tiering.html[Data tiering overview].
+For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 

@@ -4,12 +4,14 @@ permalink: task-aws-key-management.html
 keywords: aws, amazon, encryption, NVE, NetApp volume encryption, KMIP, kms, key manager service
 summary: Utilize AWS's key management service for your third-party key management service.
 ---
+
 = Manage keys with AWS Key Management Service
 :icons: font
 :hardbreaks:
 :imagesdir: ../media/
 
-You can use link:https://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS's Key Management Service (KMS)^] to protect your ONTAP encryption keys in a Google Cloud Platform-deployed application.
+[.lead]
+You can use link:https://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS's Key Management Service (KMS)^] to protect your ONTAP encryption keys in an AWS-deployed application.
 
 Key management with the AWS KMS can be enabled with the CLI or the ONTAP REST API.
 
