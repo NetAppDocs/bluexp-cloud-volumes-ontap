@@ -35,11 +35,11 @@ In Cloud Volumes ONTAP deployments with SnapMirror replication, data typically r
 Review the following considerations: 
 
 * You can only add a single NIC to a storage VM (SVM) for SnapMirror traffic segregation.
-* To add a new NIC, the storage VM instance type you deploy must have an unused NIC. 
+* To add a new NIC, the VM instance type you deploy must have an unused NIC. 
 * The source and destination clusters must be in the same Virtual Network (VNet) but not in the same subnet. 
 
-== Step 1: Create an additional NIC and attach to the destination SVM
-This section provides instructions for how to create an additional NIC and attach it to the destination SVM. 
+== Step 1: Create an additional NIC and attach to the destination VM
+This section provides instructions for how to create an additional NIC and attach it to the destination VM. 
 
 .Steps
 . In the ONTAP CLI, stop the node.
@@ -48,7 +48,7 @@ This section provides instructions for how to create an additional NIC and attac
 ----
 dest::> halt -node <dest_node-vm>
 ----
-. In the Azure portal, check that the SVM (node) status is stopped. 
+. In the Azure portal, check that the VM (node) status is stopped. 
 +
 [source,cli]
 ----
@@ -69,10 +69,8 @@ az vm stop --resource-group <dest_node-rg> --name <dest_node-vm>
 az vm deallocate --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
 
-. Configure network security group rules to make the two subnets (source cluster subnet and destination cluster subnet) non-routable to each other.  
-.. Create the new NIC on the destination SVM. 
-+
-The _security group_ should be defined such that the destination cluster subnet is non-routable to the source cluster subnet.
+. Configure network security group rules to make the two subnets (source cluster subnet and destination cluster subnet) non-routable to each other. 
+.. Create the new NIC on the destination VM. 
  
 .. Look up the subnet ID for the source cluster subnet. 
 +
@@ -80,7 +78,7 @@ The _security group_ should be defined such that the destination cluster subnet 
 ----
 az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> --query id
 ----
-.. Create the new NIC on the destination SVM with the subnet ID for the source cluster subnet. Here you enter the name for the new NIC. 
+.. Create the new NIC on the destination VM with the subnet ID for the source cluster subnet. Here you enter the name for the new NIC. 
 +
 [source,cli]
 ----
@@ -89,7 +87,7 @@ az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_f
 
 .. Save the privateIPAddress. This IP address, <new_added_nic_primary_addr>, is used to create an intercluster LIF in <<Step 2: Create a separate IPspace and broadcast domain for the new NIC>>.
 
-. Attach the new NIC to the SVM.
+. Attach the new NIC to the VM.
 +
 [source,cli]
 ----
@@ -110,8 +108,7 @@ az network nic list --resource-group azure-59806175-60147103-azure-rg --query "[
 
 For HA-pair deployments, repeat the steps for the partner node.
 
-== Step 2: Create a separate IPspace and broadcast domain for the new NIC
-This section provides instructions for how to create a separate IPspace and broadcast domain for the new NIC. 
+== Step 2: Create a new IPspace, broadcast domain, and intercluster LIF for the new NIC
 
 A separate IPspace for intercluster LIFs provides logical separation between networking functionality for replication between clusters. 
 
