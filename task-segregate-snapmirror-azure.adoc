@@ -219,8 +219,7 @@ src::> vserver peer accept -vserver <src_svm> -peer-vserver <dest_svm>
 ----
 dest::> vserver peer show
 ----
-
-.Output
++
 Peer state shows *`peered`* and peering applications shows *`snapmirror`*. 
 
 == Step 5: Create a SnapMirror replication relationship between the source and destination system
@@ -233,12 +232,7 @@ This section provides instructions for how to create a SnapMirror replication re
 ----
 dest::> vol create -volume <new_dest_vol> -vserver <dest_svm> -type DP -size <10GB> -aggregate <aggr1>
 ----
-. Optional: Add an export policy rule to the volume if you want to mount the volume. This step is required for disaster recovery. 
-+
-[source,cli]
-----
-dest::> vserver export-policy rule create -clientmatch 0.0.0.0/0 -policyname default -vserver <dest_svm> -rwrule any -allow-dev true -superuser any -allow-suid true -rorule any``
-----
+
 . Create the SnapMirror replication relationship on the destination which includes the SnapMirror policy and schedule for the replication.
 +
 [source,cli]
