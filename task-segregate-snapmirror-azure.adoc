@@ -39,7 +39,7 @@ Review the following considerations:
 * The source and destination clusters must be in the same Virtual Network (VNet) but not in the same subnet. 
 
 == Step 1: Create an additional NIC and attach to the destination VM
-This section provides instructions for how to create an additional NIC and attach it to the destination VM. 
+This section provides instructions for how to create an additional NIC and attach it to the destination VM. The destination VM is the single node or HA-pair system in Cloud Volumes ONTAP in Azure where you want to set up your additional NIC.
 
 .Steps
 . In the ONTAP CLI, stop the node.
