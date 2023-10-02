@@ -79,7 +79,7 @@ az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> 
 az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_from_prev_command> --accelerated-networking true
 ----
 
-.. Save the privateIPAddress. This IP address, <new_added_nic_primary_addr>, is used to create an intercluster LIF in <<Step 2: Create a separate IPspace and broadcast domain for the new NIC>>.
+.. Save the privateIPAddress. This IP address, <new_added_nic_primary_addr>, is used to create an intercluster LIF in <<Step 2: Create a new IPspace, broadcast domain, intercluster LIF for the new NIC>>.
 
 . Attach the new NIC to the VM.
 +
