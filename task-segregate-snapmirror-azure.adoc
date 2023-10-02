@@ -19,7 +19,7 @@ With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traf
 By default, BlueXP configures all NICs and LIFs in a Cloud Volumes ONTAP deployment on the same subnet. In such configurations, SnapMirror replication traffic and data and management traffic use the same subnet. Segregating SnapMirror traffic leverages an additional subnet that isn't routable to the existing subnet used for data and management traffic.
 
 .Figure 1
-The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in single node.
+The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in a single node deployment. An HA pair deployment differs slightly. 
 
 image:diagram-snapmirror-segregation-azure-SN.png[Diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration]
 
@@ -172,7 +172,7 @@ Use the ONTAP CLI for the following steps.
 
 .Steps
 
-. Create cluster peering on the destination using the source intercluster LIF IP address as the `-peer-addrs`.
+. Create cluster peering on the destination using the source intercluster LIF IP address as the `-peer-addrs`. For HA pairs, list the source intercluster LIF IP address for both nodes as the `-peer-addrs`.
 +
 [source,cli]
 ----
@@ -181,7 +181,7 @@ dest::> cluster peer create -peer-addrs <10.161.189.6> -ipspace <new_ipspace>
 
 . Enter and confirm the passphrase. 
 
-. Create cluster peering on the source using the destination cluster LIF IP address as the `peer-addrs`. For systems with HA pairs, use <new_added_nic_primary_addr> for the `-peer-addrs`. 
+. Create cluster peering on the source using the destination cluster LIF IP address as the `peer-addrs`. For HA pairs, list the destination intercluster LIF IP address for both nodes as the `-peer-addrs`.
 +
 [source,cli]
 ----
