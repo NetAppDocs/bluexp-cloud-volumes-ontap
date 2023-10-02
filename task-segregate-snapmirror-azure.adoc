@@ -18,17 +18,11 @@ With Cloud Volumes ONTAP in Azure, you can segregate SnapMirror replication traf
 == About SnapMirror traffic segregation in Azure
 By default, BlueXP configures all NICs and LIFs in a Cloud Volumes ONTAP deployment on the same subnet. In such configurations, SnapMirror replication traffic and data and management traffic use the same subnet. Segregating SnapMirror traffic leverages an additional subnet that isn't routable to the existing subnet used for data and management traffic.
 
-The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in single node and high-availability pair configurations.  
-
 .Figure 1
-The following diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration. 
+The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in single node.
 
 image:diagram-snapmirror-segregation-azure-SN.png[Diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration]
 
-.Figure 2
-The following diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration. 
-
-image:diagram-snapmirror-segregation-azure-HA.png[Diagram illustrates the segregation of SnapMirror replication traffic in a high-availability pair configuration]
 
 .Before you begin
 
