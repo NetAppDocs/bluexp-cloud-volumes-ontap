@@ -21,7 +21,7 @@ By default, BlueXP configures all NICs and LIFs in a Cloud Volumes ONTAP deploym
 .Figure 1
 The following diagrams show the segregation of SnapMirror replication traffic with an additional NIC, an associated intercluster LIF and a non-routable subnet in a single node deployment. An HA pair deployment differs slightly. 
 
-image:diagram-snapmirror-segregation-azure-SN.png[Diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration]
+image:diagram-segregate-snapmirror-traffic-azure-sn.png[Diagram illustrates the segregation of SnapMirror replication traffic in a single node configuration]
 
 
 .Before you begin
