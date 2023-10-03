@@ -63,8 +63,9 @@ The following sample image shows the route table for VPC 1. It includes a route 
 +
 image:screenshot_transit_gateway3.png["A screenshot of the AWS console that shows the route table for VPC 1. It includes a route to the floating IP addresses and to VPC 2, which is where a client resides."]
 
-. Update the security groups settings to All traffic for the VPC.   
-.. Under the Route table for the VPC subnet, select the target environment for the desired VPC IP address.    
+. Update the security groups settings to All traffic for the VPC. 
+.. Under Virtual Private Cloud, click *Subnets*.  
+.. Click the *Route table* tab, select the desired environment for one of the floating IP addresses for an HA pair.    
 .. Click *Security groups*. 
 .. Select *Edit Inbound Rules*.
 .. Click *Add rule*.
