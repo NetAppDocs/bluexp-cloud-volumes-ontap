@@ -30,7 +30,7 @@ Review the following considerations:
 
 * You can only add a single NIC to a Cloud Volumes ONTAP single node or HA-pair deployment (VM instance) for SnapMirror traffic segregation.
 * To add a new NIC, the VM instance type you deploy must have an unused NIC. 
-* The source and destination clusters should have access to the same Virtual Network (VNet). 
+* The source and destination clusters should have access to the same Virtual Network (VNet). The destination cluster is a Cloud Volumes ONTAP system in Azure. The source cluster can be a Cloud Volumes ONTAP system in Azure or an ONTAP system.
 
 == Step 1: Create an additional NIC and attach to the destination VM
 This section provides instructions for how to create an additional NIC and attach it to the destination VM. The destination VM is the single node or HA-pair system in Cloud Volumes ONTAP in Azure where you want to set up your additional NIC.
