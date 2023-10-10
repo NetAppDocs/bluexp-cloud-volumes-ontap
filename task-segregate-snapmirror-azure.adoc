@@ -223,7 +223,7 @@ Peer state shows *`peered`* and peering applications shows *`snapmirror`*.
 == Step 5: Create a SnapMirror replication relationship between the source and destination system
 This section provides instructions for how to create a SnapMirror replication relationship between the source and destination system. 
 
-To move an existing SnapMirror replication relationship, you must first break the existing SnapMirror replication relationship before following the procedure to create a new SnapMirror replication relationship.
+To move an existing SnapMirror replication relationship, you must first break the existing SnapMirror replication relationship before you create a new SnapMirror replication relationship.
 
 Use the ONTAP CLI for the following steps.
 
