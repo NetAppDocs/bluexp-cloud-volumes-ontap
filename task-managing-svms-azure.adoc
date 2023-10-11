@@ -24,6 +24,8 @@ Multiple storage VMs are supported with specific Cloud Volumes ONTAP configurati
 
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
+NOTE: To perform additional NIC-related tasks, you can assign a network contributor role or custom role with appropriate permissions in Azure. For more information on these NIC-related permissions, see the https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface?tabs=azure-portal#permissions[Microsoft Azure documentation^].
+
 == Allocate IP addresses in Azure
 
 You need to allocate IP addresses in Azure before you create a storage VM and allocate LIFs.
