@@ -20,6 +20,22 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
+== 13 October 2023
+The following changes were introduced with the 3.9.34 release of the Connector.
+
+=== New regions supported for HA multiple availability zone deployments in Azure
+
+The following regions in Azure now support highly-available multiple availability zone deployments for Cloud Volumes ONTAP 9.14.0 and later:
+
+* Australia East
+* East Asia
+* France Central
+* North Europe
+* Qatar Central
+* Sweden Central
+* West Europe
+* West US 2
+
 == 6 October 2023
 The following changes were introduced with the 3.9.34 release of the Connector.
 
@@ -36,6 +52,7 @@ The L48s_v3 and L64s_v3 instance types are now supported with Cloud Volumes ONTA
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[View supported configurations for Cloud Volumes ONTAP in Azure]
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[View storage limits for Cloud Volumes ONTAP in Azure]
+//end::whats-new[]
 
 == 30 July 2023
 The following changes were introduced with the 3.9.32 release of the Connector.
@@ -63,7 +80,6 @@ Various improvements to the displayed information within the usage reports are n
 * Volume type “secondary” is now labeled “Secondary (DP)”. 
 
 For more information on usage reports, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html#download-usage-reports[Download usage reports^].
-//end::whats-new[]
 
 == 26 July 2023
 The following changes were introduced with the 3.9.31 release of the Connector.
