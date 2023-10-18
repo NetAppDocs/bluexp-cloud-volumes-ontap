@@ -98,7 +98,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
 * Includes unlimited volume backups using BlueXP backup and recovery, but only for Cloud Volumes ONTAP systems that use the Professional package.
 +
-NOTE: A PAY-AS-YOU-GO subscription is required, however no charges will be incurred for the backup and recovery service. 
+NOTE: A PAY-AS-YOU-GO subscription is required, however no charges will be incurred for the service. 
 * Add on any of NetApp's cloud data services at extra cost
 
 ==== Edge Cache
