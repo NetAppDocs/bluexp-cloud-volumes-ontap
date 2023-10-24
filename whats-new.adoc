@@ -36,6 +36,8 @@ The following regions in Azure now support highly-available multiple availabilit
 * West Europe
 * West US 2
 
+For a list of all regions that support multiple availability zones, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+
 == 6 October 2023
 The following changes were introduced with the 3.9.34 release of the Connector.
 
@@ -50,8 +52,8 @@ The following changes were introduced with the 3.9.33 release of the Connector.
 === Support for Lsv3-series VMs in Azure
 The L48s_v3 and L64s_v3 instance types are now supported with Cloud Volumes ONTAP in Azure for single node and high-availability pair deployments with shared managed disks in single and multiple availability zones, starting with the 9.13.1 release. These instance types support Flash Cache.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[View supported configurations for Cloud Volumes ONTAP in Azure]
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[View storage limits for Cloud Volumes ONTAP in Azure]
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[View supported configurations for Cloud Volumes ONTAP in Azure^]
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[View storage limits for Cloud Volumes ONTAP in Azure^]
 //end::whats-new[]
 
 == 30 July 2023
@@ -67,7 +69,7 @@ Flash Cache and high write speed can be enabled separately in Google Cloud for C
 
 You can use these features separately or together on both single node and high-availability pair deployments. 
 
-link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html[Launch Cloud Volumes ONTAP in Google Cloud]
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html[Launch Cloud Volumes ONTAP in Google Cloud^]
 
 === Usage reports enhancements 
 Various improvements to the displayed information within the usage reports are now available. The following are enhancements to the usage reports:
