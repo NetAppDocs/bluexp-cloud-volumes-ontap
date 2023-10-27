@@ -1,0 +1,39 @@
+---
+sidebar: sidebar
+permalink: reference-image-verification-links.html
+keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, reference, Python, OpenSSL, 
+summary: Reference links Azure image verification
+---
+
+= Where to find additional information about Azure image verification
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Check out the links below for additional information about Azure Image Verification. The links below take you to non-NetApp sites. 
+
+== References
+
+* https://pagefault.blog/2019/04/22/how-to-sign-and-verify-using-openssl/[Page Fault Blog: How to sign and verify using OpenSSL^]
+
+* https://docs.microsoft.com/en-us/azure/databox-online/azure-stack-edge-gpu-create-virtual-machine-marketplace-image[Use Azure Marketplace image to create VM image for your Azure Stack Edge Pro GPU | Microsoft Learn^]
+
+* https://docs.microsoft.com/en-us/azure/virtual-machines/scripts/copy-managed-disks-vhd-to-storage-account[Export/Copy a managed disk to a storage account using the Azure CLI  | Microsoft Learn^]
+
+* https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart[Azure Cloud Shell Quickstart - Bash | Microsoft Learn^]
+
+* https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[How to install the Azure CLI | Microsoft Learn^]
+
+* https://learn.microsoft.com/en-us/cli/azure/storage/blob/copy?view=azure-cli-latest#az-storage-blob-copy-start[az storage blob copy | Microsoft Learn^]
+
+* https://slproweb.com/products/Win32OpenSSL.html[Latest supported Visual C++ Redistributable downloads | Microsoft Learn^]
+
+* https://slproweb.com/products/Win32OpenSSL.html[Win32/Win64 OpenSSL Installer for Windows - Shining Light Productions (slproweb.com)^]
+
+* https://www.python.org/downloads/windows/[Python Releases for Windows | Python.org^]
+
+* https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli[Sign in with Azure CLI — Login and Authentication | Microsoft Learn^]
+ 
