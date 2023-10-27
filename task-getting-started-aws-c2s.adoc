@@ -32,6 +32,8 @@ When BlueXP deploys Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud
 +
 To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode[BlueXP private deployment mode^]. 
 
+* Note that only single node deployments are supported in AWS Secret Cloud and Top Secret Cloud. 
+
 == Step 1: Set up your networking
 Set up your AWS networking so Cloud Volumes ONTAP can operate properly.
 
@@ -67,7 +69,7 @@ You need an IAM policy and IAM role for each of the following:
 
 * The Connector instance
 * Cloud Volumes ONTAP instances
-* The Cloud Volumes ONTAP HA mediator instance (if you want to deploy HA pairs)
+//For HA pairs: * The Cloud Volumes ONTAP HA mediator instance (if you want to deploy HA pairs)
 
 .Steps
 
@@ -378,36 +380,38 @@ You need an IAM policy and IAM role for each of the following:
 --
 
 ====
-
-. If you plan to deploy a Cloud Volumes ONTAP HA pair, create a policy for the HA mediator.
 +
-[source,json]
-{
-	"Version": "2012-10-17",
-	"Statement": [{
-			"Effect": "Allow",
-			"Action": [
-				"ec2:AssignPrivateIpAddresses",
-				"ec2:CreateRoute",
-				"ec2:DeleteRoute",
-				"ec2:DescribeNetworkInterfaces",
-				"ec2:DescribeRouteTables",
-				"ec2:DescribeVpcs",
-				"ec2:ReplaceRoute",
-				"ec2:UnassignPrivateIpAddresses"
-			],
-			"Resource": "*"
-		}
-	]
-}
+//For HA pairs: . If you plan to deploy a Cloud Volumes ONTAP HA pair, create a policy for the HA mediator.
+//+
+//[source,json]
+//{
+//	"Version": "2012-10-17",
+//	"Statement": [{
+//			"Effect": "Allow",
+//			"Action": [
+//				"ec2:AssignPrivateIpAddresses",
+//				"ec2:CreateRoute",
+//				"ec2:DeleteRoute",
+//				"ec2:DescribeNetworkInterfaces",
+//				"ec2:DescribeRouteTables",
+//				"ec2:DescribeVpcs",
+//				"ec2:ReplaceRoute",
+//				"ec2:UnassignPrivateIpAddresses"
+//			],
+//			"Resource": "*"
+//		}
+//	]
+//}
 
 . Create IAM roles with the role type Amazon EC2 and attach the policies that you created in the previous steps.
 +
-Similar to the policies, you should have one IAM role for the Connector, one for the Cloud Volumes ONTAP nodes, and one for the HA mediator (if you want to deploy HA pairs).
+Similar to the policies, you should have one IAM role for the Connector and one for the Cloud Volumes ONTAP nodes.
+//For HA pairs: Similar to the policies, you should have one IAM role for the Connector, one for the Cloud Volumes ONTAP nodes, and one for the HA mediator (if you want to deploy HA pairs).
 +
 You must select the Connector IAM role when you launch the Connector instance.
 +
-You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
+You can select the IAM roles for Cloud Volumes ONTAP when you create a Cloud Volumes ONTAP working environment from BlueXP.
+//For HA pairs: You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
 
 == Step 4: Set up the AWS KMS
 If you want to use Amazon encryption with Cloud Volumes ONTAP, ensure that requirements are met for the AWS Key Management Service.
@@ -554,24 +558,24 @@ You can launch Cloud Volumes ONTAP instances in AWS Secret Cloud and Top Secret 
 
 .Before you begin
 
-* If you purchased a license from NetApp, you need to add it to the BlueXP digital wallet. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-node-based-licenses.html#add-unassigned-licenses[Learn how to add a license^].
+If you purchased a license from NetApp, you need to add it to the BlueXP digital wallet. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-node-based-licenses.html#add-unassigned-licenses[Learn how to add a license^].
 
-* A key pair is required to enable key-based SSH authentication to the HA mediator.
+//* A key pair is required to enable key-based SSH authentication to the HA mediator.
 
 .Steps
 
 . On the Working Environments page, click *Add Working Environment*.
 
-. Under Create, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
-
+. Under Create, select Cloud Volumes ONTAP.
+//Step 2 for HA: . Under Create, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
 . Complete the steps in the wizard to launch the Cloud Volumes ONTAP system.
-+
-Note the following as you complete the wizard:
-+
-* If you want to deploy Cloud Volumes ONTAP HA in multiple Availability Zones, deploy the configuration as follows because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
-** Node 1: Availability Zone A
-** Node 2: Availability Zone B
-** Mediator: Availability Zone A or B
+//+
+//Note the following as you complete the wizard:
+//+
+//* If you want to deploy Cloud Volumes ONTAP HA in multiple Availability Zones, deploy the configuration as follows because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
+//** Node 1: Availability Zone A
+//** Node 2: Availability Zone B
+//** Mediator: Availability Zone A or B
 
 * You should leave the default option to use a generated security group.
 +
