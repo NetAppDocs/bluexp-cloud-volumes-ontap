@@ -62,7 +62,7 @@ Any other systems that have less than 500 GiB of provisioned capacity stay on Fr
 Pay for provisioned capacity and I/O operations separately.
 
 * Cloud Volumes ONTAP single node or HA
-* Charging is based on FlexVolumes operations.
+* Charging is based on two cost components: storage and usage (I/O).
 +
 You will not be charged for I/O related to data replication (SnapMirror), backups (SnapVault), or NDMP.
 ifdef::azure[]
