@@ -85,7 +85,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[L
 +
 The following video shows how to associate a pay-as-you-go Marketplace subscription to your AWS credentials:
 +
-video::video_subscribing_aws.mp4[width=848, height=480]
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto, title="Subscribe to BlueXP from the AWS Marketplace"]
 +
 TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS Marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to the BlueXP website and complete the process.
 image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription page for BlueXP for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not."]
@@ -294,7 +294,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[L
 +
 The following video shows how to associate a pay-as-you-go Marketplace subscription to your AWS credentials:
 +
-video::video_subscribing_aws.mp4[width=848, height=480]
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto, title="Subscribe to BlueXP from the AWS Marketplace"]
 +
 TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS Marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to BlueXP website and complete the process.
 image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for BlueXP for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]

@@ -85,7 +85,7 @@ For information about tags, refer to https://azure.microsoft.com/documentation/a
 +
 The following video shows how to associate a Marketplace subscription to an Azure subscription:
 +
-video::video_subscribing_azure.mp4[width=848, height=480]
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP from the Azure Marketplace"]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
@@ -270,7 +270,7 @@ For information about tags, refer to https://azure.microsoft.com/documentation/a
 +
 The following video shows how to associate a Marketplace subscription to an Azure subscription:
 +
-video::video_subscribing_azure.mp4[width=848, height=480]
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP from the Azure Marketplace"]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
