@@ -13,4 +13,4 @@ summary: Manage your Keystone subscriptions from the BlueXP digital wallet by en
 :imagesdir: ./media/
 
 [.lead]
-include::https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/task-manage-capacity-licenses.adoc[lines=15..-1]
+include::https://raw.githubusercontent.com/NetAppDocs/bluexp-digital-wallet/main/task-manage-keystone.adoc[lines=15..-1]
