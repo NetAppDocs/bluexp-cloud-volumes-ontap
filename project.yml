@@ -120,7 +120,7 @@ sidebar:
           entries:
             - title: Manage capacity-based licenses
               url: /task-manage-capacity-licenses.html
-            - title: Manage Keystone Subscriptions
+            - title: Manage Keystone subscriptions
               url: /task-manage-keystone.html
             - title: Manage node-based licenses
               url: /task-manage-node-licenses.html
@@ -216,6 +216,8 @@ sidebar:
                   url: /task-enabling-private-link.html
                 - title: Move resource groups 
                   url: /task-moving-resource-groups-azure.html 
+                - title: Segregate SnapMirror traffic in Azure
+                  url: /task-segregate-snapmirror-azure.html  
             - title: Google Cloud administration
               flavor: gcp
               entries:
