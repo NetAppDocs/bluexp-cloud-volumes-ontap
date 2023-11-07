@@ -20,6 +20,14 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
+== 8 November 2023
+The following changes were introduced with the 3.9.35 release of the Connector.
+
+=== Tel Aviv region now supported in AWS
+The Tel Aviv region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^]. 
+
 == 1 November 2023
 The following changes were introduced with the 3.9.34 release of the Connector.
 
@@ -45,6 +53,7 @@ The following regions in Azure now support highly-available multiple availabilit
 * West US 2
 
 For a list of all regions that support multiple availability zones, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+//end::whats-new[]
 
 == 6 October 2023
 The following changes were introduced with the 3.9.34 release of the Connector.
