@@ -21,12 +21,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 8 November 2023
-The following changes were introduced with the 3.9.35 release of the Connector.
-
-=== Tel Aviv region now supported in AWS
-The Tel Aviv region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
-
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^]. 
+This release introduces the 3.9.35 release of the Connector.
 
 == 1 November 2023
 The following changes were introduced with the 3.9.34 release of the Connector.
