@@ -149,6 +149,7 @@ Before performing an upgrade, you must verify that your systems are ready and ma
 * <<Verify that automatic giveback is still enabled>>
 * <<Suspend SnapMirror transfers>>
 * <<Verify that aggregates are online>>
+* <<Verify that all LIFs are on home ports>>
 
 === Plan for downtime
 
@@ -207,6 +208,10 @@ image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field
 .. Click *Storage > Aggregates & Disks > Aggregates*.
 
 .. Select the aggregate, and then click *More Actions > Status > Online*.
+
+=== Verify that all LIFs are on home ports 
+
+Before you upgrade, all LIFs must be on home ports. Refer to ONTAP documentation to link:https://docs.netapp.com/us-en/ontap/upgrade/task_enabling_and_reverting_lifs_to_home_ports_preparing_the_ontap_software_for_the_update.html[verify that all LIFs are on home ports]. 
 
 == Upgrade Cloud Volumes ONTAP
 
