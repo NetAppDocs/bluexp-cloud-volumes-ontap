@@ -23,8 +23,8 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 10 November 2023
 The following change was introduced with the 3.9.35 release of the Connector.
 
-=== Germany region now supported in Google Cloud
-The Germany region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
+=== Berlin region now supported in Google Cloud
+The Berlin region is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
 
