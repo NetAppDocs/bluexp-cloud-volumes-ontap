@@ -36,12 +36,10 @@ After you create a Cloud Volumes ONTAP working environment that is configured to
 
 [cols="2a,2a,2a" options="header"]
 |===
-// header row
 | Cloud Volumes ONTAP configuration
 | System disks used for key encryption
 | Data disks used for key encryption
 
-// first body row
 | Single node
 | * Boot
 * Core
