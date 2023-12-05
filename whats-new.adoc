@@ -23,7 +23,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 5 December 2023
 The following changes were introduced with the 3.9.35 release of the Connector. 
 
-=== New regions supported in Azure
+=== New region support in Azure
 
 ==== Single availability zone region support
 The following regions now support highly-available single availability zone deployments in Azure for Cloud Volumes ONTAP 9.12.1 GA and later:
