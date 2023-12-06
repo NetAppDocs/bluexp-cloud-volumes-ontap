@@ -21,7 +21,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 5 December 2023
-The following changes were introduced with the 3.9.35 release of the Connector. 
+The following changes were introduced. 
 
 === New region support in Azure
 
