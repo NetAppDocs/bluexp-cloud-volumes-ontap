@@ -30,7 +30,7 @@ If you create a new version of your key, Cloud Volumes ONTAP automatically uses 
 
 === How data is encrypted
 
-From ONTAP 9.12.1, BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks not page blobs. Any new data disks also use the same disk encryption set. Lower versions will use Microsoft-managed key, instead of the customer-managed key.
+BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks not page blobs. Any new data disks also use the same disk encryption set. Lower versions will use Microsoft-managed key, instead of the customer-managed key.
 
 After you create a Cloud Volumes ONTAP working environment that is configured to use a customer-managed key, Cloud Volumes ONTAP data is encrypted as follows.
 
