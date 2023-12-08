@@ -17,9 +17,7 @@ Reduce your storage costs by enabling automated tiering of inactive data to low-
 
 image:diagram_data_tiering.png[This is a conceptual image that shows hot data going to EBS storage and inactive data going to S3 storage.]
 
-Data tiering is powered by FabricPool technology.
-
-NOTE: You don't need to install a feature license to enable data tiering (FabricPool).
+Data tiering is powered by FabricPool technology. Cloud Volumes ONTAP provides data tiering for all Cloud Volumes ONTAP clusters without an additional license. When you enable data tiering, data tiered to object storage incurs charges. Refer to your cloud provider's documentation for details about object storage costs.
 
 ifdef::aws[]
 == Data tiering in AWS

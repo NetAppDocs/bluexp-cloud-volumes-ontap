@@ -62,9 +62,9 @@ Any other systems that have less than 500 GiB of provisioned capacity stay on Fr
 Pay for provisioned capacity and I/O operations separately.
 
 * Cloud Volumes ONTAP single node or HA
-* Charging is based on two cost components: storage and usage (I/O)
+* Charging is based on two cost components: storage and usage (I/O).
 +
-You will not be charged for I/O related to data replication (SnapMirror) or NDMP.
+You will not be charged for I/O related to data replication (SnapMirror), backups (SnapVault), or NDMP.
 ifdef::azure[]
 * Available in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
 endif::azure[]
@@ -96,7 +96,9 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 * Provides licensing for any Cloud Volumes ONTAP configuration
 +
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
-* Includes unlimited volume backups using BlueXP backup and recovery, but only for Cloud Volumes ONTAP systems that use the Professional package
+* Includes unlimited volume backups using BlueXP backup and recovery, but only for Cloud Volumes ONTAP systems that use the Professional package.
++
+NOTE: A PAYGO subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, see https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
 * Add on any of NetApp's cloud data services at extra cost
 
 ==== Edge Cache
