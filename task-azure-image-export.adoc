@@ -27,7 +27,7 @@ NOTE: For more information on how to install Azure CLI, see https://learn.micros
 
 . From BlueXP, find the Cloud Volumes ONTAP software version when configuring your deployment.
 +
-image:screenshot_cvo_software_version.png[A screenshot showing the Cloud Volumes ONTAP software versions available when configuring a deployment in BlueXP.]
+image:screenshot_cvo_software_version.png[A screenshot showing Cloud Volumes ONTAP software versions available when configuring a deployment in BlueXP.]
 
 . From the Azure marketplace, verify the image is matches the Cloud Volumes ONTAP software version configured for your deployment.
 +
