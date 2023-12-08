@@ -13,7 +13,7 @@ summary: Understanding how to verify an exported VHD file signature through the 
 :imagesdir: ./media/
 
 [.lead]
-The Azure image verification process will generate a digest from the VHD file with the leading 1MB striped by using hash function. To match the signing procedure, SHA256 is used to hash. You need to remove the leading 1MB from the VHD file and then verify the remaining portion of the VHD file. 
+The Azure image verification process will generate a digest from the VHD file with the leading 1MB and ending 512B striped by using hash function. To match the signing procedure, SHA256 is used to hash. You need to remove the leading 1MB and final 512B from the VHD file and then verify the remaining portion of the VHD file. 
 
 == File signature verification workflow summary
 The following is an overview of the file signature verification workflow process.

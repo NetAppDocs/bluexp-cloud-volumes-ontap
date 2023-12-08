@@ -30,7 +30,7 @@ If tar.gz is the downloaded format, "tar -xzf”
 Certificate-AZURE_CVO_20230124-134845.pem: OK
 ----
 
-. Remove the leading 1MB(1048576 Bytes) of VHD file. 
+. Remove the leading 1MB(1048576 Bytes) and ending 512 Bytes of VHD file. 
 +
 If 'tail' is used, the option '-c +K' outputs bytes starting with the Kth bytes 
 of the specified file. Hence, 1048577 is passed to 'tail -c'. It takes around 13m 
@@ -38,6 +38,8 @@ for the tail command to complete on Mac OS.
 +
 ----
 % tail -c +1048577 ./devN_221119_0200.vhd > ./sign.tmp
+% head -c -512 ./sign.tmp.tail > sign.tmp
+% rm ./sign.tmp.tail
 ----
 
 . Use openssl to extract public key from certificate and verify the striped 
@@ -59,7 +61,7 @@ Verification Failure
 . Clean up the workspace.
 + 
 ----
-% rm ./9.130.20230209.vhd ./sign.tmp
+% rm ./9.110.20220302.vhd ./sign.tmp
 % rm *.sig *.pub *.pem
 ----
 

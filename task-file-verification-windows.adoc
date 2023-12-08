@@ -5,7 +5,7 @@ keywords: Azure, image, VHD, file signature verification, encryption, sha256, ON
 summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool on Windows
 ---
 
-= File signature verification on Windows 
+= File signature verification on Windows
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP I
 :imagesdir: ./media/
 
 [.lead]
-You can verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool. The digest file tool removes the leading 1MB from the VHD file and then verifies the remaining portion of the exported VHD file. 
+You can verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool. The digest file tool removes the leading 1MB ending 512 Bytes from the VHD file and then verifies the remaining portion of the exported VHD file. 
 
 NOTE: On Windows, a Python script is needed to verify the Azure image.  
  

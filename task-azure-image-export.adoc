@@ -13,7 +13,7 @@ summary: You can export ONTAP images from the Azure Marketplace to verify the si
 :imagesdir: ./media/
 
 [.lead]
-Once the VHD image is published to Azure cloud, the image is no longer managed by NetApp. Instead, the published image is placed on the Azure marketplace. Azure's alteration to the leading 1MB of the VHD occurs when the is staged and published on the Azure marketplace. To verify the signature of the VHD file, the running VHD image modified by Azure needs to be exported from the Azure marketplace first.
+Once the VHD image is published to Azure cloud, the image is no longer managed by NetApp. Instead, the published image is placed on the Azure marketplace. Azure's alteration to the leading 1MB and ending 512B of the VHD occurs when the is staged and published on the Azure marketplace. To verify the signature of the VHD file, the running VHD image modified by Azure needs to be exported from the Azure marketplace first.
 
 .What you'll need
 
@@ -48,45 +48,47 @@ For example, Cloud Volumes ONTAP softwre version 9.13.0, should be "9.130.202302
 ----
 #Azure Cloud Shell on Azure portal to get VHD image from Azure Marketplace
 a) List our marketplace images
-PS /home/user1> az vm image list --all --publisher netapp --offer offer-example-one --sku sku_example_for_one
+PS /home/cassiez> az vm image list --all --publisher netapp --offer netapp-ontap-cloud --sku ontap_cloud_pgo_sn
 ...
 {
 "architecture": "x64",
-"offer": "offer -example -one",
+"offer": "netapp-ontap-cloud",
 "publisher": "netapp",
-"sku": "sku_example_for_one",
-"urn": "netapp:offer-example-one:sku_example_for_one:9.130.20230209",
-"version": "9.130.20230209"
+"sku": "ontap_cloud_pgo_sn",
+"urn": "netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.110.20220302",
+"version": "9.110.20220302"
 },
 ...
  
 b) Create a new managed disk from the Marketplace image
-PS /home/user1> $urn = “netapp:offer-example-one:sku_example_for_one:9.130.20230209”
-PS /home/user1> $diskName = “9.130.20230209-managed-disk"
-PS /home/user1> $diskRG = “fnf1”
-PS /home/user1> az disk create -g $diskRG -n $diskName --image-reference $urn
-PS /home/user1> $sas = az disk grant-access --duration-in-seconds 36000 --access-level Read --name $diskName --resource-group $diskRG
-PS /home/user1> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
+PS /home/cassiez> $urn = “netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.110.20220302”
+PS /home/cassiez> $diskName = “9.110.20220302-managed-disk"
+PS /home/cassiez> $diskRG = “fnf1”
+PS /home/cassiez> az disk create -g $diskRG -n $diskName --image-reference $urn
+PS /home/cassiez> $sas = az disk grant-access --duration-in-seconds 36000 --access-level Read --name $diskName --resource-group $diskRG
+PS /home/cassiez> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
  
-c) Export a VHD from the managed disk to Azure Storage. 
-Create a container with proper access level. As an example, a container named ‘cname-example' with 'Container' access level is used here.
-Get storage account access key, on Azure portal, 'Storage Accounts'/'Account Name'/'Access Key'/'key1'/'key'/'show'/<copy>.
-PS /home/user1> $storageAccountName = “accountnameexample”
-PS /home/user1> $containerName = “cname-example”
-PS /home/user1> $storageAccountKey = "<replace with the above access key>"
-PS /home/user1> $destBlobName = “9.130.20230209.vhd”
-PS /home/user1> $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
-PS /home/user1> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestContainer $containerName -DestContext $destContext -DestBlob $destBlobName
-PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
+c) Export a VHD from the managed disk to Azure Storage
+Create a container with proper access level. As an example, a container named 'vi-images' with 'Container' access level is used here.
+Get storage account access key, on Azure portal, 'Storage Accounts'/'signimgsa'/'Access Key'/'key1'/'key'/'show'/<copy>.
+PS /home/cassiez> $storageAccountName = “signimgsa”
+PS /home/cassiez> $containerName = “vm-images”
+PS /home/cassiez> $storageAccountKey = "<replace with the above access key>"
+PS /home/cassiez> $destBlobName = “9.110.20220302.vhd”
+PS /home/cassiez> $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+PS /home/cassiez> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestContainer $containerName -DestContext $destContext -DestBlob $destBlobName
+PS /home/cassiez> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
  
-e) Download the generated image to your server, e.g., a Linux machine or a windows PC.
-On Linux, use "wget <URL of file:<storage_account _name>.blob.core.windows.net/<container_name>/<image_name>>".
+d) Download the generated image to your server, e.g., a SCS server or a windows PC.
+On Linux in OpenLab, use "wget <URL of file signimgsa/Containers/vm-images/9.110.20220302.vhd>".
 The URL is organized in a formatted way. For automation tasks, the following example could be used to derive the URL string. Otherwise, Azure CLI 'az' command could be issued to get the URL, which is not covered in this guide. URL Example:
-https:// accountnameexample.blob.core.windows.net/cname-example/9.130.20230209.vhd
+https://signimgsa2.blob.core.windows.net/vm-images/9.110.20220302.vhd
  
-Or, on windows, use Azure Storage Explorer to 'Attach to a resource' for fast download. Generate SAS of the image container: 'accountnameexample'/'cname-example', then feed the SAS to Azure Storage Explorer.
+Or, on windows, use Azure Storage Explorer to 'Attach to a resource' for fast download. Generate SAS of the image container: 'signimgsa'/'vm-images', then feed the SAS to Azure Storage Explorer.
  
-Or, on Mac, use “<curl -O <URL of file 9.130.20230209.vhd>”.
+Or, on Mac, mount your local user directory on your MAC so you can copy the exported VHD from the marketplace over and run openssl command against it from the cycl-server:
+command+k (on Finder) and use this mountpoint:  smb://vsvhdrdur01prd.corp.netapp.com
+login as "NETAPP\<sso>" and then enter password as a "Registered Guest"
  
 e) Clean up the managed disk
 az disk revoke-access --name $diskName --resource-group $diskRG
@@ -106,54 +108,54 @@ az disk delete --name $diskName --resource-group $diskRG --yes
 
 [source]
 ----
-  #Azure CLI on local Linux machine to get VHD image from Azure Marketplace
+#Azure CLI on local Linux machine to get VHD image from Azure Marketplace
 a) Login Azure CLI and list marketplace images
 % az login --use-device-code
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XXXXXXXXX to authenticate.
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code AQKKEXXXX to authenticate.
  
-% az vm image list --all --publisher netapp --offer offer-example-one --sku sku_example_for_one
+% az vm image list --all --publisher netapp --offer netapp-ontap-cloud --sku ontap_cloud_pgo_sn
 ...
 {
 "architecture": "x64",
-"offer": "offer-example-one",
+"offer": "netapp-ontap-cloud",
 "publisher": "netapp",
-"sku": "sku_example_for_one",
-"urn": "netapp:offer-example-one:sku_example_for_one:9.130.20230209",
-"version": "9.130.20230209"
+"sku": "ontap_cloud_pgo_sn",
+"urn": "netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.110.20220302",
+"version": "9.110.20220302"
 },
 ...
  
 b) Create a new managed disk from the Marketplace image
-% export urn="netapp:offer-example-one:sku_example_for_one:9.130.20230209"
-% export diskName="9.130.20230209-managed-disk"
+% export urn="netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.110.20220302"
+% export diskName="9.110.20220302-managed-disk"
 % export diskRG="new_rg_your_rg"
 % az disk create -g $diskRG -n $diskName --image-reference $urn
 % az disk grant-access --duration-in-seconds 36000 --access-level Read --name $diskName --resource-group $diskRG
 {
-  "accessSas": "https://md-xxxxxxxxxxxx.blob.core.windows.net/hash1/abcd?sv=2018-03-01&sr=b&si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&sigxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  "accessSas": "https://md-kvls5fhl1ttw.blob.core.windows.net/h2q5jbdgsm3d/abcd?sv=2018-03-28&sr=b&si=bcxxxxxx-xxxx-437f-b019-xxxx4d7cb6e2&sigxxxxxxxxxKMG1LUq3dN66WerixxxxxxxxTnOVSFykV64%3D"
 }
  
-% export diskAccessSAS="https://md-xxxxxxxxxxxx.blob.core.windows.net/hash1/abcd?sv=2018-03-01&sr=b&si= xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&sigxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "
+% export diskAccessSAS="https://md-kvls5fhl1ttw.blob.core.windows.net/h2q5jbdgsm3d/abcd?sv=2018-03-28&sr=b&si=bcxxxxxx-xxxx-437f-b019-xxxx4d7cb6e2&sigxxxxxxxxxxKMG1LUq3dN66WerixxxxxxxxTnOVSFykV64%3D"
 #To automate the process, the SAS needs to be extracted from the standard output. This is not included in this guide.
  
-c) Export a VHD from the managed disk to Azure Storage. 
-Create a container with proper access level. As an example, a container named 'cname-example' with 'Container' access level is used here.
-Get storage account access key, on Azure portal, 'Storage Accounts'/'Storage Account Name'/'Access Key'/'key1'/'key'/'show'/<copy>. There should be az command that can achieve the same, but this is not included in this guide.
-% export storageAccountName="accountnameexample"
-% export containerName="cname-example"
-% export storageAccountKey="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-% export destBlobName="9.130.20230209.vhd"
+c) export vhd from managed disk
+Create a container with proper access level. As an example, a container named 'vi-images' with 'Container' access level is used here.
+Get storage account access key, on Azure portal, 'Storage Accounts'/'signimgsa'/'Access Key'/'key1'/'key'/'show'/<copy>. There should be az command that can achieve the same, but this is not included in this guide.
+% export storageAccountName="signimgsa2"
+% export containerName="vm-images"
+% export storageAccountKey="Y37GuQoAcId9vZq5TpEuPWxxxxxxxxxxxxxgK0iLdSYMvnMeu+AStAsCn1A=="
+% export destBlobName="9.110.20220302.vhd"
  
 % az storage blob copy start --source-uri $diskAccessSAS --destination-container $containerName --account-name $storageAccountName --account-key $storageAccountKey --destination-blob $destBlobName
  
 {
-  "client_request_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-  "copy_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "client_request_id": "10xxxxxx-xxxx-xxxx-xxxx-0050xxxxxx7e",
+  "copy_id": "9af6xxxx-xxxx-xxxx-xxxx-xxxxxe9432f3",
   "copy_status": "pending",
   "date": "2022-11-02T22:02:38+00:00",
-  "etag": "\"0xXXXXXXXXXXXXXXX\"",
+  "etag": "\"0x8DXXXXXXXXXXXXX\"",
   "last_modified": "2022-11-02T22:02:39+00:00",
-  "request_id": "xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "request_id": "5533645c-xxxx-xxxx-xxxx-efc7a1000000",
   "version": "2020-06-12",
   "version_id": null
 }
@@ -165,23 +167,25 @@ Get storage account access key, on Azure portal, 'Storage Accounts'/'Storage Acc
     "copy": {
       "completionTime": null,
       "destinationSnapshot": null,
-      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "id": "9af6xxxx-xxxx-xxxx-xxxx-xxxxxe9432f3",
       "incrementalCopy": null,
       "progress": "10737418752/10737418752",
-      "source": "https://md-xxxxxxxxxxxx.blob.core.windows.net/hash1 /abcd?sv=2018-03-01&sr=b&si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "source": "https://md-kvls5fhl1ttw.blob.core.windows.net/h2q5jbdgsm3d/abcd?sv=2018-03-28&sr=b&si=bcxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxb6e2",
       "status": "success",
       "statusDescription": null
     },
 ....
  
-d) Download the generated image to your server, e.g., a Linux machine or a windows PC.
-On Linux in OpenLab, use "wget <URL of :<storage_account _name>.blob.core.windows.net/<container_name> /<image_name>>".
+d) Download the generated image to your server, e.g., a SCS server or a windows PC.
+On Linux in OpenLab, use "wget <URL of file signimgsa/Containers/vm-images/9.110.20220302.vhd>".
 The URL is organized in a formatted way. For automation tasks, the following example could be used to derive the URL string. Otherwise, Azure CLI 'az' command could be issued to get the URL, which is not covered in this guide. URL Example:
-https://accountnameexample.blob.core.windows.net/cname-example/9.130.20230209.vhd
+https://signimgsa2.blob.core.windows.net/vm-images/9.110.20220302.vhd
  
-Or, on windows, use Azure Storage Explorer to 'Attach to a resource' for fast download. Generate SAS of the image container: 'accountnameexample'/'cname-example', then feed the SAS to Azure Storage Explorer.
+Or, on windows, use Azure Storage Explorer to 'Attach to a resource' for fast download. Generate SAS of the image container: 'signimgsa'/'vm-images', then feed the SAS to Azure Storage Explorer.
  
-Or, on Mac, “<curl -O <URL of file 9.130.20230209.vhd>”.
+Or, on Mac, mount your local user directory on your MAC so you can copy the exported VHD from the marketplace over and run openssl command against it from the cycl-server:
+command+k (on Finder) and use this mountpoint:  smb://vsvhdrdur01prd.corp.netapp.com
+login as "NETAPP\<sso>" and then enter password as a "Registered Guest"
  
 e) Clean up the managed disk
 az disk revoke-access --name $diskName --resource-group $diskRG

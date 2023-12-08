@@ -30,10 +30,14 @@ If tar.gz is the downloaded format, use "tar -xzf".
 Certificate-AZURE_CVO_20230124-134845.pem: OK
 ----
 
-. Remove the leading 1MB (1048576 Bytes) of VHD file. If 'tail' is used, the option '-c +K' outputs bytes starting with the Kth bytes of the specified file. Hence, 1048577 is passed to 'tail -c'.
+. Remove the leading 1MB (1048576 Bytes) and ending 512 Bytes of VHD file.
++
+If 'tail' is used, the option '-c +K' outputs bytes starting with the Kth bytes of the specified file. Hence, 1048577 is passed to 'tail -c'.
 +
 ----
-% tail -c +1048577 ./9.130.20230209.vhd > ./sign.tmp
+% tail -c +1048577 ./9.110.20220302.vhd > ./sign.tmp.tail
+% head -c -512 ./sign.tmp.tail > sign.tmp
+% rm ./sign.tmp.tail
 ----
 
 . Use openssl to extract public key from certificate and verify the striped file(sign.tmp) with the signature file and public key. 
@@ -42,7 +46,7 @@ If the input file passes the verification, the command will display
 "Verification OK". Otherwise, "Verification Failure" will display.
 +
 ----
-% openssl x509 -pubkey -noout -in ./Code-Sign-Cert.pem > ./Code-Sign-Cert-Public-key.pub
+% openssl x509 -pubkey -noout -in ./Certificate-AZURE_CVO_20230124-134845.pem > ./Code-Sign-Cert-Public-key.pub
  
 % openssl dgst -verify Code-Sign-Cert-Public-key.pub -keyform PEM -sha256 -signature digest.sig -binary ./sign.tmp
 Verification OK
@@ -54,6 +58,6 @@ Verification Failure
 . Clean up the workspace.
 + 
 ----
-% rm ./9.130.20230209.vhd ./sign.tmp
+% rm ./9.110.20220302.vhd ./sign.tmp
 % rm *.sig *.pub *.pem
 ----
