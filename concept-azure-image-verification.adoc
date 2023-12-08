@@ -22,6 +22,6 @@ The leading 1MB(1048576 Bytes) of VHD file is modified by Azure. NetApp image si
 
 The leading 1MB and ending 512B of VHD file is non-executable, i.e. only metadata. No alternation to the VHD file will be made other than the leading 1MB and ending 512B now and in future
 
-image::screenshot_azure_VHD_10gb.png[width=500 A screenshot that shows Azure's alternation of 10GB VHD file.]
+image::screenshot_azure_VHD_10gb.png[A screenshot that shows Azure's alternation of 10GB VHD file.]
 
 As an example, the above diagram shows a VHD file sized 10GB. But the NetApp signed portion is marked in green with size of 10GB - 1MB.
