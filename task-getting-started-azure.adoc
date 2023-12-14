@@ -48,6 +48,6 @@ Click *Add Working Environment*, select the type of system that you would like t
 .Related links
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Creating a Connector from BlueXP^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure.html[Creating a Connector from the Azure Marketplace^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-marketplace.html[Creating a Connector from the Azure Marketplace^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Installing the Connector software on a Linux host^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[What BlueXP does with permissions^]
