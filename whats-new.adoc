@@ -29,7 +29,7 @@ Patch releases are available in BlueXP only for the latest three versions of Clo
 link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#patch-releases[Patch releases]
 
 === 300 TiB FlexVol volume max limit
-You can now create FlexVol volumes up to the maximum size of 300 TiB starting from Cloud Volumes ONTAP 9.12.1 P2 and 9.13.0 P2 in all cloud providers.
+You can now create a FlexVol volume up to the maximum size of 300 TiB with System Manager and the ONTAP CLI starting from Cloud Volumes ONTAP 9.12.1 P2 and 9.13.0 P2, and in BlueXP starting from Cloud Volumes ONTAP 9.13.1.
 
 * link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#file-and-volume-limits[Storage limits in AWS]
 * link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html#file-and-volume-limits[Storage limits in Azure]
