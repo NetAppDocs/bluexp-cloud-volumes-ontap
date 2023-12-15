@@ -21,7 +21,6 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == 10 January 2024
-The following changes were introduced with the 3.9.36 release of the Connector.
 
 === Patch releases in BlueXP
 Patch releases are available in BlueXP only for the latest three versions of Cloud Volumes ONTAP. 
