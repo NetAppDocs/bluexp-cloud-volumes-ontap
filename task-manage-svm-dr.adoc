@@ -6,7 +6,6 @@ summary: BlueXP doesn't provide any setup or orchestration support for storage V
 ---
 
 = Set up SVM disaster recovery
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
