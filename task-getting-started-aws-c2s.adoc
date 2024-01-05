@@ -28,7 +28,7 @@ The Connector is software that's required to deploy and manage Cloud Volumes ONT
 
 * Learn about private mode
 +
-When BlueXP deploys Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud, deployment is in private mode. In private mode, a BlueXP Connector is installed on premises or in the cloud (in a secure region, sovereign cloud region, or commercial region) and has no connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that's available from the Connector, not from the SaaS layer.
+In AWS Secret Cloud and Top Secret Cloud, BlueXP operates in _private mode_. In private mode, there is no connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that’s available from the Connector, not from the SaaS layer.
 +
 To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode[BlueXP private deployment mode^]. 
 
@@ -63,7 +63,7 @@ A Marketplace subscription is required to deploy Cloud Volumes ONTAP from BlueXP
 You must use BlueXP to launch Cloud Volumes ONTAP instances. You must not launch Cloud Volumes ONTAP instances from the EC2 console.
 
 == Step 3: Set up permissions
-Set up IAM policies and roles that provide the Connector and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Top Secret Cloud.
+Set up IAM policies and roles that provide the Connector and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Top Secret Cloud or in the AWS Secret Cloud.
 
 You need an IAM policy and IAM role for each of the following:
 
@@ -431,7 +431,7 @@ You'll need to provide the ARN to BlueXP when you create the Cloud Volumes ONTAP
 This gives BlueXP permissions to use the CMK with Cloud Volumes ONTAP.
 
 == Step 5: Install the Connector and set up BlueXP
-Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must create and install a _Connector_. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP). After Connector creation and installation, you must launch the Connector instance from the AWS Marketplace and then log in and set up BlueXP. 
+Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must install and set up the BlueXP Connector. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP). 
 
 .Steps
 
@@ -553,12 +553,37 @@ docker restart <docker-id>
 ----
   
 
-== Step 7: Launch Cloud Volumes ONTAP from BlueXP
+== Step 7: Add a license to the BlueXP digital wallet
+If you purchased a license from NetApp, you need to add it to the BlueXP digital wallet so that you can select the license when you create a new Cloud Volumes ONTAP system. The digital wallet identifies these licenses as unassigned.
+
+.Steps
+
+. From the BlueXP navigation menu, select *Governance > Digital wallet*.
+
+. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+
+. Click *Unassigned*.
+
+. Click *Add Unassigned Licenses*.
+
+. Enter the serial number of the license or upload the license file.
+
+. If you don't have the license file yet, you'll need to manually upload the license file from netapp.com.
+
+.. Go to the link:https://register.netapp.com/site/vsnr/register/getlicensefile[NetApp License File Generator^] and log in using your NetApp Support Site credentials.
+
+.. Enter your password, choose your product, enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
+
+.. Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
+
+. Click *Add License*.
+
+.Result
+
+BlueXP adds the license to the digital wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the BYOL tab in the digital wallet.
+
+== Step 8: Launch Cloud Volumes ONTAP from BlueXP
 You can launch Cloud Volumes ONTAP instances in AWS Secret Cloud and Top Secret Cloud by creating new working environments in BlueXP.
-
-.Before you begin
-
-If you purchased a license from NetApp, you need to add it to the BlueXP digital wallet. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-node-based-licenses.html#add-unassigned-licenses[Learn how to add a license^].
 
 //* A key pair is required to enable key-based SSH authentication to the HA mediator.
 
