@@ -16,6 +16,7 @@ summary: Ransomware attacks can cost a business time, resources, and reputation.
 Ransomware attacks can cost a business time, resources, and reputation. BlueXP enables you to implement two NetApp solutions for ransomware: Protection from common ransomware file extensions and Autonomous Ransomware Protection (ARP). These solutions provide effective tools for visibility, detection, and remediation.
 
 == Protection from common ransomware file extensions 
+
 Available through BlueXP, the Ransomware Protection setting allows you to utilize the ONTAP FPolicy functionality to guard against common ransomware file extension types.  
 
 .Steps
@@ -24,7 +25,7 @@ Available through BlueXP, the Ransomware Protection setting allows you to utiliz
 
 . On the Overview tab, click the Features panel and then click the pencil icon next to *Ransomware Protection*.
 +
-image::screenshot_features_ransomware.png[400,300 A screenshot that shows the Ransomware Protection setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
+image::screenshot_features_ransomware.png[A screenshot that shows the Ransomware Protection setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
 . Implement the NetApp solution for ransomware:
 
@@ -64,7 +65,7 @@ Configuration of ARP for volumes is performed through ONTAP System Manager and O
 
 For more information on how to enable ARP with ONTAP System Manager and CLI, see https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html[Enable Autonomous Ransomware Protection^]. 
 
-image::screenshot_arp.png[width=500 Screenshot shows the add-on license for Autonomous Ransomware Protection.]
+image::screenshot_arp.png[Screenshot shows the add-on license for Autonomous Ransomware Protection.]
 
 NOTE: Support is not available for the use of licensed features without a license. 
 

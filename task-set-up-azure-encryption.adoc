@@ -30,36 +30,45 @@ If you create a new version of your key, Cloud Volumes ONTAP automatically uses 
 
 === How data is encrypted
 
+BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks not page blobs. Any new data disks also use the same disk encryption set. Lower versions will use Microsoft-managed key, instead of the customer-managed key.
+
 After you create a Cloud Volumes ONTAP working environment that is configured to use a customer-managed key, Cloud Volumes ONTAP data is encrypted as follows.
 
-Azure HA multiple availability zone::
+[cols="2a,2a,2a" options="header"]
+|===
+| Cloud Volumes ONTAP configuration
+| System disks used for key encryption
+| Data disks used for key encryption
 
-* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.^1^ 
+| Single node
+| * Boot
+* Core
+* NVRAM
+| * Root
+* Data
 
-* For root, boot, NVRAM, core and data disks, BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks.
+| Azure HA single availability zone with page blobs
+| * Boot
+* Core
+* NVRAM
+| None
 
-* Any new data disks also use the same disk encryption set.
+| Azure HA single availability zone with shared managed disks
+| * Boot
+* Core
+* NVRAM
+| * Root
+* Data
 
-Azure HA single availability zone::
+| Azure HA multiple availability zones with shared managed disks
+| * Boot
+* Core
+* NVRAM
+| * Root
+* Data
+|===
 
-* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.^1^
-
-* Any new storage accounts (for example, when you add disks or aggregates) also use the same key.^1^
-
-* From ONTAP 9.10.1P3, For NVRAM and the core disk, BlueXP uses a https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption[disk encryption set^], which enables management of encryption keys with managed disks. Lower versions will use Microsoft-managed key, instead of the customer-managed key. 
-
-Single node::
-
-* All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key. ^1^
-
-* For root, boot, and data disks, BlueXP uses a https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption[disk encryption set^], which enables management of encryption keys with managed disks.
-
-* Any new data disks also use the same disk encryption set.
-
-* From ONTAP 9.9.1P7, for NVRAM and the core disk, BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks. Lower versions will use Microsoft-managed key, instead of the customer-managed key.
-
-.Footnote
-. If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the CVO creation request. This applies for all type of deployments. If you do not provide it, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
+All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key. If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the CVO creation request. This applies for all type of deployments. If you do not provide it, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
 
 == Create a user-assigned managed identity
 You have the option to create a resource called a user-assigned managed identity. Doing so allows you to encrypt your storage accounts when you create a Cloud Volumes ONTAP working environment. We recommend creating this resource prior to creating a key vault and generating a key.
