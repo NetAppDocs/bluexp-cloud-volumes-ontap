@@ -6,7 +6,6 @@ summary: A storage VM is a virtual machine running within ONTAP that provides st
 ---
 
 = Create data-serving storage VMs for Cloud Volumes ONTAP in AWS
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
