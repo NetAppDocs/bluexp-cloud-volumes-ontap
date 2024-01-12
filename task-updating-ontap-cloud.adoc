@@ -39,7 +39,11 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 | Current version
 | Versions that you can directly upgrade to
 
-| 9.13.1 | 9.14.0
+| 9.14.0 | 9.14.1
+
+.2+| 9.13.1 
+| 9.14.1
+| 9.14.0
 
 | 9.13.0 | 9.13.1
 
@@ -214,6 +218,8 @@ image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field
 === Verify that all LIFs are on home ports 
 
 Before you upgrade, all LIFs must be on home ports. Refer to ONTAP documentation to link:https://docs.netapp.com/us-en/ontap/upgrade/task_enabling_and_reverting_lifs_to_home_ports_preparing_the_ontap_software_for_the_update.html[verify that all LIFs are on home ports]. 
+
+If an upgrade failure error occurs, refer to the link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/CVO_upgrade_fails[Knowledge Base article "Cloud Volumes ONTAP upgrade fails"]. 
 
 == Upgrade Cloud Volumes ONTAP
 
