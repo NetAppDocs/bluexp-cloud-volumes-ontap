@@ -219,7 +219,7 @@ If you exceed your BYOL capacity or if your license expires, you'll be charged f
 
 With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). For example, _Essentials HA_ has different pricing than _Essentials Secondary HA_. 
 
-If you purchased an Essentials license from NetApp (BYOL) rather than a Marketplace contract or private offer, you receive prepaid capacity to use for primary storage. If you exceed the licensed capacity for that primary deployment and volume type, the BlueXP digital wallet charges overages against a higher priced Essentials license (if you have one). Additionally, capacity used for secondary volumes isn't applied to the BYOL license and will include additional monthly charges. 
+If you purchased an Essentials license from NetApp (BYOL) rather than a Marketplace contract or private offer, you receive prepaid capacity to use for primary storage. If you exceed the licensed capacity for that primary deployment and volume type, the BlueXP digital wallet charges overages against a higher priced Essentials license (if you have one). Additionally, capacity used for secondary volumes isn't applied to the BYOL license and will include additional marketplace monthly charges. 
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
