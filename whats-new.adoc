@@ -25,7 +25,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 === Patch releases in BlueXP
 Patch releases are available in BlueXP only for the latest three versions of Cloud Volumes ONTAP. 
 
-link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#patch-releases[Patch releases]
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#patch-releases[Upgrade Cloud Volumes ONTAP^]
 
 == 8 January 2024
 
