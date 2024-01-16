@@ -53,13 +53,13 @@ Separate from the file extension protections provided through the https://docs.n
 
 The ARP feature is available for use with BYOL licenses only (1 to 36 month terms) on both node-based and capacity-based licensing models. You must contact your NetApp sales representative to purchase a new, separate, add-on license for use with the ARP feature in Cloud Volumes ONTAP. 
 
-The ARP license is considered a "floating" license, which means it is not bound to a single CLoud Volumes ONTAP instance and can be applied to multiple Cloud Volumes ONTAP environments.   
+The ARP license is considered a "floating" license, which means it is not bound to a single Cloud Volumes ONTAP instance and can be applied to multiple Cloud Volumes ONTAP environments.   
 
 NOTE: The usage of the ARP feature with node-based Cloud Volumes ONTAP licenses is not currently reflected in Digital Wallet. The ability to view node-based ARP usage will be available under Digital Wallet in a future release. 
 
 Upon purchase of an add-on license and adding it to the Digital Wallet, you can enable ARP on a per volume basis with Cloud Volumes ONTAP. Charging for ARP is metered at a volume level, according to the total provisioned capacity of volumes with the ARP feature enabled. The minimum license capacity is 1TB. However, there is no minimum capacity charging for the ARP feature.
 
-ARP enabled volumes have a designated state of "Learning mode" or "Active". Any volume with an ARP state of "Disabled" is excluded from charging. For example, a Cloud Volumes ONTAP environment with 30 TiB of provisioned capacity can elect to have only a subset of 15TiB volumes with ARP enabled. 
+ARP enabled volumes have a designated state of "Learning mode" or "Active". Any volume with an ARP state of "Disabled" is excluded from charging. For example, a Cloud Volumes ONTAP environment with 30 TiB of provisioned capacity can elect to have only a subset of 15 TiB volumes with ARP enabled. 
 
 Configuration of ARP for volumes is performed through ONTAP System Manager and ONTAP CLI. 
 
