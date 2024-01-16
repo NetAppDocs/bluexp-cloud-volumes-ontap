@@ -108,7 +108,7 @@ Note the following:
 For example, if you're running version 9.8 and you want to upgrade to 9.10.1, you first need to upgrade to version 9.9.1 and then to 9.10.1.
 
 === Patch releases
-Starting in December 2023, patch upgrades are only available in BlueXP if they are a patch release for the three latest versions of Cloud Volumes ONTAP. We use the latest GA release to determine the three latest versions to display in BlueXP. For example, if the current GA release is 9.13.1, patches for 9.11.1-9.13.1 appear in BlueXP. If you want to upgrade to a patch release for versions 9.11.1 or below, you will need to use the manual upgrade procedure by <<Upgrade from an image available at a URL,downloading the ONTAP image>>.
+Starting in January 2024, patch upgrades are only available in BlueXP if they are a patch release for the three latest versions of Cloud Volumes ONTAP. We use the latest GA release to determine the three latest versions to display in BlueXP. For example, if the current GA release is 9.13.1, patches for 9.11.1-9.13.1 appear in BlueXP. If you want to upgrade to a patch release for versions 9.11.1 or below, you will need to use the manual upgrade procedure by <<Upgrade from an image available at a URL,downloading the ONTAP image>>.
 
 As a general rule for patch (P) releases, you can upgrade from one version release to any P-release of the current version you're running or the next version. 
 
