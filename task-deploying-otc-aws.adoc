@@ -262,6 +262,8 @@ Immediately after you create the working environment, BlueXP launches a test ins
 . On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP HA*.
++
+Some AWS Local Zones are available. Local Zones must be enabled before you can create and manage resources in those zones. link:https://aws.amazon.com/tutorials/deploying-low-latency-applications-with-aws-local-zones/[Learn how to enable a Local Zone^].
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +

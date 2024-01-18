@@ -61,7 +61,7 @@ In the event of an outage, data should be available in 120 seconds or less.
 
 == HA deployment models
 
-You can ensure the high availability of your data by deploying an HA configuration across multiple Availability Zones (AZs) or in a single AZ. You should review more details about each configuration to choose which best fits your needs.
+You can ensure the high availability of your data by deploying an HA configuration across multiple Availability Zones (AZs) or in a single Availability Zone (AZ). You should review more details about each configuration to choose which best fits your needs.
 
 === Multiple Availability Zones
 
@@ -120,6 +120,34 @@ For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical 
 NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
 
 For NAS configurations, the data IP addresses can migrate between HA nodes if failures occur. This ensures client access to storage.
+
+=== AWS Local Zones
+
+AWS Local Zones are a kind of infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally. 
+
+You can deploy a single AZ or multiple AZ configuration in AWS Local Zones. 
+
+==== Example AWS Local Zone configurations
+
+The following are example configurations: 
+
+* Single Availability Zone: Both cluster nodes and the mediator are in the same Local Zone.
+* Multiple Availability Zones: 
+** Each cluster node is in a different Local Zone and the mediator in a public availability zone.
+** One cluster node and mediator are in Local Zone 1 and the second cluster node is in Local Zone 2.
+** Each cluster node and the mediator are in separate Local Zones. 
+
+==== Supported disk and instance types
+
+The only supported disk type is GP2. 
+
+The following EC2 instance type families with sizes xlarge to 4xlarge are supported: 
+
+* M5
+* C5
+* C5d
+* R5
+* R5d
 
 == How storage works in an HA pair
 
