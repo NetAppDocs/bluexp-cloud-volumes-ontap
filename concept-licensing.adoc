@@ -39,6 +39,8 @@ For example, you could purchase a single 20 TiB license, deploy four Cloud Volum
 
 Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from several licensing packages based on your business needs.
 
+NOTE: Storage and network usage are calculated in binary gigabytes (GB), where 1GB is 2^30 bytes. This unit of measurement is also known as a gibibyte (GiB). Similarly, 1TB is 2^40 bytes, i.e., 1024 GBs.
+
 === Packages
 
 The following capacity-based packages are available for Cloud Volumes ONTAP.
