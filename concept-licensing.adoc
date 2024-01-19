@@ -227,7 +227,7 @@ Here's an example. Let's say you have the following licenses for the Essentials 
 * A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
 * A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
 
-Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the BlueXP digital wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's cheaper than the PAYGO rate.
+Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the BlueXP digital wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's making use of a license you have already purchased, and it will not add costs to your monthly bill.
 
 In the BlueXP digital wallet, that 50 TiB will be shown as charged against the _Essentials Single Node_ license.
 
