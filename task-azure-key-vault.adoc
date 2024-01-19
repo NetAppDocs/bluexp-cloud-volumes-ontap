@@ -28,6 +28,7 @@ When using AKV, be aware that by default a data SVM LIF is used to communicate w
 
 .Limitations
 * AKV can only be configured on a data SVM
+* NAE can not be used using AKV. NAE requires an external-supported KMIP server. 
 
 == Configuration process
 
@@ -121,7 +122,11 @@ image:screenshot-azure-service-endpoints-services.png[Screenshot of Service Endp
 .. Verify the DNS service has been created for the data SVM:
 `vserver services name-service dns show`
 . Enable Azure Key Vault using the client ID and tenant ID saved after the application registration:
-`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _Azure_key_vault_name_ -key-id _Azure_key_ID_`
+`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _key_vault_URI_ -key-id _full_key_URI_`
++
+NOTE: The `_full_key_URI` value must utilize the `<https:// <key vault host name>/keys/<key label>` format.
++
+. Upon successful enablement of the Azure Key Vault, enter the `client secret value` when prompted. 
 . Check the status of the key manager:
 `security key-manager external azure check`
 The output will look like:
