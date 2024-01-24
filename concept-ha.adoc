@@ -61,11 +61,11 @@ In the event of an outage, data should be available in 120 seconds or less.
 
 == HA deployment models
 
-You can ensure the high availability of your data by deploying an HA configuration across multiple Availability Zones (AZs) or in a single Availability Zone (AZ). You should review more details about each configuration to choose which best fits your needs.
+You can ensure the high availability of your data by deploying an HA configuration across multiple availability zones (AZs) or in a single availability zone (AZ). You should review more details about each configuration to choose which best fits your needs.
 
-=== Multiple Availability Zones
+=== Multiple availability zones
 
-Deploying an HA configuration in multiple Availability Zones (AZs) ensures high availability of your data if a failure occurs with an AZ or an instance that runs a Cloud Volumes ONTAP node. You should understand how NAS IP addresses impact data access and storage failover.
+Deploying an HA configuration in multiple availability zones (AZs) ensures high availability of your data if a failure occurs with an AZ or an instance that runs a Cloud Volumes ONTAP node. You should understand how NAS IP addresses impact data access and storage failover.
 
 ==== NFS and CIFS data access
 
@@ -73,7 +73,7 @@ When an HA configuration is spread across multiple Availability Zones, _floating
 
 If you can't set up a transit gateway, private IP addresses are available for NAS clients that are outside the VPC. However, these IP addresses are static—they can't failover between nodes.
 
-You should review requirements for floating IP addresses and route tables before you deploy an HA configuration across multiple Availability Zones. You must specify the floating IP addresses when you deploy the configuration. The private IP addresses are automatically created by BlueXP.
+You should review requirements for floating IP addresses and route tables before you deploy an HA configuration across multiple availability zones. You must specify the floating IP addresses when you deploy the configuration. The private IP addresses are automatically created by BlueXP.
 
 For details, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
 
@@ -99,9 +99,9 @@ After the failed node comes back online, remount clients to volumes using the or
 
 You can easily identify the correct IP address from BlueXP by selecting the volume and clicking *Mount Command*.
 
-=== Single Availability Zone
+=== Single availability zone
 
-Deploying an HA configuration in a single Availability Zone (AZ) can ensure high availability of your data if an instance that runs a Cloud Volumes ONTAP node fails. All data is natively accessible from outside of the VPC.
+Deploying an HA configuration in a single availability zone (AZ) can ensure high availability of your data if an instance that runs a Cloud Volumes ONTAP node fails. All data is natively accessible from outside of the VPC.
 
 NOTE: BlueXP creates an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^] and launches the two HA nodes in that placement group. The placement group reduces the risk of simultaneous failures by spreading the instances across distinct underlying hardware. This feature improves redundancy from a compute perspective and not from disk failure perspective.
 
@@ -131,23 +131,29 @@ You can deploy a single AZ or multiple AZ configuration in AWS Local Zones.
 
 The following are example configurations: 
 
-* Single Availability Zone: Both cluster nodes and the mediator are in the same Local Zone.
-* Multiple Availability Zones: 
+* Single availability zone: Both cluster nodes and the mediator are in the same Local Zone.
+* Multiple availability zones 
+In multiple availability zone configurations, there are three instances, two nodes and one mediator. One instance out of the three instances must be in a separate zone. You can choose how you set this up. 
++
+Here are three example configurations: 
+
 ** Each cluster node is in a different Local Zone and the mediator in a public availability zone.
-** One cluster node and mediator are in Local Zone 1 and the second cluster node is in Local Zone 2.
+** One cluster node in a Local Zone, the mediator in a Local Zone, and the second cluster node is in an availability zone.
 ** Each cluster node and the mediator are in separate Local Zones. 
 
 ==== Supported disk and instance types
 
 The only supported disk type is GP2. 
 
-The following EC2 instance type families with sizes xlarge to 4xlarge are supported: 
+The following EC2 instance type families with sizes xlarge to 4xlarge are currently supported: 
 
 * M5
 * C5
 * C5d
 * R5
 * R5d
+
+link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[You should refer to AWS for the latest and complete details about supported EC2 instance types in Local Zones^].
 
 == How storage works in an HA pair
 
