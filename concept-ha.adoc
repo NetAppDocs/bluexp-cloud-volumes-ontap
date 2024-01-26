@@ -123,7 +123,7 @@ For NAS configurations, the data IP addresses can migrate between HA nodes if fa
 
 === AWS Local Zones
 
-AWS Local Zones are a kind of infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally. 
+AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally. 
 
 You can deploy a single AZ or multiple AZ configuration in AWS Local Zones. 
 
