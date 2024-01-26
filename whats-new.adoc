@@ -28,8 +28,8 @@ Cloud Volumes ONTAP introduces AWS Local Zones, an infrastructure deployment whe
 * link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html[High-availability pairs in AWS]
 * link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[Supported configurations in AWS]
 
-=== Edv5 series VM support in Azure
-Cloud Volumes ONTAP now supports the following Edv5 VM instance types for single node and high-availability pair deployments in Azure: 
+=== Support for Edv5-series VMs in Azure
+Cloud Volumes ONTAP now supports the following Edv5-series VMs with shared managed disks in single and multiple availability zones, starting with the 9.14.1 release. 
 
 * E4ds_v5
 * E8ds_v5
