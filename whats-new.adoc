@@ -23,7 +23,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 8 February 2024
 
 === Cloud Volumes ONTAP 9.14.1 GA
-BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud.
+BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud. 
 
 == 16 January 2024
 
