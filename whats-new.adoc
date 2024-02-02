@@ -32,7 +32,7 @@ Cloud Volumes ONTAP now supports the following Edv5-series VMs with shared manag
 * E48ds_v5
 * E64ds_v5
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure]
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
 
 == 16 January 2024
 
