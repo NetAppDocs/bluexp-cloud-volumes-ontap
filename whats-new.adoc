@@ -23,7 +23,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 2 February 2024
 
 === Support for Edv5-series VMs in Azure
-Cloud Volumes ONTAP now supports the following Edv5-series VMs with shared managed disks in single and multiple availability zones, starting with the 9.14.1 release. 
+Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the 9.14.1 release. 
 
 * E4ds_v5
 * E8ds_v5
