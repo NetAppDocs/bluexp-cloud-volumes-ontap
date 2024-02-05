@@ -75,7 +75,7 @@ ifdef::gcp[]
 endif::gcp[]
 * Supported with selected VM types: 
 ifdef::azure[]
-** For Azure: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4 
+** For Azure: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, E8ds_v4, E4ds_v5, and E8ds_v5 
 endif::azure[]
 ifdef::gcp[]
 ** For Google Cloud: n2-standard-4, n2-standard-8
