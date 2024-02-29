@@ -22,12 +22,6 @@ The enhancements described on this page are specific to BlueXP features that ena
 //tag::whats-new[]
 == 6 March 2024
 
-=== AWS Local Zones
-Cloud Volumes ONTAP introduces AWS Local Zones, an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally.
-
-* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html[High-availability pairs in AWS]
-* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html[Supported configurations in AWS]
-
 === Amazon Instant Metadata Service v2 support
 In AWS, Cloud Volumes ONTAP, the Mediator and the Connector now support Amazon Instant Metadata Service v2 (IMDSv2) for all functions.
 
