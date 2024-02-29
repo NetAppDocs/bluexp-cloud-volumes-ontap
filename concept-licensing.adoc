@@ -45,7 +45,8 @@ NOTE: Storage and network usage are calculated in binary gigabytes (GB), where 1
 
 The following capacity-based packages are available for Cloud Volumes ONTAP.
 
-To find supported VM types with the following capacity-based packages, refer to: 
+For a list of supported VM types for Freemium, Optimized, Essentials, Professional, and Edge Cache packages, refer to: 
+
 ifdef::azure[]
 * link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^] 
 endif::azure[]
