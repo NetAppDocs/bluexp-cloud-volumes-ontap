@@ -73,12 +73,12 @@ endif::azure[]
 ifdef::gcp[]
 * Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
 endif::gcp[]
-* Supported with selected VM types: 
+* For supported VM types, refer to the following: 
 ifdef::azure[]
-** For Azure: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, E8ds_v4, E4ds_v5, and E8ds_v5 
+** link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^] 
 endif::azure[]
 ifdef::gcp[]
-** For Google Cloud: n2-standard-4, n2-standard-8
+** link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^]
 endif::gcp[]
 * Add on any of NetApp's cloud data services at extra cost
 
