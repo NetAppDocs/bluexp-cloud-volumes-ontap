@@ -45,6 +45,14 @@ NOTE: Storage and network usage are calculated in binary gigabytes (GB), where 1
 
 The following capacity-based packages are available for Cloud Volumes ONTAP.
 
+To find supported VM types with the following capacity-based packages, refer to: 
+ifdef::azure[]
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^] 
+endif::azure[]
+ifdef::gcp[]
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^]
+endif::gcp[]
+
 ==== Freemium
 
 Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud provider charges still apply).
@@ -72,13 +80,6 @@ ifdef::azure[]
 endif::azure[]
 ifdef::gcp[]
 * Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
-endif::gcp[]
-* For supported VM types, refer to the following: 
-ifdef::azure[]
-** link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^] 
-endif::azure[]
-ifdef::gcp[]
-** link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^]
 endif::gcp[]
 * Add on any of NetApp's cloud data services at extra cost
 
