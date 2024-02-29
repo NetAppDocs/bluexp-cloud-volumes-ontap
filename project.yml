@@ -93,12 +93,12 @@ sidebar:
                   entries:
                     - title: File signature verification
                       url: /concept-azure-file-sig-verify.html
+                    - title: Download Azure Image Digest File 
+                      url: /task-azure-download-digest-file.html
                     - title: Linux File signature verification
                       url: /task-file-verification-linux.html
                     - title: Mac OS File signature verification 
                       url: /task-file-verification-mac.html
-                    - title: Windows File signature verification 
-                      url: /task-file-verification-windows.html
                 - title: Additional information
                   url: /reference-image-verification-links.html                
         - title: Get started in Google Cloud

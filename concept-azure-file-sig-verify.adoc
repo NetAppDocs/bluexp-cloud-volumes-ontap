@@ -20,24 +20,23 @@ The following is an overview of the file signature verification workflow process
 
 image::graphic_azure_check_signature.png[width=500 An image that shows the file signature verification process]
 
-* Download the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem) from the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^]. 
-If tar.gz is the downloaded format, an extra step is needed to open it.
+* Download the Azure Image Digest file from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extract the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem).
 +
-image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image that shows the NSS page containing the digest file tar.gz downloads]
+Refer to the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html[Download the Azure Image Digest File^] for more information.  
 
 * Verify the chain of trust.
 
 * Extract the public key(.pub) from the public key certificate(.pem).
 
-* The extracted public key is used to decrypt the digest file. The result is then compared against a new 
-unencrypted digest of the temporary file created from the image file with leading 1MB removed. This step is 
-achieved by the following openssl command.
+* The extracted public key is used to decrypt the digest file. The result is then compared against a new unencrypted digest of the temporary file created from the image file with leading 1MB and ending 512 bytes removed. 
++
+This step is achieved through the following openssl command.
 
-* The general CLI statement appears as follows:
+** The general CLI statement appears as follows:
 + 
 ----
 openssl dgst -verify <public_key> -keyform <form> <hash_function> 
 -signature <digest_file> -binary <temporary_file>
 ----
 
-* OpenSSL CLI tool gives a "Verified OK" message if both the files match and "Verification Failure" if they do not match.
+** OpenSSL CLI tool gives a "Verified OK" message if both the files match and "Verification Failure" if they do not match.

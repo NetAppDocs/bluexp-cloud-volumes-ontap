@@ -29,11 +29,5 @@ Check out the links below for additional information about Azure Image Verificat
 
 * https://learn.microsoft.com/en-us/cli/azure/storage/blob/copy?view=azure-cli-latest#az-storage-blob-copy-start[az storage blob copy | Microsoft Learn^]
 
-* https://slproweb.com/products/Win32OpenSSL.html[Latest supported Visual C++ Redistributable downloads | Microsoft Learn^]
-
-* https://slproweb.com/products/Win32OpenSSL.html[Win32/Win64 OpenSSL Installer for Windows - Shining Light Productions (slproweb.com)^]
-
-* https://www.python.org/downloads/windows/[Python Releases for Windows | Python.org^]
-
 * https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli[Sign in with Azure CLI — Login and Authentication | Microsoft Learn^]
  

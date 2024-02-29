@@ -13,7 +13,7 @@ summary: You can export ONTAP images from the Azure Marketplace to verify the si
 :imagesdir: ./media/
 
 [.lead]
-Once the VHD image is published to Azure cloud, the image is no longer managed by NetApp. Instead, the published image is placed on the Azure marketplace. Azure's alteration to the leading 1MB and ending 512B of the VHD occurs when the is staged and published on the Azure marketplace. To verify the signature of the VHD file, the running VHD image modified by Azure needs to be exported from the Azure marketplace first.
+Once the VHD image is published to Azure cloud, the image is no longer managed by NetApp. Instead, the published image is placed on the Azure marketplace. Azure's alteration to the leading 1MB and ending 512B of the VHD occurs when the image is staged and published on the Azure marketplace. To verify the signature of the VHD file, the running VHD image modified by Azure needs to be exported from the Azure marketplace first.
 
 .What you'll need
 
@@ -29,9 +29,18 @@ NOTE: For more information on how to install Azure CLI, see https://learn.micros
 +
 image:screenshot_cvo_software_version.png[A screenshot showing Cloud Volumes ONTAP software versions available when configuring a deployment in BlueXP.]
 
-. From the Azure marketplace, verify the image is matches the Cloud Volumes ONTAP software version configured for your deployment.
+. Map the Cloud Volumes ONTAP version to the Azure marketplace image version. 
 +
-For example, Cloud Volumes ONTAP softwre version 9.13.0, should be "9.130.20230216" for the Azure marketplace image version.
+For example, Cloud Volumes ONTAP 9.15.0 maps to Azure 9.150.20240213. This Azure marketplace image version is used to locate an image definition in the next step.
++
+[cols="1,1"]
+|===
+|Cloud Volumes ONTAP Software Version |Azure Marketplace image version
+
+|9.15.0
+|9.150.20240213
+
+|===
 
 . Once the Cloud Volumes ONTAP software version and Azure marketplace image are verified, export the VHD file from Azure marketplace through Azure Cloud Shell or Azure CLI.
 +
@@ -60,7 +69,7 @@ PS /home/user1> az vm image list --all --publisher netapp --offer offer-example-
 },
 ...
  
-b) Create a new managed disk from the Marketplace image
+b) Create a new managed disk from the Marketplace image with the matching image version
 PS /home/user1> $urn = “netapp:offer-example-one:sku_example_for_one::9.110.20220302”
 PS /home/user1> $diskName = “9.110.20220302-managed-disk"
 PS /home/user1> $diskRG = “fnf1”
@@ -125,7 +134,7 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
 },
 ...
  
-b) Create a new managed disk from the Marketplace image
+b) Create a new managed disk from the Marketplace image with the matching image version
 % export urn="netapp:offer-example-one:sku_example_for_one::9.110.20220302"
 % export diskName="9.110.20220302-managed-disk"
 % export diskRG="new_rg_your_rg"
