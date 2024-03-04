@@ -87,14 +87,14 @@ sidebar:
               entries:
                 - title: Overview
                   url: /concept-azure-image-verification.html
+                - title: Download Azure Image Digest File 
+                  url: /task-azure-download-digest-file.html
                 - title: Image Export
                   url: /task-azure-image-export.html
                 - title: File signature verification
                   entries:
                     - title: File signature verification
                       url: /concept-azure-file-sig-verify.html
-                    - title: Download Azure Image Digest File 
-                      url: /task-azure-download-digest-file.html
                     - title: Linux File signature verification
                       url: /task-file-verification-linux.html
                     - title: Mac OS File signature verification 
