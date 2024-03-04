@@ -23,13 +23,15 @@ The Azure Image Digest File can be downloaded from the https://mysupport.netapp.
 +
 image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image that shows the NSS page containing the digest file tar.gz downloads]
 
-. Linux and MacOS users must perform the following to get the md5sum and sha256sum for the downloaded Azure Image Digest file.   
+. For Linux and MacOS, you must perform the following to get the md5sum and sha256sum for the downloaded Azure Image Digest file.   
 ... For md5sum, enter the `md5sum` command. 
 ... For sha256sum, enter the `sha256sum` command.   
 
 . Verify the `md5sum` and `sha256sum` values match the Azure Image Digest File download.  
 
-. Linux and Mac OS users must perform the `tar -xzf` command to extract the tar.gz file. The extracted TAR.GZ file contains the digest file(.sig), public key certificate file(.perm), and chain certificate file(.pem). 
+. On Linux and Mac OS, perform the `tar -xzf` command to extract the tar.gz file.
++
+The extracted TAR.GZ file contains the digest file(.sig), public key certificate file(.perm), and chain certificate file(.pem). 
 
 +
 *List result of untar tar.gz file*
