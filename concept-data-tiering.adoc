@@ -105,7 +105,8 @@ When BlueXP creates the bucket, it uses the following default settings:
 * Protection: None
 * Data encryption: Google-managed key
 
-Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, inactive data moves directly to the class that you selected.
+Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, subsequent inactive data moves directly to the class that you selected.
+NOTE: Any existing inactive data will maintain the default storage class when you change the storage class. For existing inactive data, you must manually designate the desired storage class.     
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://cloud.google.com/storage/docs/storage-classes[Learn more about storage classes for Google Cloud Storage^].
 +
