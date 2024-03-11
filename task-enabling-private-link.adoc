@@ -31,7 +31,7 @@ The Connector should be deployed in the same Azure region as the Cloud Volumes O
 
 .Steps
 
-.	In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
+.	In the upper right of the BlueXP console, click the Settings icon, and select *Cloud Volumes ONTAP Settings*.
 +
 image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
