@@ -19,13 +19,13 @@ These settings affect all Cloud Volumes ONTAP systems managed by a Connector. If
 
 .Required permissions
 
-Account Admin privileges are required to modify Connector settings.
+Account Admin privileges are required to modify Cloud Volumes ONTAP Settings.
 
 .Steps
 
-.	In the upper right of the BlueXP console, click the Settings icon, and select *Connector Settings*.
+.	In the upper right of the BlueXP console, click the Settings icon, and select *Cloud Volumes ONTAP Settings*.
 +
-image::screenshot_settings_connector_button.png[width=400 A screenshot of the Connector Settings option under teh Settings icon.]
+image::screenshot-settings-cloud-volumes-ontap.png[A screenshot of the Cloud Volumes ONTAP Settings option under the Settings icon.]
 
 .	Under *Capacity*, modify any of the following settings:
 +
