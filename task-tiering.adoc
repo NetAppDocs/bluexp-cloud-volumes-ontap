@@ -271,7 +271,7 @@ The ratio is important for disaster recovery scenarios because as data is read f
 
 .Steps
 
-. In the upper right of the BlueXP console, click the *Settings* icon, and select *Connector Settings*.
+. In the upper right of the BlueXP console, click the *Settings* icon, and select *Cloud Volumes ONTAP Settings*.
 +
 image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in the upper right of the BlueXP console.]
 
