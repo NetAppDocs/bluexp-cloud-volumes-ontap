@@ -160,7 +160,9 @@ However, if you deployed BlueXP in a location that doesn't have internet access,
 
 .What you'll need
 
-The license file (or _files_ if you have an HA pair).
+The license file (or _files_ if you have an HA pair). 
+
+NOTE: For more information on how to obtain a license file, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#obtain-a-system-license-file[Obtain a system license file^]. 
 
 .Steps
 
@@ -176,7 +178,7 @@ The license file (or _files_ if you have an HA pair).
 
 Capacity-based licensing is available in the form of a _package_. When you create a Cloud Volumes ONTAP working environment, you can choose from several licensing packages based on your business needs. If your needs change after you create the working environment, you can change the package at any time. For example, you might change from the Essentials package to the Professional package.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about capacity-based licensing packages].
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about capacity-based licensing packages^].
 
 .About this task
 
