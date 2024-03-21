@@ -112,7 +112,7 @@ By default, a volume automatically grows to a maximum size when it's out of spac
 If you need to resize your volume, you can do it from the Advanced View in BlueXP. 
 
 .Steps
-. Open Advanced View to resize your volume by using System Manager. See link:task-administer-advanced-view.html#how-to-get-started[Administer Cloud Volumes ONTAP using the Advanced View] to know how to get started.
+. Open the Advanced View to resize a volume through System Manager. See link:task-administer-advanced-view.html#how-to-get-started[Administer Cloud Volumes ONTAP using the Advanced View] to know how to get started.
 . From the left navigation menu, select *Storage > Volumes*.
 . From the list of volumes, identify the one that you should resize.
 . Click the options icon image:screenshot_gallery_options.gif[kabob icon]. You see various options for editing the volume, such as cloning, changing settings for anti-ransomware, analytics, and activity tracking, and moving the volume across tiers. 
