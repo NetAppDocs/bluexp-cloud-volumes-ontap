@@ -21,7 +21,7 @@ link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using the
 
 == Manage volumes
 
-You can manage volumes as your storage needs change. You can view, edit, clone, restore, and delete volumes.
+By using the Standard View of BlueXP, you can manage volumes according to your storage needs. You can view, edit, clone, restore, and delete volumes.
 
 .Steps
 
