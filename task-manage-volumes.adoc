@@ -107,9 +107,24 @@ a|
 
 == Resize a volume
 
-By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times it's size. This value is configurable in a Connector's settings.
+By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times its size. This value is configurable in the Connector's settings.
 
-If you need to resize your volume, you can do it through link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html[ONTAP System Manager^]. Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
+If you need to resize your volume, you can do it from the Advanced View in BlueXP. 
+
+.Steps
+. Open Advanced View to resize your volume by using System Manager. See link:task-administer-advanced-view.html#how-to-get-started[Administer Cloud Volumes ONTAP using the Advanced View] to know how to get started.
+. From the left navigation menu, select *Storage > Volumes*.
+. From the list of volumes, identify the one that you should resize.
+. Click the options icon image:screenshot_gallery_options.gif[kabob icon]. You see various options for editing the volume, such as cloning, changing settings for anti-ransomware, analytics, and activity tracking, and moving the volume across tiers. 
+. Select *Resize*.
+. On the *Resize Volume* screen, edit the capacity and Snapshot reserve percentage as required. You can compare the existing, available space with the modified capacity.
+. Click *Save*. 
+
+image:screenshot-resize-volume.png[Screen displays the modified capacity after volume resize]
+
+Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
+
+//MM-GH issue 285
 
 == Modify the CIFS server
 
