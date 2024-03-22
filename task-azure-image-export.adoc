@@ -57,7 +57,7 @@ For example, Cloud Volumes ONTAP 9.15.0 maps to Azure 9.150.20240213. This Azure
 ----
 #Azure Cloud Shell on Azure portal to get VHD image from Azure Marketplace
 a) List our marketplace images
-PS /home/cassiez> az vm image list --all --publisher netapp --offer netapp-ontap-cloud --sku ontap_cloud_pgo_sn
+PS /home/user1> az vm image list --all --publisher netapp --offer netapp-ontap-cloud --sku ontap_cloud_pgo_sn
 ...
 {
 "architecture": "x64",
@@ -70,23 +70,23 @@ PS /home/cassiez> az vm image list --all --publisher netapp --offer netapp-ontap
 ...
  
 b) Create a new managed disk from the Marketplace image with the matching image version
-PS /home/cassiez> $urn = “netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.150.20240213”
-PS /home/cassiez> $diskName = “9.150.20240213-managed-disk"
-PS /home/cassiez> $diskRG = “fnf1”
-PS /home/cassiez> az disk create -g $diskRG -n $diskName --image-reference $urn
-PS /home/cassiez> $sas = az disk grant-access --duration-in-seconds 36000 --access-level Read --name $diskName --resource-group $diskRG
-PS /home/cassiez> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
+PS /home/user1> $urn = “netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.150.20240213”
+PS /home/user1> $diskName = “9.150.20240213-managed-disk"
+PS /home/user1> $diskRG = “fnf1”
+PS /home/user1> az disk create -g $diskRG -n $diskName --image-reference $urn
+PS /home/user1> $sas = az disk grant-access --duration-in-seconds 36000 --access-level Read --name $diskName --resource-group $diskRG
+PS /home/user1> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
  
 c) Export a VHD from the managed disk to Azure Storage
 Create a container with proper access level. As an example, a container named 'vi-images' with 'Container' access level is used here.
 Get storage account access key, on Azure portal, 'Storage Accounts'/'signimgsa'/'Access Key'/'key1'/'key'/'show'/<copy>.
-PS /home/cassiez> $storageAccountName = “signimgsa”
-PS /home/cassiez> $containerName = “vm-images”
-PS /home/cassiez> $storageAccountKey = "<replace with the above access key>"
-PS /home/cassiez> $destBlobName = “9.150.20240213.vhd”
-PS /home/cassiez> $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
-PS /home/cassiez> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestContainer $containerName -DestContext $destContext -DestBlob $destBlobName
-PS /home/cassiez> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
+PS /home/user1> $storageAccountName = “signimgsa”
+PS /home/user1> $containerName = “vm-images”
+PS /home/user1> $storageAccountKey = "<replace with the above access key>"
+PS /home/user1> $destBlobName = “9.150.20240213.vhd”
+PS /home/user1> $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+PS /home/user1> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestContainer $containerName -DestContext $destContext -DestBlob $destBlobName
+PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
  
 d) Download the generated image to your server, e.g., a Linux machine.
 On Linux, use "wget <URL of file signimgsa/Containers/vm-images/9.150.20240213.vhd>".
