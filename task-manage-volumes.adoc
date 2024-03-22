@@ -15,9 +15,7 @@ summary: BlueXP enables you to manage volumes and CIFS servers. It also prompts 
 [.lead]
 BlueXP enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 
-You can manage volumes in BlueXP Standard View or Advanced View. The Standard View provides a limited set of options to modify your volumes. The Advanced View provides advanced level of management, such as cloning, resizing, changing settings for anti-ransomware, analytics, protection, and activity tracking, and moving volumes across tiers.
-
-link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using the Advanced View]
+You can manage volumes in BlueXP Standard View or Advanced View. The Standard View provides a limited set of options to modify your volumes. The Advanced View provides advanced level of management, such as cloning, resizing, changing settings for anti-ransomware, analytics, protection, and activity tracking, and moving volumes across tiers. See link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using the Advanced View].
 
 == Manage volumes
 
