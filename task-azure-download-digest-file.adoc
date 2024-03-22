@@ -31,7 +31,7 @@ image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image that shows t
 
 . On Linux and Mac OS, perform the `tar -xzf` command to extract the tar.gz file.
 +
-The extracted TAR.GZ file contains the digest file(.sig), public key certificate file(.perm), and chain certificate file(.pem). 
+The extracted TAR.GZ file contains the digest file(.sig), public key certificate file(.pem), and chain certificate file(.pem). 
 
 +
 *List result of untar tar.gz file*
