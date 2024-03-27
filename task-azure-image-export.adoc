@@ -48,7 +48,7 @@ For example, Cloud Volumes ONTAP 9.15.0 maps to Azure 9.150.20240213. This Azure
 +
 ** From Azure Cloud Shell, export the marketplace image to a vhd, and download to your local server (for example, a Linux machine, or a windows PC.)
 +
-.Click to display the script
+.Click to display
 [%collapsible]
 +
 ====
@@ -108,7 +108,7 @@ az disk delete --name $diskName --resource-group $diskRG --yes
 *Azure CLI from local Linux machine*
 ** Perform the following to export the marketplace image to a vhd through the Azure CLI from a local Linux machine.
 +
-.Click to display the script
+.Click to display
 [%collapsible]
 +
 ====
