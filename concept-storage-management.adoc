@@ -78,13 +78,12 @@ This behavior is determined by the _Capacity Management Mode_ on a Connector. Th
 
 === Automatic capacity management
 
-The Capacity Management Mode is set to automatic by default. In this mode, BlueXP automatically purchases new disks for Cloud Volumes ONTAP instances when more capacity is needed, deletes unused collections of disks (aggregates), moves volumes between aggregates when needed, and attempts to unfail disks.
+The Capacity Management Mode is set to automatic by default. ##In this mode, BlueXP checks the free space ratio every 15 minutes to determine if the free space ratio falls below the specified threshold. If more capacity is needed, BlueXP automatically initiates purchase for new disks, deletes unused collections of disks (aggregates), moves volumes between aggregates when needed, and attempts to unfail disks to prevent capacity issues.##
 
 The following examples illustrate how this mode works:
 
 * If an aggregate reaches the capacity threshold and it has room for more disks, BlueXP automatically purchases new disks for that aggregate so volumes can continue to grow.
 +
-BlueXP checks the free space ratio every 15 minutes to determine if it needs to purchase additional disks.
 ifdef::aws[]
 +
 In the case of an aggregate in AWS that supports Elastic Volumes, BlueXP also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
