@@ -339,6 +339,9 @@ For help choosing a disk size, see link:https://docs.netapp.com/us-en/bluexp-clo
 * If you disable data tiering, you can enable it on subsequent aggregates.
 +
 link:concept-data-tiering.html[Learn more about data tiering^].
+* Starting with Cloud Volumes ONTAP 9.15.0P1, Azure page blobs are no longer supported for new high-availability pair deployments. If you currently use Azure page blobs in existing high-availability pair deployments, you can migrate to newer VM instance types in the Edsv4-series VMs and Edsv5-series VMs.
++
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs[Learn more about supported configurations in Azure^].
 
 . *Write Speed & WORM*: 
 .. Choose *Normal* or *High* write speed, if desired.
