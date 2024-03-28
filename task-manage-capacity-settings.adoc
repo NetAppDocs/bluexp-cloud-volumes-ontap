@@ -35,7 +35,7 @@ Choose whether BlueXP notifies you of storage capacity decisions or whether Blue
 link:concept-storage-management.html#capacity-management[Learn how Capacity Management Mode works].
 
 Aggregate Capacity Threshold - Free Space Ratio::
-This ratio is a key parameter in capacity management decisions, and understanding its impact is essential regardless of whether you are in automatic or manual mode of capacity management. It is recommended to set this threshold with consideration of your specific storage needs and anticipated growth to maintain a balance between resource utilization and cost.
+This ratio is a key parameter in capacity management decisions, and understanding its impact is essential regardless of whether you are in an automatic or manual mode of capacity management. It is recommended to set this threshold with consideration of your specific storage needs and anticipated growth to maintain a balance between resource utilization and cost.
 +
 In the manual mode, if the free space ratio on an aggregate drops below the specified threshold, it triggers a notification, alerting you that you should take actions to address the low free space ratio. It is important to monitor these notifications and manually manage the aggregate capacity to avoid service disruption and ensure optimal performance.
 +
