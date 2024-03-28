@@ -78,7 +78,7 @@ This behavior is determined by the _Capacity Management Mode_ on a Connector. Th
 
 === Automatic capacity management
 
-The Capacity Management Mode is set to automatic by default. ##In this mode, BlueXP checks the free space ratio every 15 minutes to determine if the free space ratio falls below the specified threshold. If more capacity is needed, BlueXP automatically initiates purchase of new disks, deletes unused collections of disks (aggregates), moves volumes between aggregates as required, and attempts to prevent disk failure.##
+The Capacity Management Mode is set to automatic by default. In this mode, BlueXP checks the free space ratio every 15 minutes to determine if the free space ratio falls below the specified threshold. If more capacity is needed, BlueXP automatically initiates purchase of new disks, deletes unused collections of disks (aggregates), moves volumes between aggregates as required, and attempts to prevent disk failure.
 
 The following examples illustrate how this mode works:
 
