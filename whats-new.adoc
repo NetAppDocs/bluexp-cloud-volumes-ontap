@@ -25,12 +25,12 @@ The enhancements described on this page are specific to BlueXP features that ena
 === Multiple availability zone region support
 The following regions now support highly-available multiple availability zone deployments in Azure for Cloud Volumes ONTAP 9.12.1 GA and later:
 
-* West-Central Germany
-* Central Poland
-* Western USA (West US 3)
-* Central Israel
-* North Italy
-* Central Canada
+* Germany West Central
+* Poland Central
+* West US 3
+* Israel Central
+* Italy North
+* Canada Central
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
