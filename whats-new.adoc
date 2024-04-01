@@ -21,11 +21,24 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 == April 2024
+
+=== Multiple availability zone region support
+The following regions now support highly-available multiple availability zone deployments in Azure for Cloud Volumes ONTAP 9.12.1 GA and later:
+
+* West-Central Germany
+* Central Poland
+* Western USA (West US 3)
+* Central Israel
+* North Italy
+* Central Canada
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+
+
 === Johannesburg region now supported in Google Cloud
 The Johannesburg region (`africa-south1` region) is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
-
 
 == 8 March 2024
 
