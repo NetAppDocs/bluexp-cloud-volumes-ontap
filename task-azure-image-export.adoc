@@ -43,10 +43,10 @@ For example, Cloud Volumes ONTAP 9.15.0 maps to Azure 9.150.20240213. This Azure
 |===
 
 . Once the Cloud Volumes ONTAP software version and Azure marketplace image are verified, export the VHD file from Azure marketplace through Azure Cloud Shell or Azure CLI.
-+
-*Azure Cloud Shell on Azure portal*
-+
-** From Azure Cloud Shell, export the marketplace image to a vhd, and download to your local server (for example, a Linux machine, or a windows PC.)
+
+== Export VHD file through Azure Cloud Shell on Azure portal
+
+. From Azure Cloud Shell, export the marketplace image to a vhd, and download to your local machine (for example, a Linux machine, or a windows PC.)
 +
 .Click to display
 [%collapsible]
@@ -56,21 +56,20 @@ For example, Cloud Volumes ONTAP 9.15.0 maps to Azure 9.150.20240213. This Azure
 [source]
 ----
 #Azure Cloud Shell on Azure portal to get VHD image from Azure Marketplace
-a) List our marketplace images
-PS /home/user1> az vm image list --all --publisher netapp --offer netapp-ontap-cloud --sku ontap_cloud_pgo_sn
+a) Set the URN of the marketplace image. URN is with format "<publisher>:<offer>:<sku>:<version>". Optionally, a user can list NetApp marketplace images to confirm the proper image version.
+PS /home/user1> $urn="netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.150.20240213"
+PS /home/user1> $locName="eastus2"
+PS /home/user1> $pubName="netapp"
+PS /home/user1> $offerName="netapp-ontap-cloud"
+PS /home/user1> $skuName="ontap_cloud_pgo_sn"
+PS /home/user1> Get-AzVMImage -Location $locName -PublisherName $pubName -Offer $offerName -Sku $skuName |select version
 ...
-{
-"architecture": "x64",
-"offer": "netapp-ontap-cloud",
-"publisher": "netapp",
-"sku": "ontap_cloud_pgo_sn",
-"urn": "netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.150.20240213",
-"version": "9.150.20240213"
-},
+141.20231128
+9.141.20240131
+9.150.20240213
 ...
  
 b) Create a new managed disk from the Marketplace image with the matching image version
-PS /home/user1> $urn = “netapp:netapp-ontap-cloud:ontap_cloud_pgo_sn:9.150.20240213”
 PS /home/user1> $diskName = “9.150.20240213-managed-disk"
 PS /home/user1> $diskRG = “fnf1”
 PS /home/user1> az disk create -g $diskRG -n $diskName --image-reference $urn
@@ -89,24 +88,20 @@ PS /home/user1> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestCont
 PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
  
 d) Download the generated image to your server, e.g., a Linux machine.
-On Linux, use "wget <URL of file signimgsa/Containers/vm-images/9.150.20240213.vhd>".
+Use "wget <URL of file signimgsa/Containers/vm-images/9.150.20240213.vhd>".
 The URL is organized in a formatted way. For automation tasks, the following example could be used to derive the URL string. Otherwise, Azure CLI 'az' command could be issued to get the URL, which is not covered in this guide. URL Example:
 https://signimgsa2.blob.core.windows.net/vm-images/9.150.20240213.vhd
  
-Or, on Mac, mount your local user directory on your MAC so you can copy the exported VHD from the marketplace over and run openssl command against it:
-command+k (on Finder) and use this mountpoint:  smb://vsvhdrdur01prd.corp.netapp.com
-login as "NETAPP\<sso>" and then enter password as a "Registered Guest"
- 
 e) Clean up the managed disk
-az disk revoke-access --name $diskName --resource-group $diskRG
-az disk delete --name $diskName --resource-group $diskRG --yes
+PS /home/user1> Revoke-AzDiskAccess -ResourceGroupName $diskRG -DiskName $diskName
+PS /home/user1> Remove-AzDisk -ResourceGroupName $diskRG -DiskName $diskName
 ----
 
 ====
 
-+
-*Azure CLI from local Linux machine*
-** Perform the following to export the marketplace image to a vhd through the Azure CLI from a local Linux machine.
+== Export VHD file through Azure CLI from local Linux machine
+
+. Export the marketplace image to a vhd through the Azure CLI from a local Linux machine.
 +
 .Click to display
 [%collapsible]
@@ -184,13 +179,9 @@ Get storage account access key, on Azure portal, 'Storage Accounts'/'signimgsa'/
 ....
  
 d) Download the generated image to your server, e.g., a Linux machine.
-On Linux, use "wget <URL of file signimgsa/Containers/vm-images/9.150.20240213.vhd>".
+Use "wget <URL of file signimgsa/Containers/vm-images/9.150.20240213.vhd>".
 The URL is organized in a formatted way. For automation tasks, the following example could be used to derive the URL string. Otherwise, Azure CLI 'az' command could be issued to get the URL, which is not covered in this guide. URL Example:
 https://signimgsa2.blob.core.windows.net/vm-images/9.150.20240213.vhd
- 
-Or, on Mac, mount your local user directory on your MAC so you can copy the exported VHD from the marketplace over and run openssl command against it:
-command+k (on Finder) and use this mountpoint:  smb://vsvhdrdur01prd.corp.netapp.com
-login as "NETAPP\<sso>" and then enter password as a "Registered Guest"
  
 e) Clean up the managed disk
 az disk revoke-access --name $diskName --resource-group $diskRG
