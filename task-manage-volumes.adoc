@@ -55,13 +55,6 @@ This process creates a FlexClone volume. A FlexClone volume is a writable, point
 
 To learn more about FlexClone volumes, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
 
-| Edit volume tags (read-write volumes only)
-a| 
-.. Under Volume Actions in the Manage volumes panel, click *Edit volume tags* to modify the volume tag assigned to the selected volume.
-.. Enter the volume tag key and value under the provided fields. 
-.. To include additional tags, click *Add New Tag*.
-.. Click *Save*.
-
 | Edit a volume (read-write volumes only)
 a|
 .. Under Volume Actions in the Manage volumes panel, click *Edit volume settings*

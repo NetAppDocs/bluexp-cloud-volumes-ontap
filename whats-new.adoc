@@ -20,6 +20,12 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
+== 17 April 2024
+
+=== Volume templates and tags no longer supported
+
+You can no longer create a volume from a template or edit a volume's tags. These actions were associated with the BlueXP remediation service, which is no longer available.
+
 == 8 March 2024
 
 === Amazon Instant Metadata Service v2 support
@@ -769,7 +775,6 @@ image:screenshot-cvo-user-name.png[A screenshot of the Details and Credentials p
 We made a few enhancements to volume creation:
 
 * We redesigned the create volume wizard for ease of use.
-* Tags that you add to a volume are now associated with the Application Templates service, which can help you organize and simplify the management of your resources.
 * You can now choose a custom export policy for NFS.
 
 image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
