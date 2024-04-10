@@ -15,9 +15,11 @@ summary: BlueXP enables you to manage volumes and CIFS servers. It also prompts 
 [.lead]
 BlueXP enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 
+You can manage volumes in BlueXP Standard View or Advanced View. The Standard View provides a limited set of options to modify your volumes. The Advanced View provides advanced level of management, such as cloning, resizing, changing settings for anti-ransomware, analytics, protection, and activity tracking, and moving volumes across tiers. See link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using the Advanced View].
+
 == Manage volumes
 
-You can manage volumes as your storage needs change. You can view, edit, clone, restore, and delete volumes.
+By using the Standard View of BlueXP, you can manage volumes according to your storage needs. You can view, edit, clone, restore, and delete volumes.
 
 .Steps
 
@@ -107,9 +109,24 @@ a|
 
 == Resize a volume
 
-By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times it's size. This value is configurable in a Connector's settings.
+By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times its size. This value is configurable in the Connector's settings.
 
-If you need to resize your volume, you can do it through link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-C04C2C72-FF1F-4240-A22D-BE20BB74A116.html[ONTAP System Manager^]. Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
+If you need to resize your volume, you can do it from the Advanced View in BlueXP.
+
+.Steps
+. Open the Advanced View to resize a volume through System Manager. See link:task-administer-advanced-view.html#how-to-get-started[How to get started].
+. From the left navigation menu, select *Storage > Volumes*.
+. From the list of volumes, identify the one that you should resize.
+. Click the options icon image:screenshot_gallery_options.gif[kabob icon].
+. Select *Resize*.
+. On the *Resize Volume* screen, edit the capacity and Snapshot reserve percentage as required. You can compare the existing, available space with the modified capacity.
+. Click *Save*. 
+
+image:screenshot-resize-volume.png[Screen displays the modified capacity after volume resize]
+
+Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
+
+//MM-GH issue 285
 
 == Modify the CIFS server
 

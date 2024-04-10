@@ -149,7 +149,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-goog
 
 === Packet mirroring in VPCs
 
-https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud VPC in which you deploy Cloud Volumes ONTAP. Cloud Volumes ONTAP can't operate properly if packet mirroring is enabled.
+https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud subnet in which you deploy Cloud Volumes ONTAP. Cloud Volumes ONTAP can't operate properly if packet mirroring is enabled.
 
 === Outbound internet access
 
@@ -191,7 +191,7 @@ For instructions, refer to https://cloud.google.com/vpn/docs/concepts/overview[G
 
 === Firewall rules
 
-BlueXP creates Google Cloud firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.
+BlueXP creates Google Cloud firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer to use your own firewall rules.
 
 The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules. If you're deploying an HA configuration, these are the firewall rules for Cloud Volumes ONTAP in VPC-0.
 

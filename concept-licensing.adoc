@@ -39,9 +39,20 @@ For example, you could purchase a single 20 TiB license, deploy four Cloud Volum
 
 Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from several licensing packages based on your business needs.
 
+NOTE: While the actual usage and metering for the products and services managed in BlueXP are always calculated in GiB and TiB, the terms GB/GiB and TB/TiB are used interchangeably. This is reflected in the Cloud Marketplace listings, price quotes, listing descriptions, and in other supporting documentation.
+
 === Packages
 
 The following capacity-based packages are available for Cloud Volumes ONTAP.
+
+For a list of supported VM types with the following capacity-based packages, refer to: 
+
+ifdef::azure[]
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^] 
+endif::azure[]
+ifdef::gcp[]
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^]
+endif::gcp[]
 
 ==== Freemium
 
@@ -70,13 +81,6 @@ ifdef::azure[]
 endif::azure[]
 ifdef::gcp[]
 * Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
-endif::gcp[]
-* Supported with selected VM types: 
-ifdef::azure[]
-** For Azure: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4 
-endif::azure[]
-ifdef::gcp[]
-** For Google Cloud: n2-standard-4, n2-standard-8
 endif::gcp[]
 * Add on any of NetApp's cloud data services at extra cost
 
@@ -217,18 +221,33 @@ If you exceed your BYOL capacity or if your license expires, you'll be charged f
 
 ==== Essentials package
 
-With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). For example, _Essentials HA_ has different pricing than _Essentials Secondary HA_.
+With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). Pricing from high to low is in the following order: _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_, and _Essentials Secondary Single Node_. Alternately, when you purchase a marketplace contract or accept a private offer, capacity charges are the same for any deployment or volume type. 
 
-If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the BlueXP digital wallet charges overages against a higher priced Essentials license (if you have one). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. Charging to the marketplace would add costs to your monthly bill.
+.BYOL
+If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the BlueXP digital wallet charges overages against a higher priced Essentials license (if you have one and there is available capacity). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. If there is no available capacity with your BYOL license, the exceeded capacity will be charged at marketplace on-demand hourly rates (PAYGO) and will add costs to your monthly bill.
 
 Here's an example. Let's say you have the following licenses for the Essentials package:
 
 * A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
 * A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
 
-Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the BlueXP digital wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's cheaper than the PAYGO rate.
+Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the BlueXP digital wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's making use of a license you have already purchased, and it will not add costs to your monthly bill.
 
 In the BlueXP digital wallet, that 50 TiB will be shown as charged against the _Essentials Single Node_ license.
+
+Here's another example. Let's say you have the following licenses for the Essentials package:
+
+* A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
+* A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
+
+Another 100 TiB is provisioned on an HA pair with primary volumes. The license you purchased doesn't have _Essentials Primary HA_ committed capacity. The _Essentials Primary HA_ license is priced higher than both the _Essentials Primary Single Node_ and _Essentials Secondary HA_ licenses. 
+
+In this example, the BlueXP digital wallet charges overages at the marketplace rate for the additional 100 TiB. The overage charges will appear on your monthly bill.  
+
+.Marketplace contracts or private offers
+If you purchased an Essentials license as part of a marketplace contract or a private offer, the BYOL logic does not apply, and you must have the exact license type for the usage. License type includes volume type (primary or secondary) and the deployment type (HA or single node). 
+
+For example, let's say you deploy a Cloud Volumes ONTAP instance with the Essentials license. You then provision read-write volumes (primary single node) and read-only (secondary single node) volumes. Your marketplace contract or private offer must include capacity for _Essentials Single Node_ and _Essentials Secondary Single Node_ to cover the provisioned capacity. Any provisioned capacity that isn't part of your marketplace contract or private offer will be charged at the on-demand hourly rates (PAYGO) and will add costs to your monthly bill.
 
 ==== Storage VMs
 

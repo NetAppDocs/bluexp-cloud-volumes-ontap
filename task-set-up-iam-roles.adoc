@@ -312,8 +312,8 @@ If you plan to use BlueXP backup and recovery with your Cloud Volumes ONTAP syst
 				"ec2:DescribeRouteTables",
 				"ec2:DescribeVpcs",
 				"ec2:ReplaceRoute",
-				"ec2:UnassignPrivateIpAddresses"
-                "sts:AssumeRole" 
+				"ec2:UnassignPrivateIpAddresses",
+                "sts:AssumeRole",
                 "ec2:DescribeSubnets" 
 			],
 			"Resource": "*"
@@ -332,3 +332,5 @@ You now have IAM roles that you can select when you create a new Cloud Volumes O
 
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS documentation: Creating IAM policies^]
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS documentation: Creating IAM roles^]
+
+//MM- GH issue 288
