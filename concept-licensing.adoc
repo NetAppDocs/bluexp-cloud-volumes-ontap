@@ -39,11 +39,20 @@ For example, you could purchase a single 20 TiB license, deploy four Cloud Volum
 
 Capacity-based licensing is available in the form of a _package_. When you deploy a Cloud Volumes ONTAP system, you can choose from several licensing packages based on your business needs.
 
-NOTE: Storage and network usage are calculated in binary gigabytes (GB), where 1GB is 2^30 bytes. This unit of measurement is also known as a gibibyte (GiB). Similarly, 1TB is 2^40 bytes, i.e., 1024 GBs.
+NOTE: While the actual usage and metering for the products and services managed in BlueXP are always calculated in GiB and TiB, the terms GB/GiB and TB/TiB are used interchangeably. This is reflected in the Cloud Marketplace listings, price quotes, listing descriptions, and in other supporting documentation.
 
 === Packages
 
 The following capacity-based packages are available for Cloud Volumes ONTAP.
+
+For a list of supported VM types with the following capacity-based packages, refer to: 
+
+ifdef::azure[]
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^] 
+endif::azure[]
+ifdef::gcp[]
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^]
+endif::gcp[]
 
 ==== Freemium
 
@@ -72,13 +81,6 @@ ifdef::azure[]
 endif::azure[]
 ifdef::gcp[]
 * Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
-endif::gcp[]
-* Supported with selected VM types: 
-ifdef::azure[]
-** For Azure: E4s_v3, E4ds_v4, DS4_v2, DS13_v2, E8s_v3, and E8ds_v4 
-endif::azure[]
-ifdef::gcp[]
-** For Google Cloud: n2-standard-4, n2-standard-8
 endif::gcp[]
 * Add on any of NetApp's cloud data services at extra cost
 
