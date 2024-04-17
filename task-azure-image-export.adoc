@@ -73,7 +73,7 @@ b) Create a new managed disk from the Marketplace image with the matching image 
 PS /home/user1> $diskName = “9.150.20240213-managed-disk"
 PS /home/user1> $diskRG = “fnf1”
 PS /home/user1> az disk create -g $diskRG -n $diskName --image-reference $urn
-PS /home/user1> $sas = az disk grant-access --duration-in-seconds 36000 --access-level Read --name $diskName --resource-group $diskRG
+PS /home/user1> $sas = az disk grant-access --duration-in-seconds 3600 --access-level Read --name $diskName --resource-group $diskRG
 PS /home/user1> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
  
 c) Export a VHD from the managed disk to Azure Storage
@@ -132,7 +132,7 @@ b) Create a new managed disk from the Marketplace image with the matching image 
 % export diskName="9.150.20240213-managed-disk"
 % export diskRG="new_rg_your_rg"
 % az disk create -g $diskRG -n $diskName --image-reference $urn
-% az disk grant-access --duration-in-seconds 36000 --access-level Read --name $diskName --resource-group $diskRG
+% az disk grant-access --duration-in-seconds 3600 --access-level Read --name $diskName --resource-group $diskRG
 {
   "accessSas": "https://md-xxxxxx.blob.core.windows.net/xxxxxxx/abcd?sv=2018-03-28&sr=b&si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxx&sigxxxxxxxxxxxxxxxxxxxxxxxx"
 }
