@@ -61,6 +61,8 @@ You need an IAM policy and IAM role for each of the following:
 . Go to the AWS IAM console and click *Policies*.
 
 . Create a policy for the Connector instance.
+[NOTE]
+##You create these policies to support the S3 buckets in your AWS environment. While creating the buckets later, ensure that the bucket names are prefixed with `fabric-pool-`. This requirement applies to both the AWS Secret Cloud and Top Secret Cloud regions.##
 +
 [role="tabbed-block"]
 ====
@@ -387,8 +389,6 @@ You need an IAM policy and IAM role for each of the following:
 //		}
 //	]
 //}
-[NOTE]
-For the policies that you just created to support the buckets that you create later, ensure that the bucket names are prefixed with `fabric-pool-`. This applies to the policies for both AWS Secret Cloud and Top Secret Cloud.
 +
 . Create IAM roles with the role type Amazon EC2 and attach the policies that you created in the previous steps.
 +
@@ -426,7 +426,7 @@ Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must
 . Obtain a root certificate signed by a certificate authority (CA) in the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format. Consult your organization's policies and procedures for obtaining the certificate.
 +
 [NOTE]
-For AWS Secret Cloud regions, you need the NetApp Support Site (NSS) `Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root 4` certificate.
+##For AWS Secret Cloud regions, you need the NetApp Support Site (NSS) `Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root 4` certificate.##
 +
 You'll need to upload the certificate during the setup process. BlueXP uses the trusted certificate when sending requests to AWS over HTTPS.
 
@@ -468,10 +468,10 @@ This user account runs locally on the system. There's no connection to the auth0
 . After the Connector restarts, log in using the administrator user account that you created in the Setup wizard.
 
 == Step 5: (optional) Install a private mode certificate
-This step is optional for only AWS Secret Cloud regions, and if you have multiple certificates. 
+##This step is optional for only AWS Secret Cloud regions, and if you have multiple certificates.##
 
 [NOTE]
-For Top Secret Cloud, you should not upload any additional certificate to `Amazon Root 4` certificate that you have already installed in the previous step.
+##For Top Secret Cloud, you should not upload any certificate in addition to the `Amazon Root 4` certificate that you have already installed in the previous step.##
 
 .Steps
 . List existing installed certificates. 
