@@ -34,13 +34,10 @@ The following regions now support HA multiple availability zone deployments in A
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
-
 === Johannesburg region now supported in Google Cloud
 The Johannesburg region (`africa-south1` region) is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
-
-== 17 April 2024
 
 === Volume templates and tags no longer supported
 
@@ -57,7 +54,6 @@ If required by your security policies, you can configure your EC2 instances to u
 
 === Cloud Volumes ONTAP 9.14.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud.
-//end::whats-new[]
 
 //end::whats-new[]
 
@@ -73,7 +69,6 @@ Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the
 * E64ds_v5
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
-
 
 == 16 January 2024
 
