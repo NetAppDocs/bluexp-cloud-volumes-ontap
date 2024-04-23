@@ -20,7 +20,7 @@ Before you get started, review the supported versions in AWS Secret Cloud and To
 
 * Review the following supported versions in AWS Secret Cloud and Top Secret Cloud:
 
-** Cloud Volumes ONTAP 9.12.1 P1
+** Cloud Volumes ONTAP 9.12.1 P2
  
 ** Version 3.9.32 of the Connector
 +
@@ -31,8 +31,6 @@ The Connector is software that's required to deploy and manage Cloud Volumes ONT
 In AWS Secret Cloud and Top Secret Cloud, BlueXP operates in _private mode_. In private mode, there is no connectivity to the BlueXP SaaS layer. Users access BlueXP locally from the web-based console that’s available from the Connector, not from the SaaS layer.
 +
 To learn more about how private mode works, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode[BlueXP private deployment mode^]. 
-
-* Note that only single node deployments are supported in AWS Secret Cloud and Top Secret Cloud. 
 
 == Step 1: Set up your networking
 Set up your AWS networking so Cloud Volumes ONTAP can operate properly.
@@ -402,7 +400,7 @@ You can select the IAM roles for Cloud Volumes ONTAP when you create a Cloud Vol
 
 
 == Step 3: Set up the AWS KMS
-If you want to use Amazon encryption with Cloud Volumes ONTAP, ensure that requirements are met for the AWS Key Management Service.
+If you want to use Amazon encryption with Cloud Volumes ONTAP, ensure that requirements are met for the AWS Key Management Service (KMS).
 
 .Steps
 
@@ -426,7 +424,7 @@ Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must
 . Obtain a root certificate signed by a certificate authority (CA) in the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format. Consult your organization's policies and procedures for obtaining the certificate.
 +
 [NOTE]
-##For AWS Secret Cloud regions, you need the NetApp Support Site (NSS) `Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root 4` certificate.##
+##For AWS Secret Cloud regions, you should upload the `NSS Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root 4` certificate. Ensure that you upload only these certificates and not the entire chain. The file for the entire certificate chain is large, and the upload can fail. If you have additional certificates, you can upload them later, as described in the next step.##
 +
 You'll need to upload the certificate during the setup process. BlueXP uses the trusted certificate when sending requests to AWS over HTTPS.
 
