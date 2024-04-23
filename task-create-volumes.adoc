@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-create-volumes.html
-keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, templates, cloud backup
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, cloud backup
 summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP.
 ---
 
@@ -19,7 +19,6 @@ BlueXP provides several ways to create a new volume:
 
 * Specify details for a new volume and let BlueXP handle the underlying data aggregates for you. <<create-a-volume,Learn more>>
 * Create a volume on a data aggregate of your choice. <<create-a-volume,Learn more>>
-* Create volume from a template to optimize the volume for the workload requirements for certain applications, such as databases or streaming services. <<create-a-volume-from-a-template,Learn more>>
 * Create a volume on the second node in an HA configuration. <<create-volume-second-node,Learn more>>
 
 == Before you get started
@@ -71,7 +70,7 @@ image:screenshot_add_volume_button_agg.png[A screenshot of the Add Volume button
 
 . Follow the steps in the wizard to create the volume.
 
-.. *Volumes, Details, Protection, and Tags*: Enter basic details about the volume and select a Snapshot policy.
+.. *Details, Protection, and Tags*: Enter basic details about the volume and select a Snapshot policy.
 +
 Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:
 +
@@ -83,8 +82,6 @@ Some of the fields on this page are self-explanatory. The following list describ
 | Volume Name | The identifiable name you can enter for the new volume.
 
 | Volume Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
-
-| Tags | Tags that you add to a volume are associated with the https://docs.netapp.com/us-en/bluexp-remediation/task-using-tags.html[Application Templates service^], which can help you organize and simplify the management of your resources.
 
 | Storage VM (SVM) | A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs. You can specify the Storage VM for the new volume.  
 
@@ -139,7 +136,7 @@ ifdef::azure[]
 https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou[Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain^]
 endif::azure[]
 ifdef::gcp[]
-*	To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
+* To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter *OU=Computers,OU=Cloud* in this field.
 https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units[Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD^]
 endif::gcp[]
 
@@ -191,58 +188,6 @@ Compression:: Reduces the physical capacity required to store data by compressin
 .Result
 
 BlueXP creates the volume on the Cloud Volumes ONTAP system.
-
-== Create a volume from a template
-
-If your organization has created Cloud Volumes ONTAP volume templates so you can deploy volumes that are optimized for the workload requirements for certain applications, follow the steps in this section.
-
-The template should make your job easier because certain volume parameters will already be defined in the template, such as disk type, size, protocol, snapshot policy, cloud provider, and more. When a parameter is already predefined, you can just skip to the next volume parameter.
-
-NOTE: You can only create NFS or CIFS volumes when using templates.
-
-.Steps
-
-. From the left navigation menu, select *Storage > Canvas*.
-
-. On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.
-
-. Navigate to the Volumes tab and click *Add Volume* > *New Volume From Template*.
-+
-image:screenshot_add_volume_template.png[A screenshot showing how to add a new volume from a template.]
-
-. In the _Select Template_ page, select the template that you want to use to create the volume and click *Next*.
-+
-image:screenshot_select_template_cvo.png[A screenshot of the available application templates.]
-+
-The _Editor_ page is displayed.
-+
-image:screenshot_define_cvo_vol_from_template.png[A screenshot showing a blank template that you need to fill in to create a volume.]
-
-. Above the _Action_ panel, enter a name for the template. 
-
-. Under _Context_, the Working Environment is filled in with the name of the working environment with which you started. Select the *Storage VM* where the volume will be created.
-
-. Add values for all of the parameters that are not hard-coded from the template. See <<create-a-volume,Create a volume>> for details about all the parameters needed to complete the deployment of a Cloud Volumes ONTAP volume.
-
-. Click *Apply* to save the configured parameters to the selected Action. 
-
-. If there are no other Actions that you need to define (for example, configuring BlueXP backup and recovery), click *Save Template*.
-+
-If there are other actions, click the action in the left pane to display the parameters you need to complete.
-+
-image:screenshot_template_select_next_action.png[A screenshot showing how to select additional actions that need to be completed.]
-+
-For example, if the Enable Cloud Backup on Volume action requires that you select a backup policy, you can do that now.
-
-. Once configuration for the template actions are complete, click *Save Template*.
-
-.Result
-
-Cloud Volumes ONTAP provisions the volume and displays a page so that you can see the progress.
-
-image:screenshot_template_creating_resource_cvo.png[A screenshot showing the progress of creating your new volume from the template.]
-
-Additionally, if any secondary action is implemented in the template, for example, enabling BlueXP backup and recovery on the volume, that action is also performed.
 
 [[create-volume-second-node]]
 == Create a volume on the second node in an HA configuration
