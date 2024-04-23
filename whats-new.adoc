@@ -20,6 +20,26 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
+== 23 April 2024
+
+=== New regions supported for multiple availability zone deployments in Azure
+The following regions now support HA multiple availability zone deployments in Azure for Cloud Volumes ONTAP 9.12.1 GA and later:
+
+* Germany West Central
+* Poland Central
+* West US 3
+* Israel Central
+* Italy North
+* Canada Central
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+
+
+=== Johannesburg region now supported in Google Cloud
+The Johannesburg region (`africa-south1` region) is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+
 == 17 April 2024
 
 === Volume templates and tags no longer supported
@@ -39,8 +59,9 @@ If required by your security policies, you can configure your EC2 instances to u
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud.
 //end::whats-new[]
 
-== 2 February 2024
+//end::whats-new[]
 
+== 2 February 2024
 === Support for Edv5-series VMs in Azure
 Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the 9.14.1 release. 
 
@@ -52,6 +73,7 @@ Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the
 * E64ds_v5
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
+
 
 == 16 January 2024
 
