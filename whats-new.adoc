@@ -22,8 +22,8 @@ The enhancements described on this page are specific to BlueXP features that ena
 //tag::whats-new[]
 == 23 April 2024
 
-=== Multiple availability zone region support
-The following regions now support highly-available multiple availability zone deployments in Azure for Cloud Volumes ONTAP 9.12.1 GA and later:
+=== Multiple availability zone region support in Azure
+The following regions now support HA multiple availability zone deployments in Azure for Cloud Volumes ONTAP 9.12.1 GA and later:
 
 * Germany West Central
 * Poland Central
