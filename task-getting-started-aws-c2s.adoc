@@ -424,7 +424,7 @@ Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must
 . Obtain a root certificate signed by a certificate authority (CA) in the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format. Consult your organization's policies and procedures for obtaining the certificate.
 +
 [NOTE]
-##For AWS Secret Cloud regions, you should upload the `NSS Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root 4` certificate. Ensure that you upload only these certificates and not the entire chain. The file for the entire certificate chain is large, and the upload can fail. If you have additional certificates, you can upload them later, as described in the next step.##
+##For AWS Secret Cloud regions, you should upload the `NSS Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root CA 4` certificate. Ensure that you upload only these certificates and not the entire chain. The file for the certificate chain is large, and the upload can fail. If you have additional certificates, you can upload them later, as described in the next step.##
 +
 You'll need to upload the certificate during the setup process. BlueXP uses the trusted certificate when sending requests to AWS over HTTPS.
 
@@ -614,3 +614,41 @@ NOTE: If you need a different size later, you can use the Advanced allocation op
 .Result
 
 BlueXP launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.
+
+== Step 8: Install security certificates for data tiering
+You need to manually install security certificates for enabling data tiering in AWS Secret Cloud and Top Secret Cloud regions.
+
+.Before you begin
+
+. Create S3 buckets. 
++
+[NOTE]
+Ensure that the bucket names are prefixed with `fabric-pool-`. For example `fabric-pool-testbucket`. 
++
+See https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html[Add S3 buckets].
+. Keep the root certificates that you installed in `step 4` handy.
+
+.Steps
+. Copy the text from the root certificates that you installed in `step 4`.
+. Securely connect to the Cloud Volumes ONTAP system by using the CLI.
+. Install the root certificates. You might need to press the `ENTER` key multiple times:
++
+----
+security certificate install -type server-ca -cert-name <certificate-name>
+----
++
+. When prompted, enter the entire copied text, including and from `----- BEGIN CERTIFICATE -----` to `----- END CERTIFICATE -----`.
+. Keep a copy of the CA-signed digital certificate for future reference.
+. Retain the CA name and certificate serial number.
+. Configure the object store for AWS Secret Cloud and Top Secret Cloud regions: `set -privilege advanced -confirmations off`
+. Run this command to configure the object store.
+[NOTE]
+All Amazon Resource Names (ARNs) should be suffixed with `-iso-b`, such as `arn:aws-iso-b`. For example, if a resource requires an ARN with a region, use the naming convention as `us-iso-b` for the `-server` flag.
++
+----
+storage aggregate object-store config create -object-store-name <S3Bucket> -provider-type AWS_S3 -auth-type EC2-IAM -server <s3.us-isob-east-1.server_name> -container-name <fabric-pool-testbucket> -is-ssl-enabled true -port 443
+----
++
+. Verify that the object store was created successfully: `storage aggregate object-store show -instance`
+. Attach the object store to the aggregate. This should be repeated for every new aggregate: `storage aggregate object-store attach -aggregate <aggr1> -object-store-name <S3Bucket>`
+
