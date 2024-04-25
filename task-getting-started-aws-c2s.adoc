@@ -52,7 +52,7 @@ You need an IAM policy and IAM role for each of the following:
 
 * The Connector instance
 * Cloud Volumes ONTAP instances
-//For HA pairs: * The Cloud Volumes ONTAP HA mediator instance (if you want to deploy HA pairs)
+* For HA pairs: The Cloud Volumes ONTAP HA mediator instance (if you want to deploy HA pairs)
 
 .Steps
 
@@ -60,7 +60,7 @@ You need an IAM policy and IAM role for each of the following:
 
 . Create a policy for the Connector instance.
 [NOTE]
-##You create these policies to support the S3 buckets in your AWS environment. While creating the buckets later, ensure that the bucket names are prefixed with `fabric-pool-`. This requirement applies to both the AWS Secret Cloud and Top Secret Cloud regions.##
+You create these policies to support the S3 buckets in your AWS environment. While creating the buckets later, ensure that the bucket names are prefixed with `fabric-pool-`. This requirement applies to both the AWS Secret Cloud and Top Secret Cloud regions.
 +
 [role="tabbed-block"]
 ====
@@ -366,37 +366,37 @@ You need an IAM policy and IAM role for each of the following:
 
 ====
 +
-//For HA pairs: . If you plan to deploy a Cloud Volumes ONTAP HA pair, create a policy for the HA mediator.
-//+
-//[source,json]
-//{
-//	"Version": "2012-10-17",
-//	"Statement": [{
-//			"Effect": "Allow",
-//			"Action": [
-//				"ec2:AssignPrivateIpAddresses",
-//				"ec2:CreateRoute",
-//				"ec2:DeleteRoute",
-//				"ec2:DescribeNetworkInterfaces",
-//				"ec2:DescribeRouteTables",
-//				"ec2:DescribeVpcs",
-//				"ec2:ReplaceRoute",
-//				"ec2:UnassignPrivateIpAddresses"
-//			],
-//			"Resource": "*"
-//		}
-//	]
-//}
+For HA pairs: If you plan to deploy a Cloud Volumes ONTAP HA pair, create a policy for the HA mediator.
++
+[source,json]
+{
+	"Version": "2012-10-17",
+	"Statement": [{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AssignPrivateIpAddresses",
+				"ec2:CreateRoute",
+				"ec2:DeleteRoute",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeVpcs",
+				"ec2:ReplaceRoute",
+				"ec2:UnassignPrivateIpAddresses"
+			],
+			"Resource": "*"
+		}
+	]
+}
 +
 . Create IAM roles with the role type Amazon EC2 and attach the policies that you created in the previous steps.
 +
+.Create the role:
 Similar to the policies, you should have one IAM role for the Connector and one for the Cloud Volumes ONTAP nodes.
-//For HA pairs: Similar to the policies, you should have one IAM role for the Connector, one for the Cloud Volumes ONTAP nodes, and one for the HA mediator (if you want to deploy HA pairs).
+For HA pairs: Similar to the policies, you should have one IAM role for the Connector, one for the Cloud Volumes ONTAP nodes, and one for the HA mediator (if you want to deploy HA pairs).
 +
-You must select the Connector IAM role when you launch the Connector instance.
-+
-You can select the IAM roles for Cloud Volumes ONTAP when you create a Cloud Volumes ONTAP working environment from BlueXP.
-//For HA pairs: You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
+.Select the role:
+You must select the Connector IAM role when you launch the Connector instance. You can select the IAM roles for Cloud Volumes ONTAP when you create a Cloud Volumes ONTAP working environment from BlueXP.
+For HA pairs: You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
 
 
 == Step 3: Set up the AWS KMS
@@ -424,7 +424,7 @@ Before you can start using BlueXP to deploy Cloud Volumes ONTAP in AWS, you must
 . Obtain a root certificate signed by a certificate authority (CA) in the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format. Consult your organization's policies and procedures for obtaining the certificate.
 +
 [NOTE]
-##For AWS Secret Cloud regions, you should upload the `NSS Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root CA 4` certificate. Ensure that you upload only these certificates and not the entire chain. The file for the certificate chain is large, and the upload can fail. If you have additional certificates, you can upload them later, as described in the next step.##
+For AWS Secret Cloud regions, you should upload the `NSS Root CA 2` certificate, and for Top Secret Cloud, the `Amazon Root CA 4` certificate. Ensure that you upload only these certificates and not the entire chain. The file for the certificate chain is large, and the upload can fail. If you have additional certificates, you can upload them later, as described in the next step.
 +
 You'll need to upload the certificate during the setup process. BlueXP uses the trusted certificate when sending requests to AWS over HTTPS.
 
@@ -466,7 +466,7 @@ This user account runs locally on the system. There's no connection to the auth0
 . After the Connector restarts, log in using the administrator user account that you created in the Setup wizard.
 
 == Step 5: (optional) Install a private mode certificate
-##This step is optional for AWS Secret Cloud and Top Secret Cloud regions, and is required only if you have additional certificates apart from the root certificates that you installed in the previous step.##
+This step is optional for AWS Secret Cloud and Top Secret Cloud regions, and is required only if you have additional certificates apart from the root certificates that you installed in the previous step.
 
 .Steps
 . List existing installed certificates. 
@@ -540,8 +540,8 @@ exit
 ----
 docker restart <docker-id>
 ----
-  
-
+--
+--
 == Step 6: Add a license to the BlueXP digital wallet
 If you purchased a license from NetApp, you need to add it to the BlueXP digital wallet so that you can select the license when you create a new Cloud Volumes ONTAP system. The digital wallet identifies these licenses as unassigned.
 
@@ -572,24 +572,28 @@ If you purchased a license from NetApp, you need to add it to the BlueXP digital
 BlueXP adds the license to the digital wallet. The license will be identified as unassigned until you associate it with a new Cloud Volumes ONTAP system. After that happens, the license moves to the BYOL tab in the digital wallet.
 
 == Step 7: Launch Cloud Volumes ONTAP from BlueXP
+
 You can launch Cloud Volumes ONTAP instances in AWS Secret Cloud and Top Secret Cloud by creating new working environments in BlueXP.
 
-//* A key pair is required to enable key-based SSH authentication to the HA mediator.
+* A key pair is required to enable key-based SSH authentication to the HA mediator.
 
 .Steps
 
 . On the Working Environments page, click *Add Working Environment*.
 
 . Under Create, select Cloud Volumes ONTAP.
-//Step 2 for HA: . Under Create, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
+Step 2 for HA: . Under Create, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
 . Complete the steps in the wizard to launch the Cloud Volumes ONTAP system.
-//+
-//Note the following as you complete the wizard:
-//+
-//* If you want to deploy Cloud Volumes ONTAP HA in multiple Availability Zones, deploy the configuration as follows because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
-//** Node 1: Availability Zone A
-//** Node 2: Availability Zone B
-//** Mediator: Availability Zone A or B
++
+Note the following as you complete the wizard:
++
+* If you want to deploy Cloud Volumes ONTAP HA in multiple Availability Zones, deploy the configuration as follows because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
+** Node 1: Availability Zone A
+** Node 2: Availability Zone B
+** Mediator: Availability Zone A or B
++
+[CAUTION]
+While making selections through the wizard, do not select *Data Sense & Compliance* and *Backup to Cloud* under *Services*. Also, ensure that you haven't selected any of the options under *Preconfigured Packages*. These configurations aren't supported for AWS Secret Cloud and Top Secret Cloud regions, and if selected, your deployment might fail.
 
 * You should leave the default option to use a generated security group.
 +
@@ -624,8 +628,6 @@ You need to manually install security certificates for enabling data tiering in 
 +
 [NOTE]
 Ensure that the bucket names are prefixed with `fabric-pool-`. For example `fabric-pool-testbucket`. 
-+
-See https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html[Add S3 buckets].
 . Keep the root certificates that you installed in `step 4` handy.
 
 .Steps
@@ -643,10 +645,10 @@ security certificate install -type server-ca -cert-name <certificate-name>
 . Configure the object store for AWS Secret Cloud and Top Secret Cloud regions: `set -privilege advanced -confirmations off`
 . Run this command to configure the object store.
 [NOTE]
-All Amazon Resource Names (ARNs) should be suffixed with `-iso-b`, such as `arn:aws-iso-b`. For example, if a resource requires an ARN with a region, use the naming convention as `us-iso-b` for the `-server` flag.
+All Amazon Resource Names (ARNs) should be suffixed with `-iso-b`, such as `arn:aws-iso-b`. For example, if a resource requires an ARN with a region, for Top Secret Cloud, use the naming convention as `us-iso-b` for the `-server` flag. For AWS Secret Cloud, use `us-iso-b-1`.
 +
 ----
-storage aggregate object-store config create -object-store-name <S3Bucket> -provider-type AWS_S3 -auth-type EC2-IAM -server <s3.us-isob-east-1.server_name> -container-name <fabric-pool-testbucket> -is-ssl-enabled true -port 443
+storage aggregate object-store config create -object-store-name <S3Bucket> -provider-type AWS_S3 -auth-type EC2-IAM -server <s3.us-iso-b-1.server_name> -container-name <fabric-pool-testbucket> -is-ssl-enabled true -port 443
 ----
 +
 . Verify that the object store was created successfully: `storage aggregate object-store show -instance`
