@@ -581,8 +581,9 @@ You can launch Cloud Volumes ONTAP instances in AWS Secret Cloud and Top Secret 
 
 . On the Working Environments page, click *Add Working Environment*.
 
-. Under Create, select Cloud Volumes ONTAP.
-Step 2 for HA: . Under Create, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
+. Under *Create*, select Cloud Volumes ONTAP.
++
+For HA: Under *Create*, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
 . Complete the steps in the wizard to launch the Cloud Volumes ONTAP system.
 +
 [CAUTION]
