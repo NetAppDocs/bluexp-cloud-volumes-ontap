@@ -585,35 +585,35 @@ You can launch Cloud Volumes ONTAP instances in AWS Secret Cloud and Top Secret 
 Step 2 for HA: . Under Create, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
 . Complete the steps in the wizard to launch the Cloud Volumes ONTAP system.
 +
+[CAUTION]
+While making selections through the wizard, do not select *Data Sense & Compliance* and *Backup to Cloud* under *Services*. Also, ensure that you haven't selected any of the options under *Preconfigured Packages*. These configurations aren't supported for AWS Secret Cloud and Top Secret Cloud regions, and if selected, your deployment might fail.
+
+.Notes for deploying Cloud Volumes ONTAP HA in multiple Availability Zones
 Note the following as you complete the wizard:
-+
-* If you want to deploy Cloud Volumes ONTAP HA in multiple Availability Zones, deploy the configuration as follows because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
+
+* You should configure a transit gateway when you deploy Cloud Volumes ONTAP HA in multiple Availability Zones (AZs). See link:task-setting-up-transit-gateway.html[Set up an AWS transit gateway].
+* Deploy the configuration as the following because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
 ** Node 1: Availability Zone A
 ** Node 2: Availability Zone B
 ** Mediator: Availability Zone A or B
-+
-[CAUTION]
-While making selections through the wizard, do not select *Data Sense & Compliance* and *Backup to Cloud* under *Services*. Also, ensure that you haven't selected any of the options under *Preconfigured Packages*. These configurations aren't supported for AWS Secret Cloud and Top Secret Cloud regions, and if selected, your deployment might fail.
+
+.Notes for deploying Cloud Volumes ONTAP in both single and HA nodes
+Note the following as you complete the wizard:
 
 * You should leave the default option to use a generated security group.
 +
 The predefined security group includes the rules that Cloud Volumes ONTAP needs to operate successfully. If you have a requirement to use your own, you can refer to the security group section below.
-
++
 * You must choose the IAM role that you created when preparing your AWS environment.
-
 * The underlying AWS disk type is for the initial Cloud Volumes ONTAP volume.
 +
 You can choose a different disk type for subsequent volumes.
-
 * The performance of AWS disks is tied to disk size.
 +
 You should choose the disk size that gives you the sustained performance that you need. Refer to AWS documentation for more details about EBS performance.
-
 * The disk size is the default size for all disks on the system.
 +
 NOTE: If you need a different size later, you can use the Advanced allocation option to create an aggregate that uses disks of a specific size.
-
-* Storage efficiency features can improve storage utilization and reduce the total amount of storage that you need.
 
 .Result
 
