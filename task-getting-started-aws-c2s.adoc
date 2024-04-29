@@ -52,7 +52,7 @@ You need an IAM policy and IAM role for each of the following:
 
 * The Connector instance
 * Cloud Volumes ONTAP instances
-* For HA pairs: The Cloud Volumes ONTAP HA mediator instance (if you want to deploy HA pairs)
+* For HA pairs, the Cloud Volumes ONTAP HA mediator instance (if you want to deploy HA pairs)
 
 .Steps
 
@@ -366,7 +366,7 @@ You create these policies to support the S3 buckets in your AWS environment. Whi
 
 ====
 +
-For HA pairs: If you plan to deploy a Cloud Volumes ONTAP HA pair, create a policy for the HA mediator.
+For HA pairs, if you plan to deploy a Cloud Volumes ONTAP HA pair, create a policy for the HA mediator.
 +
 [source,json]
 {
@@ -396,7 +396,7 @@ For HA pairs: Similar to the policies, you should have one IAM role for the Conn
 +
 .Select the role:
 You must select the Connector IAM role when you launch the Connector instance. You can select the IAM roles for Cloud Volumes ONTAP when you create a Cloud Volumes ONTAP working environment from BlueXP.
-For HA pairs: You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
+For HA pairs, you can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.
 
 
 == Step 3: Set up the AWS KMS
@@ -575,7 +575,8 @@ BlueXP adds the license to the digital wallet. The license will be identified as
 
 You can launch Cloud Volumes ONTAP instances in AWS Secret Cloud and Top Secret Cloud by creating new working environments in BlueXP.
 
-* A key pair is required to enable key-based SSH authentication to the HA mediator.
+.Before you begin
+For HA pairs, a key pair is required to enable key-based SSH authentication to the HA mediator.
 
 .Steps
 
@@ -590,7 +591,7 @@ For HA: Under *Create*, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
 While making selections through the wizard, do not select *Data Sense & Compliance* and *Backup to Cloud* under *Services*. Under *Preconfigured Packages*, select *Change Configuration* only, and ensure that you haven't selected any other option. Preconfigured packages aren't supported in AWS Secret Cloud and Top Secret Cloud regions, and if selected, your deployment will fail.
 
 .Notes for deploying Cloud Volumes ONTAP HA in multiple Availability Zones
-Note the following as you complete the wizard:
+Note the following as you complete the wizard for HA pairs.
 
 * You should configure a transit gateway when you deploy Cloud Volumes ONTAP HA in multiple Availability Zones (AZs). See link:task-setting-up-transit-gateway.html[Set up an AWS transit gateway].
 * Deploy the configuration as the following because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
