@@ -587,7 +587,7 @@ For HA: Under *Create*, select Cloud Volumes ONTAP or Cloud Volumes ONTAP HA.
 . Complete the steps in the wizard to launch the Cloud Volumes ONTAP system.
 +
 [CAUTION]
-While making selections through the wizard, do not select *Data Sense & Compliance* and *Backup to Cloud* under *Services*. Also, ensure that you haven't selected any of the options under *Preconfigured Packages*. These configurations aren't supported for AWS Secret Cloud and Top Secret Cloud regions, and if selected, your deployment might fail.
+While making selections through the wizard, do not select *Data Sense & Compliance* and *Backup to Cloud* under *Services*. Under *Preconfigured Packages* select *Change Configuration* only, and ensure that you haven't selected any other option. These preconfigured packages aren't supported for AWS Secret Cloud and Top Secret Cloud regions, and if selected, your deployment will fail.
 
 .Notes for deploying Cloud Volumes ONTAP HA in multiple Availability Zones
 Note the following as you complete the wizard:
