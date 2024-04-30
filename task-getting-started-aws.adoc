@@ -56,7 +56,7 @@ Click *Add Working Environment*, select the type of system that you would like t
 
 .Related links
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Creating a Connector from BlueXP^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws.html[Launching a Connector from the AWS Marketplace^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Installing the Connector software on a Linux host^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html[What BlueXP does with AWS permissions^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html[Create a Connector in AWS from BlueXP^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html[Create a Connector from the AWS Marketplace^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Install and set up a Connector on premises^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html[AWS permissions for the Connector^]

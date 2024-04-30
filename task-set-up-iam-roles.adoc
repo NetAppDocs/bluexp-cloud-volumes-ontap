@@ -17,7 +17,7 @@ IAM roles with the required permissions must be attached to each Cloud Volumes O
 
 This task is optional. When you create a Cloud Volumes ONTAP working environment, the default option is to let BlueXP create the IAM roles for you. If your business's security policies require you to create the IAM roles yourself, then follow the steps below.
 
-NOTE: Providing your own IAM role is required in the AWS Commercial Cloud Services Environment. link:task-getting-started-aws-c2s.html[Learn how to deploy Cloud Volumes ONTAP in C2S].
+NOTE: Providing your own IAM role is required in AWS Secret Cloud. link:task-getting-started-aws-c2s.html[Learn how to deploy Cloud Volumes ONTAP in C2S].
 
 .Steps
 
@@ -86,7 +86,7 @@ NOTE: Providing your own IAM role is required in the AWS Commercial Cloud Servic
 }
 --
 
-.C2S environment
+.Top Secret regions
 --
 [source,json]
 {
@@ -109,6 +109,34 @@ NOTE: Providing your own IAM role is required in the AWS Commercial Cloud Servic
             "s3:DeleteObject"
         ],
         "Resource": "arn:aws-iso:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }]
+}
+--
+
+.Secret regions
+--
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws-iso-b:s3:::*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+        ],
+        "Resource": "arn:aws-iso-b:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws-iso-b:s3:::fabric-pool-*",
         "Effect": "Allow"
     }]
 }
@@ -195,7 +223,7 @@ If you plan to use BlueXP backup and recovery with your Cloud Volumes ONTAP syst
 
 --
 
-.C2S environment
+.Top Secret regions
 --
 [source,json]
 {
@@ -230,6 +258,40 @@ If you plan to use BlueXP backup and recovery with your Cloud Volumes ONTAP syst
 }
 
 --
+
+.Secret regions
+--
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws-iso-b:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws-iso-b:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
 
 ====
 // end tabbed area
