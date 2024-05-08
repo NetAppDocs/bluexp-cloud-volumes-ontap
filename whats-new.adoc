@@ -39,6 +39,8 @@ If required by your security policies, you can configure your EC2 instances to u
 === Cloud Volumes ONTAP 9.14.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud. 
 
+//end::whats-new[]
+
 == 2 February 2024
 
 === Support for Edv5-series VMs in Azure
@@ -52,7 +54,6 @@ Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the
 * E64ds_v5
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
-//end::whats-new[]
 
 == 16 January 2024
 
@@ -60,7 +61,6 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-config
 Patch releases are available in BlueXP only for the latest three versions of Cloud Volumes ONTAP. 
 
 link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#patch-releases[Upgrade Cloud Volumes ONTAP^]
-//end::whats-new[]
 
 == 8 January 2024
 
