@@ -13,7 +13,7 @@ summary: Manage aggregates yourself by adding disks, viewing information about t
 :imagesdir: ./media/
 
 [.lead]
-Each Connector has settings that determines how it manages aggregate capacity for Cloud Volumes ONTAP.
+Each Connector has settings that determines how it manages aggregate capacity for Cloud Volumes ONTAP. 
 
 These settings affect all Cloud Volumes ONTAP systems managed by a Connector. If you have another Connector, it can be configured differently.
 
@@ -35,11 +35,14 @@ Choose whether BlueXP notifies you of storage capacity decisions or whether Blue
 link:concept-storage-management.html#capacity-management[Learn how Capacity Management Mode works].
 
 Aggregate Capacity Threshold - Free Space Ratio::
-Triggers a notification when the free space ratio on an aggregate drops below the specified threshold.
+This ratio is a key parameter in capacity management decisions, and understanding its impact is essential regardless of whether you are in an automatic or manual mode of capacity management. It is recommended to set this threshold with consideration of your specific storage needs and anticipated growth to maintain a balance between resource utilization and cost.
++
+In the manual mode, if the free space ratio on an aggregate drops below the specified threshold, it triggers a notification, alerting you that you should take actions to address the low free space ratio. It is important to monitor these notifications and manually manage the aggregate capacity to avoid service disruption and ensure optimal performance.
 +
 The free space ratio is calculated as follows:
-+
 (aggregate capacity - total used capacity on the aggregate) / aggregate capacity
++
+See link:concept-storage-management.html#automatic-capacity-management[Automatic capacity management] to learn now capacity is automatically managed in Cloud Volumes ONTAP.
 
 Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering::
 Defines how much free space is required on the performance tier (disks) when tiering data to a capacity tier (object storage).

@@ -21,6 +21,8 @@ _Capacity-based licenses_ enable you to pay for Cloud Volumes ONTAP per TiB of c
 
 The _BlueXP digital wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
 
+NOTE: While the actual usage and metering for the products and services managed in BlueXP are always calculated in GiB and TiB, the terms GB/GiB and TB/TiB are used interchangeably. This is reflected in the Cloud Marketplace listings, price quotes, listing descriptions, and in other supporting documentation
+
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about Cloud Volumes ONTAP licenses].
 
 == How licenses are added to the BlueXP digital wallet
@@ -158,7 +160,9 @@ However, if you deployed BlueXP in a location that doesn't have internet access,
 
 .What you'll need
 
-The license file (or _files_ if you have an HA pair).
+The license file (or _files_ if you have an HA pair). 
+
+NOTE: For more information on how to obtain a license file, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#obtain-a-system-license-file[Obtain a system license file^]. 
 
 .Steps
 
@@ -172,17 +176,21 @@ The license file (or _files_ if you have an HA pair).
 
 == Change charging methods
 
-You can change the charging method for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed.
+Capacity-based licensing is available in the form of a _package_. When you create a Cloud Volumes ONTAP working environment, you can choose from several licensing packages based on your business needs. If your needs change after you create the working environment, you can change the package at any time. For example, you might change from the Essentials package to the Professional package.
 
-ifdef::azure[]
-.Limitation
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Learn more about capacity-based licensing packages^].
 
-Changing to or from the Edge Cache license isn't supported.
-endif::azure[]
+.About this task
 
-.Important note
+* Changing the charging method doesn't affect whether you're charged through a license purchased from NetApp (BYOL) or from your cloud provider's marketplace (pay as you go). 
++
+BlueXP always attempts to charge against a license first. If a license isn't available, it charges against a marketplace subscription. No "conversion" is required for BYOL to marketplace subscription or vice versa.
 
-If you have a private offer or contract from your cloud provider's marketplace, changing to a charging method that's not included in your contract will result in charging against BYOL (if you purchased a license from NetApp) or PAYGO.
+* If you have a private offer or contract from your cloud provider's marketplace, changing to a charging method that's not included in your contract will result in charging against BYOL (if you purchased a license from NetApp) or PAYGO.
+
+ifdef::azure,gcp[]
+* Changing to or from the Edge Cache license isn't supported.
+endif::azure,gcp[]
 
 .Steps
 

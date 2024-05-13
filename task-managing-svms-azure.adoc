@@ -294,7 +294,7 @@ Follow these steps to create a new storage VM, along with the required LIFs.
 vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
+network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
 . Create a data LIF:
 +
@@ -326,7 +326,7 @@ Follow these steps to create a new storage VM, along with the required LIFs.
 vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
+network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
 . Create a data LIF:
 +
@@ -358,7 +358,7 @@ Follow these steps to create a new storage VM, along with the required LIFs.
 vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
+network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
 . Create a data LIF:
 +
@@ -403,7 +403,7 @@ Follow these steps to create a new storage VM, along with the required LIFs.
 vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
+network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
 . Create data LIFs:
 
@@ -469,7 +469,7 @@ Follow these steps to create a new storage VM, along with the required LIFs.
 vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
+network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
 . Create data LIFs:
 
@@ -553,7 +553,7 @@ Follow these steps to create a new storage VM, along with the required LIFs.
 vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-name> -rootvolume-security-style unix
 +
 [source,cli]
-network route create -destination 0.0.0.0/0 -vserver <svm-name> -gateway <ip-of-gateway-server>
+network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
 . Create NAS data LIFs:
 

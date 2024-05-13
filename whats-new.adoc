@@ -20,6 +20,29 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 
 //tag::whats-new[]
+== 23 April 2024
+
+=== New regions supported for multiple availability zone deployments in Azure
+The following regions now support HA multiple availability zone deployments in Azure for Cloud Volumes ONTAP 9.12.1 GA and later:
+
+* Germany West Central
+* Poland Central
+* West US 3
+* Israel Central
+* Italy North
+* Canada Central
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+
+=== Johannesburg region now supported in Google Cloud
+The Johannesburg region (`africa-south1` region) is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+
+=== Volume templates and tags no longer supported
+
+You can no longer create a volume from a template or edit a volume's tags. These actions were associated with the BlueXP remediation service, which is no longer available.
+
 == 8 March 2024
 
 === Amazon Instant Metadata Service v2 support
@@ -30,10 +53,11 @@ If required by your security policies, you can configure your EC2 instances to u
 == 5 March 2024
 
 === Cloud Volumes ONTAP 9.14.1 GA
-BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud. 
+BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud.
+
+//end::whats-new[]
 
 == 2 February 2024
-
 === Support for Edv5-series VMs in Azure
 Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the 9.14.1 release. 
 
@@ -45,7 +69,6 @@ Cloud Volumes ONTAP now supports the following Edv5-series VMs starting with the
 * E64ds_v5
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
-//end::whats-new[]
 
 == 16 January 2024
 
@@ -53,7 +76,6 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-config
 Patch releases are available in BlueXP only for the latest three versions of Cloud Volumes ONTAP. 
 
 link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#patch-releases[Upgrade Cloud Volumes ONTAP^]
-//end::whats-new[]
 
 == 8 January 2024
 
@@ -79,7 +101,6 @@ You can now create a FlexVol volume up to the maximum size of 300 TiB with Syste
 * link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#file-and-volume-limits[Storage limits in AWS]
 * link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html#file-and-volume-limits[Storage limits in Azure]
 * link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#logical-storage-limits[Storage limits in Google Cloud]
-//end::whats-new[]
 
 == 5 December 2023
 The following changes were introduced. 
@@ -284,7 +305,7 @@ FlexGroup volumes created through CLI or System Manager directly are now viewabl
 
 NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-show-flexgroup-volume.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
+image:screenshot-show-flexgroup-volume.png[A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 
 link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html[Learn more about viewing created FlexGroup volumes.^] 
 
@@ -769,7 +790,6 @@ image:screenshot-cvo-user-name.png[A screenshot of the Details and Credentials p
 We made a few enhancements to volume creation:
 
 * We redesigned the create volume wizard for ease of use.
-* Tags that you add to a volume are now associated with the Application Templates service, which can help you organize and simplify the management of your resources.
 * You can now choose a custom export policy for NFS.
 
 image:screenshot-cvo-create-volume.png[A screenshot that shows the Protocol page when creating a new volume.]
