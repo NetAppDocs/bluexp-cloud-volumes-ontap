@@ -35,7 +35,7 @@ TIP: BlueXP gracefully changes one node at a time by initiating takeover and wai
 
 For a list of supported instance types in AWS, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute[Supported EC2 instances^].
 
-If you can't change the instance type from c4, m4, or r4 instances, see KB article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_(KVM)["Converting an AWS Xen CVO instance to Nitro (KVM) "^].
+If you can't change the instance type from c4, m4, or r4 instances, see KB article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_(KVM)["Converting an AWS Xen CVO instance to Nitro (KVM)"^].
 
 .Steps
 
