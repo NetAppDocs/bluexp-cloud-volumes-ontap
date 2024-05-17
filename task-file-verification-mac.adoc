@@ -52,14 +52,14 @@ Otherwise, "Verification Failure" will display.
 % openssl dgst -verify Code-Sign-Cert-Public-key.pub -keyform PEM -sha256 -signature digest.sig -binary ./sign.tmp
 Verified OK
  
-% openssl dgst -verify public_key.pem -keyform PEM -sha256 -signature digest.sig -binary ./another_file_from_nowhere.tmp
+% openssl dgst -verify Code-Sign-Cert-Public-key.pub -keyform PEM -sha256 -signature digest.sig -binary ./another_file_from_nowhere.tmp
 Verification Failure
 ----
 
 . Clean up the workspace.
 + 
 ----
-% rm ./9.110.20220302.vhd ./sign.tmp
+% rm ./9.150.20240213.vhd ./sign.tmp
 % rm *.sig *.pub *.pem
 ----
 

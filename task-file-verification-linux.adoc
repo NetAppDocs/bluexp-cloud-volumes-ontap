@@ -33,7 +33,7 @@ Certificate-AZURE_CVO_20230124-134845.pem: OK
 If 'tail' is used, the option '-c +K' outputs bytes starting with the Kth bytes of the specified file. Hence, 1048577 is passed to 'tail -c'.
 +
 ----
-% tail -c +1048577 ./9.110.20220302.vhd > ./sign.tmp.tail
+% tail -c +1048577 ./9.150.20240213.vhd > ./sign.tmp.tail
 % head -c -512 ./sign.tmp.tail > sign.tmp
 % rm ./sign.tmp.tail
 ----
@@ -56,6 +56,6 @@ Verification Failure
 . Clean up the workspace.
 + 
 ----
-% rm ./9.110.20220302.vhd ./sign.tmp
+% rm ./9.150.20240213.vhd ./sign.tmp
 % rm *.sig *.pub *.pem
 ----
