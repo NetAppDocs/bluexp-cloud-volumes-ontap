@@ -38,9 +38,10 @@ The extracted TAR.GZ file contains the digest file(.sig), public key certificate
 +
 ---- 
 $ ls cert/ -l
--rw-r----- 1 netapp netapp  384 Feb  9 13:00 9.15.0_azure_digest.sig
--rw-r----- 1 netapp netapp 2365 Feb  9 13:00 Certificate-9.15.0_azure.pem
--rw-r----- 1 netapp netapp 8537 Feb  9 13:00 Certificate-Chain-9.15.0_azure.pem
+-rw-r----- 1 netapp netapp  384 May  13 13:00 9.15.0P1_azure_digest.sig
+-rw-r----- 1 netapp netapp 2365 May  13 13:00 Certificate-9.15.0P1_azure.pem
+-rw-r----- 1 netapp netapp 8537 May  13 13:00 Certificate-Chain-9.15.0P1_azure.pem
+-rw-r----- 1 netapp netapp 8537 May  13 13:00 version_readme
 ----
 
 

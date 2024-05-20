@@ -24,8 +24,8 @@ Refer to the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure
 . Verify the chain of trust.
 +
 ----
-% openssl verify -CAfile Certificate-Chain-AZURE_CVO_20230124-134845.pem Certificate-AZURE_CVO_20230124-134845.pem
-Certificate-AZURE_CVO_20230124-134845.pem: OK
+% openssl verify -CAfile Certificate-Chain-9.15.0P1_azure.pem Certificate-9.15.0P1_azure.pem
+Certificate-9.15.0P1_azure.pem: OK
 ----
 
 . Remove the leading 1MB(1048576 Bytes) and ending 512 Bytes of VHD file. 
@@ -35,7 +35,7 @@ of the specified file. Hence, 1048577 is passed to 'tail -c'. It takes around 13
 for the tail command to complete on Mac OS.
 +
 ----
-% tail -c +1048577 ./devN_221119_0200.vhd > ./sign.tmp
+% tail -c +1048577 ./9150.01000024.05090105.vhd > ./sign.tmp.tail
 % head -c -512 ./sign.tmp.tail > sign.tmp
 % rm ./sign.tmp.tail
 ----
@@ -47,7 +47,7 @@ If the input file passes the verification, the command will display "Verificatio
 Otherwise, "Verification Failure" will display.
 +
 ----
-% openssl x509 -pubkey -noout -in ./Certificate-AZURE_CVO_20230124-134845.pem > ./Code-Sign-Cert-Public-key.pub
+% openssl x509 -pubkey -noout -in ./Certificate-9.15.0P1_azure.pem > ./Code-Sign-Cert-Public-key.pub
  
 % openssl dgst -verify Code-Sign-Cert-Public-key.pub -keyform PEM -sha256 -signature digest.sig -binary ./sign.tmp
 Verified OK
@@ -59,7 +59,7 @@ Verification Failure
 . Clean up the workspace.
 + 
 ----
-% rm ./9.150.20240213.vhd ./sign.tmp
+% rm ./9150.01000024.05090105.vhd ./sign.tmp
 % rm *.sig *.pub *.pem
 ----
 
