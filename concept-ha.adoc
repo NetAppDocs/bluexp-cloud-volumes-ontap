@@ -27,9 +27,9 @@ In AWS, Cloud Volumes ONTAP HA configurations include the following components:
 
 Here are some key details about the mediator instance in AWS:
 
-Instance type:: t2-micro
+Instance type:: ##t3-micro##
 
-Disks:: One EBS magnetic disk that is approximately 8 GiB.
+Disks:: ##Two st1 disks of 8 GiB and 4 GiB##
 
 Operating system:: Debian 11
 +
