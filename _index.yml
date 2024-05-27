@@ -7,6 +7,8 @@ indexpage:
           url: concept-overview-cvo.html
         - title: Quick start for AWS
           url: task-getting-started-aws.html
+        - title: Quick start for AWS Top Secret/Secret Cloud regions
+          url: task-getting-started-aws-c2s.html
           flavor: aws
         - title: Quick start for Azure
           url: task-getting-started-azure.html

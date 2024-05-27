@@ -55,13 +55,6 @@ This process creates a FlexClone volume. A FlexClone volume is a writable, point
 
 To learn more about FlexClone volumes, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
 
-| Edit volume tags (read-write volumes only)
-a| 
-.. Under Volume Actions in the Manage volumes panel, click *Edit volume tags* to modify the volume tag assigned to the selected volume.
-.. Enter the volume tag key and value under the provided fields. 
-.. To include additional tags, click *Add New Tag*.
-.. Click *Save*.
-
 | Edit a volume (read-write volumes only)
 a|
 .. Under Volume Actions in the Manage volumes panel, click *Edit volume settings*
@@ -231,7 +224,7 @@ For example, the advanced information should say something similar to the follow
 
 .. In the working environment, click the *Aggregates tab*.
 
-.. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
+.. Navigate to the desired aggregate tile, and then click the *... (ellipses icon) > View aggregate details*.
 
 .. Under the Overview tab of the Aggregate Details screen, review the size of each volume and choose one or more volumes to move out of the aggregate.
 +
@@ -307,7 +300,7 @@ Moving two or more volumes is necessary to avoid capacity issues; however, BlueX
 
 .. In the working environment, click the *Aggregates tab*.
 
-.. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
+.. Navigate to the desired aggregate tile, and then click the *... (ellipses icon) > View aggregate details*.
 
 .. Under the aggregate tile, view the available capacity (provisioned size minus used aggregate capacity).
 +
@@ -315,7 +308,7 @@ image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggre
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, then click the *... (ellipse icon) > Add Disks*.
+.. Select the aggregate, then click the *... (ellipses icon) > Add Disks*.
 
 .. Select the number of disks to add, and then click *Add*.
 
