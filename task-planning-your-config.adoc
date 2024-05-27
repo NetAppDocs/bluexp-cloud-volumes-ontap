@@ -28,6 +28,17 @@ Cloud Volumes ONTAP is supported in most AWS regions. https://cloud.netapp.com/c
 
 Newer AWS regions must be enabled before you can create and manage resources in those regions. https://docs.aws.amazon.com/general/latest/gr/rande-manage.html[Learn how to enable a region^].
 
+=== Choose a supported Local Zone
+
+Cloud Volumes ONTAP is supported in some AWS Local Zones including Singapore. Selecting a Local Zone is optional. 
+
+link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/?nc=sn&loc=3[View the full list of Local Zones^]. 
+Local Zones must be enabled before you can create and manage resources in those zones. 
+
+link:https://aws.amazon.com/tutorials/deploying-low-latency-applications-with-aws-local-zones/[Learn how to enable a Local Zone^].
+
+NOTE: Phoenix is not a supported Local Zone.
+
 == Choose a supported instance
 
 Cloud Volumes ONTAP supports several instance types, depending on the license type that you choose.
