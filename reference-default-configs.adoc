@@ -104,7 +104,7 @@ ifdef::aws[]
 
 * Three disks per node for boot, root, and core data:
 ** ##47 GiB io1 disk for boot data##
-** ##Two gp3 disks, each of 140 GiB for root data on each node##
+** ##Two gp3 disks, each of 140 GiB, for root data on each node##
 ** 540 GiB gp2 disk for core data
 ** ##Two st1 disks of 8 GiB and 4 GiB for mediator data##
 
