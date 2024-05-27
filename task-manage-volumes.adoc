@@ -224,7 +224,7 @@ For example, the advanced information should say something similar to the follow
 
 .. In the working environment, click the *Aggregates tab*.
 
-.. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
+.. Navigate to the desired aggregate tile, and then click the *... (ellipses icon) > View aggregate details*.
 
 .. Under the Overview tab of the Aggregate Details screen, review the size of each volume and choose one or more volumes to move out of the aggregate.
 +
@@ -300,7 +300,7 @@ Moving two or more volumes is necessary to avoid capacity issues; however, BlueX
 
 .. In the working environment, click the *Aggregates tab*.
 
-.. Navigate to the desired aggregate tile, and then click the *... (ellipse icon) > View aggregate details*.
+.. Navigate to the desired aggregate tile, and then click the *... (ellipses icon) > View aggregate details*.
 
 .. Under the aggregate tile, view the available capacity (provisioned size minus used aggregate capacity).
 +
@@ -308,7 +308,7 @@ image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggre
 
 . If needed, add disks to an existing aggregate:
 
-.. Select the aggregate, then click the *... (ellipse icon) > Add Disks*.
+.. Select the aggregate, then click the *... (ellipses icon) > Add Disks*.
 
 .. Select the number of disks to add, and then click *Add*.
 
