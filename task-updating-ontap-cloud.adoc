@@ -205,7 +205,7 @@ These steps describe how to use System Manager for version 9.3 and later.
 
 . In the working environment, click the *Aggregates* tab.
 
-. Under the aggregate title, click the ellipse button, and then select *View Aggregate details*.
+. Under the aggregate title, click the ellipses button, and then select *View Aggregate details*.
 +
 image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field when you view information for an aggregate.]
 
@@ -307,7 +307,7 @@ Two paths are available. The correct path depends on your Connector version.
 *	`/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. From the working environment in BlueXP, click the *... (ellipse icon)*, and then click *Update Cloud Volumes ONTAP*.
+. From the working environment in BlueXP, click the *... (ellipses icon)*, and then click *Update Cloud Volumes ONTAP*.
 
 . On the Update Cloud Volumes ONTAP version page, enter the URL, and then click *Change Image*.
 +
