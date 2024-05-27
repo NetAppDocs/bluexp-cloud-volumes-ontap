@@ -262,6 +262,12 @@ Immediately after you create the working environment, BlueXP launches a test ins
 . On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP HA*.
++
+Some AWS Local Zones are available. 
++
+Before you can use AWS Local Zones, you must enable Local Zones  and create a subnet in the Local Zone in your AWS account. Follow the *Opt in to an AWS Local Zone* and *Extend your Amazon VPC to the Local Zone* steps in the link:https://aws.amazon.com/tutorials/deploying-low-latency-applications-with-aws-local-zones/[AWS tutorial "Get Started Deploying Low Latency Applications with AWS Local Zones^]. 
++
+If you are running a Connector version 3.9.36 or below, you need to add the following permission to the AWS connector role in the AWS EC2 console: DescribeAvailabilityZones.
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
