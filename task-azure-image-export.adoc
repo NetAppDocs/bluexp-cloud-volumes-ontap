@@ -43,7 +43,7 @@ For example, in the following version_readme file, ONTAP version "9.15.0P1" is m
 
 . Identify the region name where you intend to create VMs. 
 +
-This region name is used as the value for the "IocName" variable when setting the URN of the marketplace image. 
+This region name is used as the value for the "locName" variable when setting the URN of the marketplace image. 
 
 .. To receive a list of available regions, enter the `az account list-locations -o table` command.
 +
