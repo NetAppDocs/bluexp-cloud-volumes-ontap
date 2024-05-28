@@ -18,6 +18,7 @@ Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
 
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
+//Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
 //tag::whats-new[]
 
@@ -103,6 +104,8 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-config
 === Cloud Volumes ONTAP 9.14.1 RC1
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 in AWS, Azure, and Google Cloud.
 
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
 === 300 TiB FlexVol volume max limit
 You can now create a FlexVol volume up to the maximum size of 300 TiB with System Manager and the ONTAP CLI starting from Cloud Volumes ONTAP 9.12.1 P2 and 9.13.0 P2, and in BlueXP starting from Cloud Volumes ONTAP 9.13.1.
 
@@ -181,7 +184,7 @@ The following change was introduced with the 3.9.34 release of the Connector.
 === Cloud Volumes ONTAP 9.14.0
 BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.14.0 General Availability release in AWS, Azure, and Google Cloud.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9140-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 10 September 2023
 The following change was introduced with the 3.9.33 release of the Connector.
@@ -225,7 +228,7 @@ The following changes were introduced with the 3.9.31 release of the Connector.
 === Cloud Volumes ONTAP 9.13.1 GA
 BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.13.1 General Availability release in AWS, Azure, and Google Cloud.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9131-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 2 July 2023
 The following changes were introduced with the 3.9.31 release of the Connector.
@@ -246,7 +249,7 @@ The following change was introduced with the 3.9.30 release of the Connector.
 === Cloud Volumes ONTAP 9.13.1 RC1
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.13.1 in AWS, Azure, and Google Cloud.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9131-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 4 June 2023
 The following change was introduced with the 3.9.30 release of the Connector. 
@@ -335,7 +338,7 @@ The following changes were introduced with the 3.9.27 release of the Connector.
 
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.13.0 in AWS, Azure, and Google Cloud.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9130-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 === 16 TiB and 32 Tib support in Azure
 Cloud Volumes ONTAP now supports 16 TiB and 32 TiB disk sizes for high availability deployments running on managed disks in Azure. 
@@ -409,7 +412,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9120-relnotes[Learn about the 
 
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.12.1, which includes support for new features and additional cloud provider regions.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9121-relnotes[Learn about the new features included in this release of Cloud Volumes ONTAP^]
 
 == 4 December 2022
 The following changes were introduced with the 3.9.24 release of the Connector.
