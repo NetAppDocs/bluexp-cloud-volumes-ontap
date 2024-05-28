@@ -109,7 +109,7 @@ ifdef::aws[]
 
 * One EBS snapshot for each boot disk and root disk
 +
-NOTE: Snapshots are created automatically upon reboot.
+NOTE: Snapshots are created automatically upon reboot. In some zones, the available EBS disk type can be only gp2. 
 
 * ##For HA pairs, two EBS volumes for the Mediator instance, which are approximately 8 GiB and 4 GiB and additional 140 GiB gp3 disk at each node to hold a copy of the other node root data.##
 
