@@ -29,7 +29,7 @@ NOTE: For more information on how to install Azure CLI, see https://learn.micros
 +
 For each version mapping listed in the version_readme file, the ONTAP version is represented by "buildname", and Azure marketplace image version is represented by "version".
 +
-For example, in the following version_readme file, ONTAP version "9.15.0P1" is mapped to Azure marketplace image version "9150.01000024.05090105". This Azure marketplace image version is later used to set image URN.
+For example, in the following version_readme file, ONTAP version "9.15.0P1" is mapped to Azure marketplace image version "9150.01000024.05090105". This Azure marketplace image version is later used to set the image URN.
 +
 ---- 
 [
