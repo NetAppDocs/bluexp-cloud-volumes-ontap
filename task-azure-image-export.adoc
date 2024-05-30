@@ -29,7 +29,7 @@ NOTE: For more information on how to install Azure CLI, see https://learn.micros
 +
 For each version mapping listed in the version_readme file, the ONTAP version is represented by "buildname", and Azure marketplace image version is represented by "version".
 +
-For example, in the following version_readme file, ONTAP version "9.15.0P1" is mapped to Azure marketplace image version "9150.01000024.05090105". This Azure marketplace image version is used to locate an image definition in the next step.
+For example, in the following version_readme file, ONTAP version "9.15.0P1" is mapped to Azure marketplace image version "9150.01000024.05090105". This Azure marketplace image version is later used to set image URN.
 +
 ---- 
 [
@@ -46,6 +46,8 @@ For example, in the following version_readme file, ONTAP version "9.15.0P1" is m
 This region name is used as the value for the "locName" variable when setting the URN of the marketplace image. 
 
 .. To receive a list of available regions, enter the `az account list-locations -o table` command.
++
+In the table below, the region name is referred to as the "Name" field. 
 +
 ---- 
 $ az account list-locations -o table
@@ -79,7 +81,7 @@ For example, Single-Node deployments should use the "ontap_cloud_byol" SKU name.
 
 == Export VHD file through Azure Cloud Shell on Azure portal
 
-. From Azure Cloud Shell, export the marketplace image to a vhd, and download to your local machine (for example, a Linux machine, or a windows PC.)
+. From Azure Cloud Shell, export the marketplace image to a vhd (image2, e.g. 9150.01000024.05090105.vhd), and download to your local machine (for example, a Linux machine, or a windows PC.)
 +
 .Click to display
 [%collapsible]
@@ -89,7 +91,7 @@ For example, Single-Node deployments should use the "ontap_cloud_byol" SKU name.
 [source]
 ----
 #Azure Cloud Shell on Azure portal to get VHD image from Azure Marketplace
-a) Set the URN of the marketplace image. URN is with format "<publisher>:<offer>:<sku>:<version>". Optionally, a user can list NetApp marketplace images to confirm the proper image version.
+a) Set the URN and other parameters of the marketplace image. URN is with format "<publisher>:<offer>:<sku>:<version>". Optionally, a user can list NetApp marketplace images to confirm the proper image version.
 PS /home/user1> $urn="netapp:netapp-ontap-cloud:ontap_cloud_byol:9150.01000024.05090105"
 PS /home/user1> $locName="eastus2"
 PS /home/user1> $pubName="netapp"
