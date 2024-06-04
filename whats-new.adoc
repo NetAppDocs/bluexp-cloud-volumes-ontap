@@ -24,7 +24,9 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 17 May 2024
 
 === Amazon Web Services Local Zones support 
-Support for AWS Local Zones is now available for Cloud Volumes ONTAP HA deployments. AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas.  
+Support for AWS Local Zones is now available for Cloud Volumes ONTAP HA deployments. AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas.
+
+NOTE: AWS Local Zones are supported when using BlueXP in standard mode. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode or private mode.
 
 For more information on AWS Local Zones with HA Deployments, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones[AWS Local Zones^].
 
