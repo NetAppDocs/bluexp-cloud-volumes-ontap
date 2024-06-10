@@ -59,14 +59,14 @@ For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-globa
 
 You can no longer create a volume from a template or edit a volume's tags. These actions were associated with the BlueXP remediation service, which is no longer available.
 
+//end::whats-new[]
+
 == 8 March 2024
 
 === Amazon Instant Metadata Service v2 support
 In AWS, Cloud Volumes ONTAP, the Mediator, and the Connector now support Amazon Instant Metadata Service v2 (IMDSv2) for all functions. IMDSv2 provides enhanced protection against vulnerabilities. Only IMDSv1 was previously supported.
 
 If required by your security policies, you can configure your EC2 instances to use IMDSv2. For instructions, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#require-the-use-of-imdsv2-on-amazon-ec2-instances[BlueXP setup and administration documentation for managing existing Connectors^].
-
-//end::whats-new[]
 
 == 5 March 2024
 
