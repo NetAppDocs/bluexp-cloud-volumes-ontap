@@ -22,7 +22,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
-== __ May 2024
+== 10 June 2024
 
 === Cloud Volumes ONTAP 9.15.0
 BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.15.0 in AWS, Azure, and Google Cloud.
