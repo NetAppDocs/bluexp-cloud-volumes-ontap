@@ -37,7 +37,7 @@ sidebar:
       entries:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
-        - title: Supported versions for new deployments
+        - title: Supported ONTAP versions for new deployments
           url: /reference-versions.html
         - title: Get started in Amazon Web Services
           flavor: aws
@@ -82,7 +82,25 @@ sidebar:
             - title: Enable high availability mode
               url: /task-azure-high-availability-mode.html
             - title: Launch Cloud Volumes ONTAP in Azure
-              url: /task-deploying-otc-azure.html                                 
+              url: /task-deploying-otc-azure.html
+            - title: Azure Platform Image Verification
+              entries:
+                - title: Overview
+                  url: /concept-azure-image-verification.html
+                - title: Download Azure Image Digest File 
+                  url: /task-azure-download-digest-file.html
+                - title: Image Export
+                  url: /task-azure-image-export.html
+                - title: File signature verification
+                  entries:
+                    - title: File signature verification
+                      url: /concept-azure-file-sig-verify.html
+                    - title: Linux File signature verification
+                      url: /task-file-verification-linux.html
+                    - title: Mac OS File signature verification 
+                      url: /task-file-verification-mac.html
+                - title: Additional information
+                  url: /reference-image-verification-links.html                
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
