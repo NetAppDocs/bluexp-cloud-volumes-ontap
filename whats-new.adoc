@@ -58,7 +58,7 @@ You can no longer create a volume from a template or edit a volume's tags. These
 === Amazon Instant Metadata Service v2 support
 In AWS, Cloud Volumes ONTAP, the Mediator, and the Connector now support Amazon Instant Metadata Service v2 (IMDSv2) for all functions. IMDSv2 provides enhanced protection against vulnerabilities. Only IMDSv1 was previously supported.
 
-If required by your security policies, you can configure your EC2 instances to use IMDSv2. For instructions, refer to link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#require-the-use-of-imdsv2-on-amazon-ec2-instances[BlueXP setup and administration documentation for managing existing Connectors^].
+If required by your security policies, you can configure your EC2 instances to use IMDSv2. For instructions, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-require-imdsv2.html[BlueXP setup and administration documentation for managing existing Connectors^].
 
 //end::whats-new[]
 
@@ -357,7 +357,7 @@ Cloud Volumes ONTAP is now supported in any cloud environment that has complete 
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html[Install the Connector in a location without internet access^]
 +
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#access-the-local-ui[Access the BlueXP console on the Connector^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html[Access the BlueXP console on the Connector^]
 +
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#manage-byol-licenses[Add an unassigned license^]
 
