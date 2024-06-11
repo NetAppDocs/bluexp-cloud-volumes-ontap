@@ -132,6 +132,8 @@ This management LIF provides a connection to management tools like SnapCenter.
 .. Click *Add*.
 
 .. Enter a name for the frontend IP, select the subnet for the Cloud Volumes ONTAP HA pair, leave *Dynamic* selected, and in regions with Availability Zones, leave *Zone-redundant* selected to ensure that the IP address remains available if a zone fails.
+
+.. Click *Save*.
 +
 image:screenshot_azure_frontend_ip.png[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
 
@@ -202,6 +204,8 @@ NOTE: A frontend IP should only be created under the NIC0 for each corresponding
 .. Click *Add*.
 
 .. Enter a name for the frontend IP, select the subnet for the Cloud Volumes ONTAP HA pair, leave *Dynamic* selected, and in regions with Availability Zones, leave *Zone-redundant* selected to ensure that the IP address remains available if a zone fails.
+
+.. Click *Save*.
 +
 image:screenshot_azure_frontend_ip.png[A screenshot of adding a frontend IP address in the Azure portal where a name and subnet are selected.]
 
@@ -476,7 +480,7 @@ network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-
 .. Use the following command to create a NAS LIF on node 1.
 +
 [source,cli]
-network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nfs-cifs-ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe1>
+network interface create -vserver <svm-name> -lif <lif-name> -service-policy default-data-files -address <nfs-cifs-ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe1>
 
 .. Use the following command to create a NAS LIF on node 2.
 +
