@@ -1,0 +1,61 @@
+---
+sidebar: sidebar
+permalink: task-file-verification-linux.html
+keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, Linux 
+summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool on Linux
+---
+
+= File signature verification on Linux 
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can verify an exported VHD file signature for Linux by following the steps below.
+ 
+.Steps
+
+. Download the Azure Image Digest file from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extract the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem).
++
+Refer to the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html[Download the Azure Image Digest File^] for more information.  
+
+. Verify the chain of trust.
++
+----
+% openssl verify -CAfile Certificate-Chain-9.15.0P1_azure.pem Certificate-9.15.0P1_azure.pem
+Certificate-9.15.0P1_azure.pem: OK
+----
+
+. Remove the leading 1MB (1048576 Bytes) and ending 512 Bytes of VHD file.
++
+If 'tail' is used, the option '-c +K' outputs bytes starting with the Kth bytes of the specified file. Hence, 1048577 is passed to 'tail -c'.
++
+----
+% tail -c +1048577 ./9150.01000024.05090105.vhd > ./sign.tmp.tail
+% head -c -512 ./sign.tmp.tail > sign.tmp
+% rm ./sign.tmp.tail
+----
+
+. Use openssl to extract public key from certificate and verify the striped file(sign.tmp) with the signature file and public key. 
++
+If the input file passes the verification, the command will display 
+"Verification OK". Otherwise, "Verification Failure" will display.
++
+----
+% openssl x509 -pubkey -noout -in ./Certificate-9.15.0P1_azure.pem > ./Code-Sign-Cert-Public-key.pub
+ 
+% openssl dgst -verify Code-Sign-Cert-Public-key.pub -keyform PEM -sha256 -signature digest.sig -binary ./sign.tmp
+Verification OK
+ 
+% openssl dgst -verify Code-Sign-Cert-Public-key.pub -keyform PEM -sha256 -signature digest.sig -binary ./another_file_from_nowhere.tmp
+Verification Failure
+----
+
+. Clean up the workspace.
++ 
+----
+% rm ./9150.01000024.05090105.vhd ./sign.tmp
+% rm *.sig *.pub *.pem
+----
