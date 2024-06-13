@@ -21,8 +21,8 @@ Cloud Volumes ONTAP data is automatically encrypted in Azure using https://azure
 
 If you want to use a customer-managed key with Cloud Volumes ONTAP, then you need to complete the following steps:
 
-. From Azure, create a key vault and then generate a key in that vault
-. From BlueXP, use the API to create a Cloud Volumes ONTAP working environment that uses the key
+. From Azure, create a key vault and then generate a key in that vault.
+. From BlueXP, use the API to create a Cloud Volumes ONTAP working environment that uses the key.
 
 === Key rotation
 
@@ -107,7 +107,9 @@ Note the following requirements for the key vault:
 * The following options should be enabled:
 ** *Soft-delete* (this option is enabled by default, but must _not_ be disabled)
 ** *Purge protection*
-** *Azure Disk Encryption for volume encryption* (for single node systems or HA pairs in multiple zones)
+** *Azure Disk Encryption for volume encryption* (for single node systems, HA pairs in multiple zones, and HA single AZ deployments)
++
+NOTE: Usage of Azure customer-managed encryption keys is contingent upon having Azure Disk encryption enabled for the key vault.
 * The following option should be enabled if you created a user-assigned managed identity:
 ** *Vault access policy*
 . If you selected Vault access policy, click Create to create an access policy for the key vault. If not, skip to step 3.
