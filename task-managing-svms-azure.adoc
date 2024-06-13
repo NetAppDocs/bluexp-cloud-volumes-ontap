@@ -335,7 +335,7 @@ network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-
 . Create a data LIF:
 +
 [source,cli]
-network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nas-ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
+network interface create -vserver <svm-name> -lif <lif-name> -service-policy default-data-files -address <nas-ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
 
 . Optional: Create a storage VM management LIF.
 +
@@ -367,7 +367,7 @@ network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-
 . Create a data LIF:
 +
 [source,cli]
-network interface create -vserver <svm-name> -lif <lif-name> -role data -data-protocol cifs,nfs -address <nas-ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
+network interface create -vserver <svm-name> -lif <lif-name> -service-policy default-data-files -address <nas-ip-address> -netmask-length <length> -home-node <name-of-node1> -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default
 
 . Optional: Create a storage VM management LIF.
 +
