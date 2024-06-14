@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: reference-worm-snaplock.html
+keywords: WORM, SnapLock, Snapshot copies, 
+summary: You can create tamperproof Snapshot copies of write once, read many (WORM) files on a Cloud Volumes ONTAP system and retain the snapshots in unmodified form for a specific retention period.
+---
+
+= Create tamperproof Snapshot copies for WORM storage   
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can create tamperproof Snapshot copies of write once, read many (WORM) files on a Cloud Volumes ONTAP system and retain the snapshots in unmodified form for a specific retention period. This functionality is powered by the SnapLock technology, and provides an additional layer of data protection and compliance.
+
+
+.Before you begin
+
+Ensure that the volume that you use for creating Snapshot copies is a SnapLock volume. For information about enabling SnapLock protection on volumes, see https://docs.netapp.com/us-en/ontap/snaplock/snaplock-config-overview-concept.html[Configure SnapLock].
+
+.Steps
+. Create Snapshot copies from the SnapLock volume. For information about creating Snapshot copies by using the CLI or System Manager, see https://docs.netapp.com/us-en/ontap/data-protection/manage-local-snapshot-copies-concept.html[Manage local Snapshot copies overview].
++
+The Snapshot copies inherit the WORM properties of the volume, making them tamperproof. The underlying SnapLock technology ensures that the snapshots remain protected from edits and deletions until the specified retention period has elapsed.
++
+. You can modify the retention period if there's a need to edit these snapshots. See https://docs.netapp.com/us-en/ontap/snaplock/set-retention-period-task.html#set-the-default-retention-period[Set the retention time].
+
+[NOTE]
+While the Snapshots copies are protected for the retention period, the volumes can be deleted by a cluster administrator, as the WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. Additionally, a trusted cloud administrator can delete the WORM data by interacting directly with the cloud storage resources.
