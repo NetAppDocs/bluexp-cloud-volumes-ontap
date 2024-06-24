@@ -43,7 +43,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azur
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a VM type, disk type, and disk size:
 
 Virtual machine type::
-Look at the supported virtual machine types in the http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html[Cloud Volumes ONTAP Release Notes^] and then review details about each supported VM type. Be aware that each VM type supports a specific number of data disks.
+Look at the supported virtual machine types in the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] and then review details about each supported VM type. Be aware that each VM type supports a specific number of data disks.
 
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series[Azure documentation: General purpose virtual machine sizes^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15[Azure documentation: Memory optimized virtual machine sizes^]
