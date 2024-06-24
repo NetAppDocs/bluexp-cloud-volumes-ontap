@@ -48,4 +48,4 @@ NOTE: As of December 3, 2021, NetApp has switched to a new methodology of regist
 
 == What's next
 
-See the https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor documentation] for details.
+See the https://docs.netapp.com/us-en/active-iq/index.html[Digital Advisor documentation] for details.
