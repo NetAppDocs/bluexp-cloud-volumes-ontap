@@ -27,6 +27,29 @@ Note the following:
 
 An Azure user who has "Owner" privileges can enable the feature from the Azure CLI.
 
+##.What you'll need##
+Before enabling high availability mode in Azure, the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature should be activated for your subscription. This feature facilitates the deployment of zonal VMs for Single Availability Zones. Perform these steps as a user with "Owner" privileges from Azure CLI:
+
+. Register for the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature by running this command:
++
+====
+az feature register --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
+====
++
+. Verify the registration status and output sample:
++
+====
+PS /home/<instance> az feature show -n VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
+{
+  "id": "/subscriptions/<ID>/providers/Microsoft.Features/providers/Microsoft.Compute/features/VMOrchestratorZonalMultiFD",
+  "name": "Microsoft.Compute/VMOrchestratorZonalMultiFD",
+  "properties": {
+    "state": "Registered"
+  },
+  "type": "Microsoft.Features/providers/features"
+}
+====
+
 .Steps
 
 . https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[Access the Azure Cloud Shell from the Azure Portal^]
