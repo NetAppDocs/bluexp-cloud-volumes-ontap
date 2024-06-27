@@ -593,7 +593,7 @@ While making selections through the wizard, do not select *Data Sense & Complian
 .Notes for deploying Cloud Volumes ONTAP HA in multiple Availability Zones
 Note the following as you complete the wizard for HA pairs.
 
-* You should configure a transit gateway when you deploy Cloud Volumes ONTAP HA in multiple Availability Zones (AZs). See link:task-setting-up-transit-gateway.html[Set up an AWS transit gateway].
+* You should configure a transit gateway when you deploy Cloud Volumes ONTAP HA in multiple Availability Zones (AZs). For instructions, refer to link:task-setting-up-transit-gateway.html[Set up an AWS transit gateway].
 * Deploy the configuration as the following because only two AZs were available in the AWS Top Secret Cloud at the time of publication:
 ** Node 1: Availability Zone A
 ** Node 2: Availability Zone B

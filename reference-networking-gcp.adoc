@@ -181,7 +181,7 @@ Note that two sets of firewall rules are required for an HA configuration:
 
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
 
-For additional steps required to set up data tiering in BlueXP, see link:task-tiering.html[Tiering cold data to low-cost object storage].
+For additional steps required to set up data tiering in BlueXP, refer to link:task-tiering.html[Tiering cold data to low-cost object storage].
 
 === Connections to ONTAP systems in other networks
 

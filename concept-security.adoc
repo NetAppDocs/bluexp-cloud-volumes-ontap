@@ -63,7 +63,7 @@ When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encrypt
 
 TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
 
-If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task-setting-up-kms.html[Setting up the AWS KMS].
+If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For information, refer to link:task-setting-up-kms.html[Setting up the AWS KMS].
 endif::aws[]
 
 ifdef::azure[]
@@ -88,9 +88,9 @@ You can use integrated antivirus functionality on ONTAP systems to protect data 
 
 ONTAP virus scanning, called _Vscan_, combines best-in-class third-party antivirus software with ONTAP features that give you the flexibility you need to control which files get scanned and when.
 
-For information about the vendors, software, and versions supported by Vscan, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix^].
+For information about the vendors, software, and versions supported by Vscan, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix^].
 
-For information about how to configure and manage the antivirus functionality on ONTAP systems, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-acg/home.html[ONTAP 9 Antivirus Configuration Guide^].
+For information about how to configure and manage the antivirus functionality on ONTAP systems, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-acg/home.html[ONTAP 9 Antivirus Configuration Guide^].
 
 == Ransomware protection
 

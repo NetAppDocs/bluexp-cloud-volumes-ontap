@@ -109,13 +109,13 @@ A Cloud Volumes ONTAP HA configuration synchronously replicates data between nod
 
 * For HA configurations that serve data from both nodes, read performance is higher than the read performance of a single-node configuration, and write performance is the same or higher.
 
-For more details about Cloud Volumes ONTAP performance, see link:concept-performance.html[Performance].
+For more details about Cloud Volumes ONTAP performance, refer to link:concept-performance.html[Performance].
 
 === Client access to storage
 
 Clients should access NFS and CIFS volumes by using the data IP address of the node on which the volume resides. If NAS clients access a volume by using the IP address of the partner node, traffic goes between both nodes, which reduces performance.
 
-TIP: If you move a volume between nodes in an HA pair, you should remount the volume by using the IP address of the other node. Otherwise, you can experience reduced performance. If clients support NFSv4 referrals or folder redirection for CIFS, you can enable those features on the Cloud Volumes ONTAP systems to avoid remounting the volume. For details, see ONTAP documentation.
+TIP: If you move a volume between nodes in an HA pair, you should remount the volume by using the IP address of the other node. Otherwise, you can experience reduced performance. If clients support NFSv4 referrals or folder redirection for CIFS, you can enable those features on the Cloud Volumes ONTAP systems to avoid remounting the volume. For details, refer to ONTAP documentation.
 
 You can easily identify the correct IP address through the _Mount Command_ option under the manage volumes panel in BlueXP.
 

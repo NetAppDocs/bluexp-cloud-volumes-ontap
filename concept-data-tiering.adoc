@@ -47,7 +47,7 @@ If you don't plan to access the inactive data, you can reduce your storage costs
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://aws.amazon.com/s3/storage-classes[Learn more about Amazon S3 storage classes^].
 +
-You can select a storage class when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
+You can select a storage class when you create the working environment and you can change it any time after. For instructions on changing the storage class, refer to link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage class for data tiering is system wide--it's not per volume.
 endif::aws[]
@@ -80,7 +80,7 @@ If you don't plan to access the inactive data in the capacity tier, you can redu
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage tier. https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Learn more about Azure Blob storage access tiers^].
 +
-You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage tier, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
+You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage tier, refer to link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage access tier for data tiering is system wide--it's not per volume.
 endif::azure[]
@@ -110,7 +110,7 @@ NOTE: Any existing inactive data will maintain the default storage class when yo
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://cloud.google.com/storage/docs/storage-classes[Learn more about storage classes for Google Cloud Storage^].
 +
-You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
+You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage class, refer to link:task-tiering.html[Tiering inactive data to low-cost object storage].
 +
 The storage class for data tiering is system wide--it's not per volume.
 endif::gcp[]
@@ -160,4 +160,4 @@ TIP: When Cloud Volumes ONTAP is turned off, the temperature of each block is pr
 
 == Setting up data tiering
 
-For instructions and a list of supported configurations, see link:task-tiering.html[Tiering inactive data to low-cost object storage].
+For instructions and a list of supported configurations, refer to link:task-tiering.html[Tiering inactive data to low-cost object storage].
