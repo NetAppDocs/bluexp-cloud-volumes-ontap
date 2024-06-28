@@ -162,7 +162,7 @@ However, if you deployed BlueXP in a location that doesn't have internet access,
 
 The license file (or _files_ if you have an HA pair). 
 
-NOTE: For more information on how to obtain a license file, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#obtain-a-system-license-file[Obtain a system license file^]. 
+NOTE: For more information on how to obtain a license file, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#obtain-a-system-license-file[Obtain a system license file^]. 
 
 .Steps
 

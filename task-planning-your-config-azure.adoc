@@ -60,7 +60,7 @@ Single node systems can use three types of Azure Managed Disks:
 * _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
 
 +
-For additional details about the use cases for these disks, see https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure Documentation: What disk types are available in Azure?^].
+For additional details about the use cases for these disks, refer to https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure Documentation: What disk types are available in Azure?^].
 
 
 Azure disk type with HA pairs:: 

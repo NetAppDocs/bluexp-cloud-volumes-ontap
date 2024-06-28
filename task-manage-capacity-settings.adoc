@@ -42,7 +42,7 @@ In the manual mode, if the free space ratio on an aggregate drops below the spec
 The free space ratio is calculated as follows:
 (aggregate capacity - total used capacity on the aggregate) / aggregate capacity
 +
-See link:concept-storage-management.html#automatic-capacity-management[Automatic capacity management] to learn now capacity is automatically managed in Cloud Volumes ONTAP.
+Refer to link:concept-storage-management.html#automatic-capacity-management[Automatic capacity management] to learn now capacity is automatically managed in Cloud Volumes ONTAP.
 
 Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering::
 Defines how much free space is required on the performance tier (disks) when tiering data to a capacity tier (object storage).

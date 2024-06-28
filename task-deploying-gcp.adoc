@@ -30,7 +30,7 @@ You need the following to create a working environment.
 
 * An understanding of the configuration that you want to use.
 +
-You should have prepared by choosing a configuration and by obtaining Google Cloud networking information from your administrator. For details, see link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration].
+You should have prepared by choosing a configuration and by obtaining Google Cloud networking information from your administrator. For details, refer to  link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration].
 
 * An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
 +
@@ -138,7 +138,7 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
+For help choosing a disk type and size, refer to  link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
 
 . *Flash Cache, Write Speed & WORM*: 
 
@@ -149,7 +149,7 @@ NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on th
 +
 link:concept-write-speed.html[Learn more about write speed].
 +
-NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
+NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
@@ -162,7 +162,7 @@ link:concept-worm.html[Learn more about WORM storage^].
 Note the following:
 +
 * BlueXP sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from BlueXP
-* For help with adding a Google Cloud account, see https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Setting up and adding Google Cloud accounts for data tiering with 9.6^].
+* For help with adding a Google Cloud account, refer to  https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Setting up and adding Google Cloud accounts for data tiering with 9.6^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud console.
 +
@@ -206,14 +206,14 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. For information, refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
+For more information, refer to  link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -337,7 +337,7 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
+For help choosing a disk type and size, refer to  link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
 
 . *Flash Cache, Write Speed & WORM*: 
 .. Enable *Flash Cache*, if desired.
@@ -347,7 +347,7 @@ NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on th
 +
 link:concept-write-speed.html[Learn more about write speed^].
 +
-NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. High write speed and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
+NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. High write speed and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
@@ -403,14 +403,14 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to  the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
+For more information, refer to  link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 

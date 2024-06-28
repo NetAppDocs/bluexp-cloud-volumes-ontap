@@ -30,7 +30,7 @@ A few notes about volume provisioning:
 * You can create additional LUNs from System Manager or the CLI.
 
 ifdef::aws[]
-* If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
+* If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
 
 * If your Cloud Volumes ONTAP configuration supports the Amazon EBS Elastic Volumes feature, you might want to link:concept-aws-elastic-volumes.html[learn more about what happens when you create a volume].
 endif::aws[]
@@ -142,7 +142,7 @@ endif::gcp[]
 
 DNS Domain:: The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
+NTP Server:: Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. For information, refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^].
 +
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 

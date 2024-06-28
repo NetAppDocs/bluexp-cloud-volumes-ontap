@@ -225,9 +225,9 @@ If an upgrade failure error occurs, refer to the link:https://kb.netapp.com/Clou
 
 == Upgrade Cloud Volumes ONTAP
 
-BlueXP notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For details, see <<Upgrade from BlueXP notifications>>.
+BlueXP notifies you when a new version is available for upgrade. You can start the upgrade process from this notification. For more information, see <<Upgrade from BlueXP notifications>>.
 
-Another way to perform software upgrades by using an image on an external URL. This option is helpful if BlueXP can't access the S3 bucket to upgrade the software or if you were provided with a patch. For details, see <<Upgrade from an image available at a URL>>.
+Another way to perform software upgrades by using an image on an external URL. This option is helpful if BlueXP can't access the S3 bucket to upgrade the software or if you were provided with a patch. For more information, see <<Upgrade from an image available at a URL>>.
 
 === Upgrade from BlueXP notifications
 

@@ -57,7 +57,7 @@ When you create volumes for Cloud Volumes ONTAP, you need to choose the underlyi
 * _Zonal Balanced persistent disks_: These SSDs balance performance and cost by providing lower IOPS per GB.
 * _Zonal Standard persistent disks_ : Standard persistent disks are economical and can handle sequential read/write operations.
 +
-For more details, see https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^].
+For more details, refer to https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^].
 
 GCP disk size::
 You need to choose an initial disk size when you deploy a Cloud Volumes ONTAP system. After that you can let BlueXP manage a system's capacity for you, but if you want to build aggregates yourself, be aware of the following:
