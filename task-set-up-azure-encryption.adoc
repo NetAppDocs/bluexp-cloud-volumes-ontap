@@ -34,6 +34,8 @@ BlueXP uses a disk encryption set, which enables management of encryption keys w
 
 After you create a Cloud Volumes ONTAP working environment that is configured to use a customer-managed key, Cloud Volumes ONTAP data is encrypted as follows.
 
+##What should be the changes here, do we want to differentiate LRS Non-Zonal vs LRS SAZ?##
+
 [cols="2a,2a,2a" options="header"]
 |===
 | Cloud Volumes ONTAP configuration

@@ -97,6 +97,9 @@ TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP
 . *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.
 +
 For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, BlueXP will select one for you.
++
+[NOTE]
+##For single availability zones and locally redundant storage (LRS), you must select an availability zone. Cloud Volumes ONTAP 9.15.1 and later leverages Virtual Machine Scale Sets to deploy VMs in LRS and zone-redundant storage (ZRS) that utilizes the selected zone for VM deployment.##
 
 . *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.
 +
