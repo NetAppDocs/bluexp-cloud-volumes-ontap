@@ -141,7 +141,6 @@ The following regions now support highly-available multiple availability zone de
 * Switzerland North
 * South Africa North
 * United Arab Emirates North
-* China North 3
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
