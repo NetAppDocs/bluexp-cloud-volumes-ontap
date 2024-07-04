@@ -72,7 +72,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Availability Zones::
-##Cloud Volumes ONTAP 9.15.1 and later leverages Virtual Machine Scale Sets to deploy VMs in LRS and zone-redundant storage (ZRS).## Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. Availability zones ensure that the nodes are in different fault domains. To learn how Virtual Machine Scale Sets can use Availability Zones in Azure, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2[Create a Virtual Machine Scale Set that uses Availability Zones^].
+##Cloud Volumes ONTAP 9.15.1 and later leverage Virtual Machine Scale Sets to deploy VMs in LRS and zone-redundant storage (ZRS).## Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. Availability zones ensure that the nodes are in different fault domains. To learn how Virtual Machine Scale Sets can use Availability Zones in Azure, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2[Create a Virtual Machine Scale Set that uses Availability Zones^].
 
 ##I have used a different link and mentioned VMSS. Please check##
 

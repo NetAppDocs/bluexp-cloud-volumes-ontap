@@ -87,7 +87,10 @@ The following video shows how to associate a Marketplace subscription to an Azur
 +
 video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP from the Azure Marketplace"]
 
-. *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
+. *Services*: Enable or disable the individual services that you want to or don't want to use with Cloud Volumes ONTAP. 
++
+[NOTE]
+##Cloud Volumes ONTAP 9.15.1 and later leverage Virtual Machine Scale Sets to deploy VMs in locally redundant storage (LRS) and zone-redundant storage (ZRS) that requires the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature to be activated for your subscription. For more information, refer to link:task-azure-high-availability-mode.html[Enable high availability mode in Azure].##
 +
 * https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about BlueXP classification^]
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
@@ -99,7 +102,7 @@ TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP
 For single node systems, you can choose the Availability Zone in which you'd like to deploy Cloud Volumes ONTAP. If you don't select an AZ, BlueXP will select one for you.
 +
 [NOTE]
-##For single availability zones and locally redundant storage (LRS), you must select an availability zone. Cloud Volumes ONTAP 9.15.1 and later leverages Virtual Machine Scale Sets to deploy VMs in LRS and zone-redundant storage (ZRS) that utilizes the selected zone for VM deployment.##
+##For single availability zones and locally redundant storage (LRS), you must select an availability zone.##
 
 . *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.
 +
@@ -134,9 +137,9 @@ TIP: If the Azure account that you're using has the https://docs.netapp.com/us-e
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 
-. *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a virtual machine type.
+. *Licensing*: Change the Cloud Volumes ONTAP version if required, and select a virtual machine type. ##Cloud Volumes ONTAP versions earlier than 9.15.1 do not support Virtual Machine Scale Sets to deploy VMs in single availability zones. If you select an earlier ONTAP version, there might be errors in deployment. Similarly, if the selected VM type does not support Virtual Machine Scale Sets, you might need to change the selection.##
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.12.1 to 9.13.1. 
 
 . *Subscribe from the Azure Marketplace*: You see this page if BlueXP could not enable programmatic deployments of Cloud Volumes ONTAP. Follow the steps listed on the screen. refer to https://learn.microsoft.com/en-us/marketplace/programmatic-deploy-of-marketplace-products[Programmatic deployment of Marketplace products^] for more information.
 
