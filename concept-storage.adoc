@@ -65,6 +65,8 @@ Single node systems can use three types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
+* ##_Premium SSD V2 Managed Disks_ provide higher performance with lower latency at a lower cost compared to Premium SSD Shared Managed Disks. For both single node and HA pairs, Premium SSD V2 Managed Disks provide higher performance with lower latency at a lower cost. The maximum disk size is 32 TiB.##
+
 * _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
 
 * _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
