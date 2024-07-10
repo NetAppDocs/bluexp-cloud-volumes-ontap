@@ -27,8 +27,8 @@ Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no interne
 
 [role="quick-margin-para"]
 BlueXP offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task-planning-your-config-azure.html[Learn more].
-
-For zonal deployments, you should subscribe to the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature. For instructions, refer to link:task-azure-high-availability-mode.html[Enable high availability mode in Azure].
++
+##For zonal deployments in single availability zones, you should subscribe to the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature. For instructions, refer to link:task-azure-high-availability-mode.html[Enable high availability mode in Azure].##
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
 
