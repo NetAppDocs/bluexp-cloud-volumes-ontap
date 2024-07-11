@@ -55,7 +55,7 @@ Single node systems can use these types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
-* ##_Premium SSD V2 Managed Disks_ provide higher performance with lower latency at a lower cost compared to Premium SSD Shared Managed Disks.##
+* ##_Premium SSD V2 Managed Disks_ provide higher performance with lower latency, at a lower cost, compared to Premium SSD Shared Managed Disks.##
 
 * _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
 
@@ -69,7 +69,7 @@ Azure disk type with HA pairs::
 HA systems use Premium SSD Shared Managed Disks which both provide high performance for I/O-intensive workloads at a higher cost. HA deployments created before the 9.12.1 release use Premium page blobs. 
 
 Azure disk size::
-##Cassie mentioned: For disk size below, Premium SSD v2 is highly configurable, we have two suggestions, need to confirm which one we will choose. Updates might be needed.: What is the suggestion we should take?##
+##Question to reviewers: Cassie mentioned: "For disk size below, Premium SSD v2 is highly configurable, we have two suggestions, need to confirm which one we will choose. Updates might be needed." What is the suggestion we should take?##
 +
 When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. BlueXP uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task-create-aggregates.html[using the advanced allocation option].
 +
