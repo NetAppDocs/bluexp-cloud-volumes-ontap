@@ -136,6 +136,8 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * One Azure snapshot for each boot disk and root disk
 
 * Every disk by default in Azure is encrypted at rest.
++
+##If the virtual machine that you chose for Cloud Volumes ONTAP supports Premium SSD V2 Managed Disk as data disks, the system uses a 32 GiB Premium SSD V2 Managed Disk for NVRAM, and another one as the root disk.## 
 
 === Azure (HA pair)
 
