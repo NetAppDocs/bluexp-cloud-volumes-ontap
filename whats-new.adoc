@@ -647,10 +647,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9110-relnotes[Learn about the 
 When BlueXP upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.
 
 === K8s tab has been removed
-
-The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
-
-https://docs.netapp.com/us-en/bluexp-kubernetes/concept-kubernetes.html[Learn about Kubernetes data management in BlueXP^]
+The K8s tab was deprecated in a previous release, and has now been removed.
 
 === Annual contract in Azure
 
