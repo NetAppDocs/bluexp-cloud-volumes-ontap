@@ -646,6 +646,9 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9110-relnotes[Learn about the 
 
 When BlueXP upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.
 
+=== K8s tab has been removed
+The K8s tab was deprecated in a previous release, and has now been removed.
+
 === Annual contract in Azure
 
 The Essentials and Professional packages are now available in Azure through an annual contract. You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.
