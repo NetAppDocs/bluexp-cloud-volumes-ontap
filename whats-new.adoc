@@ -26,7 +26,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 === Edge Cache licensing packages deprecated
 
-Edge Cache capacity-based licensing packages will no longer be available for future deployments. However, it will be possible to convert an existing Edge Cache package to another one, based on an existing and valid BYOL license, or an associated marketplace subscription.
+Edge Cache capacity-based licensing packages will no longer be available for future deployments. However, it's possible to convert an existing Edge Cache package to another one, based on a valid BYOL license or an associated marketplace subscription.
 
 == 10 June 2024
 
