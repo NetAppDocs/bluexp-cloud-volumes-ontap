@@ -26,7 +26,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 === Free trials for marketplace subscriptions decommissioned
 
-The 30-day free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available for Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) shall be activated from the first use without a free trial period. 
+The 30-day free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) shall be activated from the first use without a free trial period. 
 
 == 10 June 2024
 
