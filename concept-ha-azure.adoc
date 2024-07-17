@@ -28,7 +28,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Virtual Machine Scale Sets in Flexible orchestration mode::
-##Azure Virtual Machine Scale Sets in Flexible orchestration mode help to create and manage groups of heterogeneous, auto-scaling virtual machines (VMs) in a zonal deployment mode for a single availability zone. The number of VM instances can automatically increase or decrease, or balance load based on demands or scheduled conditions. In this orchestration mode, distinct fault domains are defined for each zone, ensuring high availability at scale. This is applicable to Cloud Volumes ONTAP 9.15.1 and later. To learn more, refer to the https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^].##
+##Azure Virtual Machine Scale Sets in Flexible orchestration mode help to create and manage groups of heterogeneous, auto-scaling virtual machines (VMs) in a zonal deployment mode for a single availability zone. The VMs are deployed into distinct fault domains to ensure high availability. This is applicable to Cloud Volumes ONTAP 9.15.1 and later. To learn more, refer to the https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^].##
 
 Disks::
 Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, and core data^].
@@ -53,7 +53,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Virtual Machine Scale Sets in Flexible orchestration mode::
-##Azure Virtual Machine Scale Sets in Flexible orchestration mode help to create and manage groups of heterogeneous, auto-scaling virtual machines (VMs) in a zonal deployment mode for a single availability zone. The number of VM instances can automatically increase or decrease, or balance load based on demands or scheduled conditions. In this orchestration mode, distinct fault domains are defined for each zone, ensuring high availability at scale. This is applicable to Cloud Volumes ONTAP 9.15.1 and later. To learn more, refer to the https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^].##
+##Azure Virtual Machine Scale Sets in Flexible orchestration mode help to create and manage groups of heterogeneous, auto-scaling virtual machines (VMs) in a zonal deployment mode for a single availability zone. The VMs are deployed into distinct fault domains to ensure high availability. This is applicable to Cloud Volumes ONTAP 9.15.1 and later. To learn more, refer to the https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^].##
 
 Disks::
 Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data^].
