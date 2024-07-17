@@ -28,5 +28,8 @@ Flash Cache is supported with specific Cloud Volumes ONTAP configurations. View 
 * Compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements up to Cloud Volumes ONTAP 9.12.0. When you deploy or upgrade to Cloud Volumes ONTAP 9.12.1, you don't need to disable compression.
 +
 Choose no storage efficiency when creating a volume from BlueXP, or create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].
-
+ifdef::azure[]
+[NOTE]
+##The minimum ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA.##
+endif::azure[]
 * Cache rewarming after a reboot is not supported with Cloud Volumes ONTAP.
