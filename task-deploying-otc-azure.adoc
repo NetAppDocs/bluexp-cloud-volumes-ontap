@@ -88,20 +88,12 @@ The following video shows how to associate a Marketplace subscription to an Azur
 video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP from the Azure Marketplace"]
 
 . *Services*: Enable or disable the individual services that you want to or don't want to use with Cloud Volumes ONTAP. 
-+
-[NOTE]
-##Cloud Volumes ONTAP 9.15.1 and later support deployment of zonal VM instances in single availability zones. This also requires the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature to be activated for your subscription. For more information, refer to link:task-azure-high-availability-mode.html[Enable high availability mode in Azure].##
-+
 * https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about BlueXP classification^]
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
 +
 TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above.
 
 . *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.
-+
-[NOTE]
-##Cloud Volumes ONTAP 9.15.1 and later deploy zonal VM instances in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. For single node systems, you need to select a region and an availability zone that support this deployment. Else, the previous non-zonal deployment model is followed in locally redundant storage (LRS). To learn more, refer to the https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^].##
-
 . *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.
 +
 The following table describes fields for which you might need guidance:
@@ -277,6 +269,8 @@ The following video shows how to associate a Marketplace subscription to an Azur
 video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP from the Azure Marketplace"]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
+[NOTE]
+##For high-availability mode, Cloud Volumes ONTAP 9.15.1 and later support deployment of zonal VM instances in single availability zones. This also requires the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature to be activated for your subscription. For more information, refer to link:task-saz-feature.html[Enable HA deployment in single availability zones].##
 +
 * https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about BlueXP classification^]
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
@@ -287,8 +281,8 @@ TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP
 
 .. Select *Single Availability Zone* or *Multiple Availability Zone*. 
 .. *Location and Connectivity* (single AZ) and *Region and Connectivity* (multiple AZs)
-* For single availability zones, select a region, VNet, and subnet. ##In Cloud Volumes ONTAP 9.15.1 and later, zonal VM instances are installed in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. You need to select a region that supports this deployment. If the region selected by you does not support this deployment mode, then the previous non-zonal deployment model for locally redundant storage (LRS) is followed. For information about the regions that support this deployment mode, refer to...##
-* For multiple availability zones, select a region, VNet, subnet, zone for node 1, and zone for node 2. 
+* For single availability zones, select a region, VNet, and subnet. ##For high-availability mode in Cloud Volumes ONTAP 9.15.1 and later, zonal VM instances are installed in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. You need to select a region that supports this deployment. If the region selected by you does not support this deployment mode, then the previous non-zonal deployment model for locally redundant storage (LRS) is followed.  To learn more, refer to the https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^]. For information about the supported regions, refer to https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Products available by region].##
+* For multiple availability zones, select a region, VNet, subnet, zone for node 1, and zone for node 2.
 .. Select the *I have verified network connectivity...* check box.
 
 . *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.

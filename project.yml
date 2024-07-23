@@ -81,6 +81,8 @@ sidebar:
               url: /task-set-up-licensing-azure.html
             - title: Enable high availability mode
               url: /task-azure-high-availability-mode.html
+            - title: Enable HA deployment in single availability zones
+              url: /task-saz-feature.html  
             - title: Launch Cloud Volumes ONTAP in Azure
               url: /task-deploying-otc-azure.html
             - title: Azure Platform Image Verification

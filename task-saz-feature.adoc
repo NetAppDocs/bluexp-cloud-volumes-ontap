@@ -6,7 +6,7 @@ keywords: Microsoft Azure feature, HA in SAZ, single availability zone, Azure fe
 summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
 ---
 
-= Enable HA deployment in a single availability zone
+= Enable HA deployment in single availability zones
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,16 +14,13 @@ summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
 :imagesdir: ./media/
 
 [.lead]
-Microsoft Azure's high availability mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP.
+For enabling Azure's high availability mode in a single availability zone, you should activate the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature for your subscriptions.
 
-If you want to deploy 
+Cloud Volumes ONTAP 9.15.1 and later leverage Azure Virtual Machine Scale Sets in Flexible orchestration mode for the deployment of VM instances in single availability zones. This feature facilitates the creation of separate fault domains within the same availability zone to ensure availability and scalability.
 
+Perform these steps as a user with "Owner" privileges from Azure CLI:
 
-An Azure user who has "Owner" privileges can enable the feature from the Azure CLI.
-
-##.Steps##
-
-Before enabling high availability mode in a zonal deployment in Azure, the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature should be activated for your subscription. This feature facilitates the deployment of VM instances in single availability zones by Azure Virtual Machine Scale Sets in Flexible orchestration mode. Perform these steps as a user with "Owner" privileges from Azure CLI:
+.Steps
 
 . Register for the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature by running this command:
 +
