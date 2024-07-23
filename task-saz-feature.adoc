@@ -2,9 +2,10 @@
 sidebar: sidebar
 permalink: task-saz-feature.html
 keywords: Microsoft Azure feature, HA in SAZ, single availability zone, Azure feature, Virtual Machine Scale Sets in Flexible mode
----
 summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
 ---
+
+
 
 = Enable HA deployment in single availability zones
 :hardbreaks:
