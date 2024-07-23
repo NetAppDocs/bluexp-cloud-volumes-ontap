@@ -137,7 +137,7 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 
 * Every disk by default in Azure is encrypted at rest.
 +
-##If the virtual machine that you chose for Cloud Volumes ONTAP supports Premium SSD v2 Managed Disk as data disks, the system uses a 32 GiB Premium SSD v2 Managed Disk for NVRAM, and another one as the root disk.## 
+If the virtual machine that you chose for Cloud Volumes ONTAP supports Premium SSD v2 Managed Disk as data disks, the system uses a 32 GiB Premium SSD v2 Managed Disk for NVRAM, and another one as the root disk.
 
 === Azure (HA pair)
 
@@ -163,7 +163,7 @@ NOTE: Snapshots are created automatically upon reboot.
 
 * Every disk by default in Azure is encrypted at rest.
 
-##.HA pairs with shared managed disks in single availability zone##
+.HA pairs with shared managed disks in single availability zone
 
 *	Two 10 GiB Premium SSD disks for the boot volume (one per node)
 *	Two 512 GiB Premium SSD v2 Shared Managed disks for the root volume (one per node)

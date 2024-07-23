@@ -90,17 +90,17 @@ video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP 
 . *Services*: Enable or disable the individual services that you want to or don't want to use with Cloud Volumes ONTAP. 
 +
 [NOTE]
-##Cloud Volumes ONTAP 9.15.1 and later leverage Virtual Machine Scale Sets in Flexible orchestration mode to deploy zonal VM instances in single availability zones. This also requires the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature to be activated for your subscription. For more information, refer to link:task-azure-high-availability-mode.html[Enable high availability mode in Azure].##
+##Cloud Volumes ONTAP 9.15.1 and later support deployment of zonal VM instances in single availability zones. This also requires the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature to be activated for your subscription. For more information, refer to link:task-azure-high-availability-mode.html[Enable high availability mode in Azure].##
 +
 * https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about BlueXP classification^]
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
 +
-TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above. 
+TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above.
 
 . *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.
 +
 [NOTE]
-##Cloud Volumes ONTAP 9.15.1 and later leverage Virtual Machine Scale Sets in Flexible orchestration mode to deploy zonal VM instances in single availability zones. For single node systems, you need to select a region and an availability zone that support Virtual Machine Scale Sets in Flexible orchestration mode. If the region or zone selected by you does not support this deployment mode, then the previous non-zonal deployment model is followed in locally redundant storage (LRS).##
+##Cloud Volumes ONTAP 9.15.1 and later deploy zonal VM instances in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. For single node systems, you need to select a region and an availability zone that support this deployment. Else, the previous non-zonal deployment model is followed in locally redundant storage (LRS). To learn more, refer to the https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^].##
 
 . *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.
 +
@@ -135,7 +135,7 @@ TIP: If the Azure account that you're using has the https://docs.netapp.com/us-e
 +
 If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
 
-. *Licensing*: Change the Cloud Volumes ONTAP version if required, and select a virtual machine type. ##Cloud Volumes ONTAP versions earlier than 9.15.1 do not support Virtual Machine Scale Sets to deploy VM instances in single availability zones. If you select an earlier ONTAP version, there might be errors in deployment. Similarly, if the selected VM type does not support Virtual Machine Scale Sets in Flexible orchestration mode, you might need to change the selection.##
+. *Licensing*: Change the Cloud Volumes ONTAP version if required, and select a virtual machine type.
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.12.1 to 9.13.1. 
 
@@ -287,7 +287,7 @@ TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP
 
 .. Select *Single Availability Zone* or *Multiple Availability Zone*. 
 .. *Location and Connectivity* (single AZ) and *Region and Connectivity* (multiple AZs)
-* For single availability zones, select a region, VNet, and subnet. ##In Cloud Volumes ONTAP 9.15.1 and later, zonal VM instances are installed in single availability zones. You need to select a region that supports this deployment. If the region selected by you does not support this deployment mode, then the previous non-zonal deployment model for locally redundant storage (LRS) is followed. For information about the regions that support this deployment mode, refer to...##
+* For single availability zones, select a region, VNet, and subnet. ##In Cloud Volumes ONTAP 9.15.1 and later, zonal VM instances are installed in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. You need to select a region that supports this deployment. If the region selected by you does not support this deployment mode, then the previous non-zonal deployment model for locally redundant storage (LRS) is followed. For information about the regions that support this deployment mode, refer to...##
 * For multiple availability zones, select a region, VNet, subnet, zone for node 1, and zone for node 2. 
 .. Select the *I have verified network connectivity...* check box.
 
