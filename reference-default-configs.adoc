@@ -163,12 +163,21 @@ NOTE: Snapshots are created automatically upon reboot.
 
 * Every disk by default in Azure is encrypted at rest.
 
-.HA pairs with shared managed disks in single availability zone
+.HA pairs with Premium SSD v2 shared managed disks in single availability zones
 
 *	Two 10 GiB Premium SSD disks for the boot volume (one per node)
 *	Two 512 GiB Premium SSD v2 Shared Managed disks for the root volume (one per node)
 *	Two 1024 GiB Standard HDD disks for saving cores (one per node)
 *	Two 32 GiB Premium SSD v2 Managed disks for NVRAM (one per node)
++
+If your virtual machine supports Premium SSD v2 Managed Disks as data disks, it uses 32 GiB Premium SSD v2 Managed Disks for NVRAM and 512 GiB Premium SSD v2 Shared Managed disks for the root volume.
+
+.HA pairs with Premium SSD shared managed disks in non-zonal deployments
+
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 512 GiB Premium SSD Shared Managed disks for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 512 GiB Premium SSD Managed disks for NVRAM (one per node)
 
 endif::azure[]
 
