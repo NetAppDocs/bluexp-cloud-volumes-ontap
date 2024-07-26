@@ -28,7 +28,8 @@ When using AKV, be aware that by default a data SVM LIF is used to communicate w
 
 .Limitations
 * AKV can only be configured on a data SVM
-* NAE can not be used using AKV. NAE requires an external-supported KMIP server. 
+* NAE can not be used using AKV. NAE requires an external-supported KMIP server.
+* ## Cloud Volumes ONTAP nodes poll AKV every 15 minutes to confirm accessibility and key availability. This polling period is non-configurable, and after four consecutive failures (of 1 hour) in the polling attempt, the volumes are placed offline.##
 
 == Configuration process
 
