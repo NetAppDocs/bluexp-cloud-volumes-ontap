@@ -36,6 +36,108 @@ After you've verified that outbound internet access is available, you can test A
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
+==== Cloud Volumes ONTAP endpoints
+Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
+
+[cols=3*,options="header,autowidth"]
+|===
+| Endpoints
+| URL
+| Purpose
+
+| 
+Auth
+
+| 
+Domain: \https://netapp-cloud-account.auth0.com
+Audience: \https://api.cloud.netapp.com
+
+| Used for BlueXP authentication. 
+
+| 
+Key Vault
+
+| 
+\https://keyvault-production-aks.vault.azure.net
+
+| Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
+
+| 
+Tenancy
+
+| 
+\https://cloudmanager.cloud.netapp.com/tenancy
+
+| Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
+
+NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+
+| 
+AutoSupport
+
+| 
+\https://support.netapp.com/aods/asupmessage
+\https://support.netapp.com/asupprod/post/1.0/postAsup
+
+| Used to send AutoSupport telemetry data. 
+
+NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+
+| 
+Azure Related endpoints: Public Regions 
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+\https://blob.core.windows.net
+\https://core.windows.net
+
+| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
+
+| 
+Azure Related endpoints: China Region
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+\https://blob.core.chinacloudapi.cn
+\https://core.chinacloudapi.cn
+
+| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
+
+| 
+Azure Related endpoints: Germany Region
+
+| 
+\https://management.microsoftazure.de
+\https://login.microsoftonline.de
+\https://blob.core.cloudapi.de
+\https://core.cloudapi.de
+
+| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
+
+| 
+Azure Related endpoints: Government Regions
+
+| 
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.us
+\https://blob.core.usgovcloudapi.net
+\https://core.usgovcloudapi.net
+
+| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
+
+| 
+Azure Related endpoints: Government DoD regions
+
+| 
+\https://management.azure.microsoft.scloud
+\https://login.microsoftonline.microsoft.scloud
+\https://blob.core.microsoft.scloud
+\https://core.microsoft.scloud
+
+|===
+
 === IP addresses
 
 BlueXP automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP in Azure. You need to make sure that your networking has enough private IP addresses available.  

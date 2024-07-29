@@ -38,6 +38,70 @@ After you've verified that outbound internet access is available, you can test A
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
+==== Cloud Volumes ONTAP endpoints
+Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
+
+[cols=3*,options="header,autowidth"]
+|===
+| Endpoints
+| URL
+| Purpose
+
+| 
+Auth
+
+| 
+Domain: \https://netapp-cloud-account.auth0.com
+Audience: \https://api.cloud.netapp.com
+
+| Used for BlueXP authentication. 
+
+| 
+Key Vault
+
+| 
+\https://keyvault-production-aks.vault.azure.net
+
+| Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
+
+| 
+Tenancy
+
+| 
+\https://cloudmanager.cloud.netapp.com/tenancy
+
+| Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
+
+NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+
+| 
+AutoSupport
+
+| 
+\https://support.netapp.com/aods/asupmessage
+\https://support.netapp.com/asupprod/post/1.0/postAsup
+
+| Used to send AutoSupport telemetry data. 
+
+NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+
+| 
+AWS services (amazonaws.com):
+
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Identity and Access Management (IAM)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+| 
+NOTE: The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details]. 
+
+| Used by Cloud Volumes ONTAP to talk to the AWS cloud provider. 
+
+|===
+
 === Outbound internet access for the HA mediator
 
 The HA mediator instance must have an outbound connection to the AWS EC2 service so it can assist with storage failover. To provide the connection, you can add a public IP address, specify a proxy server, or use a manual option.

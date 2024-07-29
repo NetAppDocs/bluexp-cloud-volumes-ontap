@@ -183,6 +183,71 @@ If you want to tier cold data to a Google Cloud Storage bucket, the subnet in wh
 
 For additional steps required to set up data tiering in BlueXP, see link:task-tiering.html[Tiering cold data to low-cost object storage].
 
+==== Cloud Volumes ONTAP endpoints
+Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
+
+[cols=3*,options="header,autowidth"]
+|===
+| Endpoints
+| URL
+| Purpose
+
+| 
+Auth
+
+| 
+Domain: \https://netapp-cloud-account.auth0.com
+Audience: \https://api.cloud.netapp.com
+
+| Used for BlueXP authentication. 
+
+| 
+Key Vault
+
+| 
+\https://keyvault-production-aks.vault.azure.net
+
+| Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
+
+| 
+Tenancy
+
+| 
+\https://cloudmanager.cloud.netapp.com/tenancy
+
+| Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
+
+NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+
+| 
+AutoSupport
+
+| 
+\https://support.netapp.com/aods/asupmessage
+\https://support.netapp.com/asupprod/post/1.0/postAsup
+
+| Used to send AutoSupport telemetry data. 
+
+NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+
+| 
+Google Cloud endpoints
+
+| 
+\https://www.googleapis.com/compute/v1/projects/
+\https://cloudresourcemanager.googleapis.com/v1/projects
+\https://www.googleapis.com/compute/beta
+\https://storage.googleapis.com/storage/v1
+\https://www.googleapis.com/storage/v1
+\https://iam.googleapis.com/v1
+\https://cloudkms.googleapis.com/v1
+\https://www.googleapis.com/deploymentmanager/v2/projects
+\https://compute.googleapis.com/compute/v1
+
+| Used by Cloud Volumes ONTAP to talk to the GCP cloud provider. 
+
+|===
+
 === Connections to ONTAP systems in other networks
 
 To replicate data between a Cloud Volumes ONTAP system in Google Cloud and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.
