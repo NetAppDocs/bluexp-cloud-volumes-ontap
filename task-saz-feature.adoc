@@ -7,7 +7,7 @@ summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
 
 
 
-= Enable HA deployment in single availability zones
+= Enable VMOrchestratorZonalMultiFD for single availability zones
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,24 +15,24 @@ summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
 :imagesdir: ./media/
 
 [.lead]
-For enabling Azure's high availability mode in a single availability zone, you should activate the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature for your subscriptions.
+For deploying VM instances in single availability zones, you should activate the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature for your subscriptions. This feature helps in deploying HA pairs in single availability zones. Unless you activate this feature, the deployment might run into errors.
 
-Cloud Volumes ONTAP 9.15.1 and later leverage Azure Virtual Machine Scale Sets in Flexible orchestration mode for the deployment of VM instances in single availability zones. This feature facilitates the creation of separate fault domains within the same availability zone to ensure availability at scale.
-
-Perform these steps as a user with "Owner" privileges from Azure CLI:
+Perform these steps as a user with "Owner" privileges:
 
 .Steps
 
+. Access Azure Cloud Shell from the Azure portal. For information, refer to https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/[Get started with Azure Cloud Shell].
 . Register for the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature by running this command:
 +
 ====
+az account set -s <AZURE_SUBSCRIPTION_NAME_OR_ID>
 az feature register --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
 ====
 +
 . Verify the registration status and output sample:
 +
 ====
-PS /home/<instance> az feature show -n VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
+az feature show -n VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
 {
   "id": "/subscriptions/<ID>/providers/Microsoft.Features/providers/Microsoft.Compute/features/VMOrchestratorZonalMultiFD",
   "name": "Microsoft.Compute/VMOrchestratorZonalMultiFD",

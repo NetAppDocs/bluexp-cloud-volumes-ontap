@@ -270,7 +270,7 @@ video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP 
 
 . *Services*: Enable or disable the individual services based on whether you want to use them with Cloud Volumes ONTAP.
 [NOTE]
-##For high-availability mode, Cloud Volumes ONTAP 9.15.1 and later deploy VM instances in single availability zones. This also requires the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature to be activated for your subscription. For more information, refer to link:task-saz-feature.html[Enable HA deployment in single availability zones].##
+##Cloud Volumes ONTAP 9.15.1 and later deploy VM instances in locally-redundant storage (LRS) single availability zones. This also requires the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature to be activated for your subscription. For information about activating this feature, refer to link:task-saz-feature.html[Enable VMOrchestratorZonalMultiFD for single availability zones]. This feature facilitates the high-availability mode for all Cloud Volumes ONTAP HA pairs. For information about HA mode, refer to link:task-azure-high-availability-mode.html[Enable high availability mode in Azure].
 +
 * https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html[Learn more about BlueXP classification^]
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html[Learn more about BlueXP backup and recovery^]
