@@ -70,7 +70,7 @@ Tenancy
 
 | Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
 
-NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+This endpoint does not apply if you are using BlueXP in private mode.
 
 | 
 AutoSupport
@@ -81,7 +81,7 @@ AutoSupport
 
 | Used to send AutoSupport telemetry data. 
 
-NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+This endpoint does not apply if you are using BlueXP in private mode.
 
 | 
 Azure Related endpoints: Public Regions 

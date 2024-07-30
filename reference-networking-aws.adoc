@@ -72,7 +72,7 @@ Tenancy
 
 | Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
 
-NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+This endpoint does not apply if you are using BlueXP in private mode.
 
 | 
 AutoSupport
@@ -83,7 +83,7 @@ AutoSupport
 
 | Used to send AutoSupport telemetry data. 
 
-NOTE: This endpoint does not apply if you are using BlueXP in private mode.
+This endpoint does not apply if you are using BlueXP in private mode.
 
 | 
 AWS services (amazonaws.com):
@@ -96,7 +96,7 @@ AWS services (amazonaws.com):
 * Simple Storage Service (S3)
 
 | 
-NOTE: The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details]. 
+The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^]. 
 
 | Used by Cloud Volumes ONTAP to talk to the AWS cloud provider. 
 
