@@ -61,11 +61,11 @@ ifdef::azure[]
 In Azure, an aggregate can contain up to 12 disks that are all the same size. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:
 
 Single node systems::
-Single node systems can use three types of Azure Managed Disks:
+Single node systems can use these types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
-* ##_Premium SSD v2 Managed Disks_ provide higher performance with lower latency, at a lower cost, compared to Premium SSD Shared Managed Disks for both single node and HA pairs. The maximum disk size is 32 TiB.##
+* ##_Premium SSD v2 Managed Disks_ provide higher performance with lower latency, at a lower cost, compared to Premium SSD Shared Managed Disks for both single node and HA pairs.##
 
 * _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
 

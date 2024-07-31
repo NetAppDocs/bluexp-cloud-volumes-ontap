@@ -27,7 +27,6 @@ Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no interne
 
 [role="quick-margin-para"]
 BlueXP offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. For information, refer to link:task-planning-your-config-azure.html[Plan your Cloud Volumes ONTAP configuration in Azure].
-##Cloud Volumes ONTAP 9.15.1 and later support the deployment of VM instances in locally-redundant storage (LRS) single availability zones. For this, you should subscribe to the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature. For more information, refer to link:task-saz-feature.html[Enable VMOrchestratorZonalMultiFD for single availability zones].##
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up your networking
 

@@ -21,7 +21,7 @@ Perform these steps as a user with "Owner" privileges:
 
 .Steps
 
-. Access Azure Cloud Shell from the Azure portal. For information, refer to https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/[Get started with Azure Cloud Shell].
+. Access Azure Cloud Shell from the Azure portal. For information, refer to https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/[Get started with Azure Cloud Shell^].
 . Register for the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature by running this command:
 +
 ====
