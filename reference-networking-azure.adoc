@@ -39,11 +39,13 @@ If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
 
-[cols=3*,options="header,autowidth"]
+[cols=5*,options="header,autowidth"]
 |===
 | Endpoints
 | URL
 | Purpose
+| Data Flow
+| Impact if endpoint is not available 
 
 | 
 Auth
@@ -54,6 +56,13 @@ Audience: \https://api.cloud.netapp.com
 
 | Used for BlueXP authentication. 
 
+| Validation of authentication. 
+
+| Auth failures will occur and result in a denial of service for the following:
+    * OCCM
+    * ontap-service
+    * protocol-proxy
+
 | 
 Key Vault
 
@@ -61,6 +70,10 @@ Key Vault
 \https://keyvault-production-aks.vault.azure.net
 
 | Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
+
+| Secret token retrieved from Azure Vault. 
+
+| Service for OCCM will not be available.  
 
 | 
 Tenancy
@@ -71,6 +84,10 @@ Tenancy
 | Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
 
 This endpoint does not apply if you are using BlueXP in private mode.
+
+| Retrieval of the resource data. 
+
+| Resources for the user and Cloud Volumes ONTAP are not authorized.  
 
 | 
 AutoSupport
@@ -83,6 +100,10 @@ AutoSupport
 
 This endpoint does not apply if you are using BlueXP in private mode.
 
+| AutoSupport information delivered to NetApp
+
+| AutoSupport telemetry is not delivered to NetApp. 
+
 | 
 Azure Related endpoints: Public Regions 
 
@@ -93,6 +114,10 @@ Azure Related endpoints: Public Regions
 \https://core.windows.net
 
 | Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
+
+| Azure provider call
+
+| Management for Azure provider functionalities in OCCM will be unavailable. 
 
 | 
 Azure Related endpoints: China Region
@@ -105,6 +130,10 @@ Azure Related endpoints: China Region
 
 | Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
 
+| Azure provider call
+
+| Management for Azure provider functionalities in OCCM will be unavailable. 
+
 | 
 Azure Related endpoints: Germany Region
 
@@ -115,6 +144,10 @@ Azure Related endpoints: Germany Region
 \https://core.cloudapi.de
 
 | Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
+
+| Azure provider call
+
+| Management for Azure provider functionalities in OCCM will be unavailable. 
 
 | 
 Azure Related endpoints: Government Regions
@@ -127,6 +160,10 @@ Azure Related endpoints: Government Regions
 
 | Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
 
+| Azure provider call
+
+| Management for Azure provider functionalities in OCCM will be unavailable.  
+
 | 
 Azure Related endpoints: Government DoD regions
 
@@ -135,6 +172,12 @@ Azure Related endpoints: Government DoD regions
 \https://login.microsoftonline.microsoft.scloud
 \https://blob.core.microsoft.scloud
 \https://core.microsoft.scloud
+
+| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
+
+| Azure provider call
+
+| Management for Azure provider functionalities in OCCM will be unavailable. 
 
 |===
 

@@ -186,11 +186,13 @@ For additional steps required to set up data tiering in BlueXP, see link:task-ti
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
 
-[cols=3*,options="header,autowidth"]
+[cols=5*,options="header,autowidth"]
 |===
 | Endpoints
 | URL
 | Purpose
+| Data Flow
+| Impact if endpoint is not available 
 
 | 
 Auth
@@ -201,6 +203,13 @@ Audience: \https://api.cloud.netapp.com
 
 | Used for BlueXP authentication. 
 
+| Validation of authentication. 
+
+| Auth failures will occur and result in a denial of service for the following:
+    * OCCM
+    * ontap-service
+    * protocol-proxy
+
 | 
 Key Vault
 
@@ -208,6 +217,10 @@ Key Vault
 \https://keyvault-production-aks.vault.azure.net
 
 | Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
+
+| Secret token retrieved from Azure Vault. 
+
+| Service for OCCM will not be available.  
 
 | 
 Tenancy
@@ -219,6 +232,10 @@ Tenancy
 
 This endpoint does not apply if you are using BlueXP in private mode.
 
+| Retrieval of the resource data. 
+
+| Resources for the user and Cloud Volumes ONTAP are not authorized.  
+
 | 
 AutoSupport
 
@@ -229,6 +246,10 @@ AutoSupport
 | Used to send AutoSupport telemetry data. 
 
 This endpoint does not apply if you are using BlueXP in private mode.
+
+| AutoSupport information delivered to NetApp
+
+| AutoSupport telemetry is not delivered to NetApp. 
 
 | 
 Google Cloud endpoints
@@ -245,6 +266,10 @@ Google Cloud endpoints
 \https://compute.googleapis.com/compute/v1
 
 | Used by Cloud Volumes ONTAP to talk to the GCP cloud provider. 
+
+| Google Cloud provider call
+
+| Management for Google Cloud provider functionalities in OCCM will be unavailable. 
 
 |===
 

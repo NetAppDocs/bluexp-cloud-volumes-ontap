@@ -41,11 +41,13 @@ If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
 
-[cols=3*,options="header,autowidth"]
+[cols=5*,options="header,autowidth"]
 |===
 | Endpoints
 | URL
 | Purpose
+| Data Flow
+| Impact if endpoint is not available 
 
 | 
 Auth
@@ -56,6 +58,13 @@ Audience: \https://api.cloud.netapp.com
 
 | Used for BlueXP authentication. 
 
+| Validation of authentication. 
+
+| Auth failures will occur and result in a denial of service for the following:
+    * OCCM
+    * ontap-service
+    * protocol-proxy
+
 | 
 Key Vault
 
@@ -63,6 +72,10 @@ Key Vault
 \https://keyvault-production-aks.vault.azure.net
 
 | Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
+
+| Secret token retrieved from Azure Vault. 
+
+| Service for OCCM will not be available.  
 
 | 
 Tenancy
@@ -74,6 +87,10 @@ Tenancy
 
 This endpoint does not apply if you are using BlueXP in private mode.
 
+| Retrieval of the resource data. 
+
+| Resources for the user and Cloud Volumes ONTAP are not authorized.  
+
 | 
 AutoSupport
 
@@ -84,6 +101,10 @@ AutoSupport
 | Used to send AutoSupport telemetry data. 
 
 This endpoint does not apply if you are using BlueXP in private mode.
+
+| AutoSupport information delivered to NetApp
+
+| AutoSupport telemetry is not delivered to NetApp. 
 
 | 
 AWS services (amazonaws.com):
@@ -99,6 +120,10 @@ AWS services (amazonaws.com):
 The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^]. 
 
 | Used by Cloud Volumes ONTAP to talk to the AWS cloud provider. 
+
+| AWS provider call
+
+| Management of AWS provider functionalities in OCCM will be unavailable. 
 
 |===
 
