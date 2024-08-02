@@ -152,36 +152,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-goog
 https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud subnet in which you deploy Cloud Volumes ONTAP.
 
 === Outbound internet access
-
-Cloud Volumes ONTAP requires outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
-
-Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
-
-* \https://support.netapp.com/aods/asupmessage
-* \https://support.netapp.com/asupprod/post/1.0/postAsup
-
-If an outbound internet connection isn't available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's firewall allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
-
-If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP firewall allows _outbound_ connections over port 3128.
-
-After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
-
-TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
-
-If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
-
-
-Firewall rules::
-You don't need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.
-+
-Note that two sets of firewall rules are required for an HA configuration:
-+
-* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules,Learn more>>.
-* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules,Learn more>>.
-
-If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
-
-For additional steps required to set up data tiering in BlueXP, see link:task-tiering.html[Tiering cold data to low-cost object storage].
+Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
 
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
@@ -201,14 +172,15 @@ Auth
 Domain: \https://netapp-cloud-account.auth0.com
 Audience: \https://api.cloud.netapp.com
 
-| Used for BlueXP authentication. 
+| Used for BlueXP authentication.
+This endpoint doesn't apply if you are using BlueXP in private mode. 
+| Authentication validation. 
 
-| Validation of authentication. 
+a|Authentication failure and denial of service for:
 
-| Auth failures will occur and result in a denial of service for the following:
-    * OCCM
-    * ontap-service
-    * protocol-proxy
+* OCCM
+* ontap-service
+* protocol-proxy
 
 | 
 Key Vault
@@ -216,11 +188,11 @@ Key Vault
 | 
 \https://keyvault-production-aks.vault.azure.net
 
-| Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
+| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling.
 
-| Secret token retrieved from Azure Vault. 
+| Retrieval of secret token from Azure Key Vault. 
 
-| Service for OCCM will not be available.  
+| Cloud Volumes ONTAP services are unavailable.  
 
 | 
 Tenancy
@@ -228,13 +200,12 @@ Tenancy
 | 
 \https://cloudmanager.cloud.netapp.com/tenancy
 
-| Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
+| Used to retrieve the Cloud Volumes ONTAP resources from the tenancy to authorize resources and users.
+This endpoint doesn't apply if you are using BlueXP in private mode.
 
-This endpoint does not apply if you are using BlueXP in private mode.
+| Retrieval of the resources data. 
 
-| Retrieval of the resource data. 
-
-| Resources for the user and Cloud Volumes ONTAP are not authorized.  
+|Cloud Volumes ONTAP resources and the user are not authorized.  
 
 | 
 AutoSupport
@@ -244,15 +215,14 @@ AutoSupport
 \https://support.netapp.com/asupprod/post/1.0/postAsup
 
 | Used to send AutoSupport telemetry data. 
+This endpoint doesn't apply if you are using BlueXP in private mode. 
 
-This endpoint does not apply if you are using BlueXP in private mode.
+| AutoSupport information sent to NetApp support.
 
-| AutoSupport information delivered to NetApp
-
-| AutoSupport telemetry is not delivered to NetApp. 
+| AutoSupport information remains undelivered. 
 
 | 
-Google Cloud endpoints
+Endpoints for Google Cloud
 
 | 
 \https://www.googleapis.com/compute/v1/projects/
@@ -265,13 +235,44 @@ Google Cloud endpoints
 \https://www.googleapis.com/deploymentmanager/v2/projects
 \https://compute.googleapis.com/compute/v1
 
-| Used by Cloud Volumes ONTAP to talk to the GCP cloud provider. 
+| Used by Cloud Volumes ONTAP to communicate with the Google Cloud providers. 
 
-| Google Cloud provider call
+| Calls to Google Cloud providers.
 
-| Management for Google Cloud provider functionalities in OCCM will be unavailable. 
+|Inability of Cloud Volumes ONTAP to manage specific functionalities of Google Cloud providers.  
 
 |===
+
+==== Outbound internet access for NetApp AutoSupport 
+Cloud Volumes ONTAP requires outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
+
+Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
+
+* \https://support.netapp.com/aods/asupmessage
+* \https://support.netapp.com/asupprod/post/1.0/postAsup
+
+If an outbound internet connection isn't available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's firewall allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
+
+If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP firewall allows _outbound_ connections over port 3128.
+
+After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
+
+TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
+
+If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
+
+
+==== Firewall rules::
+You don't need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.
++
+Note that two sets of firewall rules are required for an HA configuration:
++
+* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules,Learn more>>.
+* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules,Learn more>>.
+
+If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
+
+For additional steps required to set up data tiering in BlueXP, see link:task-tiering.html[Tiering cold data to low-cost object storage].
 
 === Connections to ONTAP systems in other networks
 

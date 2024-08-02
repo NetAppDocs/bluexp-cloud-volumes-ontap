@@ -20,8 +20,154 @@ Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly
 The following networking requirements must be met in Azure.
 
 === Outbound internet access
+Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
 
-Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
+==== Cloud Volumes ONTAP endpoints
+Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
+
+[cols=5*,options="header,autowidth"]
+|===
+| Endpoints
+| URL
+| Purpose
+| Data flow
+| Impact if unavailable
+
+| 
+Auth
+
+| 
+Domain: \https://netapp-cloud-account.auth0.com
+Audience: \https://api.cloud.netapp.com
+
+a| Used for BlueXP authentication.
+This endpoint doesn't apply if you are using BlueXP in private mode. 
+
+| Authentication validation. 
+
+a|Authentication failure and denial of service for:
+
+* OCCM
+* ontap-service
+* protocol-proxy
+|
+Key Vault
+
+| 
+\https://keyvault-production-aks.vault.azure.net
+
+| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling.
+
+| Retrieval of secret token from Azure Key Vault. 
+
+| Cloud Volumes ONTAP services are unavailable.  
+
+| 
+Tenancy
+
+| 
+\https://cloudmanager.cloud.netapp.com/tenancy
+
+| Used to retrieve the Cloud Volumes ONTAP resources from the tenancy to authorize resources and users.
+This endpoint doesn't apply if you are using BlueXP in private mode. 
+
+| Retrieval of the resources data. 
+
+|Cloud Volumes ONTAP resources and the user are not authorized.  
+
+| 
+AutoSupport
+
+| 
+\https://support.netapp.com/aods/asupmessage
+\https://support.netapp.com/asupprod/post/1.0/postAsup
+
+| Used to send AutoSupport telemetry data. 
+This endpoint doesn't apply if you are using BlueXP in private mode. 
+
+| AutoSupport information sent to NetApp support.
+
+| AutoSupport information remains undelivered. 
+
+| 
+Endpoints for Public Regions 
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+\https://blob.core.windows.net
+\https://core.windows.net
+
+| Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers. 
+
+| Calls to Azure cloud providers.
+
+|Inability of Cloud Volumes ONTAP to manage specific functionalities of Azure cloud providers. 
+
+| 
+Endpoints for China Region
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+\https://blob.core.chinacloudapi.cn
+\https://core.chinacloudapi.cn
+
+|Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers.
+
+|Calls to Azure cloud providers.
+
+|Inability of Cloud Volumes ONTAP to manage specific functionalities of Azure cloud providers.
+
+| 
+Endpoints for Germany Region
+
+| 
+\https://management.microsoftazure.de
+\https://login.microsoftonline.de
+\https://blob.core.cloudapi.de
+\https://core.cloudapi.de
+
+|Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers.  
+
+|Calls to Azure cloud providers.
+
+|Inability of Cloud Volumes ONTAP to manage specific functionalities of Azure cloud providers.
+
+| 
+Endpoints for Government Regions
+
+| 
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.us
+\https://blob.core.usgovcloudapi.net
+\https://core.usgovcloudapi.net
+
+|Used by Cloud Volumes ONTAP to communicate with the Azure cloud cloud providers. 
+
+|Calls to Azure cloud providers.
+
+|Inability of Cloud Volumes ONTAP to manage specific functionalities of Azure cloud providers.
+
+| 
+Endpoints for Government DoD regions
+
+| 
+\https://management.azure.microsoft.scloud
+\https://login.microsoftonline.microsoft.scloud
+\https://blob.core.microsoft.scloud
+\https://core.microsoft.scloud
+
+|Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers. 
+
+|Calls to Azure cloud providers.
+
+|Inability of Cloud Volumes ONTAP to manage specific functionalities of Azure cloud providers.
+
+|===
+
+==== Outbound internet access for NetApp AutoSupport 
+Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support. 
 
 Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
 
@@ -36,150 +182,7 @@ After you've verified that outbound internet access is available, you can test A
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
-==== Cloud Volumes ONTAP endpoints
-Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
 
-[cols=5*,options="header,autowidth"]
-|===
-| Endpoints
-| URL
-| Purpose
-| Data Flow
-| Impact if endpoint is not available 
-
-| 
-Auth
-
-| 
-Domain: \https://netapp-cloud-account.auth0.com
-Audience: \https://api.cloud.netapp.com
-
-| Used for BlueXP authentication. 
-
-| Validation of authentication. 
-
-| Auth failures will occur and result in a denial of service for the following:
-    * OCCM
-    * ontap-service
-    * protocol-proxy
-
-| 
-Key Vault
-
-| 
-\https://keyvault-production-aks.vault.azure.net
-
-| Used to retrieve the client secret from the Azure vault to communicate with S3 bucket for metadata handling purposes.
-
-| Secret token retrieved from Azure Vault. 
-
-| Service for OCCM will not be available.  
-
-| 
-Tenancy
-
-| 
-\https://cloudmanager.cloud.netapp.com/tenancy
-
-| Used to retrieve the Cloud Volumes ONTAP resources from the Tenancy to authorize the resource and user.
-
-This endpoint does not apply if you are using BlueXP in private mode.
-
-| Retrieval of the resource data. 
-
-| Resources for the user and Cloud Volumes ONTAP are not authorized.  
-
-| 
-AutoSupport
-
-| 
-\https://support.netapp.com/aods/asupmessage
-\https://support.netapp.com/asupprod/post/1.0/postAsup
-
-| Used to send AutoSupport telemetry data. 
-
-This endpoint does not apply if you are using BlueXP in private mode.
-
-| AutoSupport information delivered to NetApp
-
-| AutoSupport telemetry is not delivered to NetApp. 
-
-| 
-Azure Related endpoints: Public Regions 
-
-| 
-\https://management.azure.com
-\https://login.microsoftonline.com
-\https://blob.core.windows.net
-\https://core.windows.net
-
-| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
-
-| Azure provider call
-
-| Management for Azure provider functionalities in OCCM will be unavailable. 
-
-| 
-Azure Related endpoints: China Region
-
-| 
-\https://management.chinacloudapi.cn
-\https://login.chinacloudapi.cn
-\https://blob.core.chinacloudapi.cn
-\https://core.chinacloudapi.cn
-
-| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
-
-| Azure provider call
-
-| Management for Azure provider functionalities in OCCM will be unavailable. 
-
-| 
-Azure Related endpoints: Germany Region
-
-| 
-\https://management.microsoftazure.de
-\https://login.microsoftonline.de
-\https://blob.core.cloudapi.de
-\https://core.cloudapi.de
-
-| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
-
-| Azure provider call
-
-| Management for Azure provider functionalities in OCCM will be unavailable. 
-
-| 
-Azure Related endpoints: Government Regions
-
-| 
-\https://management.usgovcloudapi.net
-\https://login.microsoftonline.us
-\https://blob.core.usgovcloudapi.net
-\https://core.usgovcloudapi.net
-
-| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
-
-| Azure provider call
-
-| Management for Azure provider functionalities in OCCM will be unavailable.  
-
-| 
-Azure Related endpoints: Government DoD regions
-
-| 
-\https://management.azure.microsoft.scloud
-\https://login.microsoftonline.microsoft.scloud
-\https://blob.core.microsoft.scloud
-\https://core.microsoft.scloud
-
-| Used by Cloud Volumes ONTAP to talk to the Azure cloud provider. 
-
-| Azure provider call
-
-| Management for Azure provider functionalities in OCCM will be unavailable. 
-
-|===
 
 === IP addresses
 
