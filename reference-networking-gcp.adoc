@@ -188,7 +188,7 @@ Key Vault
 | 
 \https://keyvault-production-aks.vault.azure.net
 
-| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling.
+| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP uses this Azure endpoint for Google Cloud.
 
 | Retrieval of secret token from Azure Key Vault. 
 
@@ -205,7 +205,7 @@ This endpoint doesn't apply if you are using BlueXP in private mode.
 
 | Retrieval of the resources data. 
 
-|Cloud Volumes ONTAP resources and the user are not authorized.  
+|Cloud Volumes ONTAP resources and the users are not authorized.  
 
 | 
 AutoSupport

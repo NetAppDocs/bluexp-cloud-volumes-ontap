@@ -73,7 +73,7 @@ This endpoint doesn't apply if you are using BlueXP in private mode.
 
 | Retrieval of the resources data. 
 
-|Cloud Volumes ONTAP resources and the user are not authorized.  
+|Cloud Volumes ONTAP resources and the users are not authorized.  
 
 | 
 AutoSupport
