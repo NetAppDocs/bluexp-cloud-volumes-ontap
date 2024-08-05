@@ -188,7 +188,7 @@ Key Vault
 | 
 \https://keyvault-production-aks.vault.azure.net
 
-| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP uses this Azure endpoint for Google Cloud.
+| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP uses this endpoint for Google Cloud.
 
 | Retrieval of secret token from Azure Key Vault. 
 
@@ -261,12 +261,11 @@ TIP: If you're using an HA pair, the HA mediator doesn't require outbound intern
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
-
-==== Firewall rules::
+==== Firewall rules
 You don't need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.
-+
+
 Note that two sets of firewall rules are required for an HA configuration:
-+
+
 * One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules,Learn more>>.
 * Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules,Learn more>>.
 

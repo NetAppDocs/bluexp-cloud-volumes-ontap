@@ -57,7 +57,7 @@ Key Vault
 | 
 \https://keyvault-production-aks.vault.azure.net
 
-| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP uses this Azure endpoint for AWS.
+| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP uses this endpoint for AWS.
 
 | Retrieval of secret token from Azure Key Vault. 
 
@@ -103,7 +103,7 @@ Endpoints for AWS services (amazonaws.com):
 | 
 The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^]. 
 
-| Used by Cloud Volumes ONTAP to communicate with the AWS cloud provider. 
+| Used by Cloud Volumes ONTAP to communicate with the AWS cloud providers. 
 
 | Calls to AWS cloud providers.
 
