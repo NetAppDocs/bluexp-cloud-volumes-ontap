@@ -85,7 +85,7 @@ AutoSupport
 | Used to send AutoSupport telemetry data. 
 This endpoint doesn't apply if you are using BlueXP in private mode. 
 
-| AutoSupport information sent to NetApp support.
+| AutoSupport information sent to NetApp Support.
 
 | AutoSupport information remains undelivered. 
 

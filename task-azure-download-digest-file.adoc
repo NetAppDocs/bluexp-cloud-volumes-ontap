@@ -17,7 +17,7 @@ The Azure Image Digest File can be downloaded from the https://mysupport.netapp.
 
 .Steps
 
-. Go to the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[Cloud Volumes ONTAP product page on the NetApp Support Site^] and download the desired software version under the Downloads section.    
+. Go to the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[Cloud Volumes ONTAP product page on the NetApp Support Site^] and download the required software version under the Downloads section.    
 
 . Under the Cloud Volumes ONTAP download page, click the *download button* for the Azure Image Digest File to download the TAR.GZ file.
 +
