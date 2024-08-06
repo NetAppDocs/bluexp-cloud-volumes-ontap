@@ -261,18 +261,6 @@ TIP: If you're using an HA pair, the HA mediator doesn't require outbound intern
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
-==== Firewall rules
-You don't need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.
-
-Note that two sets of firewall rules are required for an HA configuration:
-
-* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules,Learn more>>.
-* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules,Learn more>>.
-
-If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
-
-For additional steps required to set up data tiering in BlueXP, see link:task-tiering.html[Tiering cold data to low-cost object storage].
-
 === Connections to ONTAP systems in other networks
 
 To replicate data between a Cloud Volumes ONTAP system in Google Cloud and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.
