@@ -42,7 +42,7 @@ Follow these steps to address this problem.
 
 .Steps
 
-. SSH to the Cloud Volumes ONTAP system so that you can administer the system from the CLI.
+. SSH to the Cloud Volumes ONTAP system so that you can administer the system from the ONTAP CLI.
 +
 link:task-connecting-to-otc.html[Learn how to SSH to Cloud Volumes ONTAP].
 

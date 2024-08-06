@@ -13,7 +13,7 @@ summary: Utilize Google's key management service for your third-party key manage
 [.lead]
 You can use link:https://cloud.google.com/kms/docs[Google Cloud Platform's Key Management Service (Cloud KMS)^] to protect your ONTAP encryption keys in a Google Cloud Platform-deployed application.
 
-Key management with Cloud KMS can be enabled with the CLI or the ONTAP REST API.
+Key management with Cloud KMS can be enabled with the ONTAP CLI or the ONTAP REST API.
 
 When using Cloud KMS, be aware that by default a data SVM's LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider's authentication services (oauth2.googleapis.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.
 

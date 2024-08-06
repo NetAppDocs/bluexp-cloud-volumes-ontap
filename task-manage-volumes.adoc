@@ -60,7 +60,7 @@ a|
 .. Under Volume Actions in the Manage volumes panel, click *Edit volume settings*
 .. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click *Apply*.
 
-NOTE: If you need custom Snapshot policies, you can create them by using System Manager.
+NOTE: If you need custom Snapshot policies, you can create them by using ONTAP System Manager.
 
 | Delete a volume
 a|
@@ -107,7 +107,7 @@ By default, a volume automatically grows to a maximum size when it's out of spac
 If you need to resize your volume, you can do it from the Advanced View in BlueXP.
 
 .Steps
-. Open the Advanced View to resize a volume through System Manager. Refer to link:task-administer-advanced-view.html#how-to-get-started[How to get started].
+. Open the Advanced View to resize a volume through ONTAP System Manager. Refer to link:task-administer-advanced-view.html#how-to-get-started[How to get started].
 . From the left navigation menu, select *Storage > Volumes*.
 . From the list of volumes, identify the one that you should resize.
 . Click the options icon image:screenshot_gallery_options.gif[kabob icon].
@@ -184,11 +184,11 @@ Cloud Volumes ONTAP updates the CIFS server with the changes.
 
 Move volumes for capacity utilization, improved performance, and to satisfy service-level agreements.
 
-You can move a volume in System Manager by selecting a volume and the destination aggregate, starting the volume move operation, and optionally monitoring the volume move job. When using System Manager, a volume move operation finishes automatically.
+You can move a volume in ONTAP System Manager by selecting a volume and the destination aggregate, starting the volume move operation, and optionally monitoring the volume move job. When using System Manager, a volume move operation finishes automatically.
 
 .Steps
 
-. Use System Manager or the CLI to move the volumes to the aggregate.
+. Use ONTAP System Manager or the ONTAP CLI to move the volumes to the aggregate.
 +
 In most situations, you can use System Manager to move volumes.
 +
@@ -316,7 +316,7 @@ image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggre
 +
 For information, refer to link:task-create-aggregates.html[Creating aggregates^].
 
-. Use System Manager or the CLI to move the volumes to the aggregate.
+. Use ONTAP System Manager or the ONTAP CLI to move the volumes to the aggregate.
 
 . In most situations, you can use System Manager to move volumes.
 +
@@ -338,7 +338,7 @@ An older naming scheme is used if data tiering was enabled on an aggregate in th
 
 == View FlexGroup Volumes 
 
-You can view FlexGroup volumes created through CLI or System Manager directly through the Volumes tab within BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FleGroup volumes through a dedicated Volumes tile. Under the Volumes tile, you can identify each FlexGroup volume group through the icon’s hover text. Additionally, you can identify and sort FlexGroup volumes under the volumes list view through the Volume Style column. 
+You can view FlexGroup volumes created through ONTAP System Manager or the ONTAP CLI directly through the Volumes tab within BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FleGroup volumes through a dedicated Volumes tile. Under the Volumes tile, you can identify each FlexGroup volume group through the icon’s hover text. Additionally, you can identify and sort FlexGroup volumes under the volumes list view through the Volume Style column. 
 
 image::screenshot_show_flexgroup_vol.png[width=500 A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 

@@ -77,7 +77,7 @@ You can add up to four labels from the user interface when creating a working en
 
 For information about labels, refer to https://cloud.google.com/compute/docs/labeling-resources[Google Cloud Documentation: Labeling Resources^].
 
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 | Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.
 
@@ -237,7 +237,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-* If you want to apply quotas to volumes, use System Manager or the CLI.
+* If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
@@ -272,7 +272,7 @@ You can add up to four labels from the user interface when creating a working en
 
 For information about labels, refer to https://cloud.google.com/compute/docs/labeling-resources[Google Cloud Documentation: Labeling Resources^].
 
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 | Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.
 
@@ -434,6 +434,6 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-* If you want to apply quotas to volumes, use System Manager or the CLI.
+* If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.

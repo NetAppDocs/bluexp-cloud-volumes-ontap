@@ -27,7 +27,7 @@ A few notes about volume provisioning:
 
 * When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-connect-lun.html[use the IQN to connect to the LUN from your hosts^].
 
-* You can create additional LUNs from System Manager or the CLI.
+* You can create additional LUNs from ONTAP System Manager or the ONTAP CLI.
 
 ifdef::aws[]
 * If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
@@ -223,4 +223,4 @@ endif::aws[]
 
 If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-If you want to apply quotas to volumes, you must use System Manager or the CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+If you want to apply quotas to volumes, you must use ONTAP System Manager or the ONTAP CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.

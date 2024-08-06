@@ -21,7 +21,7 @@ You should be aware of the following before you start the Cloud Volumes ONTAP up
 
 === Upgrade from BlueXP only
 
-Upgrades of Cloud Volumes ONTAP must be completed from BlueXP. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.
+Upgrades of Cloud Volumes ONTAP must be completed from BlueXP. You should not upgrade Cloud Volumes ONTAP by using ONTAP System Manager or the ONTAP CLI. Doing so can impact system stability.
 
 === How to upgrade
 
@@ -181,7 +181,7 @@ NOTE: Even though BlueXP backup and recovery uses an implementation of SnapMirro
 
 .About this task
 
-These steps describe how to use System Manager for version 9.3 and later.
+These steps describe how to use ONTAP System Manager for version 9.3 and later.
 
 .Steps
 
@@ -201,7 +201,7 @@ Aggregates for Cloud Volumes ONTAP must be online before you update the software
 
 .About this task
 
-These steps describe how to use System Manager for version 9.3 and later.
+These steps describe how to use ONTAP System Manager for version 9.3 and later.
 
 .Steps
 

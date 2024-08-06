@@ -143,7 +143,7 @@ endif::gcp[]
 
 === Enabling data tiering after implementing the requirements
 
-BlueXP creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering through the API or System Manager, which creates the object store. 
+BlueXP creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering through the API or ONTAP System Manager, which creates the object store. 
 //
 //.Steps
 //
@@ -173,7 +173,7 @@ If you're enabling data tiering on a new volume, then you don't need to worry ab
 
 * *Existing volumes*
 +
-If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to use System Manager to attach an existing aggregate to the object store.
+If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to use ONTAP System Manager to attach an existing aggregate to the object store.
 
 .Steps to confirm whether tiering is enabled on an aggregate
 
@@ -187,7 +187,7 @@ image:screenshot_aggregate_tiering_enabled.png[A screenshot that shows informati
 
 .Steps to enable tiering on an aggregate
 
-. In System Manager, click *Storage > Tiers*.
+. In ONTAP System Manager, click *Storage > Tiers*.
 
 . Click the action menu for the aggregate and select *Attach Cloud Tiers*.
 
@@ -281,7 +281,7 @@ image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in 
 
 == Changing the cooling period for the auto tiering policy
 
-If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API and CLI only.
+If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using ONTAP CLI and API only.
 
 The cooling period is the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to object storage.
 
