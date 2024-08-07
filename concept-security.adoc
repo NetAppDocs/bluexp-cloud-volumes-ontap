@@ -34,7 +34,7 @@ You can use NetApp encryption solutions with native encryption from your cloud p
 
 === NetApp encryption solutions (NVE and NAE)
 
-Cloud Volumes ONTAP supports hhttps://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf[NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE)^]. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. Both NVE and NAE use AES 256-bit encryption.
+Cloud Volumes ONTAP supports https://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf[NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE)^]. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. Both NVE and NAE use AES 256-bit encryption.
 
 * NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
 * NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
