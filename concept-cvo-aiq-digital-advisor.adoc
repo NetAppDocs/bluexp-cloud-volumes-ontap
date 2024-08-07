@@ -42,7 +42,7 @@ In BlueXP, click the *Digital Advisor* service.
 +
 image:screenshot_aiq_digital_advisor.png[A screenshot of the Digital Advisor user interface in BlueXP.]
 
-* If you haven't registered an NSS account in BlueXP, https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[register an NSS account now^] and then the Digital Advisor UI appears.
+* If you haven't registered an NSS account in BlueXP, register an NSS account now and then the Digital Advisor UI appears. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[Manage NSS credentials associated with a BlueXP account] for the instructions.
 
 NOTE: As of December 3, 2021, NetApp has switched to a new methodology of registering credentials for NSS accounts. For more information, refer to https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login[this FAQ]. If your NSS account uses the old set of credentials you will need to update the account to the new credentials.
 

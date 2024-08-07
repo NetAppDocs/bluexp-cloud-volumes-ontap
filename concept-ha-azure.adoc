@@ -28,7 +28,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 VMs in single availability zones::
-##Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous, auto-scaling virtual machines (VMs) in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. In this mode, you can deploy VM instances in distinct fault domains, to ensure high availability. To learn more, refer to the Microsoft https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Virtual Machine Scale Sets documentation^].##
+##Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous, auto-scaling virtual machines (VMs) in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. In this mode, you can deploy VM instances in distinct fault domains, to ensure high availability. To learn more, refer to the Microsoft https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets documentation^].##
 
 Disks::
 Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, and core data^].
@@ -37,7 +37,7 @@ Storage accounts::
 * One storage account is required for managed disks.
 * One or more storage accounts are required for the Premium Storage page blobs, as the disk capacity limit per storage account is reached.
 +
-https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets[Azure documentation: Azure Storage scalability and performance targets for storage accounts^].
+https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets[Microsoft Azure documentation: Azure Storage scalability and performance targets for storage accounts^].
 * One storage account is required for data tiering to Azure Blob storage.
 * Starting with Cloud Volumes ONTAP 9.7, the storage accounts that BlueXP creates for HA pairs are general-purpose v2 storage accounts.
 * You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
@@ -53,7 +53,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 VMs in single availability zones::
-##Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous, auto-scaling virtual machines (VMs) in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. In this mode, you can deploy VM instances in distinct fault domains, to ensure high availability. To learn more, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets documentation^].##
+##Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous, auto-scaling virtual machines (VMs) in single availability zones by using Azure Virtual Machine Scale Sets in Flexible orchestration mode. In this mode, you can deploy VM instances in distinct fault domains, to ensure high availability. To learn more, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets^].##
 
 Disks::
 Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data^].
