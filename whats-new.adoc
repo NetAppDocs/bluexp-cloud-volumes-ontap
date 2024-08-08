@@ -22,12 +22,6 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
-== 7 Aug 2024
-
-=== Edge Cache licensing packages deprecated
-
-##Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to make use of this functionality.##
-
 == 10 June 2024
 
 === Cloud Volumes ONTAP 9.15.0
