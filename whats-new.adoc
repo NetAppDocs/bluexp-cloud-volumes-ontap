@@ -22,11 +22,6 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
-== 7 August 2024
-
-=== Minimum supported ONTAP version for Flash Cache on Azure
-The minimum ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. Only ONTAP 9.13.1 GA and later can be used for deploying Flash cache on Cloud Volumes ONTAP for Azure.
-
 == 10 June 2024
 
 === Cloud Volumes ONTAP 9.15.0
