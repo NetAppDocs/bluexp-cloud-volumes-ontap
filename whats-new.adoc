@@ -224,7 +224,7 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits
 The following changes were introduced with the 3.9.32 release of the Connector.
 
 === Flash Cache and high write speed support in Google Cloud
-Flash Cache and high write speed can be enabled separately in Google Cloud for Cloud Volumes ONTAP 9.13.1 RC and later. High write speed is available on all supported instance types. Flash Cache is supported on the following instance types: 
+Flash Cache and high write speed can be enabled separately in Google Cloud for Cloud Volumes ONTAP 9.13.1 and later. High write speed is available on all supported instance types. Flash Cache is supported on the following instance types: 
 
 * n2-standard-16
 * n2-standard-32
