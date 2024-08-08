@@ -105,22 +105,6 @@ Single node or HA with capacity charging for primary and secondary volumes at th
 NOTE: A PAYGO subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, see https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
 * Add on any of NetApp's cloud data services at extra cost
 
-==== Edge Cache
-
-Provides licensing for Cloud Volumes Edge Cache.
-
-* The same capabilities as the Professional package with business continuity and data protection for a distributed enterprise
-* Intelligent edge caching through a small-footprint Windows VM at each location
-* One edge node with every 3 TiBs of capacity purchased
-ifdef::azure[]
-* Available in the Azure Marketplace as a pay-as-you-go offering or as an annual contract
-endif::azure[]
-ifdef::gcp[]
-* Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
-endif::gcp[]
-
-https://cloud.netapp.com/cloud-volumes-edge-cache[Learn more about how Cloud Volumes Edge Cache can help your business^]
-
 === Consumption models
 
 Capacity-based licensing packages are available with the following consumption models:
@@ -128,7 +112,7 @@ Capacity-based licensing packages are available with the following consumption m
 * *BYOL*: A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
 ifdef::azure[]
 +
-Note that the Optimized and Edge Cache packages are not available with BYOL.
+Note that the Optimized package is not available with BYOL.
 endif::azure[]
 
 * *PAYGO*: An hourly subscription from your cloud provider's marketplace.
@@ -213,7 +197,7 @@ There is a 4 TiB minimum charge for each data-serving storage VM that has least 
 
 If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
 
-For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With all other non-Essentials package types (Optimized, Professional, and Edge Cache), the minimum capacity charging of 4 TiB applies regardless of the volume type. 
+For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With all other non-Essentials package types (Optimized and Professional), the minimum capacity charging of 4 TiB applies regardless of the volume type. 
 
 ==== Overages
 
