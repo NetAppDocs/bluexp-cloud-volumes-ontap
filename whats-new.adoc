@@ -25,13 +25,13 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 8 August 2024
 
 === Edge Cache licensing packages deprecated
-Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to utilize this functionality.
+Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
 
 === Minimum supported ONTAP version for Flash Cache on Azure
 The minimum ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. Only ONTAP 9.13.1 GA and later versions can be used for deploying Flash cache on Cloud Volumes ONTAP systems for Azure.
 
 === Free trials for marketplace subscriptions deprecated
-The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) shall be activated from the first use without a free trial period.
+The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use without a free trial period.
 
 === Canada West region now supported in AWS
 The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
