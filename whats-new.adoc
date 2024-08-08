@@ -54,6 +54,8 @@ NOTE: AWS Local Zones are supported when using BlueXP in standard mode. At this 
 
 For more information on AWS Local Zones with HA Deployments, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones[AWS Local Zones^].
 
+//end::whats-new[]
+
 == 23 April 2024
 
 === New regions supported for multiple availability zone deployments in Azure
@@ -77,7 +79,6 @@ For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-globa
 
 You can no longer create a volume from a template or edit a volume's tags. These actions were associated with the BlueXP remediation service, which is no longer available.
 
-//end::whats-new[]
 
 == 8 March 2024
 
