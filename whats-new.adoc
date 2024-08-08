@@ -22,7 +22,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
-== 7 August 2024
+== 8 August 2024
 === Canada West region now supported in AWS
 The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
 
