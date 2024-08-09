@@ -188,10 +188,6 @@ BlueXP always attempts to charge against a license first. If a license isn't ava
 
 * If you have a private offer or contract from your cloud provider's marketplace, changing to a charging method that's not included in your contract will result in charging against BYOL (if you purchased a license from NetApp) or PAYGO.
 
-ifdef::azure,gcp[]
-* Changing to or from the Edge Cache license isn't supported.
-endif::azure,gcp[]
-
 .Steps
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.

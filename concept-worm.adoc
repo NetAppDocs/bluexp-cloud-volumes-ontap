@@ -86,3 +86,7 @@ You should understand the following about enabling both data tiering and WORM st
 * WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. While WORM files are protected from alteration or modification, volumes can be deleted by a cluster administrator even if those volumes contain unexpired WORM data.
 
 * In addition to the trusted storage administrator model, WORM storage in Cloud Volumes ONTAP also implicitly operates under a "trusted cloud administrator" model. A cloud administrator could delete WORM data before its expiry date by removing or editing cloud storage directly from the cloud provider.
+
+.Related information
+
+* link:reference-worm-snaplock.html[Create tamperproof Snapshot copies for WORM storage]

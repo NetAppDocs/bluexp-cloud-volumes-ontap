@@ -22,6 +22,24 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
+== 8 August 2024
+
+=== Edge Cache licensing packages deprecated
+Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
+
+=== Minimum supported ONTAP version for Flash Cache on Azure
+The minimum ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. Only ONTAP 9.13.1 GA and later versions can be used for deploying Flash Cache on Cloud Volumes ONTAP systems for Azure. 
+
+For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
+
+=== Free trials for marketplace subscriptions deprecated
+The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.
+
+=== Canada West region now supported in AWS
+The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
+
 == 10 June 2024
 
 === Cloud Volumes ONTAP 9.15.0
@@ -37,6 +55,8 @@ Support for AWS Local Zones is now available for Cloud Volumes ONTAP HA deployme
 NOTE: AWS Local Zones are supported when using BlueXP in standard mode. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode or private mode.
 
 For more information on AWS Local Zones with HA Deployments, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones[AWS Local Zones^].
+
+//end::whats-new[]
 
 == 23 April 2024
 
@@ -61,7 +81,6 @@ For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-
 
 You can no longer create a volume from a template or edit a volume's tags. These actions were associated with the BlueXP remediation service, which is no longer available.
 
-//end::whats-new[]
 
 == 8 March 2024
 
@@ -74,6 +93,8 @@ If required by your security policies, you can configure your EC2 instances to u
 
 === Cloud Volumes ONTAP 9.14.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud.
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 2 February 2024
 === Support for Edv5-series VMs in Azure
@@ -141,7 +162,6 @@ The following regions now support highly-available multiple availability zone de
 * Switzerland North
 * South Africa North
 * United Arab Emirates North
-* China North 3
 
 For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
@@ -648,10 +668,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9110-relnotes[Learn about the 
 When BlueXP upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.
 
 === K8s tab has been removed
-
-The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.
-
-https://docs.netapp.com/us-en/bluexp-kubernetes/concept-kubernetes.html[Learn about Kubernetes data management in BlueXP^]
+The K8s tab was deprecated in a previous release, and has now been removed.
 
 === Annual contract in Azure
 
