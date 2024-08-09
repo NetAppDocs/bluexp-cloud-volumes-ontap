@@ -130,7 +130,7 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type and the size for each disk.
 +
@@ -329,7 +329,7 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type and the size for each disk.
 +

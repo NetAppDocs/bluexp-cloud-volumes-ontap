@@ -85,7 +85,7 @@ Cross-VPC data communication is not an issue since iSCSI does not use floating I
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
-NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
+NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the https://docs.netapp.com/us-en/ontap-sanhost/[SAN hosts and cloud clients guide] for your host operating system.
 
 ==== Takeover and giveback for NAS
 
@@ -117,7 +117,7 @@ image:diagram_single_az.png[Conceptual image that shows an ONTAP HA configuratio
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
-NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
+NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the https://docs.netapp.com/us-en/ontap-sanhost/[SAN hosts and cloud clients guide] for your host operating system.
 
 For NAS configurations, the data IP addresses can migrate between HA nodes if failures occur. This ensures client access to storage.
 

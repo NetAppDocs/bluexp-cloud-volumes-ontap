@@ -98,7 +98,7 @@ For NAS configurations, data IP addresses automatically migrate between HA nodes
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
-NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
+NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the https://docs.netapp.com/us-en/ontap-sanhost/[SAN hosts and cloud clients guide] for your host operating system.
 
 Storage takeover, resync, and giveback are all automatic by default. No user action is required.
 

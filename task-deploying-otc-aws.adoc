@@ -146,7 +146,7 @@ If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.ht
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose a disk type, configure the underlying storage, and choose whether to keep data tiering enabled.
 +
@@ -373,7 +373,7 @@ If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.ht
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose a disk type, configure the underlying storage, and choose whether to keep data tiering enabled.
 +
