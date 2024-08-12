@@ -21,11 +21,11 @@ Perform these steps as a user with "Owner" privileges:
 
 .Steps
 
-. Access Azure Cloud Shell from the Azure portal. For information, refer to https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/[Get started with Azure Cloud Shell^].
+. Access Azure Cloud Shell from the Azure portal. For information, refer to https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/[Microsoft Azure documentation: Get started with Azure Cloud Shell^].
 . Register for the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature by running this command:
 +
 ====
-az account set -s <AZURE_SUBSCRIPTION_NAME_OR_ID>
+az account set -s _<Azure_subscription_name_or_ID>_
 az feature register --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
 ====
 +
@@ -34,7 +34,7 @@ az feature register --name VMOrchestratorZonalMultiFD --namespace Microsoft.Comp
 ====
 az feature show -n VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
 {
-  "id": "/subscriptions/<ID>/providers/Microsoft.Features/providers/Microsoft.Compute/features/VMOrchestratorZonalMultiFD",
+  "id": "/subscriptions/_<ID>_/providers/Microsoft.Features/providers/Microsoft.Compute/features/VMOrchestratorZonalMultiFD",
   "name": "Microsoft.Compute/VMOrchestratorZonalMultiFD",
   "properties": {
     "state": "Registered"

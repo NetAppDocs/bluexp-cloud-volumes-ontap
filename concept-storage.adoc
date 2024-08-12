@@ -65,7 +65,7 @@ Single node systems can use these types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
-* ##_Premium SSD v2 Managed Disks_ provide higher performance with lower latency, at a lower cost, compared to Premium SSD Shared Managed Disks for both single node and HA pairs.##
+* ##_Premium SSD v2 Managed Disks_ provide higher performance with lower latency at a lower cost for both single node and HA pairs, compared to Premium SSD Shared Managed Disks.##
 
 * _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
 
