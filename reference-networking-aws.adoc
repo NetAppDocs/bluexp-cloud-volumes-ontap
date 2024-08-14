@@ -25,72 +25,79 @@ Cloud Volumes ONTAP nodes require outbound internet access to contact the follow
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
 
-[cols=5*,options="header,autowidth"]
+[cols=4*,options="header,autowidth"]
 |===
-| Applicable for
 | Endpoints
+| Applicable for
 | Purpose
-| Data Flow
+// | Data Flow
 | Impact if endpoint is not available 
-
-| 
-Auth
 
 | 
 Domain: \https://netapp-cloud-account.auth0.com
 Audience: \https://api.cloud.netapp.com
 
-a| Used for BlueXP authentication.
-This endpoint doesn't apply if you are using BlueXP in private mode. 
-
-| Authentication validation. 
-
-a|Authentication failure and denial of service for:
-
-* OCCM
-* ontap-service
-* protocol-proxy
-
 | 
-Key Vault
+Authentication
+Available in standard and restricted modes.
+ 
+
+a| Used for BlueXP authentication.
+
+// | Authentication validation. 
+
+a|User authentication fails and the following services remain unavailable:
+
+* Cloud Volumes ONTAP services
+* ONTAP services
+* Protocols and proxy services
 
 | 
 \https://keyvault-production-aks.vault.azure.net
 
+| 
+Key Vault.
+Available in standard, restricted, and private modes.
+
 | Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
 
-| Retrieval of secret token from Azure Key Vault. 
+// | Retrieval of secret token from Azure Key Vault. 
 
 | Cloud Volumes ONTAP services are unavailable.  
 
 | 
-Tenancy
-
-| 
 \https://cloudmanager.cloud.netapp.com/tenancy
 
-| Used to retrieve the Cloud Volumes ONTAP resources from the tenancy to authorize resources and users.
-This endpoint doesn't apply if you are using BlueXP in private mode. 
+| 
+Tenancy.
+Available in standard and restricted modes.
 
-| Retrieval of the resources data. 
+| Used to retrieve the Cloud Volumes ONTAP resources from the tenancy to authorize resources and users.
+
+
+// |Retrieval of the BlueXP tenancy data.  
 
 |Cloud Volumes ONTAP resources and the users are not authorized. 
-
-| 
-AutoSupport
 
 | 
 \https://support.netapp.com/aods/asupmessage
 \https://support.netapp.com/asupprod/post/1.0/postAsup
 
-| Used to send AutoSupport telemetry data. 
-This endpoint doesn't apply if you are using BlueXP in private mode. 
+| 
+AutoSupport.
+Available in standard and restricted modes.
 
-| AutoSupport information sent to NetApp Support.
+| Used to send AutoSupport telemetry data to NetApp support. 
+
+
+// | AutoSupport information sent to NetApp Support.
 
 | AutoSupport information remains undelivered. 
 
-a| 
+| 
+The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^].
+
+a| Available in standard, restricted, and private modes.
 AWS services (amazonaws.com):
 
 * CloudFormation
@@ -100,14 +107,11 @@ AWS services (amazonaws.com):
 * Security Token Service (STS)
 * Simple Storage Service (S3)
 
-| 
-The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^]. 
-
 | Communication with AWS services.
 
-| Calls to AWS cloud providers.
+// | Communications to AWS services.
 
-|Inability of Cloud Volumes ONTAP to manage specific functionalities of AWS cloud providers.
+| Cloud Volumes ONTAP cannot communicate with AWS service to perform specific BlueXP operations on AWS.
 
 |===
 
