@@ -71,7 +71,7 @@ Available in standard, restricted, and private modes.
 Tenancy.
 Available in standard and restricted modes.
 
-| Used to retrieve the Cloud Volumes ONTAP resources from the tenancy to authorize resources and users.
+| Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
 
 // |Retrieval of the BlueXP tenancy data.
 
@@ -142,7 +142,7 @@ Available in standard, restricted, and private modes.
 \https://blob.core.usgovcloudapi.net
 \https://core.usgovcloudapi.net
 
-| Government Regions.
+| Government regions.
 Available in standard, restricted, and private modes.
 
 |Communication with Azure services. 
@@ -165,7 +165,7 @@ Available in standard, restricted, and private modes.
 
 // |Calls to Azure cloud providers.
 
-|Inability of Cloud Volumes ONTAP to manage specific functionalities of Azure cloud providers.
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
 
 |===
 

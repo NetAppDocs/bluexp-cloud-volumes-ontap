@@ -38,7 +38,7 @@ Domain: \https://netapp-cloud-account.auth0.com
 Audience: \https://api.cloud.netapp.com
 
 | 
-Authentication
+Authentication.
 Available in standard and restricted modes.
  
 
@@ -72,7 +72,7 @@ Available in standard, restricted, and private modes.
 Tenancy.
 Available in standard and restricted modes.
 
-| Used to retrieve the Cloud Volumes ONTAP resources from the tenancy to authorize resources and users.
+| Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
 
 
 // |Retrieval of the BlueXP tenancy data.  
@@ -95,10 +95,9 @@ Available in standard and restricted modes.
 | AutoSupport information remains undelivered. 
 
 | 
-The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^].
+The exact commercial endpoint for AWS service (suffixed with `amazonaws.com`) depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^].
 
-a| Available in standard, restricted, and private modes.
-AWS services (amazonaws.com):
+a| 
 
 * CloudFormation
 * Elastic Compute Cloud (EC2)
@@ -106,6 +105,27 @@ AWS services (amazonaws.com):
 * Key Management Service (KMS)
 * Security Token Service (STS)
 * Simple Storage Service (S3)
+
+Available in standard, restricted, and private modes. 
+
+| Communication with AWS services.
+
+// | Communications to AWS services.
+
+| Cloud Volumes ONTAP cannot communicate with AWS service to perform specific BlueXP operations on AWS.
+
+| 
+The exact government endpoint for AWS service depends on the AWS region that you are using. The endpoints are suffixed with `amazonaws.com` and `c2s.ic.gov`. 
+
+a| 
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Identity and Access Management (IAM)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+Available in standard, restricted, and private modes. 
 
 | Communication with AWS services.
 

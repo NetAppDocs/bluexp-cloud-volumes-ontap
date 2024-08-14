@@ -170,7 +170,7 @@ Domain: \https://netapp-cloud-account.auth0.com
 Audience: \https://api.cloud.netapp.com
 
 | 
-Authentication
+Authentication.
 Available in standard mode.
 
 | Used for BlueXP authentication.
@@ -203,7 +203,7 @@ Available in standard and private modes.
 Tenancy.
 Available in standard mode.
 
-| Used to retrieve the Cloud Volumes ONTAP resources from the tenancy to authorize resources and users.
+| Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
 
 
 // |Retrieval of the BlueXP tenancy data.
