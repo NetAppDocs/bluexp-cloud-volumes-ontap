@@ -15,7 +15,9 @@ summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
 :imagesdir: ./media/
 
 [.lead]
-For deploying VM instances in locally-redundant storage (LRS) single availability zones, you should activate the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature for your subscriptions. In an HA mode, this feature helps in deploying the nodes in separate fault domains in the same availability zone. Unless you activate this feature, the deployment might run into errors.
+For deploying VM instances in locally-redundant storage (LRS) single availability zones, you should activate the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature for your subscriptions. In an HA mode, this feature facilitates deploying nodes in separate fault domains in the same availability zone. Unless you activate this feature, the deployment might run into errors.
+
+For information about VM deployment in single availability zone, refer to link:concept-ha-azure.html[High-availability pairs in Azure].
 
 Perform these steps as a user with "Owner" privileges:
 
