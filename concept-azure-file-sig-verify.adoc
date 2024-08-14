@@ -22,7 +22,7 @@ image::graphic_azure_check_signature.png[width=500 An image that shows the file 
 
 * Download the Azure Image Digest file from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extract the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem).
 +
-Refer to the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html[Download the Azure Image Digest File^] for more information.  
+Refer to link:task-azure-download-digest-file.html[Download the Azure Image Digest File] for more information.  
 
 * Verify the chain of trust.
 

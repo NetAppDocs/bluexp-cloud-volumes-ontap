@@ -75,7 +75,7 @@ If you can't set up a transit gateway, private IP addresses are available for NA
 
 You should review requirements for floating IP addresses and route tables before you deploy an HA configuration across multiple availability zones. You must specify the floating IP addresses when you deploy the configuration. The private IP addresses are automatically created by BlueXP.
 
-For details, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
+For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
 
 ==== iSCSI data access
 
@@ -85,7 +85,7 @@ Cross-VPC data communication is not an issue since iSCSI does not use floating I
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
-NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
+NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the https://docs.netapp.com/us-en/ontap-sanhost/[SAN hosts and cloud clients guide] for your host operating system.
 
 ==== Takeover and giveback for NAS
 
@@ -117,7 +117,7 @@ image:diagram_single_az.png[Conceptual image that shows an ONTAP HA configuratio
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
-NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
+NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the https://docs.netapp.com/us-en/ontap-sanhost/[SAN hosts and cloud clients guide] for your host operating system.
 
 For NAS configurations, the data IP addresses can migrate between HA nodes if failures occur. This ensures client access to storage.
 
@@ -155,7 +155,7 @@ The following EC2 instance type families with sizes xlarge to 4xlarge are curren
 * R5
 * R5d
 
-link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[You should refer to AWS for the latest and complete details about supported EC2 instance types in Local Zones^].
+You should refer to AWS documentation for the latest and complete details about the supported link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[EC2 instance types in Local Zones^].
 
 == How storage works in an HA pair
 
@@ -179,13 +179,13 @@ A Cloud Volumes ONTAP HA configuration synchronously replicates data between nod
 
 * For HA configurations that serve data from both nodes, read performance is higher than the read performance of a single-node configuration, and write performance is the same or higher.
 
-For more details about Cloud Volumes ONTAP performance, see link:concept-performance.html[Performance].
+For more details about Cloud Volumes ONTAP performance, refer to link:concept-performance.html[Performance].
 
 === Client access to storage
 
 Clients should access NFS and CIFS volumes by using the data IP address of the node on which the volume resides. If NAS clients access a volume by using the IP address of the partner node, traffic goes between both nodes, which reduces performance.
 
-TIP: If you move a volume between nodes in an HA pair, you should remount the volume by using the IP address of the other node. Otherwise, you can experience reduced performance. If clients support NFSv4 referrals or folder redirection for CIFS, you can enable those features on the Cloud Volumes ONTAP systems to avoid remounting the volume. For details, see ONTAP documentation.
+TIP: If you move a volume between nodes in an HA pair, you should remount the volume by using the IP address of the other node. Otherwise, you can experience reduced performance. If clients support NFSv4 referrals or folder redirection for CIFS, you can enable those features on the Cloud Volumes ONTAP systems to avoid remounting the volume. For details, refer to the ONTAP documentation.
 
 You can easily identify the correct IP address through the _Mount Command_ option under the manage volumes panel in BlueXP.
 

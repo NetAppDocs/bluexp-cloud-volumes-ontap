@@ -19,7 +19,7 @@ These limitations are specific to Cloud Volumes ONTAP management in BlueXP. To v
 
 == BlueXP doesn't support FlexGroup volumes creation
 
-While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not currently support FlexGroup volume creation. If you create a FlexGroup volume from System Manager or from the CLI, then you should set BlueXP's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
+While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not currently support FlexGroup volume creation. If you create a FlexGroup volume from ONTAP System Manager or the ONTAP CLI, then you should set BlueXP's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
 
 NOTE: The ability to create FlexGroup volumes in BlueXP is planned for a future release. 
 
@@ -31,6 +31,6 @@ link:concept-client-protocols.html[Learn more about Cloud Volumes ONTAP support 
 
 == BlueXP doesn't support disaster recovery for storage VMs
 
-BlueXP doesn't provide any setup or orchestration support for storage VM (SVM) disaster recovery. You must use System Manager or the CLI.
+BlueXP doesn't provide any setup or orchestration support for storage VM (SVM) disaster recovery. You must use ONTAP System Manager or the ONTAP CLI.
 
 link:task-manage-svm-dr.html[Learn more about SVM disaster recovery].

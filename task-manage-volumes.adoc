@@ -15,7 +15,7 @@ summary: BlueXP enables you to manage volumes and CIFS servers. It also prompts 
 [.lead]
 BlueXP enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 
-You can manage volumes in BlueXP Standard View or Advanced View. The Standard View provides a limited set of options to modify your volumes. The Advanced View provides advanced level of management, such as cloning, resizing, changing settings for anti-ransomware, analytics, protection, and activity tracking, and moving volumes across tiers. See link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using the Advanced View].
+You can manage volumes in BlueXP Standard View or Advanced View. The Standard View provides a limited set of options to modify your volumes. The Advanced View provides advanced level of management, such as cloning, resizing, changing settings for anti-ransomware, analytics, protection, and activity tracking, and moving volumes across tiers. For information, refer to link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using the Advanced View].
 
 == Manage volumes
 
@@ -53,14 +53,14 @@ a|
 
 This process creates a FlexClone volume. A FlexClone volume is a writable, point-in-time copy that is space-efficient because it uses a small amount of space for metadata, and then only consumes additional space as data is changed or added.
 
-To learn more about FlexClone volumes, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
+To learn more about FlexClone volumes, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
 
 | Edit a volume (read-write volumes only)
 a|
 .. Under Volume Actions in the Manage volumes panel, click *Edit volume settings*
 .. Modify the volume's Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click *Apply*.
 
-NOTE: If you need custom Snapshot policies, you can create them by using System Manager.
+NOTE: If you need custom Snapshot policies, you can create them by using ONTAP System Manager.
 
 | Delete a volume
 a|
@@ -107,7 +107,7 @@ By default, a volume automatically grows to a maximum size when it's out of spac
 If you need to resize your volume, you can do it from the Advanced View in BlueXP.
 
 .Steps
-. Open the Advanced View to resize a volume through System Manager. See link:task-administer-advanced-view.html#how-to-get-started[How to get started].
+. Open the Advanced View to resize a volume through ONTAP System Manager. Refer to link:task-administer-advanced-view.html#how-to-get-started[How to get started].
 . From the left navigation menu, select *Storage > Volumes*.
 . From the list of volumes, identify the one that you should resize.
 . Click the options icon image:screenshot_gallery_options.gif[kabob icon].
@@ -117,7 +117,7 @@ If you need to resize your volume, you can do it from the Advanced View in BlueX
 
 image:screenshot-resize-volume.png[Screen displays the modified capacity after volume resize]
 
-Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more details.
+Be sure to take your system's capacity limits into consideration as you resize volumes. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] for more information.
 
 //MM-GH issue 285
 
@@ -184,15 +184,15 @@ Cloud Volumes ONTAP updates the CIFS server with the changes.
 
 Move volumes for capacity utilization, improved performance, and to satisfy service-level agreements.
 
-You can move a volume in System Manager by selecting a volume and the destination aggregate, starting the volume move operation, and optionally monitoring the volume move job. When using System Manager, a volume move operation finishes automatically.
+You can move a volume in ONTAP System Manager by selecting a volume and the destination aggregate, starting the volume move operation, and optionally monitoring the volume move job. When using System Manager, a volume move operation finishes automatically.
 
 .Steps
 
-. Use System Manager or the CLI to move the volumes to the aggregate.
+. Use ONTAP System Manager or the ONTAP CLI to move the volumes to the aggregate.
 +
 In most situations, you can use System Manager to move volumes.
 +
-For instructions, see the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
+For instructions, refer to the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
 
 == Move a volume when BlueXP displays an Action Required message
 
@@ -234,7 +234,7 @@ image::screenshot_aggr_volume_overview.png[width=500 Screen shot: Shows the list
 
 . If the system has not reached the disk limit, you should move the volumes to an existing aggregate or a new aggregate on the same system.
 +
-For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>. 
+For information, refer to <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>. 
 
 . If the system has reached the disk limit, do any of the following:
 
@@ -242,11 +242,11 @@ For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggre
 
 .. Rearrange volumes to free space on an aggregate.
 +
-For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
+For information, refer to <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
 
 .. Move two or more volumes to another system that has space.
 +
-For details, see <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
+For information, refer to <<move-volumes-aggregate-capacity,Move volumes to another aggregate to avoid capacity issues>>.
 
 === Move volumes to another system to avoid capacity issues
 
@@ -266,19 +266,19 @@ Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot pe
 
 . Drag and drop the source working environment on the target working environment to perform a one-time data replication of the volume.
 +
-For details, see link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data between systems^].
+For information, refer to link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data between systems^].
 
 . Go to the Replication Status page, and then break the SnapMirror relationship to convert the replicated volume from a data protection volume to a read/write volume.
 +
-For details, see link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
+For information, refer to link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships^].
 
 . Configure the volume for data access.
 +
-For information about configuring a destination volume for data access, see the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
+For information about configuring a destination volume for data access, refer to the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
 
 . Delete the original volume.
 +
-For details, see link:task-manage-volumes.html#manage-volumes[Manage volumes].
+For information, refer to link:task-manage-volumes.html#manage-volumes[Manage volumes].
 
 [[move-volumes-aggregate-capacity]]
 
@@ -314,13 +314,13 @@ image::screenshot_aggr_capacity.png[width=500 Screen shot: Shows the total aggre
 
 . If no aggregates have available capacity, create a new aggregate.
 +
-For details, see link:task-create-aggregates.html[Creating aggregates^].
+For information, refer to link:task-create-aggregates.html[Creating aggregates^].
 
-. Use System Manager or the CLI to move the volumes to the aggregate.
+. Use ONTAP System Manager or the ONTAP CLI to move the volumes to the aggregate.
 
 . In most situations, you can use System Manager to move volumes.
 +
-For instructions, see the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
+For instructions, refer to the link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[ONTAP 9 Volume Move Express Guide^].
 
 == Reasons why a volume move might perform slowly
 
@@ -338,7 +338,7 @@ An older naming scheme is used if data tiering was enabled on an aggregate in th
 
 == View FlexGroup Volumes 
 
-You can view FlexGroup volumes created through CLI or System Manager directly through the Volumes tab within BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FleGroup volumes through a dedicated Volumes tile. Under the Volumes tile, you can identify each FlexGroup volume group through the icon’s hover text. Additionally, you can identify and sort FlexGroup volumes under the volumes list view through the Volume Style column. 
+You can view FlexGroup volumes created through ONTAP System Manager or the ONTAP CLI directly through the Volumes tab within BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FleGroup volumes through a dedicated Volumes tile. Under the Volumes tile, you can identify each FlexGroup volume group through the icon’s hover text. Additionally, you can identify and sort FlexGroup volumes under the volumes list view through the Volume Style column. 
 
 image::screenshot_show_flexgroup_vol.png[width=500 A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile.]
 
