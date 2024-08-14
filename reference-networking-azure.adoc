@@ -27,8 +27,8 @@ Cloud Volumes ONTAP requires outbound internet access to contact the following e
 
 [cols=5*,options="header,autowidth"]
 |===
+| Applicable for
 | Endpoints
-| URL
 | Purpose
 | Data flow
 | Impact if unavailable
@@ -56,7 +56,7 @@ Key Vault
 | 
 \https://keyvault-production-aks.vault.azure.net
 
-| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling.
+| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
 
 | Retrieval of secret token from Azure Key Vault. 
 
@@ -98,7 +98,7 @@ Endpoints for Public Regions
 \https://blob.core.windows.net
 \https://core.windows.net
 
-| Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers. 
+| Communication with Azure services.
 
 | Calls to Azure cloud providers.
 
@@ -113,7 +113,7 @@ Endpoints for China Region
 \https://blob.core.chinacloudapi.cn
 \https://core.chinacloudapi.cn
 
-|Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers.
+|Communication with Azure services.
 
 |Calls to Azure cloud providers.
 
@@ -128,7 +128,7 @@ Endpoints for Germany Region
 \https://blob.core.cloudapi.de
 \https://core.cloudapi.de
 
-|Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers.  
+|Communication with Azure services.  
 
 |Calls to Azure cloud providers.
 
@@ -143,7 +143,7 @@ Endpoints for Government Regions
 \https://blob.core.usgovcloudapi.net
 \https://core.usgovcloudapi.net
 
-|Used by Cloud Volumes ONTAP to communicate with the Azure cloud cloud providers. 
+|Communication with Azure services. 
 
 |Calls to Azure cloud providers.
 
@@ -158,13 +158,18 @@ Endpoints for Government DoD regions
 \https://blob.core.microsoft.scloud
 \https://core.microsoft.scloud
 
-|Used by Cloud Volumes ONTAP to communicate with the Azure cloud providers. 
+|Communication with Azure services. 
 
 |Calls to Azure cloud providers.
 
 |Inability of Cloud Volumes ONTAP to manage specific functionalities of Azure cloud providers.
 
 |===
+
+[NOTE]
+These endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. 
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console]
 
 ==== Outbound internet access for NetApp AutoSupport 
 Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support. 

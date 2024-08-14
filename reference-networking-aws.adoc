@@ -27,8 +27,8 @@ Cloud Volumes ONTAP requires outbound internet access to contact the following e
 
 [cols=5*,options="header,autowidth"]
 |===
+| Applicable for
 | Endpoints
-| URL
 | Purpose
 | Data Flow
 | Impact if endpoint is not available 
@@ -57,7 +57,7 @@ Key Vault
 | 
 \https://keyvault-production-aks.vault.azure.net
 
-| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP uses this endpoint for AWS.
+| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
 
 | Retrieval of secret token from Azure Key Vault. 
 
@@ -91,7 +91,7 @@ This endpoint doesn't apply if you are using BlueXP in private mode.
 | AutoSupport information remains undelivered. 
 
 a| 
-Endpoints for AWS services (amazonaws.com):
+AWS services (amazonaws.com):
 
 * CloudFormation
 * Elastic Compute Cloud (EC2)
@@ -103,13 +103,18 @@ Endpoints for AWS services (amazonaws.com):
 | 
 The exact endpoint depends on the AWS region that you are using. Refer to https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS documentation for details^]. 
 
-| Used by Cloud Volumes ONTAP to communicate with the AWS cloud providers. 
+| Communication with AWS services.
 
 | Calls to AWS cloud providers.
 
 |Inability of Cloud Volumes ONTAP to manage specific functionalities of AWS cloud providers.
 
 |===
+
+[NOTE]
+These endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. 
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console]
 
 ==== Outbound internet access for NetApp AutoSupport 
 Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.

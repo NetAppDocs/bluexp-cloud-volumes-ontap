@@ -159,8 +159,8 @@ Cloud Volumes ONTAP requires outbound internet access to contact the following e
 
 [cols=5*,options="header,autowidth"]
 |===
+| Applicable for
 | Endpoints
-| URL
 | Purpose
 | Data Flow
 | Impact if endpoint is not available 
@@ -188,7 +188,7 @@ Key Vault
 | 
 \https://keyvault-production-aks.vault.azure.net
 
-| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP uses this endpoint for Google Cloud.
+| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP service uses this component internally.
 
 | Retrieval of secret token from Azure Key Vault. 
 
@@ -222,7 +222,7 @@ This endpoint doesn't apply if you are using BlueXP in private mode.
 | AutoSupport information remains undelivered. 
 
 | 
-Endpoints for Google Cloud
+Google Cloud (Commercial use)
 
 | 
 \https://www.googleapis.com/compute/v1/projects/
@@ -235,13 +235,18 @@ Endpoints for Google Cloud
 \https://www.googleapis.com/deploymentmanager/v2/projects
 \https://compute.googleapis.com/compute/v1
 
-| Used by Cloud Volumes ONTAP to communicate with the Google Cloud providers. 
+| Communication with Google Cloud services. 
 
 | Calls to Google Cloud providers.
 
 |Inability of Cloud Volumes ONTAP to manage specific functionalities of Google Cloud providers.  
 
 |===
+
+[NOTE]
+These endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. 
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console]
 
 ==== Outbound internet access for NetApp AutoSupport 
 Cloud Volumes ONTAP requires outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
