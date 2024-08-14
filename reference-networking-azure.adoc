@@ -97,7 +97,7 @@ Available in standard and restricted modes.
 \https://blob.core.windows.net
 \https://core.windows.net
 
-| Public Regions.
+| Public regions.
 Available in standard, restricted, and private modes.
 
 | Communication with Azure services.
