@@ -25,25 +25,25 @@ Cloud Volumes ONTAP nodes require outbound internet access for accessing externa
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
 
-[cols=4*,options="header,autowidth"]
+[cols=5*,options="header,autowidth"]
 |===
 | Endpoints
 | Applicable for
 | Purpose
-// | Data flow
+| BlueXP deployment modes
 | Impact if unavailable
 
 | 
-Domain: \https://netapp-cloud-account.auth0.com
-Audience: \https://api.cloud.netapp.com
+\https://netapp-cloud-account.auth0.com
+
+Authenticates users in \https://api.cloud.netapp.com
 
 | 
-Authentication.
-Available in standard and restricted modes.
+Authentication
 
 a| Used for BlueXP authentication.
 
-// | Authentication validation. 
+| Standard and restricted modes.
 
 a|User authentication fails and the following services remain unavailable:
 
@@ -55,12 +55,11 @@ a|User authentication fails and the following services remain unavailable:
 \https://keyvault-production-aks.vault.azure.net
 
 |
-Key Vault.
-Available in standard, restricted, and private modes.
+Key Vault
 
 | Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
 
-// | Retrieval of secret token from Azure Key Vault. 
+| Standard, restricted, and private modes.
 
 | Cloud Volumes ONTAP services are unavailable.  
 
@@ -68,12 +67,11 @@ Available in standard, restricted, and private modes.
 \https://cloudmanager.cloud.netapp.com/tenancy
 
 | 
-Tenancy.
-Available in standard and restricted modes.
+Tenancy
 
 | Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
 
-// |Retrieval of the BlueXP tenancy data.
+| Standard and restricted modes.
 
 |Cloud Volumes ONTAP resources and the users are not authorized.  
 
@@ -82,12 +80,11 @@ Available in standard and restricted modes.
 \https://support.netapp.com/asupprod/post/1.0/postAsup
 
 | 
-AutoSupport.
-Available in standard and restricted modes.
+AutoSupport
 
 | Used to send AutoSupport telemetry data to NetApp support. 
 
-// | AutoSupport information sent to NetApp Support.
+| Standard and restricted modes.
 
 | AutoSupport information remains undelivered. 
 
@@ -97,12 +94,11 @@ Available in standard and restricted modes.
 \https://blob.core.windows.net
 \https://core.windows.net
 
-| Public regions.
-Available in standard, restricted, and private modes.
+| Public regions
 
 | Communication with Azure services.
 
-// | Calls to Azure cloud providers.
+| Standard, restricted, and private modes.
 
 |Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure. 
 
@@ -112,12 +108,11 @@ Available in standard, restricted, and private modes.
 \https://blob.core.chinacloudapi.cn
 \https://core.chinacloudapi.cn
 
-| China Region.
-Available in standard, restricted, and private modes.
+| China Region
 
 |Communication with Azure services.
 
-// |Calls to Azure cloud providers.
+| Standard, restricted, and private modes.
 
 |Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
 
@@ -127,12 +122,11 @@ Available in standard, restricted, and private modes.
 \https://blob.core.cloudapi.de
 \https://core.cloudapi.de
 
-| Germany Region.
-Available in standard, restricted, and private modes.
+| Germany Region
 
 |Communication with Azure services.  
 
-// |Calls to Azure cloud providers.
+| Standard, restricted, and private modes.
 
 |Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
 
@@ -142,12 +136,11 @@ Available in standard, restricted, and private modes.
 \https://blob.core.usgovcloudapi.net
 \https://core.usgovcloudapi.net
 
-| Government regions.
-Available in standard, restricted, and private modes.
+| Government regions
 
 |Communication with Azure services. 
 
-// |Calls to Azure cloud providers.
+| Standard, restricted, and private modes.
 
 |Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
 
@@ -157,13 +150,12 @@ Available in standard, restricted, and private modes.
 \https://blob.core.microsoft.scloud
 \https://core.microsoft.scloud
 
-| Government DoD regions.
-Available in standard, restricted, and private modes.
+| Government DoD regions
 
 |Communication with Azure services.
 
 
-// |Calls to Azure cloud providers.
+| Standard, restricted, and private modes.
 
 |Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
 

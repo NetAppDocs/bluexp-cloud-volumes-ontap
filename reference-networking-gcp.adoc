@@ -157,25 +157,25 @@ Cloud Volumes ONTAP nodes require outbound internet access for accessing externa
 ==== Cloud Volumes ONTAP endpoints
 Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
 
-[cols=4*,options="header,autowidth"]
+[cols=5*,options="header,autowidth"]
 |===
 | Endpoints
 | Applicable for
 | Purpose
-// | Data Flow
+| BlueXP deployment mode
 | Impact if endpoint is not available 
 
 | 
-Domain: \https://netapp-cloud-account.auth0.com
-Audience: \https://api.cloud.netapp.com
+\https://netapp-cloud-account.auth0.com
+
+Authenticates users in \https://api.cloud.netapp.com
 
 | 
-Authentication.
-Available in standard mode.
+Authentication
 
 | Used for BlueXP authentication.
 
-// | Authentication validation. 
+| Standard mode.
 
 a|User authentication fails and the following services remain unavailable:
 
@@ -187,12 +187,11 @@ a|User authentication fails and the following services remain unavailable:
 \https://keyvault-production-aks.vault.azure.net
 
 | 
-Key Vault.
-Available in standard and private modes.
+Key Vault
 
 | Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP service uses this component internally.
 
-// | Retrieval of secret token from Azure Key Vault. 
+| Standard and private modes.
 
 | Cloud Volumes ONTAP services are unavailable.  
 
@@ -200,13 +199,12 @@ Available in standard and private modes.
 \https://cloudmanager.cloud.netapp.com/tenancy
 
 | 
-Tenancy.
-Available in standard mode.
+Tenancy
 
 | Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
 
 
-// |Retrieval of the BlueXP tenancy data.
+| Standard mode.
 
 |Cloud Volumes ONTAP resources and the users are not authorized.  
 
@@ -215,12 +213,11 @@ Available in standard mode.
 \https://support.netapp.com/asupprod/post/1.0/postAsup
 
 | 
-AutoSupport.
-Available in standard mode.
+AutoSupport
 
 | Used to send AutoSupport telemetry data to NetApp support. 
 
-// | AutoSupport information sent to NetApp Support.
+| Standard mode.
 
 | AutoSupport information remains undelivered. 
 
@@ -237,11 +234,10 @@ Available in standard mode.
 
 | 
 Google Cloud (Commercial use).
-Available in standard and private modes.
 
 | Communication with Google Cloud services. 
 
-// | Calls to Google Cloud providers.
+| Standard and private modes.
 
 |Cloud Volumes ONTAP cannot communicate with Google Cloud service to perform specific BlueXP operations on Google Cloud. 
 
