@@ -175,7 +175,7 @@ Authentication
 
 | Used for BlueXP authentication.
 
-| Standard mode.
+| Standard and restricted modes.
 
 a|User authentication fails and the following services remain unavailable:
 
@@ -191,7 +191,7 @@ Key Vault
 
 | Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP service uses this component internally.
 
-| Standard and private modes.
+| Standard, restricted, and private modes. 
 
 | Cloud Volumes ONTAP services are unavailable.  
 
@@ -204,7 +204,7 @@ Tenancy
 | Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
 
 
-| Standard mode.
+| Standard and restricted modes.  
 
 |Cloud Volumes ONTAP resources and the users are not authorized.  
 
@@ -217,7 +217,7 @@ AutoSupport
 
 | Used to send AutoSupport telemetry data to NetApp support. 
 
-| Standard mode.
+| Standard and restricted modes.  
 
 | AutoSupport information remains undelivered. 
 

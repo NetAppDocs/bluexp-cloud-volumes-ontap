@@ -120,7 +120,7 @@ a|
 
 | Communication with AWS services.
 
-| Standard, restricted, and private modes.
+| Restricted mode.
 
 | Cloud Volumes ONTAP cannot communicate with AWS service to perform specific BlueXP operations on AWS.
 
