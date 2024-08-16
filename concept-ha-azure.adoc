@@ -28,7 +28,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 VMs in single availability zones::
-##Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous, auto-scaling virtual machines (VMs) in a single availability zone (AZ). You can deploy high-availability (HA) nodes in separate fault domains within the same AZ, guaranteeing optimal availability. To learn more about the flexible orchestration mode that enables this capability, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets^].##
+Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous virtual machines (VMs) in a single availability zone (AZ). You can deploy high-availability (HA) nodes in separate fault domains within the same AZ, guaranteeing optimal availability. To learn more about the flexible orchestration mode that enables this capability, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets^].
 
 Disks::
 Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, and core data^].
@@ -53,7 +53,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 VMs in single availability zones::
-##Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous, auto-scaling virtual machines (VMs) in a single availability zone (AZ). You can deploy high-availability (HA) nodes in separate fault domains within the same AZ, guaranteeing optimal availability. To learn more about the flexible orchestration mode that enables this capability, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets^].##
+Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous virtual machines (VMs) in a single availability zone (AZ). You can deploy high-availability (HA) nodes in separate fault domains within the same AZ, guaranteeing optimal availability. To learn more about the flexible orchestration mode that enables this capability, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets^].
 
 Disks::
 Customer data resides on locally-redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data^].
@@ -72,7 +72,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Availability Zones::
-##HA multiple availability zone configuration utilizes a deployment model where two Cloud Volumes ONTAP nodes are deployed into different availability zones, ensuring that the nodes are in different fault domains to provide redundancy and availability. To learn how Virtual Machine Scale Sets in Flexible orchestration mode can use availability zones in Azure, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2[Microsoft Azure documentation: Create a Virtual Machine Scale Set that uses Availability Zones^].##
+HA multiple availability zone configuration utilizes a deployment model where two Cloud Volumes ONTAP nodes are deployed into different availability zones, ensuring that the nodes are in different fault domains to provide redundancy and availability. To learn how Virtual Machine Scale Sets in Flexible orchestration mode can use availability zones in Azure, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2[Microsoft Azure documentation: Create a Virtual Machine Scale Set that uses Availability Zones^].
 
 Disks::
 Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, and core data^].

@@ -163,7 +163,7 @@ NOTE: Snapshots are created automatically upon reboot.
 
 * Every disk by default in Azure is encrypted at rest.
 
-##.HA pairs with shared managed disks in single availability zones##
+.HA pairs with shared managed disks in single availability zones
 
 * Two 10 GiB Premium SSD disks for the boot volume (one per node)
 * Two 512 GiB Premium SSD Shared Managed disks for the root volume (one per node)
