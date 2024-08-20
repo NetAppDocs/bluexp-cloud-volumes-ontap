@@ -35,11 +35,6 @@ For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-on
 === Free trials for marketplace subscriptions deprecated
 The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.
 
-=== Canada West region now supported in AWS
-The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
-
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
-
 == 10 June 2024
 
 === Cloud Volumes ONTAP 9.15.0
