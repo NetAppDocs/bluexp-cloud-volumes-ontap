@@ -23,7 +23,7 @@ If you want to delete an aggregate, you must have first deleted the volumes in t
 
 .About this task
 
-If an aggregate is running out of space, you can move volumes to another aggregate by using System Manager.
+If an aggregate is running out of space, you can move volumes to another aggregate by using ONTAP System Manager.
 
 .Steps
 

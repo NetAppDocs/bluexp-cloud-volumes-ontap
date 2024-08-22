@@ -49,9 +49,9 @@ Starting with Cloud Volumes ONTAP 9.10.1, you have the option to enable or disab
 
 When you create a new Cloud Volumes ONTAP working environment, you're prompted to enable or disable WORM storage:
 
-* If you enable WORM storage when creating a working environment, every volume that you create from BlueXP has WORM enabled. But you can use System Manager or the CLI to create volumes that have WORM disabled.
+* If you enable WORM storage when creating a working environment, every volume that you create from BlueXP has WORM enabled. But you can use ONTAP System Manager or the ONTAP CLI to create volumes that have WORM disabled.
 
-* If you disable WORM storage when creating a working environment, every volume that you create from BlueXP, System Manager, or the CLI has WORM disabled. If you want to enable WORM on a Cloud Volumes ONTAP working environment that was not enabled during creation, you must create a support ticket with NetApp support for assistance.
+* If you disable WORM storage when creating a working environment, every volume that you create from BlueXP, ONTAP System Manager, or the ONTAP CLI has WORM disabled. If you want to enable WORM on a Cloud Volumes ONTAP working environment that was not enabled during creation, you must create a support ticket with NetApp support for assistance.
 
 With either option, you should <<Charging,understand how charging works>>.
 
