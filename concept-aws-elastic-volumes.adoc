@@ -31,7 +31,7 @@ Support for eight disks provides a maximum aggregate capacity of 128 TiB. These 
 +
 Note that total system capacity limits remain the same.
 
-https://aws.amazon.com/ebs/features/[Learn more about Elastic Volumes from AWS^]
+https://aws.amazon.com/ebs/features/[AWS Documentation: Learn more about Elastic Volumes from AWS^]
 
 == Supported configurations
 

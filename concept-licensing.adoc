@@ -102,7 +102,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
 * Includes unlimited volume backups using BlueXP backup and recovery, but only for Cloud Volumes ONTAP systems that use the Professional package.
 +
-NOTE: A PAYGO subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, see https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
+NOTE: A PAYGO subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, refer to https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
 * Add on any of NetApp's cloud data services at extra cost
 
 === Consumption models

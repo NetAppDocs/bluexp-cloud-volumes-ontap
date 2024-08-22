@@ -1,0 +1,49 @@
+---
+sidebar: sidebar
+permalink: task-saz-feature.html
+keywords: Microsoft Azure feature, HA in SAZ, single availability zone, Azure feature, Virtual Machine Scale Sets in Flexible mode
+summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
+---
+
+
+
+= Enable VMOrchestratorZonalMultiFD for single availability zones
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+For deploying VM instances in locally-redundant storage (LRS) single availability zones, you should activate the Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature for your subscriptions. In an HA mode, this feature facilitates deploying nodes in separate fault domains in the same availability zone. 
+
+Unless you activate this feature, zonal deployment doesn't occur, and the previous LRS non-zonal deployment becomes effective.
+
+For information about VM deployment in single availability zone, refer to link:concept-ha-azure.html[High-availability pairs in Azure].
+
+Perform these steps as a user with "Owner" privileges:
+
+.Steps
+
+. Access Azure Cloud Shell from the Azure portal. For information, refer to https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/[Microsoft Azure documentation: Get started with Azure Cloud Shell^].
+. Register for the `Microsoft.Compute/VMOrchestratorZonalMultiFD` feature by running this command:
++
+====
+az account set -s _<Azure_subscription_name_or_ID>_
+az feature register --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
+====
++
+. Verify the registration status and output sample:
++
+====
+az feature show -n VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
+{
+  "id": "/subscriptions/_<ID>_/providers/Microsoft.Features/providers/Microsoft.Compute/features/VMOrchestratorZonalMultiFD",
+  "name": "Microsoft.Compute/VMOrchestratorZonalMultiFD",
+  "properties": {
+    "state": "Registered"
+  },
+  "type": "Microsoft.Features/providers/features"
+}
+====
+

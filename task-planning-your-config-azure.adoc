@@ -51,22 +51,25 @@ Look at the supported virtual machine types in the https://docs.netapp.com/us-en
 Azure disk type with single node systems:: 
 When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk.
 +
-Single node systems can use three types of Azure Managed Disks:
+Single node systems can use these types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
+
+* _Premium SSD v2 Managed Disks_ provide higher performance with lower latency at a lower cost, compared to Premium SSD Managed Disks.
 
 * _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
 
 * _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
 
 +
-For additional details about the use cases for these disks, see https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure Documentation: What disk types are available in Azure?^].
+For additional details about the use cases for these disks, refer to https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure Documentation: What disk types are available in Azure?^].
 
 
 Azure disk type with HA pairs:: 
 HA systems use Premium SSD Shared Managed Disks which both provide high performance for I/O-intensive workloads at a higher cost. HA deployments created before the 9.12.1 release use Premium page blobs. 
 
 Azure disk size::
++
 When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. BlueXP uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task-create-aggregates.html[using the advanced allocation option].
 +
 TIP: All disks in an aggregate must be the same size.
