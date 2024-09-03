@@ -169,8 +169,16 @@ NOTE: Snapshots are created automatically upon reboot.
 * Two 512 GiB Premium SSD Shared Managed disks for the root volume (one per node)
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD Managed disks for NVRAM (one per node)
-+
+
 If your virtual machine supports Premium SSD v2 Managed Disks as data disks, it uses 32 GiB Premium SSD v2 Managed Disks for NVRAM and 512 GiB Premium SSD v2 Shared Managed disks for the root volume.
+
+You can deploy HA pairs in single single availability zone and use Premium SSD v2 Managed Disks when the following conditions are fulfilled:
+
+* The version of Cloud Volumes ONTAP is 9.15.1 or later.
+* The region supports Virtual Machines Scale Sets in Flexible orchestration mode. Refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets documentation^] and https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
+* The selected zone in a region supports Virtual Machines Scale Sets in Flexible orchestration mode.
+* The subscription is registered for the Microsoft link:task-saz-feature.html[`Microsoft.Compute/VMOrchestratorZonalMultiFD` feature].
+
 endif::azure[]
 
 ifdef::gcp[]

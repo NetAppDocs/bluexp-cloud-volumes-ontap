@@ -83,11 +83,13 @@ HA pairs use two types of disks which provide high performance for I/O-intensive
 
 *Related links*
 
+* link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
+
+* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure[Launching a Cloud Volumes ONTAP HA pair in Azure]
+
 * https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure documentation: Azure managed disk types^]
 
 * https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview[Microsoft Azure documentation: Overview of Azure page blobs^]
-
-* link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[Review storage limits for Cloud Volumes ONTAP in Azure^]
 endif::azure[]
