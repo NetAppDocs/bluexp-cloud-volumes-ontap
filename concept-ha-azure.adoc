@@ -58,7 +58,7 @@ Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneo
 The zonal deployment uses Premium SSD v2 Managed Disks when the following conditions are fulfilled:
 
 * The version of Cloud Volumes ONTAP is 9.15.1 or later.
-* The selection region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
+* The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
 * The subscription is registered for the Microsoft link:task-saz-feature.html[`Microsoft.Compute/VMOrchestratorZonalMultiFD` feature].
 
 Disks::
