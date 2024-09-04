@@ -176,7 +176,7 @@ You can deploy HA pairs in a single single availability zone and use Premium SSD
 
 * The version of Cloud Volumes ONTAP is 9.15.1 or later.
 * The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
-* The subscription is registered for the Microsoft link:task-saz-feature.html[`Microsoft.Compute/VMOrchestratorZonalMultiFD` feature].
+* The subscription is registered for the Microsoft link:task-saz-feature.html[Microsoft.Compute/VMOrchestratorZonalMultiFD feature].
 
 endif::azure[]
 

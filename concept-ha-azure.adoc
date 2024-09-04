@@ -59,7 +59,7 @@ The zonal deployment uses Premium SSD v2 Managed Disks when the following condit
 +
 * The version of Cloud Volumes ONTAP is 9.15.1 or later.
 * The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
-* The subscription is registered for the Microsoft link:task-saz-feature.html[`Microsoft.Compute/VMOrchestratorZonalMultiFD` feature].
+* The subscription is registered for the Microsoft link:task-saz-feature.html[Microsoft.Compute/VMOrchestratorZonalMultiFD feature].
 
 Disks::
 Customer data resides on locally-redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data^].
