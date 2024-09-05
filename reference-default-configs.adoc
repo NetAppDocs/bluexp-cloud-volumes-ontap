@@ -66,10 +66,11 @@ endif::gcp[]
 +
 NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to cloud provider requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 
-* Cloud Volumes ONTAP sends configuration backups to the Connector using HTTP.
+* Cloud Volumes ONTAP sends configuration backups to the Connector using HTTP. 
 +
 The backups are accessible from \http://ipaddress/occm/offboxconfig/ where _ipaddress_ is the IP address of the Connector host.
-
++
+##You can use the backups for reconfiguring your Cloud Volumes ONTAP system. For more information about configuration backups, refer to https://docs.netapp.com/us-en/ontap/system-admin/config-backup-file-concept.html[ONTAP documentation].##
 * BlueXP sets a few volume attributes differently than other management tools (ONTAP System Manager or the ONTAP CLI, for example).
 +
 The following table lists the volume attributes that BlueXP sets differently from the defaults:
