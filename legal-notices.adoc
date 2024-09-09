@@ -18,6 +18,6 @@ include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-
 // Add required link(s)
 * https://docs.netapp.com/us-en/bluexp-setup-admin/media/notice.pdf[Notice for BlueXP^]
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/legal-notices.html#open-source[Notices for the Cloud Volumes ONTAP mediator^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/legal-notices.html#open-source[Notice for the Cloud Volumes ONTAP^]
 
 * https://docs.netapp.com/us-en/ontap/reference_legal_notices.html#open-source[Notice for ONTAP^]
