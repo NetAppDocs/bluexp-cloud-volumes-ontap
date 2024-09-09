@@ -31,7 +31,7 @@ The following benefits will be available:
 
 * Existing accounts with WORM and ARP will no longer be charged for these features. You will be billed for your capacity usage as was applicable prior to this change. WORM and ARP will be excluded in future billing.
 * If you do not have these features enabled in your existing accounts, you can now opt for WORM and ARP at no additional cost.
-* For new accounts, WORM and ARP charges will be excluded from all Cloud Volumes ONTAP offerings.
+* For new accounts, WORM and ARP charges will be eliminated from all Cloud Volumes ONTAP offerings.
 
 
 == 23 August 2024
