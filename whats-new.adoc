@@ -25,13 +25,13 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 9 September 2024
 
 ===  WORM and ARP functionalities are no longer chargeable
-The built-in data protection and security features of WORM (Write Once Read Many) and ARP (Autonomous Ransomware Protection) will be included with all Cloud Volumes ONTAP licenses at no additional cost. This will be applicable for new and existing BYOL and PAYGO/marketplace deployments for both node-based and capacity-based licensing models. The new pricing model applies to all cloud providers and deployment types, including single node and high availability (HA) configurations.
+The built-in data protection and security features of WORM (Write Once Read Many) and ARP (Autonomous Ransomware Protection) will be included with all Cloud Volumes ONTAP licenses at no additional cost. This will be applicable for new and existing BYOL and PAYGO/marketplace deployments for both node-based and capacity-based licenses. The new pricing model applies to all cloud providers and deployment types, including single node and high availability (HA) configurations.
 
 The following benefits will be available:
 
-* Existing accounts with WORM and ARP will no longer be charged for these features. You will be billed only for Cloud Volumes ONTAP capacity usage as before. WORM and ARP will be excluded in future billing.
+* Existing accounts with WORM and ARP will no longer be charged for these features. You will be billed for your capacity usage as was applicable prior to this change. WORM and ARP will be excluded in future billing.
 * If you do not have these features enabled in your existing accounts, you can now opt for WORM and ARP at no additional cost.
-* For new accounts, WORM and ARP charges will be eliminated from any Cloud Volumes ONTAP offering.
+* For new accounts, WORM and ARP charges will be excluded from all Cloud Volumes ONTAP offerings.
 
 
 == 23 August 2024
