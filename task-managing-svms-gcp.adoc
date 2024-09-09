@@ -81,10 +81,15 @@ You must use the BlueXP API to create a storage VM on a Cloud Volumes ONTAP syst
 
 Note that BlueXP allocates the required IP addresses in Google Cloud and creates the storage VM with a data LIF for SMB/NFS access and an iSCSI LIF for outbound SMB communication.
 
-##On the data storage VMs, the default-data-files policies of data LIFs are modified for Cloud Volumes ONTAP, so that the `management-dns-client`, `management-ldap-client`,`management-nis-client` services are removed from NAS data LIFs and added to ISCSI data LIFs.##
+BlueXP also modifies the default-data-files policies of data LIFs on the data storage VMs for Cloud Volumes ONTAP. The following services are removed from NAS data LIFs and added to ISCSI data LIFs:
 
-##Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.##
+* `data-fpolicy-client`
+* `management-ad-client`
+* `management-dns-client`
+* `management-ldap-client`
+* `management-nis-client`
 
+Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.
 
 .Required Google Cloud permissions
 
