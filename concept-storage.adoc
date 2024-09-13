@@ -61,9 +61,11 @@ ifdef::azure[]
 In Azure, an aggregate can contain up to 12 disks that are all the same size. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:
 
 Single node systems::
-Single node systems can use three types of Azure Managed Disks:
+Single node systems can use these types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
+
+* _Premium SSD v2 Managed Disks_ provide higher performance with lower latency at a lower cost for both single node and HA pairs, compared to Premium SSD Managed Disks.
 
 * _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
 
@@ -81,11 +83,13 @@ HA pairs use two types of disks which provide high performance for I/O-intensive
 
 *Related links*
 
+* link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
+
+* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure[Launching a Cloud Volumes ONTAP HA pair in Azure]
+
 * https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure documentation: Azure managed disk types^]
 
 * https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview[Microsoft Azure documentation: Overview of Azure page blobs^]
-
-* link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[Review storage limits for Cloud Volumes ONTAP in Azure^]
 endif::azure[]

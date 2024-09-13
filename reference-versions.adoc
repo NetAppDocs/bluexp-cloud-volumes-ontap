@@ -15,7 +15,7 @@ summary: BlueXP enables you to choose from several different ONTAP versions when
 [.lead]
 BlueXP enables you to choose from several different ONTAP versions when you create a new Cloud Volumes ONTAP working environment.
 
-Cloud Volumes ONTAP versions other than those listed here are not available for new deployments. For information on upgrade, see link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
+Cloud Volumes ONTAP versions other than those listed here are not available for new deployments. For information on upgrade, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
 
 ifdef::aws[]
 == AWS

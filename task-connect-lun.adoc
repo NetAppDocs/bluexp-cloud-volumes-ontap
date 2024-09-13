@@ -19,7 +19,7 @@ Note the following:
 
 * BlueXP's automatic capacity management doesn't apply to LUNs. When BlueXP creates a LUN, it disables the autogrow feature.
 
-* You can create additional LUNs from System Manager or the CLI.
+* You can create additional LUNs from ONTAP System Manager or the ONTAP CLI.
 
 .Steps
 

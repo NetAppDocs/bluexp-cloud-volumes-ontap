@@ -22,12 +22,59 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
+== 9 September 2024
+
+===  WORM and ARP functionalities are no longer chargeable
+The built-in data protection and security features of WORM (Write Once Read Many) and ARP (Autonomous Ransomware Protection) will be offered with Cloud Volumes ONTAP licenses at no extra cost. The new pricing model applies to both new and existing BYOL and PAYGO/marketplace subscriptions of AWS, Azure, and Google Cloud. Both capacity-based and node-based licenses will contain ARP and WORM for all configurations, including single node and high availability (HA) pairs, at no additional cost.
+
+The simplified pricing brings you these benefits:
+
+* Accounts that currently include WORM and ARP will no longer incur charges for these features. Going forward, your billing will only have charges for capacity usage, as it was before this change. WORM and ARP will no longer be included in your future bills.
+* If your current accounts do not include these features, you can now opt for WORM and ARP at no additional cost.
+* All Cloud Volumes ONTAP offerings for any new accounts will exclude charges for WORM and ARP.
+
+Learn more about these features:
+
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html[Improving protection against ransomware^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html[WORM storage^]
+
+== 23 August 2024
+
+=== Canada West region now supported in AWS
+The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
+
+== 22 August 2024
+
+=== Cloud Volumes ONTAP 9.15.1 GA
+BlueXP can now deploy and manage Cloud Volumes ONTAP 9.15.1 General Availability release in AWS, Azure, and Google Cloud.
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+//end::whats-new[]
+
+== 8 August 2024
+
+=== Edge Cache licensing packages deprecated
+Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
+
+=== Minimum supported ONTAP version for Flash Cache on Azure
+The minimum ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems for Azure. 
+
+For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
+
+=== Free trials for marketplace subscriptions deprecated
+The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.
+
 == 10 June 2024
 
 === Cloud Volumes ONTAP 9.15.0
 BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.15.0 in AWS, Azure, and Google Cloud.
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+
+//end::whats-new[]
 
 == 17 May 2024
 
@@ -50,18 +97,17 @@ The following regions now support HA multiple availability zone deployments in A
 * Italy North
 * Canada Central
 
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
 === Johannesburg region now supported in Google Cloud
 The Johannesburg region (`africa-south1` region) is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
 
 === Volume templates and tags no longer supported
 
 You can no longer create a volume from a template or edit a volume's tags. These actions were associated with the BlueXP remediation service, which is no longer available.
 
-//end::whats-new[]
 
 == 8 March 2024
 
@@ -74,6 +120,8 @@ If required by your security policies, you can configure your EC2 instances to u
 
 === Cloud Volumes ONTAP 9.14.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.14.1 General Availability release in AWS, Azure, and Google Cloud.
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 2 February 2024
 === Support for Edv5-series VMs in Azure
@@ -142,7 +190,7 @@ The following regions now support highly-available multiple availability zone de
 * South Africa North
 * United Arab Emirates North
 
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
 == 10 November 2023
 The following change was introduced with the 3.9.35 release of the Connector.
@@ -150,7 +198,7 @@ The following change was introduced with the 3.9.35 release of the Connector.
 === Berlin region now supported in Google Cloud
 The Berlin region is now supported in Google Cloud for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
 
 == 8 November 2023
 The following change was introduced with the 3.9.35 release of the Connector.
@@ -158,7 +206,7 @@ The following change was introduced with the 3.9.35 release of the Connector.
 === Tel Aviv region now supported in AWS
 The Tel Aviv region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^]. 
+For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^]. 
 
 == 1 November 2023
 The following change was introduced with the 3.9.34 release of the Connector.
@@ -166,7 +214,7 @@ The following change was introduced with the 3.9.34 release of the Connector.
 === Saudi Arabia region now supported in Google Cloud
 The Saudi Arabia region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
+For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Google Cloud^]. 
 
 == 23 October 2023
 The following change was introduced with the 3.9.34 release of the Connector.
@@ -184,7 +232,7 @@ The following regions in Azure now support highly-available multiple availabilit
 * West Europe
 * West US 2
 
-For a list of all regions that support multiple availability zones, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions that support multiple availability zones, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
 == 6 October 2023
 The following change was introduced with the 3.9.34 release of the Connector.
@@ -228,7 +276,7 @@ Various improvements to the displayed information within the usage reports are n
 * Volume type “file” is now labeled “Primary (Read/Write)”.
 * Volume type “secondary” is now labeled “Secondary (DP)”. 
 
-For more information on usage reports, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html#download-usage-reports[Download usage reports^].
+For more information on usage reports, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html#download-usage-reports[Download usage reports^].
 
 == 26 July 2023
 The following changes were introduced with the 3.9.31 release of the Connector.
@@ -244,12 +292,12 @@ The following changes were introduced with the 3.9.31 release of the Connector.
 === Support for HA multiple availability zone deployments in Azure
 The Japan East and Korea Central in Azure now supports HA multiple availability zone deployments for Cloud Volumes ONTAP 9.12.1 GA and later.
 
-For a list of all regions that support multiple availability zones, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
+For a list of all regions that support multiple availability zones, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^]. 
 
 === Autonomous Ransomware Protection support
 Autonomous Ransomware Protection (ARP) is now supported on Cloud Volumes ONTAP. ARP support is available on Cloud Volumes ONTAP version 9.12.1 and higher.
 
-To learn more about ARP with Cloud Volumes ONTAP, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html#autonomous-ransomware-protection[Autonomous Ransomware Protection^].
+To learn more about ARP with Cloud Volumes ONTAP, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html#autonomous-ransomware-protection[Autonomous Ransomware Protection^].
 
 == 26 June 2023
 The following change was introduced with the 3.9.30 release of the Connector. 
@@ -265,7 +313,7 @@ The following change was introduced with the 3.9.30 release of the Connector.
 === Cloud Volumes ONTAP upgrade version selector update
 Through the Upgrade Cloud Volumes ONTAP page, you can now choose to upgrade to the latest available version of Cloud Volumes ONTAP or an older version.
 
-To learn more about upgrading Cloud Volumes ONTAP through BlueXP, see https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-cloud-volumes-ontap[Upgrade Cloud Volumes ONTAP^].
+To learn more about upgrading Cloud Volumes ONTAP through BlueXP, refer to https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-cloud-volumes-ontap[Upgrade Cloud Volumes ONTAP^].
 
 == 7 May 2023
 The following changes were introduced with the 3.9.29 release of the Connector. 
@@ -287,7 +335,7 @@ Now you can find out what you're being charged for when you're subscribed to cap
 * Storage VMs usage
 * Volumes usage
 
-For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licenses^].
+For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licenses^].
 
 === Notification now displays when accessing BlueXP without a marketplace subscription
 A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
@@ -298,7 +346,7 @@ Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in 
 * Single node systems are supported.
 * Licenses purchased directly from NetApp are supported.
 
-For regional availability, see link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+For regional availability, refer to the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
 
 == 3 April 2023
 The following changes were introduced with the 3.9.28 release of the Connector. 
@@ -320,7 +368,7 @@ BlueXP now has a redesigned user interface for Cloud Volumes ONTAP Overview, Vol
 image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-resource-page-rn.png["This screenshot shows the redesigned BlueXP user interface on the Cloud Volumes ONTAP overview page. Various tiles show storage efficiency, version, capacity distribution, information about the Cloud Volumes ONTAP deployment, volumes, aggregates, replications, and backups."]
 
 === FlexGroup Volumes viewable through Cloud Volumes ONTAP
-FlexGroup volumes created through CLI or System Manager directly are now viewable through the redesigned Volumes tile in BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FlexGroup volumes through a dedicated Volumes tile.
+FlexGroup volumes created through ONTAP System Manager or the ONTAP CLI directly are now viewable through the redesigned Volumes tile in BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FlexGroup volumes through a dedicated Volumes tile.
 
 NOTE: Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.
 
@@ -337,7 +385,7 @@ Starting with Cloud Volumes ONTAP 9.12.1 GA, China region support is now support
 * Single node systems are supported.
 * Licenses purchased directly from NetApp are supported.
 
-For regional availability, see link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+For regional availability, refer to the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
 
 == 5 March 2023
 The following changes were introduced with the 3.9.27 release of the Connector.
@@ -381,7 +429,7 @@ The following changes were introduced with the 3.9.26 release of the Connector.
 === Placement group creation in AWS
 A new configuration setting is now available for placement group creation with AWS HA single availability zone (AZ) deployments. Now you can choose to bypass failed placement group creations and allow AWS HA single AZ deployments to complete successfully. 
 
-For detailed information on how to configure the placement group creation setting, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-configure-placement-group-failure-aws.html#overview[Configure placement group creation for AWS HA Single AZ^].
+For detailed information on how to configure the placement group creation setting, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-configure-placement-group-failure-aws.html#overview[Configure placement group creation for AWS HA Single AZ^].
 
 === Private DNS zone configuration update
 A new configuration setting is now available so that you can avoid creating a link between a private DNS zone and a virtual network when using Azure Private Links. Creation is enabled by default.  
@@ -399,12 +447,12 @@ The following changes were introduced with the 3.9.25 release of the Connector.
 === Licensing packages available in Google Cloud
 Optimized and Edge Cache capacity-based licensing packages are available for Cloud Volumes ONTAP in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract.
 
-See link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages[Cloud Volumes ONTAP licensing^].
+Refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages[Cloud Volumes ONTAP licensing^].
 
 === Default configuration for Cloud Volumes ONTAP 
 The Multi-tenant Encryption Key Management (MTEKM) license is no longer included in new Cloud Volumes ONTAP deployments. 
 
-For more information on the ONTAP feature licenses automatically installed with Cloud Volumes ONTAP, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html[Default Configuration for Cloud Volumes ONTAP^].
+For more information on the ONTAP feature licenses automatically installed with Cloud Volumes ONTAP, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html[Default Configuration for Cloud Volumes ONTAP^].
 
 == 15 December 2022
 
@@ -450,19 +498,19 @@ The following changes were introduced with the 3.9.23 release of the Connector.
 
 You can now move a working environment from one resource group to a different resource group in Azure within the same Azure subscription. 
 
-For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-moving-resource-groups-azure.html[Moving resource groups]. 
+For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-moving-resource-groups-azure.html[Moving resource groups]. 
 
 === NDMP-copy certification  
 
 NDMP-copy is now certified for use with Cloud Volume ONTAP.
 
-For information on how to configure and use NDMP, see https://docs.netapp.com/us-en/ontap/ndmp/index.html[NDMP configuration overview].
+For information on how to configure and use NDMP, refer to https://docs.netapp.com/us-en/ontap/ndmp/index.html[NDMP configuration overview].
 
 === Managed disk encryption support for Azure 
 
 A new Azure permission has been added that now allows you to encrypt all managed disks upon creation. 
 
-For more information on this new functionality, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-set-up-azure-encryption.html[Set up Cloud Volumes ONTAP to use a customer-managed key in Azure]. 
+For more information on this new functionality, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-set-up-azure-encryption.html[Set up Cloud Volumes ONTAP to use a customer-managed key in Azure]. 
 
 == 18 September 2022
 

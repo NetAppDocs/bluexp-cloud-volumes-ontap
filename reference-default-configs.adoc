@@ -66,11 +66,12 @@ endif::gcp[]
 +
 NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to cloud provider requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 
-* Cloud Volumes ONTAP sends configuration backups to the Connector using HTTP.
+* Cloud Volumes ONTAP sends configuration backups to the Connector using HTTP. 
 +
 The backups are accessible from \http://ipaddress/occm/offboxconfig/ where _ipaddress_ is the IP address of the Connector host.
-
-* BlueXP sets a few volume attributes differently than other management tools (System Manager or the CLI, for example).
++
+You can use the backups for reconfiguring your Cloud Volumes ONTAP system. For more information about configuration backups, refer to https://docs.netapp.com/us-en/ontap/system-admin/config-backup-file-concept.html[ONTAP documentation].
+* BlueXP sets a few volume attributes differently than other management tools (ONTAP System Manager or the ONTAP CLI, for example).
 +
 The following table lists the volume attributes that BlueXP sets differently from the defaults:
 +
@@ -93,7 +94,7 @@ UNIX for NFS volumes
 
 |===
 +
-See the link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html[ONTAP _volume create_ man page] for information about these attributes.
+For information about these attributes, refer to link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html[ONTAP _volume create_ man page].
 
 == Internal disks for system data
 
@@ -136,6 +137,8 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * One Azure snapshot for each boot disk and root disk
 
 * Every disk by default in Azure is encrypted at rest.
++
+If the virtual machine that you chose for Cloud Volumes ONTAP supports Premium SSD v2 Managed Disk as data disks, the system uses a 32 GiB Premium SSD v2 Managed Disk for NVRAM, and another one as the root disk.
 
 === Azure (HA pair)
 
@@ -152,7 +155,7 @@ NOTE: Snapshots are created automatically upon reboot.
 
 .HA pairs with shared managed disks in multiple availability zones
 * Two 10 GiB Premium SSD disks for the boot volume (one per node)
-* Two 512 GiB Premium Storage page blobs for the root volume (one per node)
+* Two 512 GiB Premium SSD disks for the root volume (one per node)
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
@@ -160,6 +163,22 @@ NOTE: Snapshots are created automatically upon reboot.
 NOTE: Snapshots are created automatically upon reboot.
 
 * Every disk by default in Azure is encrypted at rest.
+
+.HA pairs with shared managed disks in single availability zones
+
+* Two 10 GiB Premium SSD disks for the boot volume (one per node)
+* Two 512 GiB Premium SSD Shared Managed disks for the root volume (one per node)
+* Two 1024 GiB Standard HDD disks for saving cores (one per node)
+* Two 512 GiB Premium SSD Managed disks for NVRAM (one per node)
+
+If your virtual machine supports Premium SSD v2 Managed Disks as data disks, it uses 32 GiB Premium SSD v2 Managed Disks for NVRAM and 512 GiB Premium SSD v2 Shared Managed disks for the root volume.
+
+You can deploy HA pairs in a single single availability zone and use Premium SSD v2 Managed Disks when the following conditions are fulfilled:
+
+* The version of Cloud Volumes ONTAP is 9.15.1 or later.
+* The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
+* The subscription is registered for the Microsoft link:task-saz-feature.html[Microsoft.Compute/VMOrchestratorZonalMultiFD feature].
+
 endif::azure[]
 
 ifdef::gcp[]
