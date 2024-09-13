@@ -152,7 +152,98 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-goog
 https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud subnet in which you deploy Cloud Volumes ONTAP.
 
 === Outbound internet access
+Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
 
+==== Cloud Volumes ONTAP endpoints
+Cloud Volumes ONTAP requires outbound internet access to contact various endpoints for day-to-day operations.
+
+The following endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console^].
+
+[cols=5*,options="header,autowidth"]
+|===
+| Endpoints
+| Applicable for
+| Purpose
+| BlueXP deployment mode
+| Impact if endpoint is not available 
+
+| 
+\https://netapp-cloud-account.auth0.com
+
+| 
+Authentication
+
+| Used for BlueXP authentication.
+
+| Standard and restricted modes.
+
+a|User authentication fails and the following services remain unavailable:
+
+* Cloud Volumes ONTAP services
+* ONTAP services
+* Protocols and proxy services
+
+| 
+\https://keyvault-production-aks.vault.azure.net
+
+| 
+Key Vault
+
+| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP service uses this component internally.
+
+| Standard, restricted, and private modes. 
+
+| Cloud Volumes ONTAP services are unavailable.  
+
+| 
+\https://cloudmanager.cloud.netapp.com/tenancy
+
+| 
+Tenancy
+
+| Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
+
+
+| Standard and restricted modes.  
+
+|Cloud Volumes ONTAP resources and the users are not authorized.  
+
+| 
+\https://support.netapp.com/aods/asupmessage
+\https://support.netapp.com/asupprod/post/1.0/postAsup
+
+| 
+AutoSupport
+
+| Used to send AutoSupport telemetry data to NetApp support. 
+
+| Standard and restricted modes.  
+
+| AutoSupport information remains undelivered. 
+
+| 
+\https://www.googleapis.com/compute/v1/projects/
+\https://cloudresourcemanager.googleapis.com/v1/projects
+\https://www.googleapis.com/compute/beta
+\https://storage.googleapis.com/storage/v1
+\https://www.googleapis.com/storage/v1
+\https://iam.googleapis.com/v1
+\https://cloudkms.googleapis.com/v1
+\https://www.googleapis.com/deploymentmanager/v2/projects
+\https://compute.googleapis.com/compute/v1
+
+| 
+Google Cloud (Commercial use).
+
+| Communication with Google Cloud services. 
+
+| Standard, restricted, and private modes.
+
+|Cloud Volumes ONTAP cannot communicate with Google Cloud service to perform specific BlueXP operations on Google Cloud. 
+
+|===
+
+==== Outbound internet access for NetApp AutoSupport 
 Cloud Volumes ONTAP requires outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
 
 Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
@@ -169,7 +260,6 @@ After you've verified that outbound internet access is available, you can test A
 TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
-
 
 === Connections to ONTAP systems in other networks
 
