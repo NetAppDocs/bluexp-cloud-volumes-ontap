@@ -289,7 +289,7 @@ endif::gcp[]
 Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above.
 
 [IMPORTANT]
-Node-based licensing will be deprecated shortly, to be replaced by capacity-based licenses. For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
+NetApp will deprecate Node-based licensing shortly, which will be replaced by capacity-based licenses. For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
 
 
 Node-based licensing is still available for existing customers:
