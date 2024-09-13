@@ -23,7 +23,9 @@ The following networking requirements must be met in Azure.
 Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
 
 ==== Cloud Volumes ONTAP endpoints
-Cloud Volumes ONTAP requires outbound internet access to contact the following endpoints for day-to-day operations.
+Cloud Volumes ONTAP requires outbound internet access to contact various endpoints for day-to-day operations.
+
+The following endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console^].
 
 [cols=5*,options="header,autowidth"]
 |===
@@ -158,11 +160,6 @@ AutoSupport
 |Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
 
 |===
-
-[NOTE]
-These endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector]
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console]
 
 ==== Outbound internet access for NetApp AutoSupport 
 Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support. 
