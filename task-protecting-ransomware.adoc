@@ -51,7 +51,7 @@ Cloud Volumes ONTAP supports the Autonomous Ransomware Protection (ARP) feature,
 
 Separate from the file extension protections provided through the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html#protection-from-common-ransomware-file-extensions[ransomware protection setting], the ARP feature uses workload analysis to alert the user on potential attacks based on detected “abnormal activity”. Both the ransomware protection setting and the ARP feature can be used in conjunction for comprehensive ransomware protection.    
 
-The ARP feature is available for use with BYOL licenses only (1 to 36 month terms) on both node-based and capacity-based licensing models. You must contact your NetApp sales representative to purchase a new, separate, add-on license for use with the ARP feature in Cloud Volumes ONTAP. 
+The ARP feature is available for use with BYOL and marketplace subscriptions for both node-based and capacity-based licenses at no additional cost. Contact your NetApp sales representative to add ARP to your current license.
 
 The ARP license is considered a "floating" license, which means it is not bound to a single Cloud Volumes ONTAP instance and can be applied to multiple Cloud Volumes ONTAP environments.   
 
