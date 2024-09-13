@@ -168,8 +168,6 @@ Cloud Volumes ONTAP requires outbound internet access to contact the following e
 | 
 \https://netapp-cloud-account.auth0.com
 
-Authenticates users in \https://api.cloud.netapp.com
-
 | 
 Authentication
 
@@ -237,7 +235,7 @@ Google Cloud (Commercial use).
 
 | Communication with Google Cloud services. 
 
-| Standard and private modes.
+| Standard, restricted, and private modes.
 
 |Cloud Volumes ONTAP cannot communicate with Google Cloud service to perform specific BlueXP operations on Google Cloud. 
 
