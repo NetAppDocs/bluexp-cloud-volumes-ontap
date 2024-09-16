@@ -15,15 +15,13 @@ summary: You can activate write once, read many (WORM) storage on a Cloud Volume
 [.lead]
 You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. Cloud WORM storage is powered by SnapLock technology, which means WORM files are protected at the file level.
 
+The WORM feature is available for use with BYOL and marketplace subscriptions for your licenses at no additional cost. Contact your NetApp sales representative to add WORM to your current license.
+
 == How WORM storage works
 
 Once a file has been committed to WORM storage, it can't be modified, even after the retention period has expired. A tamper-proof clock determines when the retention period for a WORM file has elapsed.
 
 After the retention period has elapsed, you are responsible for deleting any files that you no longer need.
-
-//== Charging
-
-//Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes. Available for PAYGO or annual commitment terms only, licensing for WORM is purchasable through the Cloud Provider's marketplace. WORM supports both node-based and capacity-based licensing models. NOTE: BYOL licensing is not available for WORM storage on Cloud Volumes ONTAP. You should understand the following charging behavior with Cloud Volumes ONTAP 9.10.1 and later: * Beginning with ONTAP 9.10.1, WORM volumes and non-WORM volumes can exist on the same aggregate. * If you enable WORM when you create a Cloud Volumes ONTAP working environment, every volume that you create from BlueXP has WORM enabled. However, you can use the ONTAP CLI or System Manager to create volumes that have WORM disabled. Those volumes are not charged at the WORM rate. * If you don't enable WORM when you create a working environment, every volume that you create from BlueXP has WORM disabled. You are not charged at the WORM rate for those volumes. https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^]
 
 == Activating WORM storage
 

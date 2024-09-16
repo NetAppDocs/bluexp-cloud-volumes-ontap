@@ -25,7 +25,7 @@ Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provision
 Keystone Subscription::
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
 
-The previous by-node licensing model remains available for existing customers who have already purchased a license or who have an active marketplace subscription.
+//The previous by-node licensing model remains available for existing customers who have already purchased a license or who have an active marketplace subscription.
 
 The following sections provide more details about each of these options.
 
@@ -284,23 +284,9 @@ ifdef::gcp[]
 * link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
-== Node-based licensing
-
-Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above.
-
-[IMPORTANT]
-NetApp will deprecate Node-based licensing shortly, which will be replaced by capacity-based licenses. For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
-
-
-Node-based licensing is still available for existing customers:
-
-* If you have an active license, BYOL is available for license renewals only.
-* If you have an active marketplace subscription, charging is still available through that subscription.
 
 == License conversions
 
-Converting an existing Cloud Volumes ONTAP system to another licensing method isn't supported. The three current licensing methods are capacity-based licensing, Keystone Subscriptions, and node-based licensing. For example, you can't convert a system from node-based licensing to capacity-based licensing (and vice versa).
+##With the decommissioning of node-based licensing for Cloud Volumes ONTAP systems, you have to convert your existing systems with node-based licenses to capacity based. For information about how you can perform this conversion, refer to link:concept-license-management.html[License management for node-based systems].##
 
-If you want to transition to another licensing method, you can purchase a license, deploy a new Cloud Volumes ONTAP system using that license, and then replicate the data to that new system.
-
-Note that converting a system from PAYGO by-node licensing to BYOL by-node licensing (and vice versa) isn't supported. You need to deploy a new system and then replicate data to that system. link:task-manage-node-licenses.html[Learn how to change between PAYGO and BYOL].
+Conversion of a system from capacity-based to node-based licensing is not supported.
