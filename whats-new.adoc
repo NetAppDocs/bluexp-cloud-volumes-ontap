@@ -24,11 +24,11 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 == November 2024
 
-=== Support ended for n1 series in new deployments in Google Cloud
+=== Support ended for n1 series for new deployments in Google Cloud
 
 The minimum ONTAP version for deploying Cloud Volumes ONTAP in Google Cloud has been determined at 9.8. Beginning with 9.8, you can deploy only the supported n2 series machine instances. n1 series machines are no longer supported in new deployments, and are only retained in old systems.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^].
 
 == 9 September 2024
 
