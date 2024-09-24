@@ -41,8 +41,7 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 
 
 |9.15.0  | 9.15.1 
-.2+|
-|9.14.1  
+.2+|9.14.1  
 | 9.15.1
 | 9.15.0
 
