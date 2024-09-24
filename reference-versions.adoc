@@ -13,7 +13,7 @@ summary: BlueXP enables you to choose from several different ONTAP versions when
 :imagesdir: ./media/
 
 [.lead]
-BlueXP enables you to choose from several different ONTAP versions when you create a new Cloud Volumes ONTAP working environment.
+BlueXP enables you to choose from several different ONTAP versions when you create a new Cloud Volumes ONTAP working environment.s
 
 Cloud Volumes ONTAP versions other than those listed here are not available for new deployments. For information on upgrade, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
 
@@ -21,6 +21,7 @@ ifdef::aws[]
 == AWS
 
 Single node::
+* 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
 * 9.14.1 RC1
@@ -37,6 +38,7 @@ Single node::
 * 9.5 P6
 
 HA pair::
+* 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
 * 9.14.1 RC1
@@ -57,6 +59,7 @@ ifdef::azure[]
 == Azure
 
 Single node::
+* 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
 * 9.14.1 RC1
@@ -73,6 +76,7 @@ Single node::
 * 9.5 P6
 
 HA pair::
+* 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
 * 9.14.1 RC1
@@ -92,6 +96,7 @@ ifdef::gcp[]
 == Google Cloud
 
 Single node::
+* 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
 * 9.14.1 RC1
@@ -107,6 +112,7 @@ Single node::
 * 9.7 P5
 
 HA pair::
+* 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
 * 9.14.1 RC1
