@@ -142,7 +142,7 @@ When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about yo
 
 == Choose a write speed
 
-BlueXP enables you to choose a write speed setting for Cloud Volumes ONTAP, except for high availability (HA) pairs in Google Cloud. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed. link:concept-write-speed.html[Learn more about write speed].
+BlueXP enables you to choose a write speed setting for Cloud Volumes ONTAP, except for high-availability (HA) pairs in Google Cloud. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed. link:concept-write-speed.html[Learn more about write speed].
 
 == Choose a volume usage profile
 
