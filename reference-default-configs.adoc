@@ -107,13 +107,13 @@ ifdef::aws[]
 ** 47 GiB io1 disk for boot data
 ** 140 GiB gp3 disk for root data
 ** 540 GiB gp2 disk for core data
-* For HA pairs, two st1 EBS volumes for the mediator instance, which are approximately 8 GiB and 4 GiB, and an additional 140 GiB gp3 disk in each node to contain a copy of the root data of the other node.
-
+* For HA pairs:
+** Two st1 EBS volumes for the mediator instance, one of approximately 8 GiB as root disk, and one of 4 GiB as data disk
+** One 140 GiB gp3 disk in each node to contain a copy of the root data of the other node
 +
 NOTE: In some zones, the available EBS disk type can only be gp2.
 +
 * One EBS snapshot for each boot disk and root disk
-
 +
 NOTE: Snapshots are created automatically upon reboot.
 +
@@ -222,3 +222,5 @@ This disk, which contains the boot image, is not available to Cloud Volumes ONTA
 * The storage virtual machine (SVM) root volume resides in aggr1.
 
 * Data volumes also reside in aggr1.
+
+//Gh issue: 347
