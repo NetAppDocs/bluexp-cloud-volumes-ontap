@@ -30,6 +30,11 @@ The n1 series machines are no longer supported in new deployments of Cloud Volum
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^].
 
+=== Enhanced user experience for version selection
+The enhanced upgrade flow of Cloud Volumes ONTAP through BlueXP notification now enables you to view and use the default, latest, and compatible version for upgrading your system. Additionally, you can nows select the latest patch or major version that is compatible with your current Cloud Volumes ONTAP instance, or manually enter the version for upgrade.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-from-bluexp-notifications[Upgrade Cloud Volumes ONTAP software^].
+
 == 9 September 2024
 
 ===  WORM and ARP functionalities are no longer chargeable
