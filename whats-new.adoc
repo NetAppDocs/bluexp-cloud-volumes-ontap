@@ -26,7 +26,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 === Support ended for n1 series for new deployments in Google Cloud
 
-The n1 series machines are no longer supported in new deployments of Cloud Volumes ONTAP in Google Cloud, and are only retained in old systems. New Cloud Volumes ONTAP deployments in Google Cloud are supported from the 9.8 release. We recommend that you switch to the n2 series machine types that are supported by Cloud Volumes ONTAP 9.8 and later.
+The n1 series machines are no longer supported in new deployments of Cloud Volumes ONTAP in Google Cloud, and are retained only in older systems. New deployments of Cloud Volumes ONTAP are supported in Google Cloud only from the 9.8 release. We recommend that you switch to the n2 series machine types that are compatible with Cloud Volumes ONTAP 9.8 and later.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^].
 
