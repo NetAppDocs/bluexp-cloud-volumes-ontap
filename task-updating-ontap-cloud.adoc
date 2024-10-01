@@ -237,8 +237,6 @@ Another way to perform software upgrades by using an image on an external URL. T
 
 BlueXP displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
 
-image:screenshot_overview_upgrade.png[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
-
 NOTE: Before you can upgrade Cloud Volumes ONTAP through the BlueXP notification, you must have a NetApp Support Site account.
 
 You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system.
@@ -257,19 +255,19 @@ A notification appears in the Overview tab if a new version is available:
 +
 image:screenshot_overview_upgrade.png[A screenshot that shows the "Upgrade now!" link under the Overview tab.]
 
-. ##If you want to upgrade the installed version of Cloud Volumes ONTAP, click *Upgrade Now!* By default, you see the latest, compatible version for upgrade.##
+. If you want to upgrade the installed version of Cloud Volumes ONTAP, click *Upgrade Now!* By default, you see the latest, compatible version for upgrade.
 +
 image:screenshot_upgrade_select_versions.png[A screenshot of the Upgrade Cloud Volumes ONTAP version page.]
 +
-##If you want to upgrade to another version, click *Select other versions*. You see the latest Cloud Volumes ONTAP versions listed that are also compatible with the installed version on your system.##
-##For example, if the installed version on your system is 9.12.1P3 and the following compatible versions are available:##
+If you want to upgrade to another version, click *Select other versions*. You see the latest Cloud Volumes ONTAP versions listed that are also compatible with the installed version on your system.
+For example, if the installed version on your system is 9.12.1P3 and the following compatible versions are available:
 
-* ##9.12.1P4 to 9.12.1P14##
-* ##9.13.1 and 9.13.1P1##
+* 9.12.1P4 to 9.12.1P14
+* 9.13.1 and 9.13.1P1
 +
-##Then you see 9.13.1P1 as the default version for upgrade, and 9.12.1P13, 9.13.1P14, 9.13.1, and 9.13.1P1 as the other available versions.##
+Then you see 9.13.1P1 as the default version for upgrade, and 9.12.1P13, 9.13.1P14, 9.13.1, and 9.13.1P1 as the other available versions.
 
-. ##Optionally, you can click *All versions* to enter another compatible version that you want to upgrade to (say, the next patch of the installed version). Click *Save*, and then *Apply*. For the appropriate upgrade path based on your current Cloud Volumes ONTAP version, refer to the link:links.html#supported-upgrade-paths[Supported upgrade paths].##
+. Optionally, you can click *All versions* to enter another compatible version that you want to upgrade to (say, the next patch of the installed version). Click *Save*, and then *Apply*. For the appropriate upgrade path based on your current Cloud Volumes ONTAP version, refer to the link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
 +
 image:screenshot_upgrade_other_versions.png[A screenshot diplaying the available versions for upgrade.]
 +
