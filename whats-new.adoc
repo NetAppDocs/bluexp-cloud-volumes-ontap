@@ -22,6 +22,13 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
+== 7 October 2024
+
+=== Enhanced user experience in version selection for upgrade
+Beginning with this release, when you try to upgrade Cloud Volumes ONTAP using the BlueXP notification, you will receive guidance on the default, latest, and compatible version to use. Additionally, you now have the option to select the latest patch or major version compatible with your Cloud Volumes ONTAP instance or manually enter a version for upgrade.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-from-bluexp-notifications[Upgrade Cloud Volumes ONTAP software^].
+
 == 9 September 2024
 
 ===  WORM and ARP functionalities are no longer chargeable
@@ -45,14 +52,14 @@ The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
 
+//end::whats-new[]
+
 == 22 August 2024
 
 === Cloud Volumes ONTAP 9.15.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.15.1 General Availability release in AWS, Azure, and Google Cloud.
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
-
-//end::whats-new[]
 
 == 8 August 2024
 
