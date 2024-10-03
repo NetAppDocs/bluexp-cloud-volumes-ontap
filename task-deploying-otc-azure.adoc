@@ -22,7 +22,7 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Connector that is associated with your project or workspace^].
 
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
