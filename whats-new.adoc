@@ -22,6 +22,22 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
+== 9 September 2024
+
+===  WORM and ARP functionalities are no longer chargeable
+The built-in data protection and security features of WORM (Write Once Read Many) and ARP (Autonomous Ransomware Protection) will be offered with Cloud Volumes ONTAP licenses at no extra cost. The new pricing model applies to both new and existing BYOL and PAYGO/marketplace subscriptions of AWS, Azure, and Google Cloud. Both capacity-based and node-based licenses will contain ARP and WORM for all configurations, including single node and high availability (HA) pairs, at no additional cost.
+
+The simplified pricing brings you these benefits:
+
+* Accounts that currently include WORM and ARP will no longer incur charges for these features. Going forward, your billing will only have charges for capacity usage, as it was before this change. WORM and ARP will no longer be included in your future bills.
+* If your current accounts do not include these features, you can now opt for WORM and ARP at no additional cost.
+* All Cloud Volumes ONTAP offerings for any new accounts will exclude charges for WORM and ARP.
+
+Learn more about these features:
+
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html[Improving protection against ransomware^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html[WORM storage^]
+
 == 23 August 2024
 
 === Canada West region now supported in AWS
@@ -36,13 +52,15 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.15.1 General Availability
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
+//end::whats-new[]
+
 == 8 August 2024
 
 === Edge Cache licensing packages deprecated
 Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
 
-=== Minimum supported ONTAP version for Flash Cache on Azure
-The minimum ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems for Azure. 
+=== Minimum version support for Flash Cache on Azure
+The minimum Cloud Volumes ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems for Azure. 
 
 For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
 

@@ -66,10 +66,11 @@ endif::gcp[]
 +
 NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to cloud provider requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 
-* Cloud Volumes ONTAP sends configuration backups to the Connector using HTTP.
+* Cloud Volumes ONTAP sends configuration backups to the Connector using HTTP. 
 +
 The backups are accessible from \http://ipaddress/occm/offboxconfig/ where _ipaddress_ is the IP address of the Connector host.
-
++
+You can use the backups for reconfiguring your Cloud Volumes ONTAP system. For more information about configuration backups, refer to https://docs.netapp.com/us-en/ontap/system-admin/config-backup-file-concept.html[ONTAP documentation].
 * BlueXP sets a few volume attributes differently than other management tools (ONTAP System Manager or the ONTAP CLI, for example).
 +
 The following table lists the volume attributes that BlueXP sets differently from the defaults:
@@ -106,13 +107,13 @@ ifdef::aws[]
 ** 47 GiB io1 disk for boot data
 ** 140 GiB gp3 disk for root data
 ** 540 GiB gp2 disk for core data
-* For HA pairs, two st1 EBS volumes for the mediator instance, which are approximately 8 GiB and 4 GiB, and an additional 140 GiB gp3 disk in each node to contain a copy of the root data of the other node.
-
+* For HA pairs:
+** Two st1 EBS volumes for the mediator instance, one of approximately 8 GiB as root disk, and one of 4 GiB as data disk
+** One 140 GiB gp3 disk in each node to contain a copy of the root data of the other node
 +
 NOTE: In some zones, the available EBS disk type can only be gp2.
 +
 * One EBS snapshot for each boot disk and root disk
-
 +
 NOTE: Snapshots are created automatically upon reboot.
 +
@@ -169,8 +170,15 @@ NOTE: Snapshots are created automatically upon reboot.
 * Two 512 GiB Premium SSD Shared Managed disks for the root volume (one per node)
 * Two 1024 GiB Standard HDD disks for saving cores (one per node)
 * Two 512 GiB Premium SSD Managed disks for NVRAM (one per node)
-+
+
 If your virtual machine supports Premium SSD v2 Managed Disks as data disks, it uses 32 GiB Premium SSD v2 Managed Disks for NVRAM and 512 GiB Premium SSD v2 Shared Managed disks for the root volume.
+
+You can deploy HA pairs in a single single availability zone and use Premium SSD v2 Managed Disks when the following conditions are fulfilled:
+
+* The version of Cloud Volumes ONTAP is 9.15.1 or later.
+* The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
+* The subscription is registered for the Microsoft link:task-saz-feature.html[Microsoft.Compute/VMOrchestratorZonalMultiFD feature].
+
 endif::azure[]
 
 ifdef::gcp[]
@@ -214,3 +222,5 @@ This disk, which contains the boot image, is not available to Cloud Volumes ONTA
 * The storage virtual machine (SVM) root volume resides in aggr1.
 
 * Data volumes also reside in aggr1.
+
+//Gh issue: 347

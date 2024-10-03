@@ -39,7 +39,11 @@ The version of Cloud Volumes ONTAP that you can upgrade to depends on the versio
 | Current version
 | Versions that you can directly upgrade to
 
-|9.14.1  | 9.15.0
+
+|9.15.0  | 9.15.1 
+.2+|9.14.1  
+| 9.15.1
+| 9.15.0
 
 | 9.14.0 | 9.14.1
 
@@ -125,7 +129,7 @@ Reverting or downgrading Cloud Volumes ONTAP to a previous release is not suppor
 
 === Support registration
 
-Cloud Volumes ONTAP must be registered with NetApp support in order to upgrade the software using any of the methods described on this page. This applies to both PAYGO and BYOL. You'll need to link:task-registering.html[manually register PAYGO systems], while BYOL systems are registered by default.
+Cloud Volumes ONTAP must be registered with NetApp Support in order to upgrade the software using any of the methods described on this page. This applies to both PAYGO and BYOL. You'll need to link:task-registering.html[manually register PAYGO systems], while BYOL systems are registered by default.
 
 TIP: A system that isn't registered for support will still receive the software update notifications that appear in BlueXP when a new version is available. But you will need to register the system before you can upgrade the software.
 
