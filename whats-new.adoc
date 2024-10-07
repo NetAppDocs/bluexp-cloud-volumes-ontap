@@ -22,10 +22,10 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
-== 7 October 2024
+== 8 October 2024
 
 === Enhanced user experience in version selection for upgrade
-Beginning with this release, when you try to upgrade Cloud Volumes ONTAP using the BlueXP notification, you will receive guidance on the default, latest, and compatible version to use. Additionally, you can now select the latest patch or major version compatible with your Cloud Volumes ONTAP instance, or manually enter a version for upgrade.
+Beginning with this release, when you try to upgrade Cloud Volumes ONTAP using the BlueXP notification, you will receive guidance on the default, latest, and compatible versions to use. Additionally, you can now select the latest patch or major version compatible with your Cloud Volumes ONTAP instance, or manually enter a version for upgrade.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-from-bluexp-notifications[Upgrade Cloud Volumes ONTAP software^].
 
