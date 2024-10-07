@@ -24,8 +24,6 @@ You can also use the ONTAP CLI or ONTAP System Manager to create and manage Flex
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html[FlexCache Volumes for Faster Data Access Power Guide^]
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html[Creating FlexCache volumes in System Manager^]
 
-BlueXP generates a FlexCache license for all new Cloud Volumes ONTAP systems. The license includes a 500 GiB usage limit.
-
 video::PBNPVRUeT1o[youtube, width=848, height=480]
 
 == Work with FlexCache when the origin is encrypted
@@ -44,7 +42,7 @@ ifdef::gcp[]
 For Google Cloud, it is Google Cloud Key Management Service. For information, refer to link:task-google-key-manager.html[Manage keys with Google's Cloud Key Management Service].
 endif::gcp[]
 . *Key management services*: Before creating a FlexCache volume, verify that the key management services are configured correctly on the Cloud Volumes ONTAP system. This configuration is essential for the FlexCache volume to decrypt the data from the origin volume.
-. *Licensing*: Confirm that a valid FlexCache license is available and activated on the Cloud Volumes ONTAP system. BlueXP generates a FlexCache license for all new Cloud Volumes ONTAP systems with a 500 GiB usage limit.
+. *Licensing*: Confirm that a valid FlexCache license is available and activated on the Cloud Volumes ONTAP system.
 . *ONTAP version*: Ensure that the ONTAP version of your Cloud Volumes ONTAP system supports FlexCache with encrypted volumes. Refer to the latest https://docs.netapp.com/us-en/ontap/release-notes/index.html[ONTAP release notes^] or compatibility matrix for more information.
 . *Network Configuration*: Ensure that the network configuration allows for seamless communication between the origin volume and the FlexCache volume. This includes proper routing and DNS resolution in a cloud environment.
 
