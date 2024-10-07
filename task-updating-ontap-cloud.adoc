@@ -260,20 +260,16 @@ image:screenshot_overview_upgrade.png[A screenshot that shows the "Upgrade now!"
 image:screenshot_upgrade_select_versions.png[A screenshot of the Upgrade Cloud Volumes ONTAP version page.]
 +
 If you want to upgrade to another version, click *Select other versions*. You see the latest Cloud Volumes ONTAP versions listed that are also compatible with the installed version on your system.
-For example, if the installed version on your system is 9.12.1P3 and the following compatible versions are available:
+For example, the installed version on your system is 9.12.1P3, and the following compatible versions are available:
 
 * 9.12.1P4 to 9.12.1P14
 * 9.13.1 and 9.13.1P1
-+
-Then you see 9.13.1P1 as the default version for upgrade, and 9.12.1P13, 9.13.1P14, 9.13.1, and 9.13.1P1 as the other available versions.
+You see 9.13.1P1 as the default version for upgrade, and 9.12.1P13, 9.13.1P14, 9.13.1, and 9.13.1P1 as the other available versions.
 
-. Optionally, you can click *All versions* to enter another compatible version that you want to upgrade to (say, the next patch of the installed version). 
+. Optionally, you can click *All versions* to enter another version that you want to upgrade to (say, the next patch of the installed version). For a compatible upgrade path of your current Cloud Volumes ONTAP version, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
 . Click *Save*, and then *Apply*. 
-+
-For the appropriate upgrade path of your current Cloud Volumes ONTAP version, refer to link:task-updating-ontap-cloud.html#supported-upgrade-paths[Supported upgrade paths].
-+
 image:screenshot_upgrade_other_versions.png[A screenshot displaying the available versions for upgrade.]
-+
+
 . In the Upgrade Cloud Volumes ONTAP page, read the EULA, and then select *I read and approve the EULA*.
     
 . Click *Upgrade*. 
