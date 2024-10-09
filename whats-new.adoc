@@ -4,7 +4,6 @@ permalink: whats-new.html
 keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud manager, BlueXP, digital wallet, cloud backup, cloud data sense, cloud tiering, keystone flex, keystone
 summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 ---
-
 = What's new
 :hardbreaks:
 :nofooter:
@@ -20,39 +19,14 @@ The enhancements described on this page are specific to BlueXP features that ena
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This is required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 //Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
-//tag::whats-new[]
-
 == 7 October 2024
-
-=== Enhanced user experience in version selection for upgrade
-Beginning with this release, when you try to upgrade Cloud Volumes ONTAP using the BlueXP notification, you will receive guidance on the default, latest, and compatible versions to use. Also, now you can select the latest patch or major version compatible with your Cloud Volumes ONTAP instance, or manually enter a version for upgrade.
-
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-from-bluexp-notifications[Upgrade Cloud Volumes ONTAP software^]
+include::_whatsnew/2024-10-07.adoc[]
 
 == 9 September 2024
-
-===  WORM and ARP functionalities are no longer chargeable
-The built-in data protection and security features of WORM (Write Once Read Many) and ARP (Autonomous Ransomware Protection) will be offered with Cloud Volumes ONTAP licenses at no extra cost. The new pricing model applies to both new and existing BYOL and PAYGO/marketplace subscriptions of AWS, Azure, and Google Cloud. Both capacity-based and node-based licenses will contain ARP and WORM for all configurations, including single node and high-availability (HA) pairs, at no additional cost.
-
-The simplified pricing brings you these benefits:
-
-* Accounts that currently include WORM and ARP will no longer incur charges for these features. Going forward, your billing will only have charges for capacity usage, as it was before this change. WORM and ARP will no longer be included in your future bills.
-* If your current accounts do not include these features, you can now opt for WORM and ARP at no additional cost.
-* All Cloud Volumes ONTAP offerings for any new accounts will exclude charges for WORM and ARP.
-
-Learn more about these features:
-
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html[Improving protection against ransomware^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html[WORM storage^]
+include::_whatsnew/2024-09-09.adoc[]
 
 == 23 August 2024
-
-=== Canada West region now supported in AWS
-The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
-
-For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
-
-//end::whats-new[]
+include::_whatsnew/2024-08-23.adoc[]
 
 == 22 August 2024
 
@@ -80,8 +54,6 @@ The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provide
 BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.15.0 in AWS, Azure, and Google Cloud.
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
-
-//end::whats-new[]
 
 == 17 May 2024
 

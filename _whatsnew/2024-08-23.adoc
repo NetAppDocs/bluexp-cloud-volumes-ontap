@@ -1,0 +1,4 @@
+=== Canada West region now supported in AWS
+The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
+
+For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
