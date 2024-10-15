@@ -287,6 +287,6 @@ endif::gcp[]
 
 == License conversions
 
-##With the decommissioning of node-based licensing for Cloud Volumes ONTAP systems, you have to convert your existing systems with node-based licenses to capacity based. For information about how you can perform this conversion, refer to link:concept-license-management.html[License management for node-based systems].##
+##Node-based licensing has been decommissioned for Cloud Volumes ONTAP systems. You have to convert the systems that still have node-based licenses to capacity based. For information about how you can perform this conversion, refer to link:task-manage-node-licenses.html[Convert node-based licenses to capacity based].##
 
 Conversion of a system from capacity-based to node-based licensing is not supported.
