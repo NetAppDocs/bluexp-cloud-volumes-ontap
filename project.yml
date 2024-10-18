@@ -295,6 +295,8 @@ sidebar:
           url: /concept-security.html
         - title: Performance
           url: /concept-performance.html
+        - title: Management of node-based BYOL
+          url: /concept-license-management.html
         - title: AutoSupport and Digital Advisor
           url: /concept-active-iq.html
         - title: Default configurations
