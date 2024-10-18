@@ -142,6 +142,8 @@ sidebar:
               url: /task-manage-capacity-licenses.html
             - title: Manage Keystone subscriptions
               url: /task-manage-keystone.html
+            - title: Convert node-based licenses
+              url: /task-convert-node-capacity.html  
             - title: Manage node-based licenses
               url: /task-manage-node-licenses.html
         - title: Volume and LUN administration

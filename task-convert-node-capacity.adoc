@@ -1,0 +1,16 @@
+---
+sidebar: sidebar
+permalink: task-convert-node-capacity.html
+keywords: license conversion, convert node-based to capacity based, by-node to by-capacity
+summary: The Event Management System collects and displays information about events that occur on  ONTAP systems. To receive event notifications, you can set event destinations and event routes for a particular event severity.
+---
+
+= Convert node-based license to by-capacity license
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The availability of node-based licenses for marketplace and Paygo subscriptions have reached an end-of-availability phase. 
