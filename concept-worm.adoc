@@ -37,8 +37,9 @@ When you create a new Cloud Volumes ONTAP working environment, you're prompted t
 
 * If you enable WORM storage when creating a working environment, every volume that you create from BlueXP has WORM enabled. But you can use ONTAP System Manager or the ONTAP CLI to create volumes that have WORM disabled.
 
-* If you disable WORM storage when creating a working environment, every volume that you create from BlueXP, ONTAP System Manager, or the ONTAP CLI has WORM disabled. If you want to enable WORM on a Cloud Volumes ONTAP working environment that was not enabled during creation, you must create a support ticket with NetApp support for assistance.
-
+* If you disable WORM storage when creating a working environment, every volume that you create from BlueXP, ONTAP System Manager, or the ONTAP CLI has WORM disabled. 
++
+To enable WORM on a Cloud Volumes ONTAP working environment see link:concept-worm.html#worm-on-a-cloud-volumes-ontap-working-environment[Enabling WORM on a Cloud Volumes ONTAP working environment]
 
 === Version 9.10.0 and earlier
 
@@ -50,11 +51,29 @@ You can use an application to commit files to WORM over NFS or CIFS, or use the 
 
 After you activate WORM storage on a Cloud Volumes ONTAP system, you must use the ONTAP CLI for all management of WORM storage. For instructions, refer to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html[ONTAP documentation^].
 
+== Enabling WORM on a Cloud Volumes ONTAP working environment
+
+You can enable WORM on a Cloud Volumes ONTAP if WORM is not already enabled on Cloud Volumes ONTAP. After you enable, you cannot disable WORM.
+
+.About this task
+
+* WORM is supported on ONTAP 9.10.1 and later.
+* WORM with Backup is supported on ONTAP 9.11.1 and later.
+
+.Steps
+. From the *Resource* > *Overview* page, in the features column, click the pencil icon to enable WORM.
++ 
+If WORM is already enabled on a Cloud Volumes ONTAP, the pencil icon is disabled.
+. On the *WORM* page, set the retention period for the Cluster Compliance Clock. 
++
+For more information, refer to https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html[Initialize the Compliance Clock^].
+. Click *Set*.
+
 == Deleting WORM files
 
 You can delete WORM files during the retention period using the privileged delete feature.
 
-For instructions, refer to https://docs.netapp.com/us-en/ontap/snaplock/delete-worm-files-concept.html[ONTAP documentation^]
+For instructions, refer to https://docs.netapp.com/us-en/ontap/snaplock/delete-worm-files-concept.html[ONTAP documentation^].
 
 == WORM and data tiering
 
