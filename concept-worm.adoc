@@ -39,7 +39,7 @@ When you create a new Cloud Volumes ONTAP working environment, you're prompted t
 
 * If you disable WORM storage when creating a working environment, every volume that you create from BlueXP, ONTAP System Manager, or the ONTAP CLI has WORM disabled. 
 +
-To enable WORM on a Cloud Volumes ONTAP working environment see link:concept-worm.html#worm-on-a-cloud-volumes-ontap-working-environment[Enabling WORM on a Cloud Volumes ONTAP working environment]
+To enable WORM on a Cloud Volumes ONTAP working environment see link:../concept-worm.html#worm-on-a-cloud-volumes-ontap-working-environment[Enabling WORM on a Cloud Volumes ONTAP working environment]
 
 === Version 9.10.0 and earlier
 
