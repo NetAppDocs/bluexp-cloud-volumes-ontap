@@ -5,7 +5,7 @@ keywords: license conversion, convert node-based to capacity based, by-node to b
 summary: The Event Management System collects and displays information about events that occur on  ONTAP systems. To receive event notifications, you can set event destinations and event routes for a particular event severity.
 ---
 
-= Convert node-based license to by-capacity license
+= Convert node-based licenses to capacity based
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,4 +13,28 @@ summary: The Event Management System collects and displays information about eve
 :imagesdir: ./media/
 
 [.lead]
-The availability of node-based licenses for marketplace and Paygo subscriptions have reached an end-of-availability phase. 
+Your node-based licenses for marketplace and PAYGO subscriptions have reached an end-of-availability phase. The existing licenses will be supported till their expiration and won't be renewed. You will need to convert your valid node-based licenses to capacity-based licenses to continue using your Cloud Volumes ONTAP systems.
+
+[NOTE]
+After the end of availability, only annual contracts for either BYOL or marketplace subscriptions will continue to be entitled for support until the end of the term. Node-based licenses under PAYGO will not be supported after the end of availability date.
+
+.About this task
+
+* The transition from node-based to capacity-based licensing model is done online and in-place that does not require any data migration or additional cloud resources to be provisioned.
+* It is a non-disruptive operation and no service disruption or application downtime occurs.
+* Account and application data in your Cloud Volumes ONTAP system remains intact.
+* The underlying cloud resources remain unaffected post conversion.
+* Support for all CVO deployment types single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, BYOL, and PAYGO.
+* The conversion is supported for all cloud providers, Azure, Google Cloud, and AWS.
+* Post conversion, the serial number of the node-based license will be replaced by a capacity-based format.
+
+
+.Before your begin
+
+Customer must have an NSS account with customer access or administrator access level.
+The customer's NSS account must be registered into the BlueXP user credentials.
+The Working Environment should be attached to the “NSS Customer Access or Administrator Level” account.
+A capacity-based license should be available in the BlueXP account. This license can be a MarketPlace a subscription or a BYOL/Private-Offer package in the Digital Wallet.  
+A valid capacity-based license or marketplace subscription is required as a pre-req for the conversion
+
+.Steps
