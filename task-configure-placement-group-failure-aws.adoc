@@ -13,7 +13,7 @@ summary: Cloud Volumes ONTAP uses an Azure Private Link for connections to its a
 :imagesdir: ./media/
 
 [.lead]
-Cloud Volumes ONTAP fails and rolls back new deployments of AWS high availability (HA) configurations in a single availability Zone (AZ) whenever the placement group creation fails. If needed, you can force the successful completion of deployments by configuring placement groups to bypass the rollback process whenever the creation fails.  
+Cloud Volumes ONTAP fails and rolls back new deployments of AWS high-availability (HA) configurations in a single availability Zone (AZ) whenever the placement group creation fails. If needed, you can force the successful completion of deployments by configuring placement groups to bypass the rollback process whenever the creation fails.  
 
 == Overview
 

@@ -85,7 +85,7 @@ The following table lists the volume attributes that BlueXP sets differently fro
 | Maximum autosize
 a| 1,000 percent
 
-NOTE: The Account Admin can modify this value from the Settings page.
+NOTE: The BlueXP Organization or Account admin can modify this value from the Settings page.
 
 | Security style |	NTFS for CIFS volumes
 UNIX for NFS volumes

@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task-azure-high-availability-mode.html
 keywords: high availability mode, EnableHighAvailabilityMode, action required, nfsv4
-summary: Microsoft Azure's high availability mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP.
+summary: Microsoft Azure's high-availability mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP.
 ---
 
-= Enable high availability mode in Azure
+= Enable high-availability mode in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,9 @@ summary: Microsoft Azure's high availability mode should be enabled to reduce un
 :imagesdir: ./media/
 
 [.lead]
-Microsoft Azure's high availability mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP.
+Microsoft Azure's high-availability mode should be enabled to reduce unplanned failover times and to enable NFSv4 support for Cloud Volumes ONTAP.
 
-Starting with the Cloud Volumes ONTAP 9.10.1 release, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the high availability feature on your Azure subscription.
+Starting with the Cloud Volumes ONTAP 9.10.1 release, we reduced the unplanned failover time for Cloud Volumes ONTAP HA pairs running in Microsoft Azure and added support for NFSv4. To make these enhancements available to Cloud Volumes ONTAP, you need to enable the high-availability feature on your Azure subscription.
 
 BlueXP will prompt you with these details in an Action Required message when the feature needs to be enabled on an Azure subscription.
 
@@ -31,7 +31,7 @@ An Azure user who has "Owner" privileges can enable the feature from the Azure C
 
 . https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart[Access the Azure Cloud Shell from the Azure Portal^]
 
-. Register the high availability mode feature:
+. Register the high-availability mode feature:
 +
 [source,azurecli]
 az account set -s AZURE_SUBSCRIPTION_NAME_OR_ID

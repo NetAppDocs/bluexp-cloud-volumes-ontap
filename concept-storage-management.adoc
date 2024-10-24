@@ -39,8 +39,6 @@ endif::aws[]
 
 BlueXP determines where to place a new volume by looking at several factors: an aggregate's maximum size, whether thin provisioning is enabled, and free space thresholds for aggregates.
 
-TIP: The Account Admin can modify free space thresholds from the *Settings* page.
-
 ifdef::aws[]
 ==== Disk size selection for aggregates in AWS
 
@@ -72,7 +70,7 @@ Rather than let BlueXP manage aggregates for you, you can do it yourself. link:t
 
 == Capacity management
 
-The Account Admin can choose whether BlueXP notifies you of storage capacity decisions or whether BlueXP automatically manages capacity requirements for you.
+The BlueXP Organization or Account admin can choose whether BlueXP notifies you of storage capacity decisions or whether BlueXP automatically manages capacity requirements for you.
 
 This behavior is determined by the _Capacity Management Mode_ on a Connector. The Capacity Management Mode affects all Cloud Volumes ONTAP systems managed by that Connector. If you have another Connector, it can be configured differently.
 
@@ -102,7 +100,7 @@ BlueXP's automatic capacity management doesn't apply to LUNs. When BlueXP create
 
 === Manual capacity management
 
-If the Account Admin set the Capacity Management Mode to manual, BlueXP displays Action Required messages when capacity decisions must be made. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
+If the BlueXP Organization or Account admin set the Capacity Management Mode to manual, BlueXP displays Action Required messages when capacity decisions must be made. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
 
 === Learn more
 
