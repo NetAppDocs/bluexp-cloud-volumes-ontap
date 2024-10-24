@@ -127,7 +127,7 @@ AWS Local Zones are an infrastructure deployment where storage, compute, databas
 
 You can deploy a single AZ or multiple AZ configuration in AWS Local Zones.
 
-NOTE: AWS Local Zones are supported when using BlueXP in standard mode. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode or private mode.
+NOTE: AWS Local Zones are supported when using BlueXP in standard and private modes. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode.
 
 ==== Example AWS Local Zone configurations
 

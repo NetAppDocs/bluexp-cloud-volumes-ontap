@@ -22,12 +22,29 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
+== 24 October 2024
+
+=== n1 series machines unavailable for selection on BlueXP
+
+The n1 series machines are no longer available for selection on BlueXP when deploying new instances of Cloud Volumes ONTAP in Google Cloud. The n1 series machines will be retained and supported only in older, existing systems. New deployments of Cloud Volumes ONTAP are supported in Google Cloud only from the 9.8 release. We recommend that you switch to the n2 series machine types that are compatible with Cloud Volumes ONTAP 9.8 and later. The n1 series machines, however, will be available for new deployments performed through the API.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^].
+
+=== Local Zones support for Amazon Web Services in private mode
+
+BlueXP now supports AWS Local Zones for Cloud Volumes ONTAP high availability (HA) deployments in private mode. The support that was earlier limited to only standard mode has now been extended to include private mode. 
+
+NOTE: AWS Local Zones are not supported when using BlueXP in restricted mode.
+
+For more information on AWS Local Zones with HA Deployments, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones[AWS Local Zones^].
+
 == 7 October 2024
 
 === Enhanced user experience in version selection for upgrade
 Beginning with this release, when you try to upgrade Cloud Volumes ONTAP using the BlueXP notification, you will receive guidance on the default, latest, and compatible versions to use. Also, now you can select the latest patch or major version compatible with your Cloud Volumes ONTAP instance, or manually enter a version for upgrade.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-from-bluexp-notifications[Upgrade Cloud Volumes ONTAP software^]
+
 
 == 9 September 2024
 
@@ -45,6 +62,8 @@ Learn more about these features:
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html[Improving protection against ransomware^]
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html[WORM storage^]
 
+//end::whats-new[]
+
 == 23 August 2024
 
 === Canada West region now supported in AWS
@@ -52,7 +71,7 @@ The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
 
-//end::whats-new[]
+
 
 == 22 August 2024
 
