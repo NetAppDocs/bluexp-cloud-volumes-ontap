@@ -22,7 +22,7 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
-== 24 October 2024
+== 25 October 2024
 
 === n1 series machines unavailable for selection on BlueXP
 
