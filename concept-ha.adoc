@@ -123,15 +123,14 @@ For NAS configurations, the data IP addresses can migrate between HA nodes if fa
 
 === AWS Local Zones
 
-AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally. 
+AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally. On Cloud Volumes ONTAP,
 
 You can deploy a single AZ or multiple AZ configuration in AWS Local Zones.
 
 NOTE: AWS Local Zones are supported when using BlueXP in standard and private modes. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode.
 
 ==== Example AWS Local Zone configurations
-
-The following are example configurations: 
+Cloud Volumes ONTAP supports only HA deployments in AWS Local Zones. The following are example configurations: 
 
 * Single availability zone: Both cluster nodes and the mediator are in the same Local Zone.
 * Multiple availability zones 
@@ -145,9 +144,7 @@ Here are three example configurations:
 
 ==== Supported disk and instance types
 
-The only supported disk type is GP2. 
-
-The following EC2 instance type families with sizes xlarge to 4xlarge are currently supported: 
+The only supported disk type is GP2. The following EC2 instance type families with sizes xlarge to 4xlarge are currently supported: 
 
 * M5
 * C5
@@ -155,7 +152,7 @@ The following EC2 instance type families with sizes xlarge to 4xlarge are curren
 * R5
 * R5d
 
-You should refer to AWS documentation for the latest and complete details about the supported link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[EC2 instance types in Local Zones^].
+Cloud Volumes ONTAP supports only these configurations. Selecting any other disk type or EC2 instance in AWS Local Zone configuration for Cloud Volumes ONTAP might result in deployment failure. Refer to AWS documentation for the latest and complete details of the link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[EC2 instance types in Local Zones^].
 
 == How storage works in an HA pair
 
