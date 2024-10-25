@@ -45,7 +45,6 @@ Beginning with this release, when you try to upgrade Cloud Volumes ONTAP using t
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html#upgrade-from-bluexp-notifications[Upgrade Cloud Volumes ONTAP software^]
 
-
 == 9 September 2024
 
 ===  WORM and ARP functionalities are no longer chargeable
@@ -70,8 +69,6 @@ Learn more about these features:
 The Canada West region is now supported in AWS for Cloud Volumes ONTAP 9.12.1 GA and later.
 
 For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under AWS^].
-
-
 
 == 22 August 2024
 
