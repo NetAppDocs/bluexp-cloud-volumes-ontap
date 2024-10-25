@@ -19,7 +19,7 @@ These settings affect all Cloud Volumes ONTAP systems managed by a Connector. If
 
 .Required permissions
 
-Account Admin privileges are required to modify Cloud Volumes ONTAP Settings.
+BlueXP Organization or Account admin privileges are required to modify Cloud Volumes ONTAP Settings.
 
 .Steps
 

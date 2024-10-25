@@ -23,7 +23,7 @@ Capacity-based licensing::
 Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services.
 
 Keystone Subscription::
-A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for HA pairs.
+A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for High Availability (HA) pairs.
 
 //The previous by-node licensing model remains available for existing customers who have already purchased a license or who have an active marketplace subscription.
 
@@ -86,12 +86,32 @@ endif::gcp[]
 
 ==== Essentials
 
-Pay by capacity for Cloud Volumes ONTAP in a number of different configurations.
+You can pay by capacity in a number of different configurations:
 
 * Choose your Cloud Volumes ONTAP configuration:
 ** A single node or HA system
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
+
+Licensing is based entirely on the volume type created within Cloud Volumes ONTAP systems:
+
+* Essentials Single Node: Read/write volumes created on a Cloud Volumes ONTAP system using one ONTAP node only.
+* Essentials HA: Read/write volumes using two ONTAP nodes that can fail over to each other for non-disruptive data access.
+* Essentials Secondary Single Node: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using one ONTAP node only.
++
+[NOTE]
+If a read-only/DP volume becomes a primary volume, BlueXP considers it as primary data and the charging costs are calculated based on the time the volume was in read/write mode. When the volume is again made read-only/DP, BlueXP considers it as secondary data again and charges accordingly using the best matching license in the digital wallet.
++
+* Essentials Secondary HA: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using two ONTAP nodes that can fail over to each other for non-disruptive data access.
+
+Note these points:
+
+* Minimum charge: There is a 4 TiB minimum charge for each data-serving storage VM that has at least one primary (read-write) volume. For the Essentials package, this minimum charge doesn't apply to storage VMs with only secondary (data protection) volumes.
+* Overages: If the licensed capacity is exceeded, overages are charged at marketplace rates, with a preference for using available capacity from other licenses first.
+* FlexClone and FlexCache Volumes: FlexClone volumes are not charged. Source and destination FlexCache volumes are considered primary data and are charged according to the provisioned space.
+* HA pairs charging: For HA pairs, only the provisioned capacity on a node is charged. Data synchronously mirrored to the partner node is not charged.
+
+
 
 ==== Professional
 
@@ -284,6 +304,18 @@ ifdef::gcp[]
 * link:task-set-up-licensing-google.html[Set up licensing for Cloud Volumes ONTAP in Google Cloud]
 endif::gcp[]
 
+== Node-based licensing
+
+Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above.
+
+[IMPORTANT]
+NetApp will end the availability of Node-based licensing shortly. After end of availability, node-based licenses will need to be converted to capacity-based licenses. For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
+
+
+Node-based licensing is still available for existing customers:
+
+* If you have an active license, BYOL is available for license renewals only.
+* If you have an active marketplace subscription, charging is still available through that subscription.
 
 == License conversions
 

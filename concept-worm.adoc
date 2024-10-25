@@ -29,7 +29,7 @@ How you activate WORM storage depends on the Cloud Volumes ONTAP version that yo
 
 === Version 9.10.1 and later
 
-Starting with Cloud Volumes ONTAP 9.10.1, you have the option to enable or disable WORM at the volume level.
+Beginning with Cloud Volumes ONTAP 9.10.1, you have the option to enable or disable WORM at the volume level.
 
 When you create a new Cloud Volumes ONTAP working environment, you're prompted to enable or disable WORM storage:
 

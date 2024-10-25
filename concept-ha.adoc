@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-ha.html
 keywords: high availability, HA, mediator, concepts, understanding, overview, availability zones, AZs, takeover, giveback, rpo, rto, floating ip, nondisruptive, ha pairs, node, nodes, synchronous, resync, recovery point objective, recovery time objective, nas, nfs, cifs, floating ip address, route tables, iscsi, mpio, alua, failover, mount, remount, failure, data access, access, ip address, performance
-summary: A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
+summary: A Cloud Volumes ONTAP high-availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
 ---
 
 = High-availability pairs in AWS
@@ -13,7 +13,7 @@ summary: A Cloud Volumes ONTAP high availability (HA) configuration provides non
 :imagesdir: ./media/
 
 [.lead]
-A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
+A Cloud Volumes ONTAP high-availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
 
 == HA components
 
@@ -51,7 +51,7 @@ Storage takeover, resync, and giveback are all automatic by default. No user act
 
 == RPO and RTO
 
-An HA configuration maintains high availability of your data as follows:
+An HA configuration maintains high-availability of your data as follows:
 
 * The recovery point objective (RPO) is 0 seconds.
 Your data is transactionally consistent with no data loss.
@@ -123,15 +123,14 @@ For NAS configurations, the data IP addresses can migrate between HA nodes if fa
 
 === AWS Local Zones
 
-AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally. 
+AWS Local Zones are an infrastructure deployment where storage, compute, database, and other select AWS services are located close to large cities and industry areas. With AWS Local Zones, you can bring AWS services closer to you which improves latency for your workloads and maintain databases locally. On Cloud Volumes ONTAP,
 
 You can deploy a single AZ or multiple AZ configuration in AWS Local Zones.
 
-NOTE: AWS Local Zones are supported when using BlueXP in standard mode. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode or private mode.
+NOTE: AWS Local Zones are supported when using BlueXP in standard and private modes. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode.
 
 ==== Example AWS Local Zone configurations
-
-The following are example configurations: 
+Cloud Volumes ONTAP supports only HA deployments in AWS Local Zones. The following are example configurations: 
 
 * Single availability zone: Both cluster nodes and the mediator are in the same Local Zone.
 * Multiple availability zones 
@@ -145,9 +144,7 @@ Here are three example configurations:
 
 ==== Supported disk and instance types
 
-The only supported disk type is GP2. 
-
-The following EC2 instance type families with sizes xlarge to 4xlarge are currently supported: 
+The only supported disk type is GP2. The following EC2 instance type families with sizes xlarge to 4xlarge are currently supported: 
 
 * M5
 * C5
@@ -155,7 +152,7 @@ The following EC2 instance type families with sizes xlarge to 4xlarge are curren
 * R5
 * R5d
 
-You should refer to AWS documentation for the latest and complete details about the supported link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[EC2 instance types in Local Zones^].
+Cloud Volumes ONTAP supports only these configurations. Selecting any other disk type or EC2 instance in AWS Local Zone configuration for Cloud Volumes ONTAP might result in deployment failure. Refer to AWS documentation for the latest and complete details of the link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[EC2 instance types in Local Zones^].
 
 == How storage works in an HA pair
 
