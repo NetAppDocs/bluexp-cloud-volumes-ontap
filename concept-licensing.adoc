@@ -319,6 +319,11 @@ Node-based licensing is still available for existing customers:
 
 == License conversions
 
-##Node-based licensing has been decommissioned for Cloud Volumes ONTAP systems. You have to convert the systems that still have node-based licenses to capacity based. For information about how you can perform this conversion, refer to link:task-manage-node-licenses.html[Convert node-based licenses to capacity based].##
+##Node-based licensing has reached end of availability for Cloud Volumes ONTAP systems. You have to convert the systems that still have node-based licenses to capacity based. You should convert the node-based licenses to capacity-based before they expire. Post expiry, you cannot continue with node-based licenses.
+
+
+
+
+For information about how you can perform this conversion, refer to link:task-manage-node-licenses.html[Convert node-based licenses to capacity based].##
 
 Conversion of a system from capacity-based to node-based licensing is not supported.
