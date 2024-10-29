@@ -22,6 +22,14 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
+== 11 November 2024
+
+=== Addition of a cold tier for Cloud Volumes ONTAP data on Azure Blob storage
+
+BlueXP now enables you to select a cold tier to store the inactive capacity tier data on Azure Blob storage. Adding the cold tier to the existing hot and cool tiers provides you with a more affordable storage option and improved cost efficiency.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html#data-tiering-in-azure[Data tiering in Azure^]
+
 == 25 October 2024
 
 === n1 series machines unavailable for selection on BlueXP
