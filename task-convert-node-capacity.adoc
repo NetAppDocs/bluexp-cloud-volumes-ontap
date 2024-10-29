@@ -15,8 +15,7 @@ summary: The Event Management System collects and displays information about eve
 [.lead]
 Your node-based licenses for marketplace and PAYGO subscriptions have reached an end-of-availability phase. The existing licenses will be supported till their expiration and won't be renewed. You will need to convert your valid node-based licenses to capacity-based licenses to continue using your Cloud Volumes ONTAP systems.
 
-[NOTE]
-After the end of availability, only annual contracts for either BYOL or marketplace subscriptions will continue to be entitled for support until the end of the term. Node-based licenses under PAYGO will not be supported after the end of availability date.
+
 
 .About this task
 
@@ -27,7 +26,7 @@ After the end of availability, only annual contracts for either BYOL or marketpl
 * Support for all CVO deployment types single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, BYOL, and PAYGO.
 * The conversion is supported for all cloud providers, Azure, Google Cloud, and AWS.
 * Post conversion, the serial number of the node-based license will be replaced by a capacity-based format.
-
+* Your data will stay in its current locations when you transition to the capacity-based model, as it was with node-based licensing. This approach guarantees no disruption to data placement and upholds data sovereignty principles throughout the transition.
 
 .Before your begin
 

@@ -93,24 +93,7 @@ You can pay by capacity in a number of different configurations:
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
 
-Licensing is based entirely on the volume type created within Cloud Volumes ONTAP systems:
-
-* Essentials Single Node: Read/write volumes created on a Cloud Volumes ONTAP system using one ONTAP node only.
-* Essentials HA: Read/write volumes using two ONTAP nodes that can fail over to each other for non-disruptive data access.
-* Essentials Secondary Single Node: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using one ONTAP node only.
-+
-[NOTE]
-If a read-only/DP volume becomes a primary volume, BlueXP considers it as primary data and the charging costs are calculated based on the time the volume was in read/write mode. When the volume is again made read-only/DP, BlueXP considers it as secondary data again and charges accordingly using the best matching license in the digital wallet.
-+
-* Essentials Secondary HA: Data Protection (DP) type volumes (typically SnapMirror or SnapVault destination volumes that are read-only) created on a Cloud Volumes ONTAP system using two ONTAP nodes that can fail over to each other for non-disruptive data access.
-
-Note these points:
-
-* Minimum charge: There is a 4 TiB minimum charge for each data-serving storage VM that has at least one primary (read-write) volume. For the Essentials package, this minimum charge doesn't apply to storage VMs with only secondary (data protection) volumes.
-* Overages: If the licensed capacity is exceeded, overages are charged at marketplace rates, with a preference for using available capacity from other licenses first.
-* FlexClone and FlexCache Volumes: FlexClone volumes are not charged. Source and destination FlexCache volumes are considered primary data and are charged according to the provisioned space.
-* HA pairs charging: For HA pairs, only the provisioned capacity on a node is charged. Data synchronously mirrored to the partner node is not charged.
-
+For more information, see link:licensing-charging.html[Charging for capacity-based licenses].
 
 
 ==== Professional
@@ -124,139 +107,6 @@ Single node or HA with capacity charging for primary and secondary volumes at th
 +
 NOTE: A PAYGO subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, refer to https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
 * Add on any of NetApp's cloud data services at extra cost
-
-=== Consumption models
-
-Capacity-based licensing packages are available with the following consumption models:
-
-* *BYOL*: A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
-ifdef::azure[]
-+
-Note that the Optimized package is not available with BYOL.
-endif::azure[]
-
-* *PAYGO*: An hourly subscription from your cloud provider's marketplace.
-
-* *Annual*: An annual contract from your cloud provider's marketplace.
-
-Note the following:
-
-* If you purchase a license from NetApp (BYOL), you also need to subscribe to the PAYGO offering from your cloud provider's marketplace.
-+
-Your license is always charged first, but you'll be charged from the hourly rate in the marketplace in these cases:
-
-** If you exceed your licensed capacity
-** If the term of your license expires
-
-* If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
-
-* Only single node systems with BYOL are supported in China regions.
-
-=== Changing packages
-
-After deployment, you can change the package for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed.
-
-link:task-manage-capacity-licenses.html[Learn how to change charging methods].
-
-=== Pricing
-
-For details about pricing, go to https://cloud.netapp.com/pricing?hsCtaTracking=4f8b7b77-8f63-4b73-b5af-ee09eab4fbd6%7C5fefbc99-396c-4084-99e6-f1e22dc8ffe7[NetApp BlueXP website^].
-
-=== Supported configurations
-
-Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
-
-=== Capacity limit
-
-With this licensing model, each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
-
-There is no maximum capacity limitation when it comes to the license itself.
-
-=== Max number of systems
-
-With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
-
-For example, let's say you have three working environments:
-
-* A single node Cloud Volumes ONTAP system with one storage VM (this is the default storage VM that's created when you deploy Cloud Volumes ONTAP)
-+
-This working environment counts as one system.
-
-* A single node Cloud Volumes ONTAP system with two storage VMs (the default storage VM, plus one additional storage VM that you created)
-+
-This working environment counts as two systems: one for the single node system and one for the additional storage VM.
-
-* A Cloud Volumes ONTAP HA pair with three storage VMs (the default storage VM, plus two additional storage VMs that you created)
-+
-This working environment counts as three systems: one for the HA pair and two for the additional storage VMs.
-
-That's six systems in total. You would then have room for an additional 14 systems in your account.
-
-If you have a large deployment that requires more then 20 systems, contact your account rep or sales team.
-
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^].
-
-=== Notes about charging
-
-The following details can help you understand how charging works with capacity-based licensing.
-
-==== Minimum charge
-
-There is a 4 TiB minimum charge for each data-serving storage VM that has least one primary (read-write) volume. If the sum of the primary volumes is less than 4 TiB, then BlueXP applies the 4 TiB minimum charge to that storage VM.
-
-If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
-
-For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With all other non-Essentials package types (Optimized and Professional), the minimum capacity charging of 4 TiB applies regardless of the volume type. 
-
-==== Overages
-
-If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at the hourly rate based on your marketplace subscription.
-
-==== Essentials package
-
-With the Essentials package, you're billed by the deployment type (HA or single node) and the volume type (primary or secondary). Pricing from high to low is in the following order: _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_, and _Essentials Secondary Single Node_. Alternately, when you purchase a marketplace contract or accept a private offer, capacity charges are the same for any deployment or volume type. 
-
-.BYOL
-If you purchased an Essentials license from NetApp (BYOL) and you exceed the licensed capacity for that deployment and volume type, the BlueXP digital wallet charges overages against a higher priced Essentials license (if you have one and there is available capacity). This happens because we first use the available capacity that you've already purchased as prepaid capacity before charging against the marketplace. If there is no available capacity with your BYOL license, the exceeded capacity will be charged at marketplace on-demand hourly rates (PAYGO) and will add costs to your monthly bill.
-
-Here's an example. Let's say you have the following licenses for the Essentials package:
-
-* A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
-* A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
-
-Another 50 TiB is provisioned on an HA pair with secondary volumes. Instead of charging that 50 TiB to PAYGO, the BlueXP digital wallet charges the 50 TiB overage against the _Essentials Single Node_ license. That license is priced higher than _Essentials Secondary HA_, but it's making use of a license you have already purchased, and it will not add costs to your monthly bill.
-
-In the BlueXP digital wallet, that 50 TiB will be shown as charged against the _Essentials Single Node_ license.
-
-Here's another example. Let's say you have the following licenses for the Essentials package:
-
-* A 500 TiB _Essentials Secondary HA_ license that has 500 TiB of committed capacity
-* A 500 TiB _Essentials Single Node_ license that only has 100 TiB of committed capacity
-
-Another 100 TiB is provisioned on an HA pair with primary volumes. The license you purchased doesn't have _Essentials Primary HA_ committed capacity. The _Essentials Primary HA_ license is priced higher than both the _Essentials Primary Single Node_ and _Essentials Secondary HA_ licenses. 
-
-In this example, the BlueXP digital wallet charges overages at the marketplace rate for the additional 100 TiB. The overage charges will appear on your monthly bill.  
-
-.Marketplace contracts or private offers
-If you purchased an Essentials license as part of a marketplace contract or a private offer, the BYOL logic does not apply, and you must have the exact license type for the usage. License type includes volume type (primary or secondary) and the deployment type (HA or single node). 
-
-For example, let's say you deploy a Cloud Volumes ONTAP instance with the Essentials license. You then provision read-write volumes (primary single node) and read-only (secondary single node) volumes. Your marketplace contract or private offer must include capacity for _Essentials Single Node_ and _Essentials Secondary Single Node_ to cover the provisioned capacity. Any provisioned capacity that isn't part of your marketplace contract or private offer will be charged at the on-demand hourly rates (PAYGO) and will add costs to your monthly bill.
-
-==== Storage VMs
-
-* There are no extra licensing costs for additional data-serving storage VMs (SVMs), but there is a 4 TiB minimum capacity charge per data-serving SVM.
-
-* Disaster recovery SVMs are charged according to the provisioned capacity.
-
-==== HA pairs
-
-For HA pairs, you're only charged for the provisioned capacity on a node. You aren't charged for data that is synchronously mirrored to the partner node.
-
-==== FlexClone and FlexCache volumes
-
-* You won't be charged for the capacity used by FlexClone volumes.
-
-* Source and destination FlexCache volumes are considered primary data and charged according to the provisioned space.
 
 === How to get started
 
@@ -305,25 +155,56 @@ ifdef::gcp[]
 endif::gcp[]
 
 == Node-based licensing
+Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above. 
 
-Node-based licensing is the previous generation licensing model that enabled you to license Cloud Volumes ONTAP by node. This licensing model is not available for new customers. By-node charging has been replaced with the by-capacity charging methods described above.
+NetApp has ended the availability of Node-based licensing. After end of availability (EOA), node-based licenses will need to be converted to capacity-based licenses.
 
-[IMPORTANT]
-NetApp will end the availability of Node-based licensing shortly. After end of availability, node-based licenses will need to be converted to capacity-based licenses. For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
+For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
+
+//Node-based licensing is still available for existing customers:
+//* If you have an active license, BYOL is available for license renewals only.
+//* If you have an active marketplace subscription, charging is still available through that subscription.
+
+=== End of availability of node-based licenses
+The earlier limited availability of node-based licenses have reached an end of availability on 11-November-2024. If you have a valid node-based contract that extends past the EOA date, you will continue to receive support until the contract expires. Upon expiration, you will need to transition to the capacity-based licensing model. For annual or longer-term commitments, NetApp recommends that you contact the support team prior to the EOA date or license expiry date to ensure a seamless transition. If you have a PAYGO subscription, you should initiate the transition to capacity-based licensing, because there will be no automatic conversion, and you won't be able to receive support from NetApp.
+
+You can learn more about each license type and the impact of EOA on it from this table:
+
+[cols=2*,options="header"]
+|===
+
+| License type
+| Impact after EOA
 
 
-Node-based licensing is still available for existing customers:
+a| Valid node-based license purchased through BYOL or private offer
+a| License remains valid till expiration. Existing unused node-based licenses can be used for deploying new Cloud Volumes ONTAP systems.
+a| Expired node-based license purchased through BYOL or private offer 
+a| You won't be entitled to deploy new Cloud Volumes ONTAP systems using that license. The existing system might continue to work, but you won't receive any support or updates for your system.
+a| Valid node-based license with PAYGO subscription 
+a| Will cease to receive NetApp support for node-based Cloud Volumes ONTAP system until you transition to a capacity-based license. 
 
-* If you have an active license, BYOL is available for license renewals only.
-* If you have an active marketplace subscription, charging is still available through that subscription.
+|===
+
+
+.Exceptions
+NetApp acknowledges the unique requirements of some specific scenarios and EOA of node-based licensing will not be applicable for them:
+
+* USPS customers
+* Private mode deployments 
+* Customers in China
+
+In these scenarios, NetApp will provide support for the individual licensing requirements to ensure compliance with contractual obligations and operational needs.
+
+[NOTE]
+The longest validity for new licenses and renewals is one year from the day of approval.
+
 
 == License conversions
+Conversion from node-based licenses to capacity based is required post the EOA of node-based licensing. You have to convert the systems that still have node-based licenses to capacity based. 
 
-##Node-based licensing has reached end of availability for Cloud Volumes ONTAP systems. You have to convert the systems that still have node-based licenses to capacity based. You should convert the node-based licenses to capacity-based before they expire. Post expiry, you cannot continue with node-based licenses.
+Before transitioning, it is good to learn about the difference between the two licensing models. Node-based licensing entails fixed capacity for each ONTAP instance, which can limit flexibility. Capacity-based licensing, on the other hand, allows for a shared pool of storage across multiple instances, enhancing flexibility, optimizing resource utilization, and reducing the potential for financial penalties when redistributing workloads. Capacity-based charging adapts more fluidly to changing storage needs.
 
-
-
-
-For information about how you can perform this conversion, refer to link:task-manage-node-licenses.html[Convert node-based licenses to capacity based].##
+For more information about this conversion, refer to link:task-convert-node-capacity.html[Convert node-based licenses to capacity based].
 
 Conversion of a system from capacity-based to node-based licensing is not supported.
