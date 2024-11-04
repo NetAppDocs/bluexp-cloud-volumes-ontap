@@ -68,6 +68,17 @@ As soon as a system is converted to the Essentials package, the <<Notes about ch
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
+==== Essentials
+
+You can pay by capacity in a number of different configurations:
+
+* Choose your Cloud Volumes ONTAP configuration:
+** A single node or HA system
+** File and block storage or secondary data for disaster recovery (DR)
+* Add on any of NetApp's cloud data services at extra cost
+
+For more information, see link:licensing-charging.html[Charging for capacity-based licenses].
+
 ==== Optimized
 
 Pay for provisioned capacity and I/O operations separately.
@@ -83,18 +94,6 @@ ifdef::gcp[]
 * Available in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract
 endif::gcp[]
 * Add on any of NetApp's cloud data services at extra cost
-
-==== Essentials
-
-You can pay by capacity in a number of different configurations:
-
-* Choose your Cloud Volumes ONTAP configuration:
-** A single node or HA system
-** File and block storage or secondary data for disaster recovery (DR)
-* Add on any of NetApp's cloud data services at extra cost
-
-For more information, see link:licensing-charging.html[Charging for capacity-based licenses].
-
 
 ==== Professional
 
@@ -173,9 +172,9 @@ Learn more about each license type and the impact of EOA on it from this table:
 | Impact after EOA
 
 
-a| Valid node-based license purchased through BYOL or private offer
+a| Valid node-based license purchased through BYOL
 a| License remains valid till expiration. Existing unused node-based licenses can be used for deploying new Cloud Volumes ONTAP systems.
-a| Expired node-based license purchased through BYOL or private offer 
+a| Expired node-based license purchased through BYOL 
 a| You won't be entitled to deploy new Cloud Volumes ONTAP systems using that license. The existing system might continue to work, but you won't receive any support or updates for your system.
 a| Valid node-based license with PAYGO subscription 
 a| Will cease to receive NetApp support for node-based Cloud Volumes ONTAP system until you transition to a capacity-based license. 
@@ -184,11 +183,11 @@ a| Will cease to receive NetApp support for node-based Cloud Volumes ONTAP syste
 
 
 .Exceptions
-NetApp recognizes that certain situations require special consideration, and the End of Availability (EOA) of node-based licensing will not apply to the following exceptions:
+NetApp recognizes that certain situations require special consideration, and the end of availability (EOA) of node-based licensing will not apply to the following exceptions:
 
 * USPS customers
 * Deployments in private mode 
-* Customers based in China
+* Customers based in China for Cloud Volumes ONTAP on AWS
 
 For these particular scenarios, NetApp will offer support to address their unique licensing requirements in compliance with contractual obligations and operational needs.
 
@@ -198,9 +197,9 @@ The longest validity for new licenses and renewals is one year from the day of a
 
 == License conversion
 
-BlueXP enables conversion from node-based licenses to capacity based beyond the date of EOA of node-based licensing. For information about EOA of node-based licensing, refer to link:/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
+BlueXP enables seamless conversion from node-based licenses to capacity based. For information about EOA of node-based licensing, refer to link:/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
-Before transitioning, it is good to familiarize oneself with the difference between the two licensing models. Node-based licensing includes fixed capacity for each ONTAP instance, which can restrict flexibility. Capacity-based licensing, on the other hand, allows for a shared pool of storage across multiple instances, offering enhanced flexibility, optimizing resource utilization, and reducing the potential for financial penalties when redistributing workloads. Capacity-based charging seamlessly adjusts to changing storage requirements.
+Before transitioning, it is good to familiarize yourself with the difference between the two licensing models. Node-based licensing includes fixed capacity for each ONTAP instance, which can restrict flexibility. Capacity-based licensing, on the other hand, allows for a shared pool of storage across multiple instances, offering enhanced flexibility, optimizing resource utilization, and reducing the potential for financial penalties when redistributing workloads. Capacity-based charging seamlessly adjusts to changing storage requirements.
 
 
 For more information about this conversion, refer to link:task-convert-node-capacity.html[Convert node-based licenses to capacity based].
