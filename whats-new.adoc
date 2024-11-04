@@ -24,11 +24,18 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 == 11 November 2024
 
+=== End of availability for node-based licenses
+Beginning with 11-November-2024, the limited availability (EOA) of node-based licenses has been terminated. If you have a valid node-based contract that extends beyond the EOA date, you can continue to use the license until your contract expires. Once the contract expires, it will be necessary to transition to the capacity-based licensing model. For annual or longer-term commitments, NetApp recommends that you contact the support team prior to the EOA date or license expiry date to ensure a seamless transition. If you have a PAYGO subscription, you should initiate the transition to capacity-based licensing, because there will be no automatic conversion, and you will be unable to receive support from NetApp.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses]
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based]
+
 === Addition of a cold tier for Cloud Volumes ONTAP data on Azure Blob storage
 
 BlueXP now enables you to select a cold tier to store the inactive capacity tier data on Azure Blob storage. Adding the cold tier to the existing hot and cool tiers provides you with a more affordable storage option and improved cost efficiency.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html#data-tiering-in-azure[Data tiering in Azure^]
+
 
 == 25 October 2024
 
