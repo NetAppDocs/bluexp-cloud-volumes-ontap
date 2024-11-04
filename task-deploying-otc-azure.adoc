@@ -137,6 +137,7 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Note the following:
 +
+* ##If the public access to your storage account is disabled within the VNet, you cannot enable data tiering in your Cloud Volumes ONTAP system. For information, refer to link:/reference-networking-azure.html#only-one-ha-pair-in-an-azure-resource-group[Security group rules].##
 * The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 * The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
