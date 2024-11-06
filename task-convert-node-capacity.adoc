@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-convert-node-capacity.html
-keywords: license conversion, convert node-based to capacity based, by-node to by-capacity
-summary: The Event Management System collects and displays information about events that occur on  ONTAP systems. To receive event notifications, you can set event destinations and event routes for a particular event severity.
+keywords: license conversion, convert node-based to capacity based, by-node to by-capacity, bluexp license conversion for node based
+summary: After the end of availability (EOA) of your node-based licenses, you should transition to capacity-based licensing by using the BlueXP license conversion tool.
 ---
 
 = Convert node-based licenses to capacity based
@@ -13,7 +13,11 @@ summary: The Event Management System collects and displays information about eve
 :imagesdir: ./media/
 
 [.lead]
-After the end of availability (EOA) of your node-based licenses, you should transition to capacity-based licensing. For annual or longer-term commitments, NetApp recommends that you contact the support team prior to the EOA date or license expiry date to ensure a seamless transition. If you have a PAYGO subscription, you should initiate the transition to capacity-based licensing, because there will be no automatic conversion, and you will be unable to receive support from NetApp.
+After the end of availability (EOA) of your node-based licenses, you should transition to capacity-based licensing by using the BlueXP license conversion tool. 
+
+For annual or longer-term commitments, NetApp recommends that you contact your NetApp representative prior to the EOA date (11-November-2024) or license expiry date to ensure that the prerequisites for the transition are in place. If you don't have a long-term contract for a Cloud Volumes ONTAP node and run your system against an on-demand PAYGO subscription, it is important to plan your conversion before the end of support (EOS) on 31-December-2024. In both the cases, you should ensure that your system fulfills the requirements before you use the BlueXP license conversion tool for a seamless transition.
+
+For information about the EOA and EOS, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
 .About this task
 
@@ -21,9 +25,10 @@ After the end of availability (EOA) of your node-based licenses, you should tran
 * It is a non-disruptive operation, and no service disruption or application downtime occurs.
 * Account and application data in your Cloud Volumes ONTAP system remains intact.
 * The underlying cloud resources remain unaffected post conversion.
-* Support for all CVO deployment types, such as single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, BYOL, and PAYGO.
+* The license conversion tool supports all CVO deployment types, such as single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, BYOL, and PAYGO.
+* The tool supports all node-based licenses as the source and all capacity-based licenses as the destination. For example, if you have a PAYGO Standard node-based license, you can convert it to a BYOL capacity-based license. 
 * The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud.
-* Post conversion, the serial number of the node-based license will be replaced by a capacity-based format.
+* Post conversion, the serial number of the node-based license will be replaced by a capacity-based format. This is done as a part of the conversion, and is reflected on your NetApp Support Site (NSS) account. 
 * When you transition to the capacity-based model, your data continues to be retained in the same location as the node-based licensing. This approach guarantees no disruption in data placement, and upholds data sovereignty principles throughout the transition.
 
 .Before your begin
@@ -31,13 +36,13 @@ After the end of availability (EOA) of your node-based licenses, you should tran
 * You should have an NSS account with customer access or administrator access.
 * Your NSS account should be registered with the BlueXP user credentials.
 * The working environment should be linked to the NSS account with customer access or administrator access.
-* You should have a valid capacity-based license or marketplace subscription.
+* You should have a valid capacity-based license in place, either a BYOL license or  marketplace subscription.
 * A capacity-based license should be available in the BlueXP account. This license can be a marketplace subscription or a BYOL/private offer package in the Digital Wallet.
 * Understand the following criteria before selecting a destination package:
 ** If the account has a capacity-based BYOL license, the destination package selected should align with the account's BYOL capacity-based licenses:  
 *** When `Professional` is selected as the destination package, the account should have a BYOL license with a Professional package:  
 ***	When `Essentials` is selected as the destination package, the account should have a BYOL license with the Essentials package.  
-*** When `Optimized` is selected as the destination package, the account should have a BYOL license with the Optimized package.  
+*** When `Optimized` is selected as the destination package, the account should have a BYOL license with the Optimized package. 
 ** If the destination package does not align with the account's BYOL license availability, it implies that the capacity license might not include the selected package. In this case, you will be charged through your marketplace subscription.
 ** If there is no capacity-based BYOL license but only marketplace subscription, you should ensure that the selected package is included in your capacity-based marketplace subscription.
 ** If there is not enough capacity in your existing capacity-based license, and if you have a marketplace subscription to charge for the additional capacity usage, you will be charged for the additional capacity through your marketplace subscription.
@@ -46,13 +51,17 @@ After the end of availability (EOA) of your node-based licenses, you should tran
 
 
 [NOTE]
-If any of these criteria is not fulfilled, the license conversion does not happen. In specific cases, the license might be converted, but cannot be used. Click the information icon to view the appropriate messaging and identify the issues to take corrective actions.
+If any of these requirements is not fulfilled, the license conversion does not happen. In specific cases, the license might be converted, but cannot be used. Click the information icon to view the appropriate messaging and identify the issues to take corrective actions.
 
 .Steps
 
 . On the Canvas page, double-click the name of the working environment for which you want to modify the license type.
 . On the Overview tab, click the Features panel.
-. Check the pencil icon next to *Charging method*. If the charging method for your system is `Node Based`, you need to convert it to by-capacity charging. The icon is disabled if your Cloud Volumes ONTAP system has an existing capacity-based license. 
+. Check the pencil icon next to *Charging method*. If the charging method for your system is `Node Based`, you can convert it to by-capacity charging. 
++
+[TIP]
+The icon is disabled if your Cloud Volumes ONTAP system is already charged by capacity, or if any of the requirements is not met. 
++
 . On the *Convert Node-based licenses to Capacity-based* screen, verify the working environment name and source license details.
 . Select the destination package for converting the existing license:
 ifdef::aws[]
@@ -64,7 +73,7 @@ endif::aws[]
 ** Optimized
 endif::azure[]
 endif::gcp[]
-. If you have a BYOL subscription, you can select the checkbox to delete the node-based license post conversion. If you have a marketplace subscription, this option is unavailable.
+. If you have a BYOL license, you can select the checkbox to delete the node-based license from BlueXP Digital Wallet post conversion. If the conversion is not complete, then even on selecting this checkbox, the license will not be deleted from the Digital Wallet. If you have a marketplace subscription, this option is unavailable.
 . Select the check box to confirm that you understand the implications of the change, and then click *Proceed*.
 
 .After you finish
