@@ -1,0 +1,13 @@
+=== n1 series machines unavailable for selection on BlueXP
+
+The n1 series machines are no longer available for selection on BlueXP when deploying new instances of Cloud Volumes ONTAP in Google Cloud. The n1 series machines will be retained and supported only in older, existing systems. New deployments of Cloud Volumes ONTAP are supported in Google Cloud only from the 9.8 release. We recommend that you switch to the n2 series machine types that are compatible with Cloud Volumes ONTAP 9.8 and later. The n1 series machines, however, will be available for new deployments performed through the API.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html[Supported configurations in Google Cloud^].
+
+=== Local Zones support for Amazon Web Services in private mode
+
+BlueXP now supports AWS Local Zones for Cloud Volumes ONTAP high availability (HA) deployments in private mode. The support that was earlier limited to only standard mode has now been extended to include private mode. 
+
+NOTE: AWS Local Zones are not supported when using BlueXP in restricted mode.
+
+For more information on AWS Local Zones with HA Deployments, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones[AWS Local Zones^].

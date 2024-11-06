@@ -8,6 +8,7 @@ settings:
     pdf_enabled: true
     harmony_enabled: true
   rss_page: "whats-new.html"
+
   filter:
     label: Cloud provider
     default: All cloud providers
