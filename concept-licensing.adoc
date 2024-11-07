@@ -189,12 +189,12 @@ NetApp recognizes that certain situations require special consideration, and EOA
 
 * USPS customers
 * Deployments in private mode 
-* Customers based in China for Cloud Volumes ONTAP in AWS
+* China region deployments of Cloud Volumes ONTAP in AWS
 
 For these particular scenarios, NetApp will offer support to address their unique licensing requirements in compliance with contractual obligations and operational needs.
 
 [NOTE]
-The longest validity for new licenses and renewals is one year from the day of approval.
+In these scenarios, new node-based licenses and license renewals are valid for a maximum of one year starting from the date of approval.
 
 
 == License conversion
