@@ -278,9 +278,9 @@ TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/
 
 When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
 
-* *Selected VNet only*: the source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
-
-* *All VNets*: the source for inbound traffic is the 0.0.0.0/0 IP range.
+* *Selected VNet only*: The source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
+* *All VNets*: The source for inbound traffic is the 0.0.0.0/0 IP range.
+* ##*Disabled*: This option restricts the public network access to your storage account, and disables data tiering for Cloud Volumes ONTAP systems. This is a recommended option if your private IP addresses should not be exposed even within the same VNet due to security regulations and policies.##
 
 [cols=4*,options="header,autowidth"]
 
@@ -369,11 +369,13 @@ Any protocol | Any to Any | Block all other inbound traffic
 
 When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
 
-* *Selected VNet only*: the source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
+* *Selected VNet only*: The source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
 
-* *All VNets*: the source for inbound traffic is the 0.0.0.0/0 IP range.
+* *All VNets*: The source for inbound traffic is the 0.0.0.0/0 IP range.
 
 NOTE: HA systems have less inbound rules than single node systems because inbound data traffic goes through the Azure Standard Load Balancer. Because of this, traffic from the Load Balancer should be open, as shown in the "AllowAzureLoadBalancerInBound" rule.
+
+* ##*Disabled*: This option restricts the public network access to your storage account, and disables data tiering for Cloud Volumes ONTAP systems. This is a recommended option if your private IP addresses should not be exposed even within the same VNet due to security regulations and policies.##
 
 [cols=4*,options="header,autowidth"]
 
