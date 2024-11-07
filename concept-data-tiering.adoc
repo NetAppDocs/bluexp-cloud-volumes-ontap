@@ -76,7 +76,8 @@ BlueXP creates the storage account with the following settings:
 
 Storage access tiers:: The default storage access tier for tiered data in Azure is the _hot_ tier. The hot tier is ideal for frequently accessed data in the capacity tier.
 +
-If you don't plan to access the inactive data in the capacity tier, you can reduce your storage costs by changing to the _cool_ storage tier. When you change the storage tier to cool, inactive capacity tier data moves directly to the cool storage tier.
+##If you don't plan to access the inactive data in the capacity tier, you can choose the _cool_ storage tier, where the inactive data will be retained for a minimum of 30 days. You can also opt for the _cold_ tier where the inactive data will be stored for a minimum of 90 days. Based on your storage requirements and cost considerations, you can select the tier that best suits your needs. The cool and cold tiers offer lower storage costs compared to the hot tier, but they come with higher access costs.##
+When you change the storage tier to _cool_ or _cold_, the inactive capacity tier data moves directly to the cool storage tier. 
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage tier. https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Microsoft Azure documentation: Learn more about Azure Blob storage access tiers^].
 +
