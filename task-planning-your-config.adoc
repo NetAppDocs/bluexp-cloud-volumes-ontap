@@ -29,15 +29,16 @@ Cloud Volumes ONTAP is supported in most AWS regions. https://cloud.netapp.com/c
 Newer AWS regions must be enabled before you can create and manage resources in those regions. https://docs.aws.amazon.com/general/latest/gr/rande-manage.html[Learn how to enable a region^].
 
 === Choose a supported Local Zone
+Selecting a Local Zone is optional. Cloud Volumes ONTAP is supported in some AWS Local Zones including Singapore. ##Cloud Volumes ONTAP in AWS supports only high availability (HA) mode in a single availability zone. Single node deployments are not supported.##
 
-Cloud Volumes ONTAP is supported in some AWS Local Zones including Singapore. Selecting a Local Zone is optional. 
+[NOTE]
+##Cloud Volumes ONTAP does not have support for data tiering and cloud tiering in AWS Local Zones. Additionally, Local Zones with instances that have not been qualified for Cloud Volumes ONTAP are not supported. An example of this is Miami, that is not available as a Local Zone, because it has only Gen6 instances that are unsupported and unqualified.##
 
 link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/?nc=sn&loc=3[View the full list of Local Zones^]. 
 Local Zones must be enabled before you can create and manage resources in those zones. 
 
 link:https://aws.amazon.com/tutorials/deploying-low-latency-applications-with-aws-local-zones/[Learn how to enable a Local Zone^].
 
-NOTE: Phoenix is not a supported Local Zone.
 
 == Choose a supported instance
 
@@ -79,7 +80,7 @@ Note that Cloud Volumes ONTAP supports the Amazon EBS Elastic Volumes feature wi
 
 * _Throughput Optimized HDD (st1)_ disks are for frequently accessed workloads that require fast and consistent throughput at a lower price.
 +
-NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
+NOTE: ##Data tiering to AWS S3 is not available in AWS Local Zones due to lack of connectivity.##
 
 EBS disk size::
 If you choose a configuration that doesn't support the link:concept-aws-elastic-volumes.html[Amazon EBS Elastic Volumes feature], then you need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept-storage-management.html[let BlueXP manage a system's capacity for you], but if you want to link:task-create-aggregates.html[create aggregates yourself], be aware of the following:

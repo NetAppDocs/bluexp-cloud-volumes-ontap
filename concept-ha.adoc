@@ -130,7 +130,11 @@ You can deploy a single AZ or multiple AZ configuration in AWS Local Zones.
 NOTE: AWS Local Zones are supported when using BlueXP in standard and private modes. At this time, AWS Local Zones are not supported when using BlueXP in restricted mode.
 
 ==== Example AWS Local Zone configurations
-Cloud Volumes ONTAP supports only HA deployments in AWS Local Zones. The following are example configurations: 
+##Cloud Volumes ONTAP in AWS supports only high availability (HA) mode in a single availability zone. Single node deployments are not supported.##
+
+##Cloud Volumes ONTAP does not support data tiering, cloud tiering, and unqualified instances in AWS Local Zones.## 
+
+The following are example configurations: 
 
 * Single availability zone: Both cluster nodes and the mediator are in the same Local Zone.
 * Multiple availability zones 
@@ -152,7 +156,10 @@ The only supported disk type is GP2. The following EC2 instance type families wi
 * R5
 * R5d
 
-Cloud Volumes ONTAP supports only these configurations. Selecting any other disk type or EC2 instance in AWS Local Zone configuration for Cloud Volumes ONTAP might result in deployment failure. Refer to AWS documentation for the latest and complete details of the link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[EC2 instance types in Local Zones^].
+[NOTE]
+##Cloud Volumes ONTAP supports only these configurations. Selecting unsupported disk types or unqualified instances in AWS Local Zone configuration might result in deployment failure. Data tiering to AWS S3 is not available in AWS Local Zones due to lack of connectivity.##
+
+Refer to AWS documentation for the latest and complete details of the link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2[EC2 instance types in Local Zones^].
 
 == How storage works in an HA pair
 
