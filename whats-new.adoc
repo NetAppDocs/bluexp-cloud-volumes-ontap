@@ -22,34 +22,6 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 //tag::whats-new[]
 
-== 11 November 2024
-
-=== End of availability for node-based licenses
-
-NetApp has planned end of availability (EOA) and end of support (EOS) of Cloud Volumes oNTAP node-based licensing. Beginning with 11-November-2024, the limited availability (EOA) of node-based licenses has been terminated. The support node-based licensing ends on 31-December-2024. After the EOA of your node-based licenses, you should transition to capacity-based licensing by using the BlueXP license conversion tool. 
-
-For annual or longer-term commitments, NetApp recommends that you contact your NetApp representative prior to the EOA date or license expiry date to ensure that the prerequisites for the transition are in place. If you don't have a long-term contract for a Cloud Volumes ONTAP node and run your system against an on-demand PAYGO subscription, it is important to plan your conversion before the EOS date. In both the cases, you use the BlueXP license conversion tool for a seamless conversion.
-
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^]
-
-=== Addition of a cold tier for Cloud Volumes ONTAP data on Azure Blob storage
-
-BlueXP now enables you to select a cold tier to store the inactive capacity tier data on Azure Blob storage. Adding the cold tier to the existing hot and cool tiers provides you with a more affordable storage option and improved cost efficiency.
-
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html#data-tiering-in-azure[Data tiering in Azure^]
-
-=== Option introduced to restrict public access to storage account for Azure
-You now have the option to restrict public access to your storage account for Cloud Volumes ONTAP systems on Azure. By doing so, you can secure your private IP address from exposure, even within the same VNet, should there be a need to comply with your organization's security policies. Additionally, this option disables data tiering for your Cloud Volumes ONTAP systems. This is applicable for both single node and high-availability pairs.
-
-https://.docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules[Security group rules^].
-
-=== WORM enablement after deploying Cloud Volumes ONTAP 
-
-Earlier, you could enable WORM storage when creating a Cloud Volumes ONTAP working environment on BlueXP. Now, BlueXP provides you with the option to enable WORM on a working environment even if WORM was not enabled on it during creation. After you enable it, you cannot disable WORM.
-
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html#enabling-worm-on-a-cloud-volumes-ontap-working-environment[Enabling WORM on a Cloud Volumes ONTAP working environment^]
-
 == 25 October 2024
 
 === n1 series machines unavailable for selection on BlueXP
