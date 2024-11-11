@@ -161,7 +161,7 @@ NetApp has planned the end of availability (EOA) and support (EOS) of node-based
 For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
 
 === End of availability of node-based licenses
-Beginning with 11-November-2024, the limited availability of node-based licenses has been terminated. Support for node-based licensing ends on 31-December-2024.
+Beginning with 11 November, 2024, the limited availability of node-based licenses has been terminated. The support for node-based licensing ends on 31 December, 2024.
 
 If you have a valid node-based contract that extends beyond the EOA date, you can continue to use the license until the contract expires. Once the contract expires, it will be necessary to transition to the capacity-based licensing model. If you don't have a long-term contract for a Cloud Volumes ONTAP node, it is important to plan your conversion before the EOS date.
 
@@ -177,15 +177,15 @@ Learn more about each license type and the impact of EOA on it from this table:
 a| Valid node-based license purchased through BYOL
 a| License remains valid till expiration. Existing unused node-based licenses can be used for deploying new Cloud Volumes ONTAP systems.
 a| Expired node-based license purchased through BYOL 
-a| You won't be entitled to deploy new Cloud Volumes ONTAP systems using that license. The existing system might continue to work, but you won't receive any support or updates for your system post the EOS date.
+a| You won't be entitled to deploy new Cloud Volumes ONTAP systems using this license. The existing systems might continue to work, but you won't receive any support or updates for your systems post the EOS date.
 a| Valid node-based license with PAYGO subscription 
 a| Will cease to receive NetApp support post the EOS date, until you transition to a capacity-based license. 
 
 |===
 
 
-.Exceptions
-NetApp recognizes that certain situations require special consideration, and EOA and end of support (EOS) of node-based licensing will not apply to the following exceptions:
+.Exclusions
+NetApp recognizes that certain situations require special consideration, and EOA and EOS of node-based licensing will not apply to the following cases:
 
 * USPS customers
 * Deployments in private mode 
@@ -194,12 +194,12 @@ NetApp recognizes that certain situations require special consideration, and EOA
 For these particular scenarios, NetApp will offer support to address their unique licensing requirements in compliance with contractual obligations and operational needs.
 
 [NOTE]
-In these scenarios, new node-based licenses and license renewals are valid for a maximum of one year starting from the date of approval.
+Even in these scenarios, new node-based licenses and license renewals are valid for a maximum of one year from the date of approval.
 
 
 == License conversion
 
-BlueXP enables a seamless conversion of node-based licenses to capacity based by the license conversion tool. For information about EOA of node-based licensing, refer to link:/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
+BlueXP enables a seamless conversion of node-based licenses to capacity based through the license conversion tool. For information about EOA of node-based licensing, refer to link:/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
 Before transitioning, it is good to familiarize yourself with the difference between the two licensing models. Node-based licensing includes fixed capacity for each ONTAP instance, which can restrict flexibility. Capacity-based licensing, on the other hand, allows for a shared pool of storage across multiple instances, offering enhanced flexibility, optimizing resource utilization, and reducing the potential for financial penalties when redistributing workloads. Capacity-based charging seamlessly adjusts to changing storage requirements.
 

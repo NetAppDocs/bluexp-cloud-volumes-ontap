@@ -63,12 +63,12 @@ You can enable WORM storage when creating a Cloud Volumes ONTAP working environm
 If WORM is already enabled on the system, the pencil icon is disabled.
 . On the *WORM* page, set the retention period for the cluster Compliance Clock.
 +
-For more information, refer to https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html[Initialize the Compliance Clock^].
+For more information, refer to https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html[ONTAP documentation: Initialize the Compliance Clock^].
 . Click *Set*.
 
 .After you finish
 You can verify the status of *WORM* on the Features panel. 
-The SnapLock license is automatically installed for the cluster when you enable WORM in a Cloud Volumes ONTAP environment. You can view the SnapLock license on System Manager.
+After WORM is enabled, the SnapLock license is automatically installed on the cluster. You can view the SnapLock license on ONTAP System Manager.
 
 == Deleting WORM files
 

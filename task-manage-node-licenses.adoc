@@ -245,3 +245,8 @@ https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Lear
 . Terminate the Cloud Volumes ONTAP system that you no longer need by deleting the original working environment.
 +
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deleting-working-env.html[Learn how to delete a Cloud Volumes ONTAP working environment].
+
+.Related topic
+
+link: link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses]
+link:task-convert-node-capacity.html[Convert node-based licenses to capacity based]
