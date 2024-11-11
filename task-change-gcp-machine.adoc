@@ -39,7 +39,7 @@ TIP: BlueXP changes one node at a time by initiating takeover and waiting for gi
 +
 image:screenshot_features_machine_type.png[A screenshot that shows the Machine type setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
-//.. If you are using a node-based PAYGO license, you can optionally choose a different license and machine type by clicking the pencil icon next to *License type*.
+If you are using a node-based PAYGO license, you can optionally choose a different license and machine type by clicking the pencil icon next to *License type*.
 
 . Choose an machine type, select the check box to confirm that you understand the implications of the change, and then click *Change*.
 

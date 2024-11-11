@@ -47,7 +47,7 @@ You can use an application to commit files to WORM over NFS or CIFS, or use the 
 
 After you activate WORM storage on a Cloud Volumes ONTAP system, you must use the ONTAP CLI for all management of WORM storage. For instructions, refer to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html[ONTAP documentation^].
 
-== ##Enabling WORM on a Cloud Volumes ONTAP working environment##
+== Enabling WORM on a Cloud Volumes ONTAP working environment
 
 You can enable WORM storage when creating a Cloud Volumes ONTAP working environment on BlueXP. You can also enable WORM on a working environment if WORM is not enabled on it during creation. After you enable it, you cannot disable WORM.
 
