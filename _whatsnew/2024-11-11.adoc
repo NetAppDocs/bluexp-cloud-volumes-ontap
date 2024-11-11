@@ -7,6 +7,18 @@ For annual or longer-term commitments, NetApp recommends that you contact your N
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html[Convert node-based licenses to capacity based^]
 
+
+=== Removal of node-based deployments from BlueXP
+The option to deploy Cloud Volumes ONTAP systems by using node-based licenses is deprecated on BlueXP. Except for a few special cases, you cannot use node-based licenses for Cloud Volumes ONTAP deployment for any cloud providers.
+
+NetApp recognizes that certain situations require special considerations, and will continue to offer support to address their unique licensing requirements in compliance with contractual obligations and operational needs.
+
+* USPS customers
+* Deployments in private mode 
+* China region deployments of Cloud Volumes ONTAP in AWS
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
+
 === Addition of a cold tier for Cloud Volumes ONTAP data on Azure Blob storage
 
 BlueXP now enables you to select a cold tier to store the inactive capacity tier data on Azure Blob storage. Adding the cold tier to the existing hot and cool tiers provides you with a more affordable storage option and improved cost efficiency.
