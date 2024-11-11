@@ -66,13 +66,12 @@ The icon is disabled if your Cloud Volumes ONTAP system is already charged by ca
 . Select the destination package for converting the existing license:
 ** Essentials. The default value is `Essentials`.
 ** Professional
-
-ifdef::gcp[]
 ifdef::azure[]
-** Optimized
+** Optimized for Azure
 endif::azure[]
+ifdef::gcp[]
+** Optimized for Google Cloud
 endif::gcp[]
-
 . If you have a BYOL license, you can select the checkbox to delete the node-based license from BlueXP digital wallet post conversion. If the conversion is not complete, then even on selecting this checkbox, the license will not be deleted from the digital wallet. If you have a marketplace subscription, this option is unavailable.
 . Select the check box to confirm that you understand the implications of the change, and then click *Proceed*.
 
