@@ -191,7 +191,7 @@ NetApp recognizes that certain situations require special consideration, and EOA
 * Deployments in private mode 
 * China region deployments of Cloud Volumes ONTAP in AWS
 
-For these particular scenarios, NetApp will offer support to address their unique licensing requirements in compliance with contractual obligations and operational needs.
+For these particular scenarios, NetApp will offer support to address the unique licensing requirements in compliance with contractual obligations and operational needs.
 
 [NOTE]
 Even in these scenarios, new node-based licenses and license renewals are valid for a maximum of one year from the date of approval.

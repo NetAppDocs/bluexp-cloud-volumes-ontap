@@ -9,9 +9,9 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capac
 
 
 === Removal of node-based deployments from BlueXP
-The option to deploy Cloud Volumes ONTAP systems by using node-based licenses is deprecated on BlueXP. Except for a few special cases, you cannot use node-based licenses for Cloud Volumes ONTAP deployment for any cloud providers.
+The option to deploy Cloud Volumes ONTAP systems by using node-based licenses is deprecated on BlueXP. Except for a few special cases, you cannot use node-based licenses for Cloud Volumes ONTAP deployments for any cloud provider.
 
-NetApp recognizes that certain situations require special considerations, and will continue to offer support to address their unique licensing requirements in compliance with contractual obligations and operational needs.
+NetApp recognizes the following unique licensing requirements in compliance with contractual obligations and operational needs, and will continue to support node-based licenses in these situations:
 
 * USPS customers
 * Deployments in private mode 
