@@ -78,7 +78,7 @@ ifdef::azure[]
 ** Optimized
 endif::azure[]
 endif::gcp[]
-. If you have a BYOL license, you can select the checkbox to delete the node-based license from BlueXP Digital Wallet post conversion. If the conversion is not complete, then even on selecting this checkbox, the license will not be deleted from the Digital Wallet. If you have a marketplace subscription, this option is unavailable.
+. If you have a BYOL license, you can select the checkbox to delete the node-based license from BlueXP digital wallet post conversion. If the conversion is not complete, then even on selecting this checkbox, the license will not be deleted from the digital wallet. If you have a marketplace subscription, this option is unavailable.
 . Select the check box to confirm that you understand the implications of the change, and then click *Proceed*.
 
 .After you finish
