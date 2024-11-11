@@ -64,14 +64,8 @@ The icon is disabled if your Cloud Volumes ONTAP system is already charged by ca
 +
 . On the *Convert Node-based licenses to Capacity-based* screen, verify the working environment name and source license details.
 . Select the destination package for converting the existing license:
-ifdef::aws[]
-ifdef::azure[]
-ifdef::gcp[]
-** Essential. The default value is `Essential`.
+** Essentials. The default value is `Essentials`.
 ** Professional
-endif::gcp[]
-endif::azure[]
-endif::aws[]
 ifdef::azure[]
 ifdef::gcp[]
 ** Optimized
