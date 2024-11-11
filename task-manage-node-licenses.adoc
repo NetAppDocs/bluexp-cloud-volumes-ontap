@@ -19,7 +19,7 @@ Manage node-based licenses in the BlueXP digital wallet to ensure that each Clou
 
 _Node-based licenses_ are the previous generation licensing model (and not available for new customers):
 
-* BYOL licenses purchased from NetApp
+* Bring your own license (BYOL) licenses purchased from NetApp
 * Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace
 
 The _BlueXP digital wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.

@@ -15,7 +15,7 @@ summary: You can activate write once, read many (WORM) storage on a Cloud Volume
 [.lead]
 You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. Cloud WORM storage is powered by SnapLock technology, which means WORM files are protected at the file level.
 
-The WORM feature is available for use with BYOL and marketplace subscriptions for your licenses at no additional cost. Contact your NetApp sales representative to add WORM to your current license.
+The WORM feature is available for use with bring your own license (BYOL) and marketplace subscriptions for your licenses at no additional cost. Contact your NetApp sales representative to add WORM to your current license.
 
 == How WORM storage works
 

@@ -104,7 +104,7 @@ Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited
 Single node or HA with capacity charging for primary and secondary volumes at the same rate
 * Includes unlimited volume backups using BlueXP backup and recovery, but only for Cloud Volumes ONTAP systems that use the Professional package.
 +
-NOTE: A PAYGO subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, refer to https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
+NOTE: A pay-as-you-go (PAYGO) subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, refer to https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
 * Add on any of NetApp's cloud data services at extra cost
 
 === How to get started
@@ -174,7 +174,7 @@ Learn more about each license type and the impact of EOA on it from this table:
 | Impact after EOA
 
 
-a| Valid node-based license purchased through BYOL
+a| Valid node-based license purchased through bring your own license (BYOL)
 a| License remains valid till expiration. Existing unused node-based licenses can be used for deploying new Cloud Volumes ONTAP systems.
 a| Expired node-based license purchased through BYOL 
 a| You won't be entitled to deploy new Cloud Volumes ONTAP systems using this license. The existing systems might continue to work, but you won't receive any support or updates for your systems post the EOS date.

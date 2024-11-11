@@ -15,7 +15,7 @@ summary: After the end of availability (EOA) of your node-based licenses, you sh
 [.lead]
 After the end of availability (EOA) of your node-based licenses, you should transition to capacity-based licensing by using the BlueXP license conversion tool. 
 
-For annual or longer-term commitments, NetApp recommends that you contact your NetApp representative prior to the EOA date (11 November, 2024) or license expiry date to ensure that the prerequisites for the transition are in place. If you don't have a long-term contract for a Cloud Volumes ONTAP node and run your system against an on-demand PAYGO subscription, it is important to plan your conversion before the end of support (EOS) on 31 December, 2024. In both the cases, you should ensure that your system fulfills the requirements before you use the BlueXP license conversion tool for a seamless transition.
+For annual or longer-term commitments, NetApp recommends that you contact your NetApp representative prior to the EOA date (11 November, 2024) or license expiry date to ensure that the prerequisites for the transition are in place. If you don't have a long-term contract for a Cloud Volumes ONTAP node and run your system against an on-demand pay-as-you-go (PAYGO) subscription, it is important to plan your conversion before the end of support (EOS) on 31 December, 2024. In both the cases, you should ensure that your system fulfills the requirements before you use the BlueXP license conversion tool for a seamless transition.
 
 For information about the EOA and EOS, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
@@ -25,7 +25,7 @@ For information about the EOA and EOS, refer to link:concept-licensing.html#end-
 * It is a non-disruptive operation, and no service disruption or application downtime occurs.
 * The account and application data in your Cloud Volumes ONTAP system remains intact.
 * The underlying cloud resources remain unaffected post conversion.
-* The license conversion tool supports all deployment types, such as single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, BYOL, and PAYGO.
+* The license conversion tool supports all deployment types, such as single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, bring your own license (BYOL), and PAYGO.
 * The tool supports all node-based licenses as the source and all capacity-based licenses as the destination. For example, if you have a PAYGO Standard node-based license, you can convert it to a BYOL capacity-based license. 
 * The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud.
 * Post conversion, the serial number of the node-based license will be replaced by a capacity-based format. This is done as a part of the conversion, and is reflected on your NetApp Support Site (NSS) account. 
@@ -67,10 +67,10 @@ The icon is disabled if your Cloud Volumes ONTAP system is already charged by ca
 ** Essentials. The default value is `Essentials`.
 ** Professional
 ifdef::azure[]
-** Optimized for Azure
+** Optimized (for Azure)
 endif::azure[]
 ifdef::gcp[]
-** Optimized for Google Cloud
+** Optimized (for Google Cloud)
 endif::gcp[]
 . If you have a BYOL license, you can select the checkbox to delete the node-based license from BlueXP digital wallet post conversion. If the conversion is not complete, then even on selecting this checkbox, the license will not be deleted from the digital wallet. If you have a marketplace subscription, this option is unavailable.
 . Select the check box to confirm that you understand the implications of the change, and then click *Proceed*.

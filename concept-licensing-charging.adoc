@@ -19,13 +19,13 @@ You should be familiar with the charging and capacity usage for capacity-based l
 
 Capacity-based licensing packages are available with the following consumption models:
 
-* *BYOL*: A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
+* *BYOL*: Bring your own license (BYOL). A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
 ifdef::azure[]
 +
 Note that the Optimized package is not available with BYOL.
 endif::azure[]
 
-* *PAYGO*: An hourly subscription from your cloud provider's marketplace.
+* *PAYGO*: A pay-as-you-go (PAYGO) subscription is an hourly subscription from your cloud provider's marketplace.
 
 * *Annual*: An annual contract from your cloud provider's marketplace.
 
