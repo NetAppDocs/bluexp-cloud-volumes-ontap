@@ -16,6 +16,7 @@ NetApp recognizes the following unique licensing requirements in compliance with
 * USPS customers
 * Deployments in private mode 
 * China region deployments of Cloud Volumes ONTAP in AWS
+* If you have a valid by-node bring your own license (BYOL) that has not yet expired
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses^]
 
