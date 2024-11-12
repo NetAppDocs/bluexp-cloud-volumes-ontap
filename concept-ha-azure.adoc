@@ -110,4 +110,4 @@ Storage takeover, resync, and giveback are all automatic by default. No user act
 
 == Storage configurations
 
-You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.
+You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over the storage for the active node.

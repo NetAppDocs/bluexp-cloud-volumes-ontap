@@ -51,27 +51,17 @@ Cloud Volumes ONTAP supports the Autonomous Ransomware Protection (ARP) feature,
 
 Separate from the file extension protections provided through the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html#protection-from-common-ransomware-file-extensions[ransomware protection setting], the ARP feature uses workload analysis to alert the user on potential attacks based on detected “abnormal activity”. Both the ransomware protection setting and the ARP feature can be used in conjunction for comprehensive ransomware protection.    
 
-The ARP feature is available for use with BYOL and marketplace subscriptions for both node-based and capacity-based licenses at no additional cost. Contact your NetApp sales representative to add ARP to your current license.
+The ARP feature is available for use with bring your own license (BYOL) and marketplace subscriptions for your licenses at no additional cost.
 
-The ARP license is considered a "floating" license, which means it is not bound to a single Cloud Volumes ONTAP instance and can be applied to multiple Cloud Volumes ONTAP environments.   
+//NOTE: The usage of the ARP feature with node-based Cloud Volumes ONTAP licenses is not currently reflected in Digital Wallet. The ability to view node-based ARP usage will be available under Digital Wallet in a future release.
 
-NOTE: The usage of the ARP feature with node-based Cloud Volumes ONTAP licenses is not currently reflected in Digital Wallet. The ability to view node-based ARP usage will be available under Digital Wallet in a future release. 
-
-Upon purchase of an add-on license and adding it to the Digital Wallet, you can enable ARP on a per volume basis with Cloud Volumes ONTAP. 
-
-// Charging for ARP is metered at a volume level, according to the total provisioned capacity of volumes with the ARP feature enabled. The minimum license capacity is 1TB. However, there is no minimum capacity charging for the ARP feature.
-
-ARP enabled volumes have a designated state of "Learning mode" or "Active". 
-
-//Any volume with an ARP state of "Disabled" is excluded from charging. For example, a Cloud Volumes ONTAP environment with 30 TiB of provisioned capacity can elect to have only a subset of 15 TiB volumes with ARP enabled. 
+ARP-enabled volumes have a designated state of "Learning mode" or "Active". 
 
 Configuration of ARP for volumes is performed through ONTAP System Manager and ONTAP CLI. 
 
 For more information on how to enable ARP with ONTAP System Manager and the ONTAP CLI, refer to https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html[Enable Autonomous Ransomware Protection^]. 
 
 image::screenshot_arp.png[Screenshot shows the add-on license for Autonomous Ransomware Protection.]
-
-NOTE: Support is not available for the use of licensed features without a license. 
 
 
 

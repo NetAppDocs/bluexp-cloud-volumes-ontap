@@ -21,15 +21,20 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 // tag::whats-new[]
 
+== 11 November 2024
+include::_whatsnew/2024-11-11.adoc[]
+
 == 25 October 2024
 include::_whatsnew/2024-10-25.adoc[]
 
 == 7 October 2024
 include::_whatsnew/2024-10-07.adoc[]
 
+//end::whats-new[]
+
 == 9 September 2024
 include::_whatsnew/2024-09-09.adoc[]
-//end::whats-new[]
+
 
 == 23 August 2024
 === Canada West region now supported in AWS
