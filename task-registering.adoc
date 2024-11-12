@@ -13,7 +13,7 @@ summary: Support from NetApp is included with Cloud Volumes ONTAP PAYGO systems,
 :imagesdir: ./media/
 
 [.lead]
-Support from NetApp is included with Cloud Volumes ONTAP PAYGO systems, but you must first activate support by registering the systems with NetApp.
+Support from NetApp is included with Cloud Volumes ONTAP pay-as-you-go (PAYGO) systems, but you must first activate support by registering the systems with NetApp.
 
 Registering a PAYGO system with NetApp is required to upgrade ONTAP software using any of the methods link:task-updating-ontap-cloud.html[described on this page].
 

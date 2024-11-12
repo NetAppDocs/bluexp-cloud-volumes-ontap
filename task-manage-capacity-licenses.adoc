@@ -43,11 +43,11 @@ The BlueXP digital wallet shows you the total consumed capacity in your account 
 
 . On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected.
 
-. View the packages summary, which shows you consumed capacity, total precommitted capacity, and total PAYGO capacity.
+. View the packages summary, which shows you consumed capacity, total precommitted capacity, and total pay-as-you-go (PAYGO) capacity.
 +
 * _Total consumed capacity_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
 +
-* _Total precommitted capacity_ is the total licensed capacity (BYOL or Marketplace Contract) that you purchased from NetApp.
+* _Total precommitted capacity_ is the total licensed capacity (bring your own license (BYOL) or Marketplace Contract) that you purchased from NetApp.
 +
 * _Total PAYGO_ is the total provisioned capacity using cloud marketplace subscriptions. Charging via PAYGO is used only if the consumed capacity is higher than the licensed capacity or if there is no BYOL license available in the BlueXP digital wallet.
 +

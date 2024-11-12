@@ -41,7 +41,7 @@ Capacity-based licensing enables you to pay for Cloud Volumes ONTAP per TiB of c
 
 The Essentials and Professional packages are available with the following consumption models:
 
-* A license (BYOL) purchased from NetApp
+* A license (bring your own license (BYOL)) purchased from NetApp
 * An hourly, pay-as-you-go (PAYGO) subscription from the Google Cloud Marketplace
 * An annual contract
 

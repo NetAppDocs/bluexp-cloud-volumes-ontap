@@ -292,7 +292,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
+If purchased a license directly from NetApp (bring your own license (BYOL)), then an AWS subscription isn't required.
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to BlueXP^].
 
