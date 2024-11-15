@@ -63,16 +63,25 @@ South Central US          southcentralus       (US) South Central US
 +
 The SKU name is used as the value for the "skuName" variable when setting the URN of the marketplace image.
 + 
-For example, Single-Node deployments should use the "ontap_cloud_byol" SKU name. 
+##For example, all single node deployments with Cloud Volumes ONTAP versions beginning with 9.15.0 should use `ontap_cloud_byol` as the SKU name.##
 +
-[cols="1,1"]
+[cols="1,1,1"]
 |===
-|VM Deployment Type |SKU Name
-
-|Single Node
+|*Cloud Volumes ONTAP version*|*VM Deployment Type* |*SKU Name*
+|9.16.1x and later
+|Deployments through Marketplace Direct
+|ontap_cloud_direct
+|9.16.1x and later
+|All deployments through BlueXP
+|ontap_cloud
+|9.15.1x and 9.16.0x
+|All deployments through BlueXP
+|ontap_cloud
+|9.15.0x
+|Single node
 |ontap_cloud_byol
-
-|High Availability
+|9.15.0x
+|High availability
 |ontap_cloud_byol_ha
 
 |===
@@ -83,7 +92,7 @@ For example, Single-Node deployments should use the "ontap_cloud_byol" SKU name.
 
 . From Azure Cloud Shell, export the marketplace image to a vhd (image2, e.g. 9150.01000024.05090105.vhd), and download to your local machine (for example, a Linux machine, or a windows PC.)
 +
-.Click to display
+.View the steps
 [%collapsible]
 +
 ====
@@ -139,7 +148,7 @@ PS /home/user1> Remove-AzDisk -ResourceGroupName $diskRG -DiskName $diskName
 
 . Export the marketplace image to a vhd through the Azure CLI from a local Linux machine.
 +
-.Click to display
+.View the steps
 [%collapsible]
 +
 ====
