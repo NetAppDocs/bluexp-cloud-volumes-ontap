@@ -59,28 +59,28 @@ South Central US          southcentralus       (US) South Central US
 ...
 ----
 
-. Review the SKU name for the corresponding VM deployment type from the table below.
+. ##Review the SKU names for the corresponding Cloud Volumes ONTAP versions and VM deployment types from the table below.##
 +
 The SKU name is used as the value for the "skuName" variable when setting the URN of the marketplace image.
 + 
-##For example, all single node deployments with Cloud Volumes ONTAP versions beginning with 9.15.0 should use `ontap_cloud_byol` as the SKU name.##
+##For example, all single node deployments with Cloud Volumes ONTAP 9.15.0 should use `ontap_cloud_byol` as the SKU name.##
 +
 [cols="1,1,1"]
 |===
-|*Cloud Volumes ONTAP version*|*VM Deployment Type* |*SKU Name*
-|9.16.1x and later
+|*Cloud Volumes ONTAP version*|*VM deployment type* |*SKU name*
+|9.16.1 and later
 |Deployments through Marketplace Direct
 |ontap_cloud_direct
-|9.16.1x and later
+|9.16.1 and later
 |All deployments through BlueXP
 |ontap_cloud
-|9.15.1x and 9.16.0x
+|9.15.1 and 9.16.0
 |All deployments through BlueXP
 |ontap_cloud
-|9.15.0x
+|9.15.0
 |Single node
 |ontap_cloud_byol
-|9.15.0x
+|9.15.0
 |High availability
 |ontap_cloud_byol_ha
 
