@@ -187,7 +187,7 @@ a| Will cease to receive NetApp support post the EOS date, until you transition 
 .Exclusions
 NetApp recognizes that certain situations require special consideration, and EOA and EOS of node-based licensing will not apply to the following cases:
 
-* USPS customers
+* U.S. Public Sector customers
 * Deployments in private mode 
 * China region deployments of Cloud Volumes ONTAP in AWS
 

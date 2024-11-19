@@ -13,7 +13,7 @@ The option to deploy Cloud Volumes ONTAP systems by using node-based licenses is
 
 NetApp recognizes the following unique licensing requirements in compliance with contractual obligations and operational needs, and will continue to support node-based licenses in these situations:
 
-* USPS customers
+* U.S. Public Sector customers
 * Deployments in private mode 
 * China region deployments of Cloud Volumes ONTAP in AWS
 * If you have a valid, non-expired by-node bring your own license (BYOL license)
