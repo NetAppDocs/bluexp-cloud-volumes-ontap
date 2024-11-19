@@ -68,12 +68,12 @@ For example, all single node deployments with Cloud Volumes ONTAP 9.15.0 should 
 [cols="1,1,1"]
 |===
 |*Cloud Volumes ONTAP version*|*VM deployment type* |*SKU name*
-|9.16.1 and later
-|Deployments through Marketplace Direct
-|ontap_cloud_direct
-|9.16.1 and later
-|All deployments through BlueXP
-|ontap_cloud
+// |9.16.1 and later
+// |Deployments through Marketplace Direct
+// |ontap_cloud_direct
+// |9.16.1 and later
+// |All deployments through BlueXP
+// |ontap_cloud
 |9.15.1 and 9.16.0
 |All deployments through BlueXP
 |ontap_cloud
