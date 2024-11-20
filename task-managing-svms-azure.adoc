@@ -63,7 +63,7 @@ Copy the private IP addresses that you just created. You'll need to specify thos
 
 === HA pair
 
-How you allocate IP addresses for an HA pair depends on the storage protocol that you're using.
+##For high-availability (HA) pairs, you should access each storage VM (SVM) in the cluster and create corresponding IPs under nic0 for each SVM.## How you allocate IP addresses for an HA pair depends on the storage protocol that you're using. HA mode, users must  
 
 [role="tabbed-block"]
 ====
@@ -76,7 +76,7 @@ You'll need to create the following IP addresses:
 
 * One IP address for iSCSI data LIF access from node 1
 * One IP address for iSCSI data LIF access from node 2
-* An optional IP address for a storage VM (SVM) management LIF
+* An optional IP address for a SVM management LIF
 +
 This management LIF provides a connection to management tools like SnapCenter.
 
@@ -115,7 +115,7 @@ You'll need to create the following IP addresses:
 * One IP address for NAS data LIF access from node 2
 * An optional IP address for a storage VM (SVM) management LIF
 +
-The iSCSI LIFs are required for DNS communication. An iSCSI LIF is used for this purpose because it doesn't migrate on failover.
+##The iSCSI LIFs are required for DNS communication even when the iSCSI protocol is not used##. An iSCSI LIF is used for this purpose because it doesn't migrate on failover.
 +
 This management LIF provides a connection to management tools like SnapCenter.
 
@@ -409,9 +409,9 @@ vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-nam
 [source,cli]
 network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
-. Create data LIFs:
+. Create data LIFs. ##In this step, you use the IPs that you allocated in the link:task-managing-svms-azure.html#ha-pair[previous procedure] to serve as data LIFs.##
 
-.. Use the following command to create an iSCSI LIF on node 1.
+.. Use the following command to create an iSCSI LIF on node 1. 
 +
 [source,cli]
 network interface create -vserver <svm-name> -home-port e0a -address <iscsi-ip-address> -netmask-length <# of mask bits> -lif <lif-name> -home-node <name-of-node1> -data-protocol iscsi
@@ -475,7 +475,7 @@ vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-nam
 [source,cli]
 network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
-. Create data LIFs:
+. Create data LIFs. ##In this step, you use the IPs that you allocated in the link:task-managing-svms-azure.html#ha-pair[previous procedure] to serve as data LIFs.##
 
 .. Use the following command to create a NAS LIF on node 1.
 +
@@ -487,7 +487,7 @@ network interface create -vserver <svm-name> -lif <lif-name> -service-policy def
 [source,cli]
 network interface create -vserver <svm-name> -lif <lif-name> -service-policy default-data-files -address <nfs-cifs-ip-address> -netmask-length <length> -home-node <name-of-node2> -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe2>
 
-. Create iSCSI LIFs to provide DNS communication:
+. Create iSCSI LIFs to provide DNS communication. ##The iSCSI LIFs are required for DNS communication even when the iSCSI protocol is not used##.
 
 .. Use the following command to create an iSCSI LIF on node 1.
 +
@@ -559,7 +559,7 @@ vserver create -vserver <svm-name> -subtype default -rootvolume <root-volume-nam
 [source,cli]
 network route create -vserver <svm-name> -destination 0.0.0.0/0 -gateway <ip-of-gateway-server>
 
-. Create NAS data LIFs:
+. Create NAS data LIFs. ##In this step, you use the IPs that you allocated in the link:task-managing-svms-azure.html#ha-pair[previous procedure] to serve as data LIFs.##
 
 .. Use the following command to create a NAS LIF on node 1.
 +
@@ -571,7 +571,7 @@ network interface create -vserver <svm-name> -lif <lif-name> -service-policy def
 [source,cli]
 network interface create -vserver <svm-name> -lif <lif-name> -service-policy default-data-files -address <nfs-cifs-ip-address> -netmask-length <length> -home-node <name-of-node2> -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port <port-number-for-azure-health-probe2>
 
-. Create iSCSI LIFs to provide DNS communication:
+. Create iSCSI LIFs to provide DNS communication. ##The iSCSI LIFs are required for DNS communication even when the iSCSI protocol is not used##.
 
 .. Use the following command to create an iSCSI LIF on node 1.
 +
@@ -630,3 +630,5 @@ network interface service-policy add-service -vserver <svm-name> -policy default
 .What's next?
 
 After you create a storage VM on an HA pair, it's best to wait 12 hours before you provision storage on that SVM. Starting with the Cloud Volumes ONTAP 9.10.1 release, BlueXP scans the settings for an HA pair's load balancer at a 12-hour interval. If there are new SVMs, BlueXP will enable a setting that provides shorter unplanned failover.
+
+// github 353
