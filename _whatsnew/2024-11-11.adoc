@@ -33,6 +33,6 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-az
 
 === WORM enablement after deploying Cloud Volumes ONTAP 
 
-You now have the ability to activate write once, read many (WORM) storage on an existing Cloud Volumes ONTAP system through BlueXP. This feature provides you with the flexibility of enabling WORM on a working environment, even if WORM was not enabled on it during creation. Once enabled, you cannot disable WORM.
+You now have the ability to activate write once, read many (WORM) storage on an existing Cloud Volumes ONTAP system using BlueXP. This functionality provides you with the flexibility of enabling WORM on a working environment, even if WORM was not enabled on it during its creation. Once enabled, you cannot disable WORM.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html#enabling-worm-on-a-cloud-volumes-ontap-working-environment[Enabling WORM on a Cloud Volumes ONTAP working environment^]
