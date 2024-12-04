@@ -35,6 +35,7 @@ include::_whatsnew/2024-10-25.adoc[]
 == 7 October 2024
 include::_whatsnew/2024-10-07.adoc[]
 
+
 == 9 September 2024
 include::_whatsnew/2024-09-09.adoc[]
 
@@ -50,7 +51,7 @@ For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-globa
 === Cloud Volumes ONTAP 9.15.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.15.1 General Availability release in AWS, Azure, and Google Cloud.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 8 August 2024
 
@@ -70,7 +71,7 @@ The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provide
 === Cloud Volumes ONTAP 9.15.0
 BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.15.0 in AWS, Azure, and Google Cloud.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9150-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 17 May 2024
 
