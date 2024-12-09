@@ -906,7 +906,7 @@ The following changes were introduced with the 3.9.10 release of the Connector.
 
 === Customer-managed encryption key in Azure
 
-Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
 
 . From Azure, create a key vault and then generate a key in that vault.
 
