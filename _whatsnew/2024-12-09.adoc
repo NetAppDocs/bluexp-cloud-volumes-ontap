@@ -3,8 +3,5 @@ BlueXP can now deploy and manage Cloud Volumes ONTAP 9.16.1 in AWS, Azure, and G
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
-=== The DS_v2 and Es_v3 series machines unavailable for selection on BlueXP
-The DS_v2 and Es_v3 machine families are no longer available for selection on BlueXP when deploying new instances of Cloud Volumes ONTAP in Azure. These families will be retained and supported only in older, existing systems. New deployments of Cloud Volumes ONTAP are supported in Azure only from the 9.12.1 release. We recommend that you switch to either Es_v4 or any other series compatible with Cloud Volumes ONTAP 9.12.1 and later. The DS_v2 and Es_v3 series machines, however, will be available for new deployments made through the API.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
 
