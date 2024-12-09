@@ -21,16 +21,19 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 // tag::whats-new[]
 
+== 9 December 2024
+include::_whatsnew/2024-12-09.adoc[]
+
 == 11 November 2024
 include::_whatsnew/2024-11-11.adoc[]
 
 == 25 October 2024
 include::_whatsnew/2024-10-25.adoc[]
 
+//end::whats-new[]
+
 == 7 October 2024
 include::_whatsnew/2024-10-07.adoc[]
-
-//end::whats-new[]
 
 == 9 September 2024
 include::_whatsnew/2024-09-09.adoc[]
@@ -903,7 +906,7 @@ The following changes were introduced with the 3.9.10 release of the Connector.
 
 === Customer-managed encryption key in Azure
 
-Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
 
 . From Azure, create a key vault and then generate a key in that vault.
 
