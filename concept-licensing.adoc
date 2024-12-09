@@ -77,7 +77,7 @@ You can pay by capacity in a number of different configurations:
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
 
-For more information, see link:concept-licensing-charging.html[Charging for capacity-based licenses].
+For more information, see link:concept-licensing-charging.html[More about capacity-based licenses].
 
 ==== Optimized
 
