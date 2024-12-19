@@ -210,7 +210,7 @@ You might also notice that the BlueXP digital wallet refreshes the consumed capa
 
 == Remove a capacity-based license
 
-If a capacity-based license expired and is no longer in use, then you can remove it at any time.
+If a capacity-based license expired and is no longer in use, then you can remove it at any time. To learn about what happens to your Cloud Volumes ONTAP data, see the knowledge base article https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/CVO_Licensing_issues[KB:CVO Licensing issues].
 
 .Steps
 
@@ -219,3 +219,5 @@ If a capacity-based license expired and is no longer in use, then you can remove
 . On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Remove License*.
 
 . Click *Remove* to confirm.
+
+
