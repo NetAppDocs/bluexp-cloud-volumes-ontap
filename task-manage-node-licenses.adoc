@@ -81,7 +81,7 @@ Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dol
 * Licensing for a Cloud Volumes ONTAP HA pair is converted to a 51 TiB data service license
 * Licensing for a Cloud Volumes ONTAP single node is converted to a 32 TiB data service license
 
-The converted license has the same expiry date as the Cloud Volumes ONTAP license.
+The converted license has the same expiration date as the Cloud Volumes ONTAP license.
 
 .Steps
 
