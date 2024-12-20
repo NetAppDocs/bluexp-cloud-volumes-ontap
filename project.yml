@@ -264,7 +264,7 @@ sidebar:
           entries:
             - title: Licensing in Cloud Volumes ONTAP
               url: /concept-licensing.html
-            - title: More about capacity-based licenses
+            - title: Learn more about capacity-based licenses
               url: /concept-licensing-charging.html  
         - title: Storage
           entries:
