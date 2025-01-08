@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept-ha-azure.html
-keywords: high availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, failure, azure, shared storage, active, passive, load balancer, availability set, storage accounts, page blobs
-summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
+keywords: high-availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, failure, azure, shared storage, active, passive, load balancer, storage accounts, page blobs
+summary: A Cloud Volumes ONTAP high-availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
 ---
 
 = High-availability pairs in Azure
@@ -13,22 +13,22 @@ summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise r
 :imagesdir: ./media/
 
 [.lead]
-A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
+A Cloud Volumes ONTAP high-availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
 
 == HA components
 
 === HA single availability zone configuration with page blobs 
 A Cloud Volumes ONTAP HA page blob configuration in Azure includes the following components:
 
-image:diagram_ha_azure.png["A conceptual image that shows a load balancer managing incoming traffic from BlueXP and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and Page Blobs for customer data."]
+image:diagram_ha_azure.png["A conceptual image that shows a load balancer managing incoming traffic from BlueXP and clients, two Cloud Volumes ONTAP nodes in an VMSS Flex, SSD disks for boot data, and Page Blobs for customer data."]
 
 Note the following about the Azure components that BlueXP deploys for you:
 
 Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
-Availability Set::
-The Azure Availability Set is a logical grouping of the Cloud Volumes ONTAP nodes. The Availability Set ensures that the nodes are in different fault and update domains to provide redundancy and availability. https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview[Learn more about Availability Sets in the Azure docs^].
+VMs in single availability zones::
+Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous virtual machines (VMs) in a single availability zone (AZ). You can deploy high-availability (HA) nodes in separate fault domains within the same AZ, guaranteeing optimal availability. To learn more about the flexible orchestration mode that enables this capability, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets^].
 
 Disks::
 Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, and core data^].
@@ -37,7 +37,7 @@ Storage accounts::
 * One storage account is required for managed disks.
 * One or more storage accounts are required for the Premium Storage page blobs, as the disk capacity limit per storage account is reached.
 +
-https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets[Azure documentation: Azure Storage scalability and performance targets for storage accounts^].
+https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets[Microsoft Azure documentation: Azure Storage scalability and performance targets for storage accounts^].
 * One storage account is required for data tiering to Azure Blob storage.
 * Starting with Cloud Volumes ONTAP 9.7, the storage accounts that BlueXP creates for HA pairs are general-purpose v2 storage accounts.
 * You can enable an HTTPS connection from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts when creating a working environment. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
@@ -48,18 +48,24 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-config
 === HA single availability zone configuration with shared managed disks
 A Cloud Volumes ONTAP HA single availability zone configuration running on top of shared managed disk includes the following components:
 
-image:diagram_ha_azure_saz_lrs.png["A conceptual image that shows a load balancer managing incoming traffic from BlueXP and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and LRS managed disks for customer data."]
+image:diagram_ha_azure_saz_lrs.png["A conceptual image that shows a load balancer managing incoming traffic from BlueXP and clients, two Cloud Volumes ONTAP nodes in  VMSS Flex, SSD disks for boot data, and LRS managed disks for customer data."]
 
 Note the following about the Azure components that BlueXP deploys for you:
 
 Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
-Availability Set::
-The Azure Availability Set is a logical grouping of the Cloud Volumes ONTAP nodes. The Availability Set ensures that the nodes are in different fault and update domains to provide redundancy and availability. https://docs.microsoft.com/en-us/azure/virtual-machines/availability-set-overview[Learn more about Availability Sets in the Azure docs^].
+VMs in single availability zones::
+Beginning with Cloud Volumes ONTAP 9.15.1, you can create and manage heterogeneous virtual machines (VMs) in a single availability zone (AZ). You can deploy high-availability (HA) nodes in separate fault domains within the same AZ, guaranteeing optimal availability. To learn more about the flexible orchestration mode that enables this capability, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/[Microsoft Azure documentation: Virtual Machine Scale Sets^].
++
+The zonal deployment uses Premium SSD v2 Managed Disks when the following conditions are fulfilled:
++
+* The version of Cloud Volumes ONTAP is 9.15.1 or later.
+* The selected region and zone support Premium SSD v2 Managed Disks. For information about the supported regions, refer to  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/[Microsoft Azure website: Products available by region^].
+* The subscription is registered for the Microsoft link:task-saz-feature.html[Microsoft.Compute/VMOrchestratorZonalMultiFD feature].
 
 Disks::
-Customer data resides on locally redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data^].
+Customer data resides on locally-redundant storage (LRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, core, and NVRAM data^].
 
 Storage accounts::
 Storage accounts are used for managed disk based deployments to handle diagnostic logs and tiering to blob storage.
@@ -75,7 +81,7 @@ Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Availability Zones::
-Two Cloud Volumes ONTAP nodes are deployed in to different availability zones. Availability zones ensure that the nodes are in different fault domains. https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy#zone-redundant-storage-for-managed-disks[Learn more about Azure zone-redundant storage for managed disks in the Azure docs^].
+HA multiple availability zone configuration utilizes a deployment model where two Cloud Volumes ONTAP nodes are deployed into different availability zones, ensuring that the nodes are in different fault domains to provide redundancy and availability. To learn how Virtual Machine Scale Sets in Flexible orchestration mode can use availability zones in Azure, refer to https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2[Microsoft Azure documentation: Create a Virtual Machine Scale Set that uses Availability Zones^].
 
 Disks::
 Customer data resides on zone-redundant storage (ZRS) managed disks. Each node has access to the other node's storage. Additional storage is also required for link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair[boot, root, partner root, and core data^].
@@ -101,10 +107,10 @@ For NAS configurations, data IP addresses automatically migrate between HA nodes
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
-NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
+NOTE: For information about which specific host configurations support ALUA, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the https://docs.netapp.com/us-en/ontap-sanhost/[SAN hosts and cloud clients guide] for your host operating system.
 
 Storage takeover, resync, and giveback are all automatic by default. No user action is required.
 
 == Storage configurations
 
-You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.
+You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over the storage for the active node.

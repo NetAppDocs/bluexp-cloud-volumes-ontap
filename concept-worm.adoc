@@ -15,29 +15,13 @@ summary: You can activate write once, read many (WORM) storage on a Cloud Volume
 [.lead]
 You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. Cloud WORM storage is powered by SnapLock technology, which means WORM files are protected at the file level.
 
+The WORM feature is available for use with bring your own license (BYOL) and marketplace subscriptions for your licenses at no additional cost. Contact your NetApp sales representative to add WORM to your current license.
+
 == How WORM storage works
 
 Once a file has been committed to WORM storage, it can't be modified, even after the retention period has expired. A tamper-proof clock determines when the retention period for a WORM file has elapsed.
 
 After the retention period has elapsed, you are responsible for deleting any files that you no longer need.
-
-== Charging
-
-Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes.
-
-Available for PAYGO or annual commitment terms only, licensing for WORM is purchasable through the Cloud Provider's marketplace. WORM supports both node-based and capacity-based licensing models. 
-
-NOTE: BYOL licensing is not available for WORM storage on Cloud Volumes ONTAP. 
- 
-You should understand the following charging behavior with Cloud Volumes ONTAP 9.10.1 and later:
- 
-* Beginning with ONTAP 9.10.1, WORM volumes and non-WORM volumes can exist on the same aggregate.
- 
-* If you enable WORM when you create a Cloud Volumes ONTAP working environment, every volume that you create from BlueXP has WORM enabled. However, you can use the ONTAP CLI or System Manager to create volumes that have WORM disabled. Those volumes are not charged at the WORM rate.
- 
-* If you don't enable WORM when you create a working environment, every volume that you create from BlueXP has WORM disabled. You are not charged at the WORM rate for those volumes.
-
-https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^]
 
 == Activating WORM storage
 
@@ -45,15 +29,13 @@ How you activate WORM storage depends on the Cloud Volumes ONTAP version that yo
 
 === Version 9.10.1 and later
 
-Starting with Cloud Volumes ONTAP 9.10.1, you have the option to enable or disable WORM at the volume level.
+Beginning with Cloud Volumes ONTAP 9.10.1, you have the option to enable or disable WORM at the volume level.
 
 When you create a new Cloud Volumes ONTAP working environment, you're prompted to enable or disable WORM storage:
 
-* If you enable WORM storage when creating a working environment, every volume that you create from BlueXP has WORM enabled. But you can use System Manager or the CLI to create volumes that have WORM disabled.
+* If you enable WORM storage when creating a working environment, every volume that you create from BlueXP has WORM enabled. But you can use ONTAP System Manager or the ONTAP CLI to create volumes that have WORM disabled.
 
-* If you disable WORM storage when creating a working environment, every volume that you create from BlueXP, System Manager, or the CLI has WORM disabled. If you want to enable WORM on a Cloud Volumes ONTAP working environment that was not enabled during creation, you must create a support ticket with NetApp support for assistance.
-
-With either option, you should <<Charging,understand how charging works>>.
+* If you disable WORM storage when creating a working environment, every volume that you create from BlueXP, ONTAP System Manager, or the ONTAP CLI has WORM disabled. 
 
 === Version 9.10.0 and earlier
 
@@ -65,11 +47,34 @@ You can use an application to commit files to WORM over NFS or CIFS, or use the 
 
 After you activate WORM storage on a Cloud Volumes ONTAP system, you must use the ONTAP CLI for all management of WORM storage. For instructions, refer to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html[ONTAP documentation^].
 
+== Enabling WORM on a Cloud Volumes ONTAP working environment
+
+You can enable WORM storage when creating a Cloud Volumes ONTAP working environment on BlueXP. You can also enable WORM on a working environment if WORM is not enabled on it during creation. After you enable it, you cannot disable WORM.
+
+.About this task
+
+* WORM is supported on ONTAP 9.10.1 and later.
+* WORM with backup is supported on ONTAP 9.11.1 and later.
+
+.Steps
+. On the Canvas page, double-click the name of the working environment on which you want to enable WORM.
+. On the Overview tab, click the Features panel and then click the pencil icon next to *WORM*.
++
+If WORM is already enabled on the system, the pencil icon is disabled.
+. On the *WORM* page, set the retention period for the cluster Compliance Clock.
++
+For more information, refer to https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html[ONTAP documentation: Initialize the Compliance Clock^].
+. Click *Set*.
+
+.After you finish
+You can verify the status of *WORM* on the Features panel. 
+After WORM is enabled, the SnapLock license is automatically installed on the cluster. You can view the SnapLock license on ONTAP System Manager.
+
 == Deleting WORM files
 
 You can delete WORM files during the retention period using the privileged delete feature.
 
-For instructions, refer to https://docs.netapp.com/us-en/ontap/snaplock/delete-worm-files-concept.html[ONTAP documentation^]
+For instructions, refer to https://docs.netapp.com/us-en/ontap/snaplock/delete-worm-files-concept.html[ONTAP documentation^].
 
 == WORM and data tiering
 
@@ -85,4 +90,8 @@ You should understand the following about enabling both data tiering and WORM st
 
 * WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. While WORM files are protected from alteration or modification, volumes can be deleted by a cluster administrator even if those volumes contain unexpired WORM data.
 
-* In addition to the trusted storage administrator model, WORM storage in Cloud Volumes ONTAP also implicitly operates under a "trusted cloud administrator" model. A cloud administrator could delete WORM data before its expiry date by removing or editing cloud storage directly from the cloud provider.
+* In addition to the trusted storage administrator model, WORM storage in Cloud Volumes ONTAP also implicitly operates under a "trusted cloud administrator" model. A cloud administrator could delete WORM data before its expiration date by removing or editing cloud storage directly from the cloud provider.
+
+.Related information
+
+* link:reference-worm-snaplock.html[Create tamperproof Snapshot copies for WORM storage]

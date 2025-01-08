@@ -43,11 +43,11 @@ The BlueXP digital wallet shows you the total consumed capacity in your account 
 
 . On the *Cloud Volumes ONTAP* tab, keep *Capacity Based Licenses* selected.
 
-. View the packages summary, which shows you consumed capacity, total precommitted capacity, and total PAYGO capacity.
+. View the packages summary, which shows you consumed capacity, total precommitted capacity, and total pay-as-you-go (PAYGO) capacity.
 +
 * _Total consumed capacity_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
 +
-* _Total precommitted capacity_ is the total licensed capacity (BYOL or Marketplace Contract) that you purchased from NetApp.
+* _Total precommitted capacity_ is the total licensed capacity (bring your own license (BYOL) or Marketplace Contract) that you purchased from NetApp.
 +
 * _Total PAYGO_ is the total provisioned capacity using cloud marketplace subscriptions. Charging via PAYGO is used only if the consumed capacity is higher than the licensed capacity or if there is no BYOL license available in the BlueXP digital wallet.
 +
@@ -73,7 +73,7 @@ image:screenshot-digital-wallet-packages.png[A screenshot that shows consumed ca
 
 == Download usage reports
 
-Account administrators can download four usage reports from the digital wallet in BlueXP. These usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports capture data at a point in time and can be easily shared with others. 
+You can download four usage reports from the BlueXP digital wallet. These usage reports provide capacity details of your subscriptions and tell you how you're being charged for the resources in your Cloud Volumes ONTAP subscriptions. The downloadable reports capture data at a point in time and can be easily shared with others. 
 
 image:screenshot-digital-wallet-usage-report.png[Screenshot shows the digital wallet Cloud Volumes ONTAP capacity based licenses page and highlights the usage report button.]
 
@@ -162,7 +162,7 @@ However, if you deployed BlueXP in a location that doesn't have internet access,
 
 The license file (or _files_ if you have an HA pair). 
 
-NOTE: For more information on how to obtain a license file, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#obtain-a-system-license-file[Obtain a system license file^]. 
+NOTE: For more information on how to obtain a license file, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#obtain-a-system-license-file[Obtain a system license file^]. 
 
 .Steps
 
@@ -182,15 +182,11 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 .About this task
 
-* Changing the charging method doesn't affect whether you're charged through a license purchased from NetApp (BYOL) or from your cloud provider's marketplace (pay as you go). 
+* Changing the charging method doesn't affect whether you're charged through a license purchased from NetApp (BYOL) or from your cloud provider's marketplace pay-as-you-go (PAYGO) subscription. 
 +
 BlueXP always attempts to charge against a license first. If a license isn't available, it charges against a marketplace subscription. No "conversion" is required for BYOL to marketplace subscription or vice versa.
 
 * If you have a private offer or contract from your cloud provider's marketplace, changing to a charging method that's not included in your contract will result in charging against BYOL (if you purchased a license from NetApp) or PAYGO.
-
-ifdef::azure,gcp[]
-* Changing to or from the Edge Cache license isn't supported.
-endif::azure,gcp[]
 
 .Steps
 
@@ -214,7 +210,9 @@ You might also notice that the BlueXP digital wallet refreshes the consumed capa
 
 == Remove a capacity-based license
 
-If a capacity-based license expired and is no longer in use, then you can remove it at any time.
+If a capacity-based license expired and is no longer in use, then you can remove it any time. 
+
+To learn about what happens to your Cloud Volumes ONTAP data on expiration or removal of your license, refer to https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/FAQs_on_Cloud_Volumes_ONTAP_license_expiry[this knowledge base (KB) article^].
 
 .Steps
 
@@ -223,3 +221,5 @@ If a capacity-based license expired and is no longer in use, then you can remove
 . On the *Cloud Volumes ONTAP* tab, click the action menu next to the license and select *Remove License*.
 
 . Click *Remove* to confirm.
+
+

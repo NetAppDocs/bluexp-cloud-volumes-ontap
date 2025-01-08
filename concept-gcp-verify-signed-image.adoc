@@ -23,7 +23,7 @@ The following is an overview of the Google Cloud signed image verification workf
 ** Certificate containing the public key (.pem)
 ** Certificate chain (.pem)
 +
-image:screenshot_cloud_volumes_ontap_tar.gz.png[An image that shows the NSS page containing the digest file tar.gz downloads]
+image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image that shows the NSS page containing the digest file tar.gz downloads]
 
 * Download the converted disk.raw file
 
@@ -34,4 +34,4 @@ image:screenshot_cloud_volumes_ontap_tar.gz.png[An image that shows the NSS page
 ** Create a digest of the downloaded disk.raw file
 ** Compare the two digest file for validation 
 +
-image:graphic_azure_check_signature.png[An image that shows the image signature verification process]
+image::graphic_azure_check_signature.png[width=500 An image that shows the image signature verification process]

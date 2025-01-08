@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-deploying-gcp.html
-keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create,  BYOL, license key, serial number, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, high availability, google cloud ha, ha in google cloud, ha pair, cloud backup, cloud tiering
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create,  BYOL, license key, serial number, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, high-availability, google cloud ha, ha in google cloud, ha pair, cloud backup, cloud tiering
 summary: You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in Google Cloud Platform.
 ---
 
@@ -22,7 +22,7 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Connector that is associated with your project or workspace^].
 
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
@@ -30,7 +30,7 @@ You need the following to create a working environment.
 
 * An understanding of the configuration that you want to use.
 +
-You should have prepared by choosing a configuration and by obtaining Google Cloud networking information from your administrator. For details, see link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration].
+You should have prepared by choosing a configuration and by obtaining Google Cloud networking information from your administrator. For details, refer to  link:task-planning-your-config-gcp.html[Planning your Cloud Volumes ONTAP configuration].
 
 * An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
 +
@@ -77,7 +77,7 @@ You can add up to four labels from the user interface when creating a working en
 
 For information about labels, refer to https://cloud.google.com/compute/docs/labeling-resources[Google Cloud Documentation: Labeling Resources^].
 
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 | Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.
 
@@ -130,7 +130,7 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type and the size for each disk.
 +
@@ -138,7 +138,7 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
+For help choosing a disk type and size, refer to  link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
 
 . *Flash Cache, Write Speed & WORM*: 
 
@@ -149,7 +149,7 @@ NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on th
 +
 link:concept-write-speed.html[Learn more about write speed].
 +
-NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
+NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
@@ -162,7 +162,7 @@ link:concept-worm.html[Learn more about WORM storage^].
 Note the following:
 +
 * BlueXP sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from BlueXP
-* For help with adding a Google Cloud account, see https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Setting up and adding Google Cloud accounts for data tiering with 9.6^].
+* For help with adding a Google Cloud account, refer to  https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Setting up and adding Google Cloud accounts for data tiering with 9.6^].
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the Google Cloud console.
 +
@@ -206,14 +206,14 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. For information, refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
+For more information, refer to  link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -237,7 +237,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-* If you want to apply quotas to volumes, use System Manager or the CLI.
+* If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
@@ -272,7 +272,7 @@ You can add up to four labels from the user interface when creating a working en
 
 For information about labels, refer to https://cloud.google.com/compute/docs/labeling-resources[Google Cloud Documentation: Labeling Resources^].
 
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 | Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.
 
@@ -329,7 +329,7 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select a machine type.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type and the size for each disk.
 +
@@ -337,7 +337,7 @@ The disk type is for the initial volume. You can choose a different disk type fo
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a disk type and size, see link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
+For help choosing a disk type and size, refer to  link:task-planning-your-config-gcp.html#size-your-system-in-gcp[Size your system in Google Cloud^].
 
 . *Flash Cache, Write Speed & WORM*: 
 .. Enable *Flash Cache*, if desired.
@@ -347,7 +347,7 @@ NOTE: Starting with Cloud Volumes ONTAP 9.13.1, _Flash Cache_ is supported on th
 +
 link:concept-write-speed.html[Learn more about write speed^].
 +
-NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. High write speed and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, see https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
+NOTE: High write speed and a higher maximum transmission unit (MTU) of 8,896 bytes are available through the *High* write speed option with the n2-standard-16, n2-standard-32, n2-standard-48, and n2-standard-64 instance types. In addition, the higher MTU of 8,896 requires the selection of VPC-1, VPC-2 and VPC-3 for the deployment. High write speed and an MTU of 8,896 are feature-dependent and cannot be disabled individually within a configured instance. For more information on VPC-1, VPC-2, and VPC-3, refer to  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector[Rules for VPC-1, VPC-2, and VPC-3^]. 
 .. Activate write once, read many (WORM) storage, if desired.
 +
 WORM can't be enabled if data tiering was enabled for Cloud Volumes ONTAP versions 9.7 and below. Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering. 
@@ -403,14 +403,14 @@ https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objec
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to  the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
-For more information, see link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
+For more information, refer to  link:task-planning-your-config-gcp.html#choose-a-volume-usage-profile[Choose a volume usage profile^], link:concept-data-tiering.html[Data tiering overview^], and https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#[KB: What Inline Storage Efficiency features are supported with CVO?^]
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -434,6 +434,6 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-* If you want to apply quotas to volumes, use System Manager or the CLI.
+* If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.

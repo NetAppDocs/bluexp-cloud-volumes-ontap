@@ -13,16 +13,16 @@ summary: Data is automatically encrypted on Cloud Volumes ONTAP in Azure using A
 :imagesdir: ./media/
 
 [.lead]
-Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption] with a Microsoft-managed key. But you can use your own encryption key instead by following the steps on this page.
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using Azure Storage Service Encryption with a Microsoft-managed key. But you can use your own encryption key instead by following the steps on this page.
 
 == Data encryption overview
 
-Cloud Volumes ONTAP data is automatically encrypted in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^]. The default implementation uses a Microsoft-managed key. No setup is required.
+Cloud Volumes ONTAP data is automatically encrypted in Azure using https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview[Azure Storage Service Encryption^]. The default implementation uses a Microsoft-managed key. No setup is required.
 
 If you want to use a customer-managed key with Cloud Volumes ONTAP, then you need to complete the following steps:
 
-. From Azure, create a key vault and then generate a key in that vault
-. From BlueXP, use the API to create a Cloud Volumes ONTAP working environment that uses the key
+. From Azure, create a key vault and then generate a key in that vault.
+. From BlueXP, use the API to create a Cloud Volumes ONTAP working environment that uses the key.
 
 === Key rotation
 
@@ -68,7 +68,7 @@ After you create a Cloud Volumes ONTAP working environment that is configured to
 * Data
 |===
 
-All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key. If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the CVO creation request. This applies for all type of deployments. If you do not provide it, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
+All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key. If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the Cloud Volumes ONTAP creation request. This applies for all type of deployments. If you do not provide it, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
 
 == Create a user-assigned managed identity
 You have the option to create a resource called a user-assigned managed identity. Doing so allows you to encrypt your storage accounts when you create a Cloud Volumes ONTAP working environment. We recommend creating this resource prior to creating a key vault and generating a key.
@@ -107,7 +107,9 @@ Note the following requirements for the key vault:
 * The following options should be enabled:
 ** *Soft-delete* (this option is enabled by default, but must _not_ be disabled)
 ** *Purge protection*
-** *Azure Disk Encryption for volume encryption* (for single node systems or HA pairs in multiple zones)
+** *Azure Disk Encryption for volume encryption* (for single node systems, HA pairs in multiple zones, and HA single AZ deployments)
++
+NOTE: Usage of Azure customer-managed encryption keys is contingent upon having Azure Disk encryption enabled for the key vault.
 * The following option should be enabled if you created a user-assigned managed identity:
 ** *Vault access policy*
 . If you selected Vault access policy, click Create to create an access policy for the key vault. If not, skip to step 3.

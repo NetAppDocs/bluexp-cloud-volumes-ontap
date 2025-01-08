@@ -13,7 +13,7 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Volumes ONTAP system that has a node-based BYOL must have a system license installed with an active subscription. BlueXP simplifies the process by managing licenses for you and by displaying a warning before they expire.
+Each Cloud Volumes ONTAP system that has a node-based bring your own license (BYOL) must have a system license installed with an active subscription. BlueXP simplifies the process by managing licenses for you and by displaying a warning before they expire.
 
 TIP: A node-based license is the previous generation BYOL for Cloud Volumes ONTAP. A node-based license is available for license renewals only.
 
@@ -47,7 +47,7 @@ image:screenshot_warning.gif["Screen shot: Shows a Cloud Volumes ONTAP working e
 
 You can select the working environment to review the message.
 
-BlueXP includes a license expiration warning in the Cloud Volumes ONTAP report that's emailed to you, if you are an Account Admin and you enabled the option:
+BlueXP includes a license expiration warning in the Cloud Volumes ONTAP report that's emailed to you, if you are a BlueXP Organization or Account admin and you enabled the option:
 
 image:screenshot_cvo_report.gif[A screenshot of the user profile panel that shows the check box for enabling the Cloud Volumes ONTAP report via email.]
 

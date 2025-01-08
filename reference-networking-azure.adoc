@@ -20,8 +20,149 @@ Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly
 The following networking requirements must be met in Azure.
 
 === Outbound internet access
+Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
 
-Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
+==== Cloud Volumes ONTAP endpoints
+Cloud Volumes ONTAP requires outbound internet access to contact various endpoints for day-to-day operations.
+
+The following endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console^].
+
+[cols=5*,options="header,autowidth"]
+|===
+| Endpoints
+| Applicable for
+| Purpose
+| BlueXP deployment modes
+| Impact if unavailable
+
+| 
+\https://netapp-cloud-account.auth0.com
+
+| 
+Authentication
+
+a| Used for BlueXP authentication.
+
+| Standard and restricted modes.
+
+a|User authentication fails and the following services remain unavailable:
+
+* Cloud Volumes ONTAP services
+* ONTAP services
+* Protocols and proxy services
+
+| 
+\https://keyvault-production-aks.vault.azure.net
+
+|
+Key Vault
+
+| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
+
+| Standard, restricted, and private modes.
+
+| Cloud Volumes ONTAP services are unavailable.  
+
+| 
+\https://cloudmanager.cloud.netapp.com/tenancy
+
+| 
+Tenancy
+
+| Used to retrieve the Cloud Volumes ONTAP resources from BlueXP tenancy to authorize resources and users.
+
+| Standard and restricted modes.
+
+|Cloud Volumes ONTAP resources and the users are not authorized.  
+
+| 
+\https://support.netapp.com/aods/asupmessage
+\https://support.netapp.com/asupprod/post/1.0/postAsup
+
+| 
+AutoSupport
+
+| Used to send AutoSupport telemetry data to NetApp support. 
+
+| Standard and restricted modes.
+
+| AutoSupport information remains undelivered. 
+
+| 
+\https://management.azure.com
+\https://login.microsoftonline.com
+\https://blob.core.windows.net
+\https://core.windows.net
+
+| Public regions
+
+| Communication with Azure services.
+
+| Standard, restricted, and private modes.
+
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure. 
+
+| 
+\https://management.chinacloudapi.cn
+\https://login.chinacloudapi.cn
+\https://blob.core.chinacloudapi.cn
+\https://core.chinacloudapi.cn
+
+| China Region
+
+|Communication with Azure services.
+
+| Standard, restricted, and private modes.
+
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+
+| 
+\https://management.microsoftazure.de
+\https://login.microsoftonline.de
+\https://blob.core.cloudapi.de
+\https://core.cloudapi.de
+
+| Germany Region
+
+|Communication with Azure services.  
+
+| Standard, restricted, and private modes.
+
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+
+| 
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.us
+\https://blob.core.usgovcloudapi.net
+\https://core.usgovcloudapi.net
+
+| Government regions
+
+|Communication with Azure services. 
+
+| Standard, restricted, and private modes.
+
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+
+| 
+\https://management.azure.microsoft.scloud
+\https://login.microsoftonline.microsoft.scloud
+\https://blob.core.microsoft.scloud
+\https://core.microsoft.scloud
+
+| Government DoD regions
+
+|Communication with Azure services.
+
+
+| Standard, restricted, and private modes.
+
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+
+|===
+
+==== Outbound internet access for NetApp AutoSupport 
+Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support. 
 
 Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
 
@@ -35,6 +176,8 @@ If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also n
 After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
+
+
 
 === IP addresses
 
@@ -135,9 +278,9 @@ TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/
 
 When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
 
-* *Selected VNet only*: the source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
-
-* *All VNets*: the source for inbound traffic is the 0.0.0.0/0 IP range.
+* *Selected VNet only*: The source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
+* *All VNets*: The source for inbound traffic is the 0.0.0.0/0 IP range.
+* *Disabled*: This option restricts the public network access to your storage account, and disables data tiering for Cloud Volumes ONTAP systems. This is a recommended option if your private IP addresses should not be exposed even within the same VNet due to security regulations and policies.
 
 [cols=4*,options="header,autowidth"]
 
@@ -152,7 +295,7 @@ inbound_ssh | 22
 TCP | Any to Any | SSH access to the IP address of the cluster management LIF or a node management LIF
 | 1001
 inbound_http | 80
-TCP | Any to Any | HTTP access to the System Manager web console using the IP address of the cluster management LIF
+TCP | Any to Any | HTTP access to the ONTAP System Manager web console using the IP address of the cluster management LIF
 | 1002
 inbound_111_tcp | 111
 TCP | Any to Any | Remote procedure call for NFS
@@ -170,7 +313,7 @@ inbound_161-162 _udp | 161-162
 UDP | Any to Any | Simple network management protocol
 | 1007
 inbound_443 | 443
-TCP | Any to Any | Connectivity with the Connector and HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+TCP | Any to Any | Connectivity with the Connector and HTTPS access to the ONTAP System Manager web console using the IP address of the cluster management LIF
 | 1008
 inbound_445 | 445
 TCP | Any to Any | Microsoft SMB/CIFS over TCP with NetBIOS framing
@@ -226,11 +369,13 @@ Any protocol | Any to Any | Block all other inbound traffic
 
 When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:
 
-* *Selected VNet only*: the source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
+* *Selected VNet only*: The source for inbound traffic is the subnet range of the VNet for the Cloud Volumes ONTAP system and the subnet range of the VNet where the Connector resides. This is the recommended option.
 
-* *All VNets*: the source for inbound traffic is the 0.0.0.0/0 IP range.
+* *All VNets*: The source for inbound traffic is the 0.0.0.0/0 IP range.
 
 NOTE: HA systems have less inbound rules than single node systems because inbound data traffic goes through the Azure Standard Load Balancer. Because of this, traffic from the Load Balancer should be open, as shown in the "AllowAzureLoadBalancerInBound" rule.
+
+* *Disabled*: This option restricts the public network access to your storage account, and disables data tiering for Cloud Volumes ONTAP systems. This is a recommended option if your private IP addresses should not be exposed even within the same VNet due to security regulations and policies.
 
 [cols=4*,options="header,autowidth"]
 
@@ -242,7 +387,7 @@ NOTE: HA systems have less inbound rules than single node systems because inboun
 
 | 100
 inbound_443 | 443
-Any protocol | Any to Any | Connectivity with the Connector and HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+Any protocol | Any to Any | Connectivity with the Connector and HTTPS access to the ONTAP System Manager web console using the IP address of the cluster management LIF
 | 101
 inbound_111_tcp | 111
 Any protocol | Any to Any | Remote procedure call for NFS

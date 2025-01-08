@@ -19,7 +19,7 @@ Manage node-based licenses in the BlueXP digital wallet to ensure that each Clou
 
 _Node-based licenses_ are the previous generation licensing model (and not available for new customers):
 
-* BYOL licenses purchased from NetApp
+* Bring your own license (BYOL) licenses purchased from NetApp
 * Hourly pay-as-you-go (PAYGO) subscriptions from your cloud provider's marketplace
 
 The _BlueXP digital wallet_ enables you to manage licenses for Cloud Volumes ONTAP from a single location. You can add new licenses and update existing licenses.
@@ -81,7 +81,7 @@ Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dol
 * Licensing for a Cloud Volumes ONTAP HA pair is converted to a 51 TiB data service license
 * Licensing for a Cloud Volumes ONTAP single node is converted to a 32 TiB data service license
 
-The converted license has the same expiry date as the Cloud Volumes ONTAP license.
+The converted license has the same expiration date as the Cloud Volumes ONTAP license.
 
 .Steps
 
@@ -245,3 +245,8 @@ https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Lear
 . Terminate the Cloud Volumes ONTAP system that you no longer need by deleting the original working environment.
 +
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deleting-working-env.html[Learn how to delete a Cloud Volumes ONTAP working environment].
+
+.Related topic
+
+link: link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses]
+link:task-convert-node-capacity.html[Convert node-based licenses to capacity based]

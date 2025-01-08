@@ -39,8 +39,6 @@ endif::aws[]
 
 BlueXP determines where to place a new volume by looking at several factors: an aggregate's maximum size, whether thin provisioning is enabled, and free space thresholds for aggregates.
 
-TIP: The Account Admin can modify free space thresholds from the *Settings* page.
-
 ifdef::aws[]
 ==== Disk size selection for aggregates in AWS
 
@@ -72,29 +70,27 @@ Rather than let BlueXP manage aggregates for you, you can do it yourself. link:t
 
 == Capacity management
 
-The Account Admin can choose whether BlueXP notifies you of storage capacity decisions or whether BlueXP automatically manages capacity requirements for you.
+The BlueXP Organization or Account admin can choose whether BlueXP notifies you of storage capacity decisions or whether BlueXP automatically manages capacity requirements for you.
 
 This behavior is determined by the _Capacity Management Mode_ on a Connector. The Capacity Management Mode affects all Cloud Volumes ONTAP systems managed by that Connector. If you have another Connector, it can be configured differently.
 
 === Automatic capacity management
 
-The Capacity Management Mode is set to automatic by default. In this mode, BlueXP automatically purchases new disks for Cloud Volumes ONTAP instances when more capacity is needed, deletes unused collections of disks (aggregates), moves volumes between aggregates when needed, and attempts to unfail disks.
+The Capacity Management Mode is set to automatic by default. In this mode, BlueXP checks the free space ratio every 15 minutes to determine if the free space ratio falls below the specified threshold. If more capacity is needed, BlueXP automatically initiates purchase of new disks, deletes unused collections of disks (aggregates), moves volumes between aggregates as required, and attempts to prevent disk failure.
 
 The following examples illustrate how this mode works:
 
 * If an aggregate reaches the capacity threshold and it has room for more disks, BlueXP automatically purchases new disks for that aggregate so volumes can continue to grow.
 +
-BlueXP checks the free space ratio every 15 minutes to determine if it needs to purchase additional disks.
 ifdef::aws[]
-+
 In the case of an aggregate in AWS that supports Elastic Volumes, BlueXP also increases the size of the disks in a RAID group. link:concept-aws-elastic-volumes.html[Learn more about support for Elastic Volumes].
 endif::aws[]
-
++
 * If an aggregate reaches the capacity threshold and it can't support any additional disks, BlueXP automatically moves a volume from that aggregate to an aggregate with available capacity or to a new aggregate.
 +
 If BlueXP creates a new aggregate for the volume, it chooses a disk size that accommodates the size of that volume.
 +
-Note that free space is now available on the original aggregate. Existing volumes or new volumes can use that space. The space can't be returned to the cloud provder in this scenario.
+Note that free space is now available on the original aggregate. Existing volumes or new volumes can use that space. The space can't be returned to the cloud provider in this scenario.
 
 * If an aggregate contains no volumes for more than 12 hours, BlueXP deletes it.
 
@@ -104,7 +100,7 @@ BlueXP's automatic capacity management doesn't apply to LUNs. When BlueXP create
 
 === Manual capacity management
 
-If the Account Admin set the Capacity Management Mode to manual, BlueXP displays Action Required messages when capacity decisions must be made. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
+If the BlueXP Organization or Account admin set the Capacity Management Mode to manual, BlueXP displays Action Required messages when capacity decisions must be made. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
 
 === Learn more
 

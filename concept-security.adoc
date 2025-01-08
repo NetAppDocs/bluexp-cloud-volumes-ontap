@@ -34,7 +34,7 @@ You can use NetApp encryption solutions with native encryption from your cloud p
 
 === NetApp encryption solutions (NVE and NAE)
 
-Cloud Volumes ONTAP supports https://www.netapp.com/us/media/ds-3899.pdf[NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE)^]. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. Both NVE and NAE use AES 256-bit encryption.
+Cloud Volumes ONTAP supports https://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf[NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE)^]. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. Both NVE and NAE use AES 256-bit encryption.
 
 * NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
 * NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
@@ -63,13 +63,13 @@ When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encrypt
 
 TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
 
-If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task-setting-up-kms.html[Setting up the AWS KMS].
+If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For information, refer to link:task-setting-up-kms.html[Setting up the AWS KMS].
 endif::aws[]
 
 ifdef::azure[]
 === Azure Storage Service Encryption
 
-Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key.
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview[Azure Storage Service Encryption^] with a Microsoft-managed key.
 
 You can use your own encryption keys if you prefer. link:task-set-up-azure-encryption.html[Learn how to set up Cloud Volumes ONTAP to use a customer-managed key in Azure].
 endif::azure[]
@@ -88,9 +88,9 @@ You can use integrated antivirus functionality on ONTAP systems to protect data 
 
 ONTAP virus scanning, called _Vscan_, combines best-in-class third-party antivirus software with ONTAP features that give you the flexibility you need to control which files get scanned and when.
 
-For information about the vendors, software, and versions supported by Vscan, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix^].
+For information about the vendors, software, and versions supported by Vscan, refer to the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix^].
 
-For information about how to configure and manage the antivirus functionality on ONTAP systems, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-acg/home.html[ONTAP 9 Antivirus Configuration Guide^].
+For information about how to configure and manage the antivirus functionality on ONTAP systems, refer to the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-acg/home.html[ONTAP 9 Antivirus Configuration Guide^].
 
 == Ransomware protection
 

@@ -23,7 +23,7 @@ If you want to delete an aggregate, you must have first deleted the volumes in t
 
 .About this task
 
-If an aggregate is running out of space, you can move volumes to another aggregate by using System Manager.
+If an aggregate is running out of space, you can move volumes to another aggregate by using ONTAP System Manager.
 
 .Steps
 
@@ -33,7 +33,7 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 
 . In the working environment, click the *Aggregates* tab.
 
-. On the Aggregates tab, navigate to the desired title and then click the *... (ellipse icon)*.
+. On the Aggregates tab, navigate to the desired title and then click the *... (ellipses icon)*.
 +
 image:screenshot_aggr_menu_options.png[A screenshot of the Aggregates menu options.]
 
@@ -45,13 +45,13 @@ image:screenshot_aggr_menu_options.png[A screenshot of the Aggregates menu optio
 | Task
 | Action
 
-| View information about an aggregate | Under the ... (ellipse icon) menu, click *View aggregate details*.
+| View information about an aggregate | Under the ... (ellipses icon) menu, click *View aggregate details*.
 
-| Create a volume on a specific aggregate |	Under the ... (ellipse icon) menu, click *Add volume*.
+| Create a volume on a specific aggregate |	Under the ... (ellipses icon) menu, click *Add volume*.
 
 | Add disks to an aggregate
 a|
-.. Under the ... (ellipse icon) menu, click *Add disks*.
+.. Under the ... (ellipses icon) menu, click *Add disks*.
 .. Select the number of disks that you want to add and click *Add*.
 +
 TIP: All disks in an aggregate must be the same size.
@@ -59,7 +59,7 @@ TIP: All disks in an aggregate must be the same size.
 ifdef::aws[]
 | Increase the capacity of an aggregate that supports Amazon EBS Elastic Volumes
 a|
-.. Under the ... (ellipse icon) menu, click *Increase capacity*.
+.. Under the ... (ellipses icon) menu, click *Increase capacity*.
 .. Enter the additional capacity that you'd like to add and then click *Increase*.
 +
 Note that you must increase the capacity of the aggregate by a minimum of 256 GiB or 10% of the aggregate's size.
@@ -69,7 +69,7 @@ endif::aws[]
 
 | Delete an aggregate
 a|
-.. Select an aggregate tile that does not contain any volumes click the *... (ellipse icon) > Delete*.
+.. Select an aggregate tile that does not contain any volumes click the *... (ellipses icon) > Delete*.
 .. Click *Delete* again to confirm.
 
 |===

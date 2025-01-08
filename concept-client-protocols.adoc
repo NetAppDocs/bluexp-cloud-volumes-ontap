@@ -38,6 +38,6 @@ link:https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Le
 
 == NVMe-TCP
 
-NVMe-TCP is supported for cloud providers if you are using Cloud Volumes ONTAP version 9.12.1 or newer. BlueXP does not provide any management capabilities for NVMe-TCP. 
+Beginning with ONTAP version 9.12.1, NVMe-TCP is supported for cloud providers. BlueXP does not provide any management capabilities for NVMe-TCP. 
 
-For more information on configuring NVMe through ONTAP, see https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-nvme-task.html[Configure a storage VM for NVMe^].
+For more information on configuring NVMe through ONTAP, refer to https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-nvme-task.html[Configure a storage VM for NVMe^].

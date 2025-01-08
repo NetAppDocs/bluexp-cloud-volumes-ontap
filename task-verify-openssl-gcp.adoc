@@ -21,7 +21,7 @@ NOTE: The OpenSSL commands to validate the image are compatible with Linux, Mac 
 
 . Verify the certificate using OpenSSL. 
 +
-.Click to display the script
+.Click to display
 [%collapsible]
 +
 ====
@@ -137,7 +137,7 @@ Certificate-GCP-CVO-20230119-0XXXXX.pem: OK
 
 . Decrypt the signature using the extracted public key and verify the contents of the downloaded disk.raw file.
 +
-.Click to display the script
+.Click to display
 [%collapsible]
 +
 ====

@@ -63,7 +63,7 @@ image:screenshot_aws_e0a.gif[A screenshot of the AWS Console that shows port e0a
 +
 You should have identified the maximum number of supported IP addresses per interface in the previous section of this page.
 
-.. Optional: Go to the CLI for Cloud Volumes ONTAP and run *network interface show* to confirm that each of these IP addresses are in use.
+.. Optional: Go to the ONTAP CLI for Cloud Volumes ONTAP and run *network interface show* to confirm that each of these IP addresses are in use.
 +
 If an IP address isn't in use, then you can use it with the new storage VM.
 

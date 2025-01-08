@@ -8,6 +8,7 @@ settings:
     pdf_enabled: true
     harmony_enabled: true
   rss_page: "whats-new.html"
+
   filter:
     label: Cloud provider
     default: All cloud providers
@@ -37,7 +38,7 @@ sidebar:
       entries:
         - title: Learn about Cloud Volumes ONTAP
           url: /concept-overview-cvo.html
-        - title: Supported versions for new deployments
+        - title: Supported ONTAP versions for new deployments
           url: /reference-versions.html
         - title: Get started in Amazon Web Services
           flavor: aws
@@ -64,7 +65,7 @@ sidebar:
               url: /task-set-up-licensing-aws.html
             - title: Launch Cloud Volumes ONTAP in AWS
               url: /task-deploying-otc-aws.html
-            - title: Get started in AWS C2S
+            - title: Deploy Cloud Volumes ONTAP in AWS Secret regions
               url: /task-getting-started-aws-c2s.html
         - title: Get started in Microsoft Azure
           flavor: azure
@@ -79,10 +80,30 @@ sidebar:
               url: /task-set-up-azure-encryption.html
             - title: Set up licensing
               url: /task-set-up-licensing-azure.html
-            - title: Enable high availability mode
+            - title: Enable high-availability mode
               url: /task-azure-high-availability-mode.html
+            - title: Enable VMOrchestratorZonalMultiFD for single availability zones
+              url: /task-saz-feature.html  
             - title: Launch Cloud Volumes ONTAP in Azure
-              url: /task-deploying-otc-azure.html                                 
+              url: /task-deploying-otc-azure.html
+            - title: Azure Platform Image Verification
+              entries:
+                - title: Overview
+                  url: /concept-azure-image-verification.html
+                - title: Download Azure Image Digest File 
+                  url: /task-azure-download-digest-file.html
+                - title: Image Export
+                  url: /task-azure-image-export.html
+                - title: File signature verification
+                  entries:
+                    - title: File signature verification
+                      url: /concept-azure-file-sig-verify.html
+                    - title: Linux File signature verification
+                      url: /task-file-verification-linux.html
+                    - title: Mac OS File signature verification 
+                      url: /task-file-verification-mac.html
+                - title: Additional information
+                  url: /reference-image-verification-links.html                
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
@@ -174,12 +195,16 @@ sidebar:
               url: /task-google-key-manager.html
             - title: Improve ransomware protection
               url: /task-protecting-ransomware.html
+            - title: Create tamperproof Snapshot copies for WORM storage
+              url: /reference-worm-snaplock.html  
         - title: System administration
           entries:
             - title: Upgrade Cloud Volumes ONTAP
               url: /task-updating-ontap-cloud.html
             - title: Register pay-as-you-go systems
               url: /task-registering.html
+            - title: Convert node-based licenses
+              url: /task-convert-node-capacity.html                
             - title: Stop and start a system
               url: /task-managing-state.html
             - title: Synchronize system time
@@ -236,7 +261,11 @@ sidebar:
     - title: Concepts
       entries:
         - title: Licensing
-          url: /concept-licensing.html
+          entries:
+            - title: Licensing in Cloud Volumes ONTAP
+              url: /concept-licensing.html
+            - title: Learn more about capacity-based licenses
+              url: /concept-licensing-charging.html  
         - title: Storage
           entries:
             - title: Client protocols
@@ -275,7 +304,7 @@ sidebar:
           url: /concept-performance.html
         - title: Management of node-based BYOL
           url: /concept-license-management.html
-        - title: AutoSupport and Active IQ Digital Advisor
+        - title: AutoSupport and Digital Advisor
           url: /concept-active-iq.html
         - title: Default configurations
           url: /reference-default-configs.html

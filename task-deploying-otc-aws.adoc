@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-deploying-otc-aws.html
-keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, aws, serial number, license key, byol, test instance, aws tags, tags, location, vpc, encryption, security group, aws-managed encryption, disk size, disk type, write speed, licensing, IAM role, preconfigured package, access control, volume protection, usage profile, register, CIFS share, quota, qtree, WorkingEnvironmentId, HA, high availability, subscription, cloud data sense, cloud backup
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, aws, serial number, license key, byol, test instance, aws tags, tags, location, vpc, encryption, security group, aws-managed encryption, disk size, disk type, write speed, licensing, IAM role, preconfigured package, access control, volume protection, usage profile, register, CIFS share, quota, qtree, WorkingEnvironmentId, HA, high-availability, subscription, cloud data sense, cloud backup
 summary: You can launch Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS.
 ---
 
@@ -22,13 +22,13 @@ You need the following to create a working environment.
 [[licensing]]
 * A Connector that's up and running.
 
-** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Connector that is associated with your workspace^].
+** You should have a https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[Connector that is associated with your project or workspace^].
 
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[You should be prepared to leave the Connector running at all times^].
 
 * An understanding of the configuration that you want to use.
 +
-You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration^].
+You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, refer to link:task-planning-your-config.html[Planning your Cloud Volumes ONTAP configuration^].
 
 * An understanding of what's required to set up licensing for Cloud Volumes ONTAP.
 +
@@ -36,7 +36,7 @@ link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
 
 * DNS and Active Directory for CIFS configurations.
 +
-For details, see link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS^].
+For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS^].
 
 == Launching a single-node Cloud Volumes ONTAP system in AWS
 
@@ -73,7 +73,7 @@ You can add up to four tags from the user interface when creating a working envi
 
 For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
 
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 | Edit Credentials | Choose the AWS credentials associated with the account where you want to deploy this system. You can also associate the AWS Marketplace subscription to use with this Cloud Volumes ONTAP system.
 
@@ -146,7 +146,7 @@ If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.ht
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose a disk type, configure the underlying storage, and choose whether to keep data tiering enabled.
 +
@@ -208,14 +208,14 @@ If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONT
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
 +
-For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile[Understanding volume usage profiles^] and link:concept-data-tiering.html[Data tiering overview^].
+For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile[Understanding volume usage profiles^], link:concept-data-tiering.html[Data tiering overview^], and https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#[KB: What Inline Storage Efficiency features are supported with CVO?^]
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -239,7 +239,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-* If you want to apply quotas to volumes, use System Manager or the CLI.
+* If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
@@ -262,6 +262,12 @@ Immediately after you create the working environment, BlueXP launches a test ins
 . On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP HA*.
++
+Some AWS Local Zones are available. 
++
+Before you can use AWS Local Zones, you must enable Local Zones  and create a subnet in the Local Zone in your AWS account. Follow the *Opt in to an AWS Local Zone* and *Extend your Amazon VPC to the Local Zone* steps in the link:https://aws.amazon.com/tutorials/deploying-low-latency-applications-with-aws-local-zones/[AWS tutorial "Get Started Deploying Low Latency Applications with AWS Local Zones^]. 
++
+If you are running a Connector version 3.9.36 or below, you need to add the following permission to the AWS Connector role in the AWS EC2 console: DescribeAvailabilityZones.
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -280,13 +286,13 @@ You can add up to four tags from the user interface when creating a working envi
 
 For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
 
-| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI. Keep the default _admin_ user name or change it to a custom user name.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster administrator account. You can use these credentials to connect to Cloud Volumes ONTAP through ONTAP System Manager or the ONTAP CLI. Keep the default _admin_ user name or change it to a custom user name.
 
 | Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-If purchased a license directly from NetApp (BYOL), then an AWS subscription isn't required.
+If purchased a license directly from NetApp (bring your own license (BYOL)), then an AWS subscription isn't required.
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to BlueXP^].
 
@@ -308,7 +314,7 @@ TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP
 
 . *HA Deployment Models*: Choose an HA configuration.
 +
-For an overview of the deployment models, see link:concept-ha.html[Cloud Volumes ONTAP HA for AWS^].
+For an overview of the deployment models, refer to link:concept-ha.html[Cloud Volumes ONTAP HA for AWS^].
 
 . *Location and Connectivity* (single AZ) or *Region & VPC* (multiple AZs): Enter the network information that you recorded in the AWS worksheet.
 +
@@ -332,11 +338,11 @@ The following table describes fields for which you might need guidance:
 
 . *Floating IPs*: If you chose multiple AZs, specify the floating IP addresses.
 +
-The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
+The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs^].
 
 . *Route Tables*: If you chose multiple AZs, select the route tables that should include routes to the floating IP addresses.
 +
-If you have more than one route table, it is very important to select the correct route tables. Otherwise, some clients might not have access to the Cloud Volumes ONTAP HA pair. For more information about route tables, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
+If you have more than one route table, it is very important to select the correct route tables. Otherwise, some clients might not have access to the Cloud Volumes ONTAP HA pair. For more information about route tables, refer to the http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
 
 . *Data Encryption*: Choose no data encryption or AWS-managed encryption.
 +
@@ -367,7 +373,7 @@ If you prefer to use your own policy, it must meet link:task-set-up-iam-roles.ht
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed and select an instance type and the instance tenancy.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.13.1 and 9.13.1 P4 is available. The update does not occur from one release to another—for example, from 9.13 to 9.14.
 
 . *Underlying Storage Resources*: Choose a disk type, configure the underlying storage, and choose whether to keep data tiering enabled.
 +
@@ -429,14 +435,14 @@ If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONT
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
-| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. Refer to the https://docs.netapp.com/us-en/bluexp-automation/index.html[BlueXP automation docs^] for details.
 
 Note that you can configure an NTP server only when creating a CIFS server. It's not configurable after you create the CIFS server.
 |===
 
 . *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
 +
-For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
+For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile[Choose a volume usage profile^] and link:concept-data-tiering.html[Data tiering overview^].
 
 . *Review & Approve*: Review and confirm your selections.
 
@@ -460,6 +466,6 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-* If you want to apply quotas to volumes, use System Manager or the CLI.
+* If you want to apply quotas to volumes, use ONTAP System Manager or the ONTAP CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.

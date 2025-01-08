@@ -1,0 +1,48 @@
+---
+sidebar: sidebar
+permalink: task-azure-download-digest-file.html
+keywords: Azure, image, image signature, download, digest file, decompress, Linux, Mac OS, md5, sha256
+summary: You can download the Azure Image Digest File from the NetApp Support Site. 
+---
+
+= Download the Azure Image Digest File 
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Azure Image Digest File can be downloaded from the https://mysupport.netapp.com/site/[NetApp Support Site^]. The download is in tar.gz format and contains files for image signature verification.
+
+.Steps
+
+. Go to the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[Cloud Volumes ONTAP product page on the NetApp Support Site^] and download the required software version under the Downloads section.    
+
+. Under the Cloud Volumes ONTAP download page, click the *download button* for the Azure Image Digest File to download the TAR.GZ file.
++
+image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image that shows the NSS page containing the digest file tar.gz downloads]
+
+. For Linux and MacOS, you must perform the following to get the md5sum and sha256sum for the downloaded Azure Image Digest file.   
+... For md5sum, enter the `md5sum` command. 
+... For sha256sum, enter the `sha256sum` command.   
+
+. Verify the `md5sum` and `sha256sum` values match the Azure Image Digest File download.  
+
+. On Linux and Mac OS, perform the `tar -xzf` command to extract the tar.gz file.
++
+The extracted TAR.GZ file contains the digest file(.sig), public key certificate file(.pem), and chain certificate file(.pem). 
+
++
+*List result of untar tar.gz file*
++
+---- 
+$ ls cert/ -l
+-rw-r----- 1 netapp netapp  384 May  13 13:00 9.15.0P1_azure_digest.sig
+-rw-r----- 1 netapp netapp 2365 May  13 13:00 Certificate-9.15.0P1_azure.pem
+-rw-r----- 1 netapp netapp 8537 May  13 13:00 Certificate-Chain-9.15.0P1_azure.pem
+-rw-r----- 1 netapp netapp 8537 May  13 13:00 version_readme
+----
+
+
+ 

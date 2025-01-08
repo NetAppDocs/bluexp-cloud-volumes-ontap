@@ -29,13 +29,13 @@ For single node systems, I/O is interrupted.
 +
 For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 +
-TIP: BlueXP gracefully changes one node at a time by initiating takeover and waiting for give back. NetApp's QA team tested both writing and reading files during this process and didn't see any issues on the client side. As connections changed, we did see retries on the I/O level, but the application layer overcame these short "re-wire" of NFS/CIFS connections.
+TIP: BlueXP changes one node at a time by initiating takeover and waiting for give back. NetApp's Quality Assurance team tested both writing and reading files during this process and didn't see any issues on the client side. As connections changed, some retries were observed on the I/O level, but the application layer overcame the rewiring of NFS/CIFS connections.
 
 .Reference
 
-For a list of supported instance types in AWS, see link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute[Supported EC2 instances^].
+For a list of supported instance types in AWS, refer to link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute[Supported EC2 instances^].
 
-If you can't change the instance type from c4, m4, or r4 instances, see KB article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Unable_to_change_the_instance_type_from_r4_to_r5_with_disk_count_error["Unable to change the instance type from r4 to r5 with disk count error"^].
+If you can't change the instance type from c4, m4, or r4 instances, refer to KB article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_(KVM)["Converting an AWS Xen CVO instance to Nitro (KVM)"^].
 
 .Steps
 
@@ -45,7 +45,7 @@ If you can't change the instance type from c4, m4, or r4 instances, see KB artic
 +
 image::screenshot_features_instance_type.png[400,300 A screenshot that shows the Instance type setting under the Features panel available in the top right of the Overview page when viewing a working environment.]
 
-.. If you are using a node-based PAYGO license, you can optionally choose a different license and instance type by clicking the pencil icon next to *License type*.
+If you are using a node-based pay as you go (PAYGO) license, you can optionally choose a different license and instance type by clicking the pencil icon next to *License type*.
 
 . Choose an instance type, select the check box to confirm that you understand the implications of the change, and then click *Change*.
 

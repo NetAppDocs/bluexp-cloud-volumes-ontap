@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-removing.html
 keywords: working environments, removing, remove, rediscover
-summary: The Account Admin can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
+summary: You can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
 ---
 
 = Removing Cloud Volumes ONTAP working environments
@@ -13,23 +13,17 @@ summary: The Account Admin can remove a Cloud Volumes ONTAP working environment 
 :imagesdir: ./media/
 
 [.lead]
-The Account Admin can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
+You can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
 
 .About this task
 
-Removing a Cloud Volumes ONTAP working environment removes it from BlueXP. It does not delete the Cloud Volumes ONTAP system. You can later rediscover the working environment.
-
-Removing a working environment from BlueXP enables you to do the following:
-
-* Rediscover it in another workspace
-* Rediscover it from another BlueXP system
-* Rediscover it if you had problems during the initial discovery
+Removing a Cloud Volumes ONTAP working environment removes it from BlueXP. It does not delete the Cloud Volumes ONTAP system. You can later rediscover the working environment--for example, if you had problems during the initial discovery.
 
 .Steps
 
 . On the Canvas page, double-click on the working environment you want to remove. 
 
-. On the upper right of the BlueXP console, click the ellipse icon, and select *Remove from workspace*.
+. On the upper right of the BlueXP console, click the ellipses icon, and select *Remove from workspace*.
 +
 image:screenshot_settings_remove.png[A screenshot that shows the "Remove from workspace" option in the upper right of the BlueXP console.]
 
