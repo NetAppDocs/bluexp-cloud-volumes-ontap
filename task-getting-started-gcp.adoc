@@ -82,3 +82,4 @@ Click *Add Working Environment*, select the type of system that you would like t
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[Creating a Connector from BlueXP^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[Installing the Connector software on a Linux host^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[What BlueXP does with Google Cloud permissions^]
+
