@@ -5,7 +5,7 @@ keywords: capacity-based license charging, consumption for licenses, pricing for
 summary: Be familiar with the charging, consumption model, pricing, and configurations of capacity-based licenses.
 ---
 
-= Learn more about capacity-based licenses
+= Learn more about capacity-based licenses for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
