@@ -297,12 +297,13 @@ The default cooling period for the auto tiering policy is 31 days. You can chang
 == Remove an S3 bucket on decommissioning a working environment
 You can delete an S3 bucket with the data tiered from a Cloud Volumes ONTAP working environment when you decommission the environment.
 
-When you decommission a Cloud Volumes ONTAP environment, the S3 bucket that was created for the environment is not deleted automatically. You should delete the S3 bucket by using ONTAP CLI or APIs. You can delete the S3 bucket only if:
+You can delete the S3 bucket only if:
 
 * The Cloud Volume ONTAP working environment is deleted from BlueXP.
 * All objects are deleted from the bucket and the S3 bucket is empty.
 
-If the Cloud Volume ONTAP working environment is decommissioned, but has an S3 bucket with objects associated with it, the bucket will not be deleted to prevent any unintended data loss. It will be left in an orphaned state until all the objects are removed, following which, the bucket can be deleted.
+When you decommission a Cloud Volumes ONTAP working environment, the S3 bucket that was created for the environment is not deleted automatically, to prevent any unintended data loss, and remains in an orphaned state. You can delete the bucket objects, and later, the S3 bucket. Refer to https://docs.netapp.com/us-en/ontap-cli/vserver-object-store-server-bucket-delete.html#description[ONTAP CLI: vserver object-store-server bucket delete^].
+
 
 
 
