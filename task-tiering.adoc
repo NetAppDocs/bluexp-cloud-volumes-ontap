@@ -302,7 +302,8 @@ You can delete the S3 bucket only if:
 * The Cloud Volume ONTAP working environment is deleted from BlueXP.
 * All objects are deleted from the bucket and the S3 bucket is empty.
 
-When you decommission a Cloud Volumes ONTAP working environment, the S3 bucket that was created for the environment is not deleted automatically, to prevent any unintended data loss, and remains in an orphaned state. You can delete the bucket objects, and later, the S3 bucket. Refer to https://docs.netapp.com/us-en/ontap-cli/vserver-object-store-server-bucket-delete.html#description[ONTAP CLI: vserver object-store-server bucket delete^].
+When you decommission a Cloud Volumes ONTAP working environment, the S3 bucket that was created for the environment is not deleted automatically. Instead, it remains in an orphaned state to prevent any accidental data loss. You can delete the objects in the bucket, and subsequently remove the S3 bucket itself, or retain it for later use.
+Refer to https://docs.netapp.com/us-en/ontap-cli/vserver-object-store-server-bucket-delete.html#description[ONTAP CLI: vserver object-store-server bucket delete^].
 
 
 
