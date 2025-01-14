@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-tiering.html
-keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements, remove S3 bucket, delete S3 CVO bucket
 summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
 ---
 
-= Tiering inactive data to low-cost object storage
+= Tier inactive data to low-cost object storage
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -141,7 +141,7 @@ If you don't select a service account during deployment, you'll need to shut dow
 link:task-setting-up-gcp-encryption.html[Learn how to use customer-managed encryption keys with Cloud Volumes ONTAP].
 endif::gcp[]
 
-=== Enabling data tiering after implementing the requirements
+=== Enable data tiering after implementing the requirements
 
 BlueXP creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering through the API or ONTAP System Manager, which creates the object store. 
 //
@@ -163,7 +163,7 @@ BlueXP creates an object store for cold data when the system is created, as long
 
 NOTE: The ability to enable tiering through the BlueXP user interface will be available in a future Cloud Volumes ONTAP release.
 
-== Ensuring that tiering is enabled on aggregates
+== Ensure that tiering is enabled on aggregates
 
 Data tiering must be enabled on an aggregate in order to enable data tiering on a volume. You should be aware of the requirements for new volumes and for existing volumes.
 
@@ -197,7 +197,7 @@ image:screenshot_aggregate_tiering_enabled.png[A screenshot that shows informati
 
 You can now enable data tiering on new and existing volumes, as explained in the next section.
 
-== Tiering data from read-write volumes
+== Tier data from read-write volumes
 
 Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effective object storage, freeing up the performance tier for hot data.
 
@@ -227,7 +227,7 @@ image:screenshot_volumes_change_tiering_policy.png[Screenshot that shows the opt
 +
 BlueXP creates a new aggregate for the volume if a data tiering-enabled aggregate does not already exist.
 
-== Tiering data from data protection volumes
+== Tier data from data protection volumes
 
 Cloud Volumes ONTAP can tier data from a data protection volume to a capacity tier. If you activate the destination volume, the data gradually moves to the performance tier as it is read.
 
@@ -245,7 +245,7 @@ image:screenshot_replication_tiering.gif[Screenshot that shows the S3 tiering op
 +
 For help with replicating data, refer to https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Replicating data to and from the cloud^].
 
-== Changing the storage class for tiered data
+== Change the storage class for tiered data
 
 After you deploy Cloud Volumes ONTAP, you can reduce your storage costs by changing the storage class for inactive data that hasn't been accessed for 30 days. The access costs are higher if you do access the data, so you must take that into consideration before you change the storage class.
 
@@ -259,7 +259,7 @@ For information about supported storage classes, refer to link:concept-data-tier
 
 . Choose a storage class and then click *Save*.
 
-== Changing the free space ratio for data tiering
+== Change the free space ratio for data tiering
 
 The free space ratio for data tiering defines how much free space is required on Cloud Volumes ONTAP SSDs/HDDs when tiering data to object storage. The default setting is 10% free space, but you can tweak the setting based on your requirements.
 
@@ -279,7 +279,7 @@ image:screenshot_settings_icon.png[A screenshot that shows the Settings icon in 
 
 . Change the free space ratio based on your requirements and click *Save*.
 
-== Changing the cooling period for the auto tiering policy
+== Change the cooling period for the auto tiering policy
 
 If you enabled data tiering on a Cloud Volumes ONTAP volume using the _auto_ tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using ONTAP CLI and API only.
 
@@ -293,3 +293,18 @@ The default cooling period for the auto tiering policy is 31 days. You can chang
 .Step
 
 . Use the _minimumCoolingDays_ parameter with your API request when creating a volume or modifying an existing volume.
+
+== Remove an S3 bucket on decommissioning a working environment
+You can delete an S3 bucket with the data tiered from a Cloud Volumes ONTAP working environment when you decommission the environment.
+
+You can delete the S3 bucket only if:
+
+* The Cloud Volume ONTAP working environment is deleted from BlueXP.
+* All objects are deleted from the bucket and the S3 bucket is empty.
+
+When you decommission a Cloud Volumes ONTAP working environment, the S3 bucket that was created for the environment is not deleted automatically. Instead, it remains in an orphaned state to prevent any accidental data loss. You can delete the objects in the bucket, and subsequently remove the S3 bucket itself, or retain it for later use.
+Refer to https://docs.netapp.com/us-en/ontap-cli/vserver-object-store-server-bucket-delete.html#description[ONTAP CLI: vserver object-store-server bucket delete^].
+
+
+
+
