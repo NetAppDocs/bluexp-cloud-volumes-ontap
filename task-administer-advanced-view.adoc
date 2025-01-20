@@ -5,7 +5,7 @@ keywords: system manager, advanced view, access system manager, load system mana
 summary: If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager, which is a management interface that's provided with an ONTAP system. We have included the System Manager interface directly inside BlueXP so that you don't need to leave BlueXP for advanced management.
 ---
 
-= Administer Cloud Volumes ONTAP using the Advanced View
+= Administer Cloud Volumes ONTAP using ##System Manager##
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,7 +17,7 @@ If you need to perform advanced management of Cloud Volumes ONTAP, you can do so
 
 == Features
 
-The Advanced View in BlueXP gives you access to additional management features:
+##You can perform these management functions:##
 
 * Advanced storage management
 +
@@ -41,7 +41,7 @@ Set up SAN initiator groups and NFS clients.
 
 == Supported configurations
 
-Advanced management through ONTAP System Manager is supported with Cloud Volumes ONTAP 9.10.0 and later in standard cloud regions.
+Cloud Volumes ONTAP 9.10.0 and later supports advanced management through ONTAP System Manager in standard cloud regions.
 
 System Manager integration is not supported in GovCloud regions or in regions that have no outbound internet access.
 
@@ -51,7 +51,7 @@ A few features that appear in the System Manager interface are not supported wit
 
 * BlueXP tiering
 +
-The BlueXP tiering service is not supported with Cloud Volumes ONTAP. Tiering data to object storage must be set up directly from BlueXP's Standard View when creating volumes.
+The BlueXP tiering service is not supported with Cloud Volumes ONTAP. You should set up tiering of data to object storage directly from BlueXP's Standard View when creating volumes.
 
 * Tiers
 +
@@ -63,9 +63,23 @@ Automatic firmware updates from the *Cluster > Settings* page is not supported w
 
 In addition, role-based access control from System Manager is not supported.
 
-== How to get started
+== ##Configure authentication for accessing System Manager##
 
-Open a Cloud Volumes ONTAP working environment and click the Advanced View option.
+As an administrator, you can activate user authentication for accessing System Manager from BlueXP. You can determine the right level of access permissions based on the ONTAP user roles, and enable or disable authentication as needed. If you enable authentication, then users need to enter their System Manager credentials every time they access it from BlueXP, because BlueXP doesn't store the credentials internally. If you disable authentication, then users can access System Manager by using BlueXP admin credentials.
+
+.Required permissions
+
+BlueXP Organization or Account admin privileges are required to modify Cloud Volumes ONTAP Settings.
+
+.Steps
+.	In the upper right of the BlueXP console, click the Settings icon, and select *Cloud Volumes ONTAP Settings*.
+. Under *General*, click *Force user credentials for cluster login via System Manager*.
+. Select the *Enable/Disable* check box.
+. Click *Save*.
+
+== Get started with System Manager
+
+You can access ONTAP System Manager from a Cloud Volumes ONTAP working environment.
 
 .Steps
 
@@ -74,6 +88,8 @@ Open a Cloud Volumes ONTAP working environment and click the Advanced View optio
 . On the Canvas page, select a Cloud Volumes ONTAP system.
 
 . From the right panel, under *Services*, find *System Manager* and select *Open*.
+
+. ##If prompted, enter your System Manager credentials and click *Login*.##
 
 . If the confirmation message appears, read through it and click *Close*.
 
