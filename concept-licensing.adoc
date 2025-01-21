@@ -107,6 +107,9 @@ Single node or HA with capacity charging for primary and secondary volumes at th
 NOTE: A pay-as-you-go (PAYGO) subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, refer to https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
 * Add on any of NetApp's cloud data services at extra cost
 
+=== Functioning of capacity-based licenses
+The functioning of Cloud Volumes ONTAP PAYGO and BYOL licenses depends on the availability of the BlueXP connector. For more information, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap[Learn about Connectors].
+
 === How to get started
 
 Learn how to get started with capacity-based licensing:
