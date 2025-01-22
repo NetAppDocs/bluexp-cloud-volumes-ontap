@@ -71,7 +71,7 @@ All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a custome
 If you create a new version of your key, Cloud Volumes ONTAP automatically uses the latest key version, ensuring your data remains secure without the need for manual updates.
 
 .Steps
-. Navigate to your Key Vault in the Azure portal.
+. Navigate to your key vault in the Azure portal.
 . Select the key you want to rotate.
 . Click *New Version* to generate a new version of the key.
 
