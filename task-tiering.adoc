@@ -20,7 +20,7 @@ To set up data tiering, you need to do the following:
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Choose a supported configuration
 
 [role="quick-margin-para"]
-Most configurations are supported. If you have a Cloud Volumes ONTAP system running the most recent version, then you should be good to go. link:task-tiering.html#configurations-that-support-data-tiering[Learn more].
+Most configurations are supported. If you have a Cloud Volumes ONTAP system running the most recent version, then you are good to go. link:task-tiering.html#configurations-that-support-data-tiering[Learn more].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Ensure connectivity between Cloud Volumes ONTAP and object storage
 
@@ -40,7 +40,7 @@ endif::gcp[]
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Ensure that you have an aggregate with tiering enabled
 
 [role="quick-margin-para"]
-Data tiering must be enabled on an aggregate in order to enable data tiering on a volume. You should be aware of the requirements for new volumes and for existing volumes. <<Ensuring that tiering is enabled on aggregates,Learn more>>.
+Data tiering should be enabled on an aggregate to enable it on a volume. You should be aware of the requirements for new volumes and for existing volumes. <<Ensuring that tiering is enabled on aggregates,Learn more>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Choose a tiering policy when creating, modifying, or replicating a volume
 
@@ -58,7 +58,7 @@ BlueXP prompts you to choose a tiering policy when you create, modify, or replic
 * You don't need to create an object store for the capacity tier. BlueXP does that for you.
 * You don't need to enable data tiering at the system level.
 +
-BlueXP creates an object store for cold data when the system is created, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
+BlueXP creates an object store for cold data when it creates the system, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
 ====
 
 == Configurations that support data tiering
@@ -120,7 +120,7 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
-The permissions are included in the custom role by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
+The custom role includes the permissions by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
 endif::azure[]
 
 ifdef::gcp[]
@@ -173,7 +173,7 @@ If you're enabling data tiering on a new volume, then you don't need to worry ab
 
 * *Existing volumes*
 +
-If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to use ONTAP System Manager to attach an existing aggregate to the object store.
+To enable data tiering on an existing volume, ensure it is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to use ONTAP System Manager to attach an existing aggregate to the object store.
 
 .Steps to confirm whether tiering is enabled on an aggregate
 
@@ -302,7 +302,7 @@ You can delete the S3 bucket only if:
 * The Cloud Volume ONTAP working environment is deleted from BlueXP.
 * All objects are deleted from the bucket and the S3 bucket is empty.
 
-When you decommission a Cloud Volumes ONTAP working environment, the S3 bucket that was created for the environment is not deleted automatically. Instead, it remains in an orphaned state to prevent any accidental data loss. You can delete the objects in the bucket, and subsequently remove the S3 bucket itself, or retain it for later use.
+When you decommission a Cloud Volumes ONTAP working environment, the S3 bucket that was created for the environment is not deleted automatically. Instead, it remains in an orphaned state to prevent any accidental data loss. You can delete the objects in the bucket, then remove the S3 bucket itself, or keep it for later use.
 Refer to https://docs.netapp.com/us-en/ontap-cli/vserver-object-store-server-bucket-delete.html#description[ONTAP CLI: vserver object-store-server bucket delete^].
 
 
