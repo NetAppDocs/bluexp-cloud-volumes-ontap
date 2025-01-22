@@ -40,7 +40,7 @@ For details, refer to link:reference-networking-aws.html[Networking requirements
 
 == Launching a single-node Cloud Volumes ONTAP system in AWS
 
-If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new working environment in BlueXP
+If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new working environment in BlueXP.
 
 .About this task
 
@@ -231,7 +231,7 @@ For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-v
 
 BlueXP launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.
 
-If you experience any issues launching the Cloud Volumes ONTAP instance, review the failure message. You can also select the working environment and click Re-create environment.
+If you have any issues launching the Cloud Volumes ONTAP instance, review the failure message. You can also select the working environment and click Re-create environment.
 
 For additional help, go to https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[NetApp Cloud Volumes ONTAP Support^].
 
@@ -292,7 +292,7 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 Click *Add Subscription* to associate the selected credentials with a new AWS Marketplace subscription. The subscription can be for an annual contract or to pay for Cloud Volumes ONTAP at an hourly rate.
 
-If purchased a license directly from NetApp (bring your own license (BYOL)), then an AWS subscription isn't required.
+If you purchased a license directly from NetApp (bring your own license (BYOL)), then an AWS subscription isn't required.
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html[Learn how to add additional AWS credentials to BlueXP^].
 

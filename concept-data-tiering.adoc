@@ -1,5 +1,5 @@
 ---
-sidebar: sidebar
+sidebar: sidebar 
 permalink: concept-data-tiering.html
 keywords: storage tiering, tier, tiering, data tiering, s3, s3 tiering, capacity, performance, s3 endpoint, fabric pool, fabricpool, s3 bucket, requirement, vpc endpoint, policy, policies, tiering policies, auto, snapshot only, backup, none, cooling period, volume tiering policies, blob, standard, infrequent access, hot, cool, tiering level, storage tier, storage class
 summary: Reduce your storage costs by enabling automated tiering of cold data to low-cost object storage.
@@ -45,7 +45,7 @@ Storage classes:: The default storage class for tiered data in AWS is _Standard_
 +
 If you don't plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: _Intelligent Tiering_, _One-Zone Infrequent Access_, _Standard-Infrequent Access_, or _S3 Glacier Instant Retrieval_. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.
 +
-The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://aws.amazon.com/s3/storage-classes[Amazon S3 documentation: Learn more about Amazon S3 storage classes^].
+Access costs are higher if you access the data, so consider this before changing the storage class. https://aws.amazon.com/s3/storage-classes[Amazon S3 documentation: Learn more about Amazon S3 storage classes^].
 +
 You can select a storage class when you create the working environment and you can change it any time afterwards. For instructions on changing the storage class, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
 +
