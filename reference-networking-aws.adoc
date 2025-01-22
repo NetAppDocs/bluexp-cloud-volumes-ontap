@@ -20,12 +20,12 @@ BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such
 The following requirements must be met in AWS.
 
 === Outbound internet access for Cloud Volumes ONTAP nodes
-Cloud Volumes ONTAP nodes require outbound internet access to contact the following endpoints for day-to-day operations.
+Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
+
+The BlueXP Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. For information about BlueXP-specific endpoints, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console^].
 
 ==== Cloud Volumes ONTAP endpoints
-Cloud Volumes ONTAP requires outbound internet access to contact various endpoints for day-to-day operations.
-
-The following endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console^].
+The following endpoints are specific to Cloud Volumes ONTAP operations.
 
 [cols=5*,options="header,autowidth"]
 |===
