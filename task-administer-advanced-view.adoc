@@ -65,7 +65,7 @@ In addition, role-based access control from System Manager is not supported.
 
 == ##Configure authentication for accessing System Manager##
 
-As an administrator, you can activate user authentication for users accessing ONTAP System Manager from BlueXP. You can determine the right level of access permissions based on the ONTAP user roles and enable or disable authentication as needed. If you enable authentication, then users need to enter their ONTAP user credentials every time they access System Manager from BlueXP or when the page is reloaded, because BlueXP doesn't store the credentials internally. If you disable authentication, users can access System Manager using BlueXP admin credentials.
+As an administrator, you can activate authentication for users accessing ONTAP System Manager from BlueXP. You can determine the right level of access permissions based on the ONTAP user roles, and enable or disable authentication as needed. If you enable authentication, then users need to enter their ONTAP user credentials every time they access System Manager from BlueXP or when the page is reloaded, because BlueXP doesn't store the credentials internally. If you disable authentication, users can access System Manager using BlueXP admin credentials.
 
 [NOTE]
 This setting is not controlled by BlueXP. This is a global setting that applies to all ONTAP users in your organization or account, and is independent of Cloud Volumes ONTAP working environments or BlueXP projects.
@@ -73,7 +73,7 @@ This setting is not controlled by BlueXP. This is a global setting that applies 
 
 .Required permissions
 
-BlueXP Organization or Account admin privileges are required to modify Cloud Volumes ONTAP Settings.
+You need to be assigned BlueXP Organization or Account admin privileges to modify Cloud Volumes ONTAP Settings.
 
 .Steps
 .	In the upper right of the BlueXP console, click the Settings icon, and select *Cloud Volumes ONTAP Settings*.
@@ -94,7 +94,7 @@ You can access ONTAP System Manager from a Cloud Volumes ONTAP working environme
 
 . On the Canvas page, select a Cloud Volumes ONTAP system.
 
-. From the right panel, under *Services*, find *System Manager* and select *Open*.
+. From the right panel, select *Services > *System Manager > *Open*.
 
 . ##If prompted, enter your ONTAP user credentials and click *Login*.##
 
