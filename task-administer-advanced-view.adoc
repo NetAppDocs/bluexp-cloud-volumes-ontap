@@ -94,7 +94,7 @@ You can access ONTAP System Manager from a Cloud Volumes ONTAP working environme
 
 . On the Canvas page, select a Cloud Volumes ONTAP system.
 
-. From the right panel, select *Services > *System Manager > *Open*.
+. From the right panel, select *Services > System Manager > Open*.
 
 . ##If prompted, enter your ONTAP user credentials and click *Login*.##
 
