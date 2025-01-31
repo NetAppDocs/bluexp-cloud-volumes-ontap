@@ -11,6 +11,7 @@ summary: Manage your node-based licenses in the BlueXP digital wallet to ensure 
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
+:target: _blank
 
 [.lead]
 Manage node-based licenses in the BlueXP digital wallet to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
@@ -83,7 +84,6 @@ Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dol
 
 The converted license has the same expiration date as the Cloud Volumes ONTAP license.
 
-.Watch demo
 :target: _blank
 
 link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de63&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app[View walkthrough of how to exchange node-based licenses.]
