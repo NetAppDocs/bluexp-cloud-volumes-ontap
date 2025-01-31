@@ -83,7 +83,10 @@ Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dol
 
 The converted license has the same expiration date as the Cloud Volumes ONTAP license.
 
-link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de63&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app[Watch a guided demo, target="_blank"]
+.Watch demo
+:target: _blank
+
+link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de63&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app[View walkthrough of how to exchange node-based licenses.]
 
 .Steps
 
