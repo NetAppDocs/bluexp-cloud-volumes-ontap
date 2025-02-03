@@ -1,0 +1,124 @@
+---
+sidebar: sidebar
+permalink: task-deploy-cvo-azure-mktplc.html
+keywords: deploy cvo marketplace, marketplace direct cvo deployment, azure marketplace
+summary: 
+---
+
+= Deploy Cloud Volumes ONTAP from the Azure marketplace
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+"Azure Marketplace Direct Deployment" is a convenient and user-friendly method of deploying Cloud Volumes ONTAP 9.16.1 and later, independently from BlueXP. You can now use the Azure marketplace to easily deploy an instance of Cloud Volumes ONTAP, and explore its features and capabilities within your environment.
+
+For more information about this offering, refer to link:concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP offerings on BlueXP and the marketplace].
+
+.About this task
+The instance of Cloud Volumes ONTAP deployed through the Azure marketplace has these properties:
+
+* The latest Cloud Volumes ONTAP version (9.16.1 or later).
+* A free license for Cloud Volumes ONTAP that is limited to 500 GiB of provisioned capacity. This license has no expiry date and excludes NetApp support.
+* Two nodes configured in a high availability (HA) mode in a single availability zone (AZ), provisioned with default serial numbers. The storage virtual machines (VMs) are deployed in a link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[flexible orchestration mode].
+* An aggregate created by default for the instance.
+* A Premium SSD v2 Managed Disk of 500 GiB provisioned capacity, and a root and a data disk.
+* One data storage VM deployed, with  NFS, CIFS, iSCSI, and NVMe/TCP data-services. No provision for additional VMs.
+* Licenses for NFS, CIFS (SMB), iSCSI, anti-ransomware (ARW), and SnapLock installed against the default serial numbers.
+* https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html[Temperature-sensitive storage efficiency (TSSE)^] enabled by default.
+* These features are not supported:
+** FabricPool tiering
+** Volume encryption and external key-management
+** SnapMirror data replication
+** Changing the instance type
+** Fast write mode
+
+
+.Before you begin
+* Ensure that you have a valid Azure marketplace subscription.
+* Ensure you meet the networking requirements for an link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[HA deployment in a single AZ] in Azure. Refer to link:reference-networking-azure.html[Set up Azure networking for Cloud Volumes ONTAP].
+* You need to be assigned one of these Azure roles to deploy Cloud Volumes ONTAP:
+** The `contributor` role with the default permissions. For more information, refer to the https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles[Azure documentation: Azure built-in roles^].
+** A custom RBAC role with the following permissions. For more information, refer to the https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles[Azure documentation: Azure custom roles^].
++ 
+====
+"permissions": [
+            {
+                "actions": [
+                  "Microsoft.AAD/register/action",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Network/loadBalancers/write",
+                    "Microsoft.ClassicCompute/virtualMachines/write",
+                    "Microsoft.Compute/capacityReservationGroups/deploy/action",
+                    "Microsoft.ClassicCompute/virtualMachines/networkInterfaces/associatedNetworkSecurityGroups/write",
+                    "Microsoft.Network/networkInterfaces/write",
+                    "Microsoft.Compute/virtualMachines/write",
+                    "Microsoft.Compute/virtualMachines/extensions/write",
+                    "Microsoft.Resources/deployments/validate/action",
+                    "Microsoft.Resources/subscriptions/resourceGroups/read",
+                    "Microsoft.Network/virtualNetworks/write",
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/networkSecurityGroups/write",
+                    "Microsoft.Network/networkSecurityGroups/read",
+                    "Microsoft.Compute/disks/write",
+                    "Microsoft.Compute/virtualMachineScaleSets/write",
+                    "Microsoft.Resources/deployments/write",
+                    "Microsoft.Network/virtualNetworks/subnets/read",
+                    "Microsoft.Network/virtualNetworks/subnets/write"
+                ],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+
+
+====
++
+[NOTE]
+If you have registered the resource provider "Microsoft.storage" to your subscription, then you don't need the `Microsoft.AAD/register/action` permission. For information, refer to the https://learn.microsoft.com/en-us/azure/role-based-access-control/permissions/storage[Azure documentation: Azure permissions for Storage^].
+
+.Steps
+. From the Azure marketplace site, search for NetApp products.
+. Click *NetApp Cloud Volumes ONTAP direct*.
+. Click *Create* to launch the deployment wizard.
+. Select a plan. The *Plan* list typically displays the latest releases of Cloud Volumes ONTAP.
+. In the *Basics* tab, provide these details:
+** *Subscription*: Select a subscription. The deployment will be linked to the subscription number.
+** *Resource group*: Use an existing resource group or create a new one. Resource groups help in allocating all resources, for example disks and VMs, within a single group for a Cloud Volumes ONTAP instance.
+** *Region*: Select a region that supports Azure HA deployment in a single AZ. Only the available regions are listed for selection.
+** *Size*: Select a VM size for the supported Premium SSD v2 Managed Disk.
+** *Zone*: Select a zone for the selected region.
+** *Admin Password*: Add a password. You use this admin password to log in to the system after the deployment.
+** *Confirm Password*: Re-enter the same password for confirmation.
+* Click *Next*. 
+* In the *Network* tab, add a virtual network and subnet or select them from the lists.
++
+[NOTE]
+To comply with Azure restrictions, you should create a new subnet when setting up a new virtual network. Likewise, if you choose an existing network, you should also select an existing subnet.
++
+* To select a predefined network security group, click *Yes*. Click *No* to assign a predefined Azure network security group with the necessary traffic rules. For information, refer to link:reference-networking-azure.html#security-group-rules[Security group rules for Azure]. 
+* Click *Next*.
+* In the *Advanced* tab confirm whether the two Azure features, necessary for this deployment, have been set. Refer to link:task-saz-feature.html[Enable an Azure feature for Cloud Volumes ONTAP single AZ deployments] and link:task-azure-high-availability-mode.html[Enable high-availability mode for Cloud Volumes ONTAP in Azure].
+* Click *Next* to define name and value pairs for the resources or resource groups in the *Tags* tab.
+* Click *Review + create*, verify the details, and click *Create*.
+
+.After you finish
+
+You can click the notification icon to review the progress. After Cloud Volumes ONTAP is deployed, you can view the VM listed for operations.
+
+Once accessible, use ONTAP System Manager or the CLI to log in to the VM with the admin credentials that you set. You can use the VM to create volumes (https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[for NFS^]), LUNs (https://docs.netapp.com/us-en/ontap-cli/lun-create.html[for iSCSI^]), and shares (https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[for CIFS^]) to start utilizing the storage capabilities of Cloud Volumes ONTAP.
+
+
+== Troubleshooting 
+Cloud Volumes ONTAP deployments made through the Azure marketplace do not include support from NetApp. If any issues arise during deployment, you can independently troubleshoot and resolve them.
+
+.Steps
+. On the Azure marketplace site, go to *Boot diagnostics > Serial log*.
+. Download and investigate the serial logs.
+. Consult the product documentation and knowledge base (KB) articles for troubleshooting.
+** https://learn.microsoft.com/en-us/partner-center/[Azure marketplace documentation]
+** https://www.netapp.com/support-and-training/documentation/[NetApp documentation]
+** https://kb.netapp.com/[NetApp KB articles]
