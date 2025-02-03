@@ -56,6 +56,8 @@ sidebar:
                 - title: Deploy an HA pair in a shared subnet
                   url: /task-deploy-aws-shared-vpc.html
                 - title: Configure Cloud Volumes ONTAP for AWS placement group creation
+                  url: /task-configure-placement-group-failure-aws.html                   
+                - title: Configure Cloud Volumes ONTAP for AWS placement group creation
                   url: /task-configure-placement-group-failure-aws.html 
                 - title: Security group rules for AWS
                   url: /reference-security-groups.html
