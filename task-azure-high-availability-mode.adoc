@@ -59,3 +59,4 @@ The Azure CLI should return a result similar to the following:
 }
 ----
 //BLUEXPDOC-207
+//This topic is linked to the UI.
