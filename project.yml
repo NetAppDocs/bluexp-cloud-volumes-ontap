@@ -57,8 +57,6 @@ sidebar:
                   url: /task-deploy-aws-shared-vpc.html
                 - title: Configure Cloud Volumes ONTAP for AWS placement group creation
                   url: /task-configure-placement-group-failure-aws.html                   
-                - title: Configure Cloud Volumes ONTAP for AWS placement group creation
-                  url: /task-configure-placement-group-failure-aws.html 
                 - title: Security group rules for AWS
                   url: /reference-security-groups.html
             - title: Set up the AWS KMS
