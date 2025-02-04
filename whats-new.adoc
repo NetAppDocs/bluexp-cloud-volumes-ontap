@@ -4,7 +4,7 @@ permalink: whats-new.html
 keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, cloud manager, BlueXP, digital wallet, cloud backup, cloud data sense, cloud tiering, keystone flex, keystone
 summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 ---
-= What's new
+= What's new in Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -34,7 +34,6 @@ include::_whatsnew/2024-10-25.adoc[]
 
 == 7 October 2024
 include::_whatsnew/2024-10-07.adoc[]
-
 
 == 9 September 2024
 include::_whatsnew/2024-09-09.adoc[]
@@ -907,7 +906,7 @@ The following changes were introduced with the 3.9.10 release of the Connector.
 
 === Customer-managed encryption key in Azure
 
-Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview[Azure Storage Service Encryption^] with a Microsoft-managed key. But you can now use your own customer-managed encryption key instead by completing the following steps:
 
 . From Azure, create a key vault and then generate a key in that vault.
 

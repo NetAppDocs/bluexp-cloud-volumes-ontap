@@ -69,7 +69,7 @@ endif::aws[]
 ifdef::azure[]
 === Azure Storage Service Encryption
 
-Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] with a Microsoft-managed key.
+Data is automatically encrypted on Cloud Volumes ONTAP in Azure using https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview[Azure Storage Service Encryption^] with a Microsoft-managed key.
 
 You can use your own encryption keys if you prefer. link:task-set-up-azure-encryption.html[Learn how to set up Cloud Volumes ONTAP to use a customer-managed key in Azure].
 endif::azure[]

@@ -36,7 +36,7 @@ Maximize efficiency. View storage efficiency metrics and identify ways to store 
 +
 Digital Advisor displays complete inventory and software and hardware configuration information. See when service contracts are expiring and renew them to ensure you remain supported.
 
-.Related information
+.Related links
 
 * https://docs.netapp.com/us-en/active-iq/[NetApp Documentation: Digital Advisor^]
 * https://aiq.netapp.com/custom-dashboard/search[Launch Digital Advisor^]

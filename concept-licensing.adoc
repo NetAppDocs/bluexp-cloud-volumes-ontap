@@ -107,6 +107,9 @@ Single node or HA with capacity charging for primary and secondary volumes at th
 NOTE: A pay-as-you-go (PAYGO) subscription is required for BlueXP backup and recovery, however no charges will be incurred for using this service. For more information on setting up licensing for BlueXP backup and recovery, refer to https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html[Set up licensing for BlueXP backup and recovery^].
 * Add on any of NetApp's cloud data services at extra cost
 
+=== Availability of capacity-based licenses
+The availability of the PAYGO and BYOL licenses for Cloud Volumes ONTAP systems requires the BlueXP Connector to be up and running. For more information, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap[Learn about Connectors^].
+
 === How to get started
 
 Learn how to get started with capacity-based licensing:
@@ -199,7 +202,7 @@ Even in these scenarios, new node-based licenses and license renewals are valid 
 
 == License conversion
 
-BlueXP enables a seamless conversion of node-based licenses to capacity based through the license conversion tool. For information about EOA of node-based licensing, refer to link:/concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
+BlueXP enables a seamless conversion of node-based licenses to capacity based through the license conversion tool. For information about EOA of node-based licensing, refer to link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses].
 
 Before transitioning, it is good to familiarize yourself with the difference between the two licensing models. Node-based licensing includes fixed capacity for each ONTAP instance, which can restrict flexibility. Capacity-based licensing, on the other hand, allows for a shared pool of storage across multiple instances, offering enhanced flexibility, optimizing resource utilization, and reducing the potential for financial penalties when redistributing workloads. Capacity-based charging seamlessly adjusts to changing storage requirements.
 

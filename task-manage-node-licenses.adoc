@@ -81,7 +81,7 @@ Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dol
 * Licensing for a Cloud Volumes ONTAP HA pair is converted to a 51 TiB data service license
 * Licensing for a Cloud Volumes ONTAP single node is converted to a 32 TiB data service license
 
-The converted license has the same expiry date as the Cloud Volumes ONTAP license.
+The converted license has the same expiration date as the Cloud Volumes ONTAP license.
 
 .Steps
 
@@ -246,7 +246,7 @@ https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html[Lear
 +
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deleting-working-env.html[Learn how to delete a Cloud Volumes ONTAP working environment].
 
-.Related topic
+.Related links
 
 link: link:concept-licensing.html#end-of-availability-of-node-based-licenses[End of availability of node-based licenses]
 link:task-convert-node-capacity.html[Convert node-based licenses to capacity based]
