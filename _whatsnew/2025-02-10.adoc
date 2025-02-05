@@ -1,10 +1,10 @@
 
-=== Enabling of user authentication for accessing System Manager from BlueXP
-As a BlueXP administrator, you can now activate authentication for ONTAP users for accessing ONTAP System Manager from BlueXP. You can enable this option by editing BlueXP Connector settings. This option is available for standard and private modes.
+=== User authentication enabled for accessing System Manager from BlueXP
+As a BlueXP administrator, you can now activate authentication for ONTAP users accessing ONTAP System Manager from BlueXP. You can enable this option by editing the BlueXP Connector settings. This option is available for standard and private modes.
 
-For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using System Manager^].
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using System Manager^].
 
 === BlueXP Advanced View renamed to System Manager
 The option for advanced management of Cloud Volumes ONTAP from BlueXP through ONTAP System Manager has been renamed from *Advanced View* to *System Manager*.
 
-For more information, see link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using System Manager^].
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using System Manager^].

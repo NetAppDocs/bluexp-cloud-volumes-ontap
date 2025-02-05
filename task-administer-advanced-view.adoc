@@ -68,7 +68,7 @@ In addition, role-based access control from System Manager is not supported.
 As an administrator, you can activate authentication for users accessing ONTAP System Manager from BlueXP. You can determine the right level of access permissions based on the ONTAP user roles, and enable or disable authentication as needed. If you enable authentication, then users need to enter their ONTAP user credentials every time they access System Manager from BlueXP or when the page is reloaded, because BlueXP doesn't store the credentials internally. If you disable authentication, users can access System Manager using BlueXP admin credentials.
 
 [NOTE]
-This setting is not controlled by BlueXP. This is a global setting that applies to all ONTAP users in your organization or account, and is independent of Cloud Volumes ONTAP working environments or BlueXP projects.
+This setting is not controlled by BlueXP. This is a global setting that applies to all ONTAP users in your organization or account, irrespective of Cloud Volumes ONTAP working environments or BlueXP projects.
 
 
 .Required permissions
@@ -78,8 +78,8 @@ You need to be assigned BlueXP Organization or Account admin privileges to modif
 .Steps
 . Select the *Connector* drop-down from the BlueXP header.
 . Select *Manage Connectors*.
-. Click the action menu image:icon-action.png[ellipses icon] for a Connector and select *Edit Connector*.
-. Under *Force user credentials for cluster login via System Manager*, select the *Enable/Disable* check box. By default, authentication is disabled.
+. Click the action menu image:icon-action.png[ellipses icon] for the required Connector and select *Edit Connector*.
+. Under *Force user credentials*, select the *Enable/Disable* check box. By default, authentication is disabled.
 +
 [NOTE]
 If you set this value to *Enable*, authentication is reset, and you have to modify any existing workflows to accommodate this change. 
