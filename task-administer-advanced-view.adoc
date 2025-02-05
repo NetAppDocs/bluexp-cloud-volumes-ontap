@@ -73,12 +73,13 @@ This setting is not controlled by BlueXP. This is a global setting that applies 
 
 .Required permissions
 
-You need to be assigned BlueXP Organization or Account admin privileges to modify Cloud Volumes ONTAP Settings.
+You need to be assigned BlueXP Organization or Account admin privileges to modify the BlueXP Connector settings for Cloud Volumes ONTAP user authentication.
 
 .Steps
-.	In the upper right of the BlueXP console, click the Settings icon, and select *Cloud Volumes ONTAP Settings*.
-. Under *General*, click *Force user credentials for cluster login via System Manager*.
-. Select the *Enable/Disable* check box. By default, authentication is disabled.
+. Select the *Connector* drop-down from the BlueXP header.
+. Select *Manage Connectors*.
+. Click the action menu image:icon-action.png[ellipses icon] for a Connector and select *Edit Connector*.
+. Under *Force user credentials for cluster login via System Manager*, select the *Enable/Disable* check box. By default, authentication is disabled.
 +
 [NOTE]
 If you set this value to *Enable*, authentication is reset, and you have to modify any existing workflows to accommodate this change. 
@@ -105,9 +106,6 @@ You can access ONTAP System Manager from a Cloud Volumes ONTAP working environme
 . If needed, click *Switch to Standard View* to return to standard management through BlueXP.
 
 == Help with using System Manager
-
-
-
 If you need help using System Manager with Cloud Volumes ONTAP, you can refer to https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^] for step-by-step instructions. Here are a few links that might help:
 
 * https://docs.netapp.com/us-en/ontap/ontap-security-hardening/roles-applications-authentication.html[ONTAP roles, applications, and authentication^]
