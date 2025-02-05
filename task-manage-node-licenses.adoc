@@ -35,7 +35,11 @@ The BlueXP digital wallet page enables you to view details about each of your PA
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . Click *PAYGO*.
 
@@ -57,7 +61,11 @@ Add a node-based license to the BlueXP digital wallet so that you can select the
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . Click *Unassigned*.
 
@@ -92,7 +100,11 @@ link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . Click *Unassigned*.
 
@@ -136,7 +148,11 @@ If BlueXP can't access the license file over the secure internet connection, you
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -164,7 +180,11 @@ Purchase an extra capacity license by contacting us through the chat icon in the
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -182,7 +202,11 @@ If you extended the term of an extra capacity license, you'll need to update the
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -200,7 +224,11 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . In the *BYOL* tab, expand the details for a Cloud Volumes ONTAP system.
 
@@ -221,7 +249,11 @@ When you convert an Eval license to a BYOL, BlueXP restarts the Cloud Volumes ON
 
 . From the BlueXP navigation menu, select *Governance > Digital wallet*.
 
-. On the *Cloud Volumes ONTAP* tab, select *Node Based Licenses* from the drop-down.
+. Select the *Overview* tab.
+
+. On the Cloud Volumes ONTAP tile, select *View*.
+
+. Select *Node Based Licenses* from the drop-down.
 
 . Click *Eval*.
 
