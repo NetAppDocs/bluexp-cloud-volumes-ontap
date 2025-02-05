@@ -152,12 +152,12 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-goog
 https://cloud.google.com/vpc/docs/packet-mirroring[Packet mirroring^] must be disabled in the Google Cloud subnet in which you deploy Cloud Volumes ONTAP.
 
 === Outbound internet access
-Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
+Cloud Volumes ONTAP systems require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
+
+The BlueXP Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. For information about the BlueXP endpoints, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console^].
 
 ==== Cloud Volumes ONTAP endpoints
-Cloud Volumes ONTAP requires outbound internet access to contact various endpoints for day-to-day operations.
-
-The following endpoints are specific to Cloud Volumes ONTAP. The Connector also contacts several endpoints for day-to-day operations, as well as the BlueXP web-based console. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking[View endpoints contacted from the Connector^] and https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html[Prepare networking for using the BlueXP console^].
+Cloud Volumes ONTAP uses these endpoints to communicate with various services.
 
 [cols=5*,options="header,autowidth"]
 |===
@@ -182,18 +182,6 @@ a|User authentication fails and the following services remain unavailable:
 * Cloud Volumes ONTAP services
 * ONTAP services
 * Protocols and proxy services
-
-| 
-\https://keyvault-production-aks.vault.azure.net
-
-| 
-Key Vault
-
-| Used to retrieve the client secret key from the Azure Key Vault to communicate with S3 bucket for metadata handling. Cloud Volumes ONTAP service uses this component internally.
-
-| Standard, restricted, and private modes. 
-
-| Cloud Volumes ONTAP services are unavailable.  
 
 | 
 \https://cloudmanager.cloud.netapp.com/tenancy

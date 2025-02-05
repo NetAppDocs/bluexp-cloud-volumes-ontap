@@ -24,10 +24,6 @@ If you want to use a customer-managed key with Cloud Volumes ONTAP, then you nee
 . From Azure, create a key vault and then generate a key in that vault.
 . From BlueXP, use the API to create a Cloud Volumes ONTAP working environment that uses the key.
 
-=== Key rotation
-
-If you create a new version of your key, Cloud Volumes ONTAP automatically uses the latest key version.
-
 === How data is encrypted
 
 BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks not page blobs. Any new data disks also use the same disk encryption set. Lower versions will use Microsoft-managed key, instead of the customer-managed key.
@@ -69,6 +65,17 @@ After you create a Cloud Volumes ONTAP working environment that is configured to
 |===
 
 All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key. If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the Cloud Volumes ONTAP creation request. This applies for all type of deployments. If you do not provide it, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.
+
+== Key rotation in Cloud Volumes ONTAP
+
+If you create a new version of your key, Cloud Volumes ONTAP automatically uses the latest key version, ensuring your data remains secure without the need for manual updates.
+
+.Steps
+. Navigate to your key vault in the Azure portal.
+. Select the key you want to rotate.
+. Click *New Version* to generate a new version of the key.
+
+Once a new version is created, Cloud Volumes ONTAP automatically detects and uses the latest version of the key for encryption.
 
 == Create a user-assigned managed identity
 You have the option to create a resource called a user-assigned managed identity. Doing so allows you to encrypt your storage accounts when you create a Cloud Volumes ONTAP working environment. We recommend creating this resource prior to creating a key vault and generating a key.
