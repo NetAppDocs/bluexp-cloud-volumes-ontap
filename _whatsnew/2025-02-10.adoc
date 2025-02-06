@@ -1,4 +1,3 @@
-
 === User authentication enabled for accessing System Manager from BlueXP
 As a BlueXP administrator, you can now activate authentication for ONTAP users accessing ONTAP System Manager from BlueXP. You can enable this option by editing the BlueXP Connector settings. This option is available for standard and private modes.
 
@@ -8,3 +7,12 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-ad
 The option for advanced management of Cloud Volumes ONTAP from BlueXP through ONTAP System Manager has been renamed from *Advanced View* to *System Manager*.
 
 link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using System Manager^].
+
+//=== Introducing a simpler way to manage licenses with the BlueXP digital wallet
+//Now, you can experience simplified management of Cloud Volumes ONTAP licenses by using improved navigation points within the BlueXP digital wallet:
+
+//* Access your Cloud Volumes ONTAP license information easily through the *Governance > Digital wallet > Overview/Data service licenses* tabs.
+//* Click *View* on the Cloud Volume ONTAP panel in the *Overview* tab to gain a comprehensive understanding of your capacity-based licenses. This advanced view offers detailed insight into your licenses and subscriptions.
+//* If you prefer the previous interface, you can click the *Switch to legacy view* button to view license details by type and modify charging methods for your licenses.
+
+//link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licenses^].
