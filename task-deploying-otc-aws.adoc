@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, c
 summary: You can launch Cloud Volumes ONTAP instances in a single-system configuration or as an HA pair in AWS.
 ---
 
-= Launching Cloud Volumes ONTAP in AWS
+= Launch Cloud Volumes ONTAP in AWS
 :hardbreaks:
 :nofooter:
 :icons: font

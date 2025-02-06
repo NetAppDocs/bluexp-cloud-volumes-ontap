@@ -5,7 +5,7 @@ keywords: Azure, image, VHD, file signature verification, encryption, sha256, ON
 summary: Reference links Azure image verification
 ---
 
-= Where to find additional information about Azure image verification
+= Reference links for Azure marketplace image verification for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

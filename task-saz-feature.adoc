@@ -7,7 +7,7 @@ summary: Enable this Microsoft Azure feature to deploy HA in SAZ.
 
 
 
-= Enable VMOrchestratorZonalMultiFD for single availability zones
+= Enable VMOrchestratorZonalMultiFD for Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :nofooter:
 :icons: font

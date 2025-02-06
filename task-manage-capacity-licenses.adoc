@@ -5,7 +5,7 @@ keywords: license, licensing, capacity license, capacity based license, add lice
 summary: Manage your capacity-based licenses from the BlueXP digital wallet to ensure that your NetApp account has enough capacity for your Cloud Volumes ONTAP systems.
 ---
 
-= Manage capacity-based licenses
+= Manage capacity-based licensing for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

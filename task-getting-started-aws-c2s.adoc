@@ -5,7 +5,7 @@ keywords: commercial cloud services, c2s, secret cloud, top secret cloud, aws se
 summary: "Similar to a standard AWS region, you can use BlueXP in the AWS Secret Cloud and Top Secret Cloud environments to deploy Cloud Volumes ONTAP, which provide enterprise-class features for your cloud storage. AWS Secret Cloud and Top Secret Cloud regions are closed regions specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS Secret Cloud and Top Secret Cloud region users."
 ---
 
-= Deploy Cloud Volumes ONTAP in AWS Secret Cloud and Top Secret Cloud regions
+= Deploy Cloud Volumes ONTAP in AWS Secret Cloud or AWS Top Secret Cloud
 :hardbreaks:
 :nofooter:
 :icons: font

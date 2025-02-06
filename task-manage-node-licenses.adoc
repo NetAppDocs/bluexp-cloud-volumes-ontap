@@ -5,7 +5,7 @@ keywords: license, licensing, install, updating license, system license, add sys
 summary: Manage your node-based licenses in the BlueXP digital wallet to ensure that each Cloud Volumes ONTAP system has a valid license with the required capacity.
 ---
 
-= Manage node-based licenses
+= Manage node-based licensing for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

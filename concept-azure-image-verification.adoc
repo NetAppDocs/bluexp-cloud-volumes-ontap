@@ -5,7 +5,7 @@ keywords: Azure, image, VHD, image signature file,
 summary: Verify Azure VHD image file signatures files.
 ---
 
-= Azure image verification overview
+= Azure Marketplace image verification for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

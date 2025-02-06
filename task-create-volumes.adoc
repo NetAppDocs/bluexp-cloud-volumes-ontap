@@ -5,7 +5,7 @@ keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add
 summary: If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP.
 ---
 
-= Create FlexVol volumes
+= Create a FlexVol volume on a Cloud Volumes ONTAP system
 :hardbreaks:
 :nofooter:
 :icons: font

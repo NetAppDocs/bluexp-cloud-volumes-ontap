@@ -5,7 +5,7 @@ keywords: license, licensing, install, keystone, request capacity, link subscrip
 summary: Manage your Keystone subscriptions from the BlueXP digital wallet by enabling subscriptions for use with Cloud Volumes ONTAP and by requesting changes to the committed capacity for your subscription's service levels. Requesting additional capacity for a service level provides more storage for on-premises ONTAP clusters or for Cloud Volumes ONTAP systems.
 ---
 
-= Manage Keystone subscriptions
+= Manage Keystone subscriptions through BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font

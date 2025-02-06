@@ -5,7 +5,7 @@ keywords: Azure, image, VHD, file signature verification, encryption, sha256, ON
 summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool on Linux
 ---
 
-= File signature verification on Linux 
+= Verify Azure marketplace image signature for Cloud Volumes ONTAP on Linux  
 :hardbreaks:
 :nofooter:
 :icons: font
