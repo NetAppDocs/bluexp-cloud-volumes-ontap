@@ -21,17 +21,15 @@ For more information about this offering, refer to link:concept-azure-mktplace-d
 The instance of Cloud Volumes ONTAP deployed through the Azure marketplace has these properties:
 
 * The latest Cloud Volumes ONTAP version (9.16.1 or later).
-* A free license for Cloud Volumes ONTAP that is limited to 500 GiB of provisioned capacity. This license has no expiry date and excludes NetApp support.
+* A free license for Cloud Volumes ONTAP that is limited to 500 GiB of provisioned capacity. This license includes no NetApp support and has no expiry date.
 * Two nodes configured in a high availability (HA) mode in a single availability zone (AZ), provisioned with default serial numbers. The storage virtual machines (VMs) are deployed in a link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[flexible orchestration mode].
-* An aggregate created by default for the instance.
+* An aggregate for the instance created by default.
 * A Premium SSD v2 Managed Disk of 500 GiB provisioned capacity, and a root and a data disk.
-* One data storage VM deployed, with  NFS, CIFS, iSCSI, and NVMe/TCP data-services. No provision for additional VMs.
-* Licenses for NFS, CIFS (SMB), iSCSI, anti-ransomware (ARW), and SnapLock installed against the default serial numbers.
-* https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html[Temperature-sensitive storage efficiency (TSSE)^] enabled by default.
+* One data storage VM deployed, with  NFS, CIFS, iSCSI, and NVMe/TCP data-services. No provision for additional storage VMs.
+* Licenses for NFS, CIFS (SMB), iSCSI, anti-ransomware (ARW), SnapLock, and SnapMirror installed against the default serial numbers.
+* https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html[Temperature-sensitive storage efficiency (TSSE)^], volume encryption, and external key-management enabled by default.
 * These features are not supported:
 ** FabricPool tiering
-** Volume encryption and external key-management
-** SnapMirror data replication
 ** Changing the instance type
 ** Fast write mode
 
@@ -89,12 +87,12 @@ If you have registered the resource provider "Microsoft.storage" to your subscri
 ** *Subscription*: Select a subscription. The deployment will be linked to the subscription number.
 ** *Resource group*: Use an existing resource group or create a new one. Resource groups help in allocating all resources, for example disks and VMs, within a single group for a Cloud Volumes ONTAP instance.
 ** *Region*: Select a region that supports Azure HA deployment in a single AZ. Only the available regions are listed for selection.
-** *Size*: Select a VM size for the supported Premium SSD v2 Managed Disk.
+** *Size*: Select a storage VM size for the supported Premium SSD v2 Managed Disk.
 ** *Zone*: Select a zone for the selected region.
 ** *Admin Password*: Add a password. You use this admin password to log in to the system after the deployment.
 ** *Confirm Password*: Re-enter the same password for confirmation.
 * Click *Next*. 
-* In the *Network* tab, add a virtual network and subnet or select them from the lists.
+* In the *Network* tab, add a virtual network and a subnet, or select them from the lists.
 +
 [NOTE]
 To comply with Azure restrictions, you should create a new subnet when setting up a new virtual network. Likewise, if you choose an existing network, you should also select an existing subnet.
@@ -107,9 +105,9 @@ To comply with Azure restrictions, you should create a new subnet when setting u
 
 .After you finish
 
-You can click the notification icon to review the progress. After Cloud Volumes ONTAP is deployed, you can view the VM listed for operations.
+You can click the notification icon to review the progress. After Cloud Volumes ONTAP is deployed, you can view the storage VM listed for operations.
 
-Once accessible, use ONTAP System Manager or the CLI to log in to the VM with the admin credentials that you set. You can use the VM to create volumes (https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[for NFS^]), LUNs (https://docs.netapp.com/us-en/ontap-cli/lun-create.html[for iSCSI^]), and shares (https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[for CIFS^]) to start utilizing the storage capabilities of Cloud Volumes ONTAP.
+Once accessible, use ONTAP System Manager or the CLI to log in to the storage VM with the admin credentials that you set. You can use the storage VM to create volumes (https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[for NFS^]), LUNs (https://docs.netapp.com/us-en/ontap-cli/lun-create.html[for iSCSI^]), and shares (https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[for CIFS^]) to start utilizing the storage capabilities of Cloud Volumes ONTAP.
 
 
 == Troubleshooting 
