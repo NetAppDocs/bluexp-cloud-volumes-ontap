@@ -609,7 +609,7 @@ https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn h
 
 Starting with the 9.10.1 release, Cloud Volumes ONTAP is now supported in the Azure West US 3 region.
 
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
 
 === ONTAP S3 license in Azure
 
@@ -731,7 +731,7 @@ Cloud Volumes ONTAP is now supported in the following Google Cloud regions start
 * Milan (europe-west8) - single node only
 * Santiago (southamerica-west1) - single node only
 
-https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
+https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions for Cloud Volumes ONTAP^]
 
 === Support for n2-standard-16 in Google Cloud
 
