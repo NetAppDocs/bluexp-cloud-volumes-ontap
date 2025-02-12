@@ -24,9 +24,9 @@ Several licensing options are available for Cloud Volumes ONTAP. Each option ena
 
 == Choose a supported region
 
-Cloud Volumes ONTAP is supported in most AWS regions. https://cloud.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^].
+Cloud Volumes ONTAP is supported in most AWS regions. https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of supported regions^].
 
-Newer AWS regions must be enabled before you can create and manage resources in those regions. https://docs.aws.amazon.com/general/latest/gr/rande-manage.html[Learn how to enable a region^].
+Newer AWS regions must be enabled before you can create and manage resources in those regions. https://docs.aws.amazon.com/general/latest/gr/rande-manage.html[AWS documentation: Learn how to enable a region^].
 
 === Choose a supported Local Zone
 Selecting a Local Zone is optional. Cloud Volumes ONTAP is supported in some AWS Local Zones including Singapore. Cloud Volumes ONTAP in AWS supports only high availability (HA) mode in a single availability zone. Single node deployments are not supported.

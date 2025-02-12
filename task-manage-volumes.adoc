@@ -15,7 +15,7 @@ summary: BlueXP enables you to manage volumes and CIFS servers. It also prompts 
 [.lead]
 BlueXP enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 
-You can manage volumes in BlueXP Standard View or Advanced View. The Standard View provides a limited set of options to modify your volumes. The Advanced View provides advanced level of management, such as cloning, resizing, changing settings for anti-ransomware, analytics, protection, and activity tracking, and moving volumes across tiers. For information, refer to link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using the Advanced View].
+You can manage volumes in BlueXP Standard View or through ONTAP System Manager that is included within BlueXP for advanced volume management. The Standard View provides a limited set of options to modify your volumes. System Manager provides advanced level of management, such as cloning, resizing, changing settings for anti-ransomware, analytics, protection, and activity tracking, and moving volumes across tiers. For information, refer to link:task-administer-advanced-view.html[Administer Cloud Volumes ONTAP using System Manager].
 
 == Manage volumes
 
@@ -104,10 +104,10 @@ a|
 
 By default, a volume automatically grows to a maximum size when it's out of space. The default value is 1,000, which means the volume can grow to 11 times its size. This value is configurable in the Connector's settings.
 
-If you need to resize your volume, you can do it from the Advanced View in BlueXP.
+If you need to resize your volume, you can do it from ONTAP System Manager in BlueXP.
 
 .Steps
-. Open the Advanced View to resize a volume through ONTAP System Manager. Refer to link:task-administer-advanced-view.html#how-to-get-started[How to get started].
+. Click the System Manager view to resize a volume through ONTAP System Manager. Refer to link:task-administer-advanced-view.html#how-to-get-started[How to get started].
 . From the left navigation menu, select *Storage > Volumes*.
 . From the list of volumes, identify the one that you should resize.
 . Click the options icon image:screenshot_gallery_options.gif[kabob icon].
