@@ -5,7 +5,7 @@ keywords: google cloud, encryption, NVE, NetApp volume encryption, KMIP, GCP, GC
 summary: Utilize Google's key management service for your third-party key management service.
 ---
 
-= Manage keys with Google's Cloud Key Management Service
+= Manage Cloud Volumes ONTAP encryption keys with Google Cloud Key Management Service
 :icons: font
 :hardbreaks:
 :imagesdir: ../media/

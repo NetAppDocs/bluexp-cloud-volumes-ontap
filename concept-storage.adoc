@@ -37,7 +37,7 @@ In AWS, an aggregate can contain up to 6 disks that are all the same size. But i
 +
 The maximum disk size is 16 TiB.
 +
-The underlying EBS disk type can be either General Purpose SSDs (gp3 or gp2), Provisioned IOPS SSD (io1), or Throughput Optimized HDD (st1). You can pair an EBS disk with Amazon S3 to link:concept-data-tiering.html[tier inactive data to low-cost object storage].
+The underlying EBS disk type can be either General Purpose SSDs (gp3 or gp2), Provisioned IOPS SSD (io1), or Throughput Optimized HDD (st1). You can pair an EBS disk with Amazon S3 to link:concept-data-tiering.html[low-cost object storage].
 +
 NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
 
@@ -73,7 +73,7 @@ Single node systems can use these types of Azure Managed Disks:
 +
 Each managed disk type has a maximum disk size of 32 TiB.
 +
-You can pair a managed disk with Azure Blob storage to link:concept-data-tiering.html[tier inactive data to low-cost object storage].
+You can pair a managed disk with Azure Blob storage to link:concept-data-tiering.html[low-cost object storage].
 
 HA pairs::
 HA pairs use two types of disks which provide high performance for I/O-intensive workloads at a higher cost:
@@ -99,7 +99,7 @@ ifdef::gcp[]
 
 In Google Cloud, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.
 
-The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept-data-tiering.html[tier inactive data to low-cost object storage].
+The disk type can be either _Zonal SSD persistent disks_, _Zonal Balanced persistent disks_, or _Zonal standard persistent disks_. You can pair persistent disks with a Google Storage bucket to link:concept-data-tiering.html[low-cost object storage].
 
 *Related links*
 
