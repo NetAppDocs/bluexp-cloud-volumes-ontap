@@ -340,6 +340,8 @@ For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-v
 A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
 
 == 4 April 2023
+
+=== Support for China regions for AWS
 Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in AWS as follows.
 
 * Single node systems are supported.
@@ -385,6 +387,14 @@ Starting with Cloud Volumes ONTAP 9.12.1 GA, China region support is now support
 * Licenses purchased directly from NetApp are supported.
 
 For regional availability, refer to the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+
+=== ##Support for China regions for Azure##
+China North 3 region is now supported for single node deployments of Cloud Volumes ONTAP 9.12.1 GA and 9.13.0 GA in Azure. Licenses purchased directly from NetApp are supported.
+[NOTE]
+Note here, fresh deployments of Cloud Volumes ONTAP in China regions are supported only in 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support for assistance.
+
+For regional availability, refer to the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+
 
 == 5 March 2023
 The following changes were introduced with the 3.9.27 release of the Connector.
