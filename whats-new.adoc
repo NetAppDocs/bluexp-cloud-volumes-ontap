@@ -61,7 +61,7 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the
 Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
 
 === Minimum version support for Flash Cache on Azure
-The minimum Cloud Volumes ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems for Azure. 
+The minimum Cloud Volumes ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems in Azure. 
 
 For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
 
@@ -388,10 +388,10 @@ Starting with Cloud Volumes ONTAP 9.12.1 GA, China region support is now support
 
 For regional availability, refer to the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
 
-=== ##Support for China regions for Azure##
+=== ##Support for China regions in Azure##
 China North 3 region is now supported for single node deployments of Cloud Volumes ONTAP 9.12.1 GA and 9.13.0 GA in Azure. Licenses purchased directly from NetApp are supported.
 [NOTE]
-Note here, fresh deployments of Cloud Volumes ONTAP in China regions are supported only in 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support for assistance.
+Fresh deployments of Cloud Volumes ONTAP in China regions are supported only in 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support for assistance.
 
 For regional availability, refer to the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
 
