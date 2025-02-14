@@ -13,7 +13,7 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-"Azure Marketplace Direct Deployment" is a convenient and user-friendly method of deploying Cloud Volumes ONTAP 9.16.1 and later, independently from BlueXP. You can now use the Azure marketplace to easily deploy an instance of Cloud Volumes ONTAP, and explore its features and capabilities within your environment.
+"Azure Marketplace Direct Deployment" is a convenient and user-friendly method of deploying Cloud Volumes ONTAP 9.16.1 and later, outside of BlueXP. You can now deploy an instance of Cloud Volumes ONTAP directly from the Azure marketplace, and explore its features and capabilities within your environment.
 
 For more information about this offering, refer to link:concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP offerings on BlueXP and the marketplace].
 
@@ -85,17 +85,17 @@ If you have registered the resource provider "Microsoft.storage" to your subscri
 . Select a plan. The *Plan* list typically displays the latest releases of Cloud Volumes ONTAP.
 . In the *Basics* tab, provide these details:
 ** *Subscription*: Select a subscription. The deployment will be linked to the subscription number.
-** *Resource group*: Use an existing resource group or create a new one. Resource groups help in allocating all resources, for example disks and VMs, within a single group for a Cloud Volumes ONTAP instance.
-** *Region*: Select a region that supports Azure HA deployment in a single AZ. Only the available regions are listed for selection.
+** *Resource group*: Use an existing resource group or create a new one. Resource groups help in allocating all resources, for example disks and storage VMs, within a single group for a Cloud Volumes ONTAP instance.
+** *Region*: Select a region that supports Azure HA deployment in a single AZ. You see only the available regions on the list.
 ** *Size*: Select a storage VM size for the supported Premium SSD v2 Managed Disk.
-** *Zone*: Select a zone for the selected region.
+** *Zone*: Select a zone for the region you selected. 
 ** *Admin Password*: Add a password. You use this admin password to log in to the system after the deployment.
 ** *Confirm Password*: Re-enter the same password for confirmation.
 * Click *Next*. 
 * In the *Network* tab, add a virtual network and a subnet, or select them from the lists.
 +
 [NOTE]
-To comply with Azure restrictions, you should create a new subnet when setting up a new virtual network. Likewise, if you choose an existing network, you should also select an existing subnet.
+To comply with Microsoft Azure restrictions, you should create a new subnet when setting up a new virtual network. Likewise, if you choose an existing network, you should select an existing subnet.
 +
 * To select a predefined network security group, click *Yes*. Click *No* to assign a predefined Azure network security group with the necessary traffic rules. For information, refer to link:reference-networking-azure.html#security-group-rules[Security group rules for Azure]. 
 * Click *Next*.
@@ -107,7 +107,7 @@ To comply with Azure restrictions, you should create a new subnet when setting u
 
 You can click the notification icon to review the progress. After Cloud Volumes ONTAP is deployed, you can view the storage VM listed for operations.
 
-Once accessible, use ONTAP System Manager or the CLI to log in to the storage VM with the admin credentials that you set. You can use the storage VM to create volumes (https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[for NFS^]), LUNs (https://docs.netapp.com/us-en/ontap-cli/lun-create.html[for iSCSI^]), and shares (https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[for CIFS^]) to start utilizing the storage capabilities of Cloud Volumes ONTAP.
+Once accessible, use ONTAP System Manager or the CLI to log in to the storage VM with the admin credentials that you set. Thereafter, you can create volumes (https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[for NFS^]), LUNs (https://docs.netapp.com/us-en/ontap-cli/lun-create.html[for iSCSI^]), and shares (https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[for CIFS^]) to start utilizing the storage capabilities of Cloud Volumes ONTAP.
 
 
 == Troubleshooting 
