@@ -5,7 +5,7 @@ keywords: deploy cvo marketplace, marketplace direct cvo deployment, azure marke
 summary: 
 ---
 
-= Deploy Cloud Volumes ONTAP from the Azure marketplace
+= Deploy Cloud Volumes ONTAP from the Azure marketplacet
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-Azure marketplace direct deployment is a convenient and user-friendly method of deploying Cloud Volumes ONTAP 9.16.1 and later, outside of BlueXP. You can now deploy an instance of Cloud Volumes ONTAP directly from the Azure marketplace, and explore its features and capabilities within your environment.
+Beginning with Cloud Volumes ONTAP 9.16.1, you can take advantage of Azure marketplace direct deployment, a streamlined process that provides access to a limited, but still powerful, set of Cloud Volumes ONTAP features and options. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks, and explore its core features and capabilities in your environment.
 
 For more information about this offering, refer to link:concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP offerings on BlueXP and the marketplace].
 
