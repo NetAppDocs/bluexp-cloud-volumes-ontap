@@ -488,7 +488,7 @@ The following changes were introduced with the 3.9.23 release of the Connector.
 
 An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.12.1 or later in Google Cloud Platform.
 
-https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[ONTAP documentation: Learn how to configure and manage S3 object storage services^]
 
 == 6 November 2022
 The following changes were introduced with the 3.9.23 release of the Connector.
@@ -503,7 +503,7 @@ For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-v
 
 NDMP-copy is now certified for use with Cloud Volume ONTAP.
 
-For information on how to configure and use NDMP, refer to https://docs.netapp.com/us-en/ontap/ndmp/index.html[NDMP configuration overview].
+For information on how to configure and use NDMP, refer to the https://docs.netapp.com/us-en/ontap/ndmp/index.html[ONTAP documentation: NDMP configuration overview].
 
 === Managed disk encryption support for Azure 
 
@@ -603,7 +603,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-vol
 
 An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.11.0 or later in AWS.
 
-https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[ONTAP documentation: Learn how to configure and manage S3 object storage services^]
 
 === New Azure Cloud region support
 
@@ -615,7 +615,7 @@ https://bluexp.netapp.com/cloud-volumes-global-regions[View the full list of sup
 
 An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.9.1 or later in Azure.
 
-https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[Learn how to configure and manage S3 object storage services in ONTAP^]
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html[ONTAP documentation: Learn how to configure and manage S3 object storage services^]
 
 == 7 June 2022
 

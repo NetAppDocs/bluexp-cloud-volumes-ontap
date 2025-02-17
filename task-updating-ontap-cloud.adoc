@@ -169,13 +169,13 @@ When you upgrade a single-node system, the upgrade process takes the system offl
 
 In many cases, upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients. 
 
-Session-oriented protocols might cause adverse effects on clients and applications in certain areas during upgrades. For details, https://docs.netapp.com/us-en/ontap/upgrade/concept_considerations_for_session_oriented_protocols.html[refer to ONTAP documentation^]
+Session-oriented protocols might cause adverse effects on clients and applications in certain areas during upgrades. For details, refer to the https://docs.netapp.com/us-en/ontap/upgrade/concept_considerations_for_session_oriented_protocols.html[ONTAP documentation^]
 
 === Verify that automatic giveback is still enabled
 
 Automatic giveback must be enabled on a Cloud Volumes ONTAP HA pair (this is the default setting). If it isn't, then the operation will fail.
 
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html[ONTAP 9 Documentation: Commands for configuring automatic giveback^]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html[ONTAP documentation: Commands for configuring automatic giveback^]
 
 === Suspend SnapMirror transfers
 
@@ -223,9 +223,9 @@ image:screenshots_aggregate_details_state.png[Screen shot: Shows the State field
 
 === Verify that all LIFs are on home ports 
 
-Before you upgrade, all LIFs must be on home ports. Refer to ONTAP documentation to link:https://docs.netapp.com/us-en/ontap/upgrade/task_enabling_and_reverting_lifs_to_home_ports_preparing_the_ontap_software_for_the_update.html[verify that all LIFs are on home ports]. 
+Before you upgrade, all LIFs must be on home ports. Refer to the ONTAP documentation to link:https://docs.netapp.com/us-en/ontap/upgrade/task_enabling_and_reverting_lifs_to_home_ports_preparing_the_ontap_software_for_the_update.html[verify that all LIFs are on home ports^]. 
 
-If an upgrade failure error occurs, refer to the link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/CVO_upgrade_fails[Knowledge Base article "Cloud Volumes ONTAP upgrade fails"]. 
+If an upgrade failure error occurs, consult the Knowledge Base (KB) article link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/CVO_upgrade_fails[Cloud Volumes ONTAP upgrade fails^]. 
 
 == Upgrade Cloud Volumes ONTAP
 

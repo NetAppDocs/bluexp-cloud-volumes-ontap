@@ -18,14 +18,14 @@ You can create tamperproof Snapshot copies of write once, read many (WORM) files
 
 .Before you begin
 
-Ensure that the volume that you use for creating Snapshot copies is a SnapLock volume. For information about enabling SnapLock protection on volumes, refer to https://docs.netapp.com/us-en/ontap/snaplock/snaplock-config-overview-concept.html[Configure SnapLock^].
+Ensure that the volume that you use for creating Snapshot copies is a SnapLock volume. For information about enabling SnapLock protection on volumes, refer to the https://docs.netapp.com/us-en/ontap/snaplock/snaplock-config-overview-concept.html[ONTAP documentation: Configure SnapLock^].
 
 .Steps
-. Create Snapshot copies from the SnapLock volume. For information about creating Snapshot copies by using the CLI or System Manager, refer to https://docs.netapp.com/us-en/ontap/data-protection/manage-local-snapshot-copies-concept.html[Manage local Snapshot copies overview^].
+. Create Snapshot copies from the SnapLock volume. For information about creating Snapshot copies by using the CLI or System Manager, refer to the https://docs.netapp.com/us-en/ontap/data-protection/manage-local-snapshot-copies-concept.html[ONTAP documentation: Manage local Snapshot copies overview^].
 +
 The Snapshot copies inherit the WORM properties of the volume, making them tamperproof. The underlying SnapLock technology ensures that a snapshot remains protected from edit and deletion until the specified retention period has elapsed.
 +
-. You can modify the retention period if there's a need to edit these snapshots. For information, refer to https://docs.netapp.com/us-en/ontap/snaplock/set-retention-period-task.html#set-the-default-retention-period[Set the retention time^].
+. You can modify the retention period if there's a need to edit these snapshots. For information, refer to the https://docs.netapp.com/us-en/ontap/snaplock/set-retention-period-task.html#set-the-default-retention-period[ONTAP documentation: Set the retention time^].
 
 [NOTE]
 Even though a Snapshot copy is protected for a specific retention period, the source volume can be deleted by a cluster administrator, as WORM storage in Cloud Volumes ONTAP operates under a "trusted storage administrator" model. Additionally, a trusted cloud administrator can delete the WORM data by operating on the cloud storage resources.
