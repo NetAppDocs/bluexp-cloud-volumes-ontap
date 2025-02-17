@@ -13,11 +13,9 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-NetApp provides two options for deploying Cloud Volumes ONTAP on Azure: through NetApp BlueXP, or through the Azure marketplace. The traditional approach of deploying Cloud Volumes ONTAP involves using BlueXP, which requires meeting specific criteria and installing the BlueXP Connector for exploring the complete range of BlueXP functionality. The other option, the Azure marketplace offers an easier and straightforward process of deploying Cloud Volumes ONTAP directly, without BlueXP. 
+NetApp provides two options for deploying Cloud Volumes ONTAP on Azure: through NetApp BlueXP, or through the Azure marketplace. Cloud Volumes ONTAP traditionally relies on BlueXP for deployment and orchestration. Beginning with Cloud Volumes ONTAP 9.16.1, you can take advantage of Azure marketplace direct deployment, a streamlined process that provides access to a limited, but still powerful, set of Cloud Volumes ONTAP features and options. 
 
-Cloud Volumes ONTAP relies on BlueXP for deployment and orchestration. BlueXP, a software-as-a-service (SaaS) platform, is a single control plane to build, protect, and manage data across your hybrid cloud environments. It also offers various services for data mobility, protection, analysis, and control. For enabling these extensive features, BlueXP requires that you perform a number of security checks and onboarding steps.
-
-_Azure marketplace direct deployment_, on the other hand, is a streamlined process of deploying Cloud Volumes ONTAP 9.16.1 and later, outside of BlueXP, at no additional cost. However, this method offers only a limited set of BlueXP's comprehensive features. This method is ideal if you want to quickly deploy Cloud Volumes ONTAP and explore its features and capabilities within your environment.
+When you deploy Cloud Volumes ONTAP directly from the Azure marketplace, you're not required to set up the BlueXP Connector or meet other security and onboarding criteria required for deploying Cloud Volumes ONTAP through BlueXP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks, and explore its core features and capabilities in your environment.
 
 Here is the feature comparison between the two options:
 
@@ -25,20 +23,20 @@ Here is the feature comparison between the two options:
 |===
 |  | Azure marketplace | BlueXP
 | *Onboarding* | Shorter and easier, minimal preparation required for direct deployment | Longer onboarding process, including the installation of the BlueXP Connector
-| *Supported storage VM instances* | Edsv5 and LsV3 | Wider support. 
+| *Supported storage virtual machine (SVM) instances* | Edsv5 and LsV3 | Full range of storage VM options.
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
 | *License*   | Free license | Any capacity-based license. 
 link:concept-licensing.html[Cloud Volumes ONTAP licensing]
 | *NetApp support* | Not included | Available, based on the license type
 | *Capacity* | Up to 500 GiB | Expandable by configuration
 | *Deployment model* |High-availability (HA) mode deployment in single availability zone (AZ) | All supported configurations, including single node and HA modes, single and multiple AZ deployments
-| *Supported disk type* | Premium SSD v2 Managed Disks | Wider support. 
+| *Supported disk type* | Premium SSD v2 Managed Disks | Full range of supported disk types. 
 link:concept-storage.html#azure-storage[Default configuration for Cloud Volumes ONTAP]
-|*Write speed (fast write mode)* | Not supported | Supported, based on configurations. 
+|*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
 link:concept-write-speed.html[Learn about write speeds in Cloud Volumes ONTAP].
 | *Orchestration capabilities* | Not available | Available through BlueXP, based on the license type
-| *Number of supported storage VMs* | One storage VM per deployment | Multiple storage VMs, based on configurations. 
-link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported number of storage VMs]
+| *Number of supported SVMs* | One SVM per deployment | Multiple SVMs, based on your configuration. 
+link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported number of SVMs]
 | *Changing the instance type* | Not supported | Supported
 | *FabricPool tiering* | Not supported | Supported
 
