@@ -30,7 +30,7 @@ link:concept-licensing.html[Cloud Volumes ONTAP licensing]
 | *NetApp support* | Not included | Available, based on the license type
 | *Capacity* | Up to 500 GiB | Expandable by configuration
 | *Deployment model* |High-availability (HA) mode deployment in single availability zone (AZ) | All supported configurations, including single node and HA modes, single and multiple AZ deployments
-| *Supported disk type* | Premium SSD v2 Managed Disks | Full range of supported disk types. 
+| *Supported disk type* | Premium SSD v2 Managed Disks | Wider range.
 link:concept-storage.html#azure-storage[Default configuration for Cloud Volumes ONTAP]
 |*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
 link:concept-write-speed.html[Learn about write speeds in Cloud Volumes ONTAP].
