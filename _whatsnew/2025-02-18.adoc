@@ -1,6 +1,6 @@
 === Introducing Azure marketplace direct deployment
 
-Introducing Azure marketplace direct deployment, a streamlined process that enables you to easily and quickly deploy Cloud Volumes ONTAP directly from the Azure marketplace. Using this method, you can explore the core features and capabilities of Cloud Volumes ONTAP in your environment without the need to set up the BlueXP Connector or meet other security and onboarding criteria required for deploying Cloud Volumes ONTAP through BlueXP.
+You can now take advantage of Azure marketplace direct deployment to easily and quickly deploy Cloud Volumes ONTAP directly from the Azure marketplace. Using this streamlined method, you can explore the core features and capabilities of Cloud Volumes ONTAP in your environment without the need to set up the BlueXP Connector or meet other onboarding criteria required for deploying Cloud Volumes ONTAP through BlueXP.
 
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP deployment options in Azure^]
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace^]
