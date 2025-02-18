@@ -47,7 +47,7 @@ In the future, the BlueXP Connector will be able to discover the deployments mad
 
 .Related links
 
-* Deploy using BlueXP: link:task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Azure]
-* Deploy using the Azure marketplace: link:task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace]
+* Azure marketplace direct deployment: link:task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace]
+* BlueXP deployment: link:task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Azure]
 * https://docs.netapp.com/us-en/bluexp-family/index.html[BlueXP documentation^]
 

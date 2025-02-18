@@ -5,7 +5,7 @@ keywords: deploy cvo marketplace, marketplace direct cvo deployment, azure marke
 summary: 
 ---
 
-= Deploy Cloud Volumes ONTAP from the Azure marketplacet
+= Deploy Cloud Volumes ONTAP from the Azure marketplace
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,12 +13,12 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-Beginning with Cloud Volumes ONTAP 9.16.1, you can take advantage of Azure marketplace direct deployment, a streamlined process that provides access to a limited, but still powerful, set of Cloud Volumes ONTAP features and options. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks, and explore its core features and capabilities in your environment.
+Beginning with Cloud Volumes ONTAP 9.16.1, you can use Azure marketplace direct deployment to quickly and easily deploy Cloud Volumes ONTAP from the Azure marketplace, and explore its core features and capabilities within your environment.
 
 For more information about this offering, refer to link:concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP offerings on BlueXP and the marketplace].
 
 .About this task
-The instance of Cloud Volumes ONTAP deployed through the Azure marketplace has these properties:
+The instance of Cloud Volumes ONTAP deployed by using Azure marketplace direct deployment has these properties: 
 
 * The latest Cloud Volumes ONTAP version (9.16.1 or later).
 * A free license for Cloud Volumes ONTAP that is limited to 500 GiB of provisioned capacity. This license includes no NetApp support and has no expiry date.
@@ -103,7 +103,7 @@ To comply with Microsoft Azure restrictions, you should create a new subnet when
 
 .After you finish
 
-You can select the notification icon to view the progress of your deployment. After Cloud Volumes ONTAP is deployed, you can view the SVM listed for operations.
+Select the notification icon to view the progress of your deployment. After Cloud Volumes ONTAP is deployed, you can view the SVM listed for operations.
 
 Once accessible, use ONTAP System Manager or the ONTAP CLI to log in to the SVM with the admin credentials that you set. Thereafter, you can create volumes, LUNs, or shares and start utilizing the storage capabilities of Cloud Volumes ONTAP.
 
