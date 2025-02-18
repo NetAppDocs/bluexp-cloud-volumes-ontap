@@ -64,7 +64,7 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the
 Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
 
 === Minimum version support for Flash Cache on Azure
-The minimum Cloud Volumes ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems for Azure. 
+The minimum Cloud Volumes ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems in Azure. 
 
 For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
 
@@ -343,6 +343,8 @@ For more information, refer to link:https://docs.netapp.com/us-en/bluexp-cloud-v
 A notification now displays whenever you access Cloud Volumes ONTAP in BlueXP without a marketplace subscription. The notification states "a marketplace subscription for this working environment is required to be compliant with Cloud Volumes ONTAP terms and conditions."
 
 == 4 April 2023
+
+=== Support for China regions for AWS
 Starting with Cloud Volumes ONTAP 9.12.1 GA, China regions are now supported in AWS as follows.
 
 * Single node systems are supported.
@@ -380,14 +382,13 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volume
 
 == 13 March 2023
 
-=== China region support
-Starting with Cloud Volumes ONTAP 9.12.1 GA, China region support is now supported in Azure as follows.
-
-* Cloud Volumes ONTAP is supported in China North 3.
-* Single node systems are supported.
-* Licenses purchased directly from NetApp are supported.
+=== Support for China regions in Azure
+China North 3 region is now supported for single node deployments of Cloud Volumes ONTAP 9.12.1 GA and 9.13.0 GA in Azure. Only licenses purchased directly from NetApp (BYOL licenses) are supported in these regions.
+[NOTE]
+Fresh deployments of Cloud Volumes ONTAP in China regions are supported only in 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support.
 
 For regional availability, refer to the link:https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Maps for Cloud Volumes ONTAP^].
+
 
 == 5 March 2023
 The following changes were introduced with the 3.9.27 release of the Connector.
@@ -582,7 +583,7 @@ Two new capacity-based licensing packages are available for Cloud Volumes ONTAP 
 
 * *Optimized*: Pay for provisioned capacity and I/O operations separately
 
-* *Edge Cache*: Licensing for https://cloud.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
+* *Edge Cache*: Licensing for https://bluexp.netapp.com/cloud-volumes-edge-cache[Cloud Volumes Edge Cache^]
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages[Learn more about these licensing packages].
 
@@ -768,7 +769,7 @@ You can still connect to System Manager by entering the cluster management IP ad
 
 Now that the introductory special rate has expired, you will now be charged for using WORM storage. Charging is hourly, according to the total provisioned capacity of WORM volumes. This applies to new and existing Cloud Volumes ONTAP systems.
 
-https://cloud.netapp.com/pricing[Learn about pricing for WORM storage^].
+https://bluexp.netapp.com/pricing[Learn about pricing for WORM storage^].
 
 == 27 February 2022
 

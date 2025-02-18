@@ -52,7 +52,7 @@ For information about converting node-based licenses to capacity-based, see
 
 == Pricing and supported configurations
 
-For details about pricing, go to https://cloud.netapp.com/pricing?hsCtaTracking=4f8b7b77-8f63-4b73-b5af-ee09eab4fbd6%7C5fefbc99-396c-4084-99e6-f1e22dc8ffe7[NetApp BlueXP website^].
+For details about pricing, go to https://bluexp.netapp.com/pricing/[NetApp BlueXP website^].
 
 Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
 
