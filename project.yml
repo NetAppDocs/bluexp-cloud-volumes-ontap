@@ -72,7 +72,7 @@ sidebar:
         - title: Get started in Microsoft Azure
           flavor: azure
           entries:
-            - title: Learn about your options of deploying Cloud Volumes ONTAP
+            - title: Learn about your options of deployment
               url: /concept-azure-mktplace-direct.html
             - title: Get started in BlueXP
               entries:
