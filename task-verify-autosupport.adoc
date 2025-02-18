@@ -30,7 +30,7 @@ If an outbound internet connection isn't available to send AutoSupport messages,
 
 If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
 
-After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
+After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to the https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP documentation: Set up AutoSupport^].
 
 == Troubleshoot your AutoSupport configuration
 

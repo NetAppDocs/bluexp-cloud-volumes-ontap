@@ -67,12 +67,12 @@ indexpage:
         - title: Supported cloud regions
           url: https://bluexp.netapp.com/cloud-volumes-global-regions
         - title: Calculators
-          url: https://cloud.netapp.com/calculator-hub
+          url: https://bluexp.netapp.com/calculator-hub
     - title: Blogs & community
       links:
         - title: NetApp Community
           url: https://community.netapp.com/t5/Cloud-Volumes-ONTAP/bd-p/CloudVolumes
         - title: BlueXP website blog
-          url: https://cloud.netapp.com/blog/topic/cloud-volumes-ontap
+          url: https://bluexp.netapp.com/blog/topic/cloud-volumes-ontap
         - title: Cloud webinars
-          url: https://cloud.netapp.com/events
+          url: https://bluexp.netapp.com/events
