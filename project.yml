@@ -72,40 +72,48 @@ sidebar:
         - title: Get started in Microsoft Azure
           flavor: azure
           entries:
-            - title: Quick start
-              url: /task-getting-started-azure.html
-            - title: Plan your configuration
-              url: /task-planning-your-config-azure.html
-            - title: Set up your networking
-              url: /reference-networking-azure.html
-            - title: Set up encryption using your key
-              url: /task-set-up-azure-encryption.html
-            - title: Set up licensing
-              url: /task-set-up-licensing-azure.html
-            - title: Enable high-availability mode
-              url: /task-azure-high-availability-mode.html
-            - title: Enable VMOrchestratorZonalMultiFD for single availability zones
-              url: /task-saz-feature.html  
-            - title: Launch Cloud Volumes ONTAP in Azure
-              url: /task-deploying-otc-azure.html
-            - title: Azure Platform Image Verification
+            - title: Learn about your options of deploying Cloud Volumes ONTAP
+              url: /concept-azure-mktplace-direct.html
+            - title: Get started in BlueXP
               entries:
-                - title: Overview
-                  url: /concept-azure-image-verification.html
-                - title: Download Azure Image Digest File 
-                  url: /task-azure-download-digest-file.html
-                - title: Image Export
-                  url: /task-azure-image-export.html
-                - title: File signature verification
+                - title: Quick start
+                  url: /task-getting-started-azure.html
+                - title: Plan your configuration
+                  url: /task-planning-your-config-azure.html
+                - title: Set up your networking
+                  url: /reference-networking-azure.html
+                - title: Set up encryption using your key
+                  url: /task-set-up-azure-encryption.html
+                - title: Set up licensing
+                  url: /task-set-up-licensing-azure.html
+                - title: Enable high-availability mode
+                  url: /task-azure-high-availability-mode.html
+                - title: Enable VMOrchestratorZonalMultiFD for single availability zones
+                  url: /task-saz-feature.html  
+                - title: Launch Cloud Volumes ONTAP in Azure
+                  url: /task-deploying-otc-azure.html
+                - title: Azure Platform Image Verification
                   entries:
+                    - title: Overview
+                      url: /concept-azure-image-verification.html
+                    - title: Download Azure Image Digest File 
+                      url: /task-azure-download-digest-file.html
+                    - title: Image Export
+                      url: /task-azure-image-export.html
                     - title: File signature verification
-                      url: /concept-azure-file-sig-verify.html
-                    - title: Linux File signature verification
-                      url: /task-file-verification-linux.html
-                    - title: Mac OS File signature verification 
-                      url: /task-file-verification-mac.html
-                - title: Additional information
-                  url: /reference-image-verification-links.html                
+                      entries:
+                        - title: File signature verification
+                          url: /concept-azure-file-sig-verify.html
+                        - title: Linux File signature verification
+                          url: /task-file-verification-linux.html
+                        - title: Mac OS File signature verification 
+                          url: /task-file-verification-mac.html
+                    - title: Additional information
+                      url: /reference-image-verification-links.html
+            - title: Get started in the marketplace
+              entries:
+                  - title: Deploy Cloud Volumes ONTAP from the marketplace
+                    url: /task-deploy-cvo-azure-mktplc.html                                   
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
@@ -226,7 +234,7 @@ sidebar:
             - title: AWS administration
               flavor: aws
               entries:
-                - title: Change the EC2 instance type
+                - title: Work with EC2 instances in AWS
                   url: /task-change-ec2-instance.html
                 - title: Change route tables for HA pairs
                   url: /task-change-route-tables.html
