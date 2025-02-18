@@ -94,6 +94,10 @@ video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto, title="Subscribe to BlueXP 
 TIP: If you would like to utilize WORM and data tiering, you must disable BlueXP backup and recovery and deploy a Cloud Volumes ONTAP working environment with version 9.8 or above.
 
 . *Location*: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.
++
+[NOTE]
+For China regions, single node deployments are supported only in Cloud Volumes ONTAP 9.12.1 GA and 9.13.0 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you want to deploy later Cloud Volumes ONTAP versions in China regions, contact NetApp Support. Only licenses purchased directly from NetApp are supported in these regions. 
++
 . *Connectivity*: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.
 +
 The following table describes fields for which you might need guidance:
