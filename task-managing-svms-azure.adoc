@@ -15,7 +15,7 @@ summary: A storage VM is a virtual machine running within ONTAP that provides st
 [.lead]
 A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but additional storage VMs are supported when running Cloud Volumes ONTAP in Azure.
 
-To create additional data-serving storage VMs, you need to allocate IP addresses in Azure and then run ONTAP commands to create the storage VM and data LIFs.
+To create and manage additional data-serving storage VMs on Azure, you should use the APIs provided by BlueXP. This is because the APIs automate the process of creating the storage VMs and configuring the required network interfaces. when creating teh storage VMs, BlueXP configures the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communication from the storage VM.
 
 NOTE: To perform additional NIC-related tasks, you can assign a network contributor role or custom role with appropriate permissions in Azure. For more information on these NIC-related permissions, refer to the https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface?tabs=azure-portal#permissions[Microsoft Azure documentation^].
 
@@ -26,16 +26,11 @@ Multiple storage VMs are supported with specific Cloud Volumes ONTAP configurati
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
 == Create a storage VM
-
 If supported by your license, you can create multiple storage VMs on a single node system or on an HA pair. You should use the BlueXP API to create a storage VM on a single node or an HA pair.
 
 .About this task
 
-Using the API (and not ONTAP System Manager or the ONTAP CLI) is required because BlueXP configures the storage VM with the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communication.
-
-Note that BlueXP allocates the required IP addresses in Azure and creates the storage VM with a data LIF for SMB/NFS access and an iSCSI LIF for outbound SMB communication.
-
-BlueXP also modifies the `default-data-files` policies on the data storage VMs by removing the following services from NAS data LIFs and adding them to iSCSI data LIFs:
+When you create storage VMs using the APIs, along with configuring the required network interfaces, BlueXP also modifies the `default-data-files` policies on the data storage VMs by removing the following services from NAS data LIFs and adding them to iSCSI data LIFs:
 
 * `data-fpolicy-client`
 * `management-ad-client`
@@ -61,7 +56,7 @@ The request body should include the following:
 [source,json]
 { "svmName": "myNewSvm1" 
    "svmPassword": "optional, the API takes the cluster password if not provided"
-   "mgmtLif": "Y/N"}
+   "mgmtLif": "optional, to create an additional management LIF, if you want to use the storage VM for management purposes"}
 
 
 === HA pair
@@ -78,6 +73,38 @@ The request body should include the following:
 [source,json]
 { "svmName": "myNewSvm1" 
    "svmPassword": "optional, the API takes the cluster password if not provided"
-   "mgmtLif": "Y/N"}
+   "mgmtLif": "optional, to create an additional management LIF, if you want to use the storage VM for management purposes"}
 
 
+== Manage storage VMs on single node systems and HA pairs
+
+The BlueXP API also supports renaming and deleting storage VMs on single node and HA pairs.
+
+=== Rename a storage VM
+
+You can rename a storage VM on a single node system or an HA pair using the BlueXP API.
+
+.Steps
+
+. Use the following API call to rename a storage VM:
++
+`PUT /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
++
+The request body should include the following:
++
+[source,json]
+----
+{
+    "newSvmName": "myRenamedSvm"
+}
+----
+
+== Delete a storage VM
+
+You can delete a storage VM on a single node system or an HA pair using the BlueXP API.
+
+.Steps
+
+. Use the following API call to delete a storage VM:
++
+`DELETE /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
