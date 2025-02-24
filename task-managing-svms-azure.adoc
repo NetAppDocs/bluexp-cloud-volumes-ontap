@@ -102,7 +102,7 @@ The request body should include the following:
 
 === Delete a storage VM
 
-You can delete a storage VM on a single node system or an HA pair.
+You can delete a storage VM on a single node system or an HA pair when there are no active volumes in it.
 
 .Steps
 
