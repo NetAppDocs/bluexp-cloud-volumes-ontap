@@ -13,24 +13,28 @@ summary: A storage VM is a virtual machine running within ONTAP that provides st
 :imagesdir: ./media/
 
 [.lead]
-A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but additional storage VMs are supported when running Cloud Volumes ONTAP in Azure.
+A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but you can create additional storage VMs when running Cloud Volumes ONTAP in Azure.
 
-To create and manage additional data-serving storage VMs on Azure, you should use the APIs provided by BlueXP. This is because the APIs automate the process of creating the storage VMs and configuring the required network interfaces. when creating teh storage VMs, BlueXP configures the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communication from the storage VM.
+To create and manage additional data-serving storage VMs on Azure, you should use the APIs provided by BlueXP. This is because the APIs automate the process of creating the storage VMs and configuring the required network interfaces. when creating the storage VMs, BlueXP configures the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communications from the storage VM.
 
 NOTE: To perform additional NIC-related tasks, you can assign a network contributor role or custom role with appropriate permissions in Azure. For more information on these NIC-related permissions, refer to the https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface?tabs=azure-portal#permissions[Microsoft Azure documentation^].
 
 == Supported number of storage VMs
 
-Multiple storage VMs are supported with specific Cloud Volumes ONTAP configurations starting with the 9.9.0 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
+Beginning with Cloud Volumes ONTAP 9.9.0, mMultiple storage VMs are supported with specific configurations. Refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
+.Before you begin
+
+The Connector requires specific permissions to create and manage storage VMs for Cloud Volumes ONTAP high-availability (HA) pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
+
 == Create a storage VM
-If supported by your license, you can create multiple storage VMs on a single node system or on an HA pair. You should use the BlueXP API to create a storage VM on a single node or an HA pair.
+If supported by your license, you can create multiple storage VMs on a single node system or on an HA pair by using the BlueXP API.
 
 .About this task
 
-When you create storage VMs using the APIs, along with configuring the required network interfaces, BlueXP also modifies the `default-data-files` policies on the data storage VMs by removing the following services from NAS data LIFs and adding them to iSCSI data LIFs:
+When you create storage VMs using the API, along with configuring the required network interfaces, BlueXP also modifies the `default-data-files` policies on the data storage VMs by removing the following services from the NAS data LIF and adding them to the iSCSI data LIF that's used for outbound management connections:
 
 * `data-fpolicy-client`
 * `management-ad-client`
@@ -38,12 +42,9 @@ When you create storage VMs using the APIs, along with configuring the required 
 * `management-ldap-client`
 * `management-nis-client`
 
-Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.
-
-
 === Single node system
 
-These steps create a new storage VM on a single node system using the BlueXP API. 
+This step creates a storage VM on a single node system. 
 
 .Steps
 
@@ -60,7 +61,7 @@ The request body should include the following:
 
 
 === HA pair
-These steps create a new storage VM on an Azure HA pair using the BlueXP API.
+This step creates a storage VM on an Azure HA pair.
 
 .Steps
 
@@ -71,7 +72,7 @@ These steps create a new storage VM on an Azure HA pair using the BlueXP API.
 The request body should include the following:
 +
 [source,json]
-{ "svmName": "myNewSvm1" 
+{ "svmName": "NewSvmName" 
    "svmPassword": "optional, the API takes the cluster password if not provided"
    "mgmtLif": "optional, to create an additional management LIF, if you want to use the storage VM for management purposes"}
 
@@ -82,7 +83,7 @@ The BlueXP API also supports renaming and deleting storage VMs on single node an
 
 === Rename a storage VM
 
-You can rename a storage VM on a single node system or an HA pair using the BlueXP API.
+You can rename a storage VM on a single node system or an HA pair.
 
 .Steps
 
@@ -95,13 +96,13 @@ The request body should include the following:
 [source,json]
 ----
 {
-    "newSvmName": "myRenamedSvm"
+    "newSvmName": "RenamedSvm"
 }
 ----
 
-== Delete a storage VM
+=== Delete a storage VM
 
-You can delete a storage VM on a single node system or an HA pair using the BlueXP API.
+You can delete a storage VM on a single node system or an HA pair.
 
 .Steps
 
