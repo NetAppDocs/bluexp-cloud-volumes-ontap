@@ -87,9 +87,21 @@ You can rename a storage VM on a single node system or an HA pair.
 
 .Steps
 
-. Use the following API call to rename a storage VM:
+. Use the following API call to rename a storage VM on a single node system:
 +
 `PUT /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
++
+The request body should include the following:
++
+[source,json]
+----
+{
+    "newSvmName": "RenamedSvm"
+}
+----
+. Use the following API call to rename a storage VM in an HA configuration:
++
+`PUT /occm/api/azure/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
 +
 The request body should include the following:
 +
@@ -106,6 +118,9 @@ You can delete a storage VM on a single node system or an HA pair when there are
 
 .Steps
 
-. Use the following API call to delete a storage VM:
+. Use the following API call to delete a storage VM on a single node system:
 +
 `DELETE /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
+.  Use the following API call to delete a storage VM in an HA configuration:
++
+`DELETE /occm/api/azure/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
