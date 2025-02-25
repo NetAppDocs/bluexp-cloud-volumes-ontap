@@ -15,7 +15,7 @@ summary:
 [.lead]
 NetApp provides two options for deploying Cloud Volumes ONTAP on Azure: through NetApp BlueXP, or through the Azure marketplace. Cloud Volumes ONTAP traditionally relies on BlueXP for deployment and orchestration. Beginning with Cloud Volumes ONTAP 9.16.1, you can take advantage of Azure marketplace direct deployment, a streamlined process that provides access to a limited, but still powerful set of Cloud Volumes ONTAP features and options. 
 
-When you deploy Cloud Volumes ONTAP directly from the Azure marketplace, you're not required to set up the BlueXP Connector or meet other security and onboarding criteria required for deploying Cloud Volumes ONTAP through BlueXP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks, and explore its core features and capabilities in your environment.
+When you deploy Cloud Volumes ONTAP directly from the Azure marketplace, you're not required to set up the BlueXP Connector or meet other security and onboarding criteria required for deploying Cloud Volumes ONTAP through BlueXP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks and explore its core features and capabilities in your environment.
 
 Here is the feature comparison between the two options:
 
@@ -42,7 +42,7 @@ link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported num
 
 |===
 
-In the future, the BlueXP Connector will be able to discover the deployments made through Azure marketplace direct deployment, when you can experience the full management and orchestration capabilities of Cloud Volumes ONTAP.
+In the future, the BlueXP Connector will be able to identify deployments made through the Azure marketplace direct deployment. This will enable you to take advantage of the enhanced features offered by BlueXP.
 
 
 .Related links

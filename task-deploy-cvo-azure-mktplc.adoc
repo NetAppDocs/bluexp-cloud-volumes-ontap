@@ -13,7 +13,7 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-Beginning with Cloud Volumes ONTAP 9.16.1, you can use Azure marketplace direct deployment to quickly and easily deploy Cloud Volumes ONTAP from the Azure marketplace, and explore its core features and capabilities within your environment.
+Beginning with Cloud Volumes ONTAP 9.16.1, you can use Azure marketplace direct deployment to quickly and easily deploy Cloud Volumes ONTAP and explore its core features within your environment.
 
 For more information about this offering, refer to link:concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP offerings on BlueXP and the marketplace].
 
@@ -25,9 +25,9 @@ The instance of Cloud Volumes ONTAP deployed by using Azure marketplace direct d
 * Two nodes configured in a high availability (HA) mode in a single availability zone (AZ), provisioned with default serial numbers. The storage virtual machines (SVMs) are deployed in a link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks[flexible orchestration mode].
 * An aggregate for the instance created by default.
 * A Premium SSD v2 Managed Disk of 500 GiB provisioned capacity, and a root and a data disk.
-* One data SVM deployed, with  NFS, CIFS, iSCSI, and NVMe/TCP data-services. No provision for additional SVMs.
-* Licenses for NFS, CIFS (SMB), iSCSI, anti-ransomware (ARW), SnapLock, and SnapMirror installed against the default serial numbers.
-* https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html[ONTAP Temperature-sensitive storage efficiency (TSSE)^], volume encryption, and external key-management enabled by default.
+* One data SVM deployed, with  NFS, CIFS, iSCSI, and NVMe/TCP data-services. No provision for adding more SVMs.
+* Licenses installed for NFS, CIFS (SMB), iSCSI, anti-ransomware (ARW), SnapLock, and SnapMirror.
+* https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html[ONTAP temperature-sensitive storage efficiency (TSSE)^], volume encryption, and external key-management enabled by default.
 * These features are not supported:
 ** FabricPool tiering
 ** Changing the instance type
