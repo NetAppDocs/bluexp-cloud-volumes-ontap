@@ -21,16 +21,19 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 // tag::whats-new[]
 
+== 28 February 2025
+include::_whatsnew/2025-02-28.adoc[]
+
 == 18 February 2025
 include::_whatsnew/2025-02-18.adoc[]
 
 == 10 February 2025
 include::_whatsnew/2025-02-10.adoc[]
 
+//end::whats-new[]
+
 == 9 December 2024
 include::_whatsnew/2024-12-09.adoc[]
-
-//end::whats-new[]
 
 == 11 November 2024
 include::_whatsnew/2024-11-11.adoc[]

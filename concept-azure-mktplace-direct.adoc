@@ -23,7 +23,7 @@ Here is the feature comparison between the two options:
 |===
 |  | Azure marketplace | BlueXP
 | *Onboarding* | Shorter and easier, minimal preparation required for direct deployment | Longer onboarding process, including the installation of the BlueXP Connector
-| *Supported storage virtual machine (SVM) instances* | Edsv5 and LsV3 | Full range of storage VM options.
+| *Supported storage virtual machine (SVM) instances* | Edsv5 and Lsv3 | Full range of storage VM options.
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
 | *License*   | Free license | Any capacity-based license. 
 link:concept-licensing.html[Cloud Volumes ONTAP licensing]
