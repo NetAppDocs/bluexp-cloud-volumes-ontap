@@ -15,7 +15,7 @@ summary: You can launch a single Cloud Volumes ONTAP system in Azure by creating
 [.lead]
 You can launch a single node system or an HA pair in Azure by creating a Cloud Volumes ONTAP working environment in BlueXP.
 
-.What you'll need
+.Before you begin
 
 You need the following to create a working environment.
 
