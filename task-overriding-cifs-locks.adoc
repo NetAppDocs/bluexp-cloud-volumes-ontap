@@ -23,7 +23,7 @@ If you enable this setting, Cloud Volumes ONTAP will veto the locks and reset th
 
 CAUTION: This process might be disruptive to CIFS clients. Data that is not committed from CIFS clients could be lost.
 
-.What you'll need
+.Before you begin
 
 You need to create a Connector before you can change BlueXP settings. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector[Learn how^].
 

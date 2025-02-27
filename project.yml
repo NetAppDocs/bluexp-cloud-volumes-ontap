@@ -72,7 +72,7 @@ sidebar:
         - title: Get started in Microsoft Azure
           flavor: azure
           entries:
-            - title: Learn about your options of deployment
+            - title: Learn about Cloud Volumes ONTAP deployment options in Azure
               url: /concept-azure-mktplace-direct.html
             - title: Get started in BlueXP
               entries:
@@ -111,9 +111,7 @@ sidebar:
                     - title: Additional information
                       url: /reference-image-verification-links.html
             - title: Get started in the marketplace
-              entries:
-                  - title: Deploy Cloud Volumes ONTAP from the marketplace
-                    url: /task-deploy-cvo-azure-mktplc.html                                   
+              url: /task-deploy-cvo-azure-mktplc.html                                   
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
