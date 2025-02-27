@@ -52,12 +52,12 @@ a|User authentication fails and the following services remain unavailable:
 * Protocols and proxy services
 
 | 
-\https://keyvault-production-aks.vault.azure.net
+https://vault.azure.net
 
-|
+| 
 Key Vault
 
-| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
+| Used to retrieve client secret keys from the Azure Key Vault when using customer-managed keys (CMK).
 
 | Standard, restricted, and private modes.
 
@@ -164,7 +164,7 @@ AutoSupport
 ==== Outbound internet access for NetApp AutoSupport 
 Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support. 
 
-Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
+Routing and firewall policies must allow HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
 
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
