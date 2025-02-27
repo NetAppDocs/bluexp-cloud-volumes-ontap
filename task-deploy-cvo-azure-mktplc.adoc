@@ -13,7 +13,7 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-Beginning with Cloud Volumes ONTAP 9.16.1, you can use Azure marketplace direct deployment to quickly and easily deploy Cloud Volumes ONTAP and explore its core features within your environment.
+Beginning with Cloud Volumes ONTAP 9.16.1, you can use Azure marketplace direct deployment to quickly and easily deploy Cloud Volumes ONTAP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks and explore its core features and capabilities in your environment. 
 
 For more information about this offering, refer to link:concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP offerings on BlueXP and the marketplace].
 
