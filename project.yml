@@ -111,9 +111,7 @@ sidebar:
                     - title: Additional information
                       url: /reference-image-verification-links.html
             - title: Get started in the marketplace
-              entries:
-                  - title: Deploy Cloud Volumes ONTAP from the marketplace
-                    url: /task-deploy-cvo-azure-mktplc.html                                   
+              url: /task-deploy-cvo-azure-mktplc.html                                   
         - title: Get started in Google Cloud
           flavor: gcp
           entries:
