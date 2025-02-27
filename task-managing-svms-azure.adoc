@@ -15,22 +15,22 @@ summary: A storage VM is a virtual machine running within ONTAP that provides st
 [.lead]
 A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an _SVM_ or a _vserver_. Cloud Volumes ONTAP is configured with one storage VM by default, but you can create additional storage VMs when running Cloud Volumes ONTAP in Azure.
 
-To create and manage additional data-serving storage VMs on Azure, you should use the APIs provided by BlueXP. This is because the APIs automate the process of creating the storage VMs and configuring the required network interfaces. when creating the storage VMs, BlueXP configures the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communications from the storage VM.
+To create and manage additional data-serving storage VMs on Azure, you should use the APIs provided by BlueXP. This is because the APIs automate the process of creating the storage VMs and configuring the required network interfaces. When creating the storage VMs, BlueXP configures the required LIF services, as well as an iSCSI LIF that's required for outbound SMB/CIFS communications from the storage VM.
 
 NOTE: To perform additional NIC-related tasks, you can assign a network contributor role or custom role with appropriate permissions in Azure. For more information on these NIC-related permissions, refer to the https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface?tabs=azure-portal#permissions[Microsoft Azure documentation^].
 
 == Supported number of storage VMs
 
-Beginning with Cloud Volumes ONTAP 9.9.0, multiple storage VMs are supported with specific configurations. Refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
+Beginning with Cloud Volumes ONTAP 9.9.0, multiple storage VMs are supported with specific configurations, based on the license types. Refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
 .Before you begin
 
-The Connector requires specific permissions to create and manage storage VMs for Cloud Volumes ONTAP high-availability (HA) pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
+The Connector requires specific permissions to create and manage storage VMs for Cloud Volumes ONTAP. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[the policies provided by NetApp^].
 
 == Create a storage VM
-If supported by your license, you can create multiple storage VMs on a single node system or on an HA pair by using the BlueXP APIs.
+If your configuration supports it, you can create multiple storage VMs on a single node system or in a high-availability (HA) configuration by using the BlueXP APIs.
 
 .About this task
 
@@ -61,7 +61,7 @@ The request body should include the following:
 
 
 === HA pair
-This step creates a storage VM on an Azure HA pair.
+This step creates a storage VM in an Azure HA configuration.
 
 .Steps
 
@@ -79,11 +79,11 @@ The request body should include the following:
 
 == Manage storage VMs on single node systems and HA pairs
 
-The BlueXP API also supports renaming and deleting storage VMs on single node and HA pairs.
+Using the BlueXP APIs, you can rename and delete storage VMs in both single node and HA configurations.
 
 === Rename a storage VM
 
-You can rename a storage VM on a single node system or an HA pair.
+To rename a storage VM, you should provide the names of the existing storage VM and the new storage VM as parameters.
 
 .Steps
 
@@ -116,7 +116,7 @@ The request body should include the following:
 
 === Delete a storage VM
 
-You can delete a storage VM on a single node system or an HA pair when there are no active volumes in it.
+In a single node or HA configuration, you have the ability to remove a storage VM if it doesn't have any active volumes.
 
 .Steps
 
