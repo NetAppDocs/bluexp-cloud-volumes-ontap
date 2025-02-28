@@ -15,4 +15,4 @@ summary: The Event Management System collects and displays information about eve
 [.lead]
 The Event Management System (EMS) collects and displays information about events that occur on  ONTAP systems. To receive event notifications, you can set event destinations (email addresses, SNMP trap hosts, or syslog servers) and event routes for a particular event severity.
 
-You can configure EMS using the CLI. For instructions, refer to https://docs.netapp.com/us-en/ontap/error-messages/index.html[ONTAP docs: EMS configuration overview^].
+You can configure EMS using the CLI. For instructions, refer to the https://docs.netapp.com/us-en/ontap/error-messages/index.html[ONTAP documentation: EMS configuration overview^].

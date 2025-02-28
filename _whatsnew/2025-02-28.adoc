@@ -1,0 +1,4 @@
+=== New Zealand North region now supported in Azure
+The New Zealand North region is now supported in Azure for single node and high-availability (HA) configurations of Cloud Volumes ONTAP 9.12.1 GA and later. Note that the Lsv3 instance type is not supported in this region.
+
+For a list of all supported regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^].
