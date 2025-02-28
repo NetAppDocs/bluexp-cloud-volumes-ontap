@@ -52,12 +52,12 @@ a|User authentication fails and the following services remain unavailable:
 * Protocols and proxy services
 
 | 
-\https://keyvault-production-aks.vault.azure.net
+https://vault.azure.net
 
-|
+| 
 Key Vault
 
-| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
+| Used to retrieve client secret keys from the Azure Key Vault when using customer-managed keys (CMK).
 
 | Standard, restricted, and private modes.
 
