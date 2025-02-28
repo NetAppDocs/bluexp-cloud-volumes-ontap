@@ -15,7 +15,7 @@ summary: You can export ONTAP images from the Azure Marketplace to verify the si
 [.lead]
 Once the VHD image is published to Azure cloud, the image is no longer managed by NetApp. Instead, the published image is placed on the Azure marketplace. Azure's alteration to the leading 1MB and ending 512B of the VHD occurs when the image is staged and published on the Azure marketplace. To verify the signature of the VHD file, the VHD image modified by Azure needs to be exported from the Azure marketplace first.
 
-.What you'll need
+.Before you begin
 
 You must install the required programs on your system. 
 

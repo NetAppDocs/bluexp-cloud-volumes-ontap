@@ -52,12 +52,12 @@ a|User authentication fails and the following services remain unavailable:
 * Protocols and proxy services
 
 | 
-\https://keyvault-production-aks.vault.azure.net
+https://vault.azure.net
 
-|
+| 
 Key Vault
 
-| Used to retrieve client secret key from the Azure Key Vault to communicate with S3 buckets for metadata handling. Cloud Volumes ONTAP service uses this component internally.
+| Used to retrieve client secret keys from the Azure Key Vault when using customer-managed keys (CMK).
 
 | Standard, restricted, and private modes.
 
@@ -164,7 +164,7 @@ AutoSupport
 ==== Outbound internet access for NetApp AutoSupport 
 Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support. 
 
-Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
+Routing and firewall policies must allow HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
 
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
@@ -173,7 +173,7 @@ If an outbound internet connection isn't available to send AutoSupport messages,
 
 If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
 
-After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP docs: Set up AutoSupport^].
+After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to the https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP documentation: Set up AutoSupport^].
 
 If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
 
@@ -469,7 +469,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 .3+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
 | HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
 | TCP | 3128 | Node management LIF | Connector | Sending AutoSupport messages through a proxy server on the Connector, if an outbound internet connection isn't available
-| Configuration backups | HTTP | 80 | Node management LIF | \http://<connector-IP-address>/occm/offboxconfig | Send configuration backups to the Connector. link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html[Learn about configuration backup files^].
+| Configuration backups | HTTP | 80 | Node management LIF | \http://<connector-IP-address>/occm/offboxconfig | Send configuration backups to the Connector. link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html[ONTAP documentation^].
 | DHCP | 68 | UDP | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | 67 | UDP | Node management LIF | DHCP | DHCP server
 | DNS | 53 | UDP | Node management LIF and data LIF (NFS, CIFS) | DNS | DNS

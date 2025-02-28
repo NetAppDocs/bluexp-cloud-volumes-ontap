@@ -34,7 +34,7 @@ New aggregates will have NAE enabled by default after you set up an external key
 
 Cloud Volumes ONTAP doesn't support onboard key management.
 
-.What you'll need
+.Before you begin
 
 Your Cloud Volumes ONTAP system should be registered with NetApp Support. A NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.
 

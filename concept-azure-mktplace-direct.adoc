@@ -1,0 +1,53 @@
+---
+sidebar: sidebar
+permalink: concept-azure-mktplace-direct.html
+keywords: azure marketplace direct, cvo in azure marketplace
+summary: 
+---
+
+= Learn about Cloud Volumes ONTAP deployment options in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NetApp provides two options for deploying Cloud Volumes ONTAP on Azure. Cloud Volumes ONTAP traditionally relies on BlueXP for deployment and orchestration. Beginning with Cloud Volumes ONTAP 9.16.1, you can take advantage of Azure marketplace direct deployment, a streamlined process that provides access to a limited, but still powerful set of Cloud Volumes ONTAP features and options. 
+
+When you deploy Cloud Volumes ONTAP directly from the Azure marketplace, you're not required to set up the BlueXP Connector or meet other security and onboarding criteria required for deploying Cloud Volumes ONTAP through BlueXP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks and explore its core features and capabilities in your environment.
+
+Here is the feature comparison between the two options:
+
+[cols=3*,options="header,autowidth"]
+|===
+|  | Azure marketplace | BlueXP
+| *Onboarding* | Shorter and easier, minimal preparation required for direct deployment | Longer onboarding process, including the installation of the BlueXP Connector
+| *Supported storage virtual machine (storage VM) instances* | Edsv5 and Lsv3 | Full range of storage VM options.
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
+| *License*   | Free license | Any capacity-based license. 
+link:concept-licensing.html[Cloud Volumes ONTAP licensing]
+| *NetApp support* | Not included | Available, based on the license type
+| *Capacity* | Up to 500 GiB | Expandable by configuration
+| *Deployment model* |High-availability (HA) mode deployment in single availability zone (AZ) | All supported configurations, including single node and HA modes, single and multiple AZ deployments
+| *Supported disk type* | Premium SSD v2 Managed Disks | Wider support.
+link:concept-storage.html#azure-storage[Default configuration for Cloud Volumes ONTAP]
+|*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
+link:concept-write-speed.html[Learn about write speeds in Cloud Volumes ONTAP].
+| *Orchestration capabilities* | Not available | Available through BlueXP, based on the license type
+| *Number of supported storage VMs* | One  per deployment | Multiple storage VMs, based on your configuration. 
+link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported number of storage VMs]
+| *Changing the instance type* | Not supported | Supported
+| *FabricPool tiering* | Not supported | Supported
+
+|===
+
+In the future, the BlueXP Connector will be able to identify deployments made through the Azure marketplace direct deployment. This will enable you to take advantage of the enhanced features offered by BlueXP.
+
+
+.Related links
+
+* Azure marketplace direct deployment: link:task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace]
+* BlueXP deployment: link:task-getting-started-azure.html[Quick start for Cloud Volumes ONTAP in Azure]
+* https://docs.netapp.com/us-en/bluexp-family/index.html[BlueXP documentation^]
+

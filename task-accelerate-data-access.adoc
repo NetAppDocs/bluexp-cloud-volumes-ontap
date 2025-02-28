@@ -30,7 +30,7 @@ video::PBNPVRUeT1o[youtube, width=848, height=480]
 
 When configuring FlexCache on a Cloud Volumes ONTAP system where the origin volume is encrypted, additional steps are required, to ensure that the FlexCache volume can properly access and cache the encrypted data. 
 
-.What you'll need
+.Before you begin
 . *Encryption setup*: Ensure that the source volume is fully encrypted and operational. For Cloud Volumes ONTAP systems, this involves integrating with cloud-specific key management services.
 ifdef::aws[]
 For AWS, this typically means using AWS Key Management Service (KMS). For information, refer to link:task-aws-key-management.html[Manage keys with AWS Key Management Service].

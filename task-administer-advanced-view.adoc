@@ -106,7 +106,7 @@ You can access ONTAP System Manager from a Cloud Volumes ONTAP working environme
 . If needed, click *Switch to Standard View* to return to standard management through BlueXP.
 
 == Help with using System Manager
-If you need help using System Manager with Cloud Volumes ONTAP, you can refer to https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^] for step-by-step instructions. Here are a few links that might help:
+If you need help using System Manager with Cloud Volumes ONTAP, you can refer to the https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^] for step-by-step instructions. Here are a few ONTAP documentation links that might help:
 
 * https://docs.netapp.com/us-en/ontap/ontap-security-hardening/roles-applications-authentication.html[ONTAP roles, applications, and authentication^]
 * https://docs.netapp.com/us-en/ontap/system-admin/access-cluster-system-manager-browser-task.html[Use System Manager to access a cluster^].

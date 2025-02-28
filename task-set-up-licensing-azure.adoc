@@ -57,7 +57,7 @@ Pay upfront by purchasing a license (BYOL) from NetApp to deploy Cloud Volumes O
 
 .Steps
 
-. https://cloud.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
+. https://bluexp.netapp.com/contact-cds[Contact NetApp Sales to obtain a license^]
 
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account[Add your NetApp Support Site account to BlueXP^]
 +
