@@ -21,7 +21,6 @@ ifdef::aws[]
 == AWS
 
 Single node::
-* 9.16.1 GA
 * 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
@@ -39,7 +38,6 @@ Single node::
 * 9.5 P6
 
 HA pair::
-* 9.16.1 GA
 * 9.15.1 GA
 * 9.15.0 P1
 * 9.14.1 GA
