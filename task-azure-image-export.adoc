@@ -61,15 +61,15 @@ South Central US          southcentralus       (US) South Central US
 
 . Review the SKU names for the corresponding Cloud Volumes ONTAP versions and VM deployment types from the table below.
 +
-The SKU name is used as the value for the "skuName" variable when setting the URN of the marketplace image.
+The SKU name is the value for the "skuName" variable when setting the URN of the marketplace image.
 + 
 For example, all single node deployments with Cloud Volumes ONTAP 9.15.0 should use `ontap_cloud_byol` as the SKU name.
 +
 [cols="1,1,1"]
 |===
-|*Cloud Volumes ONTAP version*|*VM deployment type* |*SKU name*
+|*Cloud Volumes ONTAP version*|*VM deployment method* |*SKU name*
 |9.16.1 and later
-|Deployments through Marketplace Direct
+|Through the marketplace direct deployment method
 |ontap_cloud_direct
 |9.16.1 and later
 |All deployments through BlueXP
