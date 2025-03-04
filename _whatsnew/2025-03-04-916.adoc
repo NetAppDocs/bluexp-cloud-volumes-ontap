@@ -1,5 +1,5 @@
 === Cloud Volumes ONTAP 9.16.1 GA
-BlueXP can now deploy and manage Cloud Volumes ONTAP 9.16.1 General Availability release. This version is available for deployment only in Azure and Google Cloud, and available for upgrade in all cloud providers, AWS, Azure, and Google Cloud.
+You can now use BlueXP to deploy and manage the Cloud Volumes ONTAP 9.16.1 General Availability release. This version is available for deployment only in Azure and Google Cloud, and available for upgrade in all cloud providers, AWS, Azure, and Google Cloud.
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
