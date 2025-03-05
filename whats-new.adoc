@@ -20,17 +20,18 @@ The enhancements described on this page are specific to BlueXP features that ena
 //Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
 // tag::whats-new[]
-
 == 10 March 2025
 include::_whatsnew/2025-03-10.adoc[]
 
+== 03 March 2025
+include::_whatsnew/2025-03-03.adoc[]
+
 == 18 February 2025
 include::_whatsnew/2025-02-18.adoc[]
+//end::whats-new[]
 
 == 10 February 2025
 include::_whatsnew/2025-02-10.adoc[]
-
-//end::whats-new[]
 
 == 9 December 2024
 include::_whatsnew/2024-12-09.adoc[]
