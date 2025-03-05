@@ -66,8 +66,8 @@ The request body should include the following:
 
 [source,json]
 { "svmName": "NewSvmName" 
-   "svmPassword": "optional, the API takes the cluster password if not provided"
-   "mgmtLif": "optional, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+   "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
 
 
 == Manage storage VMs on single node systems and HA pairs
