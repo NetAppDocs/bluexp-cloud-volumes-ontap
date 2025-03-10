@@ -47,7 +47,7 @@ When you create storage VMs using the APIs, along with configuring the required 
 Use the following API call to create a storage VM on a single node system. 
 
 
-`POST /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/svm`
+`POST /azure/vsa/working-environments/{workingEnvironmentId}/svm`
 
 The request body should include the following:
 
@@ -60,7 +60,7 @@ The request body should include the following:
 === HA pair
 Use the following API call to create a storage VM in an Azure HA configuration:
 
-`POST /occm/api/azure/ha/working-environments/{workingEnvironmentId}/svm`
+`POST /azure/ha/working-environments/{workingEnvironmentId}/svm`
 
 The request body should include the following:
 
@@ -115,7 +115,7 @@ In a single node or HA configuration, you can remove a storage VM if it doesn't 
 
 * Use the following API call to delete a storage VM on a single node system:
 +
-`DELETE /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
+`DELETE /azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
 *  Use the following API call to delete a storage VM in an HA configuration:
 +
-`DELETE /occm/api/azure/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
+`DELETE /azure/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
