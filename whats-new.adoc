@@ -14,25 +14,31 @@ summary: Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 [.lead]
 Learn what's new with Cloud Volumes ONTAP management in BlueXP.
 
-The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^]
+The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what's new with the Cloud Volumes ONTAP software itself, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[go to the Cloud Volumes ONTAP Release Notes^].
 
 //The whats-new tag should be enclosed around the three most recent releases. Be sure to use absolute URLs for links and images. Begin images like this: image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/[file-name].png. This Cis required so that the what's new content can be reused in the bluexp-relnotes doc site. To begin the tag, use //tag::whats-new[]. To end the tag, use //end::whats-new[].
 //Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
-//== 28 February 2025
-//include::_whatsnew/2025-02-28.adoc[]
-
 // tag::whats-new[]
+
+== 6 March 2025
+include::_whatsnew/2025-03-06-916.adoc[]
+
+== 03 March 2025
+include::_whatsnew/2025-03-03.adoc[]
+
 == 18 February 2025
 include::_whatsnew/2025-02-18.adoc[]
+
+//end::whats-new[]
 
 == 10 February 2025
 include::_whatsnew/2025-02-10.adoc[]
 
+//end::whats-new[]
+
 == 9 December 2024
 include::_whatsnew/2024-12-09.adoc[]
-
-//end::whats-new[]
 
 == 11 November 2024
 include::_whatsnew/2024-11-11.adoc[]
@@ -58,7 +64,7 @@ For a list of all regions, see the https://bluexp.netapp.com/cloud-volumes-globa
 === Cloud Volumes ONTAP 9.15.1 GA
 BlueXP can now deploy and manage Cloud Volumes ONTAP 9.15.1 General Availability release in AWS, Azure, and Google Cloud.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 8 August 2024
 
@@ -78,7 +84,7 @@ The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provide
 === Cloud Volumes ONTAP 9.15.0
 BlueXP can now deploy and manage the Cloud Volumes ONTAP 9.15.0 in AWS, Azure, and Google Cloud.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9150-relnotes/[Learn about the new features included in this release of Cloud Volumes ONTAP^].
 
 == 17 May 2024
 
