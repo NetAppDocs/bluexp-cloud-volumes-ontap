@@ -23,6 +23,9 @@ The enhancements described on this page are specific to BlueXP features that ena
 == 10 March 2025
 include::_whatsnew/2025-03-10.adoc[]
 
+== 12 March 2025
+include::_whatsnew/2025-03-12.adoc[]
+
 == 6 March 2025
 include::_whatsnew/2025-03-06-916.adoc[]
 
