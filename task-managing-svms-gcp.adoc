@@ -93,13 +93,13 @@ Modifying the services is required because it ensures that Cloud Volumes ONTAP c
 
 .Required Google Cloud permissions
 
-The Connector requires specific permissions to create and manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp].
+The Connector requires specific permissions to create and manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
 
 .Steps
 
 . Use the following API call to create a storage VM:
 +
-`POST /occm/api/gcp/ha/working-environments/{WE_ID}/svm/`
+`POST /gcp/ha/working-environments/{workingEnvironmentId}/svm/`
 +
 The request body should include the following:
 +
@@ -118,7 +118,7 @@ If needed, you can change the name of a storage VM at any time.
 
 . Use the following API call to rename a storage VM:
 +
-`PUT /occm/api/gcp/ha/working-environments/{WE_ID}/svm`
+`PUT /gcp/ha/working-environments/{workingEnvironmentId}/svm`
 +
 The request body should include the following:
 +
@@ -136,4 +136,4 @@ If you no longer need a storage VM, you can delete it from Cloud Volumes ONTAP.
 
 . Use the following API call to delete a storage VM:
 +
-`DELETE /occm/api/gcp/ha/working-environments/{WE_ID}/svm/{SVM_NAME}`
+`DELETE /gcp/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
