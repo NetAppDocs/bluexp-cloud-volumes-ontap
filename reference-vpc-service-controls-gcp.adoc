@@ -5,7 +5,7 @@ keywords: vpc, service controls, vpc-sc, google, psc, private service connect
 summary: When choosing to lock down your Google environment with VPC Service Controls, you should understand how BlueXP and Cloud Volumes ONTAP interact with the Google APIs as well as how to configure your service parameter to deploy BlueXP and Cloud Volumes ONTAP.
 ---
 
-= Planning for VPC Service Controls in Google Cloud
+= Set up VPC Service Controls to deploy Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
