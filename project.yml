@@ -177,13 +177,13 @@ sidebar:
           entries:
             - title: Work with storage VMs in BlueXP
               url: /task-managing-svms.html
-            - title: Create storage VMs in AWS
+            - title: Manage storage VMs in AWS
               flavor: aws
               url: /task-managing-svms-aws.html
-            - title: Create storage VMs in Azure
+            - title: Manage storage VMs in Azure
               flavor: azure
               url: /task-managing-svms-azure.html
-            - title: Create storage VMs in Google Cloud
+            - title: Manage storage VMs in Google Cloud
               flavor: gcp
               url: /task-managing-svms-gcp.html
             - title: Set up SVM disaster recovery

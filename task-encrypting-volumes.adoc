@@ -39,7 +39,7 @@ Cloud Volumes ONTAP doesn't support onboard key management.
 Your Cloud Volumes ONTAP system should be registered with NetApp Support. A NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[Adding NetApp Support Site accounts to BlueXP^]
-* link:task-registering.html[Registering pay-as-you-go systems]
+* link:task-registering.html[Register pay-as-you-go systems]
 
 NOTE: BlueXP doesn't install the NVE license on systems that reside in the China region.
 

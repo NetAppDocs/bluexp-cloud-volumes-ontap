@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, register, registering, paygo, pay-as-you-go, regi
 summary: Support from NetApp is included with Cloud Volumes ONTAP PAYGO systems, but you must first activate support by registering the systems with NetApp.
 ---
 
-= Registering pay-as-you-go systems
+= Register Cloud Volumes ONTAP pay-as-you-go systems
 :hardbreaks:
 :nofooter:
 :icons: font

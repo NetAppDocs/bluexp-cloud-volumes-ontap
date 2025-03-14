@@ -5,7 +5,7 @@ keywords: security, encryption, antivirus, concepts, key managers, safenet, kms,
 summary: Cloud Volumes ONTAP supports data encryption and provides protection against viruses and ransomware.
 ---
 
-= Security
+= Learn about data encryption and ransomware protection in Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -54,7 +54,7 @@ endif::azure,gcp[]
 
 New aggregates have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
 
-Setting up a supported key manager is the only required step. For set up instructions, refer to link:task-encrypting-volumes.html[Encrypting volumes with NetApp encryption solutions].
+Setting up a supported key manager is the only required step. For set up instructions, refer to link:task-encrypting-volumes.html[Encrypt volumes with NetApp encryption solutions].
 
 ifdef::aws[]
 === AWS Key Management Service

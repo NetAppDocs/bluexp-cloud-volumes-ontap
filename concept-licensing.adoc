@@ -5,7 +5,7 @@ keywords: freemium, professional, essentials, licensing, licenses, cloud volumes
 summary: Several licensing options are available for Cloud Volumes ONTAP. Each option enables you to choose a configuration that meets your needs.
 ---
 
-= Cloud Volumes ONTAP licensing
+= Licensing for Cloud Volumes ONTAP 
 :hardbreaks:
 :nofooter:
 :icons: font

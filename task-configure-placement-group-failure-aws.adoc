@@ -5,7 +5,8 @@ keywords: placement group, failure, HA single zone, app.conf, rollback, AWS
 summary: Cloud Volumes ONTAP uses an Azure Private Link for connections to its associated storage accounts. If needed, you can disable Azure Private Links and use service endpoints instead.
 ---
 
-= Configure placement group creation for AWS HA Single AZ
+= Configure placement group creation for a Cloud Volumes ONTAP HA pair in a single AWS AZ
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,24 +14,17 @@ summary: Cloud Volumes ONTAP uses an Azure Private Link for connections to its a
 :imagesdir: ./media/
 
 [.lead]
-Cloud Volumes ONTAP fails and rolls back new deployments of AWS high-availability (HA) configurations in a single availability Zone (AZ) whenever the placement group creation fails. If needed, you can force the successful completion of deployments by configuring placement groups to bypass the rollback process whenever the creation fails.  
+Cloud Volumes ONTAP high-availability (HA) deployments in AWS single availability Zone (AZ) can fail and roll back if the creation of the placement group fails. Creation of the placement group also fails and the deployment rolls back if the Cloud Volumes ONTAP node and mediator instance are not available. To prevent this, you can modify the configuration to enable the deployment to complete successfully even if the placement group creation fails. 
 
-== Overview
-
-By default, deployments fail and rollback whenever a placement group fails the creation process for a HA single availability zone working environment. Creation of the placement group also fails and rolls back if both Cloud Volumes ONTAP nodes and the mediator instance are not present.
-
-You can bypass the rollback process whenever the placement group creation fails and allow deployments to continue by configuring the app.conf file. When bypassing the rollback process, deployments complete successfully, and the system generates a notification stating the placement group creation failed with a state of incomplete. 
-
-=== Disable rollback on placement group failure
-To turn off placement group failure, the "rollback-on-placement-group-failure" flag must be set to "false".
+On bypassing the rollback process, the Cloud Volumes ONTAP deployment process completes, and notifies you that the placement group is in an incomplete state.
 
 .Steps
 
 . Use SSH to connect to the Connector host and log in.
 
-. Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data
+. Navigate to `/opt/application/netapp/cloudmanager/docker_occm/data`.
 
-. Edit app.conf by changing the value for the  "rollback-on-placement-group-failure" parameter to 'false':
+. Edit `app.conf` by changing the value of the `rollback-on-placement-group-failure` parameter to `false`. The default value of this parameter is `true`.
 +
 ----
 {
@@ -42,7 +36,4 @@ To turn off placement group failure, the "rollback-on-placement-group-failure" f
 }
 ----
 +
-NOTE: By default, "rollback-on-placement-group-failure" parameter is set to "True". 
-. Save the file and log off the Connector.
-+
-A reboot is not required.
+. Save the file and log off the Connector. You don't need to restart the Connector.

@@ -5,7 +5,7 @@ keywords: storage takeover, storage giveback, degraded, degraded status, degrade
 summary: When a node in an HA pair isn't available, the other node serves data for its partner to provide continued data service. This is called storage takeover. Several actions are unavailable until in storage giveback is complete.
 ---
 
-= Actions unavailable during takeover
+= Operations unavailable when a node in Cloud Volumes ONTAP HA pair is offline
 :hardbreaks:
 :nofooter:
 :icons: font

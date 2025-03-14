@@ -38,7 +38,7 @@ link:task-set-up-licensing-aws.html[Learn how to set up licensing^].
 +
 For details, refer to link:reference-networking-aws.html[Networking requirements for Cloud Volumes ONTAP in AWS^].
 
-== Launching a single-node Cloud Volumes ONTAP system in AWS
+== Launch a single-node Cloud Volumes ONTAP system in AWS
 
 If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new working environment in BlueXP.
 
@@ -243,7 +243,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
-== Launching a Cloud Volumes ONTAP HA pair in AWS
+== Launch a Cloud Volumes ONTAP HA pair in AWS
 
 If you want to launch a Cloud Volumes ONTAP HA pair in AWS, you need to create an HA working environment in BlueXP.
 

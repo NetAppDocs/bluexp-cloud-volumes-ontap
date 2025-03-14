@@ -5,7 +5,7 @@ keywords: svm, LIF, LIFs, configuration backups, attributes, autosize, security 
 summary: Understanding how Cloud Volumes ONTAP is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for Cloud Volumes ONTAP is different than ONTAP.
 ---
 
-= Default configuration for Cloud Volumes ONTAP
+= Supported default configurations for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

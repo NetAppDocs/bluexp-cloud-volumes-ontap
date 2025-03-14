@@ -5,7 +5,7 @@ keywords: performance, technical report, TR, workload, cpu
 summary: You can review performance results to help you decide which workloads are appropriate for Cloud Volumes ONTAP.
 ---
 
-= Performance
+= Learn about workload performance monitoring on Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

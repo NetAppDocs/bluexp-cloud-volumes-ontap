@@ -5,7 +5,7 @@ keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity
 summary: Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.
 ---
 
-= Disks and aggregates
+= Disks and aggregates used for Cloud Volumes ONTAP clusters
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -85,7 +85,7 @@ HA pairs use two types of disks which provide high performance for I/O-intensive
 
 * link:task-planning-your-config-azure.html[Learn how to choose disk types and disk sizes for your systems in Azure]
 
-* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure[Launching a Cloud Volumes ONTAP HA pair in Azure]
+* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure[Launch a Cloud Volumes ONTAP HA pair in Azure]
 
 * https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types[Microsoft Azure documentation: Azure managed disk types^]
 
