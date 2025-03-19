@@ -87,8 +87,8 @@ If you have an unassigned node-based license for Cloud Volumes ONTAP that you ha
 
 Exchanging the license revokes the Cloud Volumes ONTAP license and creates a dollar-equivalent license for the service:
 
-* Licensing for a Cloud Volumes ONTAP HA pair is converted to a 51 TiB data service license
-* Licensing for a Cloud Volumes ONTAP single node is converted to a 32 TiB data service license
+* Licensing for a Cloud Volumes ONTAP HA pair is converted to a 51 TiB direct license
+* Licensing for a Cloud Volumes ONTAP single node is converted to a 32 TiB direct license
 
 The converted license has the same expiration date as the Cloud Volumes ONTAP license.
 

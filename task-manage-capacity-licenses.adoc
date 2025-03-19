@@ -46,7 +46,7 @@ The BlueXP digital wallet shows you the total consumed capacity in your account 
 +
 image:screenshot_cvo_overview_digital_wallet.png[a screenshot displaying the capacity summary for your Cloud Volumes ONTAP licenses and subscriptions.]
 +
-* _Data service license_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
+* _Direct license_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
 +
 * _Annual contract_ is the total licensed capacity (bring your own license (BYOL) or Marketplace Contract) that you purchased from NetApp.
 +
