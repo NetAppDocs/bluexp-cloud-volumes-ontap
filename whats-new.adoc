@@ -74,8 +74,8 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/[Learn abou
 === Edge Cache licensing packages deprecated
 Edge Cache capacity-based licensing packages will no longer be available for future deployments of Cloud Volumes ONTAP. However, you can use the API to avail this functionality.
 
-=== Minimum version support for Flash Cache on Azure
-The minimum Cloud Volumes ONTAP version required for configuring Flash Cache on Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems in Azure. 
+=== Minimum version support for Flash Cache in Azure
+The minimum Cloud Volumes ONTAP version required for configuring Flash Cache in Azure is 9.13.1 GA. You can only use ONTAP 9.13.1 GA and later versions for deploying Flash Cache on Cloud Volumes ONTAP systems in Azure. 
 
 For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
 

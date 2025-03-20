@@ -5,7 +5,7 @@ keywords: Google Cloud, image, VHD, image signature file, comvert, raw format,
 summary: Convert an exported image into disk.raw format through the Google Cloud command line. 
 ---
 
-= Convert image to raw format on Google Cloud
+= Convert image to raw format in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,7 +16,7 @@ summary: Convert an exported image into disk.raw format through the Google Cloud
 The image being used to deploy new instances, upgrades, or being used in existing images will be shared with the clients through https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[the NetApp Support Site (NSS)^]. The signed digest, and the certificates will be available to download through the NSS portal. Make sure you are downloading the digest and certificates for the right release corresponding to the image shared by NetApp Support. For instance, 9.13.0 images will have a 9.13.0 signed digest and certificates available on NSS.
 
 == Why is this step needed?
-The images from Google Cloud cannot be downloaded directly. In order to verify the image against the signed digest and the certificates, you need to have a mechanism to compare the two files and download the image. To do so, you must export/convert the image into a disk.raw format and save the results in a storage bucket on Google Cloud. The disk.raw file is tarred and gzipped in the process.
+The images from Google Cloud cannot be downloaded directly. In order to verify the image against the signed digest and the certificates, you need to have a mechanism to compare the two files and download the image. To do so, you must export/convert the image into a disk.raw format and save the results in a storage bucket in Google Cloud. The disk.raw file is tarred and gzipped in the process.
 
 The user/service-account will need privileges to perform the following:
 

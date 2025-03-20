@@ -100,7 +100,7 @@ AutoSupport
 
 | Standard, restricted, and private modes.
 
-|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure. 
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations in Azure. 
 
 | 
 \https://management.chinacloudapi.cn
@@ -114,7 +114,7 @@ AutoSupport
 
 | Standard, restricted, and private modes.
 
-|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations in Azure.
 
 | 
 \https://management.microsoftazure.de
@@ -128,7 +128,7 @@ AutoSupport
 
 | Standard, restricted, and private modes.
 
-|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations in Azure.
 
 | 
 \https://management.usgovcloudapi.net
@@ -142,7 +142,7 @@ AutoSupport
 
 | Standard, restricted, and private modes.
 
-|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations in Azure.
 
 | 
 \https://management.azure.microsoft.scloud
@@ -157,7 +157,7 @@ AutoSupport
 
 | Standard, restricted, and private modes.
 
-|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations on Azure.
+|Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations in Azure.
 
 |===
 
