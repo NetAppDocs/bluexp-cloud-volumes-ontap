@@ -5,7 +5,7 @@ keywords: client protocols, client version, smb version, nfs version, protocol v
 summary: Cloud Volumes ONTAP supports the iSCSI, NFS, SMB, NVMe-TCP, and S3 client protocols.
 ---
 
-= Client protocols
+= Supported client protocols for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

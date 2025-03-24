@@ -5,7 +5,7 @@ keywords: azure, encryption, NVE, NetApp volume encryption, KMIP, azure key vaul
 summary: Utilize Azure Key Vault for your third-party key management service.
 ---
 
-= Manage keys with Azure Key Vault
+= Manage Cloud Volumes ONTAP encryption keys with Azure Key Vault
 :icons: font
 :imagesdir: ./media/
 :hardbreaks:

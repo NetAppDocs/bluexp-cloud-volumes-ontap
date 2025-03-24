@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, c
 summary: You can launch a single Cloud Volumes ONTAP system in Azure by creating a Cloud Volumes ONTAP working environment in BlueXP.
 ---
 
-= Launching Cloud Volumes ONTAP in Azure
+= Launch Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -46,7 +46,7 @@ The best practice is to use a new, dedicated resource group for each Cloud Volum
 Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recommended due to the risk of data loss. While BlueXP can remove Cloud Volumes ONTAP resources from a shared resource group in case of deployment failure or deletion, an Azure user might accidentally delete Cloud Volumes ONTAP resources from a shared resource group.
 ====
 
-== Launching a single-node Cloud Volumes ONTAP system in Azure
+== Launch a single-node Cloud Volumes ONTAP system in Azure
 
 If you want to launch a single-node Cloud Volumes ONTAP system in Azure, you need to create an single node working environment in BlueXP.
 
@@ -234,7 +234,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
-== Launching a Cloud Volumes ONTAP HA pair in Azure
+== Launch a Cloud Volumes ONTAP HA pair in Azure
 
 If you want to launch a Cloud Volumes ONTAP HA pair in Azure, you need to create an HA working environment in BlueXP.
 

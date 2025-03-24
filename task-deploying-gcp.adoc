@@ -5,7 +5,7 @@ keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, c
 summary: You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in Google Cloud Platform.
 ---
 
-= Launching Cloud Volumes ONTAP in Google Cloud
+= Launch Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -44,7 +44,7 @@ link:task-set-up-licensing-google.html[Learn how to set up licensing].
 ** Compute Engine API
 ** Identity and Access Management (IAM) API
 
-== Launching a single-node system in Google Cloud
+== Launch a single-node system in Google Cloud
 
 Create a working environment in BlueXP to launch Cloud Volumes ONTAP in Google Cloud.
 
@@ -241,7 +241,7 @@ For additional help, go to https://mysupport.netapp.com/site/products/all/detail
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
-== Launching an HA pair in Google Cloud
+== Launch an HA pair in Google Cloud
 
 Create a working environment in BlueXP to launch Cloud Volumes ONTAP in Google Cloud.
 

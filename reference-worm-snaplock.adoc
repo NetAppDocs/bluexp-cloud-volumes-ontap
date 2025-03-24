@@ -5,7 +5,7 @@ keywords: WORM, SnapLock, Snapshot copies,
 summary: You can create tamperproof Snapshot copies of write once, read many (WORM) files on a Cloud Volumes ONTAP system and retain the snapshots in unmodified form for a specific retention period.
 ---
 
-= Create tamperproof Snapshot copies for WORM storage   
+= Create tamperproof Snapshot copies of  WORM files on Cloud Volumes ONTAP   
 :hardbreaks:
 :nofooter:
 :icons: font

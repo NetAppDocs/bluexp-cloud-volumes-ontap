@@ -5,7 +5,7 @@ keywords: ec2 instance type, change ec2 instance type, change instance type, mod
 summary: You can choose from several instance or types when you launch Cloud Volumes ONTAP in AWS. You can change the instance type at any time if you determine that it is undersized or oversized for your needs.
 ---
 
-= Change the EC2 instance type for Cloud Volumes ONTAP
+= Modify the EC2 instance type for a Cloud Volumes ONTAP system in AWS
 :hardbreaks:
 :nofooter:
 :icons: font

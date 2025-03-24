@@ -5,7 +5,7 @@ keywords: working environments, removing, remove, rediscover
 summary: You can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
 ---
 
-= Removing Cloud Volumes ONTAP working environments
+= Remove a Cloud Volumes ONTAP working environment from BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font

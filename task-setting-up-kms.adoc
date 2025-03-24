@@ -5,7 +5,7 @@ keywords: encryption, kms, key management service, cmk, customer master key, mas
 summary: If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to set up the AWS Key Management Service.
 ---
 
-= Setting up the AWS KMS
+= Set up Cloud Volumes ONTAP to use a customer-managed key in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
