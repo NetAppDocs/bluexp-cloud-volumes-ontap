@@ -5,7 +5,7 @@ keywords: security, encryption, antivirus, concepts, key managers, safenet, kms,
 summary: Cloud Volumes ONTAP supports data encryption and provides protection against viruses and ransomware.
 ---
 
-= Learn about data encryption and ransomware protection in Cloud Volumes ONTAP
+= Learn about Cloud Volumes ONTAP data encryption and ransomware protection
 :hardbreaks:
 :nofooter:
 :icons: font

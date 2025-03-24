@@ -49,7 +49,7 @@ sidebar:
               url: /task-planning-your-config.html
             - title: Set up your networking
               entries:
-                - title: Networking requirements
+                - title: Set up AWS networking
                   url: /reference-networking-aws.html
                 - title: Set up an AWS transit gateway
                   url: /task-setting-up-transit-gateway.html
@@ -108,8 +108,6 @@ sidebar:
                           url: /task-file-verification-linux.html
                         - title: Mac OS File signature verification 
                           url: /task-file-verification-mac.html
-                    - title: Additional information
-                      url: /reference-image-verification-links.html
             - title: Get started in the marketplace
               url: /task-deploy-cvo-azure-mktplc.html                                   
         - title: Get started in Google Cloud

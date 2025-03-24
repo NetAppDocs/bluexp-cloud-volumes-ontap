@@ -20,7 +20,7 @@ Several licensing options are available for Cloud Volumes ONTAP. Each option ena
 The following licensing options are available for new customers.
 
 Capacity-based licensing::
-Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services.
+Pay for multiple Cloud Volumes ONTAP systems in your NetApp account by provisioned capacity. Includes the ability to purchase add-on cloud data services. For more information about consumption models in capacity-based licenses, refer to link:concept-licensing-charging.html[Learn more about capacity-based licenses].
 
 Keystone Subscription::
 A pay-as-you-grow subscription-based service that delivers a seamless hybrid cloud experience for High Availability (HA) pairs.
@@ -43,7 +43,7 @@ NOTE: While the actual usage and metering for the products and services managed 
 
 === Packages
 
-The following capacity-based packages are available for Cloud Volumes ONTAP.
+The following capacity-based packages are available for Cloud Volumes ONTAP. For more information about capacity-based license packages, refer to link:concept-licensing-charging.html[Learn more about capacity-based licenses].
 
 For a list of supported VM types with the following capacity-based packages, refer to: 
 
@@ -64,7 +64,7 @@ Provides all Cloud Volumes ONTAP features free of charge from NetApp (cloud prov
 * You can use up to 10 Cloud Volumes ONTAP systems with the Freemium offering per NetApp account, in any cloud provider.
 * If the provisioned capacity for a Cloud Volumes ONTAP system exceeds 500 GiB, BlueXP converts the system to the Essentials package.
 +
-As soon as a system is converted to the Essentials package, the <<Notes about charging,minimum charge>> applies.
+As soon as a system is converted to the Essentials package, the link:concept-licensing-charging.html#minimum-charge[minimum charging] applies.
 +
 Any other systems that have less than 500 GiB of provisioned capacity stay on Freemium (as long as they were deployed using the Freemium offering).
 
@@ -76,8 +76,6 @@ You can pay by capacity in a number of different configurations:
 ** A single node or HA system
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
-
-For more information, see link:concept-licensing-charging.html[More about capacity-based licenses].
 
 ==== Optimized
 
