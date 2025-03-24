@@ -5,7 +5,7 @@ keywords: aws, amazon, encryption, NVE, NetApp volume encryption, KMIP, kms, key
 summary: Utilize AWS's key management service for your third-party key management service.
 ---
 
-= Manage keys with AWS Key Management Service
+= Manage Cloud Volumes ONTAP encryption keys with AWS Key Management Service
 :icons: font
 :hardbreaks:
 :imagesdir: ../media/

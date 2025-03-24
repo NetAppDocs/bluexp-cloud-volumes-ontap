@@ -5,7 +5,7 @@ keywords: Google Cloud, image, VHD, image signature file,
 summary: Verify Google Cloud image file signatures files.
 ---
 
-= Google Cloud image verification overview
+= Learn how Google Cloud image is verfied in Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

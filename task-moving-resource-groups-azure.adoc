@@ -5,7 +5,7 @@ keywords: move resource groups, azure, remove working environment, resource grou
 summary: Cloud Volumes ONTAP supports Azure resource groups moves but the workflow happens in the Azure console only. 
 ---
 
-= Moving resource groups
+= Move an Azure resource group for Cloud Volumes ONTAP in Azure console
 :hardbreaks:
 :nofooter:
 :icons: font

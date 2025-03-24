@@ -5,7 +5,7 @@ keywords: storage, provisioning, aggregates, provision, create, advanced allocat
 summary: You can create aggregates yourself or let BlueXP do it for you when it creates volumes. The benefit of creating aggregates yourself is that you can choose the underlying disk size, which enables you to size your aggregate for the capacity or the performance that you need.
 ---
 
-= Create aggregates
+= Create an aggregate for Cloud Volumes ONTAP systems
 :hardbreaks:
 :nofooter:
 :icons: font

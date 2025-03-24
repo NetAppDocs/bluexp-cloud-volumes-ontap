@@ -5,7 +5,7 @@ keywords: high-availability, HA, concepts, understanding, overview, takeover, gi
 summary: A Cloud Volumes ONTAP high-availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
 ---
 
-= High-availability pairs in Azure
+= Learn about Cloud Volumes ONTAP HA pairs in Azure
 :hardbreaks:
 :nofooter:
 :icons: font

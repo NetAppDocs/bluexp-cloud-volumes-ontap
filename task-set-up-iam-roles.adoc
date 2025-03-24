@@ -5,7 +5,7 @@ keywords: iam role, mediator role, cloud volumes ontap role, policy, iam policy,
 summary: IAM roles with the required permissions must be attached to each Cloud Volumes ONTAP node. The same is true for the HA mediator. It's easiest to let BlueXP create the IAM roles for you, but you can use your own roles.
 ---
 
-= Set up IAM roles for Cloud Volumes ONTAP
+= Set up AWS IAM roles for Cloud Volumes ONTAP nodes
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -5,7 +5,7 @@ keywords: provisioning, capacity management, storage provisioning, manual, autom
 summary: BlueXP provides simplified and advanced management of Cloud Volumes ONTAP storage.
 ---
 
-= Storage management
+= Cloud Volumes ONTAP storage management
 :hardbreaks:
 :nofooter:
 :icons: font

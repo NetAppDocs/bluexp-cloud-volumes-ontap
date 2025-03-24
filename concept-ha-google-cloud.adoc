@@ -5,7 +5,7 @@ keywords: high-availability, HA, mediator, concepts, understanding, overview, ta
 summary: A Cloud Volumes ONTAP high-availability configuration provides nondisruptive operations and fault tolerance. In Google Cloud, data is synchronously mirrored between the two nodes.
 ---
 
-= High-availability pairs in Google Cloud
+= Learn about Cloud Volumes ONTAP HA pairs in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font

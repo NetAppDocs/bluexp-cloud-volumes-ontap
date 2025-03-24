@@ -5,7 +5,7 @@ keywords: Azure, image, image signature, download, digest file, decompress, Linu
 summary: You can download the Azure Image Digest File from the NetApp Support Site. 
 ---
 
-= Download the Azure Image Digest File 
+= Download the Azure Marketplace image digest for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
