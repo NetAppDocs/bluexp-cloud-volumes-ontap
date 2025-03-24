@@ -1,5 +1,5 @@
 ---
 permalink: reference-image-verification-links.html
-redirect: concept-azure-image-verification.html
+redirect: https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-azure-image-verification.html
 ---
  
