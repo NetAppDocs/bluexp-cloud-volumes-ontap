@@ -5,7 +5,7 @@ keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, 
 summary: You can stop and start Cloud Volumes ONTAP from BlueXP to manage your cloud compute costs.
 ---
 
-= Managing the state of Cloud Volumes ONTAP
+= Start and stop a Cloud Volumes ONTAP system
 :hardbreaks:
 :nofooter:
 :icons: font

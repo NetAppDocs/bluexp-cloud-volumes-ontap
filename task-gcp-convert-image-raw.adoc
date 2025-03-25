@@ -5,7 +5,7 @@ keywords: Google Cloud, image, VHD, image signature file, comvert, raw format,
 summary: Convert an exported image into disk.raw format through the Google Cloud command line. 
 ---
 
-= Convert image to raw format in Google Cloud
+= Convert Google Cloud image to raw format for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

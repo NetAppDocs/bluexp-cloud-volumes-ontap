@@ -5,7 +5,7 @@ keywords: security group, security groups, rules, ports, aws, inbound, outbound,
 summary: BlueXP creates AWS security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer to use your own security groups.
 ---
 
-= Security group rules for AWS
+= AWS security group inbound and outbound rules for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

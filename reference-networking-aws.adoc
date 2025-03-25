@@ -5,7 +5,7 @@ keywords: networking, network, requirements, connection, connections, vpc, secur
 summary: BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.
 ---
 
-= Networking requirements for Cloud Volumes ONTAP in AWS
+= Set up AWS networking for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,7 +17,7 @@ BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such
 
 == General requirements
 
-The following requirements must be met in AWS.
+Ensure that you have fulfilled the following requirements in AWS.
 
 === Outbound internet access for Cloud Volumes ONTAP nodes
 Cloud Volumes ONTAP systems require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.

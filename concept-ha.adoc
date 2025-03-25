@@ -5,7 +5,7 @@ keywords: high availability, HA, mediator, concepts, understanding, overview, av
 summary: A Cloud Volumes ONTAP high-availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
 ---
 
-= High-availability pairs in AWS
+= Learn about Cloud Volumes ONTAP HA pairs in AWS
 :hardbreaks:
 :nofooter:
 :icons: font

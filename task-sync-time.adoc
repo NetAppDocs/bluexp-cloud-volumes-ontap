@@ -5,7 +5,7 @@ keywords: set up, setting up, ntp, time, synch
 summary: Specifying an NTP server synchronizes the time between the systems in your network, which can help prevent issues due to time differences.
 ---
 
-= Synchronize the system time using NTP
+= Synchronize Cloud Volumes ONTAP system time using the NTP server
 :hardbreaks:
 :nofooter:
 :icons: font

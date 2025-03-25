@@ -5,7 +5,7 @@ keywords: networking, network, requirements, connection, connections, subnet, vp
 summary: Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly.
 ---
 
-= Networking requirements for Cloud Volumes ONTAP in Google Cloud
+= Set up Google Cloud networking for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

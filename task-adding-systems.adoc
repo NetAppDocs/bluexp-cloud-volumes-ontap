@@ -5,7 +5,7 @@ keywords: discover, discovering, add, adding, existing
 summary: You can discover and add existing Cloud Volumes ONTAP systems to BlueXP. You might do this if you deployed a new BlueXP system.
 ---
 
-= Adding existing Cloud Volumes ONTAP systems to BlueXP
+= Add an existing Cloud Volumes ONTAP system to BlueXP
 :hardbreaks:
 :nofooter:
 :icons: font

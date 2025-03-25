@@ -5,7 +5,7 @@ keywords: worm, write once, read many, snaplock, retain, retention, period, clou
 summary: You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. Cloud WORM storage is powered by SnapLock technology, which means WORM files are protected at the file level.
 ---
 
-= WORM storage
+= Learn about WORM storage on Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
