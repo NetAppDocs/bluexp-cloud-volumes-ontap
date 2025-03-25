@@ -5,7 +5,7 @@ keywords: Google Cloud, image, VHD, signature verification, encryption, sha256, 
 summary: Verify the Google Cloud downloaded disk.raw file against the digest file contents using OpenSSL.
 ---
 
-= Verification of disk.raw file and digest file contents using OpenSSL 
+= Verify the Google Cloud image disk.raw file for Cloud Volumes ONTAP using OpenSSL 
 :hardbreaks:
 :nofooter:
 :icons: font

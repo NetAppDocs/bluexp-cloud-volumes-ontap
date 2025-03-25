@@ -5,7 +5,7 @@ keywords: azure private link, private link connection, private link to storage, 
 summary: Cloud Volumes ONTAP uses an Azure Private Link for connections to its associated storage accounts. If needed, you can disable Azure Private Links and use service endpoints instead.
 ---
 
-= Use an Azure Private Link or service endpoints
+= Use an Azure Private Link or service endpoints for Cloud Volumes ONTAP systems
 :hardbreaks:
 :nofooter:
 :icons: font

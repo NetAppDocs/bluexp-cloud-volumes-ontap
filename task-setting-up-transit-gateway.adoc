@@ -5,7 +5,7 @@ keywords: transit gateway, aws, amazon web services, transit gateway, floating i
 summary: Set up an AWS transit gateway to enable NAS client access to floating IP addresses from outside the VPC where Cloud Volumes ONTAP resides. This is beneficial because floating IPs automatically migrate between nodes when failures occur.
 ---
 
-= Setting up an AWS transit gateway for HA pairs in multiple AZs
+= Set up an AWS transit gateway for Cloud Volumes ONTAP HA pairs
 :hardbreaks:
 :nofooter:
 :icons: font

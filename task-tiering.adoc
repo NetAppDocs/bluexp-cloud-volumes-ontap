@@ -5,7 +5,7 @@ keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fab
 summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
 ---
 
-= Tier inactive data to low-cost object storage
+= Tier inactive Cloud Volumes ONTAP data to a low-cost object storage
 :hardbreaks:
 :nofooter:
 :icons: font

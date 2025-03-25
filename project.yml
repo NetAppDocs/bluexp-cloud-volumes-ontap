@@ -49,7 +49,7 @@ sidebar:
               url: /task-planning-your-config.html
             - title: Set up your networking
               entries:
-                - title: Networking requirements
+                - title: Set up AWS networking
                   url: /reference-networking-aws.html
                 - title: Set up an AWS transit gateway
                   url: /task-setting-up-transit-gateway.html
@@ -108,8 +108,6 @@ sidebar:
                           url: /task-file-verification-linux.html
                         - title: Mac OS File signature verification 
                           url: /task-file-verification-mac.html
-                    - title: Additional information
-                      url: /reference-image-verification-links.html
             - title: Get started in the marketplace
               url: /task-deploy-cvo-azure-mktplc.html                                   
         - title: Get started in Google Cloud
@@ -177,13 +175,13 @@ sidebar:
           entries:
             - title: Work with storage VMs in BlueXP
               url: /task-managing-svms.html
-            - title: Create storage VMs in AWS
+            - title: Manage storage VMs in AWS
               flavor: aws
               url: /task-managing-svms-aws.html
-            - title: Create storage VMs in Azure
+            - title: Manage storage VMs in Azure
               flavor: azure
               url: /task-managing-svms-azure.html
-            - title: Create storage VMs in Google Cloud
+            - title: Manage storage VMs in Google Cloud
               flavor: gcp
               url: /task-managing-svms-gcp.html
             - title: Set up SVM disaster recovery

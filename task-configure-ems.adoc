@@ -5,7 +5,7 @@ keywords: ems, event management system, ems notifications, notifications
 summary: The Event Management System collects and displays information about events that occur on  ONTAP systems. To receive event notifications, you can set event destinations and event routes for a particular event severity.
 ---
 
-= Configure EMS
+= Configure EMS for Cloud Volumes ONTAP systems
 :hardbreaks:
 :nofooter:
 :icons: font

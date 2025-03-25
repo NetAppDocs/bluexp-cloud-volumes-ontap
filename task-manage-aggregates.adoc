@@ -5,7 +5,7 @@ keywords: aggregates, delete aggregates, add disks, view aggregates
 summary: Manage aggregates yourself by adding disks, viewing information about the aggregates, and by deleting them.
 ---
 
-= Manage aggregates
+= Manage aggregates for Cloud Volumes ONTAP clusters
 :hardbreaks:
 :nofooter:
 :icons: font

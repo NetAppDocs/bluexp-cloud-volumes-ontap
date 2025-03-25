@@ -5,7 +5,7 @@ keywords: volumes, managing, cloning, editing, CIFS server, edit, flexclone, sna
 summary: BlueXP enables you to manage volumes and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 ---
 
-= Manage existing volumes
+= Manage volumes on Cloud Volumes ONTAP systems
 :hardbreaks:
 :nofooter:
 :icons: font

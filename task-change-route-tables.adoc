@@ -5,7 +5,7 @@ keywords: route tables, update route tables, modify route tables, change route t
 summary: You can modify the AWS route tables that include routes to the floating IP addresses for an HA pair that's deployed in multiple AWS Availability Zones. You might do this if new NFS or CIFS clients need to access an HA pair in AWS.
 ---
 
-= Change route tables for HA pairs in multiple AZs
+= Modify route tables for Cloud Volumes ONTAP HA pairs in multiple AWS AZs
 :hardbreaks:
 :nofooter:
 :icons: font

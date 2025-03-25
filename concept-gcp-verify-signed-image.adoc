@@ -5,7 +5,7 @@ keywords: Google Cloud, image, disk.raw, file signature verification, encryption
 summary: Verify an exported Google Cloud image file signature through the Cloud Volumes ONTAP Image Digest File tool. 
 ---
 
-= Verify Google Cloud signed images
+= Google Cloud image signature verification for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
