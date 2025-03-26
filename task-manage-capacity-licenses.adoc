@@ -114,15 +114,12 @@ BlueXP always attempts to charge against a license first. If a license isn't ava
 +
 image:screenshot_digital_wallet_legacy_view.png[A screenshot of the Switch to Legacy view button]
 +
-. Scroll down to the *Capacity-based license* table  and select *Change Charging Method*.
+. Scroll down to the *Capacity-based license* table  and select *Change charging method*.
 +
-image:screenshot-digital-wallet-charging-method-button.png[A screenshot of the Cloud Volumes ONTAP page in the BlueXP digital wallet where the Change Charging Method button is just above the table.]
+image:screenshot-digital-wallet-charging-method-button.png[A screenshot of the Cloud Volumes ONTAP page in the BlueXP digital wallet where the Change charging method button is just above the table.]
 
-. Select a working environment, choose the new charging method, and then confirm your understanding that changing the package type will affect service charges.
-+
-image:screenshot-digital-wallet-charging-method.png[A screenshot of the Change Charging Method dialog box where you choose a new charging method for a Cloud Volumes ONTAP working environment.]
-
-.  Select *Change Charging Method*.
+. On the *Change charging method* pop-up, select a working environment, choose the new charging method, and then confirm your understanding that changing the package type will affect service charges.
+.  Select *Change charging method*.
 
 
 
