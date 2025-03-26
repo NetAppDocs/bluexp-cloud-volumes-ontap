@@ -23,8 +23,6 @@ Multiple storage VMs are supported with specific Cloud Volumes ONTAP configurati
 
 All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
-.Before you begin
-
 == Create a storage VM
 
 Based on your configuration and license type, you can create multiple storage VMs on a single node system or in a high-availability (HA) configuration by using the BlueXP APIs.
@@ -42,35 +40,58 @@ When you create storage VMs using the APIs, along with configuring the required 
 
 .Before you begin
 
-The Connector requires specific permissions to create and manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
+The Connector requires specific permissions to create storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
 
 === Single node system
+Use the following API call to create a storage VM on a single node system. 
 
+`POST /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
+
+The request body should include the following:
+
+[source,json]
+{ "svmName": "NewSvmName" 
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+   "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
 
 === HA pair
+Use the following API call to create a storage VM:
+
+`POST /gcp/ha/working-environments/{workingEnvironmentId}/svm/`
+
+The request body should include the following:
+
+[source,json]
+{ "svmName": "NewSvmName" 
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+   "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+
+== Manage storage VMs 
+
+Using the BlueXP APIs, you can rename and delete storage VMs in both single node and HA configurations.
+
+.Before you begin
+
+The Connector requires specific permissions to manage storage VMs for Cloud Volumes ONTAP HA pairs. The required permissions are included in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html[the policies provided by NetApp^].
+
+=== Rename a storage VM
+
+To rename a storage VM, you should provide the names of the existing storage VM and the new storage VM as parameters.
 
 .Steps
 
-. Use the following API call to create a storage VM:
+* Use the following API call to rename a storage VM on a single node system:
 +
-`POST /gcp/ha/working-environments/{workingEnvironmentId}/svm/`
+`PUT /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 +
 The request body should include the following:
 +
 [source,json]
-{ "svmName": "myNewSvm1" }
-
-== Manage storage VMs 
-
-The BlueXP API also supports renaming and deleting storage VMs on HA pairs.
-
-=== Rename a storage VM
-
-If needed, you can change the name of a storage VM at any time.
-
-.Steps
-
-. Use the following API call to rename a storage VM:
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+* Use the following API call to rename a storage VM in an HA configuration:
 +
 `PUT /gcp/ha/working-environments/{workingEnvironmentId}/svm`
 +
@@ -78,9 +99,10 @@ The request body should include the following:
 +
 [source,json]
 {
-"svmNewName": "newSvmName",
-"svmName": "oldSvmName"
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
 }
+
 
 === Delete a storage VM
 
@@ -88,6 +110,9 @@ If you no longer need a storage VM, you can delete it from Cloud Volumes ONTAP.
 
 .Steps
 
-. Use the following API call to delete a storage VM:
+* Use the following API call to delete a storage VM on a single node system:
++
+`DELETE /gcp/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
+*  Use the following API call to delete a storage VM in an HA configuration:
 +
 `DELETE /gcp/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`

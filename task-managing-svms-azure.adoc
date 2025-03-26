@@ -89,12 +89,10 @@ To rename a storage VM, you should provide the names of the existing storage VM 
 The request body should include the following:
 +
 [source,json]
-----
 {
   "svmNewName": "NewSvmName",
   "svmName": "OldSvmName"
 }
-----
 * Use the following API call to rename a storage VM in an HA configuration:
 +
 `PUT /azure/ha/working-environments/{workingEnvironmentId}/svm`
@@ -102,12 +100,11 @@ The request body should include the following:
 The request body should include the following:
 +
 [source,json]
-----
 {
   "svmNewName": "NewSvmName",
   "svmName": "OldSvmName"
 }
-----
+
 
 === Delete a storage VM
 
