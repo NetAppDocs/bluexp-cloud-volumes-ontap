@@ -47,7 +47,7 @@ Use the following API call to create a storage VM on a single node system.
 
 `POST /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 
-The request body should include the following:
+Include the following parameters in the request body:
 
 [source,json]
 { "svmName": "NewSvmName" 
@@ -55,11 +55,11 @@ The request body should include the following:
    "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
 
 === HA pair
-Use the following API call to create a storage VM:
+Use the following API call to create a storage VM on an HA pair:
 
 `POST /gcp/ha/working-environments/{workingEnvironmentId}/svm/`
 
-The request body should include the following:
+Include the following parameters in the request body:
 
 [source,json]
 { "svmName": "NewSvmName" 
@@ -84,25 +84,24 @@ To rename a storage VM, you should provide the names of the existing storage VM 
 +
 `PUT /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 +
-The request body should include the following:
+Include the following parameters in the request body:
 +
 [source,json]
 {
   "svmNewName": "NewSvmName",
   "svmName": "OldSvmName"
 }
-* Use the following API call to rename a storage VM in an HA configuration:
+* Use the following API call to rename a storage VM on an HA pair:
 +
 `PUT /gcp/ha/working-environments/{workingEnvironmentId}/svm`
 +
-The request body should include the following:
+Include the following parameters in the request body:
 +
 [source,json]
 {
   "svmNewName": "NewSvmName",
   "svmName": "OldSvmName"
 }
-
 
 === Delete a storage VM
 
@@ -113,6 +112,6 @@ If you no longer need a storage VM, you can delete it from Cloud Volumes ONTAP.
 * Use the following API call to delete a storage VM on a single node system:
 +
 `DELETE /gcp/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
-*  Use the following API call to delete a storage VM in an HA configuration:
+*  Use the following API call to delete a storage VM on an HA pair:
 +
 `DELETE /gcp/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`

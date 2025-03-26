@@ -47,7 +47,7 @@ Use the following API call to create a storage VM on a single node system.
 
 `POST /azure/vsa/working-environments/{workingEnvironmentId}/svm`
 
-The request body should include the following:
+Include the following parameters in the request body:
 
 [source,json]
 { "svmName": "myNewSvm1" 
@@ -56,11 +56,11 @@ The request body should include the following:
 
 
 === HA pair
-Use the following API call to create a storage VM in an Azure HA configuration:
+Use the following API call to create a storage VM on an HA pair:
 
 `POST /azure/ha/working-environments/{workingEnvironmentId}/svm`
 
-The request body should include the following:
+Include the following parameters in the request body:
 
 [source,json]
 { "svmName": "NewSvmName" 
@@ -86,18 +86,18 @@ To rename a storage VM, you should provide the names of the existing storage VM 
 +
 `PUT /azure/vsa/working-environments/{workingEnvironmentId}/svm`
 +
-The request body should include the following:
+Include the following parameters in the request body:
 +
 [source,json]
 {
   "svmNewName": "NewSvmName",
   "svmName": "OldSvmName"
 }
-* Use the following API call to rename a storage VM in an HA configuration:
+* Use the following API call to rename a storage VM on an HA pair:
 +
 `PUT /azure/ha/working-environments/{workingEnvironmentId}/svm`
 +
-The request body should include the following:
+Include the following parameters in the request body:
 +
 [source,json]
 {
@@ -115,6 +115,6 @@ In a single node or HA configuration, you can remove a storage VM if it doesn't 
 * Use the following API call to delete a storage VM on a single node system:
 +
 `DELETE /azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
-*  Use the following API call to delete a storage VM in an HA configuration:
+*  Use the following API call to delete a storage VM on an HA pair:
 +
 `DELETE /azure/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
