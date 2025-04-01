@@ -1,0 +1,9 @@
+=== Private mode deployments enabled for Cloud Volumes ONTAP 9.14.1
+
+You can now deploy Cloud Volumes ONTAP 9.14.1 in private mode for AWS, Azure, and Google Cloud. Private mode deployments are not accessible from the public internet but only from within your virtual private cloud (VPC) or virtual network (VNet). Private mode is enabled for both single node and high-availability deployments of Cloud Volumes ONTAP 9.14.1. 
+
+For more information about private mode deployments refer to
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#restricted-mode[Learn about BlueXP deployment modes^].
+
+=== China region support for Cloud Volumes ONTAP 9.14.1
+For China regions, support for single node deployments in Cloud Volumes ONTAP 9.12.1 GA and 9.13.0 GA has now been extended to Cloud Volumes ONTAP 9.14.1 GA. You can upgrade these versions to later patches and releases of Cloud Volumes ONTAP. If you would like a fresh deployment of the later Cloud Volumes ONTAP versions in China regions, contact NetApp Support.
