@@ -74,7 +74,7 @@ You should configure your encryption keys in the Azure portal. For information a
 * https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-customer-managed-keys-powershell#set-up-an-azure-key-vault-and-diskencryptionset-with-automatic-key-rotation-preview[Azure PowerShell - Enable customer-managed keys^]
 
 [NOTE]
-After configuring, ensure that you have https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption#customer-managed-keys[enabled key rotation in the Azure portal^], so that Cloud Volumes ONTAP can utilize them. 
+After configuring, ensure that you have https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption#customer-managed-keys[enabled key rotation in the Azure portal^], so that Cloud Volumes ONTAP can utilize the new keys. 
 
 On creating and enabling a new version of your key, Cloud Volumes ONTAP automatically detects and uses the latest version of the key for encryption, ensuring your data remains secure without the need for manual updates. 
 
