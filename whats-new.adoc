@@ -31,10 +31,11 @@ include::_whatsnew/2025-03-12.adoc[]
 == 10 March 2025
 include::_whatsnew/2025-03-10.adoc[]
 
+//end::whats-new[]
+
 == 6 March 2025
 include::_whatsnew/2025-03-06-916.adoc[]
 
-//end::whats-new[]
 
 == 03 March 2025
 include::_whatsnew/2025-03-03.adoc[]
