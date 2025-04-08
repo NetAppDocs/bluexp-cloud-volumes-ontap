@@ -233,7 +233,7 @@ Google Cloud (Commercial use).
 
 | Standard, restricted, and private modes.
 
-|Cloud Volumes ONTAP cannot communicate with Google Cloud service to perform specific BlueXP operations on Google Cloud. 
+|Cloud Volumes ONTAP cannot communicate with Google Cloud service to perform specific BlueXP operations in Google Cloud. 
 
 |===
 

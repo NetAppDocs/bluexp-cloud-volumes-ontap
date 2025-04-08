@@ -1,0 +1,5 @@
+=== Storage VM creation automated through the APIs in Google Cloud 
+
+The ability to create, rename, and delete additional data-serving storage VMs through the BlueXP APIs is now extended to single node deployments of Cloud Volumes ONTAP in Google Cloud. A similar functionality was already available for the high-availability (HA) mode. This feature automates the process of storage VM creation, including the configuration of the required network interfaces, LIFs, and a management LIF, if you need to use a storage VM for management purposes.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html[Manage data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud^]
