@@ -78,7 +78,7 @@ The Connector requires specific permissions to manage storage VMs for Cloud Volu
 
 === Rename a storage VM
 
-To rename a storage VM, you should provide the names of the existing storage VM and the new storage VM as parameters.
+To rename a storage VM, you should provide the names of the existing storage VM and new storage VM as parameters.
 
 .Steps
 

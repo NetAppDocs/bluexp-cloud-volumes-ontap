@@ -19,9 +19,9 @@ To create and manage additional data-serving storage VMs in Google Cloud, you sh
 
 == Supported number of storage VMs
 
-Multiple storage VMs are supported with specific Cloud Volumes ONTAP configurations in Google Cloud starting with the 9.11.1 release. Go to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
+Beginning with Cloud Volumes ONTAP 9.11.1, based on your license, multiple storage VMs are supported with specific configurations. Refer to the https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Cloud Volumes ONTAP Release Notes^] to verify the supported number of storage VMs for your version of Cloud Volumes ONTAP.
 
-All other Cloud Volumes ONTAP configurations support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
+All versions of Cloud Volumes ONTAP prior to 9.11.1 support one data-serving storage VM and one destination storage VM used for disaster recovery. You can activate the destination storage VM for data access if there's an outage on the source storage VM.
 
 == Create a storage VM
 
@@ -76,7 +76,7 @@ The Connector requires specific permissions to manage storage VMs for Cloud Volu
 
 === Rename a storage VM
 
-To rename a storage VM, you should provide the names of the existing storage VM and the new storage VM as parameters.
+To rename a storage VM, you should provide the names of the existing storage VM and new storage VM as parameters.
 
 .Steps
 
@@ -105,7 +105,7 @@ Include the following parameters in the request body:
 
 === Delete a storage VM
 
-If you no longer need a storage VM, you can delete it from Cloud Volumes ONTAP.
+In a single node or HA configuration, you can remove a storage VM if it doesn't have any active volumes.
 
 .Steps
 
