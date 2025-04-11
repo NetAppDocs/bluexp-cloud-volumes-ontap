@@ -31,7 +31,7 @@ After you purchase a license from your NetApp sales representative, NetApp will 
 
 In the meantime, BlueXP automatically queries NetApp's licensing service to obtain details about the licenses associated with your NetApp Support Site account. If there are no errors, BlueXP automatically adds the licenses to the digital wallet.
 
-If BlueXP can't add the license, you'll need to manually add them to the digital wallet yourself. For example, if the Connector is installed in a location that doesn't have internet access, you'll need to add the licenses yourself. <<Add purchased licenses to your account,Learn how to add purchased licenses to your account>>.
+If BlueXP can't add the license, you'll need to manually add them to the digital wallet yourself. For example, if the Connector is installed in a location that doesn't have internet access, you'll need to add the licenses yourself. https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html#add-a-license[Learn how to add purchased licenses to your account^].
 
 == View the consumed capacity in your account
 
@@ -46,7 +46,7 @@ The BlueXP digital wallet shows you the total consumed capacity in your account 
 +
 image:screenshot_cvo_overview_digital_wallet.png[a screenshot displaying the capacity summary for your Cloud Volumes ONTAP licenses and subscriptions.]
 +
-* _Data service license_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
+* _Direct license_ is the total provisioned capacity of all Cloud Volumes ONTAP systems in your NetApp account. The charging is based on each volume's provisioned size, regardless of local, used, stored, or effective space within the volume.
 +
 * _Annual contract_ is the total licensed capacity (bring your own license (BYOL) or Marketplace Contract) that you purchased from NetApp.
 +
@@ -114,15 +114,12 @@ BlueXP always attempts to charge against a license first. If a license isn't ava
 +
 image:screenshot_digital_wallet_legacy_view.png[A screenshot of the Switch to Legacy view button]
 +
-. Scroll down to the *Capacity-based license* table  and select *Change Charging Method*.
+. Scroll down to the *Capacity-based license* table  and select *Change charging method*.
 +
-image:screenshot-digital-wallet-charging-method-button.png[A screenshot of the Cloud Volumes ONTAP page in the BlueXP digital wallet where the Change Charging Method button is just above the table.]
+image:screenshot-digital-wallet-charging-method-button.png[A screenshot of the Cloud Volumes ONTAP page in the BlueXP digital wallet where the Change charging method button is just above the table.]
 
-. Select a working environment, choose the new charging method, and then confirm your understanding that changing the package type will affect service charges.
-+
-image:screenshot-digital-wallet-charging-method.png[A screenshot of the Change Charging Method dialog box where you choose a new charging method for a Cloud Volumes ONTAP working environment.]
-
-.  Select *Change Charging Method*.
+. On the *Change charging method* pop-up, select a working environment, choose the new charging method, and then confirm your understanding that changing the package type will affect service charges.
+.  Select *Change charging method*.
 
 
 

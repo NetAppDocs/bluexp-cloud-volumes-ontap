@@ -31,7 +31,13 @@ One Virtual Private Cloud (VPC) is required for a single node system.
 
 ==== Private IP addresses
 
-BlueXP allocates 3 or 4 private IP addresses to a single node system in Google Cloud.
+For a single node system in Google Cloud, BlueXP allocates private IP addresses to the following:
+
+* Node
+* Cluster
+* Storage VM
+* Data NAS LIF
+* Data iSCSI LIF
 
 You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:
 
@@ -227,7 +233,7 @@ Google Cloud (Commercial use).
 
 | Standard, restricted, and private modes.
 
-|Cloud Volumes ONTAP cannot communicate with Google Cloud service to perform specific BlueXP operations on Google Cloud. 
+|Cloud Volumes ONTAP cannot communicate with Google Cloud service to perform specific BlueXP operations in Google Cloud. 
 
 |===
 
