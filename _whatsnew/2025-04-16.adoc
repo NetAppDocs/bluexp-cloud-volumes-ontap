@@ -1,0 +1,8 @@
+=== New regions supported in Azure
+The following regions now support single node and high-availability (HA) deployments in single and multiple availability zones in Azure for Cloud Volumes ONTAP 9.12.1 GA and later. 
+
+* Spain Central 
+
+* Mexico Central	
+
+For a list of all regions, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[Global Regions Map under Azure^].
