@@ -20,19 +20,22 @@ The enhancements described on this page are specific to BlueXP features that ena
 //Major ONTAP releases should be included as an entry. The RN link for the last release will need to point to the downlevel entry.
 
 // tag::whats-new[]
+== 16 April 2025
+include::_whatsnew/2025-04-16.adoc[]
 
 == 14 April 2025
-
 include::_whatsnew/2025-04-14.adoc[]
 
-== 28 March 2025
+== 3 April 2025
+include::_whatsnew/2025-04-03.adoc[]
 
+//end::whats-new[]
+
+== 28 March 2025
 include::_whatsnew/2025-03-28.adoc[]
 
 == 12 March 2025
 include::_whatsnew/2025-03-12.adoc[]
-
-//end::whats-new[]
 
 == 10 March 2025
 include::_whatsnew/2025-03-10.adoc[]
@@ -90,7 +93,7 @@ The minimum Cloud Volumes ONTAP version required for configuring Flash Cache in 
 For supported configurations, see https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems[Supported configurations in Azure^].
 
 === Free trials for marketplace subscriptions deprecated
-The 30-day automatic free trial for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.
+The 30-day automatic free trial or evaluation license for pay-as-you-go subscriptions in cloud provider's marketplace will no longer be available in Cloud Volumes ONTAP. The charging for any type of marketplace subscription (PAYGO or annual contract) will be activated from the first use, without any free trial period.
 
 == 10 June 2024
 
