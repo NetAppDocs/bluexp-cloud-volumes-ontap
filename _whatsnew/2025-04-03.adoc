@@ -1,0 +1,4 @@
+=== Support for China regions for Cloud Volumes ONTAP 9.13.1 in AWS
+You can now deploy Cloud Volumes ONTAP 9.13.1 in AWS in China regions. This includes support for both single-node and high-availability (HA) deployments. After you have deployed Cloud Volumes ONTAP 9.13.1, you can upgrade it to later versions. Only licenses purchased directly from NetApp are supported.
+
+For regional availability, refer to the https://bluexp.netapp.com/cloud-volumes-global-regions[ Global Regions Maps for Cloud Volumes ONTAP^].

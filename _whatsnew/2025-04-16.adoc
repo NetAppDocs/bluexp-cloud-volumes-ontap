@@ -1,5 +1,5 @@
 === New regions supported in Azure
-The following regions now support single node and high-availability (HA) deployments in single and multiple availability zones in Azure for Cloud Volumes ONTAP 9.12.1 GA and later. 
+You can now deploy Cloud Volumes ONTAP 9.12.1 GA and later in single and multiple availability zones in Azure in the following regions. This includes support for both single-node and high-availability (HA) deployments.
 
 * Spain Central 
 
