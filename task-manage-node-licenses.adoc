@@ -236,36 +236,7 @@ If an extra capacity license expired and is no longer in use, then you can remov
 
 . Click *Remove*.
 
-=== Convert an Eval license to a BYOL
-
-An evaluation license is good for 30 days. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade.
-
-When you convert an Eval license to a BYOL, BlueXP restarts the Cloud Volumes ONTAP system.
-
-* For a single-node system, the restart results in I/O interruption during the reboot process.
-* For an HA pair, the restart initiates takeover and giveback to continue serving I/O to clients.
-
-.Steps
-
-. From the BlueXP navigation menu, select *Governance > Digital wallet*.
-
-. Select the *Overview* tab.
-
-. On the Cloud Volumes ONTAP tile, select *View*.
-
-. Select *Node Based Licenses* from the drop-down.
-
-. Click *Eval*.
-
-. In the table, click *Convert to BYOL License* for a Cloud Volumes ONTAP system.
-
-. Enter the serial number or upload the license file.
-
-. Click *Convert License*.
-
-.Result
-
-BlueXP starts the conversion process. Cloud Volumes ONTAP automatically restarts as part of this process. When it's back up, the licensing information will reflect the new license.
+//Here was the eval-byol license section. 
 
 == Change between PAYGO and BYOL
 
