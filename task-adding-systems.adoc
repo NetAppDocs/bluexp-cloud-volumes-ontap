@@ -35,8 +35,11 @@ ifdef::aws[]
 image:screenshot_discover_redesign.png[A screenshot that shows a link to discover an existing Cloud Volumes ONTAP system.]
 endif::aws[]
 
-. On the Region page, choose the region where the instances are running, and then select the instances.
-
+. On the Region page, select a region. You can see the instances that are running in the selected region. 
++
+[NOTE]
+The systems are represented as instances on this page. From the list, you can select only the instances that are registered with the current account.
++
 . On the Credentials page, enter the password for the Cloud Volumes ONTAP admin user, and then click *Go*.
 
 .Result
