@@ -127,25 +127,26 @@ Refer to the ONTAP documentation for more information about creating storage:
 * https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[Create shares for CIFS^]
 
 == Discover the deployed systems in BlueXP
-You can discover the Cloud Volumes ONTAP systems that you deployed using Azure marketplace direct deployment on BlueXP, and manage them as working environments. The BlueXP Connector discovers the systems, adds them as working environments, applies the necessary BlueXP licensing model, and unlocks the full capabilities of BlueXP for these systems.
+You can discover the Cloud Volumes ONTAP systems that you deployed using Azure marketplace direct deployment, and manage them as working environments in BlueXP. The BlueXP Connector discovers the systems, adds them as working environments, applies the necessary BlueXP licenses, and unlocks the full capabilities of BlueXP for these systems. The systems retain the HA configuration in flexible orchestration mode with PSSD v2 Managed Disks.
 
 For information about discovering and adding existing systems in BlueXP, refer to link:task-adding-systems.html[Add an existing Cloud Volumes ONTAP system to BlueXP].
 
-When discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace direct deployment, the BlueXP Connector performs these tasks:
+On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace direct deployment, the BlueXP Connector performs these tasks:
 
-* Discovers the free licenses of the deployed systems as a regular capacity-based Freemium licenses. For information about Freemium licenses, refer to link:/concept-licensing.html#packages[Capacity-based licensing packages].
+* Replaces the free licenses of the discovered systems as regular capacity-based Freemium licenses. For information about Freemium licenses, refer to link:/concept-licensing.html#packages[Capacity-based licensing packages].
 * Retains the existing capabilities of the deployed systems, and adds the additional capabilities of BlueXP, such as data protection, data management, and security features.
-* Provisions systems and activates accounts for tiering using FabricPool.
-* Assigns the applicable cloud licenses on the instances.
-* Converts the generic serial numbers of the nodes to unique serial numbers.
+* Provisions systems and activates accounts for FabricPool tiering.
+* Assigns the applicable ONTAP licenses on the Cloud Volumes ONTAP nodes. ##Reviewers, please provide more info.##
+* Converts the generic node serial numbers to unique serial numbers.
 * Assigns new system tags on the resources as required.
 * Converts the dynamic IP addresses of the storage VMs to static IP addresses.
-* Replaces the installed licenses with the new licenses for NFS, CIFS (SMB), iSCSI, Autonomous Ransomware Protection (ARP), SnapLock, and SnapMirror.
-* Enables AutoSupport for the deployed systems.
+* Replaces the installed licenses with the new licenses for NFS, CIFS (SMB), iSCSI, ARP, SnapLock, and SnapMirror.##Reviewers, please provide more info.##
+* Enables AutoSupport on the deployed systems.
 * Activates write-once-read-many (WORM) storage.
-* Removes the unused cloud resources from the deployed systems.
+* Removes the unused cloud resources added to the instances post deployment.
+* Registers the instances to the NSS accounts used to discover them.
 
+After BlueXP discovers and adds the systems, you can perform various management tasks, such as, expanding the aggregate, adding volumes, provisioning additional storage VMs and adding data LIFs to them, and changing the instance type.
 
-
-
-
+[NOTE]
+Azure marketplace direct deployment supports L8s_v3 instance types. However, BlueXP doesn't support this instance type for HA configurations, and won't be able to detect it during discovery.
