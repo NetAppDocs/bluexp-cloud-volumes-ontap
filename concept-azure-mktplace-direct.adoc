@@ -42,8 +42,7 @@ link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported num
 
 |===
 
-In the future, the BlueXP Connector will be able to identify deployments made through the Azure marketplace direct deployment. This will enable you to take advantage of the enhanced features offered by BlueXP.
-
+##After completing the deployment using Azure marketplace direct deployment, you can discover these systems in BlueXP and add them as working environments, to take advantage of the complete range of BlueXP features. Refer to link:task-deploy-cvo-azure-mktplc.html[Discover the deployed systems in BlueXP].##
 
 .Related links
 
