@@ -38,9 +38,9 @@ endif::aws[]
 . On the Region page, select a region. You can see the systems that are running in the selected region. 
 +
 [NOTE]
-Cloud Volumes ONTAP systems are represented as instances on this page. From the list, you can select only the instances that are registered with the current account.
+Cloud Volumes ONTAP systems are represented as instances on this page. From the list, you can select the instances that are already registered with the current account.
 +
-. On the Credentials page, enter the password for the Cloud Volumes ONTAP admin user, and then click *Go*.
+. On the Credentials page, enter the password for the Cloud Volumes ONTAP admin user, and then select *Go*.
 
 .Result
 
