@@ -21,7 +21,7 @@ BlueXP provides several ways to create a new volume:
 * Create a volume on a data aggregate of your choice. <<create-a-volume,Learn more>>
 * Create a volume on the second node in an HA configuration. <<create-volume-second-node,Learn more>>
 
-== Before you get started
+== Before you begin
 
 A few notes about volume provisioning:
 

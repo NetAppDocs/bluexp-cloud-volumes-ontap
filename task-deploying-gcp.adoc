@@ -15,7 +15,7 @@ summary: You can launch Cloud Volumes ONTAP in a single-system configuration or 
 [.lead]
 You can launch Cloud Volumes ONTAP in a single-node configuration or as an HA pair in Google Cloud.
 
-== Before you get started
+== Before you begin
 
 You need the following to create a working environment.
 
