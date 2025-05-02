@@ -1,0 +1,5 @@
+=== BlueXP enables the discovery of deployments made through the Azure marketplace
+
+BlueXP now has the capability of discovering the Cloud Volumes ONTAP systems deployed through Azure marketplace direct deployment. This means that you can now add and manage these systems as working environments in BlueXP, just like any other Cloud Volumes ONTAP system.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace^]
