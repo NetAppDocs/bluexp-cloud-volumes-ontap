@@ -23,7 +23,10 @@ Here is the feature comparison between the two options:
 |===
 |  | Azure marketplace | BlueXP
 | *Onboarding* | Shorter and easier, minimal preparation required for direct deployment | Longer onboarding process, including the installation of the BlueXP Connector
-| *Supported virtual machine (VM) types* | Edsv5 and Lsv3 | Full range of VM types.
+| *Supported virtual machine (VM) types* a| Eds_v5 and Ls_v3 instance types
+[NOTE]
+L8s_v3 instance type is supported in the Azure marketplace for HA configurations, but not in BlueXP. BlueXP won't be able to detect it correctly during discovery.
+| Full range of VM types.
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^]
 | *License*   | Free license | Any capacity-based license. 
 link:concept-licensing.html[Cloud Volumes ONTAP licensing]
@@ -32,7 +35,7 @@ link:concept-licensing.html[Cloud Volumes ONTAP licensing]
 | *Deployment model* |High-availability (HA) mode deployment in single availability zone (AZ) | All supported configurations, including single node and HA modes, single and multiple AZ deployments
 | *Supported disk type* | Premium SSD v2 Managed Disks | Wider support.
 link:concept-storage.html#azure-storage[Default configuration for Cloud Volumes ONTAP]
-|*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
+a|*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
 link:concept-write-speed.html[Learn about write speeds in Cloud Volumes ONTAP].
 | *Orchestration capabilities* | Not available | Available through BlueXP, based on the license type
 | *Number of supported storage VMs* | One  per deployment | Multiple storage VMs, based on your configuration. 

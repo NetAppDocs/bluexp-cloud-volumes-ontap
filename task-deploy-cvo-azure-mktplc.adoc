@@ -138,8 +138,9 @@ On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace 
 * Converts the generic node serial numbers to unique serial numbers.
 * Assigns new system tags on the resources as required.
 * Converts the dynamic IP addresses of the instance to static IP addresses.
-* Enables the functionalities of FabricPool tiering, AutoSupport, and write-once-read-many (WORM) storage on the deployed systems.
+* Enables the functionalities of FabricPool tiering, AutoSupport, and write-once-read-many (WORM) storage on the deployed systems. You can activate these features from the BlueXP console when you need them.
 * Registers the instances to the NSS accounts used to discover them.
+* Enables capacity management features in both automatic and manual modes for the discovered systems.
 
 .Before you begin
 Ensure that the deployment is complete on the Azure marketplace. The BlueXP Connector can discover the systems only when the systems have been deployed and are available for discovery.
@@ -154,4 +155,10 @@ For information about discovering and adding existing systems to BlueXP, refer t
 
 .After you finish
 After the discovery is complete, you can view the systems in the BlueXP console. The systems are listed as working environments, and you can manage them from the BlueXP console. You can perform various management tasks, such as, expanding the aggregate, adding volumes, provisioning additional storage VMs and adding data LIFs to them, and changing the instance types.
+
+.Related information
+
+* link:task-verify-autosupport.html[Verify AutoSupport setup]
+* link:task-tiering.html[Tier inactive data to low-cost object storage]
+* link:concept-worm.html[Learn about WORM storage]
 
