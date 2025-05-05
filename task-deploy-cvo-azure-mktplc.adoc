@@ -132,15 +132,15 @@ You can discover the Cloud Volumes ONTAP systems that you deployed using Azure m
 .About this task
 On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace direct deployment, the BlueXP Connector performs these tasks:
 
-* Replaces the free licenses of the discovered systems as regular capacity-based Freemium licenses. For information about Freemium licenses, refer to link:concept-licensing.html#packages[Capacity-based licensing packages].
+* Replaces the free licenses of the discovered systems as regular capacity-based link:concept-licensing.html#packages[Freemium licenses].
 * Retains the existing capabilities of the deployed systems, and adds the additional capabilities of BlueXP, such as data protection, data management, and security features.
 * Replaces the installed licenses on the nodes with new ONTAP licenses for NFS, CIFS (SMB), iSCSI, ARP, SnapLock, and SnapMirror.
 * Converts the generic node serial numbers to unique serial numbers.
 * Assigns new system tags on the resources as required.
 * Converts the dynamic IP addresses of the instance to static IP addresses.
-* Enables the functionalities of FabricPool tiering, AutoSupport, and write-once-read-many (WORM) storage on the deployed systems. You can activate these features from the BlueXP console when you need them.
+* Enables the functionalities of link:task-tiering.html[FabricPool tiering], link:task-verify-autosupport.html[AutoSupport], and link:concept-worm.html[write-once-read-many] (WORM) storage on the deployed systems. You can activate these features from the BlueXP console when you need them.
 * Registers the instances to the NSS accounts used to discover them.
-* Enables capacity management features in both automatic and manual modes for the discovered systems.
+* Enables capacity management features in both link:concept-storage-management.html#capacity-management[automatic and manual modes] for the discovered systems.
 
 .Before you begin
 Ensure that the deployment is complete on the Azure marketplace. The BlueXP Connector can discover the systems only when the systems have been deployed and are available for discovery.
@@ -156,9 +156,5 @@ For information about discovering and adding existing systems to BlueXP, refer t
 .After you finish
 After the discovery is complete, you can view the systems in the BlueXP console. The systems are listed as working environments, and you can manage them from the BlueXP console. You can perform various management tasks, such as, expanding the aggregate, adding volumes, provisioning additional storage VMs and adding data LIFs to them, and changing the instance types.
 
-.Related information
 
-* link:task-verify-autosupport.html[Verify AutoSupport setup]
-* link:task-tiering.html[Tier inactive data to low-cost object storage]
-* link:concept-worm.html[Learn about WORM storage]
 
