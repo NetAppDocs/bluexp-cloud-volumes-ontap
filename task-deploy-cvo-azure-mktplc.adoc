@@ -118,14 +118,6 @@ Cloud Volumes ONTAP deployments made directly through the Azure marketplace do n
 ** https://www.netapp.com/support-and-training/documentation/[NetApp documentation]
 ** https://kb.netapp.com/[NetApp KB articles]
 
-.Related links
-
-Refer to the ONTAP documentation for more information about creating storage:
-
-* https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[Create volumes for NFS^]  
-* https://docs.netapp.com/us-en/ontap-cli/lun-create.html[Create LUNs for iSCSI^]
-* https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[Create shares for CIFS^]
-
 == ##Discover the deployed systems in BlueXP##
 You can discover the Cloud Volumes ONTAP systems that you deployed using Azure marketplace direct deployment, and manage them as working environments in BlueXP. The BlueXP Connector discovers the systems, adds them as working environments, applies the necessary BlueXP licenses, and unlocks the full capabilities of BlueXP for these systems. The systems retain the HA deployment in flexible orchestration mode and PSSD v2 Managed Disks.
 
@@ -140,21 +132,24 @@ On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace 
 * Converts the dynamic IP addresses of the instance to static IP addresses.
 * Enables the functionalities of link:task-tiering.html[FabricPool tiering], link:task-verify-autosupport.html[AutoSupport], and link:concept-worm.html[write-once-read-many] (WORM) storage on the deployed systems. You can activate these features from the BlueXP console when you need them.
 * Registers the instances to the NSS accounts used to discover them.
-* Enables capacity management features in both link:concept-storage-management.html#capacity-management[automatic and manual modes] for the discovered systems.
+* Enables capacity management features in link:concept-storage-management.html#capacity-management[automatic and manual modes] for the discovered systems.
 
 .Before you begin
-Ensure that the deployment is complete on the Azure marketplace. The BlueXP Connector can discover the systems only when the systems have been deployed and are available for discovery.
+Ensure that the deployment is complete on the Azure marketplace. The BlueXP Connector can discover the systems only when the deployment is complete, and are available for discovery.
 
 [NOTE]
 Azure marketplace direct deployment supports L8s_v3 instance types. However, BlueXP doesn't support this instance type for HA configurations, and won't be able to detect it correctly during discovery.
 
 .Steps
-In BlueXP, you follow the standard procedure to discover existing systems.
-
-For information about discovering and adding existing systems to BlueXP, refer to link:task-adding-systems.html[Add an existing Cloud Volumes ONTAP system to BlueXP].
+In BlueXP, you follow the standard procedure for discovering existing systems. Refer to link:task-adding-systems.html[Add an existing Cloud Volumes ONTAP system to BlueXP].
 
 .After you finish
-After the discovery is complete, you can view the systems in the BlueXP console. The systems are listed as working environments, and you can manage them from the BlueXP console. You can perform various management tasks, such as, expanding the aggregate, adding volumes, provisioning additional storage VMs and adding data LIFs to them, and changing the instance types.
+After the discovery is complete, you can view the systems listed as working environments in BlueXP. You can perform various management tasks, such as link:task-manage-aggregates.html[expanding the aggregate], link:task-create-volumes.html[adding volumes], link:task-managing-svms-azure.html[provisioning additional storage VMs], and link:task-change-azure-vm.html[changing the instance types].
 
 
+.Related links
+Refer to the ONTAP documentation for more information about creating storage:
 
+* https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html[Create volumes for NFS^]  
+* https://docs.netapp.com/us-en/ontap-cli/lun-create.html[Create LUNs for iSCSI^]
+* https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html[Create shares for CIFS^]
