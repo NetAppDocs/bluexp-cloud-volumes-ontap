@@ -40,7 +40,7 @@ endif::gcp[]
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Ensure that you have an aggregate with tiering enabled
 
 [role="quick-margin-para"]
-Data tiering should be enabled on an aggregate to enable it on a volume. You should be aware of the requirements for new volumes and for existing volumes. <<Ensuring that tiering is enabled on aggregates,Learn more>>.
+Data tiering should be enabled on an aggregate to enable it on a volume. You should be aware of the requirements for new volumes and for existing volumes. <<Ensure that tiering is enabled on aggregates,Learn more>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Choose a tiering policy when creating, modifying, or replicating a volume
 
@@ -48,8 +48,8 @@ Data tiering should be enabled on an aggregate to enable it on a volume. You sho
 BlueXP prompts you to choose a tiering policy when you create, modify, or replicate a volume.
 
 [role="quick-margin-list"]
-* link:task-tiering.html#tiering-data-from-read-write-volumes[Tiering data on read-write volumes]
-* link:task-tiering.html#tiering-data-from-data-protection-volumes[Tiering data on data protection volumes]
+* link:task-tiering.html#tiering-data-from-read-write-volumes[Tier data from read-write volumes]
+* link:task-tiering.html#tiering-data-from-data-protection-volumes[Tier data from data protection volumes]
 
 [NOTE]
 .What's not required for data tiering?
@@ -58,7 +58,7 @@ BlueXP prompts you to choose a tiering policy when you create, modify, or replic
 * You don't need to create an object store for the capacity tier. BlueXP does that for you.
 * You don't need to enable data tiering at the system level.
 +
-BlueXP creates an object store for cold data when it creates the system, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
+BlueXP creates an object store for cold data when it creates the system, <<Enable data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensure that tiering is enabled on aggregates>>).
 ====
 
 == Configurations that support data tiering
