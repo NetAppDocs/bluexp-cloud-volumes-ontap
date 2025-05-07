@@ -127,7 +127,7 @@ This scenario applies if the Cloud Volumes ONTAP working environment is created 
 
 * You have entered the credentials for both the tenants in BlueXP for cross-validation. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for BlueXP].
 * You have enabled https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview[virtual network (VNet) peering on the Azure portal^] between the two tenants. This is required so that the Connector can access the storage account for the other tenant.
-* html#disable-azure-private-links-and-use-service-endpoints-instead[Disable Azure Private Links and use service endpoints instead].
+* link:task-enabling-private-link.html#disable-azure-private-links-and-use-service-endpoints-instead[Disable Azure Private Links and use the Subnet Service Endpoint instead].
 
 endif::azure[]
 
