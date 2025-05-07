@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-tiering.html
-keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements, remove S3 bucket, delete S3 CVO bucket
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements, remove S3 bucket, delete S3 CVO bucket, tenant, multi-tenant tiering
 summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
 ---
 
@@ -121,6 +121,14 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/routeTables/join/action",
 
 The custom role includes the permissions by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
+
+=== Requirements to tier data for a different Azure tenant
+This scenario applies if the Cloud Volumes ONTAP working environment is created by a tenant and the Connector is created by another. If you want to enable tiering for a different tenant, then ensure that:
+
+* You have entered the credentials for both the tenants in BlueXP for cross-validation. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for BlueXP].
+* You have enabled https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview[virtual network (VNet) peering on the Azure portal^] between the two tenants. This is required so that the Connector can access the storage account for the other tenant.
+* html#disable-azure-private-links-and-use-service-endpoints-instead[Disable Azure Private Links and use service endpoints instead].
+
 endif::azure[]
 
 ifdef::gcp[]
