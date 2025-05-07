@@ -45,7 +45,7 @@ link:task-managing-svms-azure.html#supported-number-of-storage-vms[Supported num
 
 |===
 
-##After completing the deployment using Azure marketplace direct deployment, you can discover these systems in BlueXP and add them as working environments, to take advantage of the complete range of BlueXP features. Refer to link:task-deploy-cvo-azure-mktplc.html[Discover the deployed systems in BlueXP].##
+After deploying the Cloud Volumes ONTAP systems from the Azure marketplace, you can discover these systems in BlueXP. After discovery, you can manage them as working environments, and take advantage of all the BlueXP capabilities. Refer to link:task-deploy-cvo-azure-mktplc.html[Discover the deployed systems in BlueXP].
 
 .Related links
 

@@ -118,10 +118,10 @@ Cloud Volumes ONTAP deployments made directly through the Azure marketplace do n
 ** https://www.netapp.com/support-and-training/documentation/[NetApp documentation]
 ** https://kb.netapp.com/[NetApp KB articles]
 
-== ##Discover the deployed systems in BlueXP##
-You can discover the Cloud Volumes ONTAP systems that you deployed using Azure marketplace direct deployment, and manage them as working environments in BlueXP. The BlueXP Connector discovers the systems, adds them as working environments, applies the necessary BlueXP licenses, and unlocks the full capabilities of BlueXP for these systems. The systems retain the HA deployment in flexible orchestration mode and PSSD v2 Managed Disks.
+== Discover the deployed systems in BlueXP
+You can discover the Cloud Volumes ONTAP systems that you deployed using Azure marketplace direct deployment, and manage them as working environments in BlueXP. The BlueXP Connector discovers the systems, adds them as working environments, applies the necessary BlueXP licenses, and unlocks the full capabilities of BlueXP for these systems. The original HA configuration in a single AZ with PSSD v2 Managed Disks is retained, and the system is registered to the same Azure subscription and resource group as the original deployment.
 
-.About this task
+.About this task 
 On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace direct deployment, the BlueXP Connector performs these tasks:
 
 * Replaces the free licenses of the discovered systems as regular capacity-based link:concept-licensing.html#packages[Freemium licenses].
