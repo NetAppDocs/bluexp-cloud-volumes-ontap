@@ -13,12 +13,12 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-Beginning with Cloud Volumes ONTAP 9.16.1, you can use Azure marketplace direct deployment to quickly and easily deploy Cloud Volumes ONTAP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks and explore its core features and capabilities in your environment. 
+You can use Azure marketplace direct deployment to quickly and easily deploy Cloud Volumes ONTAP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks and explore its core features and capabilities in your environment. 
 
 For more information about this offering, refer to link:concept-azure-mktplace-direct.html[Learn about Cloud Volumes ONTAP offerings on BlueXP and the marketplace].
 
 .About this task
-The Cloud Volumes ONTAP system deployed by using Azure marketplace direct deployment has these properties: 
+The Cloud Volumes ONTAP system deployed by using Azure marketplace direct deployment has these properties. Note that the features of a standalone instance deployed through the Azure marketplace change when it is discovered in BlueXP.  
 
 * The latest Cloud Volumes ONTAP version (9.16.1 or later).
 * A free license for Cloud Volumes ONTAP that is limited to 500 GiB of provisioned capacity. This license includes no NetApp support and has no expiry date.
@@ -108,7 +108,7 @@ Select the notification icon to view the progress of your deployment. After Clou
 Once accessible, use ONTAP System Manager or the ONTAP CLI to log in to the storage VM with the admin credentials that you set. Thereafter, you can create volumes, LUNs, or shares and start utilizing the storage capabilities of Cloud Volumes ONTAP.
 
 == Troubleshoot deployment issues
-Cloud Volumes ONTAP deployments made directly through the Azure marketplace do not include support from NetApp. If any issues arise during deployment, you can independently troubleshoot and resolve them.
+Cloud Volumes ONTAP systems deployed directly through the Azure marketplace do not include support from NetApp. If any issues arise during deployment, you can independently troubleshoot and resolve them.
 
 .Steps
 . On the Azure marketplace site, go to *Boot diagnostics > Serial log*.
@@ -119,7 +119,7 @@ Cloud Volumes ONTAP deployments made directly through the Azure marketplace do n
 ** https://kb.netapp.com/[NetApp KB articles]
 
 == Discover the deployed systems in BlueXP
-You can discover the Cloud Volumes ONTAP systems that you deployed using Azure marketplace direct deployment, and manage them as working environments in BlueXP. The BlueXP Connector discovers the systems, adds them as working environments, applies the necessary BlueXP licenses, and unlocks the full capabilities of BlueXP for these systems. The original HA configuration in a single AZ with PSSD v2 Managed Disks is retained, and the system is registered to the same Azure subscription and resource group as the original deployment.
+You can discover the Cloud Volumes ONTAP systems that you deployed using Azure marketplace direct deployment and manage them as working environments in BlueXP. The BlueXP Connector discovers the systems, adds them as working environments, applies the necessary BlueXP licenses, and unlocks the full capabilities of BlueXP for these systems. The original HA configuration in a single AZ with PSSD v2 Managed Disks is retained, and the system is registered to the same Azure subscription and resource group as the original deployment.
 
 .About this task 
 On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace direct deployment, the BlueXP Connector performs these tasks:
@@ -135,7 +135,7 @@ On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace 
 * Enables capacity management features in link:concept-storage-management.html#capacity-management[automatic and manual modes] for the discovered systems.
 
 .Before you begin
-Ensure that the deployment is complete on the Azure marketplace. The BlueXP Connector can discover the systems only when the deployment is complete, and are available for discovery.
+Ensure that the deployment is complete on the Azure marketplace. The BlueXP Connector can discover the systems only when the deployment is complete and are available for discovery.
 
 [NOTE]
 Azure marketplace direct deployment supports L8s_v3 instance types. However, BlueXP doesn't support this instance type for HA configurations, and won't be able to detect it correctly during discovery.
