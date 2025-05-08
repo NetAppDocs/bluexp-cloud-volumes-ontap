@@ -122,7 +122,7 @@ You don't need to set up a connection between the performance tier and the capac
 
 The custom role includes the permissions by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
 
-=== Requirements to tier data for a different Azure tenant
+=== Requirements to tier data for an Azure tenant
 You can use the same Connector to tier data for multiple Azure tenants. To enable tiering for an Azure tenant in a scenario where the Cloud Volumes ONTAP working environment is created by one tenant and the Connector is created by another, ensure the following:
 
 * You have entered the credentials for both the tenants in BlueXP for cross-validation. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for BlueXP].
