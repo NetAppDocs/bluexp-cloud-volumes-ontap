@@ -82,9 +82,13 @@ You can view details about the capacity used per package by switching to legacy 
 
 . Select *View* to see the provisioned capacity for each of your licensing packages.
 
-. Select *Switch to Legacy View*.
+. Select *Switch to advanced view*.
 +
-image:screenshot_digital_wallet_legacy_view.png[A screenshot of the Switch to Legacy view button]
+image:screenshot_digital_wallet_legacy_view.png[A screenshot of the Switch to advanced view button]
++
+. View the details of the package you want to see.
++
+image:screenshot_digital_wallet_standard_view.png[A screenshot of switch to standard view button]
 
 
 
@@ -110,7 +114,7 @@ BlueXP always attempts to charge against a license first. If a license isn't ava
 
 . On the Cloud Volumes ONTAP tile, select *View*.
 
-. Select *Switch to Legacy View*.
+. Select *Switch to advanced view*.
 +
 image:screenshot_digital_wallet_legacy_view.png[A screenshot of the Switch to Legacy view button]
 +
