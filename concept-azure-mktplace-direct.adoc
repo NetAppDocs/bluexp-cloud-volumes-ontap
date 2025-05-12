@@ -17,7 +17,7 @@ NetApp provides two options for deploying Cloud Volumes ONTAP on Azure. Cloud Vo
 
 When you deploy Cloud Volumes ONTAP directly from the Azure marketplace, you're not required to set up the BlueXP Connector or meet other security and onboarding criteria required for deploying Cloud Volumes ONTAP through BlueXP. From the Azure marketplace, you can quickly deploy Cloud Volumes ONTAP in a few clicks and explore its core features and capabilities in your environment.
 
-After completing the deployment in the Azure marketplace, you can discover these systems in BlueXP. After discovery, you can manage them as working environments and take advantage of all the BlueXP capabilities. Refer to link:task-deploy-cvo-azure-mktplc.html[Discover the deployed systems in BlueXP].
+On completing the deployment in the Azure marketplace, you can discover these systems in BlueXP. After discovery, you can manage them as working environments and take advantage of all the BlueXP capabilities. Refer to link:task-deploy-cvo-azure-mktplc.html[Discover the deployed systems in BlueXP].
 
 Here is the feature comparison between the two options. Note that the features of a standalone instance deployed through the Azure marketplace change when it is discovered in BlueXP. 
 
@@ -37,7 +37,7 @@ link:concept-licensing.html[Cloud Volumes ONTAP licensing]
 | *Deployment model* |High-availability (HA) mode deployment in single availability zone (AZ) | All supported configurations, including single node and HA modes, single and multiple AZ deployments
 | *Supported disk type* | Premium SSD v2 Managed Disks | Wider support.
 link:concept-storage.html#azure-storage[Default configuration for Cloud Volumes ONTAP]
-a|*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
+|*Write speed (fast write mode)* | Not supported | Supported, based on your configuration. 
 link:concept-write-speed.html[Learn about write speeds in Cloud Volumes ONTAP].
 | *Orchestration capabilities* | Not available | Available through BlueXP, based on the license type
 | *Number of supported storage VMs* | One  per deployment | Multiple storage VMs, based on your configuration. 
