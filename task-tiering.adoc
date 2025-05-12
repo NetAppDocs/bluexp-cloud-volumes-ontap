@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-tiering.html
-keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements, remove S3 bucket, delete S3 CVO bucket
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements, remove S3 bucket, delete S3 CVO bucket, tenant, multi-tenant tiering
 summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
 ---
 
@@ -40,7 +40,7 @@ endif::gcp[]
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Ensure that you have an aggregate with tiering enabled
 
 [role="quick-margin-para"]
-Data tiering should be enabled on an aggregate to enable it on a volume. You should be aware of the requirements for new volumes and for existing volumes. <<Ensuring that tiering is enabled on aggregates,Learn more>>.
+Data tiering should be enabled on an aggregate to enable it on a volume. You should be aware of the requirements for new volumes and for existing volumes. <<Ensure that tiering is enabled on aggregates,Learn more>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Choose a tiering policy when creating, modifying, or replicating a volume
 
@@ -48,8 +48,8 @@ Data tiering should be enabled on an aggregate to enable it on a volume. You sho
 BlueXP prompts you to choose a tiering policy when you create, modify, or replicate a volume.
 
 [role="quick-margin-list"]
-* link:task-tiering.html#tiering-data-from-read-write-volumes[Tiering data on read-write volumes]
-* link:task-tiering.html#tiering-data-from-data-protection-volumes[Tiering data on data protection volumes]
+* link:task-tiering.html#tier-data-from-read-write-volumes[Tier data from read-write volumes]
+* link:task-tiering.html#tier-data-from-data-protection-volumes[Tier data from data protection volumes]
 
 [NOTE]
 .What's not required for data tiering?
@@ -58,7 +58,7 @@ BlueXP prompts you to choose a tiering policy when you create, modify, or replic
 * You don't need to create an object store for the capacity tier. BlueXP does that for you.
 * You don't need to enable data tiering at the system level.
 +
-BlueXP creates an object store for cold data when it creates the system, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
+BlueXP creates an object store for cold data when it creates the system, <<Enable data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensure that tiering is enabled on aggregates,on aggregates>>).
 ====
 
 == Configurations that support data tiering
@@ -121,6 +121,14 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/routeTables/join/action",
 
 The custom role includes the permissions by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
+
+=== Requirements to tier data for an Azure tenant
+You can use the same Connector to tier data for multiple Azure tenants. To enable tiering for an Azure tenant in a scenario where the Cloud Volumes ONTAP working environment is created by one tenant and the Connector is created by another, ensure the following:
+
+* You have entered the credentials for both the tenants in BlueXP for cross-validation. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for BlueXP^].
+* You have enabled virtual network (VNet) peering between the two tenants https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview[on the Azure portal^]. This is required so that the Connector can access the storage account for the other tenant.
+* You have link:task-enabling-private-link.html#disable-azure-private-links-and-use-service-endpoints-instead[disabled Azure Private Links] to use the subnet service endpoint.
+
 endif::azure[]
 
 ifdef::gcp[]
