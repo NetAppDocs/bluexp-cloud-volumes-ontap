@@ -15,7 +15,7 @@ summary: You can launch Cloud Volumes ONTAP instances in a single-system configu
 [.lead]
 You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in AWS.
 
-== Before you get started
+== Before you begin
 
 You need the following to create a working environment.
 

@@ -1,0 +1,10 @@
+=== Discovery of deployments made through the Azure marketplace in BlueXP
+
+BlueXP now has the capability of discovering the Cloud Volumes ONTAP systems deployed directly through the Azure marketplace. This means that you can now add and manage these systems as working environments in BlueXP, just like any other Cloud Volumes ONTAP system.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploy-cvo-azure-mktplc.html[Deploy Cloud Volumes ONTAP from the Azure marketplace^]
+
+=== Ability to tier data for Azure tenants
+You can now enable tiering for an Azure tenant in a scenario where the Cloud Volumes ONTAP working environment is created by one tenant and the BlueXP Connector is created by another. By using this functionality, you can use the same Connector to tier data for multiple Azure tenants.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html#requirements-to-tier-data-for-an-azure-tenant[Requirements to tier data for an Azure tenant^]
