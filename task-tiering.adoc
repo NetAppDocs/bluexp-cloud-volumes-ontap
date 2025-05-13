@@ -88,7 +88,7 @@ endif::azure[]
 ifdef::gcp[]
 === Support in Google Cloud
 
-* Data tiering is supported in Google Cloud starting with Cloud Volumes ONTAP 9.6.
+* Data tiering is supported in Google Cloud beginning with Cloud Volumes ONTAP 9.6.
 * The performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
 * The inactive data is tiered to Google Cloud Storage.  Tiering to other providers is not supported.
 endif::gcp[]
