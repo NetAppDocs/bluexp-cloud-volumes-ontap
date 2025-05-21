@@ -267,12 +267,11 @@ You must use a _dedicated_ resource group for each Cloud Volumes ONTAP HA pair t
 BlueXP experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.
 
 === Security group rules
+BlueXP creates Azure security groups that include the inbound and outbound rules for Cloud Volumes ONTAP to operate successfully. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html[View security group rules for the Connector^].
 
-BlueXP creates Azure security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer to use your own security groups.
+The Azure security groups for Cloud Volumes ONTAP require the appropriate ports to be open for internal communication between the nodes. https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].
 
-The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.
-
-TIP: Looking for information about the Connector? https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html[View security group rules for the Connector^]
+We do not recommend modifying the predefined security groups or using custom security groups. However, if you must, note that the deployment process requires the Cloud Volumes ONTAP system to have full access within its own subnet. After the deployment is complete, if you decide to modify the network security group, ensure to keep the cluster ports and HA network ports open. This ensures seamless communication within the Cloud Volumes ONTAP cluster (any-to-any communication between the nodes).
 
 ==== Inbound rules for single node systems
 
