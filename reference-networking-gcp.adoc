@@ -344,7 +344,7 @@ The predefined security group for Cloud Volumes ONTAP includes the following out
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP.
 
-NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system.
+NOTE: The source is the interface (IP address) of the Cloud Volumes ONTAP system.
 
 [cols="10,10,6,20,20,34",width=100%,options="header"]
 |===
