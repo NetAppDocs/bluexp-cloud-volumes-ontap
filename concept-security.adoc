@@ -39,14 +39,14 @@ Cloud Volumes ONTAP supports https://www.netapp.com/pdf.html?item=/media/17070-d
 * NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
 * NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
 
-##Cloud Volumes ONTAP supports both NVE and NAE with external key management services (EKMs) provided by AWS, Azure, and Google Cloud, including third-party solutions, such as Fortanix. Unlike ONTAP, for Cloud Volumes ONTAP, encryption keys are generated at the cloud provider's side, not in ONTAP.##
+Cloud Volumes ONTAP supports both NVE and NAE with external key management services (EKMs) provided by AWS, Azure, and Google Cloud, including third-party solutions, such as Fortanix. Unlike ONTAP, for Cloud Volumes ONTAP, encryption keys are generated at the cloud provider's side, not in ONTAP.
 
-##Cloud Volumes ONTAP uses the standard Key Management Interoperability Protocol (KMIP) services that ONTAP uses. For more information about the supported services, refer to the https://imt.netapp.com/imt/#welcome[Interoperability Matrix Tool^].##
+Cloud Volumes ONTAP uses the standard Key Management Interoperability Protocol (KMIP) services that ONTAP uses. For more information about the supported services, refer to the https://imt.netapp.com/imt/#welcome[Interoperability Matrix Tool^].
 
 If you use NVE, you have the option to use your cloud provider's key vault to protect ONTAP encryption keys:
 
 ifdef::aws[]
-* ##AWS Key Management Service (KMS)##
+* AWS Key Management Service (KMS)
 endif::aws[]
 ifdef::azure[]
 * Azure Key Vault (AKV)
