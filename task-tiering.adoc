@@ -68,10 +68,11 @@ You can enable data tiering when using specific configurations and features.
 ifdef::aws[]
 === Support in AWS
 
-* Data tiering is supported in AWS starting with Cloud Volumes ONTAP 9.2.
+* Data tiering is supported in AWS beginning with Cloud Volumes ONTAP 9.2.
 * The performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).
 +
-NOTE: Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
+NOTE: We do not recommend tiering data to object storage when using Throughput Optimized HDDs (st1).
+* The inactive data is tiered to Amazon S3 buckets. Tiering to other providers is not supported.
 endif::aws[]
 
 ifdef::azure[]
@@ -80,15 +81,16 @@ ifdef::azure[]
 * Data tiering is supported in Azure as follows:
 ** Version 9.4 in with single node systems
 ** Version 9.6 in with HA pairs
-
 * The performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
+* The inactive data is tiered to Microsoft Azure Blob. Tiering to other providers is not supported.
 endif::azure[]
 
 ifdef::gcp[]
 === Support in Google Cloud
 
-* Data tiering is supported in Google Cloud starting with Cloud Volumes ONTAP 9.6.
+* Data tiering is supported in Google Cloud beginning with Cloud Volumes ONTAP 9.6.
 * The performance tier can be either SSD persistent disks, balanced persistent disks, or standard persistent disks.
+* The inactive data is tiered to Google Cloud Storage.  Tiering to other providers is not supported.
 endif::gcp[]
 
 === Feature interoperability
