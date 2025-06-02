@@ -34,25 +34,28 @@ You can use NetApp encryption solutions with native encryption from your cloud p
 
 === NetApp encryption solutions (NVE and NAE)
 
-Cloud Volumes ONTAP supports https://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf[NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE)^]. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. Both NVE and NAE use AES 256-bit encryption.
+Cloud Volumes ONTAP supports https://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf[NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE)^]. NVE and NAE are software-based solutions that enable (FIPS) 140-2-compliant data-at-rest encryption of volumes. Both NVE and NAE use AES 256-bit encryption. 
 
 * NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
 * NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
 
-Both NVE and NAE are supported with an external key manager.
+Cloud Volumes ONTAP supports both NVE and NAE with external key management services (EKMs) provided by AWS, Azure, and Google Cloud, including third-party solutions, such as Fortanix. Unlike ONTAP, for Cloud Volumes ONTAP, encryption keys are generated at the cloud provider's side, not in ONTAP.
 
-ifdef::azure,gcp[]
+Cloud Volumes ONTAP uses the standard Key Management Interoperability Protocol (KMIP) services that ONTAP uses. For more information about the supported services, refer to the https://imt.netapp.com/imt/#welcome[Interoperability Matrix Tool^].
+
 If you use NVE, you have the option to use your cloud provider's key vault to protect ONTAP encryption keys:
 
+ifdef::aws[]
+* AWS Key Management Service (KMS)
+endif::aws[]
 ifdef::azure[]
 * Azure Key Vault (AKV)
 endif::azure[]
 ifdef::gcp[]
 * Google Cloud Key Management Service
 endif::gcp[]
-endif::azure,gcp[]
 
-New aggregates have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
+New aggregates have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate have NVE enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
 
 Setting up a supported key manager is the only required step. For set up instructions, refer to link:task-encrypting-volumes.html[Encrypt volumes with NetApp encryption solutions].
 
