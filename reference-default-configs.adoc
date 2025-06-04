@@ -223,4 +223,4 @@ This disk, which contains the boot image, is not available to Cloud Volumes ONTA
 
 * Data volumes also reside in aggr1.
 
-//Gh issue: 347
+//Gh issue: 347, 368
