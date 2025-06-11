@@ -13,7 +13,7 @@ summary: BlueXP doesn't provide any setup or orchestration support for storage V
 :imagesdir: ./media/
 
 [.lead]
-BlueXP doesn't provide any setup or orchestration support for storage VM (SVM) disaster recovery. You must use ONTAP System Manager or the ONTAP CLI.
+BlueXP does not offer setup or orchestration support for storage VM (SVM) disaster recovery. To perform these tasks, use ONTAP System Manager or the ONTAP CLI.
 
 If you set up SnapMirror SVM replication between two Cloud Volumes ONTAP systems, the replication must be between two HA pair systems or two single node systems. You can't set up SnapMirror SVM replication between an HA pair and a single node system.
 
