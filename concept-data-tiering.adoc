@@ -67,7 +67,9 @@ BlueXP creates the storage account with the following settings:
 
 * Access tier: Hot
 * Performance: Standard
-* Redundancy: Locally-redundant storage (LRS)
+* Redundancy: Accordingly to Cloud Volume ONTAP Deployment 
+** Single availability zone: Locally-redundant storage (LRS)
+** Multiple availability zone: Zone-redundant storage (ZRS) 
 * Account: StorageV2 (general purpose v2)
 * Require secure transfer for REST API operations: Enabled
 * Storage account key access: Enabled
@@ -159,3 +161,6 @@ TIP: When Cloud Volumes ONTAP is turned off, the temperature of each block is pr
 == Setting up data tiering
 
 For instructions and a list of supported configurations, refer to link:task-tiering.html[Tier inactive data to low-cost object storage].
+
+
+//GH-415
