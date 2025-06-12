@@ -164,7 +164,7 @@ If configured correctly, Cloud Volumes ONTAP will automatically create the volum
 
 . Confirm the volume was created and encrypted correctly. If it is, the `-is-encrypted` parameter will display as `true`.
 `vol show -vserver _SVM_name_ -fields is-encrypted`
-. Optional: If you want to update the authentication credentials for the Azure Key Vault configuration in the certificate, use the following command:
+. Optional: If you want to update the credentials for the Azure Key Vault authentication certificate, use the following command:
 `security key-manager external azure update-credentials -vserver v1 -authentication-method certificate`
 
 
