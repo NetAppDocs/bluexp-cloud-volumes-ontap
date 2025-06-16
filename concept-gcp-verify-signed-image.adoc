@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-gcp-verify-signed-image.html
 keywords: Google Cloud, image, disk.raw, file signature verification, encryption,ONTAP, Cloud Volumes, OpenSSL, sha256,
-summary: Verify an exported Google Cloud image file signature through the Cloud Volumes ONTAP Image Digest File tool. 
+summary: Verify an exported Google Cloud image file signature through the Cloud Volumes ONTAP image digest file tool. 
 ---
 
 = Google Cloud image signature verification for Cloud Volumes ONTAP

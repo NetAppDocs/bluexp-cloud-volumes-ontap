@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-file-verification-linux.html
 keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, Linux 
-summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool on Linux
+summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP image digest file tool on Linux
 ---
 
 = Verify Azure marketplace image signature for Cloud Volumes ONTAP on Linux  
@@ -17,9 +17,9 @@ You can verify an exported VHD file signature for Linux by following the steps b
  
 .Steps
 
-. Download the Azure Image Digest file from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extract the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem).
+. Download the Azure image file from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extract the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem).
 +
-Refer to the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html[Download the Azure Image Digest File^] for more information.  
+Refer to the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html[Download the Azure image digest file^] for more information.  
 
 . Verify the chain of trust.
 +

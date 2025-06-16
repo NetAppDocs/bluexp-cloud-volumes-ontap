@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-azure-download-digest-file.html
 keywords: Azure, image, image signature, download, digest file, decompress, Linux, Mac OS, md5, sha256
-summary: You can download the Azure Image Digest File from the NetApp Support Site. 
+summary: You can download the Azure image digest File from the NetApp Support Site. 
 ---
 
 = Download the Azure Marketplace image digest for Cloud Volumes ONTAP
@@ -13,29 +13,30 @@ summary: You can download the Azure Image Digest File from the NetApp Support Si
 :imagesdir: ./media/
 
 [.lead]
-You can download the Azure Image Digest File from the https://mysupport.netapp.com/site/[NetApp Support Site^]. The `tar.gz` file contains the files required for image signature verification.
+You can download the Azure image file from the https://mysupport.netapp.com/site/[NetApp Support Site^]. The _tar.gz_ file contains the files required for image signature verification.
 
 .Steps
 
 . Go to the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab[Cloud Volumes ONTAP product page on the NetApp Support Site^] and download the required software version from the *Downloads* section.
 
-. On the Cloud Volumes ONTAP download page, click the *Download* button for the Azure Image Digest File to download the `tar.gz` file.
+. On the Cloud Volumes ONTAP download page, click the downloadable file for the Azure image and download the _tar.gz_ file.
 +
-image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500, An image showing the NSS page with digest file tar.gz downloads]
+image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image showing the NSS page with digest file tar.gz downloads]
 
-. On Linux and macOS, use the following commands to obtain the downloaded Azure Image Digest file:
-.. To get the md5sum file, enter the `md5sum` command.
-.. To get the sha256sum, enter the `sha256sum` command.
+. On Linux and macOS, use the following commands to obtain the downloaded Azure image file:
+.. To get the _md5sum_ file, enter the `md5sum` command.
+.. To get the _sha256sum_ file, enter the `sha256sum` command.
 
-. Verify that the `md5sum` and `sha256sum` values match those provided for the Azure Image Digest File download.
+. Verify that the `md5sum` and `sha256sum` values match those in the downloaded Azure image.
 
-. On Linux and macOS, extract the `tar.gz` file using the `tar -xzf` command.
+. On Linux and macOS, extract the _tar.gz_ file using the `tar -xzf` command.
 +
-The extracted `tar.gz` file contains the digest file (`.sig`), public key certificate file (`.pem`), and chain certificate file (`.pem`).
+The extracted _tar.gz_ file contains the digest (_.sig_) file, public key certificate (_.pem_) file, and chain certificate (_.pem_) file.
 
 +
 *Example output after extracting the tar.gz file:*
 +
+[source,cli]
 ----
 $ ls cert/ -l
 -rw-r----- 1 netapp netapp  384 May  13 13:00 9.15.0P1_azure_digest.sig
