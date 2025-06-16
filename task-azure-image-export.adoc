@@ -17,17 +17,15 @@ Once the VHD image is published to Azure cloud, it is no longer managed by NetAp
 
 .Before you begin
 
-Ensure that Azure CLI is installed on your system, or Azure Cloud Shell is available through the Azure portal.
+Ensure that the Azure CLI is installed on your system, or the Azure Cloud Shell is available through the Azure portal.
 
-* Azure CLI is installed or Azure Cloud Shell through the Azure portal is readily available. 
-+ 
-NOTE: For more information on how to install Azure CLI, refer to https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[Azure documentation: How to install Azure CLI^].
+NOTE: For more information about how to install the Azure CLI, refer to https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[Azure documentation: How to install the Azure CLI^].
 
 .Steps
 
-. Map the ONTAP version to the Azure marketplace image version using the contents of the `version_readme` file. The ONTAP version is represented by `buildname` and the Azure marketplace image version is represented by `version` in the version mappings.
+. Map the Cloud Volumes ONTAP version on your system to the Azure marketplace image version using the contents of the _version_readme_ file. The ONTAP version is represented by `buildname` and the Azure marketplace image version is represented by `version` in the version mappings.
 +
-In the following example, the ONTAP version `9.15.0P1` is mapped to the Azure marketplace image version `9150.01000024.05090105`. This Azure marketplace image version will later be used to set the image URN.
+In the following example, the Cloud Volumes ONTAP version `9.15.0P1` is mapped to the Azure marketplace image version `9150.01000024.05090105`. This Azure marketplace image version will later be used to set the image URN.
 +
 [source,cli]
 ---- 
@@ -39,7 +37,7 @@ In the following example, the ONTAP version `9.15.0P1` is mapped to the Azure ma
 ]
 ----
 
-. Identify the region where you want to create VMs. The region name is used as the value for the "locName" variable when setting the URN of the marketplace image.
+. Identify the region where you want to create VMs. The region name is used as the value for the `locName` variable when setting the URN of the marketplace image.
 
 .. To list the available regions, run this command:
 +
@@ -48,7 +46,7 @@ In the following example, the ONTAP version `9.15.0P1` is mapped to the Azure ma
 az account list-locations -o table
 ----
 +
-In this table, the region name appears in the "Name" field.
+In this table, the region name appears in the `Name` field.
 +
 [source,cli]
 ---- 
@@ -86,15 +84,15 @@ For example, all single node deployments with Cloud Volumes ONTAP 9.15.0 should 
 
 |===
 
-. After mapping the ONTAP version and Azure marketplace image, export the VHD file from the Azure marketplace using Azure Cloud Shell or Azure CLI.
+. After mapping the ONTAP version and Azure marketplace image, export the VHD file from the Azure marketplace using the Azure Cloud Shell or Azure CLI.
 
-== Export VHD file using Azure Cloud Shell in the Azure portal
+== Export VHD file using the Azure Cloud Shell
 
-. From Azure Cloud Shell, export the marketplace image to a VHD file (image2, e.g., 9150.01000024.05090105.vhd), and download it to your local system. Perform these steps on Azure Cloud Shell on the Azure portal to get the VHD image from Azure marketplace.
+From the Azure Cloud Shell, export the marketplace image to the VHD file (for example, _9150.01000024.05090105.vhd_), and download it to your local Linux system. Perform these steps to get the VHD image from the Azure marketplace.
 
 .Steps
 
-. Set the URN and other parameters of the marketplace image. The URN format is "<publisher>:<offer>:<sku>:<version>". Optionally, you can list NetApp marketplace images to confirm the correct image version.
+. Set the URN and other parameters of the marketplace image. The URN format is `<publisher>:<offer>:<sku>:<version>`. Optionally, you can list NetApp marketplace images to confirm the correct image version.
 +
 [source,cli]
 ----
@@ -123,7 +121,7 @@ PS /home/user1> $sas = az disk grant-access --duration-in-seconds 3600 --access-
 PS /home/user1> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
 ----
 + 
-. Export the VHD file from the managed disk to Azure Storage. Create a container with the appropriate access level. In this example, a container named 'vm-images' with 'Container' access level is used. Get the storage account access key from the Azure portal: 'Storage Accounts' > 'examplesaname' > 'Access Key' > 'key1' > 'key' > 'show' > <copy>.
+. Export the VHD file from the managed disk to Azure Storage. Create a container with the appropriate access level. In this example, we've used a container named `vm-images` with `Container` access level. Get the storage account access key from the Azure portal: *Storage Accounts > _examplesaname_ > Access Key > _key1_ > _key_ > Show > _<copy>_*.
 +
 [source,cli]
 ----
@@ -136,7 +134,7 @@ PS /home/user1> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestCont
 PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
 ----
 + 
-. Download the generated image to your server, e.g., a Linux machine. For example, on a Linux system, use the `wget` command to download the VHD file:
+. Download the generated image to your server. For example, on a Linux system, use the `wget` command to download the VHD file:
 +
 [source,cli]
 ----
@@ -155,19 +153,19 @@ PS /home/user1> Revoke-AzDiskAccess -ResourceGroupName $diskRG -DiskName $diskNa
 PS /home/user1> Remove-AzDisk -ResourceGroupName $diskRG -DiskName $diskName
 ----
 
-== Export VHD file using Azure CLI from a local Linux machine
+== Export VHD file using the Azure CLI
 
-Export the marketplace image to a VHD file using the Azure CLI from a local system. Perform these steps on Azure CLI on local system, for example, here, a Linux machine to get VHD image from Azure Marketplace
+Export the marketplace image to a VHD file using the Azure CLI from a local Linux system.
 
 .Steps
-. Log in to Azure CLI and list marketplace images:
+. Log in to the Azure CLI and list marketplace images:
 +
 [source,cli]
 ----
 % az login --use-device-code
 ----
 +
-. To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XXXXXXXXX to authenticate.
+. To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the authentication code.
 +
 [source,cli]
 ---- 
@@ -201,15 +199,9 @@ Export the marketplace image to a VHD file using the Azure CLI from a local syst
 +
 To automate the process, the SAS needs to be extracted from the standard output. Refer to the appropriate documents for guidance. 
 . Export the VHD file from the managed disk.
-.. Create a container with the appropriate access level. In this example, a container named 'vm-images' with 'Container' access level is used.
-.. Get the storage account access key from the Azure portal:
+.. Create a container with the appropriate access level. In this example, a container named `vm-images` with `Container` access level is used.
+.. Get the storage account access key from the Azure portal: *Storage Accounts > _examplesaname_ > Access Key > _key1_ > _key_ > Show > _<copy>_*.
 +
-[source,cli]
-----
-'Storage Accounts' > 'examplesaname' > 'Access Key' > 'key1' > 'key' > 'show' > <copy>
-----
-+
-[NOTE]
 You can also use the `az` command for this step.
 +
 [source,cli]
@@ -234,7 +226,7 @@ You can also use the `az` command for this step.
 }
 ----
 +
-. To check the status of the blob copy
+. Check the status of the blob copy.
 +
 [source,cli]
 ----
@@ -254,13 +246,13 @@ You can also use the `az` command for this step.
 ....
 ----
 +
-. Download the generated image to your server, for example, a Linux machine.
+. Download the generated image to your Linux server.
 +
 [source,cli]
 ----
 wget <URL of file examplesaname/Containers/vm-images/9150.01000024.05090105.vhd>
 ----
-The URL follows a standard format. For automation, you can derive the URL string as shown below. Alternatively, you can use the Azure CLI 'az' command to get the URL. 
+The URL follows a standard format. For automation, you can derive the URL string as shown below. Alternatively, you can use the Azure CLI `az` command to get the URL. 
 Example URL:
 https://examplesaname.blob.core.windows.net/vm-images/9150.01000024.05090105.vhd
 + 
