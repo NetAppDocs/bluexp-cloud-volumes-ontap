@@ -92,7 +92,7 @@ sidebar:
                   url: /task-saz-feature.html  
                 - title: Launch Cloud Volumes ONTAP in Azure
                   url: /task-deploying-otc-azure.html
-                - title: Azure Platform Image Verification
+                - title: Azure platform image verification
                   entries:
                     - title: Overview
                       url: /concept-azure-image-verification.html

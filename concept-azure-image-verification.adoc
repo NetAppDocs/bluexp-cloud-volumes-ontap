@@ -5,7 +5,7 @@ keywords: Azure, image, VHD, image signature file,
 summary: Verify Azure VHD image file signatures files.
 ---
 
-= Azure Marketplace image verification for Cloud Volumes ONTAP
+= Azure marketplace image verification for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,16 +13,16 @@ summary: Verify Azure VHD image file signatures files.
 :imagesdir: ./media/
 
 [.lead]
-Azure image verification complies with enhanced NetApp security requirements. While verifying an image file is a straightforward process, Azure image signature verification does require special handlings to the well-known Azure VHD image file due to an alternation made by the Azure marketplace.
+Azure image verification complies with enhanced NetApp security requirements. Verifying an image file is a straightforward process.  However, the Azure image signature verification requires specific considerations for the Azure VHD image file because it is altered in the Azure marketplace.
 
-NOTE: Azure image verification is supported on Cloud Volumes ONTAP software version 9.15.0 or greater. 
+NOTE: Azure image verification is supported on Cloud Volumes ONTAP 9.15.0 and later. 
 
 == Azure's alteration of published VHD files
-The leading 1MB(1048576 bytes) and ending 512 bytes of VHD file is modified by Azure. NetApp image signing skips the leading 1MB and ending 512 Bytes and signs the remaining VHD image portion. 
+The 1 MB (1048576 bytes) at the beginning and 512 bytes at the end of the VHD file is modified by Azure. NetApp signs the remaining VHD file. 
 
 image:screenshot_azure_vhd_10gb.png[An image that shows Azure's alternation of 10GB VHD file]
 
-As an example, the above diagram shows a VHD file sized 10GB. But the NetApp signed portion is marked in green with size of 10GB - 1MB - 512B.
+In the example, the VHD file is of 10GB. The portion that NetApp signed is marked in green (10 GB - 1 MB - 512 bytes).
 
 .Related links
 
