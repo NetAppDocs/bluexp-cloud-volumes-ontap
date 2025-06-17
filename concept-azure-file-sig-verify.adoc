@@ -13,7 +13,7 @@ summary: Understanding how to verify an exported VHD file signature through the 
 :imagesdir: ./media/
 
 [.lead]
-The Azure image verification process generates a digest file from the VHD file by stripping the leading 1MB and trailing 512 bytes, then applying a hash function. To match the signing procedure, SHA256 is used for hashing. You must remove the leading 1MB and final 512 bytes from the VHD file and then verify the remaining portion.
+The Azure image verification process generates a digest file from the VHD file by stripping 1 MB at the beginning and 512 bytes at the end, then applying a hash function. To match the signing procedure, _SHA256_ is used for hashing. You must remove the leading 1 MB and final 512 bytes from the VHD file and then verify the remaining portion.
 
 == File signature verification workflow summary
 The following is an overview of the file signature verification workflow process.
@@ -28,7 +28,7 @@ Refer to link:task-azure-download-digest-file.html[Download the Azure image dige
 
 * Extract the public key (.pub) from the public key certificate (.pem).
 
-* Use the extracted public key to decrypt the digest file. Then, compare the result against a newly generated digest of a temporary file created from the image file, with the leading 1MB and trailing 512 bytes removed.
+* Use the extracted public key to decrypt the digest file. Then, compare the result against a newly generated digest of a temporary file created from the image file, with the leading 1 MB and trailing 512 bytes removed.
 +
 You can perform this step by using the following OpenSSL command:
 

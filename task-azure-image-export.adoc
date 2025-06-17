@@ -13,19 +13,17 @@ summary: You can export ONTAP images from the Azure Marketplace to verify the si
 :imagesdir: ./media/
 
 [.lead]
-Once the VHD image is published to Azure cloud, it is no longer managed by NetApp. Instead, the published image is placed on the Azure marketplace. When the image is staged and published on the Azure marketplace, Azure modifies the leading 1MB and ending 512B of the VHD. To verify the signature of the VHD file, you must first export the VHD image modified by Azure from the Azure marketplace.
+Once the VHD image is published to Azure cloud, it is no longer managed by NetApp. Instead, the published image is placed on the Azure marketplace. When the image is staged and published on the Azure marketplace, Azure modifies 1 MB at the beginning and 512 bytes at the end of the VHD. To verify the signature of the VHD file, you need to export the VHD image modified by Azure from the Azure marketplace.
 
 .Before you begin
 
-Ensure that the Azure CLI is installed on your system, or the Azure Cloud Shell is available through the Azure portal.
-
-NOTE: For more information about how to install the Azure CLI, refer to https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[Azure documentation: How to install the Azure CLI^].
+Ensure that the Azure CLI is installed on your system, or the Azure Cloud Shell is available through the Azure portal. For more information about how to install the Azure CLI, refer to https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[Azure documentation: How to install the Azure CLI^].
 
 .Steps
 
-. Map the Cloud Volumes ONTAP version on your system to the Azure marketplace image version using the contents of the _version_readme_ file. The ONTAP version is represented by `buildname` and the Azure marketplace image version is represented by `version` in the version mappings.
+. Map the Cloud Volumes ONTAP version on your system to the Azure marketplace image version using the contents of the _version_readme_ file. The Cloud Volumes ONTAP version is represented by `buildname` and the Azure marketplace image version is represented by `version` in the version mappings.
 +
-In the following example, the Cloud Volumes ONTAP version `9.15.0P1` is mapped to the Azure marketplace image version `9150.01000024.05090105`. This Azure marketplace image version will later be used to set the image URN.
+In the following example, the Cloud Volumes ONTAP version `9.15.0P1` is mapped to the Azure marketplace image version `9150.01000024.05090105`. This Azure marketplace image version is later used to set the image URN.
 +
 [source,cli]
 ---- 
@@ -37,7 +35,7 @@ In the following example, the Cloud Volumes ONTAP version `9.15.0P1` is mapped t
 ]
 ----
 
-. Identify the region where you want to create VMs. The region name is used as the value for the `locName` variable when setting the URN of the marketplace image.
+. Identify the region where you want to create the VMs. The region name is used as the value for the `locName` variable when setting the URN of the marketplace image.
 
 .. To list the available regions, run this command:
 +
@@ -134,7 +132,7 @@ PS /home/user1> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestCont
 PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
 ----
 + 
-. Download the generated image to your server. For example, on a Linux system, use the `wget` command to download the VHD file:
+. Download the generated image to your Linux system. Use the `wget` command to download the VHD file:
 +
 [source,cli]
 ----

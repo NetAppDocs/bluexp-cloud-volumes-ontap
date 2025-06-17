@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task-file-verification-mac.html
-keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, Mac OS 
-summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP image digest File tool on Mac OS
+keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, macOS 
+summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP image digest File tool on macOS
 ---
 
-= Verify Azure marketplace image signature for Cloud Volumes ONTAP on MAC OS 
+= Verify Azure marketplace image signature for Cloud Volumes ONTAP on macOS 
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP i
 :imagesdir: ./media/
 
 [.lead]
-You can verify an exported VHD file signature on Mac OS by following these steps.
+You can verify an exported VHD file signature on macOS by following these steps.
 
 .Steps
 
@@ -29,8 +29,8 @@ Refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-dow
 Certificate-9.15.0P1_azure.pem: OK
 ----
 +
-. Remove the leading 1MB (1,048,576 bytes) and trailing 512 bytes from the VHD file.
-When using `tail`, the `-c +K` option generates bytes from the Kth byte of the file. Therefore, it passes 1048577 to `tail -c`. Note that on Mac OS, the tail command may take a little while to complete.
+. Remove 1MB (1,048,576 bytes) at the beginning and 512 bytes at the end of the VHD file.
+When using `tail`, the `-c +K` option generates bytes from the Kth byte of the file. Therefore, it passes 1048577 to `tail -c`. Note that on macOS, the tail command may take a little while to complete.
 +
 [source,cli]
 ----

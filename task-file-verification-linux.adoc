@@ -29,7 +29,7 @@ Refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-dow
 Certificate-9.15.0P1_azure.pem: OK
 ----
 +
-. Remove the leading 1MB (1,048,576 bytes) and trailing 512 bytes from the VHD file.
+. Remove 1 MB (1,048,576 bytes) at the beginning and 512 bytes at the end of the VHD file.
 When using `tail`, the `-c +K` option generates bytes from the Kth byte of the file. Therefore, it passes 1048577 to `tail -c`.
 +
 [source,cli]
