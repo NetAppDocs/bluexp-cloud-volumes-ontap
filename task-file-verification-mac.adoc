@@ -13,7 +13,7 @@ summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP i
 :imagesdir: ./media/
 
 [.lead]
-You can verify an exported VHD file signature on macOS by following these steps.
+Verification of an exported VHD file signature on Linux consists of validating the chain of trust, editing the file, and verifying the signature.
 
 .Steps
 
@@ -29,8 +29,7 @@ Refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-dow
 Certificate-9.15.0P1_azure.pem: OK
 ----
 +
-. Remove 1MB (1,048,576 bytes) at the beginning and 512 bytes at the end of the VHD file.
-When using `tail`, the `-c +K` option generates bytes from the Kth byte of the file. Therefore, it passes 1048577 to `tail -c`. Note that on macOS, the tail command may take a little while to complete.
+. Remove 1MB (1,048,576 bytes) at the beginning and 512 bytes at the end of the VHD file. When using `tail`, the `-c +K` option generates bytes from the Kth byte of the file. Therefore, it passes 1048577 to `tail -c`. Note that on macOS, the tail command might take about ten minutes to complete.
 +
 [source,cli]
 ----

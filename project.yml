@@ -104,9 +104,9 @@ sidebar:
                       entries:
                         - title: Learn about file signature verification
                           url: /concept-azure-file-sig-verify.html
-                        - title: File signature verification on Linux
+                        - title: Verify file signature on Linux
                           url: /task-file-verification-linux.html
-                        - title: File signature verification on macOS 
+                        - title: Verify file signature on macOS 
                           url: /task-file-verification-mac.html
             - title: Get started in the marketplace
               url: /task-deploy-cvo-azure-mktplc.html                                   
