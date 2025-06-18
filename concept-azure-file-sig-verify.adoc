@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-azure-file-sig-verify.html
 keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, 
-summary: Understanding how to verify an exported VHD file signature through the Cloud Volumes ONTAP Image Digest File tool. 
+summary: Understanding how to verify an exported VHD file signature through the Cloud Volumes ONTAP image digest File tool. 
 ---
 
 = Azure marketplace image signature verfication for Cloud Volumes ONTAP
@@ -13,30 +13,25 @@ summary: Understanding how to verify an exported VHD file signature through the 
 :imagesdir: ./media/
 
 [.lead]
-The Azure image verification process will generate a digest from the VHD file with the leading 1MB and ending 512B striped by using hash function. To match the signing procedure, SHA256 is used to hash. You need to remove the leading 1MB and final 512B from the VHD file and then verify the remaining portion of the VHD file. 
+The Azure image verification process generates a digest file from the VHD file by stripping 1 MB at the beginning and 512 bytes at the end, then applying a hash function. To match the signing procedure, _sha256_ is used for hashing. 
 
 == File signature verification workflow summary
 The following is an overview of the file signature verification workflow process.
 
 image::graphic_azure_check_signature.png[width=500 An image that shows the file signature verification process]
 
-* Download the Azure Image Digest file from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extract the digest file(.sig), public key certificate file(.pem) and chain certificate file(.pem).
+* Downloading the Azure image from the https://mysupport.netapp.com/site/[NetApp Support Site^] and extracting the digest (.sig) file, public key certificate (.pem) file, and chain certificate (.pem) file. Refer to link:task-azure-download-digest-file.html[Download the Azure image digest file] for more information.
+
+* Verification of the chain of trust.
+
+* Extracting the public key (.pub) from the public key certificate (.pem).
+
+* Decrypting the digest file by using the extracted public key.
+* Comparing the result against a newly generated digest of a temporary file created from the image file after removing 1 MB at the beginning and 512 bytes at the end. This step is performed by using the OpenSSL command line tool. The OpenSSL CLI tool displays appropriate messaging on success or failure in matching the files.
 +
-Refer to link:task-azure-download-digest-file.html[Download the Azure Image Digest File] for more information.  
-
-* Verify the chain of trust.
-
-* Extract the public key(.pub) from the public key certificate(.pem).
-
-* The extracted public key is used to decrypt the digest file. The result is then compared against a new unencrypted digest of the temporary file created from the image file with leading 1MB and ending 512 bytes removed. 
-+
-This step is achieved through the following openssl command.
-
-** The general CLI statement appears as follows:
-+ 
+[source,cli]
 ----
 openssl dgst -verify <public_key> -keyform <form> <hash_function> 
 -signature <digest_file> -binary <temporary_file>
 ----
 
-** OpenSSL CLI tool gives a "Verified OK" message if both the files match and "Verification Failure" if they do not match.

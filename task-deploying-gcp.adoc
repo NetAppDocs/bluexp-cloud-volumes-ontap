@@ -87,13 +87,13 @@ NOTE: This is the service account that you set up for BlueXP, link:https://docs.
 
 Click *Add Subscription* to associate the selected credentials with a subscription.
 
-To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Google Cloud project that's associated with a subscription to Cloud Volumes ONTAP from the Google Cloud Marketplace.
+To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Google Cloud project that's associated with a subscription to Cloud Volumes ONTAP from the Google Cloud marketplace.
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your Google Cloud project. Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with Google Cloud credentials^] section.
+The following video shows how to associate a pay-as-you-go marketplace subscription to your Google Cloud project. Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with Google Cloud credentials^] section.
 +
-video::373b96de-3691-4d84-b3f3-b05101161638[panopto, title="Subscribe to BlueXP from the Google Cloud Marketplace"]
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto, title="Subscribe to BlueXP from the Google Cloud marketplace"]
 
 . *Services*: Select the services that you want to use on this system. In order to select BlueXP backup and recovery, or to use BlueXP tiering, you must have specified the Service Account in step 3.
 +
@@ -286,9 +286,9 @@ To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a Googl
 
 |===
 +
-The following video shows how to associate a pay-as-you-go Marketplace subscription to your Google Cloud project.  Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a Marketplace subscription with Google Cloud credentials^] section.
+The following video shows how to associate a pay-as-you-go marketplace subscription to your Google Cloud project.  Alternatively, follow the steps to subscribe located in the https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html[Associating a marketplace subscription with Google Cloud credentials^] section.
 +
-video::373b96de-3691-4d84-b3f3-b05101161638[panopto, title="Subscribe to BlueXP from the Google Cloud Marketplace"]
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto, title="Subscribe to BlueXP from the Google Cloud marketplace"]
 
 . *Services*: Select the services that you want to use on this system. In order to select BlueXP backup and recovery, or to use BlueXP Tiering, you must have specified the Service Account in step 3.
 +

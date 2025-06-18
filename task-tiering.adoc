@@ -124,12 +124,12 @@ You don't need to set up a connection between the performance tier and the capac
 
 The custom role includes the permissions by default. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html[View Azure permission for the Connector^]
 
-=== Requirements to tier data for an Azure tenant
-You can use the same Connector to tier data for multiple Azure tenants. To enable tiering for an Azure tenant in a scenario where the Cloud Volumes ONTAP working environment is created by one tenant and the Connector is created by another, ensure the following:
+//=== Requirements to tier data for an Azure tenant
+//You can use the same Connector to tier data for multiple Azure tenants. To enable tiering for an Azure tenant in a scenario where the Cloud Volumes ONTAP working environment is created by one tenant and the Connector is created by another, ensure the following:
 
-* You have entered the credentials for both the tenants in BlueXP for cross-validation. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for BlueXP^].
-* You have enabled virtual network (VNet) peering between the two tenants https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview[on the Azure portal^]. This is required so that the Connector can access the storage account for the other tenant.
-* You have link:task-enabling-private-link.html#disable-azure-private-links-and-use-service-endpoints-instead[disabled Azure Private Links] to use the subnet service endpoint.
+//* You have entered the credentials for both the tenants in BlueXP for cross-validation. Refer to https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html[Manage Azure credentials and marketplace subscriptions for BlueXP^].
+//* You have enabled virtual network (VNet) peering between the two tenants https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview[on the Azure portal^]. This is required so that the Connector can access the storage account for the other tenant.
+//* You have link:task-enabling-private-link.html#disable-azure-private-links-and-use-service-endpoints-instead[disabled Azure Private Links] to use the subnet service endpoint.
 
 endif::azure[]
 
@@ -315,6 +315,8 @@ You can delete the S3 bucket only if:
 When you decommission a Cloud Volumes ONTAP working environment, the S3 bucket that was created for the environment is not deleted automatically. Instead, it remains in an orphaned state to prevent any accidental data loss. You can delete the objects in the bucket, then remove the S3 bucket itself, or keep it for later use.
 Refer to https://docs.netapp.com/us-en/ontap-cli/vserver-object-store-server-bucket-delete.html#description[ONTAP CLI: vserver object-store-server bucket delete^].
 
+
+//Blackrock regression for commenting out tenancy support:NOC-40654
 
 
 
