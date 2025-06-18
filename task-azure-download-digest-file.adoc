@@ -13,7 +13,9 @@ summary: You can download the Azure image digest File from the NetApp Support Si
 :imagesdir: ./media/
 
 [.lead]
-You can download the Azure image file from the https://mysupport.netapp.com/site/[NetApp Support Site^]. The _tar.gz_ file contains the files required for image signature verification.
+You can download the Azure image file from the https://mysupport.netapp.com/site/[NetApp Support Site^]. 
+
+The _tar.gz_ file contains the files required for image signature verification. Along with the _tar.gz_ file, you should also download the _checksum_ file for the image. The checksum file contains the `md5` and `sha256` checksums of the _tar.gz_ file.
 
 .Steps
 
@@ -23,10 +25,9 @@ You can download the Azure image file from the https://mysupport.netapp.com/site
 +
 image::screenshot_cloud_volumes_ontap_tar.gz.png[width=500 An image showing the NSS page with digest file tar.gz downloads]
 
-. On Linux and macOS, use the following commands to obtain the downloaded Azure image file:
-.. To get the _md5sum_ file, enter the `md5sum` command.
-.. To get the _sha256sum_ file, enter the `sha256sum` command.
-
+. On Linux, run `md5sum  AZURE-<version>_PKG.TAR.GZ`.
++
+On macOS, run `sha256sum AZURE-<version>_PKG.TAR.GZ`. 
 . Verify that the `md5sum` and `sha256sum` values match those in the downloaded Azure image.
 
 . On Linux and macOS, extract the _tar.gz_ file using the `tar -xzf` command.

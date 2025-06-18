@@ -13,7 +13,7 @@ summary: Verify an exported VHD file signature through the Cloud Volumes ONTAP i
 :imagesdir: ./media/
 
 [.lead]
-Verification of an exported VHD file signature on Linux consists of validating the chain of trust, editing the file, and verifying the signature.
+Verification of an exported VHD file signature on Linux includes validating the chain of trust, editing the file, and verifying the signature.
 
 .Steps
 
