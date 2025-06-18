@@ -35,9 +35,7 @@ In the following example, the Cloud Volumes ONTAP version `9.15.0P1` is mapped t
 ]
 ----
 
-. Identify the region where you want to create the VMs. The region name is used as the value for the `locName` variable when setting the URN of the marketplace image.
-
-.. To list the available regions, run this command:
+. Identify the region where you want to create the VMs. The region name is used as the value for the `locName` variable when setting the URN of the marketplace image. To list the available regions, run this command:
 +
 [source,cli]
 ----
@@ -57,7 +55,7 @@ South Central US          southcentralus       (US) South Central US
 ...
 ----
 
-. Review the SKU names for the corresponding Cloud Volumes ONTAP versions and VM deployment types in the table below. The SKU name is used as the value for the "skuName" variable when setting the URN of the marketplace image.
+. Review the SKU names for the corresponding Cloud Volumes ONTAP versions and VM deployment types in the table below. The SKU name is used as the value for the `skuName` variable when setting the URN of the marketplace image.
 + 
 For example, all single node deployments with Cloud Volumes ONTAP 9.15.0 should use `ontap_cloud_byol` as the SKU name.
 +
@@ -84,7 +82,7 @@ For example, all single node deployments with Cloud Volumes ONTAP 9.15.0 should 
 
 . After mapping the ONTAP version and Azure marketplace image, export the VHD file from the Azure marketplace using the Azure Cloud Shell or Azure CLI.
 
-== Export VHD file using the Azure Cloud Shell
+== Export VHD file using the Azure Cloud Shell on Linux
 
 From the Azure Cloud Shell, export the marketplace image to the VHD file (for example, _9150.01000024.05090105.vhd_), and download it to your local Linux system. Perform these steps to get the VHD image from the Azure marketplace.
 
@@ -119,7 +117,7 @@ PS /home/user1> $sas = az disk grant-access --duration-in-seconds 3600 --access-
 PS /home/user1> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
 ----
 + 
-. Export the VHD file from the managed disk to Azure Storage. Create a container with the appropriate access level. In this example, we've used a container named `vm-images` with `Container` access level. Get the storage account access key from the Azure portal: *Storage Accounts > _examplesaname_ > Access Key > _key1_ > _key_ > Show > _<copy>_*.
+. Export the VHD file from the managed disk to Azure Storage. Create a container with the appropriate access level. In this example, we've used a container named `vm-images` with `Container` access level. Get the storage account access key from the Azure portal: *Storage Accounts > _examplesaname_ > Access Key > _key1_ > _key_ > Show > _<copy>_*
 +
 [source,cli]
 ----
@@ -151,7 +149,7 @@ PS /home/user1> Revoke-AzDiskAccess -ResourceGroupName $diskRG -DiskName $diskNa
 PS /home/user1> Remove-AzDisk -ResourceGroupName $diskRG -DiskName $diskName
 ----
 
-== Export VHD file using the Azure CLI
+== Export VHD file using the Azure CLI on Linux
 
 Export the marketplace image to a VHD file using the Azure CLI from a local Linux system.
 
@@ -198,7 +196,7 @@ Export the marketplace image to a VHD file using the Azure CLI from a local Linu
 To automate the process, the SAS needs to be extracted from the standard output. Refer to the appropriate documents for guidance. 
 . Export the VHD file from the managed disk.
 .. Create a container with the appropriate access level. In this example, a container named `vm-images` with `Container` access level is used.
-.. Get the storage account access key from the Azure portal: *Storage Accounts > _examplesaname_ > Access Key > _key1_ > _key_ > Show > _<copy>_*.
+.. Get the storage account access key from the Azure portal: *Storage Accounts > _examplesaname_ > Access Key > _key1_ > _key_ > Show > _<copy>_*
 +
 You can also use the `az` command for this step.
 +
