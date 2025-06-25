@@ -68,7 +68,7 @@ All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a custome
 
 == Key rotation in Cloud Volumes ONTAP
 
-When you configure your encryption keys, you must use the Azure portal to set up and enable automatic key rotation. Creating and enabling a new version of your keys ensures that Cloud Volumes ONTAP can automatically detect and use the latest key version for encryption, ensuring your data remains secure without the need for manual intervention.
+When you configure your encryption keys, you must use the Azure portal to set up and enable automatic key rotation. Creating and enabling a new version of encryption keys ensures that Cloud Volumes ONTAP can automatically detect and use the latest key version for encryption, ensuring your data remains secure without the need for manual intervention.
 
 For information about configuring your keys and setting up key rotation, refer to the following Microsoft Azure documentation topics:
 
@@ -76,7 +76,7 @@ For information about configuring your keys and setting up key rotation, refer t
 * https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-customer-managed-keys-powershell#set-up-an-azure-key-vault-and-diskencryptionset-with-automatic-key-rotation-preview[Azure PowerShell - Enable customer-managed keys^]
 
 [NOTE]
-After configuring the keys, ensure that you have selected the https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy[_Enable auto rotation_^] check box, so that Cloud Volumes ONTAP can utilize the new keys. If you do not select this check box on the Azure portal, Cloud Volumes ONTAP can't automatically detect the new keys, and continues to use the expired keys. This may lead to issues with storage provisioning.
+After configuring the keys, ensure that you have selected https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy[_Enable auto rotation_^], so that Cloud Volumes ONTAP can utilize the new keys. If you don't enable this option on the Azure portal, Cloud Volumes ONTAP can't automatically detect the new keys, and continues to use the expired keys. This may cause issues with storage provisioning.
 
 
 == Create a user-assigned managed identity
