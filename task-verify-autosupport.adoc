@@ -32,6 +32,11 @@ If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also n
 
 After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to the https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP documentation: Set up AutoSupport^].
 
+== Use AutoSupport when the Connector uses a proxy server
+
+You need to configure AutoSupport when the Connector uses a proxy server to connectivity
+
+
 == Troubleshoot your AutoSupport configuration
 
 If an outbound connection isn't available and BlueXP can't configure your Cloud Volumes ONTAP system to use the Connector as a proxy server, you'll receive a notification from BlueXP titled "<working environment name> is unable to send AutoSupport messages."
