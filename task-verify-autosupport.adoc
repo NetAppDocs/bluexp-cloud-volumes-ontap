@@ -17,25 +17,7 @@ AutoSupport proactively monitors the health of your system and sends messages to
 
 The only required configuration step is to ensure that Cloud Volumes ONTAP has outbound internet connectivity. For details, refer to the networking requirements for your cloud provider.
 
-== AutoSupport requirements
-
-Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
-
-Routing and firewall policies must allow HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
-
-* \https://support.netapp.com/aods/asupmessage
-* \https://support.netapp.com/asupprod/post/1.0/postAsup
-
-If an outbound internet connection isn't available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
-
-If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
-
-After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to the https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP documentation: Set up AutoSupport^].
-
-== Use AutoSupport when the Connector uses a proxy server
-
-You need to configure AutoSupport when the Connector uses a proxy server to connectivity
-
+include::_include/autosupport-networking.adoc[] 
 
 == Troubleshoot your AutoSupport configuration
 
@@ -158,3 +140,6 @@ Here's an example:
 . Go back to the Cloud Volumes ONTAP CLI and verify that Cloud Volumes ONTAP can send AutoSupport messages:
 +
 `autosupport check show-details`
+
+
+.Related links

@@ -1,0 +1,33 @@
+== Networking requirements for AutoSupport  
+Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support. 
+
+Routing and firewall policies must allow HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
+
+* \https://support.netapp.com/aods/asupmessage
+* \https://support.netapp.com/asupprod/post/1.0/postAsup
+
+If an outbound internet connection isn't available, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. There are two types of proxies: 
+
+* *Explicit proxy*: Cloud Volumes ONTAP is configured to send AutoSupport messages through the Connector by specifying the Connector's proxy address. This requires setting the proxy URL on each Cloud Volumes ONTAP node.
+
+* *Transparent proxy*: The network is configured so that outbound traffic from Cloud Volumes ONTAP is automatically routed through the Connector proxy, without requiring any proxy configuration on the Cloud Volumes ONTAP nodes.
+
+For information about how to create the BlueXP Connector as a proxy server, refer to the ...[BlueXP documentation: Create a Connector^]. 
+
+ifdef::gcp[]
+TIP: If you're using an HA pair, the HA mediator does not require outbound internet access.
+endif::gcp[]
+
+=== Verify these requirements to ensure that AutoSupport can send messages
+
+Verify the following requirements to ensure AutoSupport can send messages:
+
+* Ensure that the Connector's security group allows _inbound_ connections over port 3128. Open this port after you deploy the Connector.
+* If you have strict outbound rules for Cloud Volumes ONTAP, ensure that the security groups allow _outbound_ connections over port 3128.
+*  Obtain the CA-signed certificate uploaded when configuring the Connector proxy. Upload the same certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command. 
+ifdef::gcp[]
+* When you use the Connector as a transparent proxy server on Google Cloud, ensure that you have added the network tag for your environment. Go to *Details > Networking > Network tags* and add the tag used for the Connector. This tag is required for proper proxy server functionality.
+endif::gcp[]
+* After verifying outbound internet access, test AutoSupport to ensure it can send messages. For instructions, refer to the https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP documentation: Set up AutoSupport^].
+
+If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
