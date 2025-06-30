@@ -1,6 +1,10 @@
-=== Support for transparent proxy servers for Cloud Volumes ONTAP
+=== Support for transparent proxy for Cloud Volumes ONTAP
 
-BlueXP now supports transparent proxy servers when configuring the BlueXP Connector for Cloud Volumes ONTAP deployments. You can set up a transparent proxy server when creating or editing the BlueXP Connector to securely manage network traffic.
+BlueXP now supports transparent proxy servers in addition to the existing explicit proxy connections. When creating or modifying the BlueXP Connector, you can configure a transparent proxy server to securely manage network traffic to and from Cloud Volumes ONTAP.
 
-For more information about the use of proxy servers, refer to
+For more information about the use of proxy servers in Cloud Volumes ONTAP, refer to:
+
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#network-configurations-to-support-connector-proxy-servers[Network configurations to support Connector proxy in AWS^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/azure/reference-networking-azure.html#network-configurations-to-support-connector[Network configurations to support Connector proxy in Azure^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy[Network configurations to support Connector proxy in GCP^]
 .
