@@ -115,11 +115,13 @@ a|
 
 |===
 
-=== Outbound internet access for the HA mediator
+=== Outbound internet access for the HA mediator 
 
 The HA mediator instance must have an outbound connection to the AWS EC2 service so it can assist with storage failover. To provide the connection, you can add a public IP address, specify a proxy server, or use a manual option.
 
 The manual option can be a NAT gateway or an interface VPC endpoint from the target subnet to the AWS EC2 service. For details about VPC endpoints, refer to the http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html[AWS Documentation: Interface VPC Endpoints (AWS PrivateLink)^].
+
+include::_include/conn-proxy-config.adoc[]
 
 === Private IP addresses
 
@@ -156,7 +158,7 @@ The number of private IP addresses required for an HA pair depends on which depl
 
 The following tables provide details about the LIFs that are associated with each private IP address.
 
-===== LIFs for HA pairs in a single AZ
+.LIFs for HA pairs in a single AZ
 
 [cols="20,20,20,40",options="header"]
 |===
@@ -176,7 +178,7 @@ The following tables provide details about the LIFs that are associated with eac
 | Mediator | eth0	| Mediator | A communication channel between the nodes and the mediator to assist in storage takeover and giveback processes.
 |===
 
-===== LIFs for HA pairs in multiple AZs
+.LIFs for HA pairs in multiple AZs
 
 [cols="20,20,20,40",options="header"]
 |===

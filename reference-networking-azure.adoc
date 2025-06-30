@@ -15,7 +15,7 @@ summary: Set up your Azure networking so Cloud Volumes ONTAP systems can operate
 [.lead]
 Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly.
 
-== Requirements for Cloud Volumes ONTAP
+== Requirements for Cloud Volumes ONTAP 
 
 The following networking requirements must be met in Azure.
 
@@ -160,6 +160,8 @@ AutoSupport
 |Cloud Volumes ONTAP cannot communicate with Azure service to perform specific BlueXP operations in Azure.
 
 |===
+
+include::_include/conn-proxy-config.adoc[]
 
 === IP addresses
 
