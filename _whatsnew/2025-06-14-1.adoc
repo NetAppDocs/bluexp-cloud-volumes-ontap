@@ -6,5 +6,4 @@ For more information about the use of proxy servers in Cloud Volumes ONTAP, refe
 
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#network-configurations-to-support-connector-proxy-servers[Network configurations to support Connector proxy in AWS^]
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/azure/reference-networking-azure.html#network-configurations-to-support-connector[Network configurations to support Connector proxy in Azure^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy[Network configurations to support Connector proxy in GCP^]
-.
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy[Network configurations to support Connector proxy in Google Cloud^]
