@@ -2,15 +2,15 @@
 
 You can use the proxy servers configured for the BlueXP Connector to enable outbound internet access from Cloud Volumes ONTAP. BlueXP supports two types of proxies: 
 
-* *Explicit proxy*: The outbound traffic from Cloud Volumes ONTAP uses the HTTP address of the proxy server specified during the Connector proxy configuration. User credentials and root certificates might also be configured for additional authentication. If a root certificate is available for the explicit proxy, make sure to obtain and upload the same certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
+* *Explicit proxy*: The outbound traffic from Cloud Volumes ONTAP uses the HTTP address of the proxy server specified during the Connector proxy configuration. User credentials and root CA certificates might also be configured for additional authentication. If a root CA certificate is available for the explicit proxy, make sure to obtain and upload the same certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
 
-* *Transparent proxy*: The network is configured to automatically route outbound traffic from Cloud Volumes ONTAP through the Connector proxy. When setting up a transparent proxy, only a CA-signed certificate should be uploaded for connectivity from Cloud Volumes ONTAP, but no HTTP address of the proxy server is required. Make sure that you obtain and upload the same CA-certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
+* *Transparent proxy*: The network is configured to automatically route outbound traffic from Cloud Volumes ONTAP through the Connector proxy. When setting up a transparent proxy, only a root CA certificate should be uploaded for connectivity from Cloud Volumes ONTAP, but no HTTP address of the proxy server is required. Make sure that you obtain and upload the same root CA certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
 
 For information about how to create the BlueXP Connector as a proxy server, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure a Connector to use a proxy server^]. 
 
 ifdef::gcp[]
 [NOTE]
-When configuring a transparent proxy server for the Connector on Google Cloud, ensure that you manually configure the network tag added to the transparent proxy on the Google Cloud console. For your Cloud Volumes ONTAP working environment on the Google Cloud console, go to *Details > Networking > Network tags*, and add the tag used for the Connector. This tag is necessary to ensure the proxy server functions correctly.
+When configuring the Connector transparent proxy, you have to enter a network tag for Google Cloud. Ensure that you have manually added the same network tag for your Cloud Volumes ONTAP configuration on the Google Cloud console. For your Cloud Volumes ONTAP working environment, go to *Details > Networking > Network tags*, and add the tag used for the Connector. This tag is necessary to ensure the proxy server functions correctly.
 endif::gcp[]
 
 
