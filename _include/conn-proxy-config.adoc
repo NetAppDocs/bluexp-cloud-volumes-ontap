@@ -6,11 +6,15 @@ You can use the proxy servers configured for the BlueXP Connector to enable outb
 
 * *Transparent proxy*: The network is configured to automatically route outbound traffic from Cloud Volumes ONTAP through the Connector proxy. When setting up a transparent proxy, the Connector administrator needs to provide only a root CA certificate for connectivity from Cloud Volumes ONTAP, not the HTTP address of the proxy server. Make sure that you obtain and upload the same root CA certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
 
-For information about configuring the BlueXP Connector as a proxy server, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure a Connector to use a proxy server^]. 
+For information about configuring proxy servers for the BlueXP Connector, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure a Connector to use a proxy server^]. 
 
 ifdef::gcp[]
-[NOTE]
-During the Connector transparent proxy setup, the Connector administrator adds a network tag for Google Cloud. Ensure that you obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration in the Google Cloud console. For your Cloud Volumes ONTAP working environment, go to *Details > Networking > Network tags*, and add the tag used for the Connector. This tag is necessary to ensure the proxy server functions correctly.
+.Set up network tags for Cloud Volumes ONTAP in Google Cloud
+During the Connector transparent proxy configuration, the Connector administrator adds a network tag for Google Cloud. Ensure that you obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary to ensure the proxy server functions correctly.
+
+. In the Google Cloud console, locate your Cloud Volumes ONTAP working environment. 
+. Go to *Details > Networking > Network tags*.
+. Add the tag used for the Connector and save the configuration.
 endif::gcp[]
 
 
