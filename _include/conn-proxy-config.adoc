@@ -10,7 +10,7 @@ For information about how to create the BlueXP Connector as a proxy server, refe
 
 ifdef::gcp[]
 [NOTE]
-When configuring the Connector transparent proxy, you have to enter a network tag for Google Cloud. Ensure that you have manually added the same network tag for your Cloud Volumes ONTAP configuration on the Google Cloud console. For your Cloud Volumes ONTAP working environment, go to *Details > Networking > Network tags*, and add the tag used for the Connector. This tag is necessary to ensure the proxy server functions correctly.
+During the Connector transparent proxy setup, a network tag is configured for Google Cloud. Ensure that you obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration in the Google Cloud console. For your Cloud Volumes ONTAP working environment, go to *Details > Networking > Network tags*, and add the tag used for the Connector. This tag is necessary to ensure the proxy server functions correctly.
 endif::gcp[]
 
 
