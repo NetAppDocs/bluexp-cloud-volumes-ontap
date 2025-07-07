@@ -395,7 +395,23 @@ If you haven't created a Connector yet, you should review networking requirement
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html[View networking requirements for the Connector^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-gcp.html[Firewall rules in Google Cloud^]
 
-include::_include/conn-proxy-config.adoc[]
+=== Network configurations to support Connector proxy 
+
+You can use the proxy servers configured for the BlueXP Connector to enable outbound internet access from Cloud Volumes ONTAP. BlueXP supports two types of proxies: 
+
+* *Explicit proxy*: The outbound traffic from Cloud Volumes ONTAP uses the HTTP address of the proxy server specified during the Connector proxy configuration. The Connector administrator might also have configured user credentials and root CA certificates for additional authentication. If a root CA certificate is available for the explicit proxy, make sure to obtain and upload the same certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
+
+* *Transparent proxy*: The network is configured to automatically route outbound traffic from Cloud Volumes ONTAP through the Connector proxy. When setting up a transparent proxy, the Connector administrator needs to provide only a root CA certificate for connectivity from Cloud Volumes ONTAP, not the HTTP address of the proxy server. Make sure that you obtain and upload the same root CA certificate to your Cloud Volumes ONTAP working environment using the https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html[ONTAP CLI: security certificate install^] command.
+
+For information about configuring proxy servers for the BlueXP Connector, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure a Connector to use a proxy server^]. 
+
+.Set up network tags for Cloud Volumes ONTAP in Google Cloud
+During the Connector transparent proxy configuration, the Connector administrator adds a network tag for Google Cloud. Ensure that you obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary to ensure the proxy server functions correctly.
+
+. In the Google Cloud console, locate your Cloud Volumes ONTAP working environment. 
+. Go to *Details > Networking > Network tags*.
+. Add the tag used for the Connector and save the configuration.
+
 
 .Related topics
 
