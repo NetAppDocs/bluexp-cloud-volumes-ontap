@@ -405,7 +405,7 @@ You can use the proxy servers configured for the BlueXP Connector to enable outb
 
 For information about configuring proxy servers for the BlueXP Connector, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure a Connector to use a proxy server^]. 
 
-.Set up network tags for Cloud Volumes ONTAP in Google Cloud
+.Configure network tags for Cloud Volumes ONTAP in Google Cloud
 During the Connector transparent proxy configuration, the Connector administrator adds a network tag for Google Cloud. Ensure that you obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary to ensure the proxy server functions correctly.
 
 . In the Google Cloud console, locate your Cloud Volumes ONTAP working environment. 
