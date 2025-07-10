@@ -324,7 +324,7 @@ The predefined security group for Cloud Volumes ONTAP includes the following out
 
 .Advanced outbound rules
 
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP.
+If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP. The Cloud Volumes ONTAP clusters use these ports for regulating nodes traffic.
 
 NOTE: The source is the interface (IP address) of the Cloud Volumes ONTAP system.
 
@@ -359,7 +359,7 @@ NOTE: The source is the interface (IP address) of the Cloud Volumes ONTAP system
 .3+| AutoSupport | HTTPS | 443 | Node management LIF | support.netapp.com | AutoSupport (HTTPS is the default)
 | HTTP | 80 | Node management LIF | support.netapp.com | AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)
 | TCP | 3128 | Node management LIF | Connector | Sending AutoSupport messages through a proxy server on the Connector, if an outbound internet connection isn't available
-| Cluster | All traffic | All traffic | All LIFs on one node | All LIFs on the other node | Intercluster communications (Cloud Volumes ONTAP HA only)
+//| Cluster | All traffic | All traffic | All LIFs on one node | All LIFs on the other node | Intercluster communications (Cloud Volumes ONTAP HA only)
 | Configuration backups | HTTP | 80 | Node management LIF | \http://<connector-IP-address>/occm/offboxconfig | Send configuration backups to the Connector. link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html[ONTAP documentation^]
 | DHCP | UDP | 68 | Node management LIF | DHCP | DHCP client for first-time setup
 | DHCPS | UDP | 67 | Node management LIF | DHCP | DHCP server
@@ -416,3 +416,4 @@ During the Connector transparent proxy configuration, the Connector administrato
 .Related topics
 
 * link:task-verify-autosupport.html[Verify AutoSupport setup for Cloud Volumes ONTAP]
+* https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].
