@@ -15,7 +15,7 @@ summary: Verify the Google Cloud downloaded disk.raw file against the digest fil
 [.lead]
 You can verify the Google Cloud downloaded disk.raw file against the digest file contents available through the https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab[NSS^] using OpenSSL. 
 
-NOTE: The OpenSSL commands to validate the image are compatible with Linux, Mac OS, and Windows machines.
+NOTE: The OpenSSL commands to validate the image are compatible with Linux, macOS, and Windows machines.
 
 .Steps
 
