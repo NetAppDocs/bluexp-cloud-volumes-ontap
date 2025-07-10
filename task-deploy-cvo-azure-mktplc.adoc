@@ -137,9 +137,6 @@ On discovering the Cloud Volumes ONTAP systems deployed using Azure marketplace 
 .Before you begin
 Ensure that the deployment is complete on the Azure marketplace. The BlueXP Connector can discover the systems only when the deployment is complete and are available for discovery.
 
-[NOTE]
-Azure marketplace direct deployment supports L8s_v3 instance types. However, BlueXP doesn't support this instance type for HA configurations, and won't be able to detect it correctly during discovery.
-
 .Steps
 In BlueXP, you follow the standard procedure for discovering existing systems. Refer to link:task-adding-systems.html[Add an existing Cloud Volumes ONTAP system to BlueXP].
 
