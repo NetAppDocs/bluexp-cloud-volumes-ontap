@@ -324,7 +324,7 @@ The predefined security group for Cloud Volumes ONTAP includes the following out
 
 .Advanced outbound rules
 
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP. The Cloud Volumes ONTAP clusters use these ports for regulating nodes traffic.
+If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP. The Cloud Volumes ONTAP clusters use the following ports for regulating nodes traffic.
 
 NOTE: The source is the interface (IP address) of the Cloud Volumes ONTAP system.
 
@@ -405,7 +405,7 @@ You can use the proxy servers configured for the BlueXP Connector to enable outb
 For information about configuring proxy servers for the BlueXP Connector, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html[Configure a Connector to use a proxy server^]. 
 
 .Configure network tags for Cloud Volumes ONTAP in Google Cloud
-During the Connector transparent proxy configuration, the Connector administrator adds a network tag for Google Cloud. Ensure that you obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary to ensure the proxy server functions correctly.
+During the Connector transparent proxy configuration, the Connector administrator adds a network tag for Google Cloud. You need to obtain and manually add the same network tag for your Cloud Volumes ONTAP configuration. This tag is necessary for the proxy server to function correctly.
 
 . In the Google Cloud console, locate your Cloud Volumes ONTAP working environment. 
 . Go to *Details > Networking > Network tags*.
