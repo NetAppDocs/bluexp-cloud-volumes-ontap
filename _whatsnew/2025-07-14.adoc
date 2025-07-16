@@ -1,0 +1,16 @@
+=== Support for transparent proxy
+
+BlueXP now supports transparent proxy servers in addition to the existing explicit proxy connections. When creating or modifying the BlueXP Connector, you can configure a transparent proxy server to securely manage network traffic to and from Cloud Volumes ONTAP.
+
+For more information about the use of proxy servers in Cloud Volumes ONTAP, refer to:
+
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#network-configurations-to-support-connector-proxy-servers[Network configurations to support Connector proxy in AWS^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/azure/reference-networking-azure.html#network-configurations-to-support-connector[Network configurations to support Connector proxy in Azure^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy[Network configurations to support Connector proxy in Google Cloud^]
+
+=== New VM type supported for Cloud Volumes ONTAP in Azure
+
+Beginning with Cloud Volumes ONTAP 9.13.1, L8s_v3 is supported as a VM type in Azure single and multiple availability zones, for both new and existing high-availability (HA) pair deployments. 
+
+For more information, refer to
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html[Supported configurations in Azure^].
