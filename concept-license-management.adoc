@@ -15,7 +15,8 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 [.lead]
 Each Cloud Volumes ONTAP system that has a node-based bring your own license (BYOL) must have a system license installed with an active subscription. BlueXP simplifies the process by managing licenses for you and by displaying a warning before they expire.
 
-TIP: A node-based license is the previous generation BYOL for Cloud Volumes ONTAP. A node-based license is available for license renewals only.
+[NOTE]
+##NetApp is phasing out BYOL licensing.## BYOL A node-based license is the previous generation BYOL for Cloud Volumes ONTAP. A node-based license is available for license renewals, only in specific cases.
 
 link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licensing options].
 
@@ -23,11 +24,12 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-l
 
 == BYOL system licenses
 
-A node-based license provides up to 368 TiB of capacity for a single node or HA pair.
-
-You can purchase multiple licenses for a Cloud Volumes ONTAP BYOL system to allocate more than 368 TiB of capacity. For example, you might purchase two licenses to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you could purchase four licenses to get up to 1.4 PiB.
-
 The number of licenses that you can purchase for a single node system or HA pair is unlimited.
+
+[NOTE]
+NetApp has restricted BYOL licensing, and your expired BYOL licenses won't be renewed or extended. For information, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/upgrade/upgrade-licensing.html[Upgrading from BYOL to PAYGO^].
+
+A node-based license provides up to 368 TiB of capacity for a single node or HA pair. You might have purchased multiple licenses for a Cloud Volumes ONTAP BYOL system to allocate more than 368 TiB of capacity. For example, you might have two licenses to allocate up to 736 TiB of capacity to Cloud Volumes ONTAP. Or you could purchase four licenses to get up to 1.4 PiB.
 
 Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by link:concept-data-tiering.html[tiering inactive data to object storage]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 
@@ -57,7 +59,7 @@ If you don't renew the license in time, the Cloud Volumes ONTAP system shuts its
 
 == License renewal
 
-When you renew a node-based BYOL subscription by contacting a NetApp representative, BlueXP automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
+If you renew a node-based BYOL subscription by contacting a NetApp representative, BlueXP automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
 
 If BlueXP can't access the license file over the secure internet connection, you can link:task-manage-node-licenses.html[obtain the file yourself and then manually upload the file to BlueXP].
 

@@ -1,6 +1,8 @@
 === End of availability of BYOL licensing for Cloud Volumes ONTAP
 
-Beginning June 25, 2025, NetApp has started the phased decommissioning of bring your own license (BYOL) licensing model for Cloud Volumes ONTAP. BYOL licensing will be restricted for all customers, and expired licenses will not be renewed or extended. You must replace your BYOL licenses with cloud marketplace subscriptions. This change applies to all Cloud Volumes ONTAP deployments in AWS, Azure, and Google Cloud. Conversion to a capacity-based licensing model through hyperscaler marketplaces streamlines the licensing experience and provides greater business benefits. 
+Beginning June 25, 2025, NetApp has started a phased decommissioning of bring your own license (BYOL) licensing model for Cloud Volumes ONTAP. BYOL licensing will be restricted for all customers. This change affects all Cloud Volumes ONTAP deployments in AWS, Azure, and Google Cloud. Transitioning to a capacity-based licensing model through hyperscaler marketplaces streamlines the licensing experience and delivers greater business benefits.
+
+NetApp support and services will continue until your BYOL contract expires, but your expired licenses will not be renewed or extended. When your BYOL licenses expire, you must replace your BYOL licenses with cloud marketplace subscriptions. Contact your NetApp account team or customer success representatives to discuss your options for transitioning to a capacity-based licensing model.
 
 The only exemptions to this restriction are the U.S. Public Sector customers and China region deployments. 
 

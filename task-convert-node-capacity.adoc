@@ -26,7 +26,7 @@ For information about the EOA and EOS, refer to link:concept-licensing.html#end-
 * The account and application data in your Cloud Volumes ONTAP system remains intact.
 * The underlying cloud resources remain unaffected post conversion.
 * The license conversion tool supports all deployment types, such as single node, high availability (HA) in single availability zone (AZ), HA in multiple AZ, bring your own license (BYOL), and PAYGO.
-* The tool supports all node-based licenses as the source and all capacity-based licenses as the destination. For example, if you have a PAYGO Standard node-based license, you can convert it to a BYOL capacity-based license. 
+* The tool supports all node-based licenses as the source and all capacity-based licenses as the destination. ##For example, if you have a PAYGO Standard node-based license, you can convert it to any capacity-based license purchased through the marketplace. BYOL licenses can't be renewed or extended on expiration, and you must convert them to marketplace subscriptions.##
 * The conversion is supported for all cloud providers, AWS, Azure, and Google Cloud.
 * Post conversion, the serial number of the node-based license will be replaced by a capacity-based format. This is done as a part of the conversion, and is reflected on your NetApp Support Site (NSS) account. 
 * When you transition to the capacity-based model, your data continues to be retained in the same location as the node-based licensing. This approach guarantees no disruption in data placement, and upholds data sovereignty principles throughout the transition.
