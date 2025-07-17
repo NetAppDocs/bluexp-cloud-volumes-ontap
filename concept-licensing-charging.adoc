@@ -21,7 +21,8 @@ Capacity-based licensing packages are available with the following consumption m
 
 * *BYOL*: Bring your own license (BYOL). A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
 [NOTE]
-NetApp has restricted BYOL licensing, and your expired BYOL licenses won't be renewed or extended. For information, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/upgrade/upgrade-licensing.html[Upgrading from BYOL to PAYGO^].
+##NetApp has restricted purchase, extension, and renewal of BYOL licensing. For information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#end-of-availability-of-byol-licensing-for-cloud-volumes-ontap[End of availability of BYOL licensing for Cloud Volumes ONTAP^].##
+
 ifdef::azure[]
 +
 Note that the Optimized package is not available with BYOL.
@@ -33,7 +34,7 @@ endif::azure[]
 
 Note the following:
 
-* If you purchase a license from NetApp (BYOL), you also need to subscribe to the PAYGO offering from your cloud provider's marketplace.
+* If you purchase a license from NetApp (BYOL), you also need to subscribe to the PAYGO offering from your cloud provider's marketplace. ##NetApp has started a phased decommissioning of BYOL licensing. When your BYOL licenses expire, you must replace your BYOL licenses with cloud marketplace subscriptions.##
 +
 Your license is always charged first, but you'll be charged from the hourly rate in the marketplace in these cases:
 
@@ -42,7 +43,7 @@ Your license is always charged first, but you'll be charged from the hourly rate
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
 
-* Only single node systems with BYOL are supported in China regions.
+* Only single node systems with BYOL are supported in China regions. ##China region deployments are exempt from the BYOL decommissioning.##
 
 == Changing packages
 
@@ -122,7 +123,7 @@ For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to s
 
 === Overages
 
-If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at hourly rates based on your marketplace subscription. Overages are charged at marketplace rates, with a preference for using available capacity from other licenses first.
+##If you exceed your BYOL capacity, you'll be charged for overages at hourly rates based on your marketplace subscription. Overages are charged at marketplace rates, with a preference for using available capacity from other licenses first. If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces.##
 
 === Essentials package
 
