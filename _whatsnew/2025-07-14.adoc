@@ -1,5 +1,5 @@
 === End of availability of Optimized licenses
-Beginning on July 1, 2025, the Cloud Volumes ONTAP Optimized license is deprecated and will no longer be available for purchase or renewal in the Azure and Google Cloud marketplaces for pay-as-you-go (PAYGO) subscriptions. If you have an existing annual contract with an Optimized license, you can continue to use the license until the end of your contract. When your Optimized license expires, you can opt for Cloud Volumes ONTAP Essentials or Professional licenses.
+On August 11, 2025, the Cloud Volumes ONTAP Optimized license is deprecated, and will no longer be available for purchase or renewal through the Azure and Google Cloud marketplaces for pay-as-you-go (PAYGO) subscriptions. If you have an existing annual contract with an Optimized license, you can continue to use the license until the end of your contract. When your Optimized license expires, you can opt for Cloud Volumes ONTAP Essentials or Professional licenses.
 
 However, the ability to add or renew Optimized licenses will be available through the APIs. 
 
