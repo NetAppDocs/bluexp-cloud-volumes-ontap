@@ -54,7 +54,7 @@ image:screenshot_paygo_licenses.png["A screenshot that shows a table in the Blue
 Manage licenses that you purchased directly from NetApp by adding and removing system licenses and extra capacity licenses.
 
 [NOTE]
-##NetApp has restricted purchase, extension, and renewal of BYOL licensing. For information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].##
+##NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].##
 
 === Add unassigned licenses
 
@@ -145,7 +145,7 @@ image:screenshot-license-generator.png[Screen shot: Shows an example of the NetA
 
 When you renew a BYOL subscription by contacting a NetApp representative, BlueXP automatically obtains the new license from NetApp and installs it on the Cloud Volumes ONTAP system.
 [NOTE]
-##NetApp has restricted purchase, extension, and renewal of BYOL licensing. For information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].##
+##NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].##
 
 If BlueXP can't access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to BlueXP.
 
