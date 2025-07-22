@@ -1,8 +1,7 @@
 === Restricted availability of BYOL licensing for Cloud Volumes ONTAP
 
-Beginning June 25, 2025, NetApp has restricted the bring your own license (BYOL) licensing model for Cloud Volumes ONTAP. BYOL licensing will be restricted for all customers. This change affects all Cloud Volumes ONTAP deployments in AWS, Azure, and Google Cloud. The only exemptions to this restriction are the U.S. Public Sector customers and China region deployments. 
+Beginning June 25, 2025, NetApp has restricted the bring your own license (BYOL) licensing model for Cloud Volumes ONTAP. The restriction applies to all customers and Cloud Volumes ONTAP deployments in AWS, Azure, and Google Cloud. The only exemptions are the U.S. Public Sector customers and China region deployments. 
 
-NetApp support and services will continue until your BYOL contract expires, but your expired licenses will not be renewed or extended. When your BYOL licenses expire, you must replace your BYOL licenses with cloud marketplace subscriptions. Contact your NetApp account team or customer success representatives to discuss your options for transitioning to a capacity-based licensing model. Transitioning to a capacity-based licensing model through hyperscaler marketplaces streamlines the licensing experience and delivers greater business benefits.
+NetApp support and services will continue until your BYOL contract expires, but your expired licenses will not be renewed or extended. When your BYOL licenses expire, you must replace them with cloud marketplace subscriptions. A capacity-based licensing model in hyperscaler marketplaces streamlines the licensing experience and delivers greater business benefits. Contact your NetApp accounts team or customer success representatives to discuss your options of conversion.
 
-For more information, refer to this customer communiqué:
-https://mysupport.netapp.com/info/communications/CPC-00661.html[CPC-00661: Changes to Cloud Volumes ONTAP BYOL Policy^].
+For more information, refer to this customer communiqué: https://mysupport.netapp.com/info/communications/CPC-00661.html[CPC-00661: Changes to Cloud Volumes ONTAP BYOL Policy^].
