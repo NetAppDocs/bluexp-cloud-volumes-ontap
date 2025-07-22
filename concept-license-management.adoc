@@ -16,7 +16,7 @@ summary: Each Cloud Volumes ONTAP system that has a node-based BYOL must have a 
 Each Cloud Volumes ONTAP system that has a node-based bring your own license (BYOL) must have a system license installed with an active subscription. BlueXP simplifies the process by managing licenses for you and by displaying a warning before they expire.
 
 [NOTE]
-BYOL A node-based license is the previous generation BYOL for Cloud Volumes ONTAP. A node-based license is available for license renewals, only in specific cases.
+A node-based license is the previous generation license for Cloud Volumes ONTAP. A node-based license could be procured from NetApp (BYOL) and is available for license renewals, only in specific cases.
 
 link:concept-licensing.html[Learn more about Cloud Volumes ONTAP licensing options].
 
@@ -24,7 +24,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-l
 
 == BYOL system licenses
 
-The number of licenses that you can purchase for a single node system or HA pair is unlimited.
+Node-based licenses could be procured from NetApp. The number of licenses that you can purchase for a single node system or HA pair is unlimited.
 
 [NOTE]
 ##NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].##
