@@ -13,31 +13,21 @@ summary: If you need to perform advanced management of Cloud Volumes ONTAP, you 
 :imagesdir: ./media/
 
 [.lead]
-If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager, which is a management interface that's provided with an ONTAP system. We have included the System Manager interface directly inside BlueXP so that you don't need to leave BlueXP for advanced management.
+Some advanced capabilities of storage management in Cloud Volumes ONTAP are available through ONTAP System Manager, a management interface provided with ONTAP systems. You can access the System Manager interface directly within BlueXP.
+
 
 == Features
 
-You can perform these management functions:
+You can perform various storage management functions using ONTAP System Manager in BlueXP. The following list includes some of the features available through System Manager, though this list is not exhaustive:
 
-* Advanced storage management
-+
-Manage consistency groups, shares, qtrees, quotas, and Storage VMs.
-
-* Networking management
-+
-Manage IPspaces, network interfaces, portsets, and ethernet ports.
-
-* Events and jobs
-+
-View event logs, system alerts, jobs, and audit logs.
-
-* Advanced data protection
-+
-Protect storage VMs, LUNs, and consistency groups.
-
-* Host management
-+
-Set up SAN initiator groups and NFS clients.
+* Advanced storage management: Manage consistency groups, shares, qtrees, quotas, and Storage VMs.
+* Volume move: link:task-manage-volumes.html#move-a-volume[Move a volume to a different aggregate.]
+* Networking management: Manage IPspaces, network interfaces, portsets, and ethernet ports.
+* Manage FlexGroup volumes: You can create and manage FlexGroup volumes only through System Manager. BlueXP does not support FlexGroup volume creation.
+* Events and jobs: View event logs, system alerts, jobs, and audit logs.
+* Advanced data protection: Protect storage VMs, LUNs, and consistency groups.
+* Host management: Set up SAN initiator groups and NFS clients.
+* S3 object storage management: S3 object management in Cloud Volumes ONTAP is available only in System Manager, and not in BlueXP. You can create and manage S3 buckets, object stores, and object access policies.
 
 == Supported configurations
 
@@ -113,6 +103,8 @@ If you need help using System Manager with Cloud Volumes ONTAP, you can refer to
 * https://docs.netapp.com/us-en/ontap/volume-admin-overview-concept.html[Volume and LUN management^]
 * https://docs.netapp.com/us-en/ontap/network-manage-overview-concept.html[Network management^]
 * https://docs.netapp.com/us-en/ontap/concept_dp_overview.html[Data protection^]
+
+//GH issue: 424
 
 
 
