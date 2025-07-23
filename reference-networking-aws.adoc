@@ -115,31 +115,13 @@ a|
 
 |===
 
-==== Outbound internet access for NetApp AutoSupport 
-Cloud Volumes ONTAP nodes require outbound internet access for accessing external endpoints for various functions. Cloud Volumes ONTAP can't operate properly if these endpoints are blocked in environments with strict security requirements.
-
-Cloud Volumes ONTAP nodes require outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.
-
-Routing and firewall policies must allow HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
-
-* \https://support.netapp.com/aods/asupmessage
-* \https://support.netapp.com/asupprod/post/1.0/postAsup
-
-If you have a NAT instance, you must define an inbound security group rule that allows HTTPS traffic from the private subnet to the internet.
-
-If an outbound internet connection isn't available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector's security group allows _inbound_ connections over port 3128. You'll need to open this port after you deploy the Connector.
-
-If you defined strict outbound rules for Cloud Volumes ONTAP, then you'll also need to ensure that the Cloud Volumes ONTAP security group allows _outbound_ connections over port 3128.
-
-After you've verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to the https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html[ONTAP documentation: Set up AutoSupport^].
-
-If BlueXP notifies you that AutoSupport messages can't be sent, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration[troubleshoot your AutoSupport configuration].
-
-=== Outbound internet access for the HA mediator
+=== Outbound internet access for the HA mediator 
 
 The HA mediator instance must have an outbound connection to the AWS EC2 service so it can assist with storage failover. To provide the connection, you can add a public IP address, specify a proxy server, or use a manual option.
 
 The manual option can be a NAT gateway or an interface VPC endpoint from the target subnet to the AWS EC2 service. For details about VPC endpoints, refer to the http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html[AWS Documentation: Interface VPC Endpoints (AWS PrivateLink)^].
+
+include::_include/conn-proxy-config.adoc[]
 
 === Private IP addresses
 
@@ -176,7 +158,7 @@ The number of private IP addresses required for an HA pair depends on which depl
 
 The following tables provide details about the LIFs that are associated with each private IP address.
 
-===== LIFs for HA pairs in a single AZ
+.LIFs for HA pairs in a single AZ
 
 [cols="20,20,20,40",options="header"]
 |===
@@ -196,7 +178,7 @@ The following tables provide details about the LIFs that are associated with eac
 | Mediator | eth0	| Mediator | A communication channel between the nodes and the mediator to assist in storage takeover and giveback processes.
 |===
 
-===== LIFs for HA pairs in multiple AZs
+.LIFs for HA pairs in multiple AZs
 
 [cols="20,20,20,40",options="header"]
 |===
@@ -310,3 +292,8 @@ If you haven't created a Connector yet, you should review networking requirement
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html[View networking requirements for the Connector^]
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html[Security group rules in AWS^]
+
+.Related topics
+
+* link:task-verify-autosupport.html[Verify AutoSupport setup for Cloud Volumes ONTAP]
+* https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html[Learn about ONTAP internal ports^].

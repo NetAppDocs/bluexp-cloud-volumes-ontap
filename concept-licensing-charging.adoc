@@ -80,7 +80,7 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 == Max number of systems
 
-With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
+With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 24 per BlueXP account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
 
 For example, let's say you have three working environments:
 
@@ -98,9 +98,12 @@ This working environment counts as three systems: one for the HA pair and two fo
 
 That's six systems in total. You would then have room for an additional 14 systems in your account.
 
-If you have a large deployment that requires more then 20 systems, contact your account rep or sales team.
+If you have a large deployment that requires more then 24 systems, contact your account rep or sales team.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html[Learn more about BlueXP accounts^].
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn about storage limits for AWS, Azure, and Google Cloud^].
+//https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
 
 == Notes about charging
 

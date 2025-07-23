@@ -125,3 +125,5 @@ In a single node or HA configuration, you can remove a storage VM if it doesn't 
 
 * https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html[Prepare to use the API^]
 * https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows[Cloud Volumes ONTAP workflows^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier[Get required identifiers^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html[Use the BlueXP REST APIs^]
