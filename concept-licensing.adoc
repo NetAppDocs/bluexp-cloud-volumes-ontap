@@ -108,6 +108,9 @@ NOTE: A pay-as-you-go (PAYGO) subscription is required for BlueXP backup and rec
 === Availability of capacity-based licenses
 The availability of the PAYGO and BYOL licenses for Cloud Volumes ONTAP systems requires the BlueXP Connector to be up and running. For more information, refer to https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap[Learn about Connectors^].
 
+[NOTE]
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAPP^].
+
 === How to get started
 
 Learn how to get started with capacity-based licensing:
