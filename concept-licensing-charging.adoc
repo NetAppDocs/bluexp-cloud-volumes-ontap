@@ -20,6 +20,9 @@ You should be familiar with the charging and capacity usage for capacity-based l
 Capacity-based licensing packages are available with the following consumption models:
 
 * *BYOL*: Bring your own license (BYOL). A license purchased from NetApp that can be used to deploy Cloud Volumes ONTAP in any cloud provider.
+[NOTE]
+NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
+
 ifdef::azure[]
 +
 Note that the Optimized package is not available with BYOL.
@@ -31,7 +34,7 @@ endif::azure[]
 
 Note the following:
 
-* If you purchase a license from NetApp (BYOL), you also need to subscribe to the PAYGO offering from your cloud provider's marketplace.
+* If you purchase a license from NetApp (BYOL), you also need to subscribe to the PAYGO offering from your cloud provider's marketplace. NetApp has restricted BYOL licensing. When your BYOL licenses expire, you are required to replace them with cloud marketplace subscriptions.
 +
 Your license is always charged first, but you'll be charged from the hourly rate in the marketplace in these cases:
 
@@ -40,7 +43,7 @@ Your license is always charged first, but you'll be charged from the hourly rate
 
 * If you have an annual contract from a marketplace, _all_ Cloud Volumes ONTAP systems that you deploy are charged against that contract. You can't mix and match an annual marketplace contract with BYOL.
 
-* Only single node systems with BYOL are supported in China regions.
+* Only single node systems with BYOL are supported in China regions. China region deployments are exempt from BYOL licensing restrictions.
 
 == Changing packages
 
@@ -81,7 +84,7 @@ There is no maximum capacity limitation when it comes to the license itself.
 
 == Max number of systems
 
-With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 20 per NetApp account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
+With capacity-based licensing, the maximum number of Cloud Volumes ONTAP systems is limited to 24 per BlueXP account. A _system_ is a Cloud Volumes ONTAP HA pair, a Cloud Volumes ONTAP single node system, or any additional storage VMs that you create. The default storage VM does not count against the limit. This limit applies to all licensing models.
 
 For example, let's say you have three working environments:
 
@@ -99,9 +102,12 @@ This working environment counts as three systems: one for the HA pair and two fo
 
 That's six systems in total. You would then have room for an additional 14 systems in your account.
 
-If you have a large deployment that requires more then 20 systems, contact your account rep or sales team.
+If you have a large deployment that requires more then 24 systems, contact your account rep or sales team.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html[Learn more about NetApp accounts^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html[Learn more about BlueXP accounts^].
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html[Learn about storage limits for AWS, Azure, and Google Cloud^].
+//https://github.com/NetAppDocs/bluexp-cloud-volumes-ontap/issues/422
 
 == Notes about charging
 
@@ -117,7 +123,7 @@ For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to s
 
 === Overages
 
-If you exceed your BYOL capacity or if your license expires, you'll be charged for overages at hourly rates based on your marketplace subscription. Overages are charged at marketplace rates, with a preference for using available capacity from other licenses first.
+If you exceed your BYOL capacity, you'll be charged for overages at hourly rates based on your marketplace subscription. Overages are charged at marketplace rates, with a preference for using available capacity from other licenses first. If your BYOL license expires, you need to transition to a capacity-based licensing model through cloud marketplaces.
 
 === Essentials package
 
