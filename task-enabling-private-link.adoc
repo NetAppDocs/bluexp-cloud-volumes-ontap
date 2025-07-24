@@ -77,7 +77,7 @@ Note that the DNS name must match Azure DNS naming requirements https://docs.mic
 
 . SSH to the Connector host and log in.
 
-. Navigate to the `/opt/application/netapp/cloudmanager/docker_occm/data` directory
+. Navigate to the `/opt/application/netapp/cloudmanager/docker_occm/data` directory.
 
 . Edit `app.conf` by adding the `user-private-dns-zone-settings` parameter with the following keyword-value pairs:
 +
@@ -91,7 +91,7 @@ Note that the DNS name must match Azure DNS naming requirements https://docs.mic
  }
 ----
 +
-Note that the subscription keyword is required only if the Private DNS zone exists in a different subscription than the Connector.
+The `subscription` keyword is required only if the private DNS zone is in a different subscription than that of the Connector.
 +
 . Save the file and log off the Connector.
 +
