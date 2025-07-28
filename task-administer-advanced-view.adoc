@@ -45,6 +45,7 @@ A few features that appear in the System Manager interface are not supported wit
 * Firmware upgrades: Cloud Volumes ONTAP does not support automatic firmware updates from the *Cluster > Settings* page.
 
 * Role-based access control: Role-based access control from System Manager is not supported.
+* SMB Continuous Availability (CA) feature is not supported in Cloud Volumes ONTAP.
 
 == Configure authentication for accessing System Manager
 
