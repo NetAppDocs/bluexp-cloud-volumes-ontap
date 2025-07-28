@@ -45,6 +45,7 @@ A few features that appear in the System Manager interface are not supported wit
 * Firmware upgrades: Cloud Volumes ONTAP does not support automatic firmware updates from the *Cluster > Settings* page.
 
 * Role-based access control: Role-based access control from System Manager is not supported.
+* SMB Continuous Availability (CA) is not supported in Cloud Volumes ONTAP. You can't create continuously available SMB shares for nondisruptive operations. For information about continuously available SMB shares, refer to the https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/What_are_SMB_Continuous_Availability_CA_Shares[KB: What are SMB Continuous Availability (CA) Shares?^]   
 
 == Configure authentication for accessing System Manager
 
@@ -96,6 +97,7 @@ If you need help using System Manager with Cloud Volumes ONTAP, you can refer to
 * https://docs.netapp.com/us-en/ontap/volume-admin-overview-concept.html[Volume and LUN management^]
 * https://docs.netapp.com/us-en/ontap/network-manage-overview-concept.html[Network management^]
 * https://docs.netapp.com/us-en/ontap/concept_dp_overview.html[Data protection^]
+* https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/create-continuously-available-shares-task.html[Create continuously available SMB shares^]
 
 //GH issue: 424
 
