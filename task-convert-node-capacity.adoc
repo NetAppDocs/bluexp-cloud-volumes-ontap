@@ -79,11 +79,10 @@ endif::gcp[]
 View the new license serial number and verify the changes in BlueXP digital wallet.
 If you
 
-== Pricing and supported configurations
-
+== Pricing in different hyperscalars
 For details on pricing, go to the https://bluexp.netapp.com/pricing/[NetApp BlueXP website^].
 
-For private offers on specific hyperscalars, write to:
+For information about private offers in specific hyperscalars, write to:
 
 * AWS - awspo@netapp.com
 * Azure - azurepo@netapp.com
