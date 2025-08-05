@@ -18,7 +18,7 @@ You should always delete Cloud Volumes ONTAP systems from BlueXP, rather than fr
 When you delete a working environment, BlueXP terminates Cloud Volumes ONTAP instances and deletes disks and snapshots.
 
 [NOTE]
-Resources managed by other services like backups for BlueXP backup and recovery and instances for BlueXP classification are not deleted when you delete a working environment. You'll need to manually delete them yourself. If you don't, then you'll continue to receive charges for these resources. 
+Other resources, such as backups managed by BlueXP backup and recovery, and instances for BlueXP classification, are not deleted when you delete a working environment. You'll need to manually delete them. If you don't, then you'll continue to incur charges for these resources. 
 
 When BlueXP deploys Cloud Volumes ONTAP in your cloud provider, it enables termination protection on the instances. This option helps prevent accidental termination.
 
