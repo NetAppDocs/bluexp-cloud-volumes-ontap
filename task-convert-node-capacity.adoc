@@ -77,7 +77,7 @@ endif::gcp[]
 
 .After you finish
 View the new license serial number and verify the changes in BlueXP digital wallet.
-If you
+
 
 == Pricing in different hyperscalars
 For details on pricing, go to the https://bluexp.netapp.com/pricing/[NetApp BlueXP website^].
