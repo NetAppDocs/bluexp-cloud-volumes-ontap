@@ -40,9 +40,7 @@ https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.htm
 +
 image:screenshot_settings_delete.png[A screenshot that shows the menu available from the working environment that contains the Delete action.]
 
-.. Under the Delete Working Environment window, type the name of the working environment and then click *Delete*.
-+
-It can take up to 5 minutes to delete the working environment.
+.. Under the Delete Working Environment window, type the name of the working environment and then click *Delete*. It can take up to five minutes to delete the working environment.
 
 [NOTE]
 BlueXP backup and recovery is free only for Cloud Volumes ONTAP Professional licenses. This free benefit does not apply to deleted environments. If backed up copies of the Cloud Volumes ONTAP environment are retained in a BlueXP backup and recovery instance, you will be charged for the backed up copies until they are deleted.
