@@ -143,7 +143,7 @@ The following reports are available for download. Capacity values shown are in T
 ** Total Marketplace contracts capacity
 ** Total PAYGO capacity
 
-* *Cloud Volumes ONTAP package usage*: This report includes the following information for each package except the Optimized I/O package: 
+* *Cloud Volumes ONTAP package usage*: This report includes the following information for each package: 
 +
 ** Total consumed capacity
 ** Total precommitted capacity 

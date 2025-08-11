@@ -42,7 +42,6 @@ For information about the EOA and EOS, refer to link:concept-licensing.html#end-
 ** If the account has a capacity-based BYOL license, the destination package selected should align with the account's BYOL capacity-based licenses:  
 *** When `Professional` is selected as the destination package, the account should have a BYOL license with a Professional package:  
 ***	When `Essentials` is selected as the destination package, the account should have a BYOL license with the Essentials package.  
-*** When `Optimized` is selected as the destination package, the account should have a BYOL license with the Optimized package. 
 ** If the destination package does not align with the account's BYOL license availability, it implies that the capacity-based license might not include the selected package. In this case, you will be charged through your marketplace subscription.
 ** If there is no capacity-based BYOL license but only a marketplace subscription, you should ensure that the selected package is included in your capacity-based marketplace subscription.
 ** If there is not enough capacity in your existing capacity-based license, and if you have a marketplace subscription to charge for the additional capacity usage, you will be charged for the additional capacity through your marketplace subscription.
@@ -66,15 +65,19 @@ The icon is disabled if your Cloud Volumes ONTAP system is already charged by ca
 . Select the destination package for converting the existing license:
 ** Essentials. The default value is `Essentials`.
 ** Professional
-ifdef::azure[]
-** Optimized (for Azure)
-endif::azure[]
-ifdef::gcp[]
-** Optimized (for Google Cloud)
-endif::gcp[]
 . If you have a BYOL license, you can select the checkbox to delete the node-based license from BlueXP digital wallet post conversion. If the conversion is not complete, then even on selecting this checkbox, the license will not be deleted from the digital wallet. If you have a marketplace subscription, this option is unavailable.
 . Select the check box to confirm that you understand the implications of the change, and then click *Proceed*.
 
 .After you finish
 View the new license serial number and verify the changes in BlueXP digital wallet.
+
+
+== Pricing in different hyperscalars
+For details on pricing, go to the https://bluexp.netapp.com/pricing/[NetApp BlueXP website^].
+
+For information about private offers in specific hyperscalars, write to:
+
+* AWS - awspo@netapp.com
+* Azure - azurepo@netapp.com
+* Google Cloud - gcppo@netapp.com
 

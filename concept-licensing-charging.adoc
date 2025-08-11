@@ -24,8 +24,7 @@ Capacity-based licensing packages are available with the following consumption m
 NetApp has restricted the purchase, extension, and renewal of BYOL licensing. For more information, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap[Restricted availability of BYOL licensing for Cloud Volumes ONTAP^].
 
 ifdef::azure[]
-+
-Note that the Optimized package is not available with BYOL.
+
 endif::azure[]
 
 * *PAYGO*: A pay-as-you-go (PAYGO) subscription is an hourly subscription from your cloud provider's marketplace.
@@ -55,7 +54,7 @@ For information about converting node-based licenses to capacity-based, see
 
 == Pricing and supported configurations
 
-For details about pricing, go to https://bluexp.netapp.com/pricing/[NetApp BlueXP website^].
+For details about pricing, go to the https://bluexp.netapp.com/pricing/[NetApp BlueXP website^].
 
 Capacity-based licensing packages are available with Cloud Volumes ONTAP 9.7 and later.
 
@@ -119,7 +118,7 @@ There is a 4 TiB minimum charge for each data-serving storage VM that has least 
 
 If you haven't provisioned any volumes yet, then the minimum charge doesn't apply.
 
-For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With all other non-Essentials package types (Optimized and Professional), the minimum capacity charging of 4 TiB applies regardless of the volume type. 
+For the Essentials package, the 4 TiB minimum capacity charge doesn't apply to storage VMs that contain secondary (data protection) volumes only. For example, if you have a storage VM with 1 TiB of secondary data, then you're charged just for that 1 TiB of data. With the Professional package type, the minimum capacity charging of 4 TiB applies regardless of the volume type. 
 
 === Overages
 
