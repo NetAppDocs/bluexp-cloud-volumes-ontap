@@ -41,7 +41,7 @@ Switch between high and low-performance storage pools on-demand without taking a
 +
 Ensure consistency of NetApp Snapshot copies using NetApp SnapCenter.
 +
-https://docs.netapp.com/us-en/snapcenter/concept/concept_snapcenter_overview.html[Learn more about SnapCenter^]
+https://docs.netapp.com/us-en/snapcenter/get-started/concept_snapcenter_overview.html[Learn more about SnapCenter^]
 
 * Data security
 +
