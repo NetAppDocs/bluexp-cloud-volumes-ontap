@@ -8,7 +8,7 @@ summary: Utilize AWS's key management service for your third-party key managemen
 = Manage Cloud Volumes ONTAP encryption keys with AWS Key Management Service
 :icons: font
 :hardbreaks:
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 You can use link:https://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS's Key Management Service (KMS)^] to protect your ONTAP encryption keys in an AWS-deployed application.
