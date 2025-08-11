@@ -77,22 +77,6 @@ You can pay by capacity in a number of different configurations:
 ** File and block storage or secondary data for disaster recovery (DR)
 * Add on any of NetApp's cloud data services at extra cost
 
-==== Optimized
-
-Pay for provisioned capacity and I/O operations separately.
-
-* Cloud Volumes ONTAP single node or HA
-* Charging is based on two cost components: storage and usage (I/O).
-+
-You will not be charged for I/O related to data replication (SnapMirror), backups (SnapVault), or NDMP.
-ifdef::azure[]
-* Available in the Azure marketplace as a pay-as-you-go offering or as an annual contract
-endif::azure[]
-ifdef::gcp[]
-* Available in the Google Cloud marketplace as a pay-as-you-go offering or as an annual contract
-endif::gcp[]
-* Add on any of NetApp's cloud data services at extra cost
-
 ==== Professional
 
 Pay by capacity for any type of Cloud Volumes ONTAP configuration with unlimited backups.
@@ -165,7 +149,7 @@ NetApp has planned the end of availability (EOA) and support (EOS) of node-based
 For information, refer to https://mysupport.netapp.com/info/communications/CPC-00589.html[Customer communique: CPC-00589^].
 
 === End of availability of node-based licenses
-Beginning with 11 November, 2024, the limited availability of node-based licenses has been terminated. The support for node-based licensing ends on 31 December, 2024.
+Beginning on 11 November, 2024, the limited availability of node-based licenses has been terminated. The support for node-based licensing ends on 31 December, 2024.
 
 If you have a valid node-based contract that extends beyond the EOA date, you can continue to use the license until the contract expires. Once the contract expires, it will be necessary to transition to the capacity-based licensing model. If you don't have a long-term contract for a Cloud Volumes ONTAP node, it is important to plan your conversion before the EOS date.
 
