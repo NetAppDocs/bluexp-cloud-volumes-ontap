@@ -76,7 +76,7 @@ For HA pairs, you're only charged for the provisioned capacity on a node. You ar
 
 
 == Capacity limit
-In this licensing model, each Cloud Volumes ONTAP system supports tiering to object storage, and the total tiered capacity can scale up to the cloud provider's bucket limit. Although the license does not impose capacity restrictions, follow the https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf[FabricPool Best Practices^] to ensure optimal performance, reliability, and cost efficiency when configuring and managing tiering.
+In the capacity-based licensing model, each Cloud Volumes ONTAP system supports tiering to object storage, and the total tiered capacity can scale up to the cloud provider's bucket limit. Although the license does not impose capacity restrictions, follow the https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf[FabricPool Best Practices^] to ensure optimal performance, reliability, and cost efficiency when configuring and managing tiering.
 
 For information about the capacity limits of each cloud provider, refer to their documentation:
 
