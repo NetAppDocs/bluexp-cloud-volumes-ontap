@@ -97,7 +97,7 @@ a|
 | Cloud Volumes ONTAP cannot communicate with AWS service to perform specific BlueXP operations in AWS.
 
 | 
-The exact government endpoint for AWS service depends on the AWS region that you are using. The endpoints are suffixed with `amazonaws.com` and `c2s.ic.gov`. Refer to 	https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/Region.html[AWS SDK] and https://docs.aws.amazon.com/general/latest/gr/rande.html[Amazon documentation] for more information. 
+The exact government endpoint for AWS service depends on the AWS region that you are using. The endpoints are suffixed with `amazonaws.com` and `c2s.ic.gov`. Refer to 	https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/Region.html[AWS SDK^] and https://docs.aws.amazon.com/general/latest/gr/rande.html[AWS Documentation^] for more information. 
 
 a| 
 * CloudFormation

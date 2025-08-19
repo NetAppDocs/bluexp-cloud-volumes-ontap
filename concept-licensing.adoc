@@ -125,7 +125,14 @@ Keystone Subscriptions are supported with HA pairs. This licensing option isn't 
 
 === Capacity limit
 
-Each individual Cloud Volumes ONTAP system supports up to 2 PiB of capacity through disks and tiering to object storage.
+In the capacity-based licensing model, each Cloud Volumes ONTAP system supports tiering to object storage, and the total tiered capacity can scale up to the cloud provider's bucket limit. Although the license does not impose capacity restrictions, follow the https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf[FabricPool Best Practices^] to ensure optimal performance, reliability, and cost efficiency when configuring and managing tiering.
+
+For information about the capacity limits of each cloud provider, refer to their documentation:
+
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html[AWS documentation^]
+* https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account[Azure documentation for managed disks^] and https://learn.microsoft.com/en-us/azure/storage/blobs/scalability-targets[Azure documentation for blob storage^]
+* https://cloud.google.com/storage/docs/buckets[Google Cloud documentation^]
+
 
 === How to get started
 

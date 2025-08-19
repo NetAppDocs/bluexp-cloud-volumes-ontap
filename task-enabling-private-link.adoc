@@ -61,7 +61,7 @@ When BlueXP deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint 
 
 Client access goes through the private link when clients are within the same VNet as Cloud Volumes ONTAP, within peered VNets, or in your on-premises network when using a private VPN or ExpressRoute connection to the VNet. 
 
-Here's an example that shows client access over a private link from within the same VNet and from an on-prem network that has either a private VPN or ExpressRoute connection.
+Here's an example that shows client access over a private link from within the same VNet and from an on-premises network that has either a private VPN or ExpressRoute connection.
 
 image:diagram_azure_private_link.png[A conceptual image that shows data access going to Cloud Volumes ONTAP and through a private endpoint and private link to the storage account.]
 
