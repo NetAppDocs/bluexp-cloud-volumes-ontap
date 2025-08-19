@@ -34,10 +34,10 @@ Selecting a Local Zone is optional. Cloud Volumes ONTAP is supported in some AWS
 [NOTE]
 Cloud Volumes ONTAP does not have support for data tiering and cloud tiering in AWS Local Zones. Additionally, Local Zones with instances that have not been qualified for Cloud Volumes ONTAP are not supported. An example of this is Miami, that is not available as a Local Zone, because it has only Gen6 instances that are unsupported and unqualified.
 
-link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/?nc=sn&loc=3[View the full list of Local Zones^]. 
+link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/?nc=sn&loc=3[AWS Documentation: View the full list of Local Zones^]. 
 Local Zones must be enabled before you can create and manage resources in those zones. 
 
-link:https://aws.amazon.com/tutorials/deploying-low-latency-applications-with-aws-local-zones/[Learn how to enable a Local Zone^].
+link:https://docs.aws.amazon.com/local-zones/latest/ug/getting-started.html[AWS Documentation: Getting started with AWS Local Zones^].
 
 
 == Choose a supported instance
@@ -61,14 +61,14 @@ Instance type::
 * If several users write to the system at the same time, choose an instance type that has enough CPUs to manage the requests.
 * If you have an application that is mostly reads, then choose a system with enough RAM.
 ** https://aws.amazon.com/ec2/instance-types/[AWS Documentation: Amazon EC2 Instance Types^]
-** https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html[AWS Documentation: Amazon EBS–Optimized Instances^]
+** https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html[AWS Documentation: Amazon EBS-Optimized Instances^]
 
 EBS disk type::
 At a high level, the differences between EBS disk types are as follows. To learn more about the use cases for EBS disks, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 
 * _General Purpose SSD (gp3)_ disks are the lowest-cost SSDs that balance cost and performance for a broad range of workloads. Performance is defined in terms of IOPS and throughput. gp3 disks are supported with Cloud Volumes ONTAP 9.7 and later.
 +
-When you select a gp3 disk, BlueXP fills in default IOPS and throughput values that provide performance that is equivalent to a gp2 disk based on the selected disk size. You can increase the values to get better performance at a higher cost, but we do not support lower values because it can result in inferior performance. In short, stick with the default values or increase them. Don't lower them. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type[Learn more about gp3 disks and their performance^].
+When you select a gp3 disk, BlueXP fills in default IOPS and throughput values that provide performance that is equivalent to a gp2 disk based on the selected disk size. You can increase the values to get better performance at a higher cost, but we do not support lower values because it can result in inferior performance. In short, stick with the default values or increase them. Don't lower them. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type[AWS Documentation: Learn more about gp3 disks and their performance^].
 +
 Note that Cloud Volumes ONTAP supports the Amazon EBS Elastic Volumes feature with gp3 disks. link:concept-aws-elastic-volumes.html[Learn more about Elastic Volumes support].
 
