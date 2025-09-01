@@ -1,0 +1,9 @@
+=== End of availability of Optimized licenses
+
+Beginning on August 11, 2025, the Cloud Volumes ONTAP Optimized license will be deprecated and will no longer be available for purchase or renewal in the Azure and Google Cloud marketplaces for pay-as-you-go (PAYGO) subscriptions. If you have an existing annual contract with an Optimized license, you can continue to use the license until the end of your contract. When your Optimized license expires, you can opt for Cloud Volumes ONTAP Essentials or Professional licenses in BlueXP.
+
+However, the ability to add or renew Optimized licenses will be available through the APIs.
+
+For information about licensing packages, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[Licensing for Cloud Volumes ONTAP^].
+
+For information about switching to a different charging method, refer to https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html[Manage capacity-based licensing^].

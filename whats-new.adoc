@@ -21,16 +21,22 @@ The enhancements described on this page are specific to BlueXP features that ena
 
 // tag::whats-new[]
 
+== 11 August 2025
+include::_whatsnew/2025-08-11.adoc[]
+
 == 14 July 2025
 include::_whatsnew/2025-07-14.adoc[]
+
+== 25 June 2025
+include::_whatsnew/2025-06-25.adoc[]
+
+//end::whats-new[]
 
 == 29 May 2025
 include::_whatsnew/2025-05-29.adoc[]
 
 == 12 May 2025
 include::_whatsnew/2025-05-12.adoc[]
-
-//end::whats-new[]
 
 == 16 April 2025
 include::_whatsnew/2025-04-16.adoc[]
@@ -1029,7 +1035,7 @@ The following changes were introduced with the 3.9.7 release of the Connector.
 
 === New Professional Package in AWS
 
-A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-prem data.
+A new Professional Package enables you to bundle Cloud Volumes ONTAP and Cloud Backup Service by using an annual contract from the AWS Marketplace. Payment is per TiB. This subscription doesn't enable you to back up on-premises data.
 
 If you choose this payment option, you can provision up to 2 PiB per Cloud Volumes ONTAP system through EBS disks and tiering to S3 object storage (single node or HA).
 

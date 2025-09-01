@@ -17,9 +17,10 @@ You should always delete Cloud Volumes ONTAP systems from BlueXP, rather than fr
 
 When you delete a working environment, BlueXP terminates Cloud Volumes ONTAP instances and deletes disks and snapshots.
 
-Resources managed by other services like backups for BlueXP backup and recovery and instances for BlueXP classification are not deleted when you delete a working environment. You'll need to manually delete them yourself. If you don't, then you'll continue to receive charges for these resources.
+[NOTE]
+Other resources, such as backups managed by BlueXP backup and recovery, and instances for BlueXP classification, are not deleted when you delete a working environment. You'll need to manually delete them. If you don't, then you'll continue to incur charges for these resources. 
 
-NOTE: When BlueXP deploys Cloud Volumes ONTAP in your cloud provider, it enables termination protection on the instances. This option helps prevent accidental termination.
+When BlueXP deploys Cloud Volumes ONTAP in your cloud provider, it enables termination protection on the instances. This option helps prevent accidental termination.
 
 .Steps
 
@@ -39,6 +40,9 @@ https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.htm
 +
 image:screenshot_settings_delete.png[A screenshot that shows the menu available from the working environment that contains the Delete action.]
 
-.. Under the Delete Working Environment window, type the name of the working environment and then click *Delete*.
-+
-It can take up to 5 minutes to delete the working environment.
+.. Under the Delete Working Environment window, type the name of the working environment and then click *Delete*. It can take up to five minutes to delete the working environment.
+
+[NOTE]
+BlueXP backup and recovery is free only for Cloud Volumes ONTAP Professional licenses. This free benefit does not apply to deleted environments. If backed up copies of the Cloud Volumes ONTAP environment are retained in a BlueXP backup and recovery instance, you will be charged for the backed up copies until they are deleted.
+
+//BLUEXPDOC-722
