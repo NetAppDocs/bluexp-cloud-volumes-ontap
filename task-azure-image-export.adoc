@@ -61,21 +61,27 @@ For example, all single node deployments with Cloud Volumes ONTAP 9.15.0 should 
 +
 [cols="1,1,1"]
 |===
-|*Cloud Volumes ONTAP version*|*VM deployment method* |*SKU name*
-|9.16.1 and later
-|Through the marketplace direct deployment method
+|*Cloud Volumes ONTAP version*|*VM deployment through* |*SKU name*
+|9.17.1 and later
+|The Azure marketplace
+|ontap_cloud_direct_gen2 
+|9.17.1 and later
+|BlueXP
+|ontap_cloud_gen2
+|9.16.1
+|The Azure marketplace
 |ontap_cloud_direct
-|9.16.1 and later
-|All deployments through BlueXP
+|9.16.1
+|BlueXP
 |ontap_cloud
 |9.15.1
-|All deployments through BlueXP
+|BlueXP
 |ontap_cloud
 |9.15.0
-|Single node
+|BlueXP, single node deployments
 |ontap_cloud_byol
 |9.15.0
-|High availability
+|BlueXP, high availability (HA) deployments
 |ontap_cloud_byol_ha
 
 |===
