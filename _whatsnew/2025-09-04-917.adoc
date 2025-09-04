@@ -1,8 +1,6 @@
 === Cloud Volumes ONTAP 9.17.1 RC
 You can now use BlueXP to deploy and manage the Release Candidate 1 of Cloud Volumes ONTAP 9.17.1 in Azure and Google Cloud. However, this version is not available for deployment and upgrade in AWS.
 
-The last Cloud Volumes ONTAP version supported in AWS is 9.15.1.
-
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/[Learn more about this release of Cloud Volumes ONTAP^].
 
 //The file name contains the major BXP-CVO rls number so that it's easy for the writer to change the download path for the next release.
